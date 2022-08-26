@@ -287,7 +287,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -311,7 +311,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -338,7 +338,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -362,7 +362,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -386,7 +386,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDispute($dispute)
+    public function setDispute($dispute, $deserialize = false)
     {
         $this->container['dispute'] = $dispute;
 
@@ -410,10 +410,10 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true)) {
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'state', must be one of '%s'",
@@ -444,7 +444,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -370,7 +370,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -394,7 +394,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -418,7 +418,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -442,7 +442,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id)
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
 
@@ -466,7 +466,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -490,7 +490,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -514,10 +514,10 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $allowedValues = $this->getProcessorAllowableValues();
-        if (!is_null($processor) && !in_array($processor, $allowedValues, true)) {
+        if (!is_null($processor) && !in_array($processor, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'processor', must be one of '%s'",
@@ -548,7 +548,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 
@@ -572,7 +572,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAdditionalPurchaseData($additional_purchase_data)
+    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
     {
         $this->container['additional_purchase_data'] = $additional_purchase_data;
 
@@ -596,7 +596,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setFraudSessionId($fraud_session_id)
+    public function setFraudSessionId($fraud_session_id, $deserialize = false)
     {
         $this->container['fraud_session_id'] = $fraud_session_id;
 
@@ -620,7 +620,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setSubType($sub_type)
+    public function setSubType($sub_type, $deserialize = false)
     {
         $this->container['sub_type'] = $sub_type;
 
@@ -644,7 +644,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setOperationKey($operation_key)
+    public function setOperationKey($operation_key, $deserialize = false)
     {
         $this->container['operation_key'] = $operation_key;
 
@@ -668,7 +668,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
         $this->container['device'] = $device;
 
@@ -692,7 +692,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAdditionalBuyerCharges($additional_buyer_charges)
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
         $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
@@ -716,7 +716,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function set3dSecureAuthentication($_3d_secure_authentication)
+    public function set3dSecureAuthentication($_3d_secure_authentication, $deserialize = false)
     {
         $this->container['_3d_secure_authentication'] = $_3d_secure_authentication;
 

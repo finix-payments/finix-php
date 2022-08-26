@@ -391,7 +391,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setSort($sort)
+    public function setSort($sort, $deserialize = false)
     {
         $this->container['sort'] = $sort;
 
@@ -415,7 +415,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setBeforeCursor($before_cursor)
+    public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
 
@@ -439,7 +439,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -463,7 +463,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id)
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
 
@@ -487,7 +487,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $this->container['state'] = $state;
 
@@ -511,7 +511,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -535,7 +535,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -559,7 +559,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setUpdatedAtGte($updated_at_gte)
+    public function setUpdatedAtGte($updated_at_gte, $deserialize = false)
     {
         $this->container['updated_at_gte'] = $updated_at_gte;
 
@@ -583,7 +583,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setUpdatedAtLte($updated_at_lte)
+    public function setUpdatedAtLte($updated_at_lte, $deserialize = false)
     {
         $this->container['updated_at_lte'] = $updated_at_lte;
 
@@ -607,7 +607,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setIsVoid($is_void)
+    public function setIsVoid($is_void, $deserialize = false)
     {
         $this->container['is_void'] = $is_void;
 
@@ -631,7 +631,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -655,7 +655,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAmountLt($amount_lt)
+    public function setAmountLt($amount_lt, $deserialize = false)
     {
         $this->container['amount_lt'] = $amount_lt;
 
@@ -679,7 +679,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAmountGt($amount_gt)
+    public function setAmountGt($amount_gt, $deserialize = false)
     {
         $this->container['amount_gt'] = $amount_gt;
 
@@ -703,7 +703,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAmountLte($amount_lte)
+    public function setAmountLte($amount_lte, $deserialize = false)
     {
         $this->container['amount_lte'] = $amount_lte;
 
@@ -727,7 +727,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAmountGte($amount_gte)
+    public function setAmountGte($amount_gte, $deserialize = false)
     {
         $this->container['amount_gte'] = $amount_gte;
 
@@ -751,7 +751,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setTraceId($trace_id)
+    public function setTraceId($trace_id, $deserialize = false)
     {
         $this->container['trace_id'] = $trace_id;
 
@@ -775,7 +775,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentBin($instrument_bin)
+    public function setInstrumentBin($instrument_bin, $deserialize = false)
     {
         $this->container['instrument_bin'] = $instrument_bin;
 
@@ -799,7 +799,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentAccountLast4($instrument_account_last4)
+    public function setInstrumentAccountLast4($instrument_account_last4, $deserialize = false)
     {
         $this->container['instrument_account_last4'] = $instrument_account_last4;
 
@@ -823,7 +823,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentBrandType($instrument_brand_type)
+    public function setInstrumentBrandType($instrument_brand_type, $deserialize = false)
     {
         $this->container['instrument_brand_type'] = $instrument_brand_type;
 
@@ -847,7 +847,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setMerchantIdentityId($merchant_identity_id)
+    public function setMerchantIdentityId($merchant_identity_id, $deserialize = false)
     {
         $this->container['merchant_identity_id'] = $merchant_identity_id;
 
@@ -871,7 +871,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setMerchantIdentityName($merchant_identity_name)
+    public function setMerchantIdentityName($merchant_identity_name, $deserialize = false)
     {
         $this->container['merchant_identity_name'] = $merchant_identity_name;
 
@@ -895,7 +895,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentName($instrument_name)
+    public function setInstrumentName($instrument_name, $deserialize = false)
     {
         $this->container['instrument_name'] = $instrument_name;
 
@@ -919,7 +919,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentType($instrument_type)
+    public function setInstrumentType($instrument_type, $deserialize = false)
     {
         $this->container['instrument_type'] = $instrument_type;
 
@@ -943,7 +943,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
 
@@ -967,7 +967,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setMerchantMid($merchant_mid)
+    public function setMerchantMid($merchant_mid, $deserialize = false)
     {
         $this->container['merchant_mid'] = $merchant_mid;
 
@@ -991,7 +991,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setInstrumentCardLast4($instrument_card_last4)
+    public function setInstrumentCardLast4($instrument_card_last4, $deserialize = false)
     {
         $this->container['instrument_card_last4'] = $instrument_card_last4;
 
@@ -1015,7 +1015,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setMerchantProcessorId($merchant_processor_id)
+    public function setMerchantProcessorId($merchant_processor_id, $deserialize = false)
     {
         $this->container['merchant_processor_id'] = $merchant_processor_id;
 
@@ -1039,7 +1039,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
 
@@ -1063,7 +1063,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setAfterCursor($after_cursor)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
 

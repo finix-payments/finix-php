@@ -248,7 +248,7 @@ class CreatePaymentInstrumentRequestAddress implements ModelInterface, ArrayAcce
      *
      * @return self
      */
-    public function setCity($city)
+    public function setCity($city, $deserialize = false)
     {
         $this->container['city'] = $city;
 
@@ -272,7 +272,7 @@ class CreatePaymentInstrumentRequestAddress implements ModelInterface, ArrayAcce
      *
      * @return self
      */
-    public function setRegion($region)
+    public function setRegion($region, $deserialize = false)
     {
         $this->container['region'] = $region;
 
@@ -296,7 +296,7 @@ class CreatePaymentInstrumentRequestAddress implements ModelInterface, ArrayAcce
      *
      * @return self
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postal_code, $deserialize = false)
     {
         $this->container['postal_code'] = $postal_code;
 
@@ -320,7 +320,7 @@ class CreatePaymentInstrumentRequestAddress implements ModelInterface, ArrayAcce
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setLine1($line1, $deserialize = false)
     {
         $this->container['line1'] = $line1;
 
@@ -344,7 +344,7 @@ class CreatePaymentInstrumentRequestAddress implements ModelInterface, ArrayAcce
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $this->container['country'] = $country;
 

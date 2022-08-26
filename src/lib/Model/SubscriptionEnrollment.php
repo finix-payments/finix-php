@@ -304,7 +304,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         if (!is_null($id) && (mb_strlen($id) < 1)) {
@@ -334,7 +334,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -358,7 +358,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -382,7 +382,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($created_by, $deserialize = false)
     {
 
         if (!is_null($created_by) && (mb_strlen($created_by) < 1)) {
@@ -412,7 +412,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setEndedAt($ended_at)
+    public function setEndedAt($ended_at, $deserialize = false)
     {
         $this->container['ended_at'] = $ended_at;
 
@@ -436,7 +436,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
 
         if (!is_null($merchant) && (mb_strlen($merchant) < 1)) {
@@ -466,7 +466,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
 
@@ -490,7 +490,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setStartedAt($started_at)
+    public function setStartedAt($started_at, $deserialize = false)
     {
 
         if (!is_null($started_at) && (mb_strlen($started_at) < 1)) {
@@ -520,7 +520,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setSubscriptionSchedule($subscription_schedule)
+    public function setSubscriptionSchedule($subscription_schedule, $deserialize = false)
     {
 
         if (!is_null($subscription_schedule) && (mb_strlen($subscription_schedule) < 1)) {
@@ -550,7 +550,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -574,7 +574,7 @@ class SubscriptionEnrollment implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

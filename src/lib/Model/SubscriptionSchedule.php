@@ -348,7 +348,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         if (!is_null($id) && (mb_strlen($id) < 1)) {
@@ -378,7 +378,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -402,7 +402,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -426,7 +426,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($created_by, $deserialize = false)
     {
 
         if (!is_null($created_by) && (mb_strlen($created_by) < 1)) {
@@ -456,7 +456,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setFixedTimeIntervalOffset($fixed_time_interval_offset)
+    public function setFixedTimeIntervalOffset($fixed_time_interval_offset, $deserialize = false)
     {
         $this->container['fixed_time_interval_offset'] = $fixed_time_interval_offset;
 
@@ -480,10 +480,10 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setLineItemType($line_item_type)
+    public function setLineItemType($line_item_type, $deserialize = false)
     {
         $allowedValues = $this->getLineItemTypeAllowableValues();
-        if (!is_null($line_item_type) && !in_array($line_item_type, $allowedValues, true)) {
+        if (!is_null($line_item_type) && !in_array($line_item_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'line_item_type', must be one of '%s'",
@@ -520,7 +520,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
 
@@ -544,7 +544,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPeriodOffset($period_offset)
+    public function setPeriodOffset($period_offset, $deserialize = false)
     {
         $this->container['period_offset'] = $period_offset;
 
@@ -568,10 +568,10 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setSubscriptionType($subscription_type)
+    public function setSubscriptionType($subscription_type, $deserialize = false)
     {
         $allowedValues = $this->getSubscriptionTypeAllowableValues();
-        if (!is_null($subscription_type) && !in_array($subscription_type, $allowedValues, true)) {
+        if (!is_null($subscription_type) && !in_array($subscription_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'subscription_type', must be one of '%s'",
@@ -608,7 +608,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -632,7 +632,7 @@ class SubscriptionSchedule implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

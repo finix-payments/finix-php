@@ -223,7 +223,7 @@ class Error401UnauthorizedEmbedded implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setErrors($errors, $deserialize = false)
     {
         $this->container['errors'] = $errors;
 

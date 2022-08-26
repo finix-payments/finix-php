@@ -235,7 +235,7 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
 
@@ -259,7 +259,7 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setOtherOptions($other_options)
+    public function setOtherOptions($other_options, $deserialize = false)
     {
         $this->container['other_options'] = $other_options;
 
@@ -283,7 +283,7 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setTipSelections($tip_selections)
+    public function setTipSelections($tip_selections, $deserialize = false)
     {
         $this->container['tip_selections'] = $tip_selections;
 

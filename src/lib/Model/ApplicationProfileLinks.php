@@ -242,7 +242,7 @@ class ApplicationProfileLinks implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -266,7 +266,7 @@ class ApplicationProfileLinks implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setFeeProfile($fee_profile)
+    public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
 
@@ -290,7 +290,7 @@ class ApplicationProfileLinks implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setRiskProfile($risk_profile)
+    public function setRiskProfile($risk_profile, $deserialize = false)
     {
         $this->container['risk_profile'] = $risk_profile;
 
@@ -314,7 +314,7 @@ class ApplicationProfileLinks implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 

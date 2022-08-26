@@ -223,7 +223,7 @@ class MerchantProfilesListEmbedded implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setMerchantProfiles($merchant_profiles)
+    public function setMerchantProfiles($merchant_profiles, $deserialize = false)
     {
         $this->container['merchant_profiles'] = $merchant_profiles;
 

@@ -298,7 +298,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setAmountExcludingSalesTax($amount_excluding_sales_tax)
+    public function setAmountExcludingSalesTax($amount_excluding_sales_tax, $deserialize = false)
     {
         $this->container['amount_excluding_sales_tax'] = $amount_excluding_sales_tax;
 
@@ -322,7 +322,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setAmountIncludingSalesTax($amount_including_sales_tax)
+    public function setAmountIncludingSalesTax($amount_including_sales_tax, $deserialize = false)
     {
         $this->container['amount_including_sales_tax'] = $amount_including_sales_tax;
 
@@ -346,7 +346,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setCommodityCode($commodity_code)
+    public function setCommodityCode($commodity_code, $deserialize = false)
     {
         $this->container['commodity_code'] = $commodity_code;
 
@@ -370,7 +370,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setCostPerUnit($cost_per_unit)
+    public function setCostPerUnit($cost_per_unit, $deserialize = false)
     {
         $this->container['cost_per_unit'] = $cost_per_unit;
 
@@ -394,7 +394,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setItemDescription($item_description)
+    public function setItemDescription($item_description, $deserialize = false)
     {
         $this->container['item_description'] = $item_description;
 
@@ -418,7 +418,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setItemDiscountAmount($item_discount_amount)
+    public function setItemDiscountAmount($item_discount_amount, $deserialize = false)
     {
         $this->container['item_discount_amount'] = $item_discount_amount;
 
@@ -442,7 +442,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setMerchantProductCode($merchant_product_code)
+    public function setMerchantProductCode($merchant_product_code, $deserialize = false)
     {
         $this->container['merchant_product_code'] = $merchant_product_code;
 
@@ -466,7 +466,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setQuantity($quantity, $deserialize = false)
     {
         $this->container['quantity'] = $quantity;
 
@@ -490,7 +490,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setUnitOfMeasure($unit_of_measure)
+    public function setUnitOfMeasure($unit_of_measure, $deserialize = false)
     {
         $this->container['unit_of_measure'] = $unit_of_measure;
 

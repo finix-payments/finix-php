@@ -295,7 +295,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -319,7 +319,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setStatus($status, $deserialize = false)
     {
         $this->container['status'] = $status;
 
@@ -343,7 +343,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -367,7 +367,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -391,7 +391,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinkedType($linked_type)
+    public function setLinkedType($linked_type, $deserialize = false)
     {
         $this->container['linked_type'] = $linked_type;
 
@@ -415,7 +415,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinkedTo($linked_to)
+    public function setLinkedTo($linked_to, $deserialize = false)
     {
         $this->container['linked_to'] = $linked_to;
 
@@ -439,7 +439,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExtension($extension)
+    public function setExtension($extension, $deserialize = false)
     {
         $this->container['extension'] = $extension;
 
@@ -463,7 +463,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisplayName($display_name)
+    public function setDisplayName($display_name, $deserialize = false)
     {
         $this->container['display_name'] = $display_name;
 
@@ -487,7 +487,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
 
@@ -511,7 +511,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPlatformId($platform_id)
+    public function setPlatformId($platform_id, $deserialize = false)
     {
         $this->container['platform_id'] = $platform_id;
 
@@ -535,7 +535,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplicationId($application_id)
+    public function setApplicationId($application_id, $deserialize = false)
     {
         $this->container['application_id'] = $application_id;
 
@@ -559,7 +559,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -583,7 +583,7 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentityId($identity_id)
+    public function setIdentityId($identity_id, $deserialize = false)
     {
         $this->container['identity_id'] = $identity_id;
 

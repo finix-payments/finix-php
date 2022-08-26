@@ -228,7 +228,7 @@ class IdentityLinksSettlements implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setHref($href)
+    public function setHref($href, $deserialize = false)
     {
 
         if (!is_null($href) && (mb_strlen($href) < 1)) {

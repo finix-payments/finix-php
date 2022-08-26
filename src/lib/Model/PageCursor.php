@@ -230,7 +230,7 @@ class PageCursor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -254,7 +254,7 @@ class PageCursor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNextCursor($next_cursor)
+    public function setNextCursor($next_cursor, $deserialize = false)
     {
         $this->container['next_cursor'] = $next_cursor;
 

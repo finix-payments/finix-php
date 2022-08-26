@@ -227,7 +227,7 @@ class PaymentInstrumentsListEmbedded implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setPaymentInstruments($payment_instruments)
+    public function setPaymentInstruments($payment_instruments, $deserialize = false)
     {
 
         

@@ -246,7 +246,7 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
 
         if ((mb_strlen($type) < 1)) {
@@ -276,7 +276,7 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setConfig($config)
+    public function setConfig($config, $deserialize = false)
     {
         $this->container['config'] = $config;
 
@@ -300,7 +300,7 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

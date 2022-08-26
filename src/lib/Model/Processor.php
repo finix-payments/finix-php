@@ -284,7 +284,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -311,7 +311,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -335,7 +335,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -359,7 +359,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -383,7 +383,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplicationConfig($application_config)
+    public function setApplicationConfig($application_config, $deserialize = false)
     {
         $this->container['application_config'] = $application_config;
 
@@ -407,7 +407,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setConfig($config)
+    public function setConfig($config, $deserialize = false)
     {
         $this->container['config'] = $config;
 
@@ -431,7 +431,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDefaultMerchantProfile($default_merchant_profile)
+    public function setDefaultMerchantProfile($default_merchant_profile, $deserialize = false)
     {
         $this->container['default_merchant_profile'] = $default_merchant_profile;
 
@@ -455,7 +455,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -479,7 +479,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 
@@ -503,7 +503,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSystemConfig($system_config)
+    public function setSystemConfig($system_config, $deserialize = false)
     {
         $this->container['system_config'] = $system_config;
 
@@ -527,7 +527,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

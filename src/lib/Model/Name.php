@@ -241,7 +241,7 @@ class Name implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name, $deserialize = false)
     {
         $this->container['first_name'] = $first_name;
 
@@ -265,7 +265,7 @@ class Name implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFullName($full_name)
+    public function setFullName($full_name, $deserialize = false)
     {
         $this->container['full_name'] = $full_name;
 
@@ -289,7 +289,7 @@ class Name implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name, $deserialize = false)
     {
         $this->container['last_name'] = $last_name;
 
@@ -313,7 +313,7 @@ class Name implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setValue($value)
+    public function setValue($value, $deserialize = false)
     {
         $this->container['value'] = $value;
 

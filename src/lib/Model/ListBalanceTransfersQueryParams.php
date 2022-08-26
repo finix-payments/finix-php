@@ -307,7 +307,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -331,7 +331,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setOffset($offset)
+    public function setOffset($offset, $deserialize = false)
     {
         $this->container['offset'] = $offset;
 
@@ -355,7 +355,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setPageNumber($page_number)
+    public function setPageNumber($page_number, $deserialize = false)
     {
         $this->container['page_number'] = $page_number;
 
@@ -379,7 +379,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setPageSize($page_size)
+    public function setPageSize($page_size, $deserialize = false)
     {
         $this->container['page_size'] = $page_size;
 
@@ -403,7 +403,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -427,7 +427,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -451,7 +451,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setUpdatedAtGte($updated_at_gte)
+    public function setUpdatedAtGte($updated_at_gte, $deserialize = false)
     {
         $this->container['updated_at_gte'] = $updated_at_gte;
 
@@ -475,7 +475,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setUpdatedAtLte($updated_at_lte)
+    public function setUpdatedAtLte($updated_at_lte, $deserialize = false)
     {
         $this->container['updated_at_lte'] = $updated_at_lte;
 
@@ -499,7 +499,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id)
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
 
@@ -523,7 +523,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -547,7 +547,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description, $deserialize = false)
     {
         $this->container['description'] = $description;
 
@@ -571,7 +571,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
         $this->container['destination'] = $destination;
 
@@ -595,7 +595,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setExternalReferenceId($external_reference_id)
+    public function setExternalReferenceId($external_reference_id, $deserialize = false)
     {
         $this->container['external_reference_id'] = $external_reference_id;
 
@@ -619,7 +619,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setReferenceId($reference_id)
+    public function setReferenceId($reference_id, $deserialize = false)
     {
         $this->container['reference_id'] = $reference_id;
 
@@ -643,7 +643,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 

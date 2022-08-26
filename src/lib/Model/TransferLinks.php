@@ -296,7 +296,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -320,7 +320,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
         $this->container['destination'] = $destination;
 
@@ -344,7 +344,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
         $this->container['device'] = $device;
 
@@ -368,7 +368,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputes($disputes)
+    public function setDisputes($disputes, $deserialize = false)
     {
         $this->container['disputes'] = $disputes;
 
@@ -392,7 +392,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeProfile($fee_profile)
+    public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
 
@@ -416,7 +416,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFees($fees)
+    public function setFees($fees, $deserialize = false)
     {
         $this->container['fees'] = $fees;
 
@@ -440,7 +440,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -464,7 +464,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPaymentInstruments($payment_instruments)
+    public function setPaymentInstruments($payment_instruments, $deserialize = false)
     {
         $this->container['payment_instruments'] = $payment_instruments;
 
@@ -488,7 +488,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputedTransfer($disputed_transfer)
+    public function setDisputedTransfer($disputed_transfer, $deserialize = false)
     {
         $this->container['disputed_transfer'] = $disputed_transfer;
 
@@ -512,7 +512,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReversals($reversals)
+    public function setReversals($reversals, $deserialize = false)
     {
         $this->container['reversals'] = $reversals;
 
@@ -536,7 +536,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -560,7 +560,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setParent($parent)
+    public function setParent($parent, $deserialize = false)
     {
         $this->container['parent'] = $parent;
 
@@ -584,7 +584,7 @@ class TransferLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 

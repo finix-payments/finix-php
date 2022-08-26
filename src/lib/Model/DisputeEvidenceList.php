@@ -235,7 +235,7 @@ class DisputeEvidenceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setPage($page)
+    public function setPage($page, $deserialize = false)
     {
         $this->container['page'] = $page;
 
@@ -259,7 +259,7 @@ class DisputeEvidenceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setEmbedded($_embedded)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
         $this->container['_embedded'] = $_embedded;
 
@@ -283,7 +283,7 @@ class DisputeEvidenceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

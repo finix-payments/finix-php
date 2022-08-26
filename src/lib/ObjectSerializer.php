@@ -476,7 +476,7 @@ class ObjectSerializer
 
                 if (isset($data->{$instance::attributeMap()[$property]})) {
                     $propertyValue = $data->{$instance::attributeMap()[$property]};
-                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
+                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null), true);
                 }
             }
             return $instance;

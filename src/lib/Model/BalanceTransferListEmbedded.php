@@ -224,7 +224,7 @@ class BalanceTransferListEmbedded implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBalanceTransfers($balance_transfers)
+    public function setBalanceTransfers($balance_transfers, $deserialize = false)
     {
         $this->container['balance_transfers'] = $balance_transfers;
 

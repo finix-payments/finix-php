@@ -229,7 +229,7 @@ class Error401Unauthorized implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setTotal($total)
+    public function setTotal($total, $deserialize = false)
     {
         $this->container['total'] = $total;
 
@@ -253,7 +253,7 @@ class Error401Unauthorized implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setEmbedded($_embedded)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
         $this->container['_embedded'] = $_embedded;
 

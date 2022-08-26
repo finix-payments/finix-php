@@ -224,7 +224,7 @@ class VerificationLinksMerchant implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setHref($href)
+    public function setHref($href, $deserialize = false)
     {
         $this->container['href'] = $href;
 

@@ -223,7 +223,7 @@ class AdjustmentTransfersListEmbedded implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 

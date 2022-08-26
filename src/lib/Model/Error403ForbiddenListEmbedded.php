@@ -223,7 +223,7 @@ class Error403ForbiddenListEmbedded implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setErrors($errors, $deserialize = false)
     {
         $this->container['errors'] = $errors;
 

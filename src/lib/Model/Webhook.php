@@ -265,7 +265,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -292,7 +292,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -316,7 +316,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -340,7 +340,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -364,7 +364,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAuthentication($authentication)
+    public function setAuthentication($authentication, $deserialize = false)
     {
         $this->container['authentication'] = $authentication;
 
@@ -388,7 +388,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -412,7 +412,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrl($url, $deserialize = false)
     {
         $this->container['url'] = $url;
 
@@ -436,7 +436,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -227,7 +227,7 @@ class AuthorizationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAuthorizations($authorizations)
+    public function setAuthorizations($authorizations, $deserialize = false)
     {
 
         

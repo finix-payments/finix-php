@@ -226,7 +226,7 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setCanDebitBankAccount($can_debit_bank_account)
+    public function setCanDebitBankAccount($can_debit_bank_account, $deserialize = false)
     {
         $this->container['can_debit_bank_account'] = $can_debit_bank_account;
 

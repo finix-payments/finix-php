@@ -227,7 +227,7 @@ class TransfersListEmbedded implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
 
         

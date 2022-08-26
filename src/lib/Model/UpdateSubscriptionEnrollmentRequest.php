@@ -224,7 +224,7 @@ class UpdateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 

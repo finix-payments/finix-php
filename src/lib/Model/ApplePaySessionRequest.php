@@ -241,7 +241,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setDisplayName($display_name)
+    public function setDisplayName($display_name, $deserialize = false)
     {
         $this->container['display_name'] = $display_name;
 
@@ -265,7 +265,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setDomain($domain)
+    public function setDomain($domain, $deserialize = false)
     {
         $this->container['domain'] = $domain;
 
@@ -289,7 +289,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -313,7 +313,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setValidationUrl($validation_url)
+    public function setValidationUrl($validation_url, $deserialize = false)
     {
         $this->container['validation_url'] = $validation_url;
 

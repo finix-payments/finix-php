@@ -223,7 +223,7 @@ class LogRef implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLogref($logref)
+    public function setLogref($logref, $deserialize = false)
     {
 
         

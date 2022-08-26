@@ -247,7 +247,7 @@ class ApplePaySession implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -271,7 +271,7 @@ class ApplePaySession implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -295,7 +295,7 @@ class ApplePaySession implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -319,7 +319,7 @@ class ApplePaySession implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSessionDetails($session_details)
+    public function setSessionDetails($session_details, $deserialize = false)
     {
         $this->container['session_details'] = $session_details;
 
@@ -343,7 +343,7 @@ class ApplePaySession implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

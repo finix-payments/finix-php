@@ -248,7 +248,7 @@ class FeeProfileLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -272,7 +272,7 @@ class FeeProfileLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOwnerIdentity($owner_identity)
+    public function setOwnerIdentity($owner_identity, $deserialize = false)
     {
         $this->container['owner_identity'] = $owner_identity;
 
@@ -296,7 +296,7 @@ class FeeProfileLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessors($processors)
+    public function setProcessors($processors, $deserialize = false)
     {
         $this->container['processors'] = $processors;
 
@@ -320,7 +320,7 @@ class FeeProfileLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -344,7 +344,7 @@ class FeeProfileLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setUsers($users, $deserialize = false)
     {
         $this->container['users'] = $users;
 

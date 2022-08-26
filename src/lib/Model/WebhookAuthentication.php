@@ -250,10 +250,10 @@ class WebhookAuthentication implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",

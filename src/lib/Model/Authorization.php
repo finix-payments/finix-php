@@ -426,7 +426,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -450,7 +450,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -477,7 +477,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -501,7 +501,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -525,7 +525,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function set3dsRedirectUrl($_3ds_redirect_url)
+    public function set3dsRedirectUrl($_3ds_redirect_url, $deserialize = false)
     {
         $this->container['_3ds_redirect_url'] = $_3ds_redirect_url;
 
@@ -549,7 +549,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
 
         if (!is_null($amount) && ($amount < 0)) {
@@ -579,7 +579,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -603,7 +603,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardPresentDetails($card_present_details)
+    public function setCardPresentDetails($card_present_details, $deserialize = false)
     {
         $this->container['card_present_details'] = $card_present_details;
 
@@ -627,7 +627,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCaptureAmount($capture_amount)
+    public function setCaptureAmount($capture_amount, $deserialize = false)
     {
         $this->container['capture_amount'] = $capture_amount;
 
@@ -651,7 +651,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -675,7 +675,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
 
         
@@ -702,7 +702,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExpiresAt($expires_at)
+    public function setExpiresAt($expires_at, $deserialize = false)
     {
         $this->container['expires_at'] = $expires_at;
 
@@ -726,7 +726,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExternalResponses($external_responses)
+    public function setExternalResponses($external_responses, $deserialize = false)
     {
         $this->container['external_responses'] = $external_responses;
 
@@ -750,7 +750,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id)
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
 
@@ -774,7 +774,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAdditionalBuyerCharges($additional_buyer_charges)
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
         $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
@@ -798,7 +798,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFailureCode($failure_code)
+    public function setFailureCode($failure_code, $deserialize = false)
     {
         $this->container['failure_code'] = $failure_code;
 
@@ -822,7 +822,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFailureMessage($failure_message)
+    public function setFailureMessage($failure_message, $deserialize = false)
     {
         $this->container['failure_message'] = $failure_message;
 
@@ -846,7 +846,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsVoid($is_void)
+    public function setIsVoid($is_void, $deserialize = false)
     {
         $this->container['is_void'] = $is_void;
 
@@ -870,7 +870,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -894,7 +894,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -918,7 +918,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessages($messages)
+    public function setMessages($messages, $deserialize = false)
     {
         $this->container['messages'] = $messages;
 
@@ -942,7 +942,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRaw($raw)
+    public function setRaw($raw, $deserialize = false)
     {
         $this->container['raw'] = $raw;
 
@@ -966,7 +966,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
 
         
@@ -993,10 +993,10 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true)) {
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'state', must be one of '%s'",
@@ -1027,7 +1027,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTraceId($trace_id)
+    public function setTraceId($trace_id, $deserialize = false)
     {
         $this->container['trace_id'] = $trace_id;
 
@@ -1051,7 +1051,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfer($transfer)
+    public function setTransfer($transfer, $deserialize = false)
     {
 
         
@@ -1078,7 +1078,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVoidState($void_state)
+    public function setVoidState($void_state, $deserialize = false)
     {
         $this->container['void_state'] = $void_state;
 
@@ -1102,7 +1102,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSubType($sub_type)
+    public function setSubType($sub_type, $deserialize = false)
     {
         $this->container['sub_type'] = $sub_type;
 
@@ -1126,7 +1126,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

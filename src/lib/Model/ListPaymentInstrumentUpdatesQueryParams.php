@@ -235,7 +235,7 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -259,7 +259,7 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      *
      * @return self
      */
-    public function setOffset($offset)
+    public function setOffset($offset, $deserialize = false)
     {
         $this->container['offset'] = $offset;
 
@@ -283,7 +283,7 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      *
      * @return self
      */
-    public function setPageSize($page_size)
+    public function setPageSize($page_size, $deserialize = false)
     {
         $this->container['page_size'] = $page_size;
 

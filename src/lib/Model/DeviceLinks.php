@@ -242,7 +242,7 @@ class DeviceLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAuthorizations($authorizations)
+    public function setAuthorizations($authorizations, $deserialize = false)
     {
         $this->container['authorizations'] = $authorizations;
 
@@ -266,7 +266,7 @@ class DeviceLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -290,7 +290,7 @@ class DeviceLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -314,7 +314,7 @@ class DeviceLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 

@@ -254,7 +254,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setCity($city)
+    public function setCity($city, $deserialize = false)
     {
         $this->container['city'] = $city;
 
@@ -278,7 +278,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $this->container['country'] = $country;
 
@@ -302,7 +302,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setLine1($line1, $deserialize = false)
     {
         $this->container['line1'] = $line1;
 
@@ -326,7 +326,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLine2($line2)
+    public function setLine2($line2, $deserialize = false)
     {
         $this->container['line2'] = $line2;
 
@@ -350,7 +350,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postal_code, $deserialize = false)
     {
         $this->container['postal_code'] = $postal_code;
 
@@ -374,7 +374,7 @@ class CreateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setRegion($region)
+    public function setRegion($region, $deserialize = false)
     {
         $this->container['region'] = $region;
 

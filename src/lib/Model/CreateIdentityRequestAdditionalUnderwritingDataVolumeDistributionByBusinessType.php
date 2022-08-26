@@ -248,7 +248,7 @@ class CreateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusines
      *
      * @return self
      */
-    public function setOtherVolumePercentage($other_volume_percentage)
+    public function setOtherVolumePercentage($other_volume_percentage, $deserialize = false)
     {
         $this->container['other_volume_percentage'] = $other_volume_percentage;
 
@@ -272,7 +272,7 @@ class CreateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusines
      *
      * @return self
      */
-    public function setConsumerToConsumerVolumePercentage($consumer_to_consumer_volume_percentage)
+    public function setConsumerToConsumerVolumePercentage($consumer_to_consumer_volume_percentage, $deserialize = false)
     {
         $this->container['consumer_to_consumer_volume_percentage'] = $consumer_to_consumer_volume_percentage;
 
@@ -296,7 +296,7 @@ class CreateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusines
      *
      * @return self
      */
-    public function setBusinessToConsumerVolumePercentage($business_to_consumer_volume_percentage)
+    public function setBusinessToConsumerVolumePercentage($business_to_consumer_volume_percentage, $deserialize = false)
     {
         $this->container['business_to_consumer_volume_percentage'] = $business_to_consumer_volume_percentage;
 
@@ -320,7 +320,7 @@ class CreateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusines
      *
      * @return self
      */
-    public function setBusinessToBusinessVolumePercentage($business_to_business_volume_percentage)
+    public function setBusinessToBusinessVolumePercentage($business_to_business_volume_percentage, $deserialize = false)
     {
         $this->container['business_to_business_volume_percentage'] = $business_to_business_volume_percentage;
 
@@ -344,7 +344,7 @@ class CreateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusines
      *
      * @return self
      */
-    public function setPersonToPersonVolumePercentage($person_to_person_volume_percentage)
+    public function setPersonToPersonVolumePercentage($person_to_person_volume_percentage, $deserialize = false)
     {
         $this->container['person_to_person_volume_percentage'] = $person_to_person_volume_percentage;
 

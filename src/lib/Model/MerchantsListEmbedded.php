@@ -228,7 +228,7 @@ class MerchantsListEmbedded implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setMerchants($merchants)
+    public function setMerchants($merchants, $deserialize = false)
     {
 
         

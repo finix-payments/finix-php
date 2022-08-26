@@ -260,7 +260,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setApprovalCode($approval_code)
+    public function setApprovalCode($approval_code, $deserialize = false)
     {
         $this->container['approval_code'] = $approval_code;
 
@@ -284,7 +284,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setBrand($brand)
+    public function setBrand($brand, $deserialize = false)
     {
         $this->container['brand'] = $brand;
 
@@ -308,7 +308,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setEmvData($emv_data)
+    public function setEmvData($emv_data, $deserialize = false)
     {
         $this->container['emv_data'] = $emv_data;
 
@@ -332,7 +332,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setEntryMode($entry_mode)
+    public function setEntryMode($entry_mode, $deserialize = false)
     {
         $this->container['entry_mode'] = $entry_mode;
 
@@ -356,7 +356,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setMaskedAccountNumber($masked_account_number)
+    public function setMaskedAccountNumber($masked_account_number, $deserialize = false)
     {
         $this->container['masked_account_number'] = $masked_account_number;
 
@@ -380,7 +380,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -404,7 +404,7 @@ class CardPresentDetails implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setPaymentType($payment_type)
+    public function setPaymentType($payment_type, $deserialize = false)
     {
         $this->container['payment_type'] = $payment_type;
 

@@ -380,7 +380,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -404,7 +404,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -431,7 +431,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -455,7 +455,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -479,7 +479,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAction($action)
+    public function setAction($action, $deserialize = false)
     {
         $this->container['action'] = $action;
 
@@ -503,7 +503,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -527,7 +527,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -551,7 +551,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -575,7 +575,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputeDetails($dispute_details)
+    public function setDisputeDetails($dispute_details, $deserialize = false)
     {
         $this->container['dispute_details'] = $dispute_details;
 
@@ -599,7 +599,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -623,7 +623,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setMessage($message, $deserialize = false)
     {
         $this->container['message'] = $message;
 
@@ -647,7 +647,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOccurredAt($occurred_at)
+    public function setOccurredAt($occurred_at, $deserialize = false)
     {
         $this->container['occurred_at'] = $occurred_at;
 
@@ -671,10 +671,10 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReason($reason)
+    public function setReason($reason, $deserialize = false)
     {
         $allowedValues = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowedValues, true)) {
+        if (!is_null($reason) && !in_array($reason, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'reason', must be one of '%s'",
@@ -705,7 +705,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRespondBy($respond_by)
+    public function setRespondBy($respond_by, $deserialize = false)
     {
         $this->container['respond_by'] = $respond_by;
 
@@ -729,10 +729,10 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true)) {
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'state', must be one of '%s'",
@@ -763,7 +763,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfer($transfer)
+    public function setTransfer($transfer, $deserialize = false)
     {
 
         
@@ -790,7 +790,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

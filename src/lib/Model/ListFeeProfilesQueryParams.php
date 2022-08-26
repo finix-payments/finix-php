@@ -235,7 +235,7 @@ class ListFeeProfilesQueryParams implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAfterCursor($after_cursor)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
 
@@ -259,7 +259,7 @@ class ListFeeProfilesQueryParams implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setBeforeCursor($before_cursor)
+    public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
 
@@ -283,7 +283,7 @@ class ListFeeProfilesQueryParams implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 

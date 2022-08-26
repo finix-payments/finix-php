@@ -223,7 +223,7 @@ class DownloadInstrumentUpdateQueryParams implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setFormat($format)
+    public function setFormat($format, $deserialize = false)
     {
         $this->container['format'] = $format;
 

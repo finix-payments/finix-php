@@ -224,7 +224,7 @@ class FilesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setFiles($files)
+    public function setFiles($files, $deserialize = false)
     {
         $this->container['files'] = $files;
 

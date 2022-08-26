@@ -235,7 +235,7 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAdditionalUnderwritingData($additional_underwriting_data)
+    public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
     {
         $this->container['additional_underwriting_data'] = $additional_underwriting_data;
 
@@ -259,7 +259,7 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -283,7 +283,7 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setEntity($entity)
+    public function setEntity($entity, $deserialize = false)
     {
         $this->container['entity'] = $entity;
 

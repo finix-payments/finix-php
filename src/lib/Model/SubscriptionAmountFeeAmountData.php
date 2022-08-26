@@ -240,7 +240,7 @@ class SubscriptionAmountFeeAmountData implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -264,7 +264,7 @@ class SubscriptionAmountFeeAmountData implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -288,7 +288,7 @@ class SubscriptionAmountFeeAmountData implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setLabel($label)
+    public function setLabel($label, $deserialize = false)
     {
 
         if (!is_null($label) && (mb_strlen($label) < 1)) {

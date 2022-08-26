@@ -790,7 +790,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setCity($city)
+    public function setCity($city, $deserialize = false)
     {
         $this->container['city'] = $city;
 
@@ -814,10 +814,10 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $allowedValues = $this->getCountryAllowableValues();
-        if (!in_array($country, $allowedValues, true)) {
+        if (!in_array($country, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'country', must be one of '%s'",
@@ -848,7 +848,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setLine1($line1, $deserialize = false)
     {
         $this->container['line1'] = $line1;
 
@@ -872,7 +872,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setLine2($line2)
+    public function setLine2($line2, $deserialize = false)
     {
         $this->container['line2'] = $line2;
 
@@ -896,7 +896,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postal_code, $deserialize = false)
     {
         $this->container['postal_code'] = $postal_code;
 
@@ -920,7 +920,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setRegion($region)
+    public function setRegion($region, $deserialize = false)
     {
         $this->container['region'] = $region;
 

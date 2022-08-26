@@ -239,7 +239,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrl($url, $deserialize = false)
     {
         if (!is_null($url) && (mb_strlen($url) > 120)) {
             throw new \InvalidArgumentException('invalid length for $url when calling CreateWebhookRequest., must be smaller than or equal to 120.');
@@ -268,7 +268,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -292,7 +292,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setAuthentication($authentication)
+    public function setAuthentication($authentication, $deserialize = false)
     {
         $this->container['authentication'] = $authentication;
 

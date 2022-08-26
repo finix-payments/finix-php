@@ -253,7 +253,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -277,7 +277,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setEntity($entity)
+    public function setEntity($entity, $deserialize = false)
     {
         $this->container['entity'] = $entity;
 
@@ -301,7 +301,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setMaxTransactionAmount($max_transaction_amount)
+    public function setMaxTransactionAmount($max_transaction_amount, $deserialize = false)
     {
         $this->container['max_transaction_amount'] = $max_transaction_amount;
 
@@ -325,7 +325,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -349,7 +349,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setUser($user)
+    public function setUser($user, $deserialize = false)
     {
 
         

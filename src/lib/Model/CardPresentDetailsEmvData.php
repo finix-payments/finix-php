@@ -266,7 +266,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -290,7 +290,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setApplicationIdentifier($application_identifier)
+    public function setApplicationIdentifier($application_identifier, $deserialize = false)
     {
         $this->container['application_identifier'] = $application_identifier;
 
@@ -314,7 +314,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setApplicationLabel($application_label)
+    public function setApplicationLabel($application_label, $deserialize = false)
     {
         $this->container['application_label'] = $application_label;
 
@@ -338,7 +338,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setApplicationPreferredName($application_preferred_name)
+    public function setApplicationPreferredName($application_preferred_name, $deserialize = false)
     {
         $this->container['application_preferred_name'] = $application_preferred_name;
 
@@ -362,7 +362,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setApplicationTransactionCounter($application_transaction_counter)
+    public function setApplicationTransactionCounter($application_transaction_counter, $deserialize = false)
     {
         $this->container['application_transaction_counter'] = $application_transaction_counter;
 
@@ -386,7 +386,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setCryptogram($cryptogram)
+    public function setCryptogram($cryptogram, $deserialize = false)
     {
         $this->container['cryptogram'] = $cryptogram;
 
@@ -410,7 +410,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setIssuerCodeTableIndex($issuer_code_table_index)
+    public function setIssuerCodeTableIndex($issuer_code_table_index, $deserialize = false)
     {
         $this->container['issuer_code_table_index'] = $issuer_code_table_index;
 
@@ -434,7 +434,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setPinVerified($pin_verified)
+    public function setPinVerified($pin_verified, $deserialize = false)
     {
         $this->container['pin_verified'] = $pin_verified;
 

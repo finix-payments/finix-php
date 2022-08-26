@@ -363,7 +363,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -387,7 +387,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setExpirationYear($expiration_year)
+    public function setExpirationYear($expiration_year, $deserialize = false)
     {
         $this->container['expiration_year'] = $expiration_year;
 
@@ -411,7 +411,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -435,7 +435,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setNumber($number)
+    public function setNumber($number, $deserialize = false)
     {
         $this->container['number'] = $number;
 
@@ -459,7 +459,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setExpirationMonth($expiration_month)
+    public function setExpirationMonth($expiration_month, $deserialize = false)
     {
         $this->container['expiration_month'] = $expiration_month;
 
@@ -483,7 +483,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setAddress($address, $deserialize = false)
     {
         $this->container['address'] = $address;
 
@@ -507,7 +507,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setSecurityCode($security_code)
+    public function setSecurityCode($security_code, $deserialize = false)
     {
         $this->container['security_code'] = $security_code;
 
@@ -531,10 +531,10 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -565,7 +565,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -589,7 +589,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setThirdPartyToken($third_party_token)
+    public function setThirdPartyToken($third_party_token, $deserialize = false)
     {
         $this->container['third_party_token'] = $third_party_token;
 
@@ -613,10 +613,10 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setAccountType($account_type)
+    public function setAccountType($account_type, $deserialize = false)
     {
         $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true)) {
+        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'account_type', must be one of '%s'",
@@ -647,7 +647,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $this->container['country'] = $country;
 
@@ -671,7 +671,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setBankCode($bank_code)
+    public function setBankCode($bank_code, $deserialize = false)
     {
         $this->container['bank_code'] = $bank_code;
 
@@ -695,7 +695,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setAccountNumber($account_number)
+    public function setAccountNumber($account_number, $deserialize = false)
     {
         $this->container['account_number'] = $account_number;
 
@@ -719,7 +719,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setToken($token)
+    public function setToken($token, $deserialize = false)
     {
         $this->container['token'] = $token;
 

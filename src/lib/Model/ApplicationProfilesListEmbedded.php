@@ -227,7 +227,7 @@ class ApplicationProfilesListEmbedded implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setApplicationProfiles($application_profiles)
+    public function setApplicationProfiles($application_profiles, $deserialize = false)
     {
 
         

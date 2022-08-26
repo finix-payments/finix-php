@@ -236,7 +236,7 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      *
      * @return self
      */
-    public function setCardPresentPercentage($card_present_percentage)
+    public function setCardPresentPercentage($card_present_percentage, $deserialize = false)
     {
         $this->container['card_present_percentage'] = $card_present_percentage;
 
@@ -260,7 +260,7 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      *
      * @return self
      */
-    public function setMailOrderTelephoneOrderPercentage($mail_order_telephone_order_percentage)
+    public function setMailOrderTelephoneOrderPercentage($mail_order_telephone_order_percentage, $deserialize = false)
     {
         $this->container['mail_order_telephone_order_percentage'] = $mail_order_telephone_order_percentage;
 
@@ -284,7 +284,7 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      *
      * @return self
      */
-    public function setEcommercePercentage($ecommerce_percentage)
+    public function setEcommercePercentage($ecommerce_percentage, $deserialize = false)
     {
         $this->container['ecommerce_percentage'] = $ecommerce_percentage;
 

@@ -235,7 +235,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -259,7 +259,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setFeeProfile($fee_profile)
+    public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
 
@@ -283,7 +283,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setRiskProfile($risk_profile)
+    public function setRiskProfile($risk_profile, $deserialize = false)
     {
         $this->container['risk_profile'] = $risk_profile;
 

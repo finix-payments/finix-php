@@ -223,7 +223,7 @@ class RemoveSettlementTransfer implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 

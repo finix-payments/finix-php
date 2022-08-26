@@ -259,7 +259,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -283,7 +283,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -307,7 +307,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -331,7 +331,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setSort($sort)
+    public function setSort($sort, $deserialize = false)
     {
         $this->container['sort'] = $sort;
 
@@ -355,7 +355,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setAfterCursor($after_cursor)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
 
@@ -379,7 +379,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -403,7 +403,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setBeforeCursor($before_cursor)
+    public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
 

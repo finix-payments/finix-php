@@ -227,7 +227,7 @@ class SettlementsListEmbedded implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setSettlements($settlements)
+    public function setSettlements($settlements, $deserialize = false)
     {
 
         

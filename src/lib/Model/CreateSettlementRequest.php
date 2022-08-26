@@ -247,7 +247,7 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -271,7 +271,7 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 
@@ -295,7 +295,7 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
 
@@ -319,7 +319,7 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

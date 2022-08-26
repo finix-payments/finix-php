@@ -301,7 +301,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -325,7 +325,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setProcessingEnabled($processing_enabled)
+    public function setProcessingEnabled($processing_enabled, $deserialize = false)
     {
         $this->container['processing_enabled'] = $processing_enabled;
 
@@ -349,7 +349,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setSettlementEnabled($settlement_enabled)
+    public function setSettlementEnabled($settlement_enabled, $deserialize = false)
     {
         $this->container['settlement_enabled'] = $settlement_enabled;
 
@@ -373,7 +373,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGrossSettlementEnabled($gross_settlement_enabled)
+    public function setGrossSettlementEnabled($gross_settlement_enabled, $deserialize = false)
     {
         $this->container['gross_settlement_enabled'] = $gross_settlement_enabled;
 
@@ -397,7 +397,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled)
+    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled, $deserialize = false)
     {
         $this->container['creating_transfer_from_report_enabled'] = $creating_transfer_from_report_enabled;
 
@@ -421,7 +421,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCardExpirationDateRequired($card_expiration_date_required)
+    public function setCardExpirationDateRequired($card_expiration_date_required, $deserialize = false)
     {
         $this->container['card_expiration_date_required'] = $card_expiration_date_required;
 
@@ -445,7 +445,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCardCvvRequired($card_cvv_required)
+    public function setCardCvvRequired($card_cvv_required, $deserialize = false)
     {
         $this->container['card_cvv_required'] = $card_cvv_required;
 
@@ -469,7 +469,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setMerchantName($merchant_name)
+    public function setMerchantName($merchant_name, $deserialize = false)
     {
         $this->container['merchant_name'] = $merchant_name;
 
@@ -493,7 +493,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setSettlementFundingIdentifier($settlement_funding_identifier)
+    public function setSettlementFundingIdentifier($settlement_funding_identifier, $deserialize = false)
     {
         $this->container['settlement_funding_identifier'] = $settlement_funding_identifier;
 
@@ -517,7 +517,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setReadyToSettleUpon($ready_to_settle_upon)
+    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
     {
         $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
 
@@ -541,7 +541,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon)
+    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon, $deserialize = false)
     {
         $this->container['fee_ready_to_settle_upon'] = $fee_ready_to_settle_upon;
 
@@ -565,7 +565,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setLevelTwoLevelThreeDataEnabled($level_two_level_three_data_enabled)
+    public function setLevelTwoLevelThreeDataEnabled($level_two_level_three_data_enabled, $deserialize = false)
     {
         $this->container['level_two_level_three_data_enabled'] = $level_two_level_three_data_enabled;
 
@@ -589,7 +589,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setConvenienceChargesEnabled($convenience_charges_enabled)
+    public function setConvenienceChargesEnabled($convenience_charges_enabled, $deserialize = false)
     {
         $this->container['convenience_charges_enabled'] = $convenience_charges_enabled;
 
@@ -613,7 +613,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setRentSurchargesEnabled($rent_surcharges_enabled)
+    public function setRentSurchargesEnabled($rent_surcharges_enabled, $deserialize = false)
     {
         $this->container['rent_surcharges_enabled'] = $rent_surcharges_enabled;
 

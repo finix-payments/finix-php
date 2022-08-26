@@ -247,7 +247,7 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -271,7 +271,7 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -295,7 +295,7 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setInstrument($instrument)
+    public function setInstrument($instrument, $deserialize = false)
     {
         $this->container['instrument'] = $instrument;
 
@@ -319,7 +319,7 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -343,7 +343,7 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 

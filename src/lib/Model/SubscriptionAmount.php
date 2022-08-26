@@ -312,7 +312,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         if (!is_null($id) && (mb_strlen($id) < 1)) {
@@ -342,7 +342,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -366,7 +366,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -390,10 +390,10 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setAmountType($amount_type)
+    public function setAmountType($amount_type, $deserialize = false)
     {
         $allowedValues = $this->getAmountTypeAllowableValues();
-        if (!is_null($amount_type) && !in_array($amount_type, $allowedValues, true)) {
+        if (!is_null($amount_type) && !in_array($amount_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'amount_type', must be one of '%s'",
@@ -424,7 +424,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($created_by, $deserialize = false)
     {
 
         if (!is_null($created_by) && (mb_strlen($created_by) < 1)) {
@@ -454,7 +454,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setFeeAmountData($fee_amount_data)
+    public function setFeeAmountData($fee_amount_data, $deserialize = false)
     {
         $this->container['fee_amount_data'] = $fee_amount_data;
 
@@ -478,7 +478,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
 
@@ -502,7 +502,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setSubscriptionSchedule($subscription_schedule)
+    public function setSubscriptionSchedule($subscription_schedule, $deserialize = false)
     {
 
         if (!is_null($subscription_schedule) && (mb_strlen($subscription_schedule) < 1)) {
@@ -532,7 +532,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -556,7 +556,7 @@ class SubscriptionAmount implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

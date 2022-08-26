@@ -302,7 +302,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setAllowDebit($allow_debit)
+    public function setAllowDebit($allow_debit, $deserialize = false)
     {
         $this->container['allow_debit'] = $allow_debit;
 
@@ -326,7 +326,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setAllowPartialApprovals($allow_partial_approvals)
+    public function setAllowPartialApprovals($allow_partial_approvals, $deserialize = false)
     {
         $this->container['allow_partial_approvals'] = $allow_partial_approvals;
 
@@ -350,7 +350,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setBypassDeviceOnCapture($bypass_device_on_capture)
+    public function setBypassDeviceOnCapture($bypass_device_on_capture, $deserialize = false)
     {
         $this->container['bypass_device_on_capture'] = $bypass_device_on_capture;
 
@@ -374,7 +374,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setCashbackOptions($cashback_options)
+    public function setCashbackOptions($cashback_options, $deserialize = false)
     {
         $this->container['cashback_options'] = $cashback_options;
 
@@ -398,7 +398,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setCheckForDuplicateTransactions($check_for_duplicate_transactions)
+    public function setCheckForDuplicateTransactions($check_for_duplicate_transactions, $deserialize = false)
     {
         $this->container['check_for_duplicate_transactions'] = $check_for_duplicate_transactions;
 
@@ -422,7 +422,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setIsCashBackAllowed($is_cash_back_allowed)
+    public function setIsCashBackAllowed($is_cash_back_allowed, $deserialize = false)
     {
         $this->container['is_cash_back_allowed'] = $is_cash_back_allowed;
 
@@ -446,7 +446,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setIsGiftSupported($is_gift_supported)
+    public function setIsGiftSupported($is_gift_supported, $deserialize = false)
     {
         $this->container['is_gift_supported'] = $is_gift_supported;
 
@@ -470,7 +470,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setIsManualEntryAllowed($is_manual_entry_allowed)
+    public function setIsManualEntryAllowed($is_manual_entry_allowed, $deserialize = false)
     {
         $this->container['is_manual_entry_allowed'] = $is_manual_entry_allowed;
 
@@ -494,7 +494,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setMarketCode($market_code)
+    public function setMarketCode($market_code, $deserialize = false)
     {
         $this->container['market_code'] = $market_code;
 
@@ -518,7 +518,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPromptAmountConfirmation($prompt_amount_confirmation)
+    public function setPromptAmountConfirmation($prompt_amount_confirmation, $deserialize = false)
     {
         $this->container['prompt_amount_confirmation'] = $prompt_amount_confirmation;
 
@@ -542,7 +542,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPromptManualEntry($prompt_manual_entry)
+    public function setPromptManualEntry($prompt_manual_entry, $deserialize = false)
     {
         $this->container['prompt_manual_entry'] = $prompt_manual_entry;
 
@@ -566,7 +566,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPromptSignature($prompt_signature)
+    public function setPromptSignature($prompt_signature, $deserialize = false)
     {
         $this->container['prompt_signature'] = $prompt_signature;
 
@@ -590,7 +590,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setSignatureThresholdAmount($signature_threshold_amount)
+    public function setSignatureThresholdAmount($signature_threshold_amount, $deserialize = false)
     {
         $this->container['signature_threshold_amount'] = $signature_threshold_amount;
 
@@ -614,7 +614,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setTipOptions($tip_options)
+    public function setTipOptions($tip_options, $deserialize = false)
     {
         $this->container['tip_options'] = $tip_options;
 

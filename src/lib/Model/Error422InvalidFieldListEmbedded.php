@@ -223,7 +223,7 @@ class Error422InvalidFieldListEmbedded implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setErrors($errors, $deserialize = false)
     {
         $this->container['errors'] = $errors;
 

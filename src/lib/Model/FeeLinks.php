@@ -236,7 +236,7 @@ class FeeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -260,7 +260,7 @@ class FeeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -284,7 +284,7 @@ class FeeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfer($transfer)
+    public function setTransfer($transfer, $deserialize = false)
     {
         $this->container['transfer'] = $transfer;
 

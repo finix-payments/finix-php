@@ -452,7 +452,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name, $deserialize = false)
     {
 
         if (!is_null($last_name) && (mb_strlen($last_name) < 1)) {
@@ -482,7 +482,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setMaxTransactionAmount($max_transaction_amount)
+    public function setMaxTransactionAmount($max_transaction_amount, $deserialize = false)
     {
         $this->container['max_transaction_amount'] = $max_transaction_amount;
 
@@ -506,7 +506,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setHasAcceptedCreditCardsPreviously($has_accepted_credit_cards_previously)
+    public function setHasAcceptedCreditCardsPreviously($has_accepted_credit_cards_previously, $deserialize = false)
     {
         $this->container['has_accepted_credit_cards_previously'] = $has_accepted_credit_cards_previously;
 
@@ -530,7 +530,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setDefaultStatementDescriptor($default_statement_descriptor)
+    public function setDefaultStatementDescriptor($default_statement_descriptor, $deserialize = false)
     {
 
         if (!is_null($default_statement_descriptor) && (mb_strlen($default_statement_descriptor) < 1)) {
@@ -560,7 +560,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setPersonalAddress($personal_address)
+    public function setPersonalAddress($personal_address, $deserialize = false)
     {
         $this->container['personal_address'] = $personal_address;
 
@@ -584,7 +584,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setIncorporationDate($incorporation_date)
+    public function setIncorporationDate($incorporation_date, $deserialize = false)
     {
         $this->container['incorporation_date'] = $incorporation_date;
 
@@ -608,7 +608,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBusinessAddress($business_address)
+    public function setBusinessAddress($business_address, $deserialize = false)
     {
         $this->container['business_address'] = $business_address;
 
@@ -632,7 +632,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setOwnershipType($ownership_type)
+    public function setOwnershipType($ownership_type, $deserialize = false)
     {
 
         if (!is_null($ownership_type) && (mb_strlen($ownership_type) < 1)) {
@@ -662,7 +662,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name, $deserialize = false)
     {
 
         if (!is_null($first_name) && (mb_strlen($first_name) < 1)) {
@@ -692,7 +692,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setTitle($title, $deserialize = false)
     {
 
         if (!is_null($title) && (mb_strlen($title) < 1)) {
@@ -722,7 +722,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBusinessTaxId($business_tax_id)
+    public function setBusinessTaxId($business_tax_id, $deserialize = false)
     {
 
         if (!is_null($business_tax_id) && (mb_strlen($business_tax_id) < 1)) {
@@ -752,7 +752,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setDoingBusinessAs($doing_business_as)
+    public function setDoingBusinessAs($doing_business_as, $deserialize = false)
     {
 
         if (!is_null($doing_business_as) && (mb_strlen($doing_business_as) < 1)) {
@@ -782,7 +782,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setPrincipalPercentageOwnership($principal_percentage_ownership)
+    public function setPrincipalPercentageOwnership($principal_percentage_ownership, $deserialize = false)
     {
         $this->container['principal_percentage_ownership'] = $principal_percentage_ownership;
 
@@ -806,7 +806,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setEmail($email, $deserialize = false)
     {
 
         if (!is_null($email) && (mb_strlen($email) < 1)) {
@@ -836,7 +836,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setMcc($mcc)
+    public function setMcc($mcc, $deserialize = false)
     {
 
         if (!is_null($mcc) && (mb_strlen($mcc) < 1)) {
@@ -866,7 +866,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setPhone($phone)
+    public function setPhone($phone, $deserialize = false)
     {
 
         if (!is_null($phone) && (mb_strlen($phone) < 1)) {
@@ -896,7 +896,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBusinessName($business_name)
+    public function setBusinessName($business_name, $deserialize = false)
     {
 
         if (!is_null($business_name) && (mb_strlen($business_name) < 1)) {
@@ -926,7 +926,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setTaxId($tax_id)
+    public function setTaxId($tax_id, $deserialize = false)
     {
 
         if (!is_null($tax_id) && (mb_strlen($tax_id) < 1)) {
@@ -956,10 +956,10 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBusinessType($business_type)
+    public function setBusinessType($business_type, $deserialize = false)
     {
         $allowedValues = $this->getBusinessTypeAllowableValues();
-        if (!is_null($business_type) && !in_array($business_type, $allowedValues, true)) {
+        if (!is_null($business_type) && !in_array($business_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'business_type', must be one of '%s'",
@@ -996,7 +996,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setBusinessPhone($business_phone)
+    public function setBusinessPhone($business_phone, $deserialize = false)
     {
 
         if (!is_null($business_phone) && (mb_strlen($business_phone) < 1)) {
@@ -1026,7 +1026,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setDob($dob)
+    public function setDob($dob, $deserialize = false)
     {
         $this->container['dob'] = $dob;
 
@@ -1050,7 +1050,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrl($url, $deserialize = false)
     {
 
         if (!is_null($url) && (mb_strlen($url) < 1)) {
@@ -1080,7 +1080,7 @@ class UpdateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setAnnualCardVolume($annual_card_volume)
+    public function setAnnualCardVolume($annual_card_volume, $deserialize = false)
     {
         $this->container['annual_card_volume'] = $annual_card_volume;
 

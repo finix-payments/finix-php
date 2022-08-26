@@ -230,7 +230,7 @@ class Error422InvalidFieldList implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setTotal($total)
+    public function setTotal($total, $deserialize = false)
     {
         $this->container['total'] = $total;
 
@@ -254,7 +254,7 @@ class Error422InvalidFieldList implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setEmbedded($_embedded)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
         $this->container['_embedded'] = $_embedded;
 

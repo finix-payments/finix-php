@@ -248,7 +248,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setFirst($first)
+    public function setFirst($first, $deserialize = false)
     {
         $this->container['first'] = $first;
 
@@ -272,7 +272,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setLast($last)
+    public function setLast($last, $deserialize = false)
     {
         $this->container['last'] = $last;
 
@@ -296,7 +296,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setNext($next)
+    public function setNext($next, $deserialize = false)
     {
         $this->container['next'] = $next;
 
@@ -320,7 +320,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setPrev($prev)
+    public function setPrev($prev, $deserialize = false)
     {
         $this->container['prev'] = $prev;
 
@@ -344,7 +344,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 

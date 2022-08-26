@@ -224,7 +224,7 @@ class ExternalLinksListEmbedded implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setExternalLinks($external_links)
+    public function setExternalLinks($external_links, $deserialize = false)
     {
         $this->container['external_links'] = $external_links;
 

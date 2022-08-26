@@ -230,7 +230,7 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setMid($mid)
+    public function setMid($mid, $deserialize = false)
     {
         $this->container['mid'] = $mid;
 
@@ -254,7 +254,7 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setApiKey($api_key)
+    public function setApiKey($api_key, $deserialize = false)
     {
         $this->container['api_key'] = $api_key;
 

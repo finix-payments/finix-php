@@ -229,7 +229,7 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      *
      * @return self
      */
-    public function setAmountIncrement($amount_increment)
+    public function setAmountIncrement($amount_increment, $deserialize = false)
     {
         $this->container['amount_increment'] = $amount_increment;
 
@@ -253,7 +253,7 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      *
      * @return self
      */
-    public function setMaximumAmount($maximum_amount)
+    public function setMaximumAmount($maximum_amount, $deserialize = false)
     {
         $this->container['maximum_amount'] = $maximum_amount;
 

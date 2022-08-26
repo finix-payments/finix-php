@@ -230,7 +230,7 @@ class ListLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNext($next)
+    public function setNext($next, $deserialize = false)
     {
         $this->container['next'] = $next;
 
@@ -254,7 +254,7 @@ class ListLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 

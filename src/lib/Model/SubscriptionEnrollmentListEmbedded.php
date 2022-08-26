@@ -227,7 +227,7 @@ class SubscriptionEnrollmentListEmbedded implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setSubscriptionEnrollments($subscription_enrollments)
+    public function setSubscriptionEnrollments($subscription_enrollments, $deserialize = false)
     {
 
         

@@ -368,7 +368,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setAnnualAchVolume($annual_ach_volume)
+    public function setAnnualAchVolume($annual_ach_volume, $deserialize = false)
     {
         $this->container['annual_ach_volume'] = $annual_ach_volume;
 
@@ -392,7 +392,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setAverageAchTransferAmount($average_ach_transfer_amount)
+    public function setAverageAchTransferAmount($average_ach_transfer_amount, $deserialize = false)
     {
         $this->container['average_ach_transfer_amount'] = $average_ach_transfer_amount;
 
@@ -416,7 +416,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setAverageCardTransferAmount($average_card_transfer_amount)
+    public function setAverageCardTransferAmount($average_card_transfer_amount, $deserialize = false)
     {
         $this->container['average_card_transfer_amount'] = $average_card_transfer_amount;
 
@@ -440,7 +440,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setBusinessDescription($business_description)
+    public function setBusinessDescription($business_description, $deserialize = false)
     {
 
         if (!is_null($business_description) && (mb_strlen($business_description) < 1)) {
@@ -470,7 +470,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setCardVolumeDistribution($card_volume_distribution)
+    public function setCardVolumeDistribution($card_volume_distribution, $deserialize = false)
     {
         $this->container['card_volume_distribution'] = $card_volume_distribution;
 
@@ -494,7 +494,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setCreditCheckAllowed($credit_check_allowed)
+    public function setCreditCheckAllowed($credit_check_allowed, $deserialize = false)
     {
         $this->container['credit_check_allowed'] = $credit_check_allowed;
 
@@ -518,7 +518,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setCreditCheckIpAddress($credit_check_ip_address)
+    public function setCreditCheckIpAddress($credit_check_ip_address, $deserialize = false)
     {
 
         if (!is_null($credit_check_ip_address) && (mb_strlen($credit_check_ip_address) < 1)) {
@@ -548,7 +548,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setCreditCheckTimestamp($credit_check_timestamp)
+    public function setCreditCheckTimestamp($credit_check_timestamp, $deserialize = false)
     {
 
         if (!is_null($credit_check_timestamp) && (mb_strlen($credit_check_timestamp) < 1)) {
@@ -578,7 +578,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setCreditCheckUserAgent($credit_check_user_agent)
+    public function setCreditCheckUserAgent($credit_check_user_agent, $deserialize = false)
     {
 
         if (!is_null($credit_check_user_agent) && (mb_strlen($credit_check_user_agent) < 1)) {
@@ -608,7 +608,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setMerchantAgreementAccepted($merchant_agreement_accepted)
+    public function setMerchantAgreementAccepted($merchant_agreement_accepted, $deserialize = false)
     {
         $this->container['merchant_agreement_accepted'] = $merchant_agreement_accepted;
 
@@ -632,7 +632,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setMerchantAgreementIpAddress($merchant_agreement_ip_address)
+    public function setMerchantAgreementIpAddress($merchant_agreement_ip_address, $deserialize = false)
     {
 
         if (!is_null($merchant_agreement_ip_address) && (mb_strlen($merchant_agreement_ip_address) < 1)) {
@@ -662,7 +662,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setMerchantAgreementTimestamp($merchant_agreement_timestamp)
+    public function setMerchantAgreementTimestamp($merchant_agreement_timestamp, $deserialize = false)
     {
 
         if (!is_null($merchant_agreement_timestamp) && (mb_strlen($merchant_agreement_timestamp) < 1)) {
@@ -692,7 +692,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setMerchantAgreementUserAgent($merchant_agreement_user_agent)
+    public function setMerchantAgreementUserAgent($merchant_agreement_user_agent, $deserialize = false)
     {
 
         if (!is_null($merchant_agreement_user_agent) && (mb_strlen($merchant_agreement_user_agent) < 1)) {
@@ -722,10 +722,10 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setRefundPolicy($refund_policy)
+    public function setRefundPolicy($refund_policy, $deserialize = false)
     {
         $allowedValues = $this->getRefundPolicyAllowableValues();
-        if (!is_null($refund_policy) && !in_array($refund_policy, $allowedValues, true)) {
+        if (!is_null($refund_policy) && !in_array($refund_policy, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'refund_policy', must be one of '%s'",
@@ -762,7 +762,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setVolumeDistributionByBusinessType($volume_distribution_by_business_type)
+    public function setVolumeDistributionByBusinessType($volume_distribution_by_business_type, $deserialize = false)
     {
         $this->container['volume_distribution_by_business_type'] = $volume_distribution_by_business_type;
 

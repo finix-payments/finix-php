@@ -277,7 +277,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -301,7 +301,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -325,7 +325,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrl($url, $deserialize = false)
     {
         $this->container['url'] = $url;
 
@@ -349,7 +349,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
 
@@ -373,7 +373,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExpiresAt($expires_at)
+    public function setExpiresAt($expires_at, $deserialize = false)
     {
         $this->container['expires_at'] = $expires_at;
 
@@ -397,7 +397,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUserId($user_id)
+    public function setUserId($user_id, $deserialize = false)
     {
         $this->container['user_id'] = $user_id;
 
@@ -421,7 +421,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFileId($file_id)
+    public function setFileId($file_id, $deserialize = false)
     {
         $this->container['file_id'] = $file_id;
 
@@ -445,7 +445,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDuration($duration)
+    public function setDuration($duration, $deserialize = false)
     {
         $this->container['duration'] = $duration;
 
@@ -469,7 +469,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -493,7 +493,7 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExpired($expired)
+    public function setExpired($expired, $deserialize = false)
     {
         $this->container['expired'] = $expired;
 

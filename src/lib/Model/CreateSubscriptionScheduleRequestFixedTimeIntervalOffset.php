@@ -230,7 +230,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
      *
      * @return self
      */
-    public function setHourlyInterval($hourly_interval)
+    public function setHourlyInterval($hourly_interval, $deserialize = false)
     {
         $this->container['hourly_interval'] = $hourly_interval;
 
@@ -254,7 +254,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
      *
      * @return self
      */
-    public function setIntervalCount($interval_count)
+    public function setIntervalCount($interval_count, $deserialize = false)
     {
         $this->container['interval_count'] = $interval_count;
 

@@ -227,7 +227,7 @@ class ProcessorsListEmbedded implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setProcessors($processors)
+    public function setProcessors($processors, $deserialize = false)
     {
 
         

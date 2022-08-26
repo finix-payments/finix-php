@@ -339,7 +339,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -363,7 +363,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -387,7 +387,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -411,7 +411,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLabel($label)
+    public function setLabel($label, $deserialize = false)
     {
         $this->container['label'] = $label;
 
@@ -435,10 +435,10 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeSubtype($fee_subtype)
+    public function setFeeSubtype($fee_subtype, $deserialize = false)
     {
         $allowedValues = $this->getFeeSubtypeAllowableValues();
-        if (!in_array($fee_subtype, $allowedValues, true)) {
+        if (!in_array($fee_subtype, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'fee_subtype', must be one of '%s'",
@@ -469,7 +469,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeType($fee_type)
+    public function setFeeType($fee_type, $deserialize = false)
     {
         $this->container['fee_type'] = $fee_type;
 
@@ -493,7 +493,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinkedId($linked_id)
+    public function setLinkedId($linked_id, $deserialize = false)
     {
         $this->container['linked_id'] = $linked_id;
 
@@ -517,10 +517,10 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinkedType($linked_type)
+    public function setLinkedType($linked_type, $deserialize = false)
     {
         $allowedValues = $this->getLinkedTypeAllowableValues();
-        if (!is_null($linked_type) && !in_array($linked_type, $allowedValues, true)) {
+        if (!is_null($linked_type) && !in_array($linked_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'linked_type', must be one of '%s'",
@@ -551,7 +551,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
 
@@ -575,7 +575,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlementDelayDays($settlement_delay_days)
+    public function setSettlementDelayDays($settlement_delay_days, $deserialize = false)
     {
         $this->container['settlement_delay_days'] = $settlement_delay_days;
 

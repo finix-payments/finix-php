@@ -229,7 +229,7 @@ class AuthorizationExternalResponsesInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setBody($body)
+    public function setBody($body, $deserialize = false)
     {
         $this->container['body'] = $body;
 
@@ -253,7 +253,7 @@ class AuthorizationExternalResponsesInner implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setContentType($content_type)
+    public function setContentType($content_type, $deserialize = false)
     {
         $this->container['content_type'] = $content_type;
 

@@ -223,7 +223,7 @@ class Error402PaymentRequiredEmbeddedErrorsInnerLinks implements ModelInterface,
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 

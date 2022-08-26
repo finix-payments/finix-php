@@ -258,7 +258,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setAmountType($amount_type)
+    public function setAmountType($amount_type, $deserialize = false)
     {
 
         if ((mb_strlen($amount_type) < 1)) {
@@ -288,7 +288,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setFeeAmountData($fee_amount_data)
+    public function setFeeAmountData($fee_amount_data, $deserialize = false)
     {
         $this->container['fee_amount_data'] = $fee_amount_data;
 
@@ -312,7 +312,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
 
@@ -336,7 +336,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

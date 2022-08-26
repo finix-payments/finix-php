@@ -292,12 +292,12 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
      * @deprecated
     {{/deprecated}}
      */
-    public function {{setter}}(${{name}})
+    public function {{setter}}(${{name}}, $deserialize = false)
     {
         {{#isEnum}}
         $allowedValues = $this->{{getter}}AllowableValues();
         {{^isContainer}}
-        if ({{^required}}!is_null(${{name}}) && {{/required}}!in_array(${{{name}}}, $allowedValues, true)) {
+        if ({{^required}}!is_null(${{name}}) && {{/required}}!in_array(${{{name}}}, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for '{{name}}', must be one of '%s'",

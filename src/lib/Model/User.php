@@ -299,7 +299,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -323,7 +323,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -347,7 +347,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -371,7 +371,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -395,7 +395,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -419,7 +419,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
 
         
@@ -446,7 +446,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPassword($password)
+    public function setPassword($password, $deserialize = false)
     {
         $this->container['password'] = $password;
 
@@ -470,10 +470,10 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRole($role)
+    public function setRole($role, $deserialize = false)
     {
         $allowedValues = $this->getRoleAllowableValues();
-        if (!is_null($role) && !in_array($role, $allowedValues, true)) {
+        if (!is_null($role) && !in_array($role, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'role', must be one of '%s'",
@@ -504,7 +504,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

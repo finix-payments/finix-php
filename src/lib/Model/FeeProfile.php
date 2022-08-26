@@ -577,7 +577,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -601,7 +601,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -628,7 +628,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -652,7 +652,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -676,7 +676,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAchBasisPoints($ach_basis_points)
+    public function setAchBasisPoints($ach_basis_points, $deserialize = false)
     {
         $this->container['ach_basis_points'] = $ach_basis_points;
 
@@ -700,7 +700,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAchCreditReturnFixedFee($ach_credit_return_fixed_fee)
+    public function setAchCreditReturnFixedFee($ach_credit_return_fixed_fee, $deserialize = false)
     {
         $this->container['ach_credit_return_fixed_fee'] = $ach_credit_return_fixed_fee;
 
@@ -724,7 +724,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAchDebitReturnFixedFee($ach_debit_return_fixed_fee)
+    public function setAchDebitReturnFixedFee($ach_debit_return_fixed_fee, $deserialize = false)
     {
         $this->container['ach_debit_return_fixed_fee'] = $ach_debit_return_fixed_fee;
 
@@ -748,7 +748,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAchFixedFee($ach_fixed_fee)
+    public function setAchFixedFee($ach_fixed_fee, $deserialize = false)
     {
         $this->container['ach_fixed_fee'] = $ach_fixed_fee;
 
@@ -772,7 +772,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressAssessmentBasisPoints($american_express_assessment_basis_points)
+    public function setAmericanExpressAssessmentBasisPoints($american_express_assessment_basis_points, $deserialize = false)
     {
         $this->container['american_express_assessment_basis_points'] = $american_express_assessment_basis_points;
 
@@ -796,7 +796,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressBasisPoints($american_express_basis_points)
+    public function setAmericanExpressBasisPoints($american_express_basis_points, $deserialize = false)
     {
         $this->container['american_express_basis_points'] = $american_express_basis_points;
 
@@ -820,7 +820,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressChargeInterchange($american_express_charge_interchange)
+    public function setAmericanExpressChargeInterchange($american_express_charge_interchange, $deserialize = false)
     {
         $this->container['american_express_charge_interchange'] = $american_express_charge_interchange;
 
@@ -844,7 +844,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressFixedFee($american_express_fixed_fee)
+    public function setAmericanExpressFixedFee($american_express_fixed_fee, $deserialize = false)
     {
         $this->container['american_express_fixed_fee'] = $american_express_fixed_fee;
 
@@ -868,7 +868,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressExternallyFundedBasisPoints($american_express_externally_funded_basis_points)
+    public function setAmericanExpressExternallyFundedBasisPoints($american_express_externally_funded_basis_points, $deserialize = false)
     {
         $this->container['american_express_externally_funded_basis_points'] = $american_express_externally_funded_basis_points;
 
@@ -892,7 +892,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmericanExpressExternallyFundedFixedFee($american_express_externally_funded_fixed_fee)
+    public function setAmericanExpressExternallyFundedFixedFee($american_express_externally_funded_fixed_fee, $deserialize = false)
     {
         $this->container['american_express_externally_funded_fixed_fee'] = $american_express_externally_funded_fixed_fee;
 
@@ -916,7 +916,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAncillaryFixedFeePrimary($ancillary_fixed_fee_primary)
+    public function setAncillaryFixedFeePrimary($ancillary_fixed_fee_primary, $deserialize = false)
     {
         $this->container['ancillary_fixed_fee_primary'] = $ancillary_fixed_fee_primary;
 
@@ -940,7 +940,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAncillaryFixedFeeSecondary($ancillary_fixed_fee_secondary)
+    public function setAncillaryFixedFeeSecondary($ancillary_fixed_fee_secondary, $deserialize = false)
     {
         $this->container['ancillary_fixed_fee_secondary'] = $ancillary_fixed_fee_secondary;
 
@@ -964,7 +964,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -988,7 +988,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBasisPoints($basis_points)
+    public function setBasisPoints($basis_points, $deserialize = false)
     {
         $this->container['basis_points'] = $basis_points;
 
@@ -1012,7 +1012,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExternallyFundedBasisPoints($externally_funded_basis_points)
+    public function setExternallyFundedBasisPoints($externally_funded_basis_points, $deserialize = false)
     {
         $this->container['externally_funded_basis_points'] = $externally_funded_basis_points;
 
@@ -1036,7 +1036,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExternallyFundedFixedFee($externally_funded_fixed_fee)
+    public function setExternallyFundedFixedFee($externally_funded_fixed_fee, $deserialize = false)
     {
         $this->container['externally_funded_fixed_fee'] = $externally_funded_fixed_fee;
 
@@ -1060,7 +1060,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setChargeInterchange($charge_interchange)
+    public function setChargeInterchange($charge_interchange, $deserialize = false)
     {
         $this->container['charge_interchange'] = $charge_interchange;
 
@@ -1084,7 +1084,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDinersClubBasisPoints($diners_club_basis_points)
+    public function setDinersClubBasisPoints($diners_club_basis_points, $deserialize = false)
     {
         $this->container['diners_club_basis_points'] = $diners_club_basis_points;
 
@@ -1108,7 +1108,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDinersClubChargeInterchange($diners_club_charge_interchange)
+    public function setDinersClubChargeInterchange($diners_club_charge_interchange, $deserialize = false)
     {
         $this->container['diners_club_charge_interchange'] = $diners_club_charge_interchange;
 
@@ -1132,7 +1132,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDinersClubFixedFee($diners_club_fixed_fee)
+    public function setDinersClubFixedFee($diners_club_fixed_fee, $deserialize = false)
     {
         $this->container['diners_club_fixed_fee'] = $diners_club_fixed_fee;
 
@@ -1156,7 +1156,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverAssessmentsBasisPoints($discover_assessments_basis_points)
+    public function setDiscoverAssessmentsBasisPoints($discover_assessments_basis_points, $deserialize = false)
     {
         $this->container['discover_assessments_basis_points'] = $discover_assessments_basis_points;
 
@@ -1180,7 +1180,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverBasisPoints($discover_basis_points)
+    public function setDiscoverBasisPoints($discover_basis_points, $deserialize = false)
     {
         $this->container['discover_basis_points'] = $discover_basis_points;
 
@@ -1204,7 +1204,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverChargeInterchange($discover_charge_interchange)
+    public function setDiscoverChargeInterchange($discover_charge_interchange, $deserialize = false)
     {
         $this->container['discover_charge_interchange'] = $discover_charge_interchange;
 
@@ -1228,7 +1228,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverDataUsageFixedFee($discover_data_usage_fixed_fee)
+    public function setDiscoverDataUsageFixedFee($discover_data_usage_fixed_fee, $deserialize = false)
     {
         $this->container['discover_data_usage_fixed_fee'] = $discover_data_usage_fixed_fee;
 
@@ -1252,7 +1252,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverFixedFee($discover_fixed_fee)
+    public function setDiscoverFixedFee($discover_fixed_fee, $deserialize = false)
     {
         $this->container['discover_fixed_fee'] = $discover_fixed_fee;
 
@@ -1276,7 +1276,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverExternallyFundedBasisPoints($discover_externally_funded_basis_points)
+    public function setDiscoverExternallyFundedBasisPoints($discover_externally_funded_basis_points, $deserialize = false)
     {
         $this->container['discover_externally_funded_basis_points'] = $discover_externally_funded_basis_points;
 
@@ -1300,7 +1300,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverExternallyFundedFixedFee($discover_externally_funded_fixed_fee)
+    public function setDiscoverExternallyFundedFixedFee($discover_externally_funded_fixed_fee, $deserialize = false)
     {
         $this->container['discover_externally_funded_fixed_fee'] = $discover_externally_funded_fixed_fee;
 
@@ -1324,7 +1324,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscoverNetworkAuthorizationFixedFee($discover_network_authorization_fixed_fee)
+    public function setDiscoverNetworkAuthorizationFixedFee($discover_network_authorization_fixed_fee, $deserialize = false)
     {
         $this->container['discover_network_authorization_fixed_fee'] = $discover_network_authorization_fixed_fee;
 
@@ -1348,7 +1348,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputeFixedFee($dispute_fixed_fee)
+    public function setDisputeFixedFee($dispute_fixed_fee, $deserialize = false)
     {
         $this->container['dispute_fixed_fee'] = $dispute_fixed_fee;
 
@@ -1372,7 +1372,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputeInquiryFixedFee($dispute_inquiry_fixed_fee)
+    public function setDisputeInquiryFixedFee($dispute_inquiry_fixed_fee, $deserialize = false)
     {
         $this->container['dispute_inquiry_fixed_fee'] = $dispute_inquiry_fixed_fee;
 
@@ -1396,7 +1396,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFixedFee($fixed_fee)
+    public function setFixedFee($fixed_fee, $deserialize = false)
     {
         $this->container['fixed_fee'] = $fixed_fee;
 
@@ -1420,7 +1420,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setJcbBasisPoints($jcb_basis_points)
+    public function setJcbBasisPoints($jcb_basis_points, $deserialize = false)
     {
         $this->container['jcb_basis_points'] = $jcb_basis_points;
 
@@ -1444,7 +1444,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setJcbChargeInterchange($jcb_charge_interchange)
+    public function setJcbChargeInterchange($jcb_charge_interchange, $deserialize = false)
     {
         $this->container['jcb_charge_interchange'] = $jcb_charge_interchange;
 
@@ -1468,7 +1468,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setJcbFixedFee($jcb_fixed_fee)
+    public function setJcbFixedFee($jcb_fixed_fee, $deserialize = false)
     {
         $this->container['jcb_fixed_fee'] = $jcb_fixed_fee;
 
@@ -1492,7 +1492,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardAcquirerFeesBasisPoints($mastercard_acquirer_fees_basis_points)
+    public function setMastercardAcquirerFeesBasisPoints($mastercard_acquirer_fees_basis_points, $deserialize = false)
     {
         $this->container['mastercard_acquirer_fees_basis_points'] = $mastercard_acquirer_fees_basis_points;
 
@@ -1516,7 +1516,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardAssessmentsOver1kBasisPoints($mastercard_assessments_over1k_basis_points)
+    public function setMastercardAssessmentsOver1kBasisPoints($mastercard_assessments_over1k_basis_points, $deserialize = false)
     {
         $this->container['mastercard_assessments_over1k_basis_points'] = $mastercard_assessments_over1k_basis_points;
 
@@ -1540,7 +1540,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardAssessmentsUnder1kBasisPoints($mastercard_assessments_under1k_basis_points)
+    public function setMastercardAssessmentsUnder1kBasisPoints($mastercard_assessments_under1k_basis_points, $deserialize = false)
     {
         $this->container['mastercard_assessments_under1k_basis_points'] = $mastercard_assessments_under1k_basis_points;
 
@@ -1564,7 +1564,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardBasisPoints($mastercard_basis_points)
+    public function setMastercardBasisPoints($mastercard_basis_points, $deserialize = false)
     {
         $this->container['mastercard_basis_points'] = $mastercard_basis_points;
 
@@ -1588,7 +1588,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardChargeInterchange($mastercard_charge_interchange)
+    public function setMastercardChargeInterchange($mastercard_charge_interchange, $deserialize = false)
     {
         $this->container['mastercard_charge_interchange'] = $mastercard_charge_interchange;
 
@@ -1612,7 +1612,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMastercardFixedFee($mastercard_fixed_fee)
+    public function setMastercardFixedFee($mastercard_fixed_fee, $deserialize = false)
     {
         $this->container['mastercard_fixed_fee'] = $mastercard_fixed_fee;
 
@@ -1636,7 +1636,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setQualifiedTiers($qualified_tiers)
+    public function setQualifiedTiers($qualified_tiers, $deserialize = false)
     {
         $this->container['qualified_tiers'] = $qualified_tiers;
 
@@ -1660,10 +1660,10 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRoundingMode($rounding_mode)
+    public function setRoundingMode($rounding_mode, $deserialize = false)
     {
         $allowedValues = $this->getRoundingModeAllowableValues();
-        if (!is_null($rounding_mode) && !in_array($rounding_mode, $allowedValues, true)) {
+        if (!is_null($rounding_mode) && !in_array($rounding_mode, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'rounding_mode', must be one of '%s'",
@@ -1694,7 +1694,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaAcquirerProcessingFixedFee($visa_acquirer_processing_fixed_fee)
+    public function setVisaAcquirerProcessingFixedFee($visa_acquirer_processing_fixed_fee, $deserialize = false)
     {
         $this->container['visa_acquirer_processing_fixed_fee'] = $visa_acquirer_processing_fixed_fee;
 
@@ -1718,7 +1718,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaAssessmentsBasisPoints($visa_assessments_basis_points)
+    public function setVisaAssessmentsBasisPoints($visa_assessments_basis_points, $deserialize = false)
     {
         $this->container['visa_assessments_basis_points'] = $visa_assessments_basis_points;
 
@@ -1742,7 +1742,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaBaseIiCreditVoucherFixedFee($visa_base_ii_credit_voucher_fixed_fee)
+    public function setVisaBaseIiCreditVoucherFixedFee($visa_base_ii_credit_voucher_fixed_fee, $deserialize = false)
     {
         $this->container['visa_base_ii_credit_voucher_fixed_fee'] = $visa_base_ii_credit_voucher_fixed_fee;
 
@@ -1766,7 +1766,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaBaseIiSystemFileTransmissionFixedFee($visa_base_ii_system_file_transmission_fixed_fee)
+    public function setVisaBaseIiSystemFileTransmissionFixedFee($visa_base_ii_system_file_transmission_fixed_fee, $deserialize = false)
     {
         $this->container['visa_base_ii_system_file_transmission_fixed_fee'] = $visa_base_ii_system_file_transmission_fixed_fee;
 
@@ -1790,7 +1790,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaBasisPoints($visa_basis_points)
+    public function setVisaBasisPoints($visa_basis_points, $deserialize = false)
     {
         $this->container['visa_basis_points'] = $visa_basis_points;
 
@@ -1814,7 +1814,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaChargeInterchange($visa_charge_interchange)
+    public function setVisaChargeInterchange($visa_charge_interchange, $deserialize = false)
     {
         $this->container['visa_charge_interchange'] = $visa_charge_interchange;
 
@@ -1838,7 +1838,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaCreditVoucherFixedFee($visa_credit_voucher_fixed_fee)
+    public function setVisaCreditVoucherFixedFee($visa_credit_voucher_fixed_fee, $deserialize = false)
     {
         $this->container['visa_credit_voucher_fixed_fee'] = $visa_credit_voucher_fixed_fee;
 
@@ -1862,7 +1862,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaFixedFee($visa_fixed_fee)
+    public function setVisaFixedFee($visa_fixed_fee, $deserialize = false)
     {
         $this->container['visa_fixed_fee'] = $visa_fixed_fee;
 
@@ -1886,7 +1886,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVisaKilobyteAccessFixedFee($visa_kilobyte_access_fixed_fee)
+    public function setVisaKilobyteAccessFixedFee($visa_kilobyte_access_fixed_fee, $deserialize = false)
     {
         $this->container['visa_kilobyte_access_fixed_fee'] = $visa_kilobyte_access_fixed_fee;
 
@@ -1910,7 +1910,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

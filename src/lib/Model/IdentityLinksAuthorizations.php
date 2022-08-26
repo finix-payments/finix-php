@@ -228,7 +228,7 @@ class IdentityLinksAuthorizations implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setHref($href)
+    public function setHref($href, $deserialize = false)
     {
 
         if (!is_null($href) && (mb_strlen($href) < 1)) {

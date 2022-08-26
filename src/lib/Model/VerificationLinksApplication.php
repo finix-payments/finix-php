@@ -224,7 +224,7 @@ class VerificationLinksApplication implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setHref($href)
+    public function setHref($href, $deserialize = false)
     {
         $this->container['href'] = $href;
 

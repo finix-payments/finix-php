@@ -278,7 +278,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -302,7 +302,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVerifications($verifications)
+    public function setVerifications($verifications, $deserialize = false)
     {
         $this->container['verifications'] = $verifications;
 
@@ -326,7 +326,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchants($merchants)
+    public function setMerchants($merchants, $deserialize = false)
     {
         $this->container['merchants'] = $merchants;
 
@@ -350,7 +350,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlements($settlements)
+    public function setSettlements($settlements, $deserialize = false)
     {
         $this->container['settlements'] = $settlements;
 
@@ -374,7 +374,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAuthorizations($authorizations)
+    public function setAuthorizations($authorizations, $deserialize = false)
     {
         $this->container['authorizations'] = $authorizations;
 
@@ -398,7 +398,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 
@@ -422,7 +422,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPaymentInstruments($payment_instruments)
+    public function setPaymentInstruments($payment_instruments, $deserialize = false)
     {
         $this->container['payment_instruments'] = $payment_instruments;
 
@@ -446,7 +446,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAssociatedIdentities($associated_identities)
+    public function setAssociatedIdentities($associated_identities, $deserialize = false)
     {
         $this->container['associated_identities'] = $associated_identities;
 
@@ -470,7 +470,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputes($disputes)
+    public function setDisputes($disputes, $deserialize = false)
     {
         $this->container['disputes'] = $disputes;
 
@@ -494,7 +494,7 @@ class IdentityLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 

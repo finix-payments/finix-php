@@ -283,7 +283,7 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setDisplayName($display_name)
+    public function setDisplayName($display_name, $deserialize = false)
     {
         $this->container['display_name'] = $display_name;
 
@@ -307,7 +307,7 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setLinkedTo($linked_to)
+    public function setLinkedTo($linked_to, $deserialize = false)
     {
         $this->container['linked_to'] = $linked_to;
 
@@ -331,10 +331,10 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -365,7 +365,7 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

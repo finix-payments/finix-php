@@ -249,7 +249,7 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -273,7 +273,7 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -297,7 +297,7 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setLabel($label)
+    public function setLabel($label, $deserialize = false)
     {
 
         if ((mb_strlen($label) < 1)) {

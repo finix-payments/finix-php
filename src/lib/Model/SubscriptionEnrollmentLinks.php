@@ -242,7 +242,7 @@ class SubscriptionEnrollmentLinks implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -266,7 +266,7 @@ class SubscriptionEnrollmentLinks implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -290,7 +290,7 @@ class SubscriptionEnrollmentLinks implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setSchedule($schedule)
+    public function setSchedule($schedule, $deserialize = false)
     {
         $this->container['schedule'] = $schedule;
 
@@ -314,7 +314,7 @@ class SubscriptionEnrollmentLinks implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setAmounts($amounts)
+    public function setAmounts($amounts, $deserialize = false)
     {
         $this->container['amounts'] = $amounts;
 

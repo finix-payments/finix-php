@@ -307,7 +307,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -331,7 +331,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setAfterCursor($after_cursor)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
 
@@ -355,7 +355,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setAccountLast4($account_last4)
+    public function setAccountLast4($account_last4, $deserialize = false)
     {
         $this->container['account_last4'] = $account_last4;
 
@@ -379,7 +379,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setAccountRoutingNumber($account_routing_number)
+    public function setAccountRoutingNumber($account_routing_number, $deserialize = false)
     {
         $this->container['account_routing_number'] = $account_routing_number;
 
@@ -403,7 +403,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -427,7 +427,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setBin($bin)
+    public function setBin($bin, $deserialize = false)
     {
         $this->container['bin'] = $bin;
 
@@ -451,7 +451,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -475,7 +475,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -499,7 +499,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setExpirationMonth($expiration_month)
+    public function setExpirationMonth($expiration_month, $deserialize = false)
     {
         $this->container['expiration_month'] = $expiration_month;
 
@@ -523,7 +523,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setExpirationYear($expiration_year)
+    public function setExpirationYear($expiration_year, $deserialize = false)
     {
         $this->container['expiration_year'] = $expiration_year;
 
@@ -547,7 +547,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setLastFour($last_four)
+    public function setLastFour($last_four, $deserialize = false)
     {
         $this->container['last_four'] = $last_four;
 
@@ -571,7 +571,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -595,7 +595,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setOwnerIdentityId($owner_identity_id)
+    public function setOwnerIdentityId($owner_identity_id, $deserialize = false)
     {
         $this->container['owner_identity_id'] = $owner_identity_id;
 
@@ -619,7 +619,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
 
@@ -643,7 +643,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setBeforeCursor($before_cursor)
+    public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
 

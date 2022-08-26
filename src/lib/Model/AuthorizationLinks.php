@@ -248,7 +248,7 @@ class AuthorizationLinks implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -272,7 +272,7 @@ class AuthorizationLinks implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
         $this->container['device'] = $device;
 
@@ -296,7 +296,7 @@ class AuthorizationLinks implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -320,7 +320,7 @@ class AuthorizationLinks implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -344,7 +344,7 @@ class AuthorizationLinks implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return self
      */
-    public function setTransfer($transfer)
+    public function setTransfer($transfer, $deserialize = false)
     {
         $this->container['transfer'] = $transfer;
 

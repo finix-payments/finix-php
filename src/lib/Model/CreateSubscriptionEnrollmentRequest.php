@@ -263,7 +263,7 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
 
         if ((mb_strlen($merchant) < 1)) {
@@ -293,7 +293,7 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setStartedAt($started_at)
+    public function setStartedAt($started_at, $deserialize = false)
     {
 
         if ((mb_strlen($started_at) < 1)) {
@@ -323,7 +323,7 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
 
         if ((mb_strlen($nickname) < 1)) {
@@ -353,7 +353,7 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

@@ -227,7 +227,7 @@ class SubscriptionAmountListEmbedded implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setSubscriptionAmounts($subscription_amounts)
+    public function setSubscriptionAmounts($subscription_amounts, $deserialize = false)
     {
 
         

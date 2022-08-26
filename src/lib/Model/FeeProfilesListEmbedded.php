@@ -227,7 +227,7 @@ class FeeProfilesListEmbedded implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setFeeProfiles($fee_profiles)
+    public function setFeeProfiles($fee_profiles, $deserialize = false)
     {
 
         

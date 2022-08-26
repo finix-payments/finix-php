@@ -227,7 +227,7 @@ class UsersListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setUsers($users, $deserialize = false)
     {
 
         

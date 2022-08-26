@@ -229,7 +229,7 @@ class Error401UnauthorizedEmbeddedErrorsInnerLinks implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -253,7 +253,7 @@ class Error401UnauthorizedEmbeddedErrorsInnerLinks implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 

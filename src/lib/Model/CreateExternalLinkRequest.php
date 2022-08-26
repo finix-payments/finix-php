@@ -261,10 +261,10 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -295,7 +295,7 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setDuration($duration)
+    public function setDuration($duration, $deserialize = false)
     {
         $this->container['duration'] = $duration;
 
@@ -319,7 +319,7 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

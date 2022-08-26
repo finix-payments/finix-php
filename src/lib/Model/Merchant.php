@@ -405,7 +405,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -429,7 +429,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -453,7 +453,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -477,7 +477,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVerification($verification)
+    public function setVerification($verification, $deserialize = false)
     {
         $this->container['verification'] = $verification;
 
@@ -501,7 +501,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantProfile($merchant_profile)
+    public function setMerchantProfile($merchant_profile, $deserialize = false)
     {
         $this->container['merchant_profile'] = $merchant_profile;
 
@@ -525,7 +525,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 
@@ -549,7 +549,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessingEnabled($processing_enabled)
+    public function setProcessingEnabled($processing_enabled, $deserialize = false)
     {
         $this->container['processing_enabled'] = $processing_enabled;
 
@@ -573,7 +573,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlementEnabled($settlement_enabled)
+    public function setSettlementEnabled($settlement_enabled, $deserialize = false)
     {
         $this->container['settlement_enabled'] = $settlement_enabled;
 
@@ -597,7 +597,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setGrossSettlementEnabled($gross_settlement_enabled)
+    public function setGrossSettlementEnabled($gross_settlement_enabled, $deserialize = false)
     {
         $this->container['gross_settlement_enabled'] = $gross_settlement_enabled;
 
@@ -621,7 +621,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled)
+    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled, $deserialize = false)
     {
         $this->container['creating_transfer_from_report_enabled'] = $creating_transfer_from_report_enabled;
 
@@ -645,7 +645,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardExpirationDateRequired($card_expiration_date_required)
+    public function setCardExpirationDateRequired($card_expiration_date_required, $deserialize = false)
     {
         $this->container['card_expiration_date_required'] = $card_expiration_date_required;
 
@@ -669,7 +669,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardCvvRequired($card_cvv_required)
+    public function setCardCvvRequired($card_cvv_required, $deserialize = false)
     {
         $this->container['card_cvv_required'] = $card_cvv_required;
 
@@ -693,7 +693,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -717,7 +717,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMcc($mcc)
+    public function setMcc($mcc, $deserialize = false)
     {
         $this->container['mcc'] = $mcc;
 
@@ -741,7 +741,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMid($mid)
+    public function setMid($mid, $deserialize = false)
     {
         $this->container['mid'] = $mid;
 
@@ -765,7 +765,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantName($merchant_name)
+    public function setMerchantName($merchant_name, $deserialize = false)
     {
         $this->container['merchant_name'] = $merchant_name;
 
@@ -789,7 +789,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlementFundingIdentifier($settlement_funding_identifier)
+    public function setSettlementFundingIdentifier($settlement_funding_identifier, $deserialize = false)
     {
         $this->container['settlement_funding_identifier'] = $settlement_funding_identifier;
 
@@ -813,7 +813,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReadyToSettleUpon($ready_to_settle_upon)
+    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
     {
         $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
 
@@ -837,7 +837,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon)
+    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon, $deserialize = false)
     {
         $this->container['fee_ready_to_settle_upon'] = $fee_ready_to_settle_upon;
 
@@ -861,7 +861,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLevelTwoLevelThreeDataEnabled($level_two_level_three_data_enabled)
+    public function setLevelTwoLevelThreeDataEnabled($level_two_level_three_data_enabled, $deserialize = false)
     {
         $this->container['level_two_level_three_data_enabled'] = $level_two_level_three_data_enabled;
 
@@ -885,7 +885,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -909,7 +909,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -933,10 +933,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOnboardingState($onboarding_state)
+    public function setOnboardingState($onboarding_state, $deserialize = false)
     {
         $allowedValues = $this->getOnboardingStateAllowableValues();
-        if (!is_null($onboarding_state) && !in_array($onboarding_state, $allowedValues, true)) {
+        if (!is_null($onboarding_state) && !in_array($onboarding_state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'onboarding_state', must be one of '%s'",
@@ -967,7 +967,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessorDetails($processor_details)
+    public function setProcessorDetails($processor_details, $deserialize = false)
     {
         $this->container['processor_details'] = $processor_details;
 
@@ -991,7 +991,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setConvenienceChargesEnabled($convenience_charges_enabled)
+    public function setConvenienceChargesEnabled($convenience_charges_enabled, $deserialize = false)
     {
         $this->container['convenience_charges_enabled'] = $convenience_charges_enabled;
 
@@ -1015,7 +1015,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRentSurchargesEnabled($rent_surcharges_enabled)
+    public function setRentSurchargesEnabled($rent_surcharges_enabled, $deserialize = false)
     {
         $this->container['rent_surcharges_enabled'] = $rent_surcharges_enabled;
 
@@ -1039,7 +1039,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

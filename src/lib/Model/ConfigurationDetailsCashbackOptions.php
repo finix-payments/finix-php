@@ -229,7 +229,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setManualEntry($manual_entry)
+    public function setManualEntry($manual_entry, $deserialize = false)
     {
         $this->container['manual_entry'] = $manual_entry;
 
@@ -253,7 +253,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setSelectionAmounts($selection_amounts)
+    public function setSelectionAmounts($selection_amounts, $deserialize = false)
     {
         $this->container['selection_amounts'] = $selection_amounts;
 

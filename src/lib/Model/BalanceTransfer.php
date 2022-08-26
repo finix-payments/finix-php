@@ -336,7 +336,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -360,7 +360,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -384,7 +384,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -408,7 +408,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -432,7 +432,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -456,7 +456,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description, $deserialize = false)
     {
         $this->container['description'] = $description;
 
@@ -480,7 +480,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
         $this->container['destination'] = $destination;
 
@@ -504,7 +504,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExternalReferenceId($external_reference_id)
+    public function setExternalReferenceId($external_reference_id, $deserialize = false)
     {
         $this->container['external_reference_id'] = $external_reference_id;
 
@@ -528,7 +528,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessorType($processor_type)
+    public function setProcessorType($processor_type, $deserialize = false)
     {
         $this->container['processor_type'] = $processor_type;
 
@@ -552,7 +552,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReferenceId($reference_id)
+    public function setReferenceId($reference_id, $deserialize = false)
     {
         $this->container['reference_id'] = $reference_id;
 
@@ -576,7 +576,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 
@@ -600,10 +600,10 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true)) {
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'state', must be one of '%s'",
@@ -634,7 +634,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -658,7 +658,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

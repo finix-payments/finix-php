@@ -254,7 +254,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -278,7 +278,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -302,7 +302,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVerifications($verifications)
+    public function setVerifications($verifications, $deserialize = false)
     {
         $this->container['verifications'] = $verifications;
 
@@ -326,7 +326,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantProfile($merchant_profile)
+    public function setMerchantProfile($merchant_profile, $deserialize = false)
     {
         $this->container['merchant_profile'] = $merchant_profile;
 
@@ -350,7 +350,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -374,7 +374,7 @@ class MerchantLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVerification($verification)
+    public function setVerification($verification, $deserialize = false)
     {
         $this->container['verification'] = $verification;
 

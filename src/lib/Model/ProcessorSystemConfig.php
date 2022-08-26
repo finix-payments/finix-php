@@ -976,10 +976,10 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setClassKeyIdentifier($class_key_identifier)
+    public function setClassKeyIdentifier($class_key_identifier, $deserialize = false)
     {
         $allowedValues = $this->getClassKeyIdentifierAllowableValues();
-        if (!is_null($class_key_identifier) && !in_array($class_key_identifier, $allowedValues, true)) {
+        if (!is_null($class_key_identifier) && !in_array($class_key_identifier, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'class_key_identifier', must be one of '%s'",
@@ -1010,10 +1010,10 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAcquirerCountryCode($acquirer_country_code)
+    public function setAcquirerCountryCode($acquirer_country_code, $deserialize = false)
     {
         $allowedValues = $this->getAcquirerCountryCodeAllowableValues();
-        if (!is_null($acquirer_country_code) && !in_array($acquirer_country_code, $allowedValues, true)) {
+        if (!is_null($acquirer_country_code) && !in_array($acquirer_country_code, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'acquirer_country_code', must be one of '%s'",
@@ -1044,7 +1044,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAcquiringBin($acquiring_bin)
+    public function setAcquiringBin($acquiring_bin, $deserialize = false)
     {
 
         
@@ -1071,7 +1071,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAllowCreditForPartner($allow_credit_for_partner)
+    public function setAllowCreditForPartner($allow_credit_for_partner, $deserialize = false)
     {
         $this->container['allow_credit_for_partner'] = $allow_credit_for_partner;
 
@@ -1095,7 +1095,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAvailableCountries($available_countries)
+    public function setAvailableCountries($available_countries, $deserialize = false)
     {
         $this->container['available_countries'] = $available_countries;
 
@@ -1119,7 +1119,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setBusinessApplicationId($business_application_id)
+    public function setBusinessApplicationId($business_application_id, $deserialize = false)
     {
         $this->container['business_application_id'] = $business_application_id;
 
@@ -1143,7 +1143,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setConfigurationTemplates($configuration_templates)
+    public function setConfigurationTemplates($configuration_templates, $deserialize = false)
     {
         $this->container['configuration_templates'] = $configuration_templates;
 
@@ -1167,7 +1167,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setDefaultCurrencies($default_currencies)
+    public function setDefaultCurrencies($default_currencies, $deserialize = false)
     {
         $this->container['default_currencies'] = $default_currencies;
 
@@ -1191,7 +1191,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setDisablePpgs($disable_ppgs)
+    public function setDisablePpgs($disable_ppgs, $deserialize = false)
     {
         $this->container['disable_ppgs'] = $disable_ppgs;
 
@@ -1215,7 +1215,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setFeeProgramIndicator($fee_program_indicator)
+    public function setFeeProgramIndicator($fee_program_indicator, $deserialize = false)
     {
         $this->container['fee_program_indicator'] = $fee_program_indicator;
 
@@ -1239,7 +1239,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGatewayProxyCertificate($gateway_proxy_certificate)
+    public function setGatewayProxyCertificate($gateway_proxy_certificate, $deserialize = false)
     {
         $this->container['gateway_proxy_certificate'] = $gateway_proxy_certificate;
 
@@ -1263,7 +1263,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGatewayProxyHost($gateway_proxy_host)
+    public function setGatewayProxyHost($gateway_proxy_host, $deserialize = false)
     {
         $this->container['gateway_proxy_host'] = $gateway_proxy_host;
 
@@ -1287,7 +1287,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGatewayProxyPassword($gateway_proxy_password)
+    public function setGatewayProxyPassword($gateway_proxy_password, $deserialize = false)
     {
         $this->container['gateway_proxy_password'] = $gateway_proxy_password;
 
@@ -1311,7 +1311,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGatewayProxyPort($gateway_proxy_port)
+    public function setGatewayProxyPort($gateway_proxy_port, $deserialize = false)
     {
         $this->container['gateway_proxy_port'] = $gateway_proxy_port;
 
@@ -1335,7 +1335,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setGatewayProxyUsername($gateway_proxy_username)
+    public function setGatewayProxyUsername($gateway_proxy_username, $deserialize = false)
     {
         $this->container['gateway_proxy_username'] = $gateway_proxy_username;
 
@@ -1359,7 +1359,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setKeyStorePassword($key_store_password)
+    public function setKeyStorePassword($key_store_password, $deserialize = false)
     {
         $this->container['key_store_password'] = $key_store_password;
 
@@ -1383,7 +1383,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setKeyStorePath($key_store_path)
+    public function setKeyStorePath($key_store_path, $deserialize = false)
     {
         $this->container['key_store_path'] = $key_store_path;
 
@@ -1407,7 +1407,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setMerchantPseudoAbaNumber($merchant_pseudo_aba_number)
+    public function setMerchantPseudoAbaNumber($merchant_pseudo_aba_number, $deserialize = false)
     {
         $this->container['merchant_pseudo_aba_number'] = $merchant_pseudo_aba_number;
 
@@ -1431,7 +1431,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setOnlineCreditProcessing($online_credit_processing)
+    public function setOnlineCreditProcessing($online_credit_processing, $deserialize = false)
     {
         $this->container['online_credit_processing'] = $online_credit_processing;
 
@@ -1455,7 +1455,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setOnlineDebitProcessing($online_debit_processing)
+    public function setOnlineDebitProcessing($online_debit_processing, $deserialize = false)
     {
         $this->container['online_debit_processing'] = $online_debit_processing;
 
@@ -1479,7 +1479,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setPassword($password)
+    public function setPassword($password, $deserialize = false)
     {
         $this->container['password'] = $password;
 
@@ -1503,7 +1503,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setPrivateKeyPassword($private_key_password)
+    public function setPrivateKeyPassword($private_key_password, $deserialize = false)
     {
         $this->container['private_key_password'] = $private_key_password;
 
@@ -1527,7 +1527,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setProcessorSequenceLimit($processor_sequence_limit)
+    public function setProcessorSequenceLimit($processor_sequence_limit, $deserialize = false)
     {
         $this->container['processor_sequence_limit'] = $processor_sequence_limit;
 
@@ -1551,7 +1551,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setPseudoBatchPush($pseudo_batch_push)
+    public function setPseudoBatchPush($pseudo_batch_push, $deserialize = false)
     {
         $this->container['pseudo_batch_push'] = $pseudo_batch_push;
 
@@ -1575,10 +1575,10 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setSourceOfFunds($source_of_funds)
+    public function setSourceOfFunds($source_of_funds, $deserialize = false)
     {
         $allowedValues = $this->getSourceOfFundsAllowableValues();
-        if (!is_null($source_of_funds) && !in_array($source_of_funds, $allowedValues, true)) {
+        if (!is_null($source_of_funds) && !in_array($source_of_funds, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'source_of_funds', must be one of '%s'",
@@ -1609,7 +1609,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setUserId($user_id)
+    public function setUserId($user_id, $deserialize = false)
     {
         $this->container['user_id'] = $user_id;
 
@@ -1633,7 +1633,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setVisaAcceptanceCloudKeyStorePath($visa_acceptance_cloud_key_store_path)
+    public function setVisaAcceptanceCloudKeyStorePath($visa_acceptance_cloud_key_store_path, $deserialize = false)
     {
         $this->container['visa_acceptance_cloud_key_store_path'] = $visa_acceptance_cloud_key_store_path;
 
@@ -1657,7 +1657,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setVisaAcceptanceCloudPassword($visa_acceptance_cloud_password)
+    public function setVisaAcceptanceCloudPassword($visa_acceptance_cloud_password, $deserialize = false)
     {
         $this->container['visa_acceptance_cloud_password'] = $visa_acceptance_cloud_password;
 
@@ -1681,7 +1681,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setVisaAcceptanceCloudUrl($visa_acceptance_cloud_url)
+    public function setVisaAcceptanceCloudUrl($visa_acceptance_cloud_url, $deserialize = false)
     {
         $this->container['visa_acceptance_cloud_url'] = $visa_acceptance_cloud_url;
 
@@ -1705,7 +1705,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setVisaAcceptanceCloudUserId($visa_acceptance_cloud_user_id)
+    public function setVisaAcceptanceCloudUserId($visa_acceptance_cloud_user_id, $deserialize = false)
     {
         $this->container['visa_acceptance_cloud_user_id'] = $visa_acceptance_cloud_user_id;
 
@@ -1729,7 +1729,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setVisaUrl($visa_url)
+    public function setVisaUrl($visa_url, $deserialize = false)
     {
         $this->container['visa_url'] = $visa_url;
 

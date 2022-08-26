@@ -236,7 +236,7 @@ class UsersListPage implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCount($count)
+    public function setCount($count, $deserialize = false)
     {
         $this->container['count'] = $count;
 
@@ -260,7 +260,7 @@ class UsersListPage implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -284,7 +284,7 @@ class UsersListPage implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOffset($offset)
+    public function setOffset($offset, $deserialize = false)
     {
         $this->container['offset'] = $offset;
 

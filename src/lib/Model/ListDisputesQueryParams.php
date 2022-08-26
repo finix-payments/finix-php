@@ -259,7 +259,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setSort($sort)
+    public function setSort($sort, $deserialize = false)
     {
         $this->container['sort'] = $sort;
 
@@ -283,7 +283,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setOffset($offset)
+    public function setOffset($offset, $deserialize = false)
     {
         $this->container['offset'] = $offset;
 
@@ -307,7 +307,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -331,7 +331,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -355,7 +355,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -379,7 +379,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setUpdatedAtGte($updated_at_gte)
+    public function setUpdatedAtGte($updated_at_gte, $deserialize = false)
     {
         $this->container['updated_at_gte'] = $updated_at_gte;
 
@@ -403,7 +403,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setUpdatedAtLte($updated_at_lte)
+    public function setUpdatedAtLte($updated_at_lte, $deserialize = false)
     {
         $this->container['updated_at_lte'] = $updated_at_lte;
 

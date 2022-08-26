@@ -247,7 +247,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -271,7 +271,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setFee($fee)
+    public function setFee($fee, $deserialize = false)
     {
         $this->container['fee'] = $fee;
 
@@ -295,7 +295,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setCaptureAmount($capture_amount)
+    public function setCaptureAmount($capture_amount, $deserialize = false)
     {
         $this->container['capture_amount'] = $capture_amount;
 
@@ -319,7 +319,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAdditionalPurchaseData($additional_purchase_data)
+    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
     {
         $this->container['additional_purchase_data'] = $additional_purchase_data;
 
@@ -343,7 +343,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setVoidMe($void_me)
+    public function setVoidMe($void_me, $deserialize = false)
     {
         $this->container['void_me'] = $void_me;
 

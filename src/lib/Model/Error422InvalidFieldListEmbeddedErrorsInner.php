@@ -269,10 +269,10 @@ class Error422InvalidFieldListEmbeddedErrorsInner implements ModelInterface, Arr
      *
      * @return self
      */
-    public function setCode($code)
+    public function setCode($code, $deserialize = false)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (!is_null($code) && !in_array($code, $allowedValues, true)) {
+        if (!is_null($code) && !in_array($code, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'code', must be one of '%s'",
@@ -303,7 +303,7 @@ class Error422InvalidFieldListEmbeddedErrorsInner implements ModelInterface, Arr
      *
      * @return self
      */
-    public function setField($field)
+    public function setField($field, $deserialize = false)
     {
         $this->container['field'] = $field;
 
@@ -327,7 +327,7 @@ class Error422InvalidFieldListEmbeddedErrorsInner implements ModelInterface, Arr
      *
      * @return self
      */
-    public function setLogref($logref)
+    public function setLogref($logref, $deserialize = false)
     {
         $this->container['logref'] = $logref;
 
@@ -351,7 +351,7 @@ class Error422InvalidFieldListEmbeddedErrorsInner implements ModelInterface, Arr
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setMessage($message, $deserialize = false)
     {
         $this->container['message'] = $message;
 
@@ -375,7 +375,7 @@ class Error422InvalidFieldListEmbeddedErrorsInner implements ModelInterface, Arr
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

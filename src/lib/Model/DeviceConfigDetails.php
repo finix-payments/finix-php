@@ -260,7 +260,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setAllowDebit($allow_debit)
+    public function setAllowDebit($allow_debit, $deserialize = false)
     {
         $this->container['allow_debit'] = $allow_debit;
 
@@ -284,7 +284,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setCheckForDuplicateTransactions($check_for_duplicate_transactions)
+    public function setCheckForDuplicateTransactions($check_for_duplicate_transactions, $deserialize = false)
     {
         $this->container['check_for_duplicate_transactions'] = $check_for_duplicate_transactions;
 
@@ -308,7 +308,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setPromptAmountConfirmation($prompt_amount_confirmation)
+    public function setPromptAmountConfirmation($prompt_amount_confirmation, $deserialize = false)
     {
         $this->container['prompt_amount_confirmation'] = $prompt_amount_confirmation;
 
@@ -332,7 +332,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setPromptManualEntry($prompt_manual_entry)
+    public function setPromptManualEntry($prompt_manual_entry, $deserialize = false)
     {
         $this->container['prompt_manual_entry'] = $prompt_manual_entry;
 
@@ -356,7 +356,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setPromptSignature($prompt_signature)
+    public function setPromptSignature($prompt_signature, $deserialize = false)
     {
         $this->container['prompt_signature'] = $prompt_signature;
 
@@ -380,7 +380,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setSignatureThresholdAmount($signature_threshold_amount)
+    public function setSignatureThresholdAmount($signature_threshold_amount, $deserialize = false)
     {
         $this->container['signature_threshold_amount'] = $signature_threshold_amount;
 
@@ -404,7 +404,7 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setBypassDeviceOnCapture($bypass_device_on_capture)
+    public function setBypassDeviceOnCapture($bypass_device_on_capture, $deserialize = false)
     {
         $this->container['bypass_device_on_capture'] = $bypass_device_on_capture;
 

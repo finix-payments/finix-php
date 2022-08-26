@@ -166,10 +166,10 @@ class PaymentInstrumentsApiTest extends TestCase
      */
     public function testUnknownEnum()
     {
-        $paymentInstrumentId = "PI8sdzepdapDehPWKFTcre1m";
+        $paymentInstrumentId = "PI4gTM3twQ5XyXfM4rTuFvpo";
         $paymentInstrument = $this->client->paymentInstruments->get($paymentInstrumentId);
-        $this->assertSame($paymentInstrumentId, $paymentInstrument->getId());
-        $this->assertSame("APgPDQrLD52TYvqazjHJJchM", $paymentInstrument->getApplication());
+        $this->assertSame("APPLE_PAY", $paymentInstrument->getType());
+        $this->assertSame("APPLE_PAY", $paymentInstrument->getInstrumentType());
     }
     /**
      * Test case for listUpdatesByPaymentInstrumentId

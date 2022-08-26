@@ -396,7 +396,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -420,10 +420,10 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -454,7 +454,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -478,7 +478,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -502,7 +502,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -526,7 +526,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -550,7 +550,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -574,7 +574,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
 
         
@@ -601,7 +601,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFundsFlow($funds_flow)
+    public function setFundsFlow($funds_flow, $deserialize = false)
     {
         $this->container['funds_flow'] = $funds_flow;
 
@@ -625,7 +625,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -649,7 +649,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
 
@@ -673,7 +673,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNetAmount($net_amount)
+    public function setNetAmount($net_amount, $deserialize = false)
     {
         $this->container['net_amount'] = $net_amount;
 
@@ -697,7 +697,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPaymentType($payment_type)
+    public function setPaymentType($payment_type, $deserialize = false)
     {
         $this->container['payment_type'] = $payment_type;
 
@@ -721,7 +721,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 
@@ -745,10 +745,10 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setStatus($status, $deserialize = false)
     {
         $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+        if (!is_null($status) && !in_array($status, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'status', must be one of '%s'",
@@ -779,7 +779,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setTotalAmount($total_amount, $deserialize = false)
     {
         $this->container['total_amount'] = $total_amount;
 
@@ -803,7 +803,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTotalFee($total_fee)
+    public function setTotalFee($total_fee, $deserialize = false)
     {
         $this->container['total_fee'] = $total_fee;
 
@@ -827,7 +827,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTotalFees($total_fees)
+    public function setTotalFees($total_fees, $deserialize = false)
     {
         $this->container['total_fees'] = $total_fees;
 
@@ -851,7 +851,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -227,7 +227,7 @@ class DisputesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setDisputes($disputes)
+    public function setDisputes($disputes, $deserialize = false)
     {
 
         

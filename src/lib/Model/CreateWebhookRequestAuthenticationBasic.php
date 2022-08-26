@@ -230,7 +230,7 @@ class CreateWebhookRequestAuthenticationBasic implements ModelInterface, ArrayAc
      *
      * @return self
      */
-    public function setUsername($username)
+    public function setUsername($username, $deserialize = false)
     {
         $this->container['username'] = $username;
 
@@ -254,7 +254,7 @@ class CreateWebhookRequestAuthenticationBasic implements ModelInterface, ArrayAc
      *
      * @return self
      */
-    public function setPassword($password)
+    public function setPassword($password, $deserialize = false)
     {
         $this->container['password'] = $password;
 

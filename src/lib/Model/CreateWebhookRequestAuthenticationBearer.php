@@ -224,7 +224,7 @@ class CreateWebhookRequestAuthenticationBearer implements ModelInterface, ArrayA
      *
      * @return self
      */
-    public function setToken($token)
+    public function setToken($token, $deserialize = false)
     {
         $this->container['token'] = $token;
 

@@ -274,7 +274,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         if (!is_null($id) && (mb_strlen($id) < 1)) {
@@ -304,7 +304,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -328,7 +328,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -352,7 +352,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAdditionalUnderwritingData($additional_underwriting_data)
+    public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
     {
         $this->container['additional_underwriting_data'] = $additional_underwriting_data;
 
@@ -376,7 +376,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
 
         if (!is_null($application) && (mb_strlen($application) < 1)) {
@@ -406,7 +406,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEntity($entity)
+    public function setEntity($entity, $deserialize = false)
     {
         $this->container['entity'] = $entity;
 
@@ -430,7 +430,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -454,7 +454,7 @@ class Identity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

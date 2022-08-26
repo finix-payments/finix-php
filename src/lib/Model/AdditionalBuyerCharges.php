@@ -230,7 +230,7 @@ class AdditionalBuyerCharges implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setConvenienceAmount($convenience_amount)
+    public function setConvenienceAmount($convenience_amount, $deserialize = false)
     {
         $this->container['convenience_amount'] = $convenience_amount;
 
@@ -254,7 +254,7 @@ class AdditionalBuyerCharges implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setRentSurchargeAmount($rent_surcharge_amount)
+    public function setRentSurchargeAmount($rent_surcharge_amount, $deserialize = false)
     {
         $this->container['rent_surcharge_amount'] = $rent_surcharge_amount;
 

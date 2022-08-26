@@ -236,7 +236,7 @@ class SubscriptionSchedulesListLinks implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -260,7 +260,7 @@ class SubscriptionSchedulesListLinks implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setNext($next)
+    public function setNext($next, $deserialize = false)
     {
         $this->container['next'] = $next;
 
@@ -284,7 +284,7 @@ class SubscriptionSchedulesListLinks implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setLast($last)
+    public function setLast($last, $deserialize = false)
     {
         $this->container['last'] = $last;
 

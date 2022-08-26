@@ -227,7 +227,7 @@ class ApplicationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setApplications($applications)
+    public function setApplications($applications, $deserialize = false)
     {
 
         

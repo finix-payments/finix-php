@@ -278,7 +278,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setCity($city)
+    public function setCity($city, $deserialize = false)
     {
 
         if (!is_null($city) && (mb_strlen($city) < 1)) {
@@ -308,7 +308,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
 
         if (!is_null($country) && (mb_strlen($country) < 1)) {
@@ -338,7 +338,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setRegion($region)
+    public function setRegion($region, $deserialize = false)
     {
 
         if (!is_null($region) && (mb_strlen($region) < 1)) {
@@ -368,7 +368,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLine2($line2)
+    public function setLine2($line2, $deserialize = false)
     {
 
         if (!is_null($line2) && (mb_strlen($line2) < 1)) {
@@ -398,7 +398,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setLine1($line1, $deserialize = false)
     {
 
         if (!is_null($line1) && (mb_strlen($line1) < 1)) {
@@ -428,7 +428,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postal_code, $deserialize = false)
     {
 
         if (!is_null($postal_code) && (mb_strlen($postal_code) < 1)) {

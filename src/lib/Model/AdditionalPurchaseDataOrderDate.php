@@ -244,7 +244,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setDay($day)
+    public function setDay($day, $deserialize = false)
     {
         $this->container['day'] = $day;
 
@@ -268,7 +268,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setMonth($month)
+    public function setMonth($month, $deserialize = false)
     {
         $this->container['month'] = $month;
 
@@ -292,7 +292,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
      *
      * @return self
      */
-    public function setYear($year)
+    public function setYear($year, $deserialize = false)
     {
         $this->container['year'] = $year;
 

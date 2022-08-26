@@ -518,7 +518,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -542,10 +542,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -576,7 +576,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -600,7 +600,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -624,7 +624,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -648,7 +648,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -672,7 +672,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -696,7 +696,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardPresentDetails($card_present_details)
+    public function setCardPresentDetails($card_present_details, $deserialize = false)
     {
         $this->container['card_present_details'] = $card_present_details;
 
@@ -720,7 +720,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -744,7 +744,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
         $this->container['destination'] = $destination;
 
@@ -768,7 +768,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
         $this->container['device'] = $device;
 
@@ -792,7 +792,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFee($fee)
+    public function setFee($fee, $deserialize = false)
     {
         $this->container['fee'] = $fee;
 
@@ -816,7 +816,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeType($fee_type)
+    public function setFeeType($fee_type, $deserialize = false)
     {
         $this->container['fee_type'] = $fee_type;
 
@@ -840,7 +840,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id)
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
 
@@ -864,7 +864,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -888,7 +888,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity)
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
 
@@ -912,7 +912,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessages($messages)
+    public function setMessages($messages, $deserialize = false)
     {
         $this->container['messages'] = $messages;
 
@@ -936,7 +936,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRaw($raw)
+    public function setRaw($raw, $deserialize = false)
     {
         $this->container['raw'] = $raw;
 
@@ -960,7 +960,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReadyToSettleAt($ready_to_settle_at)
+    public function setReadyToSettleAt($ready_to_settle_at, $deserialize = false)
     {
         $this->container['ready_to_settle_at'] = $ready_to_settle_at;
 
@@ -984,7 +984,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $this->container['source'] = $source;
 
@@ -1008,10 +1008,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true)) {
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'state', must be one of '%s'",
@@ -1042,7 +1042,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setStatementDescriptor($statement_descriptor)
+    public function setStatementDescriptor($statement_descriptor, $deserialize = false)
     {
         $this->container['statement_descriptor'] = $statement_descriptor;
 
@@ -1066,10 +1066,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSubtype($subtype)
+    public function setSubtype($subtype, $deserialize = false)
     {
         $allowedValues = $this->getSubtypeAllowableValues();
-        if (!is_null($subtype) && !in_array($subtype, $allowedValues, true)) {
+        if (!is_null($subtype) && !in_array($subtype, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'subtype', must be one of '%s'",
@@ -1100,7 +1100,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTraceId($trace_id)
+    public function setTraceId($trace_id, $deserialize = false)
     {
         $this->container['trace_id'] = $trace_id;
 
@@ -1124,7 +1124,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExternallyFunded($externally_funded)
+    public function setExternallyFunded($externally_funded, $deserialize = false)
     {
         $this->container['externally_funded'] = $externally_funded;
 
@@ -1148,7 +1148,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFailureCode($failure_code)
+    public function setFailureCode($failure_code, $deserialize = false)
     {
         $this->container['failure_code'] = $failure_code;
 
@@ -1172,7 +1172,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFailureMessage($failure_message)
+    public function setFailureMessage($failure_message, $deserialize = false)
     {
         $this->container['failure_message'] = $failure_message;
 
@@ -1196,7 +1196,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAdditionalBuyerCharges($additional_buyer_charges)
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
         $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
@@ -1220,7 +1220,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

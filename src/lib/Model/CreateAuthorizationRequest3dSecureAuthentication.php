@@ -248,7 +248,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
      *
      * @return self
      */
-    public function setCardholderAuthentication($cardholder_authentication)
+    public function setCardholderAuthentication($cardholder_authentication, $deserialize = false)
     {
         $this->container['cardholder_authentication'] = $cardholder_authentication;
 
@@ -272,7 +272,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
      *
      * @return self
      */
-    public function setCardholderIpAddress($cardholder_ip_address)
+    public function setCardholderIpAddress($cardholder_ip_address, $deserialize = false)
     {
 
         
@@ -299,7 +299,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
      *
      * @return self
      */
-    public function setElectronicCommerceIndicator($electronic_commerce_indicator)
+    public function setElectronicCommerceIndicator($electronic_commerce_indicator, $deserialize = false)
     {
         $this->container['electronic_commerce_indicator'] = $electronic_commerce_indicator;
 
@@ -323,7 +323,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
      *
      * @return self
      */
-    public function setTransactionId($transaction_id)
+    public function setTransactionId($transaction_id, $deserialize = false)
     {
         $this->container['transaction_id'] = $transaction_id;
 

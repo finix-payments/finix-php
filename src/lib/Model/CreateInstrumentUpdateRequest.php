@@ -229,7 +229,7 @@ class CreateInstrumentUpdateRequest implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setFile($file)
+    public function setFile($file, $deserialize = false)
     {
         $this->container['file'] = $file;
 
@@ -253,7 +253,7 @@ class CreateInstrumentUpdateRequest implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setRequest($request)
+    public function setRequest($request, $deserialize = false)
     {
         $this->container['request'] = $request;
 

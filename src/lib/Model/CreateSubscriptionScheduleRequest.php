@@ -315,10 +315,10 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setLineItemType($line_item_type)
+    public function setLineItemType($line_item_type, $deserialize = false)
     {
         $allowedValues = $this->getLineItemTypeAllowableValues();
-        if (!in_array($line_item_type, $allowedValues, true)) {
+        if (!in_array($line_item_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'line_item_type', must be one of '%s'",
@@ -355,7 +355,7 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
 
@@ -379,7 +379,7 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setFixedTimeIntervalOffset($fixed_time_interval_offset)
+    public function setFixedTimeIntervalOffset($fixed_time_interval_offset, $deserialize = false)
     {
         $this->container['fixed_time_interval_offset'] = $fixed_time_interval_offset;
 
@@ -403,7 +403,7 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setPeriodOffset($period_offset)
+    public function setPeriodOffset($period_offset, $deserialize = false)
     {
         $this->container['period_offset'] = $period_offset;
 
@@ -427,10 +427,10 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setSubscriptionType($subscription_type)
+    public function setSubscriptionType($subscription_type, $deserialize = false)
     {
         $allowedValues = $this->getSubscriptionTypeAllowableValues();
-        if (!in_array($subscription_type, $allowedValues, true)) {
+        if (!in_array($subscription_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'subscription_type', must be one of '%s'",
@@ -461,7 +461,7 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

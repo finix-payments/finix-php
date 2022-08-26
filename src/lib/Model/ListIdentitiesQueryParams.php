@@ -301,7 +301,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setSort($sort)
+    public function setSort($sort, $deserialize = false)
     {
         $this->container['sort'] = $sort;
 
@@ -325,7 +325,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setAfterCursor($after_cursor)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
 
@@ -349,7 +349,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setLimit($limit, $deserialize = false)
     {
         $this->container['limit'] = $limit;
 
@@ -373,7 +373,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -397,7 +397,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setCreatedAtGte($created_at_gte)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
         $this->container['created_at_gte'] = $created_at_gte;
 
@@ -421,7 +421,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setCreatedAtLte($created_at_lte)
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
 
@@ -445,7 +445,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setDefaultStatementDescriptor($default_statement_descriptor)
+    public function setDefaultStatementDescriptor($default_statement_descriptor, $deserialize = false)
     {
         $this->container['default_statement_descriptor'] = $default_statement_descriptor;
 
@@ -469,7 +469,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setBusinessName($business_name)
+    public function setBusinessName($business_name, $deserialize = false)
     {
         $this->container['business_name'] = $business_name;
 
@@ -493,7 +493,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setBusinessType($business_type)
+    public function setBusinessType($business_type, $deserialize = false)
     {
         $this->container['business_type'] = $business_type;
 
@@ -517,7 +517,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setEmail($email, $deserialize = false)
     {
         $this->container['email'] = $email;
 
@@ -541,7 +541,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name, $deserialize = false)
     {
         $this->container['first_name'] = $first_name;
 
@@ -565,7 +565,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name, $deserialize = false)
     {
         $this->container['last_name'] = $last_name;
 
@@ -589,7 +589,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setTitle($title, $deserialize = false)
     {
         $this->container['title'] = $title;
 
@@ -613,7 +613,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setBeforeCursor($before_cursor)
+    public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
 

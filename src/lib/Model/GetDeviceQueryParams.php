@@ -223,7 +223,7 @@ class GetDeviceQueryParams implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setIncludeConnection($include_connection)
+    public function setIncludeConnection($include_connection, $deserialize = false)
     {
         $this->container['include_connection'] = $include_connection;
 

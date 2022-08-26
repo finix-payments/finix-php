@@ -277,7 +277,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -301,7 +301,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -325,7 +325,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -349,7 +349,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
 
@@ -373,7 +373,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setState($state)
+    public function setState($state, $deserialize = false)
     {
         $this->container['state'] = $state;
 
@@ -397,7 +397,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -421,7 +421,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessages($messages)
+    public function setMessages($messages, $deserialize = false)
     {
         $this->container['messages'] = $messages;
 
@@ -445,7 +445,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTraceId($trace_id)
+    public function setTraceId($trace_id, $deserialize = false)
     {
         $this->container['trace_id'] = $trace_id;
 
@@ -469,7 +469,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPaymentInstrument($payment_instrument)
+    public function setPaymentInstrument($payment_instrument, $deserialize = false)
     {
         $this->container['payment_instrument'] = $payment_instrument;
 
@@ -493,7 +493,7 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

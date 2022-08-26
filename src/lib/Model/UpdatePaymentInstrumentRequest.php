@@ -224,7 +224,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 

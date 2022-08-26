@@ -357,7 +357,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -381,10 +381,10 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -415,7 +415,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -439,7 +439,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -463,7 +463,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -487,7 +487,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -511,7 +511,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -535,7 +535,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setFingerprint($fingerprint)
+    public function setFingerprint($fingerprint, $deserialize = false)
     {
         $this->container['fingerprint'] = $fingerprint;
 
@@ -559,7 +559,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -583,10 +583,10 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setInstrumentType($instrument_type)
+    public function setInstrumentType($instrument_type, $deserialize = false)
     {
         $allowedValues = $this->getInstrumentTypeAllowableValues();
-        if (!is_null($instrument_type) && !in_array($instrument_type, $allowedValues, true)) {
+        if (!is_null($instrument_type) && !in_array($instrument_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'instrument_type', must be one of '%s'",
@@ -617,10 +617,10 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setPayloadType($payload_type)
+    public function setPayloadType($payload_type, $deserialize = false)
     {
         $allowedValues = $this->getPayloadTypeAllowableValues();
-        if (!is_null($payload_type) && !in_array($payload_type, $allowedValues, true)) {
+        if (!is_null($payload_type) && !in_array($payload_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'payload_type', must be one of '%s'",
@@ -651,7 +651,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -227,7 +227,7 @@ class WebhooksListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setWebhooks($webhooks)
+    public function setWebhooks($webhooks, $deserialize = false)
     {
 
         

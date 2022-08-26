@@ -236,7 +236,7 @@ class InstrumentUpdateLinks implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -260,7 +260,7 @@ class InstrumentUpdateLinks implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setPaymentInstrument($payment_instrument)
+    public function setPaymentInstrument($payment_instrument, $deserialize = false)
     {
         $this->container['payment_instrument'] = $payment_instrument;
 
@@ -284,7 +284,7 @@ class InstrumentUpdateLinks implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 

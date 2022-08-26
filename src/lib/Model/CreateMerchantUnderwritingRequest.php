@@ -265,7 +265,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -289,10 +289,10 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setGateway($gateway)
+    public function setGateway($gateway, $deserialize = false)
     {
         $allowedValues = $this->getGatewayAllowableValues();
-        if (!is_null($gateway) && !in_array($gateway, $allowedValues, true)) {
+        if (!is_null($gateway) && !in_array($gateway, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'gateway', must be one of '%s'",
@@ -323,7 +323,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setProcessor($processor)
+    public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
 
@@ -347,7 +347,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setProcessorSpecificParameters($processor_specific_parameters)
+    public function setProcessorSpecificParameters($processor_specific_parameters, $deserialize = false)
     {
         $this->container['processor_specific_parameters'] = $processor_specific_parameters;
 

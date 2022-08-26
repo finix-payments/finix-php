@@ -263,10 +263,10 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setAction($action)
+    public function setAction($action, $deserialize = false)
     {
         $allowedValues = $this->getActionAllowableValues();
-        if (!is_null($action) && !in_array($action, $allowedValues, true)) {
+        if (!is_null($action) && !in_array($action, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'action', must be one of '%s'",
@@ -297,7 +297,7 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setActivationCode($activation_code)
+    public function setActivationCode($activation_code, $deserialize = false)
     {
         $this->container['activation_code'] = $activation_code;
 
@@ -321,7 +321,7 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -345,7 +345,7 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setIdleMessage($idle_message)
+    public function setIdleMessage($idle_message, $deserialize = false)
     {
         $this->container['idle_message'] = $idle_message;
 

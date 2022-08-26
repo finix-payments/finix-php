@@ -384,7 +384,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -408,7 +408,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
 
         
@@ -435,7 +435,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -459,7 +459,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -483,7 +483,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardCvvRequired($card_cvv_required)
+    public function setCardCvvRequired($card_cvv_required, $deserialize = false)
     {
         $this->container['card_cvv_required'] = $card_cvv_required;
 
@@ -507,7 +507,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCardExpirationDateRequired($card_expiration_date_required)
+    public function setCardExpirationDateRequired($card_expiration_date_required, $deserialize = false)
     {
         $this->container['card_expiration_date_required'] = $card_expiration_date_required;
 
@@ -531,7 +531,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled)
+    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled, $deserialize = false)
     {
         $this->container['creating_transfer_from_report_enabled'] = $creating_transfer_from_report_enabled;
 
@@ -555,7 +555,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -579,7 +579,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -603,7 +603,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOwner($owner)
+    public function setOwner($owner, $deserialize = false)
     {
 
         
@@ -630,7 +630,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setProcessingEnabled($processing_enabled)
+    public function setProcessingEnabled($processing_enabled, $deserialize = false)
     {
         $this->container['processing_enabled'] = $processing_enabled;
 
@@ -654,7 +654,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlementEnabled($settlement_enabled)
+    public function setSettlementEnabled($settlement_enabled, $deserialize = false)
     {
         $this->container['settlement_enabled'] = $settlement_enabled;
 
@@ -678,10 +678,10 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSettlementFundingIdentifier($settlement_funding_identifier)
+    public function setSettlementFundingIdentifier($settlement_funding_identifier, $deserialize = false)
     {
         $allowedValues = $this->getSettlementFundingIdentifierAllowableValues();
-        if (!is_null($settlement_funding_identifier) && !in_array($settlement_funding_identifier, $allowedValues, true)) {
+        if (!is_null($settlement_funding_identifier) && !in_array($settlement_funding_identifier, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'settlement_funding_identifier', must be one of '%s'",
@@ -712,10 +712,10 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReadyToSettleUpon($ready_to_settle_upon)
+    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
     {
         $allowedValues = $this->getReadyToSettleUponAllowableValues();
-        if (!is_null($ready_to_settle_upon) && !in_array($ready_to_settle_upon, $allowedValues, true)) {
+        if (!is_null($ready_to_settle_upon) && !in_array($ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'ready_to_settle_upon', must be one of '%s'",
@@ -746,10 +746,10 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon)
+    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon, $deserialize = false)
     {
         $allowedValues = $this->getFeeReadyToSettleUponAllowableValues();
-        if (!is_null($fee_ready_to_settle_upon) && !in_array($fee_ready_to_settle_upon, $allowedValues, true)) {
+        if (!is_null($fee_ready_to_settle_upon) && !in_array($fee_ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'fee_ready_to_settle_upon', must be one of '%s'",
@@ -780,7 +780,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -248,7 +248,7 @@ class DisputeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAdjustmentTransfers($adjustment_transfers)
+    public function setAdjustmentTransfers($adjustment_transfers, $deserialize = false)
     {
         $this->container['adjustment_transfers'] = $adjustment_transfers;
 
@@ -272,7 +272,7 @@ class DisputeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -296,7 +296,7 @@ class DisputeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEvidence($evidence)
+    public function setEvidence($evidence, $deserialize = false)
     {
         $this->container['evidence'] = $evidence;
 
@@ -320,7 +320,7 @@ class DisputeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -344,7 +344,7 @@ class DisputeLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfer($transfer)
+    public function setTransfer($transfer, $deserialize = false)
     {
         $this->container['transfer'] = $transfer;
 

@@ -227,7 +227,7 @@ class DisputeEvidenceListEmbedded implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setEvidences($evidences)
+    public function setEvidences($evidences, $deserialize = false)
     {
 
         

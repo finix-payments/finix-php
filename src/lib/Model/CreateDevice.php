@@ -294,7 +294,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -318,7 +318,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description, $deserialize = false)
     {
         $this->container['description'] = $description;
 
@@ -342,7 +342,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setConfiguration($configuration)
+    public function setConfiguration($configuration, $deserialize = false)
     {
         $this->container['configuration'] = $configuration;
 
@@ -366,7 +366,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchantId($merchant_id)
+    public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
 
@@ -390,10 +390,10 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setModel($model)
+    public function setModel($model, $deserialize = false)
     {
         $allowedValues = $this->getModelAllowableValues();
-        if (!is_null($model) && !in_array($model, $allowedValues, true)) {
+        if (!is_null($model) && !in_array($model, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'model', must be one of '%s'",
@@ -424,7 +424,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 

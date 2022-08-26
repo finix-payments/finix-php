@@ -235,7 +235,7 @@ class InputDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setInputText($input_text)
+    public function setInputText($input_text, $deserialize = false)
     {
         $this->container['input_text'] = $input_text;
 
@@ -259,7 +259,7 @@ class InputDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelection($selection)
+    public function setSelection($selection, $deserialize = false)
     {
         $this->container['selection'] = $selection;
 
@@ -283,7 +283,7 @@ class InputDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSignatureData($signature_data)
+    public function setSignatureData($signature_data, $deserialize = false)
     {
         $this->container['signature_data'] = $signature_data;
 

@@ -227,7 +227,7 @@ class FeesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFees($fees)
+    public function setFees($fees, $deserialize = false)
     {
 
         

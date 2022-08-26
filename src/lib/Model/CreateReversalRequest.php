@@ -253,7 +253,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setRefundAmount($refund_amount)
+    public function setRefundAmount($refund_amount, $deserialize = false)
     {
         $this->container['refund_amount'] = $refund_amount;
 
@@ -277,7 +277,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -301,7 +301,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setDevice($device)
+    public function setDevice($device, $deserialize = false)
     {
         $this->container['device'] = $device;
 
@@ -325,7 +325,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -349,7 +349,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -373,7 +373,7 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setOperationKey($operation_key)
+    public function setOperationKey($operation_key, $deserialize = false)
     {
         $this->container['operation_key'] = $operation_key;
 

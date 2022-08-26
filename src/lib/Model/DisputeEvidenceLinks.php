@@ -224,7 +224,7 @@ class DisputeEvidenceLinks implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 

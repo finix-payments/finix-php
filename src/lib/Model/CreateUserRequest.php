@@ -230,7 +230,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -254,7 +254,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 

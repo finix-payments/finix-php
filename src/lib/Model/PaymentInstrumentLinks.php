@@ -254,7 +254,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -278,7 +278,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setAuthorizations($authorizations)
+    public function setAuthorizations($authorizations, $deserialize = false)
     {
         $this->container['authorizations'] = $authorizations;
 
@@ -302,7 +302,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 
@@ -326,7 +326,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setVerifications($verifications)
+    public function setVerifications($verifications, $deserialize = false)
     {
         $this->container['verifications'] = $verifications;
 
@@ -350,7 +350,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -374,7 +374,7 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 

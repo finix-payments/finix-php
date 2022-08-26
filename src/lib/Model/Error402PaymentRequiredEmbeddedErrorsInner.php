@@ -285,10 +285,10 @@ class Error402PaymentRequiredEmbeddedErrorsInner implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setCode($code)
+    public function setCode($code, $deserialize = false)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (!is_null($code) && !in_array($code, $allowedValues, true)) {
+        if (!is_null($code) && !in_array($code, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'code', must be one of '%s'",
@@ -319,7 +319,7 @@ class Error402PaymentRequiredEmbeddedErrorsInner implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLogref($logref)
+    public function setLogref($logref, $deserialize = false)
     {
         $this->container['logref'] = $logref;
 
@@ -343,10 +343,10 @@ class Error402PaymentRequiredEmbeddedErrorsInner implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setMessage($message, $deserialize = false)
     {
         $allowedValues = $this->getMessageAllowableValues();
-        if (!is_null($message) && !in_array($message, $allowedValues, true)) {
+        if (!is_null($message) && !in_array($message, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'message', must be one of '%s'",
@@ -377,7 +377,7 @@ class Error402PaymentRequiredEmbeddedErrorsInner implements ModelInterface, Arra
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

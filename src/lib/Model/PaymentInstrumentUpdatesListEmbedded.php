@@ -230,7 +230,7 @@ class PaymentInstrumentUpdatesListEmbedded implements ModelInterface, ArrayAcces
      *
      * @return self
      */
-    public function setUpdates($updates)
+    public function setUpdates($updates, $deserialize = false)
     {
 
         

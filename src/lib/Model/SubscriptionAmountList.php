@@ -229,7 +229,7 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setPage($page)
+    public function setPage($page, $deserialize = false)
     {
         $this->container['page'] = $page;
 
@@ -253,7 +253,7 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setEmbedded($_embedded)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
         $this->container['_embedded'] = $_embedded;
 

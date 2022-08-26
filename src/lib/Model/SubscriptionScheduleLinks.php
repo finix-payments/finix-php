@@ -230,7 +230,7 @@ class SubscriptionScheduleLinks implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -254,7 +254,7 @@ class SubscriptionScheduleLinks implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setAmounts($amounts)
+    public function setAmounts($amounts, $deserialize = false)
     {
         $this->container['amounts'] = $amounts;
 

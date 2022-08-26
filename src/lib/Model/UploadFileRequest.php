@@ -223,7 +223,7 @@ class UploadFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setFile($file)
+    public function setFile($file, $deserialize = false)
     {
         $this->container['file'] = $file;
 

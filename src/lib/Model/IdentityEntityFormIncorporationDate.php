@@ -236,7 +236,7 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setYear($year)
+    public function setYear($year, $deserialize = false)
     {
         $this->container['year'] = $year;
 
@@ -260,7 +260,7 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setDay($day)
+    public function setDay($day, $deserialize = false)
     {
         $this->container['day'] = $day;
 
@@ -284,7 +284,7 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      *
      * @return self
      */
-    public function setMonth($month)
+    public function setMonth($month, $deserialize = false)
     {
         $this->container['month'] = $month;
 

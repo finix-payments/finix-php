@@ -348,10 +348,10 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -382,10 +382,10 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setAvailableAccountType($available_account_type)
+    public function setAvailableAccountType($available_account_type, $deserialize = false)
     {
         $allowedValues = $this->getAvailableAccountTypeAllowableValues();
-        if (!is_null($available_account_type) && !in_array($available_account_type, $allowedValues, true)) {
+        if (!is_null($available_account_type) && !in_array($available_account_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'available_account_type', must be one of '%s'",
@@ -416,7 +416,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEmvData($emv_data)
+    public function setEmvData($emv_data, $deserialize = false)
     {
         $this->container['emv_data'] = $emv_data;
 
@@ -440,7 +440,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEmvDataKeySerialNumber($emv_data_key_serial_number)
+    public function setEmvDataKeySerialNumber($emv_data_key_serial_number, $deserialize = false)
     {
         $this->container['emv_data_key_serial_number'] = $emv_data_key_serial_number;
 
@@ -464,7 +464,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEncryptedEmvData($encrypted_emv_data)
+    public function setEncryptedEmvData($encrypted_emv_data, $deserialize = false)
     {
         $this->container['encrypted_emv_data'] = $encrypted_emv_data;
 
@@ -488,7 +488,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEncryptedEmvFormat($encrypted_emv_format)
+    public function setEncryptedEmvFormat($encrypted_emv_format, $deserialize = false)
     {
         $this->container['encrypted_emv_format'] = $encrypted_emv_format;
 
@@ -512,7 +512,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setExpirationMonth($expiration_month)
+    public function setExpirationMonth($expiration_month, $deserialize = false)
     {
         $this->container['expiration_month'] = $expiration_month;
 
@@ -536,7 +536,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setExpirationYear($expiration_year)
+    public function setExpirationYear($expiration_year, $deserialize = false)
     {
         $this->container['expiration_year'] = $expiration_year;
 
@@ -560,7 +560,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name, $deserialize = false)
     {
         $this->container['first_name'] = $first_name;
 
@@ -584,7 +584,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name, $deserialize = false)
     {
         $this->container['last_name'] = $last_name;
 
@@ -608,7 +608,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -632,7 +632,7 @@ class CardPresentInstrumentForm implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setNumber($number)
+    public function setNumber($number, $deserialize = false)
     {
         $this->container['number'] = $number;
 

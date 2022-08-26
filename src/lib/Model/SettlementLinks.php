@@ -278,7 +278,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -302,7 +302,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCredits($credits)
+    public function setCredits($credits, $deserialize = false)
     {
         $this->container['credits'] = $credits;
 
@@ -326,7 +326,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDebits($debits)
+    public function setDebits($debits, $deserialize = false)
     {
         $this->container['debits'] = $debits;
 
@@ -350,7 +350,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDisputes($disputes)
+    public function setDisputes($disputes, $deserialize = false)
     {
         $this->container['disputes'] = $disputes;
 
@@ -374,7 +374,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFees($fees)
+    public function setFees($fees, $deserialize = false)
     {
         $this->container['fees'] = $fees;
 
@@ -398,7 +398,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFundingTransfers($funding_transfers)
+    public function setFundingTransfers($funding_transfers, $deserialize = false)
     {
         $this->container['funding_transfers'] = $funding_transfers;
 
@@ -422,7 +422,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -446,7 +446,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReversals($reversals)
+    public function setReversals($reversals, $deserialize = false)
     {
         $this->container['reversals'] = $reversals;
 
@@ -470,7 +470,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSelf($self)
+    public function setSelf($self, $deserialize = false)
     {
         $this->container['self'] = $self;
 
@@ -494,7 +494,7 @@ class SettlementLinks implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransfers($transfers)
+    public function setTransfers($transfers, $deserialize = false)
     {
         $this->container['transfers'] = $transfers;
 

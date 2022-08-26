@@ -227,7 +227,7 @@ class SubscriptionSchedulesListEmbedded implements ModelInterface, ArrayAccess, 
      *
      * @return self
      */
-    public function setSubscriptionSchedules($subscription_schedules)
+    public function setSubscriptionSchedules($subscription_schedules, $deserialize = false)
     {
 
         

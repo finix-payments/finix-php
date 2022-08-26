@@ -262,10 +262,10 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -296,7 +296,7 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setBasic($basic)
+    public function setBasic($basic, $deserialize = false)
     {
         $this->container['basic'] = $basic;
 
@@ -320,7 +320,7 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      *
      * @return self
      */
-    public function setBearer($bearer)
+    public function setBearer($bearer, $deserialize = false)
     {
         $this->container['bearer'] = $bearer;
 

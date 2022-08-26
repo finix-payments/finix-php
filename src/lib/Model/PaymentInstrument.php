@@ -590,7 +590,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -614,7 +614,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -638,7 +638,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -662,10 +662,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setAccountType($account_type)
+    public function setAccountType($account_type, $deserialize = false)
     {
         $allowedValues = $this->getAccountTypeAllowableValues();
-        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true)) {
+        if (!is_null($account_type) && !in_array($account_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'account_type', must be one of '%s'",
@@ -696,7 +696,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -720,7 +720,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setBankCode($bank_code)
+    public function setBankCode($bank_code, $deserialize = false)
     {
 
         
@@ -747,7 +747,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $this->container['country'] = $country;
 
@@ -771,7 +771,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -795,7 +795,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setFingerprint($fingerprint)
+    public function setFingerprint($fingerprint, $deserialize = false)
     {
         $this->container['fingerprint'] = $fingerprint;
 
@@ -819,7 +819,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setIdentity($identity)
+    public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
 
@@ -843,10 +843,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setInstrumentType($instrument_type)
+    public function setInstrumentType($instrument_type, $deserialize = false)
     {
         $allowedValues = $this->getInstrumentTypeAllowableValues();
-        if (!is_null($instrument_type) && !in_array($instrument_type, $allowedValues, true)) {
+        if (!is_null($instrument_type) && !in_array($instrument_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'instrument_type', must be one of '%s'",
@@ -877,7 +877,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setMaskedAccountNumber($masked_account_number)
+    public function setMaskedAccountNumber($masked_account_number, $deserialize = false)
     {
 
         
@@ -904,7 +904,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -928,7 +928,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -952,10 +952,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setType($type)
+    public function setType($type, $deserialize = false)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -986,7 +986,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 
@@ -1010,7 +1010,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setAddress($address, $deserialize = false)
     {
         $this->container['address'] = $address;
 
@@ -1034,10 +1034,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setAddressVerification($address_verification)
+    public function setAddressVerification($address_verification, $deserialize = false)
     {
         $allowedValues = $this->getAddressVerificationAllowableValues();
-        if (!is_null($address_verification) && !in_array($address_verification, $allowedValues, true)) {
+        if (!is_null($address_verification) && !in_array($address_verification, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'address_verification', must be one of '%s'",
@@ -1068,7 +1068,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setBin($bin)
+    public function setBin($bin, $deserialize = false)
     {
 
         
@@ -1095,7 +1095,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setBrand($brand)
+    public function setBrand($brand, $deserialize = false)
     {
 
         
@@ -1122,7 +1122,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCardName($card_name)
+    public function setCardName($card_name, $deserialize = false)
     {
         $this->container['card_name'] = $card_name;
 
@@ -1146,7 +1146,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCardType($card_type)
+    public function setCardType($card_type, $deserialize = false)
     {
 
         
@@ -1173,7 +1173,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setExpirationMonth($expiration_month)
+    public function setExpirationMonth($expiration_month, $deserialize = false)
     {
 
         if (!is_null($expiration_month) && ($expiration_month > 12)) {
@@ -1206,7 +1206,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setExpirationYear($expiration_year)
+    public function setExpirationYear($expiration_year, $deserialize = false)
     {
 
         if (!is_null($expiration_year) && ($expiration_year < 1)) {
@@ -1236,7 +1236,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setFastFundsIndicator($fast_funds_indicator)
+    public function setFastFundsIndicator($fast_funds_indicator, $deserialize = false)
     {
         $this->container['fast_funds_indicator'] = $fast_funds_indicator;
 
@@ -1260,7 +1260,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setLastFour($last_four)
+    public function setLastFour($last_four, $deserialize = false)
     {
 
         
@@ -1287,7 +1287,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setOnlineGambingBlockIndicator($online_gambing_block_indicator)
+    public function setOnlineGambingBlockIndicator($online_gambing_block_indicator, $deserialize = false)
     {
         $this->container['online_gambing_block_indicator'] = $online_gambing_block_indicator;
 
@@ -1311,10 +1311,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setPayloadType($payload_type)
+    public function setPayloadType($payload_type, $deserialize = false)
     {
         $allowedValues = $this->getPayloadTypeAllowableValues();
-        if (!is_null($payload_type) && !in_array($payload_type, $allowedValues, true)) {
+        if (!is_null($payload_type) && !in_array($payload_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'payload_type', must be one of '%s'",
@@ -1345,7 +1345,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setPushFundsBlockIndicator($push_funds_block_indicator)
+    public function setPushFundsBlockIndicator($push_funds_block_indicator, $deserialize = false)
     {
         $this->container['push_funds_block_indicator'] = $push_funds_block_indicator;
 
@@ -1369,10 +1369,10 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setSecurityCodeVerification($security_code_verification)
+    public function setSecurityCodeVerification($security_code_verification, $deserialize = false)
     {
         $allowedValues = $this->getSecurityCodeVerificationAllowableValues();
-        if (!is_null($security_code_verification) && !in_array($security_code_verification, $allowedValues, true)) {
+        if (!is_null($security_code_verification) && !in_array($security_code_verification, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'security_code_verification', must be one of '%s'",

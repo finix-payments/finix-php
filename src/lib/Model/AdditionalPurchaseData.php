@@ -293,7 +293,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCustomerReferenceNumber($customer_reference_number)
+    public function setCustomerReferenceNumber($customer_reference_number, $deserialize = false)
     {
         $this->container['customer_reference_number'] = $customer_reference_number;
 
@@ -317,7 +317,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCustomsDutyAmount($customs_duty_amount)
+    public function setCustomsDutyAmount($customs_duty_amount, $deserialize = false)
     {
         $this->container['customs_duty_amount'] = $customs_duty_amount;
 
@@ -341,7 +341,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setDestinationCountryCode($destination_country_code)
+    public function setDestinationCountryCode($destination_country_code, $deserialize = false)
     {
         $this->container['destination_country_code'] = $destination_country_code;
 
@@ -365,7 +365,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setDestinationPostalCode($destination_postal_code)
+    public function setDestinationPostalCode($destination_postal_code, $deserialize = false)
     {
         $this->container['destination_postal_code'] = $destination_postal_code;
 
@@ -389,7 +389,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setDiscountAmount($discount_amount)
+    public function setDiscountAmount($discount_amount, $deserialize = false)
     {
         $this->container['discount_amount'] = $discount_amount;
 
@@ -413,7 +413,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setInvoiceReferenceNumber($invoice_reference_number)
+    public function setInvoiceReferenceNumber($invoice_reference_number, $deserialize = false)
     {
         $this->container['invoice_reference_number'] = $invoice_reference_number;
 
@@ -437,7 +437,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setItemData($item_data)
+    public function setItemData($item_data, $deserialize = false)
     {
         $this->container['item_data'] = $item_data;
 
@@ -461,7 +461,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setOrderDate($order_date)
+    public function setOrderDate($order_date, $deserialize = false)
     {
         $this->container['order_date'] = $order_date;
 
@@ -485,7 +485,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setSalesTax($sales_tax)
+    public function setSalesTax($sales_tax, $deserialize = false)
     {
         $this->container['sales_tax'] = $sales_tax;
 
@@ -509,7 +509,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setShipFromPostalCode($ship_from_postal_code)
+    public function setShipFromPostalCode($ship_from_postal_code, $deserialize = false)
     {
         $this->container['ship_from_postal_code'] = $ship_from_postal_code;
 
@@ -533,7 +533,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setShippingAmount($shipping_amount)
+    public function setShippingAmount($shipping_amount, $deserialize = false)
     {
         $this->container['shipping_amount'] = $shipping_amount;
 
@@ -557,7 +557,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTaxExempt($tax_exempt)
+    public function setTaxExempt($tax_exempt, $deserialize = false)
     {
         $this->container['tax_exempt'] = $tax_exempt;
 

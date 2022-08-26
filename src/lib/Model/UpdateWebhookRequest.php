@@ -229,7 +229,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrl($url, $deserialize = false)
     {
         $this->container['url'] = $url;
 
@@ -253,7 +253,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 

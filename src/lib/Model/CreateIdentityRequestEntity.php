@@ -248,7 +248,7 @@ class CreateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setEmail($email, $deserialize = false)
     {
         $this->container['email'] = $email;
 
@@ -272,7 +272,7 @@ class CreateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name, $deserialize = false)
     {
         $this->container['first_name'] = $first_name;
 
@@ -296,7 +296,7 @@ class CreateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name, $deserialize = false)
     {
         $this->container['last_name'] = $last_name;
 
@@ -320,7 +320,7 @@ class CreateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setPersonalAddress($personal_address)
+    public function setPersonalAddress($personal_address, $deserialize = false)
     {
         $this->container['personal_address'] = $personal_address;
 
@@ -344,7 +344,7 @@ class CreateIdentityRequestEntity implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setPhone($phone)
+    public function setPhone($phone, $deserialize = false)
     {
         $this->container['phone'] = $phone;
 

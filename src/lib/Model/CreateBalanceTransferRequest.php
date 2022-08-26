@@ -323,7 +323,7 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description, $deserialize = false)
     {
         $this->container['description'] = $description;
 
@@ -347,7 +347,7 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -371,10 +371,10 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setDestination($destination)
+    public function setDestination($destination, $deserialize = false)
     {
         $allowedValues = $this->getDestinationAllowableValues();
-        if (!in_array($destination, $allowedValues, true)) {
+        if (!in_array($destination, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'destination', must be one of '%s'",
@@ -405,7 +405,7 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
 
@@ -429,7 +429,7 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
 
@@ -453,10 +453,10 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setSource($source)
+    public function setSource($source, $deserialize = false)
     {
         $allowedValues = $this->getSourceAllowableValues();
-        if (!in_array($source, $allowedValues, true)) {
+        if (!in_array($source, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'source', must be one of '%s'",
@@ -487,7 +487,7 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setProcessorType($processor_type)
+    public function setProcessorType($processor_type, $deserialize = false)
     {
         $this->container['processor_type'] = $processor_type;
 

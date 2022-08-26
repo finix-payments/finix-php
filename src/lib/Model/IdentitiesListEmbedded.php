@@ -224,7 +224,7 @@ class IdentitiesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setIdentities($identities)
+    public function setIdentities($identities, $deserialize = false)
     {
 
         

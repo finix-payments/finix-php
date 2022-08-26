@@ -230,7 +230,7 @@ class SubscriptionSchedulePeriodOffset implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
-    public function setDay($day)
+    public function setDay($day, $deserialize = false)
     {
         $this->container['day'] = $day;
 
@@ -254,7 +254,7 @@ class SubscriptionSchedulePeriodOffset implements ModelInterface, ArrayAccess, \
      *
      * @return self
      */
-    public function setMonth($month)
+    public function setMonth($month, $deserialize = false)
     {
         $this->container['month'] = $month;
 

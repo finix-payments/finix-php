@@ -271,7 +271,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -295,7 +295,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -319,7 +319,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -343,7 +343,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -367,7 +367,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApplication($application)
+    public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
 
@@ -391,7 +391,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFeeProfile($fee_profile)
+    public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
 
@@ -415,7 +415,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setReserveProfile($reserve_profile)
+    public function setReserveProfile($reserve_profile, $deserialize = false)
     {
 
         
@@ -442,7 +442,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRiskProfile($risk_profile)
+    public function setRiskProfile($risk_profile, $deserialize = false)
     {
         $this->container['risk_profile'] = $risk_profile;
 
@@ -466,7 +466,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -2503,7 +2503,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAchSettlementDelayDays($ach_settlement_delay_days)
+    public function setAchSettlementDelayDays($ach_settlement_delay_days, $deserialize = false)
     {
 
         if (!is_null($ach_settlement_delay_days) && ($ach_settlement_delay_days < 0)) {
@@ -2533,7 +2533,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAllowSplitPayouts($allow_split_payouts)
+    public function setAllowSplitPayouts($allow_split_payouts, $deserialize = false)
     {
         $this->container['allow_split_payouts'] = $allow_split_payouts;
 
@@ -2557,7 +2557,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setAllowedBusinessApplicationIds($allowed_business_application_ids)
+    public function setAllowedBusinessApplicationIds($allowed_business_application_ids, $deserialize = false)
     {
         $allowedValues = $this->getAllowedBusinessApplicationIdsAllowableValues();
         if (!is_null($allowed_business_application_ids) && array_diff($allowed_business_application_ids, $allowedValues)) {
@@ -2590,7 +2590,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setCardAcceptorIdCode($card_acceptor_id_code)
+    public function setCardAcceptorIdCode($card_acceptor_id_code, $deserialize = false)
     {
         $this->container['card_acceptor_id_code'] = $card_acceptor_id_code;
 
@@ -2614,7 +2614,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setCardAcceptorTerminalId($card_acceptor_terminal_id)
+    public function setCardAcceptorTerminalId($card_acceptor_terminal_id, $deserialize = false)
     {
         $this->container['card_acceptor_terminal_id'] = $card_acceptor_terminal_id;
 
@@ -2638,7 +2638,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setConfigurationTemplates($configuration_templates)
+    public function setConfigurationTemplates($configuration_templates, $deserialize = false)
     {
         $this->container['configuration_templates'] = $configuration_templates;
 
@@ -2662,7 +2662,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultCurrencies($default_currencies)
+    public function setDefaultCurrencies($default_currencies, $deserialize = false)
     {
         $this->container['default_currencies'] = $default_currencies;
 
@@ -2686,10 +2686,10 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultMcc($default_mcc)
+    public function setDefaultMcc($default_mcc, $deserialize = false)
     {
         $allowedValues = $this->getDefaultMccAllowableValues();
-        if (!is_null($default_mcc) && !in_array($default_mcc, $allowedValues, true)) {
+        if (!is_null($default_mcc) && !in_array($default_mcc, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'default_mcc', must be one of '%s'",
@@ -2720,7 +2720,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderAccountNumber($default_sender_account_number)
+    public function setDefaultSenderAccountNumber($default_sender_account_number, $deserialize = false)
     {
         $this->container['default_sender_account_number'] = $default_sender_account_number;
 
@@ -2744,7 +2744,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderAddress($default_sender_address)
+    public function setDefaultSenderAddress($default_sender_address, $deserialize = false)
     {
         $this->container['default_sender_address'] = $default_sender_address;
 
@@ -2768,7 +2768,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderCity($default_sender_city)
+    public function setDefaultSenderCity($default_sender_city, $deserialize = false)
     {
         $this->container['default_sender_city'] = $default_sender_city;
 
@@ -2792,7 +2792,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderCountry($default_sender_country)
+    public function setDefaultSenderCountry($default_sender_country, $deserialize = false)
     {
         $this->container['default_sender_country'] = $default_sender_country;
 
@@ -2816,7 +2816,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderCountryCode($default_sender_country_code)
+    public function setDefaultSenderCountryCode($default_sender_country_code, $deserialize = false)
     {
         $this->container['default_sender_country_code'] = $default_sender_country_code;
 
@@ -2840,7 +2840,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderCountyCode($default_sender_county_code)
+    public function setDefaultSenderCountyCode($default_sender_county_code, $deserialize = false)
     {
         $this->container['default_sender_county_code'] = $default_sender_county_code;
 
@@ -2864,7 +2864,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderName($default_sender_name)
+    public function setDefaultSenderName($default_sender_name, $deserialize = false)
     {
         $this->container['default_sender_name'] = $default_sender_name;
 
@@ -2888,7 +2888,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderStateCode($default_sender_state_code)
+    public function setDefaultSenderStateCode($default_sender_state_code, $deserialize = false)
     {
         $this->container['default_sender_state_code'] = $default_sender_state_code;
 
@@ -2912,7 +2912,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setDefaultSenderZipCode($default_sender_zip_code)
+    public function setDefaultSenderZipCode($default_sender_zip_code, $deserialize = false)
     {
         $this->container['default_sender_zip_code'] = $default_sender_zip_code;
 
@@ -2936,7 +2936,7 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setIncludeColombiaData($include_colombia_data)
+    public function setIncludeColombiaData($include_colombia_data, $deserialize = false)
     {
         $this->container['include_colombia_data'] = $include_colombia_data;
 
@@ -2960,10 +2960,10 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setMotoEciindicator($moto_eciindicator)
+    public function setMotoEciindicator($moto_eciindicator, $deserialize = false)
     {
         $allowedValues = $this->getMotoEciindicatorAllowableValues();
-        if (!is_null($moto_eciindicator) && !in_array($moto_eciindicator, $allowedValues, true)) {
+        if (!is_null($moto_eciindicator) && !in_array($moto_eciindicator, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'moto_eciindicator', must be one of '%s'",
@@ -2994,10 +2994,10 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setPanEntryMode($pan_entry_mode)
+    public function setPanEntryMode($pan_entry_mode, $deserialize = false)
     {
         $allowedValues = $this->getPanEntryModeAllowableValues();
-        if (!is_null($pan_entry_mode) && !in_array($pan_entry_mode, $allowedValues, true)) {
+        if (!is_null($pan_entry_mode) && !in_array($pan_entry_mode, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'pan_entry_mode', must be one of '%s'",
@@ -3028,10 +3028,10 @@ class ProcessorApplicationConfig implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return self
      */
-    public function setPosConditionCode($pos_condition_code)
+    public function setPosConditionCode($pos_condition_code, $deserialize = false)
     {
         $allowedValues = $this->getPosConditionCodeAllowableValues();
-        if (!is_null($pos_condition_code) && !in_array($pos_condition_code, $allowedValues, true)) {
+        if (!is_null($pos_condition_code) && !in_array($pos_condition_code, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'pos_condition_code', must be one of '%s'",

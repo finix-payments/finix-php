@@ -308,7 +308,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
 
@@ -332,7 +332,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description, $deserialize = false)
     {
         $this->container['description'] = $description;
 
@@ -356,7 +356,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setId($id)
+    public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
 
@@ -380,7 +380,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
         $this->container['created_at'] = $created_at;
 
@@ -404,7 +404,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
 
@@ -428,7 +428,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setConfigurationDetails($configuration_details)
+    public function setConfigurationDetails($configuration_details, $deserialize = false)
     {
         $this->container['configuration_details'] = $configuration_details;
 
@@ -452,7 +452,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setConnection($connection)
+    public function setConnection($connection, $deserialize = false)
     {
         $this->container['connection'] = $connection;
 
@@ -476,7 +476,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEnabled($enabled)
+    public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
 
@@ -500,7 +500,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIdleMessage($idle_message)
+    public function setIdleMessage($idle_message, $deserialize = false)
     {
         $this->container['idle_message'] = $idle_message;
 
@@ -524,7 +524,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setInputDetails($input_details)
+    public function setInputDetails($input_details, $deserialize = false)
     {
         $this->container['input_details'] = $input_details;
 
@@ -548,7 +548,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMerchant($merchant)
+    public function setMerchant($merchant, $deserialize = false)
     {
 
         
@@ -575,7 +575,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setModel($model)
+    public function setModel($model, $deserialize = false)
     {
         $this->container['model'] = $model;
 
@@ -599,7 +599,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setName($name)
+    public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
 
@@ -623,7 +623,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSerialNumber($serial_number)
+    public function setSerialNumber($serial_number, $deserialize = false)
     {
         $this->container['serial_number'] = $serial_number;
 
@@ -647,7 +647,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLinks($_links)
+    public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
 

@@ -223,7 +223,7 @@ class ProcessorApplicationConfigConfigurationTemplates implements ModelInterface
      *
      * @return self
      */
-    public function setCountry($country)
+    public function setCountry($country, $deserialize = false)
     {
         $this->container['country'] = $country;
 

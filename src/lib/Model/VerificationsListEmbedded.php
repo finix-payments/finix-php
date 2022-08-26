@@ -228,7 +228,7 @@ class VerificationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setVerifications($verifications)
+    public function setVerifications($verifications, $deserialize = false)
     {
 
         
