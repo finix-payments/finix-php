@@ -9,7 +9,8 @@ use Finix\ApiException;
 use Finix\Model as Model;
 
 const username = "USsRhsHYZGBPnQw8CByJyEQW";
-const password = "8a14c2f9-d94b-4c72-8f5c-a62908e5b30e";
+// const password = "8a14c2f9-d94b-4c72-8f5c-a62908e5b30e";
+const password = "1231231";
 const environment = Environment::SANDBOX;
 
 // ==================== Instantiate client =====================
@@ -26,8 +27,9 @@ try {
     // $contents = $downloadedFile->fread($downloadedFile->getSize());
     // var_dump($contents);
 
-    // $transferList = $client->transfers->listTransfersReversals(array('limit' =>2));
+    // $transferList = $client->transfers->list(array('limit' =>2));
 
+    // var_dump(count($transferList));
     // var_dump($transferList->listNext(2)->getPage());
     // $hasNextCursor = ($transferList->openAPITypes()['page'] == '\Finix\Model\PageCursor');
     // var_dump($hasNextCursor);
@@ -60,9 +62,10 @@ try {
         // var_dump($arrtest);
         $paymentInstrumentId = "PI4gTM3twQ5XyXfM4rTuFvpo";
         $paymentInstrument = $client->paymentInstruments->get($paymentInstrumentId);
-        var_dump($paymentInstrument);
+        // var_dump($paymentInstrument);
 
 } catch (ApiException $e) {
-    var_dump($e->getCode());
-    // var_dump
+    foreach($e->getResponseBody() as $error){
+        var_dump($error["message"]);
+    }
 }

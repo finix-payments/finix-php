@@ -127,12 +127,12 @@ class VerificationsApiTest extends TestCase
         $this->assertTrue(count($verificationList) >= 0);
         if (count($verificationList) == 0)
         {
-            $this->assertSame($verificationList->hasMore, false);
+            $this->assertSame($verificationList->hasMore(), false);
         }
-        if ($verificationList->hasMore)
+        if ($verificationList->hasMore())
         {
             $nextList = $verificationList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -151,12 +151,12 @@ class VerificationsApiTest extends TestCase
         $this->assertTrue(count($verificationList) >= 0);
         if (count($verificationList) == 0)
         {
-            $this->assertSame($verificationList->hasMore, false);
+            $this->assertSame($verificationList->hasMore(), false);
         }
-        if ($verificationList->hasMore)
+        if ($verificationList->hasMore())
         {
             $nextList = $verificationList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

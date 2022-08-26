@@ -5,7 +5,7 @@ use ArrayObject;
 class FinixList extends ArrayObject {
     private $page;
     private $links;
-    private Boolean $hasMore;
+    private $hasMore;
     private $listNextBase;
 
     public function __construct($array, $listNextBase, $hasMore){

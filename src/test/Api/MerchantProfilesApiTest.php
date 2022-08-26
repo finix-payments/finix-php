@@ -104,12 +104,12 @@ class MerchantProfilesApiTest extends TestCase
         $this->assertTrue(count($merchantProfileList) >= 0);
         if (count($merchantProfileList) == 0)
         {
-            $this->assertSame($merchantProfileList->hasMore, false);
+            $this->assertSame($merchantProfileList->hasMore(), false);
         }
-        if ($merchantProfileList->hasMore)
+        if ($merchantProfileList->hasMore())
         {
             $nextList = $merchantProfileList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

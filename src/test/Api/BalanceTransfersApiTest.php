@@ -131,12 +131,12 @@ class BalanceTransfersApiTest extends TestCase
         $this->assertTrue(count($balanceTransferList) >= 0);
         if (count($balanceTransferList) == 0)
         {
-            $this->assertSame($balanceTransferList->hasMore, false);
+            $this->assertSame($balanceTransferList->hasMore(), false);
         }
-        if ($balanceTransferList->hasMore)
+        if ($balanceTransferList->hasMore())
         {
             $nextList = $balanceTransferList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 }

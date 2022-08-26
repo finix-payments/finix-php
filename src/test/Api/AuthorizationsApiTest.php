@@ -289,12 +289,12 @@ class AuthorizationsApiTest extends TestCase
         $this->assertTrue(count($authorizationList) >= 0);
         if (count($authorizationList) == 0)
         {
-            $this->assertSame($authorizationList->hasMore, false);
+            $this->assertSame($authorizationList->hasMore(), false);
         }
-        if ($authorizationList->hasMore)
+        if ($authorizationList->hasMore())
         {
             $nextList = $authorizationList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
 
     }

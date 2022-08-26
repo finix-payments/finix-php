@@ -131,12 +131,12 @@ class WebhooksApiTest extends TestCase
         $this->assertTrue(count($webhookList) >= 0);
         if (count($webhookList) == 0)
         {
-            $this->assertSame($webhookList->hasMore, false);
+            $this->assertSame($webhookList->hasMore(), false);
         }
-        if ($webhookList->hasMore)
+        if ($webhookList->hasMore())
         {
             $nextList = $webhookList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

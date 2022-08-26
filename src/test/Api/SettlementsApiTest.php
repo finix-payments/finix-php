@@ -129,12 +129,12 @@ class SettlementsApiTest extends TestCase
         $this->assertTrue(count($settlementFundingList) >= 0);
         if (count($settlementFundingList) == 0)
         {
-            $this->assertSame($settlementFundingList->hasMore, false);
+            $this->assertSame($settlementFundingList->hasMore(), false);
         }
-        if ($settlementFundingList->hasMore)
+        if ($settlementFundingList->hasMore())
         {
             $nextList = $settlementFundingList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -152,12 +152,12 @@ class SettlementsApiTest extends TestCase
         $this->assertTrue(count($settlementTransferList) >= 0);
         if (count($settlementTransferList) == 0)
         {
-            $this->assertSame($settlementTransferList->hasMore, false);
+            $this->assertSame($settlementTransferList->hasMore(), false);
         }
-        if ($settlementTransferList->hasMore)
+        if ($settlementTransferList->hasMore())
         {
             $nextList = $settlementTransferList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -173,12 +173,12 @@ class SettlementsApiTest extends TestCase
         $this->assertTrue(count($settlementList) >= 0);
         if (count($settlementList) == 0)
         {
-            $this->assertSame($settlementList->hasMore, false);
+            $this->assertSame($settlementList->hasMore(), false);
         }
-        if ($settlementList->hasMore)
+        if ($settlementList->hasMore())
         {
             $nextList = $settlementList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

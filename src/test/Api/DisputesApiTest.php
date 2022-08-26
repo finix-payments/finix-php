@@ -136,12 +136,12 @@ class DisputesApiTest extends TestCase
         $this->assertTrue(count($disputeEvidenceList) >= 0);
         if (count($disputeEvidenceList) == 0)
         {
-            $this->assertSame($disputeEvidenceList->hasMore, false);
+            $this->assertSame($disputeEvidenceList->hasMore(), false);
         }
-        if ($disputeEvidenceList->hasMore)
+        if ($disputeEvidenceList->hasMore())
         {
             $nextList = $disputeEvidenceList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -157,12 +157,12 @@ class DisputesApiTest extends TestCase
         $this->assertTrue(count($disputeList) >= 0);
         if (count($disputeList) == 0)
         {
-            $this->assertSame($disputeList->hasMore, false);
+            $this->assertSame($disputeList->hasMore(), false);
         }
-        if ($disputeList->hasMore)
+        if ($disputeList->hasMore())
         {
             $nextList = $disputeList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -179,12 +179,12 @@ class DisputesApiTest extends TestCase
         $this->assertTrue(count($disputeAdjustmentList) >= 0);
         if (count($disputeAdjustmentList) == 0)
         {
-            $this->assertSame($disputeAdjustmentList->hasMore, false);
+            $this->assertSame($disputeAdjustmentList->hasMore(), false);
         }
-        if ($disputeAdjustmentList->hasMore)
+        if ($disputeAdjustmentList->hasMore())
         {
             $nextList = $disputeAdjustmentList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 }

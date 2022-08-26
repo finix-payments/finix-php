@@ -13,3 +13,5 @@ openapi-generator generate \
 # --type-mappings=File=ModelFile
 
 mv ./src/lib/Configuration.php ./src/lib/FinixClient.php
+mv ./src/composer.json composer.json
+rm ./src/README.md

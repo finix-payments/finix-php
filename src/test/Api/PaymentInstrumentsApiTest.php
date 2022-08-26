@@ -185,12 +185,12 @@ class PaymentInstrumentsApiTest extends TestCase
         $this->assertTrue(count($paymentInstrumentUpdateList) >= 0);
         if (count($paymentInstrumentUpdateList) == 0)
         {
-            $this->assertSame($paymentInstrumentUpdateList->hasMore, false);
+            $this->assertSame($paymentInstrumentUpdateList->hasMore(), false);
         }
-        if ($paymentInstrumentUpdateList->hasMore)
+        if ($paymentInstrumentUpdateList->hasMore())
         {
             $nextList = $paymentInstrumentUpdateList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -206,12 +206,12 @@ class PaymentInstrumentsApiTest extends TestCase
         $this->assertTrue(count($paymentInstrumentList) >= 0);
         if (count($paymentInstrumentList) == 0)
         {
-            $this->assertSame($paymentInstrumentList->hasMore, false);
+            $this->assertSame($paymentInstrumentList->hasMore(), false);
         }
-        if ($paymentInstrumentList->hasMore)
+        if ($paymentInstrumentList->hasMore())
         {
             $nextList = $paymentInstrumentList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

@@ -139,12 +139,12 @@ class FeeProfilesApiTest extends TestCase
         $this->assertTrue(count($feeProfileList) >= 0);
         if (count($feeProfileList) == 0)
         {
-            $this->assertSame($feeProfileList->hasMore, false);
+            $this->assertSame($feeProfileList->hasMore(), false);
         }
-        if ($feeProfileList->hasMore)
+        if ($feeProfileList->hasMore())
         {
             $nextList = $feeProfileList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 }

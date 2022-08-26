@@ -180,12 +180,12 @@ class FilesApiTest extends TestCase
         $this->assertTrue(count($fileList) >= 0);
         if (count($fileList) == 0)
         {
-            $this->assertSame($fileList->hasMore, false);
+            $this->assertSame($fileList->hasMore(), false);
         }
-        if ($fileList->hasMore)
+        if ($fileList->hasMore())
         {
             $nextList = $fileList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -204,12 +204,12 @@ class FilesApiTest extends TestCase
         $this->assertTrue(count($externalLinkList) >= 0);
         if (count($externalLinkList) == 0)
         {
-            $this->assertSame($externalLinkList->hasMore, false);
+            $this->assertSame($externalLinkList->hasMore(), false);
         }
-        if ($externalLinkList->hasMore)
+        if ($externalLinkList->hasMore())
         {
             $nextList = $externalLinkList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

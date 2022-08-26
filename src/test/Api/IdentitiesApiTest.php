@@ -200,12 +200,12 @@ class IdentitiesApiTest extends TestCase
         $this->assertTrue(count($identitiesList) >= 0);
         if (count($identitiesList) == 0)
         {
-            $this->assertSame($identitiesList->hasMore, false);
+            $this->assertSame($identitiesList->hasMore(), false);
         }
-        if ($identitiesList->hasMore)
+        if ($identitiesList->hasMore())
         {
             $nextList = $identitiesList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -224,12 +224,12 @@ class IdentitiesApiTest extends TestCase
         $this->assertTrue(count($identitiesList) >= 0);
         if (count($identitiesList) == 0)
         {
-            $this->assertSame($identitiesList->hasMore, false);
+            $this->assertSame($identitiesList->hasMore(), false);
         }
-        if ($identitiesList->hasMore)
+        if ($identitiesList->hasMore())
         {
             $nextList = $identitiesList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

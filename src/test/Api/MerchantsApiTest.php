@@ -175,12 +175,12 @@ class MerchantsApiTest extends TestCase
         $this->assertTrue(count($merchantsList) >= 0);
         if (count($merchantsList) == 0)
         {
-            $this->assertSame($merchantsList->hasMore, false);
+            $this->assertSame($merchantsList->hasMore(), false);
         }
-        if ($merchantsList->hasMore)
+        if ($merchantsList->hasMore())
         {
             $nextList = $merchantsList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -198,12 +198,12 @@ class MerchantsApiTest extends TestCase
         $this->assertTrue(count($merchantsVerificationList) >= 0);
         if (count($merchantsVerificationList) == 0)
         {
-            $this->assertSame($merchantsVerificationList->hasMore, false);
+            $this->assertSame($merchantsVerificationList->hasMore(), false);
         }
-        if ($merchantsVerificationList->hasMore)
+        if ($merchantsVerificationList->hasMore())
         {
             $nextList = $merchantsVerificationList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 

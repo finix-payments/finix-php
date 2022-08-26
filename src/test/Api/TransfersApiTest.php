@@ -265,12 +265,12 @@ class TransfersApiTest extends TestCase
         $this->assertTrue(count($transfersList) >= 0);
         if (count($transfersList) == 0)
         {
-            $this->assertSame($transfersList->hasMore, false);
+            $this->assertSame($transfersList->hasMore(), false);
         }
-        if ($transfersList->hasMore)
+        if ($transfersList->hasMore())
         {
             $nextList = $transfersList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
@@ -286,12 +286,12 @@ class TransfersApiTest extends TestCase
         $this->assertTrue(count($transfersList) >= 0);
         if (count($transfersList) == 0)
         {
-            $this->assertSame($transfersList->hasMore, false);
+            $this->assertSame($transfersList->hasMore(), false);
         }
-        if ($transfersList->hasMore)
+        if ($transfersList->hasMore())
         {
             $nextList = $transfersList->listNext(1);
-            $this->assertSame(count($nextList), 2);
+            $this->assertSame(count($nextList), 1);
         }
     }
 
