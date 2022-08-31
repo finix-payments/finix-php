@@ -63,10 +63,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         'id' => 'string',
         'created_at_gte' => 'string',
         'created_at_lte' => 'string',
-        'sort' => 'string',
         'after_cursor' => 'string',
+        'before_cursor' => 'string',
         'limit' => 'int',
-        'before_cursor' => 'string'
+        'sort' => 'string'
     ];
 
     /**
@@ -80,10 +80,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         'id' => null,
         'created_at_gte' => null,
         'created_at_lte' => null,
-        'sort' => null,
         'after_cursor' => null,
+        'before_cursor' => null,
         'limit' => null,
-        'before_cursor' => null
+        'sort' => null
     ];
 
     /**
@@ -116,10 +116,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         'id' => 'id',
         'created_at_gte' => 'created_at.gte',
         'created_at_lte' => 'created_at.lte',
-        'sort' => 'sort',
         'after_cursor' => 'after_cursor',
+        'before_cursor' => 'before_cursor',
         'limit' => 'limit',
-        'before_cursor' => 'before_cursor'
+        'sort' => 'sort'
     ];
 
     /**
@@ -131,10 +131,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         'id' => 'setId',
         'created_at_gte' => 'setCreatedAtGte',
         'created_at_lte' => 'setCreatedAtLte',
-        'sort' => 'setSort',
         'after_cursor' => 'setAfterCursor',
+        'before_cursor' => 'setBeforeCursor',
         'limit' => 'setLimit',
-        'before_cursor' => 'setBeforeCursor'
+        'sort' => 'setSort'
     ];
 
     /**
@@ -146,10 +146,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         'id' => 'getId',
         'created_at_gte' => 'getCreatedAtGte',
         'created_at_lte' => 'getCreatedAtLte',
-        'sort' => 'getSort',
         'after_cursor' => 'getAfterCursor',
+        'before_cursor' => 'getBeforeCursor',
         'limit' => 'getLimit',
-        'before_cursor' => 'getBeforeCursor'
+        'sort' => 'getSort'
     ];
 
     /**
@@ -212,10 +212,10 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at_gte'] = $data['created_at_gte'] ?? null;
         $this->container['created_at_lte'] = $data['created_at_lte'] ?? null;
-        $this->container['sort'] = $data['sort'] ?? null;
         $this->container['after_cursor'] = $data['after_cursor'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? null;
         $this->container['before_cursor'] = $data['before_cursor'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['sort'] = $data['sort'] ?? null;
     }
 
     /**
@@ -255,7 +255,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets id
      *
-     * @param string|null $id Filter by id
+     * @param string|null $id Filter by `id`.
      *
      * @return self
      */
@@ -279,7 +279,7 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -303,37 +303,13 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
     public function setCreatedAtLte($created_at_lte, $deserialize = false)
     {
         $this->container['created_at_lte'] = $created_at_lte;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort
-     *
-     * @return string|null
-     */
-    public function getSort()
-    {
-        return $this->container['sort'];
-    }
-
-    /**
-     * Sets sort
-     *
-     * @param string|null $sort Specify key to be used for sorting the collection
-     *
-     * @return self
-     */
-    public function setSort($sort, $deserialize = false)
-    {
-        $this->container['sort'] = $sort;
 
         return $this;
     }
@@ -363,30 +339,6 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets limit
-     *
-     * @return int|null
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param int|null $limit The numbers of items to return
-     *
-     * @return self
-     */
-    public function setLimit($limit, $deserialize = false)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
      * Gets before_cursor
      *
      * @return string|null
@@ -406,6 +358,54 @@ class ListMerchantsQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     public function setBeforeCursor($before_cursor, $deserialize = false)
     {
         $this->container['before_cursor'] = $before_cursor;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int|null
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int|null $limit The numbers of items to return.
+     *
+     * @return self
+     */
+    public function setLimit($limit, $deserialize = false)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     *
+     * @return string|null
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     *
+     * @param string|null $sort Specify key to be used for sorting the collection.
+     *
+     * @return self
+     */
+    public function setSort($sort, $deserialize = false)
+    {
+        $this->container['sort'] = $sort;
 
         return $this;
     }

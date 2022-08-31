@@ -505,7 +505,7 @@ class BalanceTransfersApi
     /**
      * Operation get
      *
-     * Get a Balance Transfer
+     * Fetch a Balance Transfer
      *
      * @param  string $balance_transfers_id ID of the &#x60;balance_transfer&#x60; resource. (required)
      *
@@ -522,7 +522,7 @@ class BalanceTransfersApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Balance Transfer
+     * Fetch a Balance Transfer
      *
      * @param  string $balance_transfers_id ID of the &#x60;balance_transfer&#x60; resource. (required)
      *
@@ -713,7 +713,7 @@ class BalanceTransfersApi
     /**
      * Operation getAsync
      *
-     * Get a Balance Transfer
+     * Fetch a Balance Transfer
      *
      * @param  string $balance_transfers_id ID of the &#x60;balance_transfer&#x60; resource. (required)
      *
@@ -733,7 +733,7 @@ class BalanceTransfersApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Balance Transfer
+     * Fetch a Balance Transfer
      *
      * @param  string $balance_transfers_id ID of the &#x60;balance_transfer&#x60; resource. (required)
      *
@@ -887,21 +887,21 @@ class BalanceTransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $page_number The page number to list (optional)
-     * @param  int $page_size The size of the page (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  string $description Filter by the &#x60;description&#x60; value (optional)
-     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;destination&#x60; (optional)
-     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60; (optional)
-     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60; (optional)
-     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60; (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  string $description Filter by the &#x60;Description&#x60; value . (optional)
+     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;Destination&#x60;. (optional)
+     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60;. (optional)
+     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60;. (optional)
+     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60;. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -945,21 +945,21 @@ class BalanceTransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $page_number The page number to list (optional)
-     * @param  int $page_size The size of the page (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  string $description Filter by the &#x60;description&#x60; value (optional)
-     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;destination&#x60; (optional)
-     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60; (optional)
-     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60; (optional)
-     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60; (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  string $description Filter by the &#x60;Description&#x60; value . (optional)
+     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;Destination&#x60;. (optional)
+     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60;. (optional)
+     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60;. (optional)
+     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60;. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1152,21 +1152,21 @@ class BalanceTransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $page_number The page number to list (optional)
-     * @param  int $page_size The size of the page (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  string $description Filter by the &#x60;description&#x60; value (optional)
-     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;destination&#x60; (optional)
-     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60; (optional)
-     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60; (optional)
-     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60; (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  string $description Filter by the &#x60;Description&#x60; value . (optional)
+     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;Destination&#x60;. (optional)
+     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60;. (optional)
+     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60;. (optional)
+     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1188,21 +1188,21 @@ class BalanceTransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $page_number The page number to list (optional)
-     * @param  int $page_size The size of the page (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  string $description Filter by the &#x60;description&#x60; value (optional)
-     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;destination&#x60; (optional)
-     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60; (optional)
-     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60; (optional)
-     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60; (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  string $description Filter by the &#x60;Description&#x60; value . (optional)
+     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;Destination&#x60;. (optional)
+     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60;. (optional)
+     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60;. (optional)
+     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1253,21 +1253,21 @@ class BalanceTransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $page_number The page number to list (optional)
-     * @param  int $page_size The size of the page (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  string $description Filter by the &#x60;description&#x60; value (optional)
-     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;destination&#x60; (optional)
-     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60; (optional)
-     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60; (optional)
-     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60; (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  string $description Filter by the &#x60;Description&#x60; value . (optional)
+     * @param  string $destination Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;Destination&#x60;. (optional)
+     * @param  string $external_reference_id Filter by the value saved in &#x60;external_reference_id&#x60;. (optional)
+     * @param  string $reference_id Filter by the value saved in &#x60;reference_id&#x60;. (optional)
+     * @param  string $source Filter by the &#x60;Payment Instrument&#x60; saved in &#x60;source&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

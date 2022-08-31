@@ -61,19 +61,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'application' => 'string',
-        'tags' => 'array<string,string>',
-        'messages' => 'object[]',
-        'raw' => 'object',
-        'processor' => 'string',
-        'state' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
-        'trace_id' => 'string',
-        'payment_instrument' => 'string',
-        'merchant' => 'string',
+        'application' => 'string',
         'identity' => 'string',
+        'merchant' => 'string',
         'merchant_identity' => 'string',
+        'messages' => 'object[]',
+        'payment_instrument' => 'string',
+        'processor' => 'string',
+        'raw' => 'object',
+        'state' => 'string',
+        'tags' => 'array<string,string>',
+        'trace_id' => 'string',
         '_links' => '\Finix\Model\VerificationLinks'
     ];
 
@@ -86,19 +86,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'application' => null,
-        'tags' => null,
-        'messages' => null,
-        'raw' => null,
-        'processor' => null,
-        'state' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
-        'trace_id' => null,
-        'payment_instrument' => null,
-        'merchant' => null,
+        'application' => null,
         'identity' => null,
+        'merchant' => null,
         'merchant_identity' => null,
+        'messages' => null,
+        'payment_instrument' => null,
+        'processor' => null,
+        'raw' => null,
+        'state' => null,
+        'tags' => null,
+        'trace_id' => null,
         '_links' => null
     ];
 
@@ -130,19 +130,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'application' => 'application',
-        'tags' => 'tags',
-        'messages' => 'messages',
-        'raw' => 'raw',
-        'processor' => 'processor',
-        'state' => 'state',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
-        'trace_id' => 'trace_id',
-        'payment_instrument' => 'payment_instrument',
-        'merchant' => 'merchant',
+        'application' => 'application',
         'identity' => 'identity',
+        'merchant' => 'merchant',
         'merchant_identity' => 'merchant_identity',
+        'messages' => 'messages',
+        'payment_instrument' => 'payment_instrument',
+        'processor' => 'processor',
+        'raw' => 'raw',
+        'state' => 'state',
+        'tags' => 'tags',
+        'trace_id' => 'trace_id',
         '_links' => '_links'
     ];
 
@@ -153,19 +153,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'application' => 'setApplication',
-        'tags' => 'setTags',
-        'messages' => 'setMessages',
-        'raw' => 'setRaw',
-        'processor' => 'setProcessor',
-        'state' => 'setState',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
-        'trace_id' => 'setTraceId',
-        'payment_instrument' => 'setPaymentInstrument',
-        'merchant' => 'setMerchant',
+        'application' => 'setApplication',
         'identity' => 'setIdentity',
+        'merchant' => 'setMerchant',
         'merchant_identity' => 'setMerchantIdentity',
+        'messages' => 'setMessages',
+        'payment_instrument' => 'setPaymentInstrument',
+        'processor' => 'setProcessor',
+        'raw' => 'setRaw',
+        'state' => 'setState',
+        'tags' => 'setTags',
+        'trace_id' => 'setTraceId',
         '_links' => 'setLinks'
     ];
 
@@ -176,19 +176,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'application' => 'getApplication',
-        'tags' => 'getTags',
-        'messages' => 'getMessages',
-        'raw' => 'getRaw',
-        'processor' => 'getProcessor',
-        'state' => 'getState',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
-        'trace_id' => 'getTraceId',
-        'payment_instrument' => 'getPaymentInstrument',
-        'merchant' => 'getMerchant',
+        'application' => 'getApplication',
         'identity' => 'getIdentity',
+        'merchant' => 'getMerchant',
         'merchant_identity' => 'getMerchantIdentity',
+        'messages' => 'getMessages',
+        'payment_instrument' => 'getPaymentInstrument',
+        'processor' => 'getProcessor',
+        'raw' => 'getRaw',
+        'state' => 'getState',
+        'tags' => 'getTags',
+        'trace_id' => 'getTraceId',
         '_links' => 'getLinks'
     ];
 
@@ -267,19 +267,19 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['application'] = $data['application'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['messages'] = $data['messages'] ?? null;
-        $this->container['raw'] = $data['raw'] ?? null;
-        $this->container['processor'] = $data['processor'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
-        $this->container['trace_id'] = $data['trace_id'] ?? null;
-        $this->container['payment_instrument'] = $data['payment_instrument'] ?? null;
-        $this->container['merchant'] = $data['merchant'] ?? null;
+        $this->container['application'] = $data['application'] ?? null;
         $this->container['identity'] = $data['identity'] ?? null;
+        $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
+        $this->container['messages'] = $data['messages'] ?? null;
+        $this->container['payment_instrument'] = $data['payment_instrument'] ?? null;
+        $this->container['processor'] = $data['processor'] ?? null;
+        $this->container['raw'] = $data['raw'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['trace_id'] = $data['trace_id'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -341,160 +341,6 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets application
-     *
-     * @return string|null
-     */
-    public function getApplication()
-    {
-        return $this->container['application'];
-    }
-
-    /**
-     * Sets application
-     *
-     * @param string|null $application ID of the `Application` the `Merchant` was created under.
-     *
-     * @return self
-     */
-    public function setApplication($application, $deserialize = false)
-    {
-        $this->container['application'] = $application;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets messages
-     *
-     * @return object[]|null
-     */
-    public function getMessages()
-    {
-        return $this->container['messages'];
-    }
-
-    /**
-     * Sets messages
-     *
-     * @param object[]|null $messages Provides additional details about the verification (e.g why it failed). This field is usually **null**.
-     *
-     * @return self
-     */
-    public function setMessages($messages, $deserialize = false)
-    {
-        $this->container['messages'] = $messages;
-
-        return $this;
-    }
-
-    /**
-     * Gets raw
-     *
-     * @return object|null
-     */
-    public function getRaw()
-    {
-        return $this->container['raw'];
-    }
-
-    /**
-     * Sets raw
-     *
-     * @param object|null $raw Raw response from the processor
-     *
-     * @return self
-     */
-    public function setRaw($raw, $deserialize = false)
-    {
-        $this->container['raw'] = $raw;
-
-        return $this;
-    }
-
-    /**
-     * Gets processor
-     *
-     * @return string|null
-     */
-    public function getProcessor()
-    {
-        return $this->container['processor'];
-    }
-
-    /**
-     * Sets processor
-     *
-     * @param string|null $processor Name of the verification processor.
-     *
-     * @return self
-     */
-    public function setProcessor($processor, $deserialize = false)
-    {
-        $this->container['processor'] = $processor;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state The status of the `Verification` request.
-     *
-     * @return self
-     */
-    public function setState($state, $deserialize = false)
-    {
-        $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'state', must be one of '%s'",
-                    $state,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
      * Gets created_at
      *
      * @return \DateTime|null
@@ -543,73 +389,25 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets trace_id
+     * Gets application
      *
      * @return string|null
      */
-    public function getTraceId()
+    public function getApplication()
     {
-        return $this->container['trace_id'];
+        return $this->container['application'];
     }
 
     /**
-     * Sets trace_id
+     * Sets application
      *
-     * @param string|null $trace_id Trace ID of the `Verification`. The processor sends back the `trace_id` so you can track the verification end-to-end.
+     * @param string|null $application ID of the `Application` the `Merchant` was created under.
      *
      * @return self
      */
-    public function setTraceId($trace_id, $deserialize = false)
+    public function setApplication($application, $deserialize = false)
     {
-        $this->container['trace_id'] = $trace_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_instrument
-     *
-     * @return string|null
-     */
-    public function getPaymentInstrument()
-    {
-        return $this->container['payment_instrument'];
-    }
-
-    /**
-     * Sets payment_instrument
-     *
-     * @param string|null $payment_instrument The `Payment Instrument` that'll be used to settle the `Merchant's` processed funds.
-     *
-     * @return self
-     */
-    public function setPaymentInstrument($payment_instrument, $deserialize = false)
-    {
-        $this->container['payment_instrument'] = $payment_instrument;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant
-     *
-     * @return string|null
-     */
-    public function getMerchant()
-    {
-        return $this->container['merchant'];
-    }
-
-    /**
-     * Sets merchant
-     *
-     * @param string|null $merchant ID of the `Merchant` resource.
-     *
-     * @return self
-     */
-    public function setMerchant($merchant, $deserialize = false)
-    {
-        $this->container['merchant'] = $merchant;
+        $this->container['application'] = $application;
 
         return $this;
     }
@@ -639,6 +437,30 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets merchant
+     *
+     * @return string|null
+     */
+    public function getMerchant()
+    {
+        return $this->container['merchant'];
+    }
+
+    /**
+     * Sets merchant
+     *
+     * @param string|null $merchant ID of the `Merchant` resource.
+     *
+     * @return self
+     */
+    public function setMerchant($merchant, $deserialize = false)
+    {
+        $this->container['merchant'] = $merchant;
+
+        return $this;
+    }
+
+    /**
      * Gets merchant_identity
      *
      * @return string|null
@@ -658,6 +480,184 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMerchantIdentity($merchant_identity, $deserialize = false)
     {
         $this->container['merchant_identity'] = $merchant_identity;
+
+        return $this;
+    }
+
+    /**
+     * Gets messages
+     *
+     * @return object[]|null
+     */
+    public function getMessages()
+    {
+        return $this->container['messages'];
+    }
+
+    /**
+     * Sets messages
+     *
+     * @param object[]|null $messages Provides additional details about the verification (e.g why it failed). This field is usually **null**.
+     *
+     * @return self
+     */
+    public function setMessages($messages, $deserialize = false)
+    {
+        $this->container['messages'] = $messages;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_instrument
+     *
+     * @return string|null
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['payment_instrument'];
+    }
+
+    /**
+     * Sets payment_instrument
+     *
+     * @param string|null $payment_instrument The `Payment Instrument` that'll be used to settle the `Merchant's` processed funds.
+     *
+     * @return self
+     */
+    public function setPaymentInstrument($payment_instrument, $deserialize = false)
+    {
+        $this->container['payment_instrument'] = $payment_instrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor
+     *
+     * @return string|null
+     */
+    public function getProcessor()
+    {
+        return $this->container['processor'];
+    }
+
+    /**
+     * Sets processor
+     *
+     * @param string|null $processor Name of the verification processor.
+     *
+     * @return self
+     */
+    public function setProcessor($processor, $deserialize = false)
+    {
+        $this->container['processor'] = $processor;
+
+        return $this;
+    }
+
+    /**
+     * Gets raw
+     *
+     * @return object|null
+     */
+    public function getRaw()
+    {
+        return $this->container['raw'];
+    }
+
+    /**
+     * Sets raw
+     *
+     * @param object|null $raw Raw response from the processor.
+     *
+     * @return self
+     */
+    public function setRaw($raw, $deserialize = false)
+    {
+        $this->container['raw'] = $raw;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string|null $state The status of the `Verification` request.
+     *
+     * @return self
+     */
+    public function setState($state, $deserialize = false)
+    {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'state', must be one of '%s'",
+                    $state,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets trace_id
+     *
+     * @return string|null
+     */
+    public function getTraceId()
+    {
+        return $this->container['trace_id'];
+    }
+
+    /**
+     * Sets trace_id
+     *
+     * @param string|null $trace_id Trace ID of the `Verification`. The processor sends back the `trace_id` so you can track the verification end-to-end.
+     *
+     * @return self
+     */
+    public function setTraceId($trace_id, $deserialize = false)
+    {
+        $this->container['trace_id'] = $trace_id;
 
         return $this;
     }

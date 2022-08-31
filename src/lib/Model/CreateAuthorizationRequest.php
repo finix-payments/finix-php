@@ -61,20 +61,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
+        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'additional_purchase_data' => '\Finix\Model\AdditionalPurchaseData',
         'amount' => 'int',
         'currency' => '\Finix\Model\Currency',
+        'device' => 'string',
+        'fraud_session_id' => 'string',
         'idempotency_id' => 'string',
         'merchant' => 'string',
-        'merchant_identity' => 'string',
-        'processor' => 'string',
-        'source' => 'string',
-        'additional_purchase_data' => '\Finix\Model\AdditionalPurchaseData',
-        'fraud_session_id' => 'string',
-        'sub_type' => '\Finix\Model\SubTypeTransfer',
         'operation_key' => '\Finix\Model\OperationKey',
-        'device' => 'string',
-        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'source' => 'string',
+        'tags' => 'array<string,string>',
         '_3d_secure_authentication' => '\Finix\Model\CreateAuthorizationRequest3dSecureAuthentication'
     ];
 
@@ -86,20 +83,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
+        'additional_buyer_charges' => null,
+        'additional_purchase_data' => null,
         'amount' => 'int64',
         'currency' => null,
+        'device' => null,
+        'fraud_session_id' => null,
         'idempotency_id' => null,
         'merchant' => null,
-        'merchant_identity' => null,
-        'processor' => null,
-        'source' => null,
-        'additional_purchase_data' => null,
-        'fraud_session_id' => null,
-        'sub_type' => null,
         'operation_key' => null,
-        'device' => null,
-        'additional_buyer_charges' => null,
+        'source' => null,
+        'tags' => null,
         '_3d_secure_authentication' => null
     ];
 
@@ -130,20 +124,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
+        'additional_buyer_charges' => 'additional_buyer_charges',
+        'additional_purchase_data' => 'additional_purchase_data',
         'amount' => 'amount',
         'currency' => 'currency',
+        'device' => 'device',
+        'fraud_session_id' => 'fraud_session_id',
         'idempotency_id' => 'idempotency_id',
         'merchant' => 'merchant',
-        'merchant_identity' => 'merchant_identity',
-        'processor' => 'processor',
-        'source' => 'source',
-        'additional_purchase_data' => 'additional_purchase_data',
-        'fraud_session_id' => 'fraud_session_id',
-        'sub_type' => 'sub_type',
         'operation_key' => 'operation_key',
-        'device' => 'device',
-        'additional_buyer_charges' => 'additional_buyer_charges',
+        'source' => 'source',
+        'tags' => 'tags',
         '_3d_secure_authentication' => '3d_secure_authentication'
     ];
 
@@ -153,20 +144,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
+        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'additional_purchase_data' => 'setAdditionalPurchaseData',
         'amount' => 'setAmount',
         'currency' => 'setCurrency',
+        'device' => 'setDevice',
+        'fraud_session_id' => 'setFraudSessionId',
         'idempotency_id' => 'setIdempotencyId',
         'merchant' => 'setMerchant',
-        'merchant_identity' => 'setMerchantIdentity',
-        'processor' => 'setProcessor',
-        'source' => 'setSource',
-        'additional_purchase_data' => 'setAdditionalPurchaseData',
-        'fraud_session_id' => 'setFraudSessionId',
-        'sub_type' => 'setSubType',
         'operation_key' => 'setOperationKey',
-        'device' => 'setDevice',
-        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'source' => 'setSource',
+        'tags' => 'setTags',
         '_3d_secure_authentication' => 'set3dSecureAuthentication'
     ];
 
@@ -176,20 +164,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
+        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'additional_purchase_data' => 'getAdditionalPurchaseData',
         'amount' => 'getAmount',
         'currency' => 'getCurrency',
+        'device' => 'getDevice',
+        'fraud_session_id' => 'getFraudSessionId',
         'idempotency_id' => 'getIdempotencyId',
         'merchant' => 'getMerchant',
-        'merchant_identity' => 'getMerchantIdentity',
-        'processor' => 'getProcessor',
-        'source' => 'getSource',
-        'additional_purchase_data' => 'getAdditionalPurchaseData',
-        'fraud_session_id' => 'getFraudSessionId',
-        'sub_type' => 'getSubType',
         'operation_key' => 'getOperationKey',
-        'device' => 'getDevice',
-        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'source' => 'getSource',
+        'tags' => 'getTags',
         '_3d_secure_authentication' => 'get3dSecureAuthentication'
     ];
 
@@ -234,53 +219,6 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         return self::$openAPIModelName;
     }
 
-    public const PROCESSOR_AFFIPAY_V1 = 'AFFIPAY_V1';
-    public const PROCESSOR_CHECKOUT_V1 = 'CHECKOUT_V1';
-    public const PROCESSOR_DUMMY_V1 = 'DUMMY_V1';
-    public const PROCESSOR_ELAVON_V1 = 'ELAVON_V1';
-    public const PROCESSOR_EXPRESS_V1 = 'EXPRESS_V1';
-    public const PROCESSOR_FINIX_VISA_SANDBOX_V1 = 'FINIX_VISA_SANDBOX_V1';
-    public const PROCESSOR_LITLE_V1 = 'LITLE_V1';
-    public const PROCESSOR_MASTERCARD_V1 = 'MASTERCARD_V1';
-    public const PROCESSOR_MICROBILT_V1 = 'MICROBILT_V1';
-    public const PROCESSOR_MYTHICAL_V1 = 'MYTHICAL_V1';
-    public const PROCESSOR_NMI_V1 = 'NMI_V1';
-    public const PROCESSOR_SKRILL_V1 = 'SKRILL_V1';
-    public const PROCESSOR_STRIPE_V1 = 'STRIPE_V1';
-    public const PROCESSOR_TRIPOS_CLOUD_V1 = 'TRIPOS_CLOUD_V1';
-    public const PROCESSOR_TRIPOS_MOBILE_V1 = 'TRIPOS_MOBILE_V1';
-    public const PROCESSOR_TRULIOO_V1 = 'TRULIOO_V1';
-    public const PROCESSOR_VANTIV_V1 = 'VANTIV_V1';
-    public const PROCESSOR_VISA_V1 = 'VISA_V1';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getProcessorAllowableValues()
-    {
-        return [
-            self::PROCESSOR_AFFIPAY_V1,
-            self::PROCESSOR_CHECKOUT_V1,
-            self::PROCESSOR_DUMMY_V1,
-            self::PROCESSOR_ELAVON_V1,
-            self::PROCESSOR_EXPRESS_V1,
-            self::PROCESSOR_FINIX_VISA_SANDBOX_V1,
-            self::PROCESSOR_LITLE_V1,
-            self::PROCESSOR_MASTERCARD_V1,
-            self::PROCESSOR_MICROBILT_V1,
-            self::PROCESSOR_MYTHICAL_V1,
-            self::PROCESSOR_NMI_V1,
-            self::PROCESSOR_SKRILL_V1,
-            self::PROCESSOR_STRIPE_V1,
-            self::PROCESSOR_TRIPOS_CLOUD_V1,
-            self::PROCESSOR_TRIPOS_MOBILE_V1,
-            self::PROCESSOR_TRULIOO_V1,
-            self::PROCESSOR_VANTIV_V1,
-            self::PROCESSOR_VISA_V1,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -297,20 +235,17 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['additional_purchase_data'] = $data['additional_purchase_data'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
+        $this->container['device'] = $data['device'] ?? null;
+        $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
         $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
-        $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
-        $this->container['processor'] = $data['processor'] ?? null;
-        $this->container['source'] = $data['source'] ?? null;
-        $this->container['additional_purchase_data'] = $data['additional_purchase_data'] ?? null;
-        $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
-        $this->container['sub_type'] = $data['sub_type'] ?? null;
         $this->container['operation_key'] = $data['operation_key'] ?? null;
-        $this->container['device'] = $data['device'] ?? null;
-        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_3d_secure_authentication'] = $data['_3d_secure_authentication'] ?? null;
     }
 
@@ -329,15 +264,6 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
         }
-        $allowedValues = $this->getProcessorAllowableValues();
-        if (!is_null($this->container['processor']) && !in_array($this->container['processor'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'processor', must be one of '%s'",
-                $this->container['processor'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -354,25 +280,49 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets tags
+     * Gets additional_buyer_charges
      *
-     * @return array<string,string>|null
+     * @return \Finix\Model\AdditionalBuyerCharges|null
      */
-    public function getTags()
+    public function getAdditionalBuyerCharges()
     {
-        return $this->container['tags'];
+        return $this->container['additional_buyer_charges'];
     }
 
     /**
-     * Sets tags
+     * Sets additional_buyer_charges
      *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
      *
      * @return self
      */
-    public function setTags($tags, $deserialize = false)
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
-        $this->container['tags'] = $tags;
+        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_purchase_data
+     *
+     * @return \Finix\Model\AdditionalPurchaseData|null
+     */
+    public function getAdditionalPurchaseData()
+    {
+        return $this->container['additional_purchase_data'];
+    }
+
+    /**
+     * Sets additional_purchase_data
+     *
+     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
+     *
+     * @return self
+     */
+    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
+    {
+        $this->container['additional_purchase_data'] = $additional_purchase_data;
 
         return $this;
     }
@@ -426,6 +376,54 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Gets device
+     *
+     * @return string|null
+     */
+    public function getDevice()
+    {
+        return $this->container['device'];
+    }
+
+    /**
+     * Sets device
+     *
+     * @param string|null $device The ID of the resource.
+     *
+     * @return self
+     */
+    public function setDevice($device, $deserialize = false)
+    {
+        $this->container['device'] = $device;
+
+        return $this;
+    }
+
+    /**
+     * Gets fraud_session_id
+     *
+     * @return string|null
+     */
+    public function getFraudSessionId()
+    {
+        return $this->container['fraud_session_id'];
+    }
+
+    /**
+     * Sets fraud_session_id
+     *
+     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
+     *
+     * @return self
+     */
+    public function setFraudSessionId($fraud_session_id, $deserialize = false)
+    {
+        $this->container['fraud_session_id'] = $fraud_session_id;
+
+        return $this;
+    }
+
+    /**
      * Gets idempotency_id
      *
      * @return string|null
@@ -474,59 +472,25 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets merchant_identity
+     * Gets operation_key
      *
-     * @return string|null
+     * @return \Finix\Model\OperationKey|null
      */
-    public function getMerchantIdentity()
+    public function getOperationKey()
     {
-        return $this->container['merchant_identity'];
+        return $this->container['operation_key'];
     }
 
     /**
-     * Sets merchant_identity
+     * Sets operation_key
      *
-     * @param string|null $merchant_identity The ID of the resource.
+     * @param \Finix\Model\OperationKey|null $operation_key operation_key
      *
      * @return self
      */
-    public function setMerchantIdentity($merchant_identity, $deserialize = false)
+    public function setOperationKey($operation_key, $deserialize = false)
     {
-        $this->container['merchant_identity'] = $merchant_identity;
-
-        return $this;
-    }
-
-    /**
-     * Gets processor
-     *
-     * @return string|null
-     */
-    public function getProcessor()
-    {
-        return $this->container['processor'];
-    }
-
-    /**
-     * Sets processor
-     *
-     * @param string|null $processor Name of the transaction processor.
-     *
-     * @return self
-     */
-    public function setProcessor($processor, $deserialize = false)
-    {
-        $allowedValues = $this->getProcessorAllowableValues();
-        if (!is_null($processor) && !in_array($processor, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'processor', must be one of '%s'",
-                    $processor,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['processor'] = $processor;
+        $this->container['operation_key'] = $operation_key;
 
         return $this;
     }
@@ -556,145 +520,25 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets additional_purchase_data
+     * Gets tags
      *
-     * @return \Finix\Model\AdditionalPurchaseData|null
+     * @return array<string,string>|null
      */
-    public function getAdditionalPurchaseData()
+    public function getTags()
     {
-        return $this->container['additional_purchase_data'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets additional_purchase_data
+     * Sets tags
      *
-     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $this->container['additional_purchase_data'] = $additional_purchase_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets fraud_session_id
-     *
-     * @return string|null
-     */
-    public function getFraudSessionId()
-    {
-        return $this->container['fraud_session_id'];
-    }
-
-    /**
-     * Sets fraud_session_id
-     *
-     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
-     *
-     * @return self
-     */
-    public function setFraudSessionId($fraud_session_id, $deserialize = false)
-    {
-        $this->container['fraud_session_id'] = $fraud_session_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets sub_type
-     *
-     * @return \Finix\Model\SubTypeTransfer|null
-     */
-    public function getSubType()
-    {
-        return $this->container['sub_type'];
-    }
-
-    /**
-     * Sets sub_type
-     *
-     * @param \Finix\Model\SubTypeTransfer|null $sub_type sub_type
-     *
-     * @return self
-     */
-    public function setSubType($sub_type, $deserialize = false)
-    {
-        $this->container['sub_type'] = $sub_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets operation_key
-     *
-     * @return \Finix\Model\OperationKey|null
-     */
-    public function getOperationKey()
-    {
-        return $this->container['operation_key'];
-    }
-
-    /**
-     * Sets operation_key
-     *
-     * @param \Finix\Model\OperationKey|null $operation_key operation_key
-     *
-     * @return self
-     */
-    public function setOperationKey($operation_key, $deserialize = false)
-    {
-        $this->container['operation_key'] = $operation_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets device
-     *
-     * @return string|null
-     */
-    public function getDevice()
-    {
-        return $this->container['device'];
-    }
-
-    /**
-     * Sets device
-     *
-     * @param string|null $device The ID of the resource.
-     *
-     * @return self
-     */
-    public function setDevice($device, $deserialize = false)
-    {
-        $this->container['device'] = $device;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_buyer_charges
-     *
-     * @return \Finix\Model\AdditionalBuyerCharges|null
-     */
-    public function getAdditionalBuyerCharges()
-    {
-        return $this->container['additional_buyer_charges'];
-    }
-
-    /**
-     * Sets additional_buyer_charges
-     *
-     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
-     *
-     * @return self
-     */
-    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
-    {
-        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+        $this->container['tags'] = $tags;
 
         return $this;
     }

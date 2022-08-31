@@ -34,7 +34,7 @@ use \Finix\ObjectSerializer;
  * OperationKey Class Doc Comment
  *
  * @category Class
- * @description Details the operation that&#39;ll be performed in the transaction.
+ * @description Details the operation that&#39;ll be performed in the transaction (Card present transactions only) .
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

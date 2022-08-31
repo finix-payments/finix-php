@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * SubscriptionSchedulesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;subscription_schedule&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubscriptionSchedulesListEmbedded implements ModelInterface, ArrayAccess, 
     /**
      * Sets subscription_schedules
      *
-     * @param \Finix\Model\SubscriptionSchedule[]|null $subscription_schedules subscription_schedules
+     * @param \Finix\Model\SubscriptionSchedule[]|null $subscription_schedules `subscription_schedule` objects.
      *
      * @return self
      */

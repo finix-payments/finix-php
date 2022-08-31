@@ -305,7 +305,7 @@ class TransfersApiTest extends TestCase
     {
         $transferId = "TRvtThmhZtk56z6dtCt8hUDR"; 
         $updateRequest = new Model\UpdateTransferRequest(array(
-            "test_tag" => "123123"
+            "tags" => array("test_tag" => "123123")
         ));
         $updatedTransfer = $this->client->transfers->update($transferId, $updateRequest);
         $this->assertSame($updatedTransfer->getTags()["test_tag"], "123123");

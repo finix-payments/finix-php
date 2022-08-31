@@ -279,7 +279,7 @@ class ListFeeProfilesQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */

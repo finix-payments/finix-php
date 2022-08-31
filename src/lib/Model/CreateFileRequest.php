@@ -62,8 +62,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'display_name' => 'string',
         'linked_to' => 'string',
-        'type' => 'string',
-        'tags' => 'array<string,string>'
+        'tags' => 'array<string,string>',
+        'type' => 'string'
     ];
 
     /**
@@ -76,8 +76,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'display_name' => null,
         'linked_to' => null,
-        'type' => null,
-        'tags' => null
+        'tags' => null,
+        'type' => null
     ];
 
     /**
@@ -109,8 +109,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'display_name' => 'display_name',
         'linked_to' => 'linked_to',
-        'type' => 'type',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'type' => 'type'
     ];
 
     /**
@@ -121,8 +121,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'display_name' => 'setDisplayName',
         'linked_to' => 'setLinkedTo',
-        'type' => 'setType',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'type' => 'setType'
     ];
 
     /**
@@ -133,8 +133,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'display_name' => 'getDisplayName',
         'linked_to' => 'getLinkedTo',
-        'type' => 'getType',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'type' => 'getType'
     ];
 
     /**
@@ -229,8 +229,8 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['linked_to'] = $data['linked_to'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -315,6 +315,30 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string|null
@@ -344,30 +368,6 @@ class CreateFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
             );
         }
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
 
         return $this;
     }

@@ -60,10 +60,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'entity' => '\Finix\Model\IdentityEntityForm',
         'max_transaction_amount' => 'int',
         'name' => 'string',
+        'tags' => 'array<string,string>',
         'user' => 'string'
     ];
 
@@ -75,10 +75,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'entity' => null,
         'max_transaction_amount' => null,
         'name' => null,
+        'tags' => null,
         'user' => null
     ];
 
@@ -109,10 +109,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'entity' => 'entity',
         'max_transaction_amount' => 'max_transaction_amount',
         'name' => 'name',
+        'tags' => 'tags',
         'user' => 'user'
     ];
 
@@ -122,10 +122,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'entity' => 'setEntity',
         'max_transaction_amount' => 'setMaxTransactionAmount',
         'name' => 'setName',
+        'tags' => 'setTags',
         'user' => 'setUser'
     ];
 
@@ -135,10 +135,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'entity' => 'getEntity',
         'max_transaction_amount' => 'getMaxTransactionAmount',
         'name' => 'getName',
+        'tags' => 'getTags',
         'user' => 'getUser'
     ];
 
@@ -199,10 +199,10 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['entity'] = $data['entity'] ?? null;
         $this->container['max_transaction_amount'] = $data['max_transaction_amount'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['user'] = $data['user'] ?? null;
     }
 
@@ -215,9 +215,6 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['entity'] === null) {
-            $invalidProperties[] = "'entity' can't be null";
-        }
         if ($this->container['user'] === null) {
             $invalidProperties[] = "'user' can't be null";
         }
@@ -237,33 +234,9 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets entity
      *
-     * @return \Finix\Model\IdentityEntityForm
+     * @return \Finix\Model\IdentityEntityForm|null
      */
     public function getEntity()
     {
@@ -273,7 +246,7 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets entity
      *
-     * @param \Finix\Model\IdentityEntityForm $entity entity
+     * @param \Finix\Model\IdentityEntityForm|null $entity entity
      *
      * @return self
      */
@@ -321,13 +294,37 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets name
      *
-     * @param string|null $name Merchant's full legal business name (If INDIVIDUAL_SOLE_PROPRIETORSHIP, please input first name, Full legal last name and middle initial; max 120 characters).
+     * @param string|null $name Merchant's full legal business name (If **INDIVIDUAL_SOLE_PROPRIETORSHIP**, enter first name, Full legal last name and middle initial; max 120 characters).
      *
      * @return self
      */
     public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -351,9 +348,6 @@ class CreateApplicationRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setUser($user, $deserialize = false)
     {
-
-        
-
         $this->container['user'] = $user;
 
         return $this;

@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * ExternalLinksListEmbedded Class Doc Comment
  *
  * @category Class
- * @description &#x60;external_links&#x60; resources.
+ * @description List of &#x60;external_link&#x60; resources.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -220,7 +220,7 @@ class ExternalLinksListEmbedded implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets external_links
      *
-     * @param \Finix\Model\ExternalLink[]|null $external_links external_links
+     * @param \Finix\Model\ExternalLink[]|null $external_links `external_link` resources.
      *
      * @return self
      */

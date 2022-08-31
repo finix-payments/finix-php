@@ -259,7 +259,7 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets action
      *
-     * @param string|null $action The action you want to perform on the device.
+     * @param string|null $action The action you want to perform on the device. Use **DEACTIVATE** to deactivate the device.
      *
      * @return self
      */
@@ -293,7 +293,7 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets activation_code
      *
-     * @param string|null $activation_code Used when `action` is **ACTIVATE**. The input the code thats show up on the device screen.
+     * @param string|null $activation_code Used when `action` is **ACTIVATE**. Provide the input code that shows up on the device screen.
      *
      * @return self
      */

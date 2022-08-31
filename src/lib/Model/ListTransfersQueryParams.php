@@ -405,7 +405,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets sort
      *
-     * @param string|null $sort Specify key to be used for sorting the collection
+     * @param string|null $sort Specify key to be used for sorting the collection.
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets amount
      *
-     * @param int|null $amount Filter by an amount equal to the given value
+     * @param int|null $amount Filter by an amount equal to the given value.
      *
      * @return self
      */
@@ -501,7 +501,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets amount_gte
      *
-     * @param int|null $amount_gte Filter by an amount greater than or equal
+     * @param int|null $amount_gte Filter by an amount greater than or equal.
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets amount_gt
      *
-     * @param int|null $amount_gt Filter by an amount greater than
+     * @param int|null $amount_gt Filter by an amount greater than.
      *
      * @return self
      */
@@ -549,7 +549,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets amount_lte
      *
-     * @param int|null $amount_lte Filter by an amount less than or equal
+     * @param int|null $amount_lte Filter by an amount less than or equal.
      *
      * @return self
      */
@@ -573,7 +573,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets amount_lt
      *
-     * @param int|null $amount_lt Filter by an amount less than
+     * @param int|null $amount_lt Filter by an amount less than.
      *
      * @return self
      */
@@ -597,7 +597,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -621,7 +621,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets idempotency_id
      *
-     * @param string|null $idempotency_id Filter by idempotency_id
+     * @param string|null $idempotency_id Filter by `idempotency_id`.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets id
      *
-     * @param string|null $id Filter by id
+     * @param string|null $id Filter by `id`.
      *
      * @return self
      */
@@ -717,7 +717,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ready_to_settle_at_gte
      *
-     * @param string|null $ready_to_settle_at_gte Filter by ready_to_settle_at
+     * @param string|null $ready_to_settle_at_gte Filter by `ready_to_settle_at`.
      *
      * @return self
      */
@@ -741,7 +741,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ready_to_settle_at_lte
      *
-     * @param string|null $ready_to_settle_at_lte Filter by ready_to_settle_at
+     * @param string|null $ready_to_settle_at_lte Filter by `ready_to_settle_at`.
      *
      * @return self
      */
@@ -765,7 +765,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets statement_descriptor
      *
-     * @param int|null $statement_descriptor Filter by statement_descriptor
+     * @param int|null $statement_descriptor Filter by `statement_descriptor`.
      *
      * @return self
      */
@@ -789,7 +789,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets trace_id
      *
-     * @param string|null $trace_id Filter by trace_id
+     * @param string|null $trace_id Filter by `trace_id`.
      *
      * @return self
      */
@@ -813,7 +813,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets updated_at_gte
      *
-     * @param string|null $updated_at_gte Filter where updated_at is after the given date
+     * @param string|null $updated_at_gte Filter where `updated_at` is after the given date.
      *
      * @return self
      */
@@ -837,7 +837,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets updated_at_lte
      *
-     * @param string|null $updated_at_lte Filter where updated_at is before the given date
+     * @param string|null $updated_at_lte Filter where `updated_at` is before the given date.
      *
      * @return self
      */
@@ -861,7 +861,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_bin
      *
-     * @param string|null $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number
+     * @param string|null $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number.
      *
      * @return self
      */
@@ -885,7 +885,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_account_last4
      *
-     * @param string|null $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4=9444 BIN
+     * @param string|null $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4=9444 BIN.
      *
      * @return self
      */
@@ -909,7 +909,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_brand_type
      *
-     * @param string|null $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down
+     * @param string|null $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down.
      *
      * @return self
      */
@@ -933,7 +933,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets merchant_identity_id
      *
-     * @param string|null $merchant_identity_id Filter by Identity ID
+     * @param string|null $merchant_identity_id Filter by `Identity` ID.
      *
      * @return self
      */
@@ -957,7 +957,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets merchant_identity_name
      *
-     * @param string|null $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive
+     * @param string|null $merchant_identity_name Filter Transactions by `Identity` name. The name is not case-sensitive.
      *
      * @return self
      */
@@ -981,7 +981,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_name
      *
-     * @param string|null $instrument_name Filter Transactions by payment instrument name
+     * @param string|null $instrument_name Filter Transactions by `Payment Instrument` name.
      *
      * @return self
      */
@@ -1005,7 +1005,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_type
      *
-     * @param string|null $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card
+     * @param string|null $instrument_type Filter Transactions by `Payment Instrument` type. Available instrument types include: Bank Account or Payment Card
      *
      * @return self
      */
@@ -1029,7 +1029,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets merchant_id
      *
-     * @param string|null $merchant_id Filter by Merchant ID
+     * @param string|null $merchant_id Filter by `Merchant` ID.
      *
      * @return self
      */
@@ -1053,7 +1053,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets merchant_mid
      *
-     * @param string|null $merchant_mid Filter by Merchant Identification Number (MID)
+     * @param string|null $merchant_mid Filter by Merchant Identification Number (MID).
      *
      * @return self
      */
@@ -1077,7 +1077,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instrument_card_last4
      *
-     * @param string|null $instrument_card_last4 Filter by the payment card last 4 digits
+     * @param string|null $instrument_card_last4 Filter by the payment card last 4 digits.
      *
      * @return self
      */
@@ -1101,7 +1101,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets merchant_processor_id
      *
-     * @param string|null $merchant_processor_id Filter by Processor ID
+     * @param string|null $merchant_processor_id Filter by `Processor` ID.
      *
      * @return self
      */
@@ -1125,7 +1125,7 @@ class ListTransfersQueryParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets type
      *
-     * @param string|null $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits.
+     * @param string|null $type Filter by `Transfer` type. Available type filters include: All, Debits, Refunds, or Credits.
      *
      * @return self
      */

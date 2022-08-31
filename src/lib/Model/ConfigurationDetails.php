@@ -346,7 +346,7 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets bypass_device_on_capture
      *
-     * @param bool|null $bypass_device_on_capture Sets whether or not the device will be used to capture transactions. This field must be set to true (defaults to false).
+     * @param bool|null $bypass_device_on_capture Sets whether the device will be used to capture `Authorizations`. The device is required to be connected if `bypass_device_on_capture` is set to false. (defaults to true).
      *
      * @return self
      */

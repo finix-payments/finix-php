@@ -2068,14 +2068,14 @@ class FilesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $file_id Your &#x60;File&#x60; ID. (required)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2121,14 +2121,14 @@ class FilesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $file_id Your &#x60;File&#x60; ID. (required)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2300,14 +2300,14 @@ class FilesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $file_id Your &#x60;File&#x60; ID. (required)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2331,14 +2331,14 @@ class FilesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $file_id Your &#x60;File&#x60; ID. (required)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2391,14 +2391,14 @@ class FilesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $file_id Your &#x60;File&#x60; ID. (required)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2595,14 +2595,14 @@ class FilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2647,14 +2647,14 @@ class FilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2848,14 +2848,14 @@ class FilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2878,14 +2878,14 @@ class FilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2937,14 +2937,14 @@ class FilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException

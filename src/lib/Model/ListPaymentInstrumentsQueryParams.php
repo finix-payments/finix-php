@@ -60,21 +60,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'limit' => 'int',
-        'after_cursor' => 'string',
         'account_last4' => 'string',
         'account_routing_number' => 'string',
+        'after_cursor' => 'string',
         'application' => 'string',
+        'before_cursor' => 'string',
         'bin' => 'string',
         'created_at_gte' => 'string',
         'created_at_lte' => 'string',
         'expiration_month' => 'string',
         'expiration_year' => 'string',
         'last_four' => 'string',
+        'limit' => 'int',
         'name' => 'string',
         'owner_identity_id' => 'string',
-        'type' => 'string',
-        'before_cursor' => 'string'
+        'type' => 'string'
     ];
 
     /**
@@ -85,21 +85,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
-        'after_cursor' => null,
         'account_last4' => null,
         'account_routing_number' => null,
+        'after_cursor' => null,
         'application' => null,
+        'before_cursor' => null,
         'bin' => null,
         'created_at_gte' => null,
         'created_at_lte' => null,
         'expiration_month' => null,
         'expiration_year' => null,
         'last_four' => null,
+        'limit' => null,
         'name' => null,
         'owner_identity_id' => null,
-        'type' => null,
-        'before_cursor' => null
+        'type' => null
     ];
 
     /**
@@ -129,21 +129,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'limit' => 'limit',
-        'after_cursor' => 'after_cursor',
         'account_last4' => 'account_last4',
         'account_routing_number' => 'account_routing_number',
+        'after_cursor' => 'after_cursor',
         'application' => 'application',
+        'before_cursor' => 'before_cursor',
         'bin' => 'bin',
         'created_at_gte' => 'created_at.gte',
         'created_at_lte' => 'created_at.lte',
         'expiration_month' => 'expiration_month',
         'expiration_year' => 'expiration_year',
         'last_four' => 'last_four',
+        'limit' => 'limit',
         'name' => 'name',
         'owner_identity_id' => 'owner_identity_id',
-        'type' => 'type',
-        'before_cursor' => 'before_cursor'
+        'type' => 'type'
     ];
 
     /**
@@ -152,21 +152,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'limit' => 'setLimit',
-        'after_cursor' => 'setAfterCursor',
         'account_last4' => 'setAccountLast4',
         'account_routing_number' => 'setAccountRoutingNumber',
+        'after_cursor' => 'setAfterCursor',
         'application' => 'setApplication',
+        'before_cursor' => 'setBeforeCursor',
         'bin' => 'setBin',
         'created_at_gte' => 'setCreatedAtGte',
         'created_at_lte' => 'setCreatedAtLte',
         'expiration_month' => 'setExpirationMonth',
         'expiration_year' => 'setExpirationYear',
         'last_four' => 'setLastFour',
+        'limit' => 'setLimit',
         'name' => 'setName',
         'owner_identity_id' => 'setOwnerIdentityId',
-        'type' => 'setType',
-        'before_cursor' => 'setBeforeCursor'
+        'type' => 'setType'
     ];
 
     /**
@@ -175,21 +175,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'limit' => 'getLimit',
-        'after_cursor' => 'getAfterCursor',
         'account_last4' => 'getAccountLast4',
         'account_routing_number' => 'getAccountRoutingNumber',
+        'after_cursor' => 'getAfterCursor',
         'application' => 'getApplication',
+        'before_cursor' => 'getBeforeCursor',
         'bin' => 'getBin',
         'created_at_gte' => 'getCreatedAtGte',
         'created_at_lte' => 'getCreatedAtLte',
         'expiration_month' => 'getExpirationMonth',
         'expiration_year' => 'getExpirationYear',
         'last_four' => 'getLastFour',
+        'limit' => 'getLimit',
         'name' => 'getName',
         'owner_identity_id' => 'getOwnerIdentityId',
-        'type' => 'getType',
-        'before_cursor' => 'getBeforeCursor'
+        'type' => 'getType'
     ];
 
     /**
@@ -249,21 +249,21 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['limit'] = $data['limit'] ?? null;
-        $this->container['after_cursor'] = $data['after_cursor'] ?? null;
         $this->container['account_last4'] = $data['account_last4'] ?? null;
         $this->container['account_routing_number'] = $data['account_routing_number'] ?? null;
+        $this->container['after_cursor'] = $data['after_cursor'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
+        $this->container['before_cursor'] = $data['before_cursor'] ?? null;
         $this->container['bin'] = $data['bin'] ?? null;
         $this->container['created_at_gte'] = $data['created_at_gte'] ?? null;
         $this->container['created_at_lte'] = $data['created_at_lte'] ?? null;
         $this->container['expiration_month'] = $data['expiration_month'] ?? null;
         $this->container['expiration_year'] = $data['expiration_year'] ?? null;
         $this->container['last_four'] = $data['last_four'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['owner_identity_id'] = $data['owner_identity_id'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
-        $this->container['before_cursor'] = $data['before_cursor'] ?? null;
     }
 
     /**
@@ -289,54 +289,6 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets limit
-     *
-     * @return int|null
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param int|null $limit The numbers of items to return
-     *
-     * @return self
-     */
-    public function setLimit($limit, $deserialize = false)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets after_cursor
-     *
-     * @return string|null
-     */
-    public function getAfterCursor()
-    {
-        return $this->container['after_cursor'];
-    }
-
-    /**
-     * Sets after_cursor
-     *
-     * @param string|null $after_cursor Return every resource created after the cursor value.
-     *
-     * @return self
-     */
-    public function setAfterCursor($after_cursor, $deserialize = false)
-    {
-        $this->container['after_cursor'] = $after_cursor;
-
-        return $this;
-    }
 
     /**
      * Gets account_last4
@@ -387,6 +339,30 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     }
 
     /**
+     * Gets after_cursor
+     *
+     * @return string|null
+     */
+    public function getAfterCursor()
+    {
+        return $this->container['after_cursor'];
+    }
+
+    /**
+     * Sets after_cursor
+     *
+     * @param string|null $after_cursor Return every resource created after the cursor value.
+     *
+     * @return self
+     */
+    public function setAfterCursor($after_cursor, $deserialize = false)
+    {
+        $this->container['after_cursor'] = $after_cursor;
+
+        return $this;
+    }
+
+    /**
      * Gets application
      *
      * @return string|null
@@ -399,13 +375,37 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets application
      *
-     * @param string|null $application Filter by application id
+     * @param string|null $application Filter by `Application` ID.
      *
      * @return self
      */
     public function setApplication($application, $deserialize = false)
     {
         $this->container['application'] = $application;
+
+        return $this;
+    }
+
+    /**
+     * Gets before_cursor
+     *
+     * @return string|null
+     */
+    public function getBeforeCursor()
+    {
+        return $this->container['before_cursor'];
+    }
+
+    /**
+     * Sets before_cursor
+     *
+     * @param string|null $before_cursor Return every resource created before the cursor value.
+     *
+     * @return self
+     */
+    public function setBeforeCursor($before_cursor, $deserialize = false)
+    {
+        $this->container['before_cursor'] = $before_cursor;
 
         return $this;
     }
@@ -423,7 +423,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets bin
      *
-     * @param string|null $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number
+     * @param string|null $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number.
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets expiration_year
      *
-     * @param string|null $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards
+     * @param string|null $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards.
      *
      * @return self
      */
@@ -543,13 +543,37 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets last_four
      *
-     * @param string|null $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards.
+     * @param string|null $last_four Filter by the last 4 digits of the `Payment Instrument` card. This filter only applies to payment cards.
      *
      * @return self
      */
     public function setLastFour($last_four, $deserialize = false)
     {
         $this->container['last_four'] = $last_four;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int|null
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int|null $limit The numbers of items to return.
+     *
+     * @return self
+     */
+    public function setLimit($limit, $deserialize = false)
+    {
+        $this->container['limit'] = $limit;
 
         return $this;
     }
@@ -591,7 +615,7 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets owner_identity_id
      *
-     * @param string|null $owner_identity_id Filter by the owner id of the associated identity.
+     * @param string|null $owner_identity_id Filter by the owner id of the associated `Identity`.
      *
      * @return self
      */
@@ -615,37 +639,13 @@ class ListPaymentInstrumentsQueryParams implements ModelInterface, ArrayAccess, 
     /**
      * Sets type
      *
-     * @param string|null $type Filter by the payment instrument type.
+     * @param string|null $type Filter by the `Payment Instrument` type.
      *
      * @return self
      */
     public function setType($type, $deserialize = false)
     {
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets before_cursor
-     *
-     * @return string|null
-     */
-    public function getBeforeCursor()
-    {
-        return $this->container['before_cursor'];
-    }
-
-    /**
-     * Sets before_cursor
-     *
-     * @param string|null $before_cursor Return every resource created before the cursor value.
-     *
-     * @return self
-     */
-    public function setBeforeCursor($before_cursor, $deserialize = false)
-    {
-        $this->container['before_cursor'] = $before_cursor;
 
         return $this;
     }

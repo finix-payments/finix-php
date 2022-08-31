@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * ApplicationProfilesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;application_profile&#x60; resources.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class ApplicationProfilesListEmbedded implements ModelInterface, ArrayAccess, \J
     /**
      * Sets application_profiles
      *
-     * @param \Finix\Model\ApplicationProfile[]|null $application_profiles `application_profile` resource.
+     * @param \Finix\Model\ApplicationProfile[]|null $application_profiles `application_profile` resources.
      *
      * @return self
      */

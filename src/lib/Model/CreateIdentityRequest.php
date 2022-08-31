@@ -61,8 +61,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entity' => '\Finix\Model\CreateIdentityRequestEntity',
         'additional_underwriting_data' => '\Finix\Model\CreateIdentityRequestAdditionalUnderwritingData',
+        'entity' => '\Finix\Model\CreateIdentityRequestEntity',
         'tags' => 'array<string,string>'
     ];
 
@@ -74,8 +74,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entity' => null,
         'additional_underwriting_data' => null,
+        'entity' => null,
         'tags' => null
     ];
 
@@ -106,8 +106,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity' => 'entity',
         'additional_underwriting_data' => 'additional_underwriting_data',
+        'entity' => 'entity',
         'tags' => 'tags'
     ];
 
@@ -117,8 +117,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'entity' => 'setEntity',
         'additional_underwriting_data' => 'setAdditionalUnderwritingData',
+        'entity' => 'setEntity',
         'tags' => 'setTags'
     ];
 
@@ -128,8 +128,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'entity' => 'getEntity',
         'additional_underwriting_data' => 'getAdditionalUnderwritingData',
+        'entity' => 'getEntity',
         'tags' => 'getTags'
     ];
 
@@ -190,8 +190,8 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity'] = $data['entity'] ?? null;
         $this->container['additional_underwriting_data'] = $data['additional_underwriting_data'] ?? null;
+        $this->container['entity'] = $data['entity'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
 
@@ -220,30 +220,6 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets entity
-     *
-     * @return \Finix\Model\CreateIdentityRequestEntity|null
-     */
-    public function getEntity()
-    {
-        return $this->container['entity'];
-    }
-
-    /**
-     * Sets entity
-     *
-     * @param \Finix\Model\CreateIdentityRequestEntity|null $entity entity
-     *
-     * @return self
-     */
-    public function setEntity($entity, $deserialize = false)
-    {
-        $this->container['entity'] = $entity;
-
-        return $this;
-    }
-
-    /**
      * Gets additional_underwriting_data
      *
      * @return \Finix\Model\CreateIdentityRequestAdditionalUnderwritingData|null
@@ -263,6 +239,30 @@ class CreateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
     {
         $this->container['additional_underwriting_data'] = $additional_underwriting_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity
+     *
+     * @return \Finix\Model\CreateIdentityRequestEntity|null
+     */
+    public function getEntity()
+    {
+        return $this->container['entity'];
+    }
+
+    /**
+     * Sets entity
+     *
+     * @param \Finix\Model\CreateIdentityRequestEntity|null $entity entity
+     *
+     * @return self
+     */
+    public function setEntity($entity, $deserialize = false)
+    {
+        $this->container['entity'] = $entity;
 
         return $this;
     }

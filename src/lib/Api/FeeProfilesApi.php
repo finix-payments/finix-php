@@ -507,7 +507,7 @@ class FeeProfilesApi
      *
      * Fetch a Fee Profile
      *
-     * @param  string $fee_profile_id The ID of the fee profile. (required)
+     * @param  string $fee_profile_id The ID of the &#x60;fee_profile&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -524,7 +524,7 @@ class FeeProfilesApi
      *
      * Fetch a Fee Profile
      *
-     * @param  string $fee_profile_id The ID of the fee profile. (required)
+     * @param  string $fee_profile_id The ID of the &#x60;fee_profile&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -715,7 +715,7 @@ class FeeProfilesApi
      *
      * Fetch a Fee Profile
      *
-     * @param  string $fee_profile_id The ID of the fee profile. (required)
+     * @param  string $fee_profile_id The ID of the &#x60;fee_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -735,7 +735,7 @@ class FeeProfilesApi
      *
      * Fetch a Fee Profile
      *
-     * @param  string $fee_profile_id The ID of the fee profile. (required)
+     * @param  string $fee_profile_id The ID of the &#x60;fee_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -784,7 +784,7 @@ class FeeProfilesApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $fee_profile_id The ID of the fee profile. (required)
+     * @param  string $fee_profile_id The ID of the &#x60;fee_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -889,7 +889,7 @@ class FeeProfilesApi
      *
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -935,7 +935,7 @@ class FeeProfilesApi
      *
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1107,7 +1107,7 @@ class FeeProfilesApi
      *
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1131,7 +1131,7 @@ class FeeProfilesApi
      *
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1184,7 +1184,7 @@ class FeeProfilesApi
      *
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -61,11 +61,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         '_3ds_redirect_url' => 'string',
+        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
         'amount' => 'int',
         'application' => 'string',
         'card_present_details' => '\Finix\Model\CardPresentDetails',
@@ -73,22 +73,20 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         'currency' => '\Finix\Model\Currency',
         'device' => 'string',
         'expires_at' => '\DateTime',
-        'external_responses' => '\Finix\Model\AuthorizationExternalResponsesInner[]',
-        'idempotency_id' => 'string',
-        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'external_responses' => '\Finix\Model\AuthorizationCapturedExternalResponsesInner[]',
         'failure_code' => 'string',
         'failure_message' => 'string',
+        'idempotency_id' => 'string',
         'is_void' => 'bool',
         'merchant_identity' => 'string',
-        'merchant' => 'string',
         'messages' => 'string[]',
         'raw' => 'object',
         'source' => 'string',
         'state' => 'string',
+        'tags' => 'array<string,string>',
         'trace_id' => 'string',
         'transfer' => 'string',
         'void_state' => 'string',
-        'sub_type' => '\Finix\Model\SubTypeTransfer',
         '_links' => '\Finix\Model\AuthorizationLinks'
     ];
 
@@ -100,11 +98,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         '_3ds_redirect_url' => null,
+        'additional_buyer_charges' => null,
         'amount' => null,
         'application' => null,
         'card_present_details' => null,
@@ -113,21 +111,19 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         'device' => null,
         'expires_at' => 'date-time',
         'external_responses' => null,
-        'idempotency_id' => null,
-        'additional_buyer_charges' => null,
         'failure_code' => null,
         'failure_message' => null,
+        'idempotency_id' => null,
         'is_void' => null,
         'merchant_identity' => null,
-        'merchant' => null,
         'messages' => null,
         'raw' => null,
         'source' => null,
         'state' => null,
+        'tags' => null,
         'trace_id' => null,
         'transfer' => null,
         'void_state' => null,
-        'sub_type' => null,
         '_links' => null
     ];
 
@@ -158,11 +154,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         '_3ds_redirect_url' => '3ds_redirect_url',
+        'additional_buyer_charges' => 'additional_buyer_charges',
         'amount' => 'amount',
         'application' => 'application',
         'card_present_details' => 'card_present_details',
@@ -171,21 +167,19 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         'device' => 'device',
         'expires_at' => 'expires_at',
         'external_responses' => 'external_responses',
-        'idempotency_id' => 'idempotency_id',
-        'additional_buyer_charges' => 'additional_buyer_charges',
         'failure_code' => 'failure_code',
         'failure_message' => 'failure_message',
+        'idempotency_id' => 'idempotency_id',
         'is_void' => 'is_void',
         'merchant_identity' => 'merchant_identity',
-        'merchant' => 'merchant',
         'messages' => 'messages',
         'raw' => 'raw',
         'source' => 'source',
         'state' => 'state',
+        'tags' => 'tags',
         'trace_id' => 'trace_id',
         'transfer' => 'transfer',
         'void_state' => 'void_state',
-        'sub_type' => 'sub_type',
         '_links' => '_links'
     ];
 
@@ -195,11 +189,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         '_3ds_redirect_url' => 'set3dsRedirectUrl',
+        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
         'amount' => 'setAmount',
         'application' => 'setApplication',
         'card_present_details' => 'setCardPresentDetails',
@@ -208,21 +202,19 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         'device' => 'setDevice',
         'expires_at' => 'setExpiresAt',
         'external_responses' => 'setExternalResponses',
-        'idempotency_id' => 'setIdempotencyId',
-        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
         'failure_code' => 'setFailureCode',
         'failure_message' => 'setFailureMessage',
+        'idempotency_id' => 'setIdempotencyId',
         'is_void' => 'setIsVoid',
         'merchant_identity' => 'setMerchantIdentity',
-        'merchant' => 'setMerchant',
         'messages' => 'setMessages',
         'raw' => 'setRaw',
         'source' => 'setSource',
         'state' => 'setState',
+        'tags' => 'setTags',
         'trace_id' => 'setTraceId',
         'transfer' => 'setTransfer',
         'void_state' => 'setVoidState',
-        'sub_type' => 'setSubType',
         '_links' => 'setLinks'
     ];
 
@@ -232,11 +224,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         '_3ds_redirect_url' => 'get3dsRedirectUrl',
+        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
         'amount' => 'getAmount',
         'application' => 'getApplication',
         'card_present_details' => 'getCardPresentDetails',
@@ -245,21 +237,19 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         'device' => 'getDevice',
         'expires_at' => 'getExpiresAt',
         'external_responses' => 'getExternalResponses',
-        'idempotency_id' => 'getIdempotencyId',
-        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
         'failure_code' => 'getFailureCode',
         'failure_message' => 'getFailureMessage',
+        'idempotency_id' => 'getIdempotencyId',
         'is_void' => 'getIsVoid',
         'merchant_identity' => 'getMerchantIdentity',
-        'merchant' => 'getMerchant',
         'messages' => 'getMessages',
         'raw' => 'getRaw',
         'source' => 'getSource',
         'state' => 'getState',
+        'tags' => 'getTags',
         'trace_id' => 'getTraceId',
         'transfer' => 'getTransfer',
         'void_state' => 'getVoidState',
-        'sub_type' => 'getSubType',
         '_links' => 'getLinks'
     ];
 
@@ -341,11 +331,11 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['_3ds_redirect_url'] = $data['_3ds_redirect_url'] ?? null;
+        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['card_present_details'] = $data['card_present_details'] ?? null;
@@ -354,21 +344,19 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['device'] = $data['device'] ?? null;
         $this->container['expires_at'] = $data['expires_at'] ?? null;
         $this->container['external_responses'] = $data['external_responses'] ?? null;
-        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
-        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
         $this->container['failure_code'] = $data['failure_code'] ?? null;
         $this->container['failure_message'] = $data['failure_message'] ?? null;
+        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
         $this->container['is_void'] = $data['is_void'] ?? null;
         $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
-        $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['messages'] = $data['messages'] ?? null;
         $this->container['raw'] = $data['raw'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['trace_id'] = $data['trace_id'] ?? null;
         $this->container['transfer'] = $data['transfer'] ?? null;
         $this->container['void_state'] = $data['void_state'] ?? null;
-        $this->container['sub_type'] = $data['sub_type'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -410,30 +398,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -452,9 +416,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -528,6 +489,30 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     public function set3dsRedirectUrl($_3ds_redirect_url, $deserialize = false)
     {
         $this->container['_3ds_redirect_url'] = $_3ds_redirect_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_buyer_charges
+     *
+     * @return \Finix\Model\AdditionalBuyerCharges|null
+     */
+    public function getAdditionalBuyerCharges()
+    {
+        return $this->container['additional_buyer_charges'];
+    }
+
+    /**
+     * Sets additional_buyer_charges
+     *
+     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
+     *
+     * @return self
+     */
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
+    {
+        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
         return $this;
     }
@@ -677,9 +662,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setDevice($device, $deserialize = false)
     {
-
-        
-
         $this->container['device'] = $device;
 
         return $this;
@@ -712,7 +694,7 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets external_responses
      *
-     * @return \Finix\Model\AuthorizationExternalResponsesInner[]|null
+     * @return \Finix\Model\AuthorizationCapturedExternalResponsesInner[]|null
      */
     public function getExternalResponses()
     {
@@ -722,61 +704,13 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets external_responses
      *
-     * @param \Finix\Model\AuthorizationExternalResponsesInner[]|null $external_responses external_responses
+     * @param \Finix\Model\AuthorizationCapturedExternalResponsesInner[]|null $external_responses external_responses
      *
      * @return self
      */
     public function setExternalResponses($external_responses, $deserialize = false)
     {
         $this->container['external_responses'] = $external_responses;
-
-        return $this;
-    }
-
-    /**
-     * Gets idempotency_id
-     *
-     * @return string|null
-     */
-    public function getIdempotencyId()
-    {
-        return $this->container['idempotency_id'];
-    }
-
-    /**
-     * Sets idempotency_id
-     *
-     * @param string|null $idempotency_id A randomly generated value that'll be associated with the request.
-     *
-     * @return self
-     */
-    public function setIdempotencyId($idempotency_id, $deserialize = false)
-    {
-        $this->container['idempotency_id'] = $idempotency_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_buyer_charges
-     *
-     * @return \Finix\Model\AdditionalBuyerCharges|null
-     */
-    public function getAdditionalBuyerCharges()
-    {
-        return $this->container['additional_buyer_charges'];
-    }
-
-    /**
-     * Sets additional_buyer_charges
-     *
-     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
-     *
-     * @return self
-     */
-    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
-    {
-        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
         return $this;
     }
@@ -830,6 +764,30 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets idempotency_id
+     *
+     * @return string|null
+     */
+    public function getIdempotencyId()
+    {
+        return $this->container['idempotency_id'];
+    }
+
+    /**
+     * Sets idempotency_id
+     *
+     * @param string|null $idempotency_id A randomly generated value that'll be associated with the request.
+     *
+     * @return self
+     */
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
+    {
+        $this->container['idempotency_id'] = $idempotency_id;
+
+        return $this;
+    }
+
+    /**
      * Gets is_void
      *
      * @return bool|null
@@ -878,30 +836,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets merchant
-     *
-     * @return string|null
-     */
-    public function getMerchant()
-    {
-        return $this->container['merchant'];
-    }
-
-    /**
-     * Sets merchant
-     *
-     * @param string|null $merchant The ID of the resource.
-     *
-     * @return self
-     */
-    public function setMerchant($merchant, $deserialize = false)
-    {
-        $this->container['merchant'] = $merchant;
-
-        return $this;
-    }
-
-    /**
      * Gets messages
      *
      * @return string[]|null
@@ -938,7 +872,7 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets raw
      *
-     * @param object|null $raw Raw response from the processor
+     * @param object|null $raw Raw response from the processor.
      *
      * @return self
      */
@@ -968,9 +902,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setSource($source, $deserialize = false)
     {
-
-        
-
         $this->container['source'] = $source;
 
         return $this;
@@ -1006,6 +937,30 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -1053,9 +1008,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setTransfer($transfer, $deserialize = false)
     {
-
-        
-
         $this->container['transfer'] = $transfer;
 
         return $this;
@@ -1081,30 +1033,6 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setVoidState($void_state, $deserialize = false)
     {
         $this->container['void_state'] = $void_state;
-
-        return $this;
-    }
-
-    /**
-     * Gets sub_type
-     *
-     * @return \Finix\Model\SubTypeTransfer|null
-     */
-    public function getSubType()
-    {
-        return $this->container['sub_type'];
-    }
-
-    /**
-     * Sets sub_type
-     *
-     * @param \Finix\Model\SubTypeTransfer|null $sub_type sub_type
-     *
-     * @return self
-     */
-    public function setSubType($sub_type, $deserialize = false)
-    {
-        $this->container['sub_type'] = $sub_type;
 
         return $this;
     }

@@ -61,8 +61,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mid' => 'string',
-        'api_key' => 'string'
+        'api_key' => 'string',
+        'mid' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'mid' => null,
-        'api_key' => null
+        'api_key' => null,
+        'mid' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'mid' => 'mid',
-        'api_key' => 'api_key'
+        'api_key' => 'api_key',
+        'mid' => 'mid'
     ];
 
     /**
@@ -114,8 +114,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'mid' => 'setMid',
-        'api_key' => 'setApiKey'
+        'api_key' => 'setApiKey',
+        'mid' => 'setMid'
     ];
 
     /**
@@ -124,8 +124,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'mid' => 'getMid',
-        'api_key' => 'getApiKey'
+        'api_key' => 'getApiKey',
+        'mid' => 'getMid'
     ];
 
     /**
@@ -185,8 +185,8 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['mid'] = $data['mid'] ?? null;
         $this->container['api_key'] = $data['api_key'] ?? null;
+        $this->container['mid'] = $data['mid'] ?? null;
     }
 
     /**
@@ -214,30 +214,6 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets mid
-     *
-     * @return string|null
-     */
-    public function getMid()
-    {
-        return $this->container['mid'];
-    }
-
-    /**
-     * Sets mid
-     *
-     * @param string|null $mid mid
-     *
-     * @return self
-     */
-    public function setMid($mid, $deserialize = false)
-    {
-        $this->container['mid'] = $mid;
-
-        return $this;
-    }
-
-    /**
      * Gets api_key
      *
      * @return string|null
@@ -257,6 +233,30 @@ class MerchantProcessorDetails implements ModelInterface, ArrayAccess, \JsonSeri
     public function setApiKey($api_key, $deserialize = false)
     {
         $this->container['api_key'] = $api_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets mid
+     *
+     * @return string|null
+     */
+    public function getMid()
+    {
+        return $this->container['mid'];
+    }
+
+    /**
+     * Sets mid
+     *
+     * @param string|null $mid mid
+     *
+     * @return self
+     */
+    public function setMid($mid, $deserialize = false)
+    {
+        $this->container['mid'] = $mid;
 
         return $this;
     }

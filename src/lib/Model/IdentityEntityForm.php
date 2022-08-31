@@ -61,7 +61,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
         'amex_mid' => 'string',
         'annual_card_volume' => 'int',
         'business_address' => '\Finix\Model\IdentityEntityFormBusinessAddress',
@@ -87,6 +86,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         'short_business_name' => 'string',
         'tax_authority' => 'string',
         'tax_id' => 'string',
+        'title' => 'string',
         'url' => 'string'
     ];
 
@@ -98,7 +98,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
         'amex_mid' => null,
         'annual_card_volume' => 'int64',
         'business_address' => null,
@@ -124,6 +123,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         'short_business_name' => null,
         'tax_authority' => null,
         'tax_id' => null,
+        'title' => null,
         'url' => null
     ];
 
@@ -154,7 +154,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
         'amex_mid' => 'amex_mid',
         'annual_card_volume' => 'annual_card_volume',
         'business_address' => 'business_address',
@@ -180,6 +179,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         'short_business_name' => 'short_business_name',
         'tax_authority' => 'tax_authority',
         'tax_id' => 'tax_id',
+        'title' => 'title',
         'url' => 'url'
     ];
 
@@ -189,7 +189,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
         'amex_mid' => 'setAmexMid',
         'annual_card_volume' => 'setAnnualCardVolume',
         'business_address' => 'setBusinessAddress',
@@ -215,6 +214,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         'short_business_name' => 'setShortBusinessName',
         'tax_authority' => 'setTaxAuthority',
         'tax_id' => 'setTaxId',
+        'title' => 'setTitle',
         'url' => 'setUrl'
     ];
 
@@ -224,7 +224,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
         'amex_mid' => 'getAmexMid',
         'annual_card_volume' => 'getAnnualCardVolume',
         'business_address' => 'getBusinessAddress',
@@ -250,6 +249,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         'short_business_name' => 'getShortBusinessName',
         'tax_authority' => 'getTaxAuthority',
         'tax_id' => 'getTaxId',
+        'title' => 'getTitle',
         'url' => 'getUrl'
     ];
 
@@ -358,7 +358,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
         $this->container['amex_mid'] = $data['amex_mid'] ?? null;
         $this->container['annual_card_volume'] = $data['annual_card_volume'] ?? null;
         $this->container['business_address'] = $data['business_address'] ?? null;
@@ -384,6 +383,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->container['short_business_name'] = $data['short_business_name'] ?? null;
         $this->container['tax_authority'] = $data['tax_authority'] ?? null;
         $this->container['tax_id'] = $data['tax_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
     }
 
@@ -396,10 +396,21 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['title']) && (mb_strlen($this->container['title']) > 60)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 60.";
+        if ($this->container['business_address'] === null) {
+            $invalidProperties[] = "'business_address' can't be null";
         }
-
+        if ($this->container['business_name'] === null) {
+            $invalidProperties[] = "'business_name' can't be null";
+        }
+        if ($this->container['business_phone'] === null) {
+            $invalidProperties[] = "'business_phone' can't be null";
+        }
+        if ($this->container['business_tax_id'] === null) {
+            $invalidProperties[] = "'business_tax_id' can't be null";
+        }
+        if ($this->container['business_type'] === null) {
+            $invalidProperties[] = "'business_type' can't be null";
+        }
         $allowedValues = $this->getBusinessTypeAllowableValues();
         if (!is_null($this->container['business_type']) && !in_array($this->container['business_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -417,10 +428,25 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'default_statement_descriptor', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['doing_business_as']) && (mb_strlen($this->container['doing_business_as']) > 60)) {
+        if ($this->container['dob'] === null) {
+            $invalidProperties[] = "'dob' can't be null";
+        }
+        if ($this->container['doing_business_as'] === null) {
+            $invalidProperties[] = "'doing_business_as' can't be null";
+        }
+        if ((mb_strlen($this->container['doing_business_as']) > 60)) {
             $invalidProperties[] = "invalid value for 'doing_business_as', the character length must be smaller than or equal to 60.";
         }
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['first_name'] === null) {
+            $invalidProperties[] = "'first_name' can't be null";
+        }
+        if ($this->container['last_name'] === null) {
+            $invalidProperties[] = "'last_name' can't be null";
+        }
         $allowedValues = $this->getOwnershipTypeAllowableValues();
         if (!is_null($this->container['ownership_type']) && !in_array($this->container['ownership_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -430,6 +456,12 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
             );
         }
 
+        if ($this->container['personal_address'] === null) {
+            $invalidProperties[] = "'personal_address' can't be null";
+        }
+        if ($this->container['phone'] === null) {
+            $invalidProperties[] = "'phone' can't be null";
+        }
         if (!is_null($this->container['principal_percentage_ownership']) && ($this->container['principal_percentage_ownership'] > 100)) {
             $invalidProperties[] = "invalid value for 'principal_percentage_ownership', must be smaller than or equal to 100.";
         }
@@ -446,6 +478,13 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'short_business_name', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['tax_id'] === null) {
+            $invalidProperties[] = "'tax_id' can't be null";
+        }
+        if (!is_null($this->container['title']) && (mb_strlen($this->container['title']) > 60)) {
+            $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 60.";
+        }
+
         return $invalidProperties;
     }
 
@@ -460,35 +499,6 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title Control person's corporate title or role (i.e. Chief Executive Officer, CFO, etc.; max 60 characters).
-     *
-     * @return self
-     */
-    public function setTitle($title, $deserialize = false)
-    {
-        if (!is_null($title) && (mb_strlen($title) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling IdentityEntityForm., must be smaller than or equal to 60.');
-        }
-        
-
-        $this->container['title'] = $title;
-
-        return $this;
-    }
 
     /**
      * Gets amex_mid
@@ -541,7 +551,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets business_address
      *
-     * @return \Finix\Model\IdentityEntityFormBusinessAddress|null
+     * @return \Finix\Model\IdentityEntityFormBusinessAddress
      */
     public function getBusinessAddress()
     {
@@ -551,7 +561,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets business_address
      *
-     * @param \Finix\Model\IdentityEntityFormBusinessAddress|null $business_address business_address
+     * @param \Finix\Model\IdentityEntityFormBusinessAddress $business_address business_address
      *
      * @return self
      */
@@ -565,7 +575,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets business_name
      *
-     * @return string|null
+     * @return string
      */
     public function getBusinessName()
     {
@@ -575,7 +585,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets business_name
      *
-     * @param string|null $business_name Merchant's full legal business name (If INDIVIDUAL\\_SOLE\\_PROPRIETORSHIP, input first name, Full legal last name and middle initial; max 120 characters)
+     * @param string $business_name Merchant's full legal business name (If **INDIVIDUAL\\_SOLE\\_PROPRIETORSHIP**, input first name, Full legal last name and middle initial; max 120 characters)
      *
      * @return self
      */
@@ -589,7 +599,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets business_phone
      *
-     * @return string|null
+     * @return string
      */
     public function getBusinessPhone()
     {
@@ -599,7 +609,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets business_phone
      *
-     * @param string|null $business_phone Customer service phone number where the merchant can be reached (max 10 characters).
+     * @param string $business_phone Customer service phone number where the merchant can be reached (max 10 characters).
      *
      * @return self
      */
@@ -613,7 +623,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets business_tax_id
      *
-     * @return string|null
+     * @return string
      */
     public function getBusinessTaxId()
     {
@@ -623,7 +633,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets business_tax_id
      *
-     * @param string|null $business_tax_id Nine digit Tax Identification Number (TIN), Employer Identification Number (EIN). If the `business_type` is **INDIVIDUAL\\_SOLE\\_PROPRIETORSHIP** and they do not have an EIN, use the sole proprietor's Social Security Number (SSN).
+     * @param string $business_tax_id Nine digit Tax Identification Number (TIN), Employer Identification Number (EIN). If the `business_type` is **INDIVIDUAL\\_SOLE\\_PROPRIETORSHIP** and they do not have an EIN, use the sole proprietor's Social Security Number (SSN).
      *
      * @return self
      */
@@ -637,7 +647,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets business_type
      *
-     * @return string|null
+     * @return string
      */
     public function getBusinessType()
     {
@@ -647,14 +657,14 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets business_type
      *
-     * @param string|null $business_type Include the value that applies the best.
+     * @param string $business_type Include the value that applies the best.
      *
      * @return self
      */
     public function setBusinessType($business_type, $deserialize = false)
     {
         $allowedValues = $this->getBusinessTypeAllowableValues();
-        if (!is_null($business_type) && !in_array($business_type, $allowedValues, true) && !$deserialize) {
+        if (!in_array($business_type, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'business_type', must be one of '%s'",
@@ -713,7 +723,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets discover_mid
      *
-     * @param string|null $discover_mid Assigned discover_Mid value.
+     * @param string|null $discover_mid Assigned Discover Mid value.
      *
      * @return self
      */
@@ -727,7 +737,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets dob
      *
-     * @return \Finix\Model\IdentityEntityFormDob|null
+     * @return \Finix\Model\IdentityEntityFormDob
      */
     public function getDob()
     {
@@ -737,7 +747,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets dob
      *
-     * @param \Finix\Model\IdentityEntityFormDob|null $dob dob
+     * @param \Finix\Model\IdentityEntityFormDob $dob dob
      *
      * @return self
      */
@@ -751,7 +761,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets doing_business_as
      *
-     * @return string|null
+     * @return string
      */
     public function getDoingBusinessAs()
     {
@@ -761,13 +771,13 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets doing_business_as
      *
-     * @param string|null $doing_business_as Alternate name of the business. If no other name is used use the same value used in `business_name` (max 60 characters)
+     * @param string $doing_business_as Alternate name of the business. If no other name is used use the same value used in `business_name` (max 60 characters).
      *
      * @return self
      */
     public function setDoingBusinessAs($doing_business_as, $deserialize = false)
     {
-        if (!is_null($doing_business_as) && (mb_strlen($doing_business_as) > 60)) {
+        if ((mb_strlen($doing_business_as) > 60)) {
             throw new \InvalidArgumentException('invalid length for $doing_business_as when calling IdentityEntityForm., must be smaller than or equal to 60.');
         }
         
@@ -780,7 +790,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets email
      *
-     * @return string|null
+     * @return string
      */
     public function getEmail()
     {
@@ -790,7 +800,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets email
      *
-     * @param string|null $email Control person's email address where they can be reached (max 100 characters).
+     * @param string $email Control person's email address where they can be reached (max 100 characters).
      *
      * @return self
      */
@@ -804,7 +814,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets first_name
      *
-     * @return string|null
+     * @return string
      */
     public function getFirstName()
     {
@@ -814,7 +824,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets first_name
      *
-     * @param string|null $first_name Full legal first name of the merchant's principal representative (max 20 characters).
+     * @param string $first_name Full legal first name of the merchant's principal representative (max 20 characters).
      *
      * @return self
      */
@@ -876,7 +886,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets last_name
      *
-     * @return string|null
+     * @return string
      */
     public function getLastName()
     {
@@ -886,7 +896,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets last_name
      *
-     * @param string|null $last_name Full legal last name of the merchant's principal representative (max 20 characters).
+     * @param string $last_name Full legal last name of the merchant's principal representative (max 20 characters).
      *
      * @return self
      */
@@ -982,7 +992,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets personal_address
      *
-     * @return \Finix\Model\Address|null
+     * @return \Finix\Model\Address
      */
     public function getPersonalAddress()
     {
@@ -992,7 +1002,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets personal_address
      *
-     * @param \Finix\Model\Address|null $personal_address personal_address
+     * @param \Finix\Model\Address $personal_address personal_address
      *
      * @return self
      */
@@ -1006,7 +1016,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets phone
      *
-     * @return string|null
+     * @return string
      */
     public function getPhone()
     {
@@ -1016,7 +1026,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets phone
      *
-     * @param string|null $phone Principal's phone number (max 10 characters).
+     * @param string $phone Principal's phone number (max 10 characters).
      *
      * @return self
      */
@@ -1119,7 +1129,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets tax_id
      *
-     * @return string|null
+     * @return string
      */
     public function getTaxId()
     {
@@ -1129,13 +1139,42 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets tax_id
      *
-     * @param string|null $tax_id Used to verify `tax_id` was provided.
+     * @param string $tax_id Used to verify `tax_id` was provided.
      *
      * @return self
      */
     public function setTaxId($tax_id, $deserialize = false)
     {
         $this->container['tax_id'] = $tax_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title Control person's corporate title or role (i.e. Chief Executive Officer, CFO, etc.; max 60 characters).
+     *
+     * @return self
+     */
+    public function setTitle($title, $deserialize = false)
+    {
+        if (!is_null($title) && (mb_strlen($title) > 60)) {
+            throw new \InvalidArgumentException('invalid length for $title when calling IdentityEntityForm., must be smaller than or equal to 60.');
+        }
+        
+
+        $this->container['title'] = $title;
 
         return $this;
     }

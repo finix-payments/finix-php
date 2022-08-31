@@ -239,33 +239,6 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['amount_excluding_sales_tax'] === null) {
-            $invalidProperties[] = "'amount_excluding_sales_tax' can't be null";
-        }
-        if ($this->container['amount_including_sales_tax'] === null) {
-            $invalidProperties[] = "'amount_including_sales_tax' can't be null";
-        }
-        if ($this->container['commodity_code'] === null) {
-            $invalidProperties[] = "'commodity_code' can't be null";
-        }
-        if ($this->container['cost_per_unit'] === null) {
-            $invalidProperties[] = "'cost_per_unit' can't be null";
-        }
-        if ($this->container['item_description'] === null) {
-            $invalidProperties[] = "'item_description' can't be null";
-        }
-        if ($this->container['item_discount_amount'] === null) {
-            $invalidProperties[] = "'item_discount_amount' can't be null";
-        }
-        if ($this->container['merchant_product_code'] === null) {
-            $invalidProperties[] = "'merchant_product_code' can't be null";
-        }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
-        }
-        if ($this->container['unit_of_measure'] === null) {
-            $invalidProperties[] = "'unit_of_measure' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -284,7 +257,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets amount_excluding_sales_tax
      *
-     * @return int
+     * @return int|null
      */
     public function getAmountExcludingSalesTax()
     {
@@ -294,7 +267,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets amount_excluding_sales_tax
      *
-     * @param int $amount_excluding_sales_tax Total cost in cents of the line item excluding tax.
+     * @param int|null $amount_excluding_sales_tax Total cost in cents of the line item excluding tax.
      *
      * @return self
      */
@@ -308,7 +281,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets amount_including_sales_tax
      *
-     * @return int
+     * @return int|null
      */
     public function getAmountIncludingSalesTax()
     {
@@ -318,7 +291,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets amount_including_sales_tax
      *
-     * @param int $amount_including_sales_tax Total cost in cents of the line item including tax.
+     * @param int|null $amount_including_sales_tax Total cost in cents of the line item including tax.
      *
      * @return self
      */
@@ -332,7 +305,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets commodity_code
      *
-     * @return string
+     * @return string|null
      */
     public function getCommodityCode()
     {
@@ -342,7 +315,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets commodity_code
      *
-     * @param string $commodity_code A commodity code is a numeric code representing a particular product or service as defined by the National Institute of Governmental Purchasing. The code can be 3, 5, 7, or 11 digits in length. The longer the code the more granular the description of the product/service. (max 12 characters).
+     * @param string|null $commodity_code A commodity code is a numeric code representing a particular product or service as defined by the National Institute of Governmental Purchasing. The code can be 3, 5, 7, or 11 digits in length. The longer the code the more granular the description of the product/service. (max 12 characters).
      *
      * @return self
      */
@@ -356,7 +329,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets cost_per_unit
      *
-     * @return int
+     * @return int|null
      */
     public function getCostPerUnit()
     {
@@ -366,7 +339,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets cost_per_unit
      *
-     * @param int $cost_per_unit The price in cents of one unit of the item purchased
+     * @param int|null $cost_per_unit The price in cents of one unit of the item purchased
      *
      * @return self
      */
@@ -380,7 +353,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets item_description
      *
-     * @return string
+     * @return string|null
      */
     public function getItemDescription()
     {
@@ -390,7 +363,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets item_description
      *
-     * @param string $item_description Required when `item_data` is supplied (max 25 characters)
+     * @param string|null $item_description Required when `item_data` is supplied (max 25 characters)
      *
      * @return self
      */
@@ -404,7 +377,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets item_discount_amount
      *
-     * @return int
+     * @return int|null
      */
     public function getItemDiscountAmount()
     {
@@ -414,7 +387,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets item_discount_amount
      *
-     * @param int $item_discount_amount Item discount amount in cents
+     * @param int|null $item_discount_amount Item discount amount in cents
      *
      * @return self
      */
@@ -428,7 +401,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets merchant_product_code
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantProductCode()
     {
@@ -438,7 +411,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets merchant_product_code
      *
-     * @param string $merchant_product_code Merchant defined product code (max 12 characters).
+     * @param string|null $merchant_product_code Merchant defined product code (max 12 characters).
      *
      * @return self
      */
@@ -452,7 +425,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets quantity
      *
-     * @return int
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -462,7 +435,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets quantity
      *
-     * @param int $quantity The number of items purchased. Must be greater than 0.
+     * @param int|null $quantity The number of items purchased. Must be greater than 0.
      *
      * @return self
      */
@@ -476,7 +449,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Gets unit_of_measure
      *
-     * @return string
+     * @return string|null
      */
     public function getUnitOfMeasure()
     {
@@ -486,7 +459,7 @@ class AdditionalPurchaseDataItemDataInner implements ModelInterface, ArrayAccess
     /**
      * Sets unit_of_measure
      *
-     * @param string $unit_of_measure The unit of measure of the purchased item (max 3 characters).
+     * @param string|null $unit_of_measure The unit of measure of the purchased item (max 3 characters).
      *
      * @return self
      */

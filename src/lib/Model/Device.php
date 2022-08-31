@@ -61,20 +61,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'description' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'configuration_details' => '\Finix\Model\DeviceConfigDetails',
         'connection' => 'string',
+        'description' => 'string',
         'enabled' => 'bool',
         'idle_message' => 'string',
-        'input_details' => '\Finix\Model\InputDetails',
         'merchant' => 'string',
         'model' => 'string',
         'name' => 'string',
         'serial_number' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\DeviceLinks'
     ];
 
@@ -86,20 +85,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'description' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'configuration_details' => null,
         'connection' => null,
+        'description' => null,
         'enabled' => null,
         'idle_message' => null,
-        'input_details' => null,
         'merchant' => null,
         'model' => null,
         'name' => null,
         'serial_number' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -130,20 +128,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'description' => 'description',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'configuration_details' => 'configuration_details',
         'connection' => 'connection',
+        'description' => 'description',
         'enabled' => 'enabled',
         'idle_message' => 'idle_message',
-        'input_details' => 'input_details',
         'merchant' => 'merchant',
         'model' => 'model',
         'name' => 'name',
         'serial_number' => 'serial_number',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -153,20 +150,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'description' => 'setDescription',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'configuration_details' => 'setConfigurationDetails',
         'connection' => 'setConnection',
+        'description' => 'setDescription',
         'enabled' => 'setEnabled',
         'idle_message' => 'setIdleMessage',
-        'input_details' => 'setInputDetails',
         'merchant' => 'setMerchant',
         'model' => 'setModel',
         'name' => 'setName',
         'serial_number' => 'setSerialNumber',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -176,20 +172,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'description' => 'getDescription',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'configuration_details' => 'getConfigurationDetails',
         'connection' => 'getConnection',
+        'description' => 'getDescription',
         'enabled' => 'getEnabled',
         'idle_message' => 'getIdleMessage',
-        'input_details' => 'getInputDetails',
         'merchant' => 'getMerchant',
         'model' => 'getModel',
         'name' => 'getName',
         'serial_number' => 'getSerialNumber',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -250,20 +245,19 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['configuration_details'] = $data['configuration_details'] ?? null;
         $this->container['connection'] = $data['connection'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['idle_message'] = $data['idle_message'] ?? null;
-        $this->container['input_details'] = $data['input_details'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['model'] = $data['model'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['serial_number'] = $data['serial_number'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -290,54 +284,6 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description Additional information about device (e.g. self serving terminal).
-     *
-     * @return self
-     */
-    public function setDescription($description, $deserialize = false)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -448,13 +394,37 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets connection
      *
-     * @param string|null $connection Details if the `Device` is connected and online. Only returned when include_connection parameter provided.
+     * @param string|null $connection Details if the `Device` is connected and online. Only returned when `include_connection parameter` provided.
      *
      * @return self
      */
     public function setConnection($connection, $deserialize = false)
     {
         $this->container['connection'] = $connection;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description Additional information about device (e.g. self serving terminal).
+     *
+     * @return self
+     */
+    public function setDescription($description, $deserialize = false)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -496,37 +466,13 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets idle_message
      *
-     * @param string|null $idle_message ID of `Device`.
+     * @param string|null $idle_message The message that diplays on the device after a period of inactivity.
      *
      * @return self
      */
     public function setIdleMessage($idle_message, $deserialize = false)
     {
         $this->container['idle_message'] = $idle_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets input_details
-     *
-     * @return \Finix\Model\InputDetails|null
-     */
-    public function getInputDetails()
-    {
-        return $this->container['input_details'];
-    }
-
-    /**
-     * Sets input_details
-     *
-     * @param \Finix\Model\InputDetails|null $input_details input_details
-     *
-     * @return self
-     */
-    public function setInputDetails($input_details, $deserialize = false)
-    {
-        $this->container['input_details'] = $input_details;
 
         return $this;
     }
@@ -550,9 +496,6 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMerchant($merchant, $deserialize = false)
     {
-
-        
-
         $this->container['merchant'] = $merchant;
 
         return $this;
@@ -626,6 +569,30 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSerialNumber($serial_number, $deserialize = false)
     {
         $this->container['serial_number'] = $serial_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

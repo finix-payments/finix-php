@@ -60,13 +60,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'application' => 'string',
         'fee_profile' => 'string',
         'risk_profile' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\ApplicationProfileLinks'
     ];
 
@@ -78,13 +78,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'application' => null,
         'fee_profile' => null,
         'risk_profile' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -115,13 +115,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'application' => 'application',
         'fee_profile' => 'fee_profile',
         'risk_profile' => 'risk_profile',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -131,13 +131,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'application' => 'setApplication',
         'fee_profile' => 'setFeeProfile',
         'risk_profile' => 'setRiskProfile',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -147,13 +147,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'application' => 'getApplication',
         'fee_profile' => 'getFeeProfile',
         'risk_profile' => 'getRiskProfile',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -214,13 +214,13 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['fee_profile'] = $data['fee_profile'] ?? null;
         $this->container['risk_profile'] = $data['risk_profile'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -249,30 +249,6 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -291,9 +267,6 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -390,9 +363,6 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setFeeProfile($fee_profile, $deserialize = false)
     {
-
-        
-
         $this->container['fee_profile'] = $fee_profile;
 
         return $this;
@@ -417,10 +387,31 @@ class ApplicationProfile implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setRiskProfile($risk_profile, $deserialize = false)
     {
-
-        
-
         $this->container['risk_profile'] = $risk_profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

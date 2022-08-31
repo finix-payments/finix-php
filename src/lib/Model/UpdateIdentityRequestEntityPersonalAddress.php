@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * UpdateIdentityRequestEntityPersonalAddress Class Doc Comment
  *
  * @category Class
- * @description The home address of the principal control owner. This field is used for identity verification purposes.
+ * @description The billing address of the buyer. This field is used for identity verification purposes.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,9 +63,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $openAPITypes = [
         'city' => 'string',
         'country' => 'string',
-        'region' => 'string',
-        'line2' => 'string',
         'line1' => 'string',
+        'line2' => 'string',
         'postal_code' => 'string'
     ];
 
@@ -79,9 +78,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $openAPIFormats = [
         'city' => null,
         'country' => null,
-        'region' => null,
-        'line2' => null,
         'line1' => null,
+        'line2' => null,
         'postal_code' => null
     ];
 
@@ -114,9 +112,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $attributeMap = [
         'city' => 'city',
         'country' => 'country',
-        'region' => 'region',
-        'line2' => 'line2',
         'line1' => 'line1',
+        'line2' => 'line2',
         'postal_code' => 'postal_code'
     ];
 
@@ -128,9 +125,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $setters = [
         'city' => 'setCity',
         'country' => 'setCountry',
-        'region' => 'setRegion',
-        'line2' => 'setLine2',
         'line1' => 'setLine1',
+        'line2' => 'setLine2',
         'postal_code' => 'setPostalCode'
     ];
 
@@ -142,9 +138,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $getters = [
         'city' => 'getCity',
         'country' => 'getCountry',
-        'region' => 'getRegion',
-        'line2' => 'getLine2',
         'line1' => 'getLine1',
+        'line2' => 'getLine2',
         'postal_code' => 'getPostalCode'
     ];
 
@@ -207,9 +202,8 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     {
         $this->container['city'] = $data['city'] ?? null;
         $this->container['country'] = $data['country'] ?? null;
-        $this->container['region'] = $data['region'] ?? null;
-        $this->container['line2'] = $data['line2'] ?? null;
         $this->container['line1'] = $data['line1'] ?? null;
+        $this->container['line2'] = $data['line2'] ?? null;
         $this->container['postal_code'] = $data['postal_code'] ?? null;
     }
 
@@ -221,30 +215,6 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 1)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['country']) && (mb_strlen($this->container['country']) < 1)) {
-            $invalidProperties[] = "invalid value for 'country', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['region']) && (mb_strlen($this->container['region']) < 1)) {
-            $invalidProperties[] = "invalid value for 'region', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['line2']) && (mb_strlen($this->container['line2']) < 1)) {
-            $invalidProperties[] = "invalid value for 'line2', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 1)) {
-            $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['postal_code']) && (mb_strlen($this->container['postal_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 1.";
-        }
 
         return $invalidProperties;
     }
@@ -280,12 +250,6 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setCity($city, $deserialize = false)
     {
-
-        if (!is_null($city) && (mb_strlen($city) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
         $this->container['city'] = $city;
 
         return $this;
@@ -310,73 +274,7 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setCountry($country, $deserialize = false)
     {
-
-        if (!is_null($country) && (mb_strlen($country) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
         $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets region
-     *
-     * @return string|null
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /**
-     * Sets region
-     *
-     * @param string|null $region 2-letter State code.
-     *
-     * @return self
-     */
-    public function setRegion($region, $deserialize = false)
-    {
-
-        if (!is_null($region) && (mb_strlen($region) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $region when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * Gets line2
-     *
-     * @return string|null
-     */
-    public function getLine2()
-    {
-        return $this->container['line2'];
-    }
-
-    /**
-     * Sets line2
-     *
-     * @param string|null $line2 Second line of the address (max 35 characters).
-     *
-     * @return self
-     */
-    public function setLine2($line2, $deserialize = false)
-    {
-
-        if (!is_null($line2) && (mb_strlen($line2) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $line2 when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['line2'] = $line2;
 
         return $this;
     }
@@ -400,13 +298,31 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setLine1($line1, $deserialize = false)
     {
-
-        if (!is_null($line1) && (mb_strlen($line1) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $line1 when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
         $this->container['line1'] = $line1;
+
+        return $this;
+    }
+
+    /**
+     * Gets line2
+     *
+     * @return string|null
+     */
+    public function getLine2()
+    {
+        return $this->container['line2'];
+    }
+
+    /**
+     * Sets line2
+     *
+     * @param string|null $line2 Second line of the address (max 35 characters).
+     *
+     * @return self
+     */
+    public function setLine2($line2, $deserialize = false)
+    {
+        $this->container['line2'] = $line2;
 
         return $this;
     }
@@ -430,12 +346,6 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setPostalCode($postal_code, $deserialize = false)
     {
-
-        if (!is_null($postal_code) && (mb_strlen($postal_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
         $this->container['postal_code'] = $postal_code;
 
         return $this;

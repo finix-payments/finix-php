@@ -60,20 +60,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'processing_enabled' => 'bool',
-        'settlement_enabled' => 'bool',
-        'gross_settlement_enabled' => 'bool',
-        'creating_transfer_from_report_enabled' => 'bool',
-        'card_expiration_date_required' => 'bool',
         'card_cvv_required' => 'bool',
-        'merchant_name' => 'string',
-        'settlement_funding_identifier' => 'string',
-        'ready_to_settle_upon' => 'string',
-        'fee_ready_to_settle_upon' => 'string',
-        'level_two_level_three_data_enabled' => 'bool',
+        'card_expiration_date_required' => 'bool',
         'convenience_charges_enabled' => 'bool',
-        'rent_surcharges_enabled' => 'bool'
+        'creating_transfer_from_report_enabled' => 'bool',
+        'fee_ready_to_settle_upon' => 'string',
+        'gross_settlement_enabled' => 'bool',
+        'level_two_level_three_data_enabled' => 'bool',
+        'merchant_name' => 'string',
+        'processing_enabled' => 'bool',
+        'ready_to_settle_upon' => 'string',
+        'rent_surcharges_enabled' => 'bool',
+        'settlement_enabled' => 'bool',
+        'settlement_funding_identifier' => 'string',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -84,20 +84,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'processing_enabled' => null,
-        'settlement_enabled' => null,
-        'gross_settlement_enabled' => null,
-        'creating_transfer_from_report_enabled' => null,
-        'card_expiration_date_required' => null,
         'card_cvv_required' => null,
-        'merchant_name' => null,
-        'settlement_funding_identifier' => null,
-        'ready_to_settle_upon' => null,
-        'fee_ready_to_settle_upon' => null,
-        'level_two_level_three_data_enabled' => null,
+        'card_expiration_date_required' => null,
         'convenience_charges_enabled' => null,
-        'rent_surcharges_enabled' => null
+        'creating_transfer_from_report_enabled' => null,
+        'fee_ready_to_settle_upon' => null,
+        'gross_settlement_enabled' => null,
+        'level_two_level_three_data_enabled' => null,
+        'merchant_name' => null,
+        'processing_enabled' => null,
+        'ready_to_settle_upon' => null,
+        'rent_surcharges_enabled' => null,
+        'settlement_enabled' => null,
+        'settlement_funding_identifier' => null,
+        'tags' => null
     ];
 
     /**
@@ -127,20 +127,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'processing_enabled' => 'processing_enabled',
-        'settlement_enabled' => 'settlement_enabled',
-        'gross_settlement_enabled' => 'gross_settlement_enabled',
-        'creating_transfer_from_report_enabled' => 'creating_transfer_from_report_enabled',
-        'card_expiration_date_required' => 'card_expiration_date_required',
         'card_cvv_required' => 'card_cvv_required',
-        'merchant_name' => 'merchant_name',
-        'settlement_funding_identifier' => 'settlement_funding_identifier',
-        'ready_to_settle_upon' => 'ready_to_settle_upon',
-        'fee_ready_to_settle_upon' => 'fee_ready_to_settle_upon',
-        'level_two_level_three_data_enabled' => 'level_two_level_three_data_enabled',
+        'card_expiration_date_required' => 'card_expiration_date_required',
         'convenience_charges_enabled' => 'convenience_charges_enabled',
-        'rent_surcharges_enabled' => 'rent_surcharges_enabled'
+        'creating_transfer_from_report_enabled' => 'creating_transfer_from_report_enabled',
+        'fee_ready_to_settle_upon' => 'fee_ready_to_settle_upon',
+        'gross_settlement_enabled' => 'gross_settlement_enabled',
+        'level_two_level_three_data_enabled' => 'level_two_level_three_data_enabled',
+        'merchant_name' => 'merchant_name',
+        'processing_enabled' => 'processing_enabled',
+        'ready_to_settle_upon' => 'ready_to_settle_upon',
+        'rent_surcharges_enabled' => 'rent_surcharges_enabled',
+        'settlement_enabled' => 'settlement_enabled',
+        'settlement_funding_identifier' => 'settlement_funding_identifier',
+        'tags' => 'tags'
     ];
 
     /**
@@ -149,20 +149,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'processing_enabled' => 'setProcessingEnabled',
-        'settlement_enabled' => 'setSettlementEnabled',
-        'gross_settlement_enabled' => 'setGrossSettlementEnabled',
-        'creating_transfer_from_report_enabled' => 'setCreatingTransferFromReportEnabled',
-        'card_expiration_date_required' => 'setCardExpirationDateRequired',
         'card_cvv_required' => 'setCardCvvRequired',
-        'merchant_name' => 'setMerchantName',
-        'settlement_funding_identifier' => 'setSettlementFundingIdentifier',
-        'ready_to_settle_upon' => 'setReadyToSettleUpon',
-        'fee_ready_to_settle_upon' => 'setFeeReadyToSettleUpon',
-        'level_two_level_three_data_enabled' => 'setLevelTwoLevelThreeDataEnabled',
+        'card_expiration_date_required' => 'setCardExpirationDateRequired',
         'convenience_charges_enabled' => 'setConvenienceChargesEnabled',
-        'rent_surcharges_enabled' => 'setRentSurchargesEnabled'
+        'creating_transfer_from_report_enabled' => 'setCreatingTransferFromReportEnabled',
+        'fee_ready_to_settle_upon' => 'setFeeReadyToSettleUpon',
+        'gross_settlement_enabled' => 'setGrossSettlementEnabled',
+        'level_two_level_three_data_enabled' => 'setLevelTwoLevelThreeDataEnabled',
+        'merchant_name' => 'setMerchantName',
+        'processing_enabled' => 'setProcessingEnabled',
+        'ready_to_settle_upon' => 'setReadyToSettleUpon',
+        'rent_surcharges_enabled' => 'setRentSurchargesEnabled',
+        'settlement_enabled' => 'setSettlementEnabled',
+        'settlement_funding_identifier' => 'setSettlementFundingIdentifier',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -171,20 +171,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'processing_enabled' => 'getProcessingEnabled',
-        'settlement_enabled' => 'getSettlementEnabled',
-        'gross_settlement_enabled' => 'getGrossSettlementEnabled',
-        'creating_transfer_from_report_enabled' => 'getCreatingTransferFromReportEnabled',
-        'card_expiration_date_required' => 'getCardExpirationDateRequired',
         'card_cvv_required' => 'getCardCvvRequired',
-        'merchant_name' => 'getMerchantName',
-        'settlement_funding_identifier' => 'getSettlementFundingIdentifier',
-        'ready_to_settle_upon' => 'getReadyToSettleUpon',
-        'fee_ready_to_settle_upon' => 'getFeeReadyToSettleUpon',
-        'level_two_level_three_data_enabled' => 'getLevelTwoLevelThreeDataEnabled',
+        'card_expiration_date_required' => 'getCardExpirationDateRequired',
         'convenience_charges_enabled' => 'getConvenienceChargesEnabled',
-        'rent_surcharges_enabled' => 'getRentSurchargesEnabled'
+        'creating_transfer_from_report_enabled' => 'getCreatingTransferFromReportEnabled',
+        'fee_ready_to_settle_upon' => 'getFeeReadyToSettleUpon',
+        'gross_settlement_enabled' => 'getGrossSettlementEnabled',
+        'level_two_level_three_data_enabled' => 'getLevelTwoLevelThreeDataEnabled',
+        'merchant_name' => 'getMerchantName',
+        'processing_enabled' => 'getProcessingEnabled',
+        'ready_to_settle_upon' => 'getReadyToSettleUpon',
+        'rent_surcharges_enabled' => 'getRentSurchargesEnabled',
+        'settlement_enabled' => 'getSettlementEnabled',
+        'settlement_funding_identifier' => 'getSettlementFundingIdentifier',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -244,20 +244,20 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['processing_enabled'] = $data['processing_enabled'] ?? null;
-        $this->container['settlement_enabled'] = $data['settlement_enabled'] ?? null;
-        $this->container['gross_settlement_enabled'] = $data['gross_settlement_enabled'] ?? null;
-        $this->container['creating_transfer_from_report_enabled'] = $data['creating_transfer_from_report_enabled'] ?? null;
-        $this->container['card_expiration_date_required'] = $data['card_expiration_date_required'] ?? null;
         $this->container['card_cvv_required'] = $data['card_cvv_required'] ?? null;
-        $this->container['merchant_name'] = $data['merchant_name'] ?? null;
-        $this->container['settlement_funding_identifier'] = $data['settlement_funding_identifier'] ?? null;
-        $this->container['ready_to_settle_upon'] = $data['ready_to_settle_upon'] ?? null;
-        $this->container['fee_ready_to_settle_upon'] = $data['fee_ready_to_settle_upon'] ?? null;
-        $this->container['level_two_level_three_data_enabled'] = $data['level_two_level_three_data_enabled'] ?? null;
+        $this->container['card_expiration_date_required'] = $data['card_expiration_date_required'] ?? null;
         $this->container['convenience_charges_enabled'] = $data['convenience_charges_enabled'] ?? null;
+        $this->container['creating_transfer_from_report_enabled'] = $data['creating_transfer_from_report_enabled'] ?? null;
+        $this->container['fee_ready_to_settle_upon'] = $data['fee_ready_to_settle_upon'] ?? null;
+        $this->container['gross_settlement_enabled'] = $data['gross_settlement_enabled'] ?? null;
+        $this->container['level_two_level_three_data_enabled'] = $data['level_two_level_three_data_enabled'] ?? null;
+        $this->container['merchant_name'] = $data['merchant_name'] ?? null;
+        $this->container['processing_enabled'] = $data['processing_enabled'] ?? null;
+        $this->container['ready_to_settle_upon'] = $data['ready_to_settle_upon'] ?? null;
         $this->container['rent_surcharges_enabled'] = $data['rent_surcharges_enabled'] ?? null;
+        $this->container['settlement_enabled'] = $data['settlement_enabled'] ?? null;
+        $this->container['settlement_funding_identifier'] = $data['settlement_funding_identifier'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -285,121 +285,25 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets processing_enabled
+     * Gets card_cvv_required
      *
      * @return bool|null
      */
-    public function getProcessingEnabled()
+    public function getCardCvvRequired()
     {
-        return $this->container['processing_enabled'];
+        return $this->container['card_cvv_required'];
     }
 
     /**
-     * Sets processing_enabled
+     * Sets card_cvv_required
      *
-     * @param bool|null $processing_enabled Details if transaction processing is enabled for the `Merchant`.
+     * @param bool|null $card_cvv_required Set to **true** to require the card's CVV code.
      *
      * @return self
      */
-    public function setProcessingEnabled($processing_enabled, $deserialize = false)
+    public function setCardCvvRequired($card_cvv_required, $deserialize = false)
     {
-        $this->container['processing_enabled'] = $processing_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets settlement_enabled
-     *
-     * @return bool|null
-     */
-    public function getSettlementEnabled()
-    {
-        return $this->container['settlement_enabled'];
-    }
-
-    /**
-     * Sets settlement_enabled
-     *
-     * @param bool|null $settlement_enabled Details if settlement processing is enabled for the `Merchant`.
-     *
-     * @return self
-     */
-    public function setSettlementEnabled($settlement_enabled, $deserialize = false)
-    {
-        $this->container['settlement_enabled'] = $settlement_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets gross_settlement_enabled
-     *
-     * @return bool|null
-     */
-    public function getGrossSettlementEnabled()
-    {
-        return $this->container['gross_settlement_enabled'];
-    }
-
-    /**
-     * Sets gross_settlement_enabled
-     *
-     * @param bool|null $gross_settlement_enabled Set to **true** to enable gross settlements.
-     *
-     * @return self
-     */
-    public function setGrossSettlementEnabled($gross_settlement_enabled, $deserialize = false)
-    {
-        $this->container['gross_settlement_enabled'] = $gross_settlement_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets creating_transfer_from_report_enabled
-     *
-     * @return bool|null
-     */
-    public function getCreatingTransferFromReportEnabled()
-    {
-        return $this->container['creating_transfer_from_report_enabled'];
-    }
-
-    /**
-     * Sets creating_transfer_from_report_enabled
-     *
-     * @param bool|null $creating_transfer_from_report_enabled Set to **true** to automatically create `Transfers` once settlement reports get generated.
-     *
-     * @return self
-     */
-    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled, $deserialize = false)
-    {
-        $this->container['creating_transfer_from_report_enabled'] = $creating_transfer_from_report_enabled;
+        $this->container['card_cvv_required'] = $card_cvv_required;
 
         return $this;
     }
@@ -429,97 +333,49 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets card_cvv_required
+     * Gets convenience_charges_enabled
      *
      * @return bool|null
      */
-    public function getCardCvvRequired()
+    public function getConvenienceChargesEnabled()
     {
-        return $this->container['card_cvv_required'];
+        return $this->container['convenience_charges_enabled'];
     }
 
     /**
-     * Sets card_cvv_required
+     * Sets convenience_charges_enabled
      *
-     * @param bool|null $card_cvv_required Set to **true** to require the card's CVV code.
+     * @param bool|null $convenience_charges_enabled Set to **true** if you want to enable the `Merchant` to accept convenience fees and/or service fees.
      *
      * @return self
      */
-    public function setCardCvvRequired($card_cvv_required, $deserialize = false)
+    public function setConvenienceChargesEnabled($convenience_charges_enabled, $deserialize = false)
     {
-        $this->container['card_cvv_required'] = $card_cvv_required;
+        $this->container['convenience_charges_enabled'] = $convenience_charges_enabled;
 
         return $this;
     }
 
     /**
-     * Gets merchant_name
+     * Gets creating_transfer_from_report_enabled
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getMerchantName()
+    public function getCreatingTransferFromReportEnabled()
     {
-        return $this->container['merchant_name'];
+        return $this->container['creating_transfer_from_report_enabled'];
     }
 
     /**
-     * Sets merchant_name
+     * Sets creating_transfer_from_report_enabled
      *
-     * @param string|null $merchant_name The legal name saved in the `Merchant` resource.
+     * @param bool|null $creating_transfer_from_report_enabled Set to **true** to automatically create `Transfers` once settlement reports get generated.
      *
      * @return self
      */
-    public function setMerchantName($merchant_name, $deserialize = false)
+    public function setCreatingTransferFromReportEnabled($creating_transfer_from_report_enabled, $deserialize = false)
     {
-        $this->container['merchant_name'] = $merchant_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets settlement_funding_identifier
-     *
-     * @return string|null
-     */
-    public function getSettlementFundingIdentifier()
-    {
-        return $this->container['settlement_funding_identifier'];
-    }
-
-    /**
-     * Sets settlement_funding_identifier
-     *
-     * @param string|null $settlement_funding_identifier Include addtional information (like the MID) when submitting funding `Tranfers` to processors.
-     *
-     * @return self
-     */
-    public function setSettlementFundingIdentifier($settlement_funding_identifier, $deserialize = false)
-    {
-        $this->container['settlement_funding_identifier'] = $settlement_funding_identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets ready_to_settle_upon
-     *
-     * @return string|null
-     */
-    public function getReadyToSettleUpon()
-    {
-        return $this->container['ready_to_settle_upon'];
-    }
-
-    /**
-     * Sets ready_to_settle_upon
-     *
-     * @param string|null $ready_to_settle_upon Details how `Authorizations` captured by the `Merchant` are settled.
-     *
-     * @return self
-     */
-    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
-    {
-        $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
+        $this->container['creating_transfer_from_report_enabled'] = $creating_transfer_from_report_enabled;
 
         return $this;
     }
@@ -549,6 +405,30 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets gross_settlement_enabled
+     *
+     * @return bool|null
+     */
+    public function getGrossSettlementEnabled()
+    {
+        return $this->container['gross_settlement_enabled'];
+    }
+
+    /**
+     * Sets gross_settlement_enabled
+     *
+     * @param bool|null $gross_settlement_enabled Set to **true** to enable gross settlements.
+     *
+     * @return self
+     */
+    public function setGrossSettlementEnabled($gross_settlement_enabled, $deserialize = false)
+    {
+        $this->container['gross_settlement_enabled'] = $gross_settlement_enabled;
+
+        return $this;
+    }
+
+    /**
      * Gets level_two_level_three_data_enabled
      *
      * @return bool|null
@@ -573,25 +453,73 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets convenience_charges_enabled
+     * Gets merchant_name
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getConvenienceChargesEnabled()
+    public function getMerchantName()
     {
-        return $this->container['convenience_charges_enabled'];
+        return $this->container['merchant_name'];
     }
 
     /**
-     * Sets convenience_charges_enabled
+     * Sets merchant_name
      *
-     * @param bool|null $convenience_charges_enabled Set to **true** if you want to enable the `Merchant` to accept convenience fees and/or service fees.
+     * @param string|null $merchant_name The legal name saved in the `Merchant` resource.
      *
      * @return self
      */
-    public function setConvenienceChargesEnabled($convenience_charges_enabled, $deserialize = false)
+    public function setMerchantName($merchant_name, $deserialize = false)
     {
-        $this->container['convenience_charges_enabled'] = $convenience_charges_enabled;
+        $this->container['merchant_name'] = $merchant_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing_enabled
+     *
+     * @return bool|null
+     */
+    public function getProcessingEnabled()
+    {
+        return $this->container['processing_enabled'];
+    }
+
+    /**
+     * Sets processing_enabled
+     *
+     * @param bool|null $processing_enabled Details if transaction processing is enabled for the `Merchant`.
+     *
+     * @return self
+     */
+    public function setProcessingEnabled($processing_enabled, $deserialize = false)
+    {
+        $this->container['processing_enabled'] = $processing_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets ready_to_settle_upon
+     *
+     * @return string|null
+     */
+    public function getReadyToSettleUpon()
+    {
+        return $this->container['ready_to_settle_upon'];
+    }
+
+    /**
+     * Sets ready_to_settle_upon
+     *
+     * @param string|null $ready_to_settle_upon Details how `Authorizations` captured by the `Merchant` are settled.
+     *
+     * @return self
+     */
+    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
+    {
+        $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
 
         return $this;
     }
@@ -616,6 +544,78 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRentSurchargesEnabled($rent_surcharges_enabled, $deserialize = false)
     {
         $this->container['rent_surcharges_enabled'] = $rent_surcharges_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlement_enabled
+     *
+     * @return bool|null
+     */
+    public function getSettlementEnabled()
+    {
+        return $this->container['settlement_enabled'];
+    }
+
+    /**
+     * Sets settlement_enabled
+     *
+     * @param bool|null $settlement_enabled Details if settlement processing is enabled for the `Merchant`.
+     *
+     * @return self
+     */
+    public function setSettlementEnabled($settlement_enabled, $deserialize = false)
+    {
+        $this->container['settlement_enabled'] = $settlement_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlement_funding_identifier
+     *
+     * @return string|null
+     */
+    public function getSettlementFundingIdentifier()
+    {
+        return $this->container['settlement_funding_identifier'];
+    }
+
+    /**
+     * Sets settlement_funding_identifier
+     *
+     * @param string|null $settlement_funding_identifier Include addtional information (like the MID) when submitting funding `Tranfers` to processors.
+     *
+     * @return self
+     */
+    public function setSettlementFundingIdentifier($settlement_funding_identifier, $deserialize = false)
+    {
+        $this->container['settlement_funding_identifier'] = $settlement_funding_identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

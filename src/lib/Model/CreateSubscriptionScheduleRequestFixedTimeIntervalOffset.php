@@ -198,6 +198,12 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
     {
         $invalidProperties = [];
 
+        if ($this->container['hourly_interval'] === null) {
+            $invalidProperties[] = "'hourly_interval' can't be null";
+        }
+        if ($this->container['interval_count'] === null) {
+            $invalidProperties[] = "'interval_count' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -216,7 +222,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
     /**
      * Gets hourly_interval
      *
-     * @return int|null
+     * @return int
      */
     public function getHourlyInterval()
     {
@@ -226,7 +232,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
     /**
      * Sets hourly_interval
      *
-     * @param int|null $hourly_interval Hourly increments between recurring charges
+     * @param int $hourly_interval Hourly increments between recurring charges
      *
      * @return self
      */
@@ -240,7 +246,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
     /**
      * Gets interval_count
      *
-     * @return int|null
+     * @return int
      */
     public function getIntervalCount()
     {
@@ -250,7 +256,7 @@ class CreateSubscriptionScheduleRequestFixedTimeIntervalOffset implements ModelI
     /**
      * Sets interval_count
      *
-     * @param int|null $interval_count Number of recurring charges
+     * @param int $interval_count Number of recurring charges
      *
      * @return self
      */

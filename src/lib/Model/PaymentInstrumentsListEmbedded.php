@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * PaymentInstrumentsListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Payment Instrument&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class PaymentInstrumentsListEmbedded implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets payment_instruments
      *
-     * @param \Finix\Model\PaymentInstrument[]|null $payment_instruments List of `Payment Instruments`.
+     * @param \Finix\Model\PaymentInstrument[]|null $payment_instruments `Payment Instrument` objects.
      *
      * @return self
      */

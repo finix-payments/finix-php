@@ -203,15 +203,6 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['day'] === null) {
-            $invalidProperties[] = "'day' can't be null";
-        }
-        if ($this->container['month'] === null) {
-            $invalidProperties[] = "'month' can't be null";
-        }
-        if ($this->container['year'] === null) {
-            $invalidProperties[] = "'year' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -230,7 +221,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Gets day
      *
-     * @return int
+     * @return int|null
      */
     public function getDay()
     {
@@ -240,7 +231,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets day
      *
-     * @param int $day Day of purchase (between 1 and 31)
+     * @param int|null $day Day of purchase (between 1 and 31)
      *
      * @return self
      */
@@ -254,7 +245,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Gets month
      *
-     * @return int
+     * @return int|null
      */
     public function getMonth()
     {
@@ -264,7 +255,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets month
      *
-     * @param int $month Month of purchase (between 1 and 12)
+     * @param int|null $month Month of purchase (between 1 and 12)
      *
      * @return self
      */
@@ -278,7 +269,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Gets year
      *
-     * @return int
+     * @return int|null
      */
     public function getYear()
     {
@@ -288,7 +279,7 @@ class AdditionalPurchaseDataOrderDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets year
      *
-     * @param int $year Year of purchase (4-digit)
+     * @param int|null $year Year of purchase (4-digit)
      *
      * @return self
      */

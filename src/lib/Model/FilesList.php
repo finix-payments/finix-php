@@ -60,8 +60,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_embedded' => '\Finix\Model\FilesListEmbedded',
         'page' => '\Finix\Model\PageCursor',
+        '_embedded' => '\Finix\Model\FilesListEmbedded',
         '_links' => '\Finix\Model\ListLinks'
     ];
 
@@ -73,8 +73,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        '_embedded' => null,
         'page' => null,
+        '_embedded' => null,
         '_links' => null
     ];
 
@@ -105,8 +105,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        '_embedded' => '_embedded',
         'page' => 'page',
+        '_embedded' => '_embedded',
         '_links' => '_links'
     ];
 
@@ -116,8 +116,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        '_embedded' => 'setEmbedded',
         'page' => 'setPage',
+        '_embedded' => 'setEmbedded',
         '_links' => 'setLinks'
     ];
 
@@ -127,8 +127,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        '_embedded' => 'getEmbedded',
         'page' => 'getPage',
+        '_embedded' => 'getEmbedded',
         '_links' => 'getLinks'
     ];
 
@@ -189,8 +189,8 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['_embedded'] = $data['_embedded'] ?? null;
         $this->container['page'] = $data['page'] ?? null;
+        $this->container['_embedded'] = $data['_embedded'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -219,30 +219,6 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets _embedded
-     *
-     * @return \Finix\Model\FilesListEmbedded|null
-     */
-    public function getEmbedded()
-    {
-        return $this->container['_embedded'];
-    }
-
-    /**
-     * Sets _embedded
-     *
-     * @param \Finix\Model\FilesListEmbedded|null $_embedded _embedded
-     *
-     * @return self
-     */
-    public function setEmbedded($_embedded, $deserialize = false)
-    {
-        $this->container['_embedded'] = $_embedded;
-
-        return $this;
-    }
-
-    /**
      * Gets page
      *
      * @return \Finix\Model\PageCursor|null
@@ -262,6 +238,30 @@ class FilesList implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPage($page, $deserialize = false)
     {
         $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets _embedded
+     *
+     * @return \Finix\Model\FilesListEmbedded|null
+     */
+    public function getEmbedded()
+    {
+        return $this->container['_embedded'];
+    }
+
+    /**
+     * Sets _embedded
+     *
+     * @param \Finix\Model\FilesListEmbedded|null $_embedded _embedded
+     *
+     * @return self
+     */
+    public function setEmbedded($_embedded, $deserialize = false)
+    {
+        $this->container['_embedded'] = $_embedded;
 
         return $this;
     }

@@ -61,9 +61,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'ended_at' => 'string',
         'merchant' => 'string',
-        'started_at' => 'string',
         'nickname' => 'string',
+        'started_at' => 'string',
         'tags' => 'array<string,string>'
     ];
 
@@ -75,9 +76,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'ended_at' => null,
         'merchant' => null,
-        'started_at' => null,
         'nickname' => null,
+        'started_at' => null,
         'tags' => null
     ];
 
@@ -108,9 +110,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'ended_at' => 'ended_at',
         'merchant' => 'merchant',
-        'started_at' => 'started_at',
         'nickname' => 'nickname',
+        'started_at' => 'started_at',
         'tags' => 'tags'
     ];
 
@@ -120,9 +123,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'ended_at' => 'setEndedAt',
         'merchant' => 'setMerchant',
-        'started_at' => 'setStartedAt',
         'nickname' => 'setNickname',
+        'started_at' => 'setStartedAt',
         'tags' => 'setTags'
     ];
 
@@ -132,9 +136,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'ended_at' => 'getEndedAt',
         'merchant' => 'getMerchant',
-        'started_at' => 'getStartedAt',
         'nickname' => 'getNickname',
+        'started_at' => 'getStartedAt',
         'tags' => 'getTags'
     ];
 
@@ -195,9 +200,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['ended_at'] = $data['ended_at'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
-        $this->container['started_at'] = $data['started_at'] ?? null;
         $this->container['nickname'] = $data['nickname'] ?? null;
+        $this->container['started_at'] = $data['started_at'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
 
@@ -210,6 +216,10 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['ended_at']) && (mb_strlen($this->container['ended_at']) < 1)) {
+            $invalidProperties[] = "invalid value for 'ended_at', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['merchant'] === null) {
             $invalidProperties[] = "'merchant' can't be null";
         }
@@ -217,18 +227,18 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'merchant', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['started_at'] === null) {
-            $invalidProperties[] = "'started_at' can't be null";
-        }
-        if ((mb_strlen($this->container['started_at']) < 1)) {
-            $invalidProperties[] = "invalid value for 'started_at', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['nickname'] === null) {
             $invalidProperties[] = "'nickname' can't be null";
         }
         if ((mb_strlen($this->container['nickname']) < 1)) {
             $invalidProperties[] = "invalid value for 'nickname', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['started_at'] === null) {
+            $invalidProperties[] = "'started_at' can't be null";
+        }
+        if ((mb_strlen($this->container['started_at']) < 1)) {
+            $invalidProperties[] = "invalid value for 'started_at', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -245,6 +255,36 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ended_at
+     *
+     * @return string|null
+     */
+    public function getEndedAt()
+    {
+        return $this->container['ended_at'];
+    }
+
+    /**
+     * Sets ended_at
+     *
+     * @param string|null $ended_at When the `subscription_enrollment` will end in **DateTime** format. If left **null**, the Fee will continue in perpetuity and won't end.
+     *
+     * @return self
+     */
+    public function setEndedAt($ended_at, $deserialize = false)
+    {
+
+        if (!is_null($ended_at) && (mb_strlen($ended_at) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $ended_at when calling CreateSubscriptionEnrollmentRequest., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['ended_at'] = $ended_at;
+
+        return $this;
+    }
 
     /**
      * Gets merchant
@@ -277,36 +317,6 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets started_at
-     *
-     * @return string
-     */
-    public function getStartedAt()
-    {
-        return $this->container['started_at'];
-    }
-
-    /**
-     * Sets started_at
-     *
-     * @param string $started_at When the `subscription_enrollment` will begin in **DateTime** format. The start date must be a future date.
-     *
-     * @return self
-     */
-    public function setStartedAt($started_at, $deserialize = false)
-    {
-
-        if ((mb_strlen($started_at) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $started_at when calling CreateSubscriptionEnrollmentRequest., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['started_at'] = $started_at;
-
-        return $this;
-    }
-
-    /**
      * Gets nickname
      *
      * @return string
@@ -332,6 +342,36 @@ class CreateSubscriptionEnrollmentRequest implements ModelInterface, ArrayAccess
         
 
         $this->container['nickname'] = $nickname;
+
+        return $this;
+    }
+
+    /**
+     * Gets started_at
+     *
+     * @return string
+     */
+    public function getStartedAt()
+    {
+        return $this->container['started_at'];
+    }
+
+    /**
+     * Sets started_at
+     *
+     * @param string $started_at When the `subscription_enrollment` will begin in **DateTime** format. The start date must be a future date.
+     *
+     * @return self
+     */
+    public function setStartedAt($started_at, $deserialize = false)
+    {
+
+        if ((mb_strlen($started_at) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $started_at when calling CreateSubscriptionEnrollmentRequest., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['started_at'] = $started_at;
 
         return $this;
     }

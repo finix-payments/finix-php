@@ -913,7 +913,7 @@ class InstrumentUpdatesApi
      *
      * Fetch an Instrument Update
      *
-     * @param  string $instrument_updates_id The Id of the instrument update. (required)
+     * @param  string $instrument_updates_id The ID of the &#x60;instrument_update&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -930,7 +930,7 @@ class InstrumentUpdatesApi
      *
      * Fetch an Instrument Update
      *
-     * @param  string $instrument_updates_id The Id of the instrument update. (required)
+     * @param  string $instrument_updates_id The ID of the &#x60;instrument_update&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1121,7 +1121,7 @@ class InstrumentUpdatesApi
      *
      * Fetch an Instrument Update
      *
-     * @param  string $instrument_updates_id The Id of the instrument update. (required)
+     * @param  string $instrument_updates_id The ID of the &#x60;instrument_update&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1141,7 +1141,7 @@ class InstrumentUpdatesApi
      *
      * Fetch an Instrument Update
      *
-     * @param  string $instrument_updates_id The Id of the instrument update. (required)
+     * @param  string $instrument_updates_id The ID of the &#x60;instrument_update&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1190,7 +1190,7 @@ class InstrumentUpdatesApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $instrument_updates_id The Id of the instrument update. (required)
+     * @param  string $instrument_updates_id The ID of the &#x60;instrument_update&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

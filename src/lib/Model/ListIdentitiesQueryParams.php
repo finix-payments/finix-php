@@ -297,7 +297,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets sort
      *
-     * @param string|null $sort Specify key to be used for sorting the collection
+     * @param string|null $sort Specify key to be used for sorting the collection.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets id
      *
-     * @param string|null $id Filter by id
+     * @param string|null $id Filter by `id`.
      *
      * @return self
      */
@@ -393,7 +393,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets default_statement_descriptor
      *
-     * @param string|null $default_statement_descriptor Filter by the default_statement_descriptor
+     * @param string|null $default_statement_descriptor Filter by the `default_statement_descriptor`.
      *
      * @return self
      */
@@ -489,7 +489,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets business_type
      *
-     * @param string|null $business_type Filter by the business type. Partial business types are not supported
+     * @param string|null $business_type Filter by the business type. Partial business types are not supported.
      *
      * @return self
      */
@@ -537,7 +537,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets first_name
      *
-     * @param string|null $first_name Filter by the first name of the person associated to the Identity.
+     * @param string|null $first_name Filter by the first name of the person associated to the `Identity`.
      *
      * @return self
      */
@@ -561,7 +561,7 @@ class ListIdentitiesQueryParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets last_name
      *
-     * @param string|null $last_name Filter by the last name of the person associated to the identity.
+     * @param string|null $last_name Filter by the last name of the person associated to the `Identity`.
      *
      * @return self
      */

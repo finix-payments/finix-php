@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * TransfersListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Transfer&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class TransfersListEmbedded implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets transfers
      *
-     * @param \Finix\Model\Transfer[]|null $transfers `Transfer` object.
+     * @param \Finix\Model\Transfer[]|null $transfers `Transfer` objects.
      *
      * @return self
      */

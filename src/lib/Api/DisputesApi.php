@@ -119,7 +119,7 @@ class DisputesApi
     /**
      * Operation createDisputeEvidence
      *
-     * Create Dispute Evidence
+     * Upload Dispute Evidence
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
      * @param  \Finix\Model\CreateDisputeEvidenceRequest $create_dispute_evidence_request create_dispute_evidence_request (optional)
@@ -137,7 +137,7 @@ class DisputesApi
     /**
      * Operation createDisputeEvidenceWithHttpInfo
      *
-     * Create Dispute Evidence
+     * Upload Dispute Evidence
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
      * @param  \Finix\Model\CreateDisputeEvidenceRequest $create_dispute_evidence_request (optional)
@@ -329,7 +329,7 @@ class DisputesApi
     /**
      * Operation createDisputeEvidenceAsync
      *
-     * Create Dispute Evidence
+     * Upload Dispute Evidence
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
      * @param  \Finix\Model\CreateDisputeEvidenceRequest $create_dispute_evidence_request (optional)
@@ -350,7 +350,7 @@ class DisputesApi
     /**
      * Operation createDisputeEvidenceAsyncWithHttpInfo
      *
-     * Create Dispute Evidence
+     * Upload Dispute Evidence
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
      * @param  \Finix\Model\CreateDisputeEvidenceRequest $create_dispute_evidence_request (optional)
@@ -524,7 +524,7 @@ class DisputesApi
     /**
      * Operation get
      *
-     * Get Dispute
+     * Fetch a Dispute
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to fetch. (required)
      *
@@ -541,7 +541,7 @@ class DisputesApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get Dispute
+     * Fetch a Dispute
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to fetch. (required)
      *
@@ -732,7 +732,7 @@ class DisputesApi
     /**
      * Operation getAsync
      *
-     * Get Dispute
+     * Fetch a Dispute
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to fetch. (required)
      *
@@ -752,7 +752,7 @@ class DisputesApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get Dispute
+     * Fetch a Dispute
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to fetch. (required)
      *
@@ -1304,7 +1304,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1351,7 +1351,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1547,7 +1547,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1572,7 +1572,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1626,7 +1626,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of &#x60;Dispute&#x60; to mange evidence for. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1764,13 +1764,13 @@ class DisputesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1814,13 +1814,13 @@ class DisputesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1990,13 +1990,13 @@ class DisputesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2018,13 +2018,13 @@ class DisputesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2075,13 +2075,13 @@ class DisputesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
-     * @param  int $offset The number of items to skip before starting to collect the result set (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2243,7 +2243,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of the &#x60;Dispute&#x60; resource. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2290,7 +2290,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of the &#x60;Dispute&#x60; resource. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2463,7 +2463,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of the &#x60;Dispute&#x60; resource. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2488,7 +2488,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of the &#x60;Dispute&#x60; resource. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2542,7 +2542,7 @@ class DisputesApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $dispute_id ID of the &#x60;Dispute&#x60; resource. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *

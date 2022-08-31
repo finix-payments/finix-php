@@ -63,12 +63,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'idempotency_id' => 'string',
         'merchant' => 'string',
         'state' => 'string',
-        'application' => 'string',
-        'messages' => 'string[]',
-        'trace_id' => 'string',
-        'payment_instrument' => 'string',
         '_links' => '\Finix\Model\InstrumentUpdateLinks'
     ];
 
@@ -83,12 +80,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'idempotency_id' => null,
         'merchant' => null,
         'state' => null,
-        'application' => null,
-        'messages' => null,
-        'trace_id' => null,
-        'payment_instrument' => null,
         '_links' => null
     ];
 
@@ -122,12 +116,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
+        'idempotency_id' => 'idempotency_id',
         'merchant' => 'merchant',
         'state' => 'state',
-        'application' => 'application',
-        'messages' => 'messages',
-        'trace_id' => 'trace_id',
-        'payment_instrument' => 'payment_instrument',
         '_links' => '_links'
     ];
 
@@ -140,12 +131,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'idempotency_id' => 'setIdempotencyId',
         'merchant' => 'setMerchant',
         'state' => 'setState',
-        'application' => 'setApplication',
-        'messages' => 'setMessages',
-        'trace_id' => 'setTraceId',
-        'payment_instrument' => 'setPaymentInstrument',
         '_links' => 'setLinks'
     ];
 
@@ -158,12 +146,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'idempotency_id' => 'getIdempotencyId',
         'merchant' => 'getMerchant',
         'state' => 'getState',
-        'application' => 'getApplication',
-        'messages' => 'getMessages',
-        'trace_id' => 'getTraceId',
-        'payment_instrument' => 'getPaymentInstrument',
         '_links' => 'getLinks'
     ];
 
@@ -227,12 +212,9 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
-        $this->container['application'] = $data['application'] ?? null;
-        $this->container['messages'] = $data['messages'] ?? null;
-        $this->container['trace_id'] = $data['trace_id'] ?? null;
-        $this->container['payment_instrument'] = $data['payment_instrument'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -333,6 +315,30 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets idempotency_id
+     *
+     * @return string|null
+     */
+    public function getIdempotencyId()
+    {
+        return $this->container['idempotency_id'];
+    }
+
+    /**
+     * Sets idempotency_id
+     *
+     * @param string|null $idempotency_id A randomly generated value that will be associated with this `instrument_update` resource.
+     *
+     * @return self
+     */
+    public function setIdempotencyId($idempotency_id, $deserialize = false)
+    {
+        $this->container['idempotency_id'] = $idempotency_id;
+
+        return $this;
+    }
+
+    /**
      * Gets merchant
      *
      * @return string|null
@@ -376,102 +382,6 @@ class InstrumentUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setState($state, $deserialize = false)
     {
         $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets application
-     *
-     * @return string|null
-     */
-    public function getApplication()
-    {
-        return $this->container['application'];
-    }
-
-    /**
-     * Sets application
-     *
-     * @param string|null $application The id of the application.
-     *
-     * @return self
-     */
-    public function setApplication($application, $deserialize = false)
-    {
-        $this->container['application'] = $application;
-
-        return $this;
-    }
-
-    /**
-     * Gets messages
-     *
-     * @return string[]|null
-     */
-    public function getMessages()
-    {
-        return $this->container['messages'];
-    }
-
-    /**
-     * Sets messages
-     *
-     * @param string[]|null $messages messages
-     *
-     * @return self
-     */
-    public function setMessages($messages, $deserialize = false)
-    {
-        $this->container['messages'] = $messages;
-
-        return $this;
-    }
-
-    /**
-     * Gets trace_id
-     *
-     * @return string|null
-     */
-    public function getTraceId()
-    {
-        return $this->container['trace_id'];
-    }
-
-    /**
-     * Sets trace_id
-     *
-     * @param string|null $trace_id Trace ID of the `Update`. The processor sends back the `trace_id` so you can track the update end-to-end.
-     *
-     * @return self
-     */
-    public function setTraceId($trace_id, $deserialize = false)
-    {
-        $this->container['trace_id'] = $trace_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_instrument
-     *
-     * @return string|null
-     */
-    public function getPaymentInstrument()
-    {
-        return $this->container['payment_instrument'];
-    }
-
-    /**
-     * Sets payment_instrument
-     *
-     * @param string|null $payment_instrument The id of the payment instrument the update occured against.
-     *
-     * @return self
-     */
-    public function setPaymentInstrument($payment_instrument, $deserialize = false)
-    {
-        $this->container['payment_instrument'] = $payment_instrument;
 
         return $this;
     }

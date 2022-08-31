@@ -61,12 +61,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'description' => 'string',
         'configuration' => '\Finix\Model\ConfigurationDetails',
-        'merchant_id' => 'string',
+        'description' => 'string',
         'model' => 'string',
-        'name' => 'string'
+        'name' => 'string',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -77,12 +76,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'description' => null,
         'configuration' => null,
-        'merchant_id' => null,
+        'description' => null,
         'model' => null,
-        'name' => null
+        'name' => null,
+        'tags' => null
     ];
 
     /**
@@ -112,12 +110,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'description' => 'description',
         'configuration' => 'configuration',
-        'merchant_id' => 'merchant_id',
+        'description' => 'description',
         'model' => 'model',
-        'name' => 'name'
+        'name' => 'name',
+        'tags' => 'tags'
     ];
 
     /**
@@ -126,12 +123,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'description' => 'setDescription',
         'configuration' => 'setConfiguration',
-        'merchant_id' => 'setMerchantId',
+        'description' => 'setDescription',
         'model' => 'setModel',
-        'name' => 'setName'
+        'name' => 'setName',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -140,12 +136,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'description' => 'getDescription',
         'configuration' => 'getConfiguration',
-        'merchant_id' => 'getMerchantId',
+        'description' => 'getDescription',
         'model' => 'getModel',
-        'name' => 'getName'
+        'name' => 'getName',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -199,6 +194,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     public const MODEL_ISMP4 = 'ISMP4';
     public const MODEL_ANDROID = 'ANDROID';
     public const MODEL_LANE_3000 = 'LANE_3000';
+    public const MODEL_LINK_2500 = 'LINK_2500';
 
     /**
      * Gets allowable values of the enum
@@ -218,6 +214,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
             self::MODEL_ISMP4,
             self::MODEL_ANDROID,
             self::MODEL_LANE_3000,
+            self::MODEL_LINK_2500,
         ];
     }
 
@@ -236,12 +233,11 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
         $this->container['configuration'] = $data['configuration'] ?? null;
-        $this->container['merchant_id'] = $data['merchant_id'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
         $this->container['model'] = $data['model'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -253,6 +249,9 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['model'] === null) {
+            $invalidProperties[] = "'model' can't be null";
+        }
         $allowedValues = $this->getModelAllowableValues();
         if (!is_null($this->container['model']) && !in_array($this->container['model'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -262,6 +261,9 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -278,25 +280,25 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
+     * Gets configuration
      *
-     * @return array<string,string>|null
+     * @return \Finix\Model\ConfigurationDetails|null
      */
-    public function getTags()
+    public function getConfiguration()
     {
-        return $this->container['tags'];
+        return $this->container['configuration'];
     }
 
     /**
-     * Sets tags
+     * Sets configuration
      *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     * @param \Finix\Model\ConfigurationDetails|null $configuration configuration
      *
      * @return self
      */
-    public function setTags($tags, $deserialize = false)
+    public function setConfiguration($configuration, $deserialize = false)
     {
-        $this->container['tags'] = $tags;
+        $this->container['configuration'] = $configuration;
 
         return $this;
     }
@@ -326,57 +328,9 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets configuration
-     *
-     * @return \Finix\Model\ConfigurationDetails|null
-     */
-    public function getConfiguration()
-    {
-        return $this->container['configuration'];
-    }
-
-    /**
-     * Sets configuration
-     *
-     * @param \Finix\Model\ConfigurationDetails|null $configuration configuration
-     *
-     * @return self
-     */
-    public function setConfiguration($configuration, $deserialize = false)
-    {
-        $this->container['configuration'] = $configuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant_id
-     *
-     * @return string|null
-     */
-    public function getMerchantId()
-    {
-        return $this->container['merchant_id'];
-    }
-
-    /**
-     * Sets merchant_id
-     *
-     * @param string|null $merchant_id ID of the `Merchant` the `Device` is associated with.
-     *
-     * @return self
-     */
-    public function setMerchantId($merchant_id, $deserialize = false)
-    {
-        $this->container['merchant_id'] = $merchant_id;
-
-        return $this;
-    }
-
-    /**
      * Gets model
      *
-     * @return string|null
+     * @return string
      */
     public function getModel()
     {
@@ -386,14 +340,14 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets model
      *
-     * @param string|null $model Include one of the following values to let Finix know the type of device that's being used.
+     * @param string $model The model type of the device.
      *
      * @return self
      */
     public function setModel($model, $deserialize = false)
     {
         $allowedValues = $this->getModelAllowableValues();
-        if (!is_null($model) && !in_array($model, $allowedValues, true) && !$deserialize) {
+        if (!in_array($model, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'model', must be one of '%s'",
@@ -410,7 +364,7 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -420,13 +374,37 @@ class CreateDevice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Name of the `Device`.
+     * @param string $name Name of the `Device`.
      *
      * @return self
      */
     public function setName($name, $deserialize = false)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

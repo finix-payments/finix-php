@@ -303,7 +303,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets offset
      *
-     * @param int|null $offset The number of items to skip before starting to collect the result set
+     * @param int|null $offset The number of items to skip before starting to collect the result set.
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets page_number
      *
-     * @param int|null $page_number The page number to list
+     * @param int|null $page_number The page number to list.
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets page_size
      *
-     * @param int|null $page_size The size of the page
+     * @param int|null $page_size The size of the page.
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets updated_at_gte
      *
-     * @param string|null $updated_at_gte Filter where updated_at is after the given date
+     * @param string|null $updated_at_gte Filter where `updated_at` is after the given date.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets updated_at_lte
      *
-     * @param string|null $updated_at_lte Filter where updated_at is before the given date
+     * @param string|null $updated_at_lte Filter where `updated_at` is before the given date.
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets idempotency_id
      *
-     * @param string|null $idempotency_id Filter by idempotency_id
+     * @param string|null $idempotency_id Filter by `idempotency_id`.
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets amount
      *
-     * @param int|null $amount Filter by an amount equal to the given value
+     * @param int|null $amount Filter by an amount equal to the given value.
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets description
      *
-     * @param string|null $description Filter by the `description` value
+     * @param string|null $description Filter by the `Description` value .
      *
      * @return self
      */
@@ -567,7 +567,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets destination
      *
-     * @param string|null $destination Filter by the `Payment Instrument` saved in `destination`
+     * @param string|null $destination Filter by the `Payment Instrument` saved in `Destination`.
      *
      * @return self
      */
@@ -591,7 +591,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets external_reference_id
      *
-     * @param string|null $external_reference_id Filter by the value saved in `external_reference_id`
+     * @param string|null $external_reference_id Filter by the value saved in `external_reference_id`.
      *
      * @return self
      */
@@ -615,7 +615,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets reference_id
      *
-     * @param string|null $reference_id Filter by the value saved in `reference_id`
+     * @param string|null $reference_id Filter by the value saved in `reference_id`.
      *
      * @return self
      */
@@ -639,7 +639,7 @@ class ListBalanceTransfersQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets source
      *
-     * @param string|null $source Filter by the `Payment Instrument` saved in `source`
+     * @param string|null $source Filter by the `Payment Instrument` saved in `source`.
      *
      * @return self
      */

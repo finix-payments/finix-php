@@ -31,7 +31,7 @@ namespace Finix\Test\Api;
 use \Finix\Configuration;
 use \Finix\ApiException;
 use \Finix\ObjectSerializer;
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 use \Finix\Model as Model;
 use \Finix\Environment;
 use \Finix\FinixClient;

@@ -60,10 +60,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'fee' => 'int',
-        'capture_amount' => 'int',
         'additional_purchase_data' => '\Finix\Model\AdditionalPurchaseData',
+        'capture_amount' => 'int',
+        'fee' => 'int',
+        'tags' => 'array<string,string>',
         'void_me' => 'bool'
     ];
 
@@ -75,10 +75,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'fee' => 'int64',
-        'capture_amount' => 'int64',
         'additional_purchase_data' => null,
+        'capture_amount' => 'int64',
+        'fee' => 'int64',
+        'tags' => null,
         'void_me' => null
     ];
 
@@ -109,10 +109,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'fee' => 'fee',
-        'capture_amount' => 'capture_amount',
         'additional_purchase_data' => 'additional_purchase_data',
+        'capture_amount' => 'capture_amount',
+        'fee' => 'fee',
+        'tags' => 'tags',
         'void_me' => 'void_me'
     ];
 
@@ -122,10 +122,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'fee' => 'setFee',
-        'capture_amount' => 'setCaptureAmount',
         'additional_purchase_data' => 'setAdditionalPurchaseData',
+        'capture_amount' => 'setCaptureAmount',
+        'fee' => 'setFee',
+        'tags' => 'setTags',
         'void_me' => 'setVoidMe'
     ];
 
@@ -135,10 +135,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'fee' => 'getFee',
-        'capture_amount' => 'getCaptureAmount',
         'additional_purchase_data' => 'getAdditionalPurchaseData',
+        'capture_amount' => 'getCaptureAmount',
+        'fee' => 'getFee',
+        'tags' => 'getTags',
         'void_me' => 'getVoidMe'
     ];
 
@@ -199,10 +199,10 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['fee'] = $data['fee'] ?? null;
-        $this->container['capture_amount'] = $data['capture_amount'] ?? null;
         $this->container['additional_purchase_data'] = $data['additional_purchase_data'] ?? null;
+        $this->container['capture_amount'] = $data['capture_amount'] ?? null;
+        $this->container['fee'] = $data['fee'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['void_me'] = $data['void_me'] ?? null;
     }
 
@@ -231,49 +231,25 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets tags
+     * Gets additional_purchase_data
      *
-     * @return array<string,string>|null
+     * @return \Finix\Model\AdditionalPurchaseData|null
      */
-    public function getTags()
+    public function getAdditionalPurchaseData()
     {
-        return $this->container['tags'];
+        return $this->container['additional_purchase_data'];
     }
 
     /**
-     * Sets tags
+     * Sets additional_purchase_data
      *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
      *
      * @return self
      */
-    public function setTags($tags, $deserialize = false)
+    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
     {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets fee
-     *
-     * @return int|null
-     */
-    public function getFee()
-    {
-        return $this->container['fee'];
-    }
-
-    /**
-     * Sets fee
-     *
-     * @param int|null $fee The amount of the `Authorization` you'd like to collect as your fee in cents. Defaults to zero (must be less than or equal to the `amount`).
-     *
-     * @return self
-     */
-    public function setFee($fee, $deserialize = false)
-    {
-        $this->container['fee'] = $fee;
+        $this->container['additional_purchase_data'] = $additional_purchase_data;
 
         return $this;
     }
@@ -303,25 +279,49 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets additional_purchase_data
+     * Gets fee
      *
-     * @return \Finix\Model\AdditionalPurchaseData|null
+     * @return int|null
      */
-    public function getAdditionalPurchaseData()
+    public function getFee()
     {
-        return $this->container['additional_purchase_data'];
+        return $this->container['fee'];
     }
 
     /**
-     * Sets additional_purchase_data
+     * Sets fee
      *
-     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
+     * @param int|null $fee The amount of the `Authorization` you'd like to collect as your fee in cents. Defaults to zero (must be less than or equal to the `amount`).
      *
      * @return self
      */
-    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
+    public function setFee($fee, $deserialize = false)
     {
-        $this->container['additional_purchase_data'] = $additional_purchase_data;
+        $this->container['fee'] = $fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -339,7 +339,7 @@ class UpdateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets void_me
      *
-     * @param bool|null $void_me Set to True to void the Authorization
+     * @param bool|null $void_me Set to **True** to void the `Authorization`.
      *
      * @return self
      */

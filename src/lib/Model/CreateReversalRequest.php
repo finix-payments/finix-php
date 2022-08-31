@@ -63,8 +63,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'refund_amount' => 'int',
         'tags' => 'array<string,string>',
         'device' => 'string',
-        'currency' => '\Finix\Model\Currency',
         'amount' => 'int',
+        'currency' => '\Finix\Model\Currency',
         'operation_key' => 'string'
     ];
 
@@ -79,8 +79,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'refund_amount' => null,
         'tags' => null,
         'device' => null,
-        'currency' => null,
         'amount' => null,
+        'currency' => null,
         'operation_key' => null
     ];
 
@@ -114,8 +114,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'refund_amount' => 'refund_amount',
         'tags' => 'tags',
         'device' => 'device',
-        'currency' => 'currency',
         'amount' => 'amount',
+        'currency' => 'currency',
         'operation_key' => 'operation_key'
     ];
 
@@ -128,8 +128,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'refund_amount' => 'setRefundAmount',
         'tags' => 'setTags',
         'device' => 'setDevice',
-        'currency' => 'setCurrency',
         'amount' => 'setAmount',
+        'currency' => 'setCurrency',
         'operation_key' => 'setOperationKey'
     ];
 
@@ -142,8 +142,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'refund_amount' => 'getRefundAmount',
         'tags' => 'getTags',
         'device' => 'getDevice',
-        'currency' => 'getCurrency',
         'amount' => 'getAmount',
+        'currency' => 'getCurrency',
         'operation_key' => 'getOperationKey'
     ];
 
@@ -207,8 +207,8 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['refund_amount'] = $data['refund_amount'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['device'] = $data['device'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['operation_key'] = $data['operation_key'] ?? null;
     }
 
@@ -309,30 +309,6 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets currency
-     *
-     * @return \Finix\Model\Currency|null
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param \Finix\Model\Currency|null $currency currency
-     *
-     * @return self
-     */
-    public function setCurrency($currency, $deserialize = false)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
      * Gets amount
      *
      * @return int|null
@@ -352,6 +328,30 @@ class CreateReversalRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAmount($amount, $deserialize = false)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return \Finix\Model\Currency|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param \Finix\Model\Currency|null $currency currency
+     *
+     * @return self
+     */
+    public function setCurrency($currency, $deserialize = false)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }

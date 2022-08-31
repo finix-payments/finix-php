@@ -60,8 +60,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'enabled' => 'bool'
+        'enabled' => 'bool',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -72,8 +72,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'enabled' => null
+        'enabled' => null,
+        'tags' => null
     ];
 
     /**
@@ -103,8 +103,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'enabled' => 'enabled'
+        'enabled' => 'enabled',
+        'tags' => 'tags'
     ];
 
     /**
@@ -113,8 +113,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'enabled' => 'setEnabled'
+        'enabled' => 'setEnabled',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -123,8 +123,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'enabled' => 'getEnabled'
+        'enabled' => 'getEnabled',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -184,8 +184,8 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -213,6 +213,30 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
+     * Gets enabled
+     *
+     * @return bool|null
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param bool|null $enabled Details if the `user` is enabled and active. Set to **false** to disable the user.
+     *
+     * @return self
+     */
+    public function setEnabled($enabled, $deserialize = false)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
      * Gets tags
      *
      * @return array<string,string>|null
@@ -232,30 +256,6 @@ class UpdateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets enabled
-     *
-     * @return bool|null
-     */
-    public function getEnabled()
-    {
-        return $this->container['enabled'];
-    }
-
-    /**
-     * Sets enabled
-     *
-     * @param bool|null $enabled enabled
-     *
-     * @return self
-     */
-    public function setEnabled($enabled, $deserialize = false)
-    {
-        $this->container['enabled'] = $enabled;
 
         return $this;
     }

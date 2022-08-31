@@ -61,9 +61,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fixed_time_interval_offset' => '\Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset',
         'line_item_type' => 'string',
         'nickname' => 'string',
-        'fixed_time_interval_offset' => '\Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset',
         'period_offset' => '\Finix\Model\CreateSubscriptionScheduleRequestPeriodOffset',
         'subscription_type' => 'string',
         'tags' => 'array<string,string>'
@@ -77,9 +77,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fixed_time_interval_offset' => null,
         'line_item_type' => null,
         'nickname' => null,
-        'fixed_time_interval_offset' => null,
         'period_offset' => null,
         'subscription_type' => null,
         'tags' => null
@@ -112,9 +112,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'fixed_time_interval_offset' => 'fixed_time_interval_offset',
         'line_item_type' => 'line_item_type',
         'nickname' => 'nickname',
-        'fixed_time_interval_offset' => 'fixed_time_interval_offset',
         'period_offset' => 'period_offset',
         'subscription_type' => 'subscription_type',
         'tags' => 'tags'
@@ -126,9 +126,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
+        'fixed_time_interval_offset' => 'setFixedTimeIntervalOffset',
         'line_item_type' => 'setLineItemType',
         'nickname' => 'setNickname',
-        'fixed_time_interval_offset' => 'setFixedTimeIntervalOffset',
         'period_offset' => 'setPeriodOffset',
         'subscription_type' => 'setSubscriptionType',
         'tags' => 'setTags'
@@ -140,9 +140,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
+        'fixed_time_interval_offset' => 'getFixedTimeIntervalOffset',
         'line_item_type' => 'getLineItemType',
         'nickname' => 'getNickname',
-        'fixed_time_interval_offset' => 'getFixedTimeIntervalOffset',
         'period_offset' => 'getPeriodOffset',
         'subscription_type' => 'getSubscriptionType',
         'tags' => 'getTags'
@@ -235,9 +235,9 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
+        $this->container['fixed_time_interval_offset'] = $data['fixed_time_interval_offset'] ?? null;
         $this->container['line_item_type'] = $data['line_item_type'] ?? null;
         $this->container['nickname'] = $data['nickname'] ?? null;
-        $this->container['fixed_time_interval_offset'] = $data['fixed_time_interval_offset'] ?? null;
         $this->container['period_offset'] = $data['period_offset'] ?? null;
         $this->container['subscription_type'] = $data['subscription_type'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
@@ -299,6 +299,30 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
 
 
     /**
+     * Gets fixed_time_interval_offset
+     *
+     * @return \Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset|null
+     */
+    public function getFixedTimeIntervalOffset()
+    {
+        return $this->container['fixed_time_interval_offset'];
+    }
+
+    /**
+     * Sets fixed_time_interval_offset
+     *
+     * @param \Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset|null $fixed_time_interval_offset fixed_time_interval_offset
+     *
+     * @return self
+     */
+    public function setFixedTimeIntervalOffset($fixed_time_interval_offset, $deserialize = false)
+    {
+        $this->container['fixed_time_interval_offset'] = $fixed_time_interval_offset;
+
+        return $this;
+    }
+
+    /**
      * Gets line_item_type
      *
      * @return string
@@ -358,30 +382,6 @@ class CreateSubscriptionScheduleRequest implements ModelInterface, ArrayAccess, 
     public function setNickname($nickname, $deserialize = false)
     {
         $this->container['nickname'] = $nickname;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_time_interval_offset
-     *
-     * @return \Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset|null
-     */
-    public function getFixedTimeIntervalOffset()
-    {
-        return $this->container['fixed_time_interval_offset'];
-    }
-
-    /**
-     * Sets fixed_time_interval_offset
-     *
-     * @param \Finix\Model\CreateSubscriptionScheduleRequestFixedTimeIntervalOffset|null $fixed_time_interval_offset fixed_time_interval_offset
-     *
-     * @return self
-     */
-    public function setFixedTimeIntervalOffset($fixed_time_interval_offset, $deserialize = false)
-    {
-        $this->container['fixed_time_interval_offset'] = $fixed_time_interval_offset;
 
         return $this;
     }

@@ -34,6 +34,7 @@ use \Finix\ObjectSerializer;
  * FeeType Class Doc Comment
  *
  * @category Class
+ * @description The type of fee.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

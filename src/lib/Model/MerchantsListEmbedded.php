@@ -224,7 +224,7 @@ class MerchantsListEmbedded implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets merchants
      *
-     * @param \Finix\Model\Merchant[]|null $merchants merchants
+     * @param \Finix\Model\Merchant[]|null $merchants `Merchant` objects.
      *
      * @return self
      */

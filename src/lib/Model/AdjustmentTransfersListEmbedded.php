@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * AdjustmentTransfersListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of adjustment &#x60;Transfers&#x60; created for a &#x60;Dispute&#x60;.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -219,7 +220,7 @@ class AdjustmentTransfersListEmbedded implements ModelInterface, ArrayAccess, \J
     /**
      * Sets transfers
      *
-     * @param \Finix\Model\Transfer[]|null $transfers transfers
+     * @param \Finix\Model\Transfer[]|null $transfers `Transfer` objects.
      *
      * @return self
      */

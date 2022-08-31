@@ -60,8 +60,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'url' => 'string',
-        'enabled' => 'bool'
+        'enabled' => 'bool',
+        'url' => 'string'
     ];
 
     /**
@@ -72,8 +72,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'url' => null,
-        'enabled' => null
+        'enabled' => null,
+        'url' => null
     ];
 
     /**
@@ -103,8 +103,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'enabled' => 'enabled'
+        'enabled' => 'enabled',
+        'url' => 'url'
     ];
 
     /**
@@ -113,8 +113,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'enabled' => 'setEnabled'
+        'enabled' => 'setEnabled',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -123,8 +123,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'enabled' => 'getEnabled'
+        'enabled' => 'getEnabled',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -184,8 +184,8 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = $data['url'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -213,30 +213,6 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url The HTTP or HTTPS url where the callbacks will be sent via POST request (max 120 characters).
-     *
-     * @return self
-     */
-    public function setUrl($url, $deserialize = false)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
      * Gets enabled
      *
      * @return bool|null
@@ -256,6 +232,30 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url The HTTP or HTTPS url where the callbacks will be sent via POST request (max 120 characters).
+     *
+     * @return self
+     */
+    public function setUrl($url, $deserialize = false)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

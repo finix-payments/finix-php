@@ -61,9 +61,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
         'basic' => '\Finix\Model\CreateWebhookRequestAuthenticationBasic',
-        'bearer' => '\Finix\Model\CreateWebhookRequestAuthenticationBearer'
+        'bearer' => '\Finix\Model\CreateWebhookRequestAuthenticationBearer',
+        'type' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
         'basic' => null,
-        'bearer' => null
+        'bearer' => null,
+        'type' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
         'basic' => 'basic',
-        'bearer' => 'bearer'
+        'bearer' => 'bearer',
+        'type' => 'type'
     ];
 
     /**
@@ -117,9 +117,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
         'basic' => 'setBasic',
-        'bearer' => 'setBearer'
+        'bearer' => 'setBearer',
+        'type' => 'setType'
     ];
 
     /**
@@ -128,9 +128,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
         'basic' => 'getBasic',
-        'bearer' => 'getBearer'
+        'bearer' => 'getBearer',
+        'type' => 'getType'
     ];
 
     /**
@@ -207,9 +207,9 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['basic'] = $data['basic'] ?? null;
         $this->container['bearer'] = $data['bearer'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -244,40 +244,6 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type The type of authentication the webhook will use: - NONE: No authentication will be used. - BASIC: Basic authentication. - BEARER: Oauth2's Bearer Token.
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets basic
@@ -323,6 +289,40 @@ class CreateWebhookRequestAuthentication implements ModelInterface, ArrayAccess,
     public function setBearer($bearer, $deserialize = false)
     {
         $this->container['bearer'] = $bearer;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type The type of authentication the webhook will use: - **NONE**: No authentication will be used. - **BASIC**: Basic authentication. - **BEARER**: Oauth2's Bearer Token.
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

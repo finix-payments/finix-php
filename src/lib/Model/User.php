@@ -60,7 +60,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -68,6 +67,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity' => 'string',
         'password' => 'string',
         'role' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\UserLinks'
     ];
 
@@ -79,7 +79,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -87,6 +86,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity' => null,
         'password' => null,
         'role' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -117,7 +117,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
@@ -125,6 +124,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity' => 'identity',
         'password' => 'password',
         'role' => 'role',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -134,7 +134,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -142,6 +141,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity' => 'setIdentity',
         'password' => 'setPassword',
         'role' => 'setRole',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -151,7 +151,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -159,6 +158,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity' => 'getIdentity',
         'password' => 'getPassword',
         'role' => 'getRole',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -238,7 +238,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -246,6 +245,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['identity'] = $data['identity'] ?? null;
         $this->container['password'] = $data['password'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -283,30 +283,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -319,7 +295,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the `User` resource.
+     * @param string|null $id The ID of the `User` object.
      *
      * @return self
      */
@@ -415,15 +391,12 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identity
      *
-     * @param string|null $identity ID of the `Identity` that the `User` resource was created under.
+     * @param string|null $identity ID of the `Identity` that the `User` object was created under.
      *
      * @return self
      */
     public function setIdentity($identity, $deserialize = false)
     {
-
-        
-
         $this->container['identity'] = $identity;
 
         return $this;
@@ -483,6 +456,30 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['role'] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

@@ -60,12 +60,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'dispute' => 'string',
         'state' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\DisputeEvidenceLinks'
     ];
 
@@ -77,12 +77,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'dispute' => null,
         'state' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -113,12 +113,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'dispute' => 'dispute',
         'state' => 'state',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -128,12 +128,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'dispute' => 'setDispute',
         'state' => 'setState',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -143,12 +143,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'dispute' => 'getDispute',
         'state' => 'getState',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -228,12 +228,12 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['dispute'] = $data['dispute'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -271,30 +271,6 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -313,9 +289,6 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -406,7 +379,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state
      *
-     * @param string|null $state Result of the evidence uploaded. - PENDING: The evidence file has not yet been submitted to the Processor. No user action is required. - SUCCEEDED: The evidence file has been successfully sent to the Processor. No further user action is required. - CANCELED: The evidence file upload was not completed due to user action. - FAILED: An issue occurred. User action is required. Any of the following issues could have occurred:   - There was an error in the system and the user should retry uploading their evidence file.   - There is an issue with the file and the user should retry uploading a different file.   - There is an issue and the user should contact Support.
+     * @param string|null $state Result of the evidence uploaded. - **PENDING**: The evidence file has not yet been submitted to the Processor. No user action is required. - **SUCCEEDED**: The evidence file has been successfully sent to the Processor. No further user action is required. - **CANCELED**: The evidence file upload was not completed due to user action. - **FAILED**: An issue occurred. User action is required**. Any of the following issues could have occurred:   - There was an error in the system and the user should retry uploading their evidence file.   - There is an issue with the file and the user should retry uploading a different file.   - There is an issue and the user should contact Support.
      *
      * @return self
      */
@@ -423,6 +396,30 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

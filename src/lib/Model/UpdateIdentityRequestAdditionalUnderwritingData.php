@@ -61,21 +61,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
+        'annual_ach_volume' => 'int',
+        'average_ach_transfer_amount' => 'int',
+        'average_card_transfer_amount' => 'int',
+        'business_description' => 'string',
+        'credit_check_allowed' => 'bool',
+        'credit_check_ip_address' => 'string',
+        'credit_check_timestamp' => 'string',
+        'credit_check_user_agent' => 'string',
+        'card_volume_distribution' => '\Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution',
         'merchant_agreement_accepted' => 'bool',
         'merchant_agreement_ip_address' => 'string',
-        'volume_distribution_by_business_type' => '\Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType',
-        'average_ach_transfer_amount' => 'int',
-        'annual_ach_volume' => 'int',
-        'credit_check_user_agent' => 'string',
-        'refund_policy' => 'string',
-        'credit_check_timestamp' => 'string',
-        'credit_check_allowed' => 'bool',
         'merchant_agreement_timestamp' => 'string',
-        'business_description' => 'string',
-        'average_card_transfer_amount' => 'int',
-        'credit_check_ip_address' => 'string',
         'merchant_agreement_user_agent' => 'string',
-        'card_volume_distribution' => '\Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution'
+        'refund_policy' => 'string',
+        'volume_distribution_by_business_type' => '\Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType'
     ];
 
     /**
@@ -86,21 +86,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'annual_ach_volume' => null,
+        'average_ach_transfer_amount' => null,
+        'average_card_transfer_amount' => null,
+        'business_description' => null,
+        'credit_check_allowed' => null,
+        'credit_check_ip_address' => null,
+        'credit_check_timestamp' => null,
+        'credit_check_user_agent' => null,
+        'card_volume_distribution' => null,
         'merchant_agreement_accepted' => null,
         'merchant_agreement_ip_address' => null,
-        'volume_distribution_by_business_type' => null,
-        'average_ach_transfer_amount' => null,
-        'annual_ach_volume' => null,
-        'credit_check_user_agent' => null,
-        'refund_policy' => null,
-        'credit_check_timestamp' => null,
-        'credit_check_allowed' => null,
         'merchant_agreement_timestamp' => null,
-        'business_description' => null,
-        'average_card_transfer_amount' => null,
-        'credit_check_ip_address' => null,
         'merchant_agreement_user_agent' => null,
-        'card_volume_distribution' => null
+        'refund_policy' => null,
+        'volume_distribution_by_business_type' => null
     ];
 
     /**
@@ -130,21 +130,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
+        'annual_ach_volume' => 'annual_ach_volume',
+        'average_ach_transfer_amount' => 'average_ach_transfer_amount',
+        'average_card_transfer_amount' => 'average_card_transfer_amount',
+        'business_description' => 'business_description',
+        'credit_check_allowed' => 'credit_check_allowed',
+        'credit_check_ip_address' => 'credit_check_ip_address',
+        'credit_check_timestamp' => 'credit_check_timestamp',
+        'credit_check_user_agent' => 'credit_check_user_agent',
+        'card_volume_distribution' => 'card_volume_distribution',
         'merchant_agreement_accepted' => 'merchant_agreement_accepted',
         'merchant_agreement_ip_address' => 'merchant_agreement_ip_address',
-        'volume_distribution_by_business_type' => 'volume_distribution_by_business_type',
-        'average_ach_transfer_amount' => 'average_ach_transfer_amount',
-        'annual_ach_volume' => 'annual_ach_volume',
-        'credit_check_user_agent' => 'credit_check_user_agent',
-        'refund_policy' => 'refund_policy',
-        'credit_check_timestamp' => 'credit_check_timestamp',
-        'credit_check_allowed' => 'credit_check_allowed',
         'merchant_agreement_timestamp' => 'merchant_agreement_timestamp',
-        'business_description' => 'business_description',
-        'average_card_transfer_amount' => 'average_card_transfer_amount',
-        'credit_check_ip_address' => 'credit_check_ip_address',
         'merchant_agreement_user_agent' => 'merchant_agreement_user_agent',
-        'card_volume_distribution' => 'card_volume_distribution'
+        'refund_policy' => 'refund_policy',
+        'volume_distribution_by_business_type' => 'volume_distribution_by_business_type'
     ];
 
     /**
@@ -153,21 +153,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
+        'annual_ach_volume' => 'setAnnualAchVolume',
+        'average_ach_transfer_amount' => 'setAverageAchTransferAmount',
+        'average_card_transfer_amount' => 'setAverageCardTransferAmount',
+        'business_description' => 'setBusinessDescription',
+        'credit_check_allowed' => 'setCreditCheckAllowed',
+        'credit_check_ip_address' => 'setCreditCheckIpAddress',
+        'credit_check_timestamp' => 'setCreditCheckTimestamp',
+        'credit_check_user_agent' => 'setCreditCheckUserAgent',
+        'card_volume_distribution' => 'setCardVolumeDistribution',
         'merchant_agreement_accepted' => 'setMerchantAgreementAccepted',
         'merchant_agreement_ip_address' => 'setMerchantAgreementIpAddress',
-        'volume_distribution_by_business_type' => 'setVolumeDistributionByBusinessType',
-        'average_ach_transfer_amount' => 'setAverageAchTransferAmount',
-        'annual_ach_volume' => 'setAnnualAchVolume',
-        'credit_check_user_agent' => 'setCreditCheckUserAgent',
-        'refund_policy' => 'setRefundPolicy',
-        'credit_check_timestamp' => 'setCreditCheckTimestamp',
-        'credit_check_allowed' => 'setCreditCheckAllowed',
         'merchant_agreement_timestamp' => 'setMerchantAgreementTimestamp',
-        'business_description' => 'setBusinessDescription',
-        'average_card_transfer_amount' => 'setAverageCardTransferAmount',
-        'credit_check_ip_address' => 'setCreditCheckIpAddress',
         'merchant_agreement_user_agent' => 'setMerchantAgreementUserAgent',
-        'card_volume_distribution' => 'setCardVolumeDistribution'
+        'refund_policy' => 'setRefundPolicy',
+        'volume_distribution_by_business_type' => 'setVolumeDistributionByBusinessType'
     ];
 
     /**
@@ -176,21 +176,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
+        'annual_ach_volume' => 'getAnnualAchVolume',
+        'average_ach_transfer_amount' => 'getAverageAchTransferAmount',
+        'average_card_transfer_amount' => 'getAverageCardTransferAmount',
+        'business_description' => 'getBusinessDescription',
+        'credit_check_allowed' => 'getCreditCheckAllowed',
+        'credit_check_ip_address' => 'getCreditCheckIpAddress',
+        'credit_check_timestamp' => 'getCreditCheckTimestamp',
+        'credit_check_user_agent' => 'getCreditCheckUserAgent',
+        'card_volume_distribution' => 'getCardVolumeDistribution',
         'merchant_agreement_accepted' => 'getMerchantAgreementAccepted',
         'merchant_agreement_ip_address' => 'getMerchantAgreementIpAddress',
-        'volume_distribution_by_business_type' => 'getVolumeDistributionByBusinessType',
-        'average_ach_transfer_amount' => 'getAverageAchTransferAmount',
-        'annual_ach_volume' => 'getAnnualAchVolume',
-        'credit_check_user_agent' => 'getCreditCheckUserAgent',
-        'refund_policy' => 'getRefundPolicy',
-        'credit_check_timestamp' => 'getCreditCheckTimestamp',
-        'credit_check_allowed' => 'getCreditCheckAllowed',
         'merchant_agreement_timestamp' => 'getMerchantAgreementTimestamp',
-        'business_description' => 'getBusinessDescription',
-        'average_card_transfer_amount' => 'getAverageCardTransferAmount',
-        'credit_check_ip_address' => 'getCreditCheckIpAddress',
         'merchant_agreement_user_agent' => 'getMerchantAgreementUserAgent',
-        'card_volume_distribution' => 'getCardVolumeDistribution'
+        'refund_policy' => 'getRefundPolicy',
+        'volume_distribution_by_business_type' => 'getVolumeDistributionByBusinessType'
     ];
 
     /**
@@ -267,21 +267,21 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
+        $this->container['annual_ach_volume'] = $data['annual_ach_volume'] ?? null;
+        $this->container['average_ach_transfer_amount'] = $data['average_ach_transfer_amount'] ?? null;
+        $this->container['average_card_transfer_amount'] = $data['average_card_transfer_amount'] ?? null;
+        $this->container['business_description'] = $data['business_description'] ?? null;
+        $this->container['credit_check_allowed'] = $data['credit_check_allowed'] ?? null;
+        $this->container['credit_check_ip_address'] = $data['credit_check_ip_address'] ?? null;
+        $this->container['credit_check_timestamp'] = $data['credit_check_timestamp'] ?? null;
+        $this->container['credit_check_user_agent'] = $data['credit_check_user_agent'] ?? null;
+        $this->container['card_volume_distribution'] = $data['card_volume_distribution'] ?? null;
         $this->container['merchant_agreement_accepted'] = $data['merchant_agreement_accepted'] ?? null;
         $this->container['merchant_agreement_ip_address'] = $data['merchant_agreement_ip_address'] ?? null;
-        $this->container['volume_distribution_by_business_type'] = $data['volume_distribution_by_business_type'] ?? null;
-        $this->container['average_ach_transfer_amount'] = $data['average_ach_transfer_amount'] ?? null;
-        $this->container['annual_ach_volume'] = $data['annual_ach_volume'] ?? null;
-        $this->container['credit_check_user_agent'] = $data['credit_check_user_agent'] ?? null;
-        $this->container['refund_policy'] = $data['refund_policy'] ?? null;
-        $this->container['credit_check_timestamp'] = $data['credit_check_timestamp'] ?? null;
-        $this->container['credit_check_allowed'] = $data['credit_check_allowed'] ?? null;
         $this->container['merchant_agreement_timestamp'] = $data['merchant_agreement_timestamp'] ?? null;
-        $this->container['business_description'] = $data['business_description'] ?? null;
-        $this->container['average_card_transfer_amount'] = $data['average_card_transfer_amount'] ?? null;
-        $this->container['credit_check_ip_address'] = $data['credit_check_ip_address'] ?? null;
         $this->container['merchant_agreement_user_agent'] = $data['merchant_agreement_user_agent'] ?? null;
-        $this->container['card_volume_distribution'] = $data['card_volume_distribution'] ?? null;
+        $this->container['refund_policy'] = $data['refund_policy'] ?? null;
+        $this->container['volume_distribution_by_business_type'] = $data['volume_distribution_by_business_type'] ?? null;
     }
 
     /**
@@ -293,12 +293,32 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['merchant_agreement_ip_address']) && (mb_strlen($this->container['merchant_agreement_ip_address']) < 1)) {
-            $invalidProperties[] = "invalid value for 'merchant_agreement_ip_address', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['business_description']) && (mb_strlen($this->container['business_description']) < 1)) {
+            $invalidProperties[] = "invalid value for 'business_description', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['credit_check_ip_address']) && (mb_strlen($this->container['credit_check_ip_address']) < 1)) {
+            $invalidProperties[] = "invalid value for 'credit_check_ip_address', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['credit_check_timestamp']) && (mb_strlen($this->container['credit_check_timestamp']) < 1)) {
+            $invalidProperties[] = "invalid value for 'credit_check_timestamp', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['credit_check_user_agent']) && (mb_strlen($this->container['credit_check_user_agent']) < 1)) {
             $invalidProperties[] = "invalid value for 'credit_check_user_agent', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['merchant_agreement_ip_address']) && (mb_strlen($this->container['merchant_agreement_ip_address']) < 1)) {
+            $invalidProperties[] = "invalid value for 'merchant_agreement_ip_address', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['merchant_agreement_timestamp']) && (mb_strlen($this->container['merchant_agreement_timestamp']) < 1)) {
+            $invalidProperties[] = "invalid value for 'merchant_agreement_timestamp', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['merchant_agreement_user_agent']) && (mb_strlen($this->container['merchant_agreement_user_agent']) < 1)) {
+            $invalidProperties[] = "invalid value for 'merchant_agreement_user_agent', the character length must be bigger than or equal to 1.";
         }
 
         $allowedValues = $this->getRefundPolicyAllowableValues();
@@ -312,26 +332,6 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
 
         if (!is_null($this->container['refund_policy']) && (mb_strlen($this->container['refund_policy']) < 1)) {
             $invalidProperties[] = "invalid value for 'refund_policy', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['credit_check_timestamp']) && (mb_strlen($this->container['credit_check_timestamp']) < 1)) {
-            $invalidProperties[] = "invalid value for 'credit_check_timestamp', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['merchant_agreement_timestamp']) && (mb_strlen($this->container['merchant_agreement_timestamp']) < 1)) {
-            $invalidProperties[] = "invalid value for 'merchant_agreement_timestamp', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['business_description']) && (mb_strlen($this->container['business_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'business_description', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['credit_check_ip_address']) && (mb_strlen($this->container['credit_check_ip_address']) < 1)) {
-            $invalidProperties[] = "invalid value for 'credit_check_ip_address', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['merchant_agreement_user_agent']) && (mb_strlen($this->container['merchant_agreement_user_agent']) < 1)) {
-            $invalidProperties[] = "invalid value for 'merchant_agreement_user_agent', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -348,6 +348,246 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets annual_ach_volume
+     *
+     * @return int|null
+     */
+    public function getAnnualAchVolume()
+    {
+        return $this->container['annual_ach_volume'];
+    }
+
+    /**
+     * Sets annual_ach_volume
+     *
+     * @param int|null $annual_ach_volume The approximate annual ACH sales expected to be processed (in cents) by this merchant (max 10 characters).
+     *
+     * @return self
+     */
+    public function setAnnualAchVolume($annual_ach_volume, $deserialize = false)
+    {
+        $this->container['annual_ach_volume'] = $annual_ach_volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets average_ach_transfer_amount
+     *
+     * @return int|null
+     */
+    public function getAverageAchTransferAmount()
+    {
+        return $this->container['average_ach_transfer_amount'];
+    }
+
+    /**
+     * Sets average_ach_transfer_amount
+     *
+     * @param int|null $average_ach_transfer_amount The approximate average ACH sale amount (in cents) for this merchant.
+     *
+     * @return self
+     */
+    public function setAverageAchTransferAmount($average_ach_transfer_amount, $deserialize = false)
+    {
+        $this->container['average_ach_transfer_amount'] = $average_ach_transfer_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets average_card_transfer_amount
+     *
+     * @return int|null
+     */
+    public function getAverageCardTransferAmount()
+    {
+        return $this->container['average_card_transfer_amount'];
+    }
+
+    /**
+     * Sets average_card_transfer_amount
+     *
+     * @param int|null $average_card_transfer_amount The average credit card sale amount (in cents) for this merchant.
+     *
+     * @return self
+     */
+    public function setAverageCardTransferAmount($average_card_transfer_amount, $deserialize = false)
+    {
+        $this->container['average_card_transfer_amount'] = $average_card_transfer_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_description
+     *
+     * @return string|null
+     */
+    public function getBusinessDescription()
+    {
+        return $this->container['business_description'];
+    }
+
+    /**
+     * Sets business_description
+     *
+     * @param string|null $business_description Description of this merchant's business (max 200 characters).
+     *
+     * @return self
+     */
+    public function setBusinessDescription($business_description, $deserialize = false)
+    {
+
+        if (!is_null($business_description) && (mb_strlen($business_description) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $business_description when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['business_description'] = $business_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_check_allowed
+     *
+     * @return bool|null
+     */
+    public function getCreditCheckAllowed()
+    {
+        return $this->container['credit_check_allowed'];
+    }
+
+    /**
+     * Sets credit_check_allowed
+     *
+     * @param bool|null $credit_check_allowed Sets if this merchant has consented and accepted to a credit check.
+     *
+     * @return self
+     */
+    public function setCreditCheckAllowed($credit_check_allowed, $deserialize = false)
+    {
+        $this->container['credit_check_allowed'] = $credit_check_allowed;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_check_ip_address
+     *
+     * @return string|null
+     */
+    public function getCreditCheckIpAddress()
+    {
+        return $this->container['credit_check_ip_address'];
+    }
+
+    /**
+     * Sets credit_check_ip_address
+     *
+     * @param string|null $credit_check_ip_address The IP address of the merchant when they consented to a credit check (e.g., 42.1.1.113 ).
+     *
+     * @return self
+     */
+    public function setCreditCheckIpAddress($credit_check_ip_address, $deserialize = false)
+    {
+
+        if (!is_null($credit_check_ip_address) && (mb_strlen($credit_check_ip_address) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $credit_check_ip_address when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['credit_check_ip_address'] = $credit_check_ip_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_check_timestamp
+     *
+     * @return string|null
+     */
+    public function getCreditCheckTimestamp()
+    {
+        return $this->container['credit_check_timestamp'];
+    }
+
+    /**
+     * Sets credit_check_timestamp
+     *
+     * @param string|null $credit_check_timestamp A timestamp of when this merchant consented to a credit check (e.g., 2021-04-28T16:42:55Z).
+     *
+     * @return self
+     */
+    public function setCreditCheckTimestamp($credit_check_timestamp, $deserialize = false)
+    {
+
+        if (!is_null($credit_check_timestamp) && (mb_strlen($credit_check_timestamp) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $credit_check_timestamp when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['credit_check_timestamp'] = $credit_check_timestamp;
+
+        return $this;
+    }
+
+    /**
+     * Gets credit_check_user_agent
+     *
+     * @return string|null
+     */
+    public function getCreditCheckUserAgent()
+    {
+        return $this->container['credit_check_user_agent'];
+    }
+
+    /**
+     * Sets credit_check_user_agent
+     *
+     * @param string|null $credit_check_user_agent The details of the browser that was used when this merchant consented to a credit check (e.g., Mozilla 5.0 (Macintosh; Intel Mac OS X 10 _14_6)).
+     *
+     * @return self
+     */
+    public function setCreditCheckUserAgent($credit_check_user_agent, $deserialize = false)
+    {
+
+        if (!is_null($credit_check_user_agent) && (mb_strlen($credit_check_user_agent) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $credit_check_user_agent when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['credit_check_user_agent'] = $credit_check_user_agent;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_volume_distribution
+     *
+     * @return \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null
+     */
+    public function getCardVolumeDistribution()
+    {
+        return $this->container['card_volume_distribution'];
+    }
+
+    /**
+     * Sets card_volume_distribution
+     *
+     * @param \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null $card_volume_distribution card_volume_distribution
+     *
+     * @return self
+     */
+    public function setCardVolumeDistribution($card_volume_distribution, $deserialize = false)
+    {
+        $this->container['card_volume_distribution'] = $card_volume_distribution;
+
+        return $this;
+    }
 
     /**
      * Gets merchant_agreement_accepted
@@ -404,103 +644,61 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
     }
 
     /**
-     * Gets volume_distribution_by_business_type
-     *
-     * @return \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType|null
-     */
-    public function getVolumeDistributionByBusinessType()
-    {
-        return $this->container['volume_distribution_by_business_type'];
-    }
-
-    /**
-     * Sets volume_distribution_by_business_type
-     *
-     * @param \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType|null $volume_distribution_by_business_type volume_distribution_by_business_type
-     *
-     * @return self
-     */
-    public function setVolumeDistributionByBusinessType($volume_distribution_by_business_type, $deserialize = false)
-    {
-        $this->container['volume_distribution_by_business_type'] = $volume_distribution_by_business_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets average_ach_transfer_amount
-     *
-     * @return int|null
-     */
-    public function getAverageAchTransferAmount()
-    {
-        return $this->container['average_ach_transfer_amount'];
-    }
-
-    /**
-     * Sets average_ach_transfer_amount
-     *
-     * @param int|null $average_ach_transfer_amount The approximate average ACH sale amount (in cents) for this merchant.
-     *
-     * @return self
-     */
-    public function setAverageAchTransferAmount($average_ach_transfer_amount, $deserialize = false)
-    {
-        $this->container['average_ach_transfer_amount'] = $average_ach_transfer_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets annual_ach_volume
-     *
-     * @return int|null
-     */
-    public function getAnnualAchVolume()
-    {
-        return $this->container['annual_ach_volume'];
-    }
-
-    /**
-     * Sets annual_ach_volume
-     *
-     * @param int|null $annual_ach_volume The approximate annual ACH sales expected to be processed (in cents) by this merchant (max 10 characters).
-     *
-     * @return self
-     */
-    public function setAnnualAchVolume($annual_ach_volume, $deserialize = false)
-    {
-        $this->container['annual_ach_volume'] = $annual_ach_volume;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_check_user_agent
+     * Gets merchant_agreement_timestamp
      *
      * @return string|null
      */
-    public function getCreditCheckUserAgent()
+    public function getMerchantAgreementTimestamp()
     {
-        return $this->container['credit_check_user_agent'];
+        return $this->container['merchant_agreement_timestamp'];
     }
 
     /**
-     * Sets credit_check_user_agent
+     * Sets merchant_agreement_timestamp
      *
-     * @param string|null $credit_check_user_agent The details of the browser that was used when this merchant consented to a credit check (e.g., Mozilla 5.0 (Macintosh; Intel Mac OS X 10 _14_6)).
+     * @param string|null $merchant_agreement_timestamp Timestamp of when the merchant accepted Finix's Terms of Service (e.g., 2021-04-28T16:42:55Z).
      *
      * @return self
      */
-    public function setCreditCheckUserAgent($credit_check_user_agent, $deserialize = false)
+    public function setMerchantAgreementTimestamp($merchant_agreement_timestamp, $deserialize = false)
     {
 
-        if (!is_null($credit_check_user_agent) && (mb_strlen($credit_check_user_agent) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_user_agent when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        if (!is_null($merchant_agreement_timestamp) && (mb_strlen($merchant_agreement_timestamp) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $merchant_agreement_timestamp when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
-        $this->container['credit_check_user_agent'] = $credit_check_user_agent;
+        $this->container['merchant_agreement_timestamp'] = $merchant_agreement_timestamp;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_agreement_user_agent
+     *
+     * @return string|null
+     */
+    public function getMerchantAgreementUserAgent()
+    {
+        return $this->container['merchant_agreement_user_agent'];
+    }
+
+    /**
+     * Sets merchant_agreement_user_agent
+     *
+     * @param string|null $merchant_agreement_user_agent The details of the browser that was used when this merchant accepted Finix's Terms of Service (e.g., Mozilla 5.0 (Macintosh; Intel Mac OS X 10 _14_6)).
+     *
+     * @return self
+     */
+    public function setMerchantAgreementUserAgent($merchant_agreement_user_agent, $deserialize = false)
+    {
+
+        if (!is_null($merchant_agreement_user_agent) && (mb_strlen($merchant_agreement_user_agent) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $merchant_agreement_user_agent when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['merchant_agreement_user_agent'] = $merchant_agreement_user_agent;
 
         return $this;
     }
@@ -546,223 +744,25 @@ class UpdateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
     }
 
     /**
-     * Gets credit_check_timestamp
+     * Gets volume_distribution_by_business_type
      *
-     * @return string|null
+     * @return \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType|null
      */
-    public function getCreditCheckTimestamp()
+    public function getVolumeDistributionByBusinessType()
     {
-        return $this->container['credit_check_timestamp'];
+        return $this->container['volume_distribution_by_business_type'];
     }
 
     /**
-     * Sets credit_check_timestamp
+     * Sets volume_distribution_by_business_type
      *
-     * @param string|null $credit_check_timestamp A timestamp of when this merchant consented to a credit check (e.g., 2021-04-28T16:42:55Z).
+     * @param \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataVolumeDistributionByBusinessType|null $volume_distribution_by_business_type volume_distribution_by_business_type
      *
      * @return self
      */
-    public function setCreditCheckTimestamp($credit_check_timestamp, $deserialize = false)
+    public function setVolumeDistributionByBusinessType($volume_distribution_by_business_type, $deserialize = false)
     {
-
-        if (!is_null($credit_check_timestamp) && (mb_strlen($credit_check_timestamp) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_timestamp when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['credit_check_timestamp'] = $credit_check_timestamp;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_check_allowed
-     *
-     * @return bool|null
-     */
-    public function getCreditCheckAllowed()
-    {
-        return $this->container['credit_check_allowed'];
-    }
-
-    /**
-     * Sets credit_check_allowed
-     *
-     * @param bool|null $credit_check_allowed Sets if this merchant has consented and accepted to a credit check.
-     *
-     * @return self
-     */
-    public function setCreditCheckAllowed($credit_check_allowed, $deserialize = false)
-    {
-        $this->container['credit_check_allowed'] = $credit_check_allowed;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant_agreement_timestamp
-     *
-     * @return string|null
-     */
-    public function getMerchantAgreementTimestamp()
-    {
-        return $this->container['merchant_agreement_timestamp'];
-    }
-
-    /**
-     * Sets merchant_agreement_timestamp
-     *
-     * @param string|null $merchant_agreement_timestamp Timestamp of when the merchant accepted Finix's Terms of Service (e.g., 2021-04-28T16:42:55Z).
-     *
-     * @return self
-     */
-    public function setMerchantAgreementTimestamp($merchant_agreement_timestamp, $deserialize = false)
-    {
-
-        if (!is_null($merchant_agreement_timestamp) && (mb_strlen($merchant_agreement_timestamp) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_agreement_timestamp when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['merchant_agreement_timestamp'] = $merchant_agreement_timestamp;
-
-        return $this;
-    }
-
-    /**
-     * Gets business_description
-     *
-     * @return string|null
-     */
-    public function getBusinessDescription()
-    {
-        return $this->container['business_description'];
-    }
-
-    /**
-     * Sets business_description
-     *
-     * @param string|null $business_description Description of this merchant's business (max 200 characters).
-     *
-     * @return self
-     */
-    public function setBusinessDescription($business_description, $deserialize = false)
-    {
-
-        if (!is_null($business_description) && (mb_strlen($business_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $business_description when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['business_description'] = $business_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets average_card_transfer_amount
-     *
-     * @return int|null
-     */
-    public function getAverageCardTransferAmount()
-    {
-        return $this->container['average_card_transfer_amount'];
-    }
-
-    /**
-     * Sets average_card_transfer_amount
-     *
-     * @param int|null $average_card_transfer_amount The average credit card sale amount (in cents) for this merchant.
-     *
-     * @return self
-     */
-    public function setAverageCardTransferAmount($average_card_transfer_amount, $deserialize = false)
-    {
-        $this->container['average_card_transfer_amount'] = $average_card_transfer_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets credit_check_ip_address
-     *
-     * @return string|null
-     */
-    public function getCreditCheckIpAddress()
-    {
-        return $this->container['credit_check_ip_address'];
-    }
-
-    /**
-     * Sets credit_check_ip_address
-     *
-     * @param string|null $credit_check_ip_address The IP address of the merchant when they consented to a credit check (e.g., 42.1.1.113 ).
-     *
-     * @return self
-     */
-    public function setCreditCheckIpAddress($credit_check_ip_address, $deserialize = false)
-    {
-
-        if (!is_null($credit_check_ip_address) && (mb_strlen($credit_check_ip_address) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_ip_address when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['credit_check_ip_address'] = $credit_check_ip_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant_agreement_user_agent
-     *
-     * @return string|null
-     */
-    public function getMerchantAgreementUserAgent()
-    {
-        return $this->container['merchant_agreement_user_agent'];
-    }
-
-    /**
-     * Sets merchant_agreement_user_agent
-     *
-     * @param string|null $merchant_agreement_user_agent The details of the browser that was used when this merchant accepted Finix's Terms of Service (e.g., Mozilla 5.0 (Macintosh; Intel Mac OS X 10 _14_6)).
-     *
-     * @return self
-     */
-    public function setMerchantAgreementUserAgent($merchant_agreement_user_agent, $deserialize = false)
-    {
-
-        if (!is_null($merchant_agreement_user_agent) && (mb_strlen($merchant_agreement_user_agent) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_agreement_user_agent when calling UpdateIdentityRequestAdditionalUnderwritingData., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['merchant_agreement_user_agent'] = $merchant_agreement_user_agent;
-
-        return $this;
-    }
-
-    /**
-     * Gets card_volume_distribution
-     *
-     * @return \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null
-     */
-    public function getCardVolumeDistribution()
-    {
-        return $this->container['card_volume_distribution'];
-    }
-
-    /**
-     * Sets card_volume_distribution
-     *
-     * @param \Finix\Model\UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null $card_volume_distribution card_volume_distribution
-     *
-     * @return self
-     */
-    public function setCardVolumeDistribution($card_volume_distribution, $deserialize = false)
-    {
-        $this->container['card_volume_distribution'] = $card_volume_distribution;
+        $this->container['volume_distribution_by_business_type'] = $volume_distribution_by_business_type;
 
         return $this;
     }

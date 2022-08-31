@@ -61,7 +61,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -69,13 +68,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'card_expiration_date_required' => 'bool',
         'creating_transfer_from_report_enabled' => 'bool',
         'enabled' => 'bool',
+        'fee_ready_to_settle_upon' => 'string',
         'name' => 'string',
         'owner' => 'string',
         'processing_enabled' => 'bool',
+        'ready_to_settle_upon' => 'string',
         'settlement_enabled' => 'bool',
         'settlement_funding_identifier' => 'string',
-        'ready_to_settle_upon' => 'string',
-        'fee_ready_to_settle_upon' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\ApplicationLinks'
     ];
 
@@ -87,7 +87,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -95,13 +94,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'card_expiration_date_required' => null,
         'creating_transfer_from_report_enabled' => null,
         'enabled' => null,
+        'fee_ready_to_settle_upon' => null,
         'name' => null,
         'owner' => null,
         'processing_enabled' => null,
+        'ready_to_settle_upon' => null,
         'settlement_enabled' => null,
         'settlement_funding_identifier' => null,
-        'ready_to_settle_upon' => null,
-        'fee_ready_to_settle_upon' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -132,7 +132,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
@@ -140,13 +139,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'card_expiration_date_required' => 'card_expiration_date_required',
         'creating_transfer_from_report_enabled' => 'creating_transfer_from_report_enabled',
         'enabled' => 'enabled',
+        'fee_ready_to_settle_upon' => 'fee_ready_to_settle_upon',
         'name' => 'name',
         'owner' => 'owner',
         'processing_enabled' => 'processing_enabled',
+        'ready_to_settle_upon' => 'ready_to_settle_upon',
         'settlement_enabled' => 'settlement_enabled',
         'settlement_funding_identifier' => 'settlement_funding_identifier',
-        'ready_to_settle_upon' => 'ready_to_settle_upon',
-        'fee_ready_to_settle_upon' => 'fee_ready_to_settle_upon',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -156,7 +156,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -164,13 +163,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'card_expiration_date_required' => 'setCardExpirationDateRequired',
         'creating_transfer_from_report_enabled' => 'setCreatingTransferFromReportEnabled',
         'enabled' => 'setEnabled',
+        'fee_ready_to_settle_upon' => 'setFeeReadyToSettleUpon',
         'name' => 'setName',
         'owner' => 'setOwner',
         'processing_enabled' => 'setProcessingEnabled',
+        'ready_to_settle_upon' => 'setReadyToSettleUpon',
         'settlement_enabled' => 'setSettlementEnabled',
         'settlement_funding_identifier' => 'setSettlementFundingIdentifier',
-        'ready_to_settle_upon' => 'setReadyToSettleUpon',
-        'fee_ready_to_settle_upon' => 'setFeeReadyToSettleUpon',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -180,7 +180,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -188,13 +187,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         'card_expiration_date_required' => 'getCardExpirationDateRequired',
         'creating_transfer_from_report_enabled' => 'getCreatingTransferFromReportEnabled',
         'enabled' => 'getEnabled',
+        'fee_ready_to_settle_upon' => 'getFeeReadyToSettleUpon',
         'name' => 'getName',
         'owner' => 'getOwner',
         'processing_enabled' => 'getProcessingEnabled',
+        'ready_to_settle_upon' => 'getReadyToSettleUpon',
         'settlement_enabled' => 'getSettlementEnabled',
         'settlement_funding_identifier' => 'getSettlementFundingIdentifier',
-        'ready_to_settle_upon' => 'getReadyToSettleUpon',
-        'fee_ready_to_settle_upon' => 'getFeeReadyToSettleUpon',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -239,21 +239,22 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const SETTLEMENT_FUNDING_IDENTIFIER__UNSET = 'UNSET';
-    public const READY_TO_SETTLE_UPON_RECONCILIATION = 'RECONCILIATION';
-    public const READY_TO_SETTLE_UPON_SUCCESSFUL_CAPTURE = 'SUCCESSFUL_CAPTURE';
     public const FEE_READY_TO_SETTLE_UPON_RECONCILIATION = 'RECONCILIATION';
     public const FEE_READY_TO_SETTLE_UPON_SUCCESSFUL_CAPTURE = 'SUCCESSFUL_CAPTURE';
+    public const READY_TO_SETTLE_UPON_RECONCILIATION = 'RECONCILIATION';
+    public const READY_TO_SETTLE_UPON_SUCCESSFUL_CAPTURE = 'SUCCESSFUL_CAPTURE';
+    public const SETTLEMENT_FUNDING_IDENTIFIER__UNSET = 'UNSET';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getSettlementFundingIdentifierAllowableValues()
+    public function getFeeReadyToSettleUponAllowableValues()
     {
         return [
-            self::SETTLEMENT_FUNDING_IDENTIFIER__UNSET,
+            self::FEE_READY_TO_SETTLE_UPON_RECONCILIATION,
+            self::FEE_READY_TO_SETTLE_UPON_SUCCESSFUL_CAPTURE,
         ];
     }
 
@@ -275,11 +276,10 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getFeeReadyToSettleUponAllowableValues()
+    public function getSettlementFundingIdentifierAllowableValues()
     {
         return [
-            self::FEE_READY_TO_SETTLE_UPON_RECONCILIATION,
-            self::FEE_READY_TO_SETTLE_UPON_SUCCESSFUL_CAPTURE,
+            self::SETTLEMENT_FUNDING_IDENTIFIER__UNSET,
         ];
     }
 
@@ -298,7 +298,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -306,13 +305,14 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['card_expiration_date_required'] = $data['card_expiration_date_required'] ?? null;
         $this->container['creating_transfer_from_report_enabled'] = $data['creating_transfer_from_report_enabled'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['fee_ready_to_settle_upon'] = $data['fee_ready_to_settle_upon'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['owner'] = $data['owner'] ?? null;
         $this->container['processing_enabled'] = $data['processing_enabled'] ?? null;
+        $this->container['ready_to_settle_upon'] = $data['ready_to_settle_upon'] ?? null;
         $this->container['settlement_enabled'] = $data['settlement_enabled'] ?? null;
         $this->container['settlement_funding_identifier'] = $data['settlement_funding_identifier'] ?? null;
-        $this->container['ready_to_settle_upon'] = $data['ready_to_settle_upon'] ?? null;
-        $this->container['fee_ready_to_settle_upon'] = $data['fee_ready_to_settle_upon'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -325,11 +325,11 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getSettlementFundingIdentifierAllowableValues();
-        if (!is_null($this->container['settlement_funding_identifier']) && !in_array($this->container['settlement_funding_identifier'], $allowedValues, true)) {
+        $allowedValues = $this->getFeeReadyToSettleUponAllowableValues();
+        if (!is_null($this->container['fee_ready_to_settle_upon']) && !in_array($this->container['fee_ready_to_settle_upon'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'settlement_funding_identifier', must be one of '%s'",
-                $this->container['settlement_funding_identifier'],
+                "invalid value '%s' for 'fee_ready_to_settle_upon', must be one of '%s'",
+                $this->container['fee_ready_to_settle_upon'],
                 implode("', '", $allowedValues)
             );
         }
@@ -343,11 +343,11 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        $allowedValues = $this->getFeeReadyToSettleUponAllowableValues();
-        if (!is_null($this->container['fee_ready_to_settle_upon']) && !in_array($this->container['fee_ready_to_settle_upon'], $allowedValues, true)) {
+        $allowedValues = $this->getSettlementFundingIdentifierAllowableValues();
+        if (!is_null($this->container['settlement_funding_identifier']) && !in_array($this->container['settlement_funding_identifier'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'fee_ready_to_settle_upon', must be one of '%s'",
-                $this->container['fee_ready_to_settle_upon'],
+                "invalid value '%s' for 'settlement_funding_identifier', must be one of '%s'",
+                $this->container['settlement_funding_identifier'],
                 implode("', '", $allowedValues)
             );
         }
@@ -368,30 +368,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -410,9 +386,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -563,6 +536,40 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets fee_ready_to_settle_upon
+     *
+     * @return string|null
+     */
+    public function getFeeReadyToSettleUpon()
+    {
+        return $this->container['fee_ready_to_settle_upon'];
+    }
+
+    /**
+     * Sets fee_ready_to_settle_upon
+     *
+     * @param string|null $fee_ready_to_settle_upon Details when the `fees` of `Authroizations` submitted under the `Application` will be ready to settle.
+     *
+     * @return self
+     */
+    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon, $deserialize = false)
+    {
+        $allowedValues = $this->getFeeReadyToSettleUponAllowableValues();
+        if (!is_null($fee_ready_to_settle_upon) && !in_array($fee_ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'fee_ready_to_settle_upon', must be one of '%s'",
+                    $fee_ready_to_settle_upon,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['fee_ready_to_settle_upon'] = $fee_ready_to_settle_upon;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string|null
@@ -605,9 +612,6 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setOwner($owner, $deserialize = false)
     {
-
-        
-
         $this->container['owner'] = $owner;
 
         return $this;
@@ -633,6 +637,40 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProcessingEnabled($processing_enabled, $deserialize = false)
     {
         $this->container['processing_enabled'] = $processing_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets ready_to_settle_upon
+     *
+     * @return string|null
+     */
+    public function getReadyToSettleUpon()
+    {
+        return $this->container['ready_to_settle_upon'];
+    }
+
+    /**
+     * Sets ready_to_settle_upon
+     *
+     * @param string|null $ready_to_settle_upon Details when `Authroizations` submitted under the `Application` will be ready to settle.
+     *
+     * @return self
+     */
+    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
+    {
+        $allowedValues = $this->getReadyToSettleUponAllowableValues();
+        if (!is_null($ready_to_settle_upon) && !in_array($ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'ready_to_settle_upon', must be one of '%s'",
+                    $ready_to_settle_upon,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
 
         return $this;
     }
@@ -696,69 +734,25 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ready_to_settle_upon
+     * Gets tags
      *
-     * @return string|null
+     * @return array<string,string>|null
      */
-    public function getReadyToSettleUpon()
+    public function getTags()
     {
-        return $this->container['ready_to_settle_upon'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets ready_to_settle_upon
+     * Sets tags
      *
-     * @param string|null $ready_to_settle_upon Details when `Authroizations` submitted under the `Application` will be ready to settle.
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setReadyToSettleUpon($ready_to_settle_upon, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $allowedValues = $this->getReadyToSettleUponAllowableValues();
-        if (!is_null($ready_to_settle_upon) && !in_array($ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'ready_to_settle_upon', must be one of '%s'",
-                    $ready_to_settle_upon,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['ready_to_settle_upon'] = $ready_to_settle_upon;
-
-        return $this;
-    }
-
-    /**
-     * Gets fee_ready_to_settle_upon
-     *
-     * @return string|null
-     */
-    public function getFeeReadyToSettleUpon()
-    {
-        return $this->container['fee_ready_to_settle_upon'];
-    }
-
-    /**
-     * Sets fee_ready_to_settle_upon
-     *
-     * @param string|null $fee_ready_to_settle_upon Details when the `fees` of `Authroizations` submitted under the `Application` will be ready to settle.
-     *
-     * @return self
-     */
-    public function setFeeReadyToSettleUpon($fee_ready_to_settle_upon, $deserialize = false)
-    {
-        $allowedValues = $this->getFeeReadyToSettleUponAllowableValues();
-        if (!is_null($fee_ready_to_settle_upon) && !in_array($fee_ready_to_settle_upon, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'fee_ready_to_settle_upon', must be one of '%s'",
-                    $fee_ready_to_settle_upon,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['fee_ready_to_settle_upon'] = $fee_ready_to_settle_upon;
+        $this->container['tags'] = $tags;
 
         return $this;
     }

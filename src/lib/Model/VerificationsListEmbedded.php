@@ -224,7 +224,7 @@ class VerificationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets verifications
      *
-     * @param \Finix\Model\Verification[]|null $verifications verifications
+     * @param \Finix\Model\Verification[]|null $verifications `Verification` resources.
      *
      * @return self
      */

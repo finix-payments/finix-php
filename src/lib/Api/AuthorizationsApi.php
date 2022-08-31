@@ -121,7 +121,7 @@ class AuthorizationsApi
      *
      * Capture an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      * @param  \Finix\Model\UpdateAuthorizationRequest $update_authorization_request update_authorization_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -139,7 +139,7 @@ class AuthorizationsApi
      *
      * Capture an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      * @param  \Finix\Model\UpdateAuthorizationRequest $update_authorization_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -331,7 +331,7 @@ class AuthorizationsApi
      *
      * Capture an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      * @param  \Finix\Model\UpdateAuthorizationRequest $update_authorization_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -352,7 +352,7 @@ class AuthorizationsApi
      *
      * Capture an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      * @param  \Finix\Model\UpdateAuthorizationRequest $update_authorization_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -402,7 +402,7 @@ class AuthorizationsApi
     /**
      * Create request for operation 'update'
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      * @param  \Finix\Model\UpdateAuthorizationRequest $update_authorization_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -979,9 +979,9 @@ class AuthorizationsApi
     /**
      * Operation get
      *
-     * Get an Authorization
+     * Fetch an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -996,9 +996,9 @@ class AuthorizationsApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get an Authorization
+     * Fetch an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1187,9 +1187,9 @@ class AuthorizationsApi
     /**
      * Operation getAsync
      *
-     * Get an Authorization
+     * Fetch an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1207,9 +1207,9 @@ class AuthorizationsApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get an Authorization
+     * Fetch an Authorization
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1258,7 +1258,7 @@ class AuthorizationsApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $authorization_id ID of authorization to fetch (required)
+     * @param  string $authorization_id ID of &#x60;Authorization&#x60; to fetch. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1361,34 +1361,34 @@ class AuthorizationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $is_void Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Type of the authorization. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $is_void Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card. (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Type of the &#x60;Authorization&#x60;. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -1433,34 +1433,34 @@ class AuthorizationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $is_void Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Type of the authorization. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $is_void Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card. (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Type of the &#x60;Authorization&#x60;. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -1654,34 +1654,34 @@ class AuthorizationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $is_void Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Type of the authorization. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $is_void Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card. (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Type of the &#x60;Authorization&#x60;. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1704,34 +1704,34 @@ class AuthorizationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $is_void Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Type of the authorization. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $is_void Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card. (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Type of the &#x60;Authorization&#x60;. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1783,34 +1783,34 @@ class AuthorizationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $is_void Filter by idempotency_id (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Type of the authorization. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $is_void Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card. (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Type of the &#x60;Authorization&#x60;. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1819,22 +1819,22 @@ class AuthorizationsApi
     public function listRequest($associative_array)
     {
         // unbox the parameters from the associative array
-        $sort = array_key_exists('sort', $associative_array) ? $associative_array['sort'] : null;
+        $amount = array_key_exists('amount', $associative_array) ? $associative_array['amount'] : null;
+        $amount_gt = array_key_exists('amount_gt', $associative_array) ? $associative_array['amount_gt'] : null;
+        $amount_gte = array_key_exists('amount_gte', $associative_array) ? $associative_array['amount_gte'] : null;
+        $amount_lt = array_key_exists('amount_lt', $associative_array) ? $associative_array['amount_lt'] : null;
+        $amount_lte = array_key_exists('amount_lte', $associative_array) ? $associative_array['amount_lte'] : null;
         $before_cursor = array_key_exists('before_cursor', $associative_array) ? $associative_array['before_cursor'] : null;
-        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
-        $idempotency_id = array_key_exists('idempotency_id', $associative_array) ? $associative_array['idempotency_id'] : null;
-        $state = array_key_exists('state', $associative_array) ? $associative_array['state'] : null;
         $created_at_gte = array_key_exists('created_at_gte', $associative_array) ? $associative_array['created_at_gte'] : null;
         $created_at_lte = array_key_exists('created_at_lte', $associative_array) ? $associative_array['created_at_lte'] : null;
+        $idempotency_id = array_key_exists('idempotency_id', $associative_array) ? $associative_array['idempotency_id'] : null;
+        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
+        $sort = array_key_exists('sort', $associative_array) ? $associative_array['sort'] : null;
+        $state = array_key_exists('state', $associative_array) ? $associative_array['state'] : null;
         $updated_at_gte = array_key_exists('updated_at_gte', $associative_array) ? $associative_array['updated_at_gte'] : null;
         $updated_at_lte = array_key_exists('updated_at_lte', $associative_array) ? $associative_array['updated_at_lte'] : null;
-        $is_void = array_key_exists('is_void', $associative_array) ? $associative_array['is_void'] : null;
-        $amount = array_key_exists('amount', $associative_array) ? $associative_array['amount'] : null;
-        $amount_lt = array_key_exists('amount_lt', $associative_array) ? $associative_array['amount_lt'] : null;
-        $amount_gt = array_key_exists('amount_gt', $associative_array) ? $associative_array['amount_gt'] : null;
-        $amount_lte = array_key_exists('amount_lte', $associative_array) ? $associative_array['amount_lte'] : null;
-        $amount_gte = array_key_exists('amount_gte', $associative_array) ? $associative_array['amount_gte'] : null;
         $trace_id = array_key_exists('trace_id', $associative_array) ? $associative_array['trace_id'] : null;
+        $is_void = array_key_exists('is_void', $associative_array) ? $associative_array['is_void'] : null;
         $instrument_bin = array_key_exists('instrument_bin', $associative_array) ? $associative_array['instrument_bin'] : null;
         $instrument_account_last4 = array_key_exists('instrument_account_last4', $associative_array) ? $associative_array['instrument_account_last4'] : null;
         $instrument_brand_type = array_key_exists('instrument_brand_type', $associative_array) ? $associative_array['instrument_brand_type'] : null;
@@ -1859,9 +1859,45 @@ class AuthorizationsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort,
-            'sort', // param base name
-            'string', // openApiType
+            $amount,
+            'amount', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $amount_gt,
+            'amount.gt', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $amount_gte,
+            'amount.gte', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $amount_lt,
+            'amount.lt', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $amount_lte,
+            'amount.lte', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1870,33 +1906,6 @@ class AuthorizationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $before_cursor,
             'before_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $idempotency_id,
-            'idempotency_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $state,
-            'state', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1922,6 +1931,42 @@ class AuthorizationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_id,
+            'idempotency_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort,
+            'sort', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $state,
+            'state', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $updated_at_gte,
             'updated_at.gte', // param base name
             'string', // openApiType
@@ -1940,8 +1985,8 @@ class AuthorizationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_void,
-            'is_void', // param base name
+            $trace_id,
+            'trace_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1949,53 +1994,8 @@ class AuthorizationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $amount,
-            'amount', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $amount_lt,
-            'amount.lt', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $amount_gt,
-            'amount.gt', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $amount_lte,
-            'amount.lte', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $amount_gte,
-            'amount.gte', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $trace_id,
-            'trace_id', // param base name
+            $is_void,
+            'is_void', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

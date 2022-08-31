@@ -61,7 +61,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -74,6 +73,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         'linked_id' => 'string',
         'linked_type' => 'string',
         'merchant' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\FeeLinks'
     ];
 
@@ -85,7 +85,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -98,6 +97,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         'linked_id' => null,
         'linked_type' => null,
         'merchant' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -128,7 +128,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
@@ -141,6 +140,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         'linked_id' => 'linked_id',
         'linked_type' => 'linked_type',
         'merchant' => 'merchant',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -150,7 +150,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -163,6 +162,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         'linked_id' => 'setLinkedId',
         'linked_type' => 'setLinkedType',
         'merchant' => 'setMerchant',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -172,7 +172,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -185,6 +184,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         'linked_id' => 'getLinkedId',
         'linked_type' => 'getLinkedType',
         'merchant' => 'getMerchant',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -386,7 +386,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -399,6 +398,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['linked_id'] = $data['linked_id'] ?? null;
         $this->container['linked_type'] = $data['linked_type'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -454,30 +454,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -496,9 +472,6 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -753,7 +726,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets linked_type
      *
-     * @param string|null $linked_type The type of entity the `fee` is linked (**null** by default).
+     * @param string|null $linked_type The type of entity the `fee` is linked to (**null** by default).
      *
      * @return self
      */
@@ -794,6 +767,30 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

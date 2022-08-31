@@ -60,9 +60,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
         'duration' => 'int',
-        'tags' => 'array<string,string>'
+        'tags' => 'array<string,string>',
+        'type' => 'string'
     ];
 
     /**
@@ -73,9 +73,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
         'duration' => null,
-        'tags' => null
+        'tags' => null,
+        'type' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
         'duration' => 'duration',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'type' => 'type'
     ];
 
     /**
@@ -116,9 +116,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
         'duration' => 'setDuration',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'type' => 'setType'
     ];
 
     /**
@@ -127,9 +127,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
         'duration' => 'getDuration',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'type' => 'getType'
     ];
 
     /**
@@ -206,9 +206,9 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['duration'] = $data['duration'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -243,40 +243,6 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type <ul><li>Set to <strong>UPLOAD</strong> to create a link that can be used to upload files to Finix.<li>Set to <strong>DOWNLOAD</strong> to create a link where the uploaded file can be downloaded from.<li>Set to <strong>VIEW</strong> to create a link that displays the file in browser.
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets duration
@@ -322,6 +288,40 @@ class CreateExternalLinkRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type <ul><li>Set to <strong>UPLOAD</strong> to create a link that can be used to upload files to Finix.<li>Set to <strong>DOWNLOAD</strong> to create a link where the uploaded file can be downloaded from.<li>Set to <strong>VIEW</strong> to create a link that displays the file in browser.
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

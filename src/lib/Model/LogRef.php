@@ -225,9 +225,6 @@ class LogRef implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLogref($logref, $deserialize = false)
     {
-
-        
-
         $this->container['logref'] = $logref;
 
         return $this;

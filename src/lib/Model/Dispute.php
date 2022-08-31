@@ -61,7 +61,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -76,6 +75,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'reason' => 'string',
         'respond_by' => '\DateTime',
         'state' => 'string',
+        'tags' => 'array<string,string>',
         'transfer' => 'string',
         '_links' => '\Finix\Model\DisputeLinks'
     ];
@@ -88,7 +88,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -103,6 +102,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'reason' => null,
         'respond_by' => 'date-time',
         'state' => null,
+        'tags' => null,
         'transfer' => null,
         '_links' => null
     ];
@@ -134,7 +134,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
@@ -149,6 +148,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'reason' => 'reason',
         'respond_by' => 'respond_by',
         'state' => 'state',
+        'tags' => 'tags',
         'transfer' => 'transfer',
         '_links' => '_links'
     ];
@@ -159,7 +159,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -174,6 +173,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'reason' => 'setReason',
         'respond_by' => 'setRespondBy',
         'state' => 'setState',
+        'tags' => 'setTags',
         'transfer' => 'setTransfer',
         '_links' => 'setLinks'
     ];
@@ -184,7 +184,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -199,6 +198,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'reason' => 'getReason',
         'respond_by' => 'getRespondBy',
         'state' => 'getState',
+        'tags' => 'getTags',
         'transfer' => 'getTransfer',
         '_links' => 'getLinks'
     ];
@@ -302,7 +302,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -317,6 +316,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['reason'] = $data['reason'] ?? null;
         $this->container['respond_by'] = $data['respond_by'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['transfer'] = $data['transfer'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
@@ -364,30 +364,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
      * @return string|null
@@ -406,9 +382,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;
@@ -571,7 +544,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dispute_details
      *
-     * @param array<string,mixed>|null $dispute_details Details about the `Dispute` recieved by the `Processor`.
+     * @param array<string,mixed>|null $dispute_details Details about the `Dispute` recieved by the `Processor`. May be any type of data.
      *
      * @return self
      */
@@ -619,7 +592,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string|null $message Message field that provides additional details. This field is typically null.
+     * @param string|null $message Message field that provides additional details. This field is typically **null**.
      *
      * @return self
      */
@@ -667,7 +640,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reason
      *
-     * @param string|null $reason The system-defined reason for the `Dispute`. Available values include:<ul><li>**INQUIRY**<li>**QUALITY**<li>**CLERICAL**<li>**FRAUD**<li>**TECHNICAL**</ul>
+     * @param string|null $reason The system-defined reason for the `Dispute`. Available values include:<ul><li>**INQUIRY**<li>**QUALITY**<li>**FRAUD**
      *
      * @return self
      */
@@ -747,6 +720,30 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
      * Gets transfer
      *
      * @return string|null
@@ -765,9 +762,6 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTransfer($transfer, $deserialize = false)
     {
-
-        
-
         $this->container['transfer'] = $transfer;
 
         return $this;

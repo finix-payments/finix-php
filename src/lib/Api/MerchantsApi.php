@@ -998,7 +998,7 @@ class MerchantsApi
     /**
      * Operation get
      *
-     * Get a Merchant
+     * Fetch a Merchant
      *
      * @param  string $merchant_id ID of &#x60;Merchant&#x60;. (required)
      *
@@ -1015,7 +1015,7 @@ class MerchantsApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Merchant
+     * Fetch a Merchant
      *
      * @param  string $merchant_id ID of &#x60;Merchant&#x60;. (required)
      *
@@ -1206,7 +1206,7 @@ class MerchantsApi
     /**
      * Operation getAsync
      *
-     * Get a Merchant
+     * Fetch a Merchant
      *
      * @param  string $merchant_id ID of &#x60;Merchant&#x60;. (required)
      *
@@ -1226,7 +1226,7 @@ class MerchantsApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Merchant
+     * Fetch a Merchant
      *
      * @param  string $merchant_id ID of &#x60;Merchant&#x60;. (required)
      *
@@ -1380,13 +1380,13 @@ class MerchantsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1430,13 +1430,13 @@ class MerchantsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1652,13 +1652,13 @@ class MerchantsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1680,13 +1680,13 @@ class MerchantsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1737,13 +1737,13 @@ class MerchantsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1754,10 +1754,10 @@ class MerchantsApi
         $id = array_key_exists('id', $associative_array) ? $associative_array['id'] : null;
         $created_at_gte = array_key_exists('created_at_gte', $associative_array) ? $associative_array['created_at_gte'] : null;
         $created_at_lte = array_key_exists('created_at_lte', $associative_array) ? $associative_array['created_at_lte'] : null;
-        $sort = array_key_exists('sort', $associative_array) ? $associative_array['sort'] : null;
         $after_cursor = array_key_exists('after_cursor', $associative_array) ? $associative_array['after_cursor'] : null;
-        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
         $before_cursor = array_key_exists('before_cursor', $associative_array) ? $associative_array['before_cursor'] : null;
+        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
+        $sort = array_key_exists('sort', $associative_array) ? $associative_array['sort'] : null;
 
 
         $resourcePath = '/merchants';
@@ -1796,8 +1796,8 @@ class MerchantsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort,
-            'sort', // param base name
+            $after_cursor,
+            'after_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1805,8 +1805,8 @@ class MerchantsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $after_cursor,
-            'after_cursor', // param base name
+            $before_cursor,
+            'before_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1823,8 +1823,8 @@ class MerchantsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $before_cursor,
-            'before_cursor', // param base name
+            $sort,
+            'sort', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

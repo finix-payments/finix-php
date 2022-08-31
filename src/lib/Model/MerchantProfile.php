@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * MerchantProfile Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,14 +61,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'application' => 'string',
         'fee_profile' => 'string',
-        'reserve_profile' => 'string',
         'risk_profile' => 'string',
+        'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\MerchantProfileLinks'
     ];
 
@@ -79,14 +79,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'application' => null,
         'fee_profile' => null,
-        'reserve_profile' => null,
         'risk_profile' => null,
+        'tags' => null,
         '_links' => null
     ];
 
@@ -117,14 +116,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'application' => 'application',
         'fee_profile' => 'fee_profile',
-        'reserve_profile' => 'reserve_profile',
         'risk_profile' => 'risk_profile',
+        'tags' => 'tags',
         '_links' => '_links'
     ];
 
@@ -134,14 +132,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'application' => 'setApplication',
         'fee_profile' => 'setFeeProfile',
-        'reserve_profile' => 'setReserveProfile',
         'risk_profile' => 'setRiskProfile',
+        'tags' => 'setTags',
         '_links' => 'setLinks'
     ];
 
@@ -151,14 +148,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'application' => 'getApplication',
         'fee_profile' => 'getFeeProfile',
-        'reserve_profile' => 'getReserveProfile',
         'risk_profile' => 'getRiskProfile',
+        'tags' => 'getTags',
         '_links' => 'getLinks'
     ];
 
@@ -219,14 +215,13 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['fee_profile'] = $data['fee_profile'] ?? null;
-        $this->container['reserve_profile'] = $data['reserve_profile'] ?? null;
         $this->container['risk_profile'] = $data['risk_profile'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -253,30 +248,6 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -399,33 +370,6 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets reserve_profile
-     *
-     * @return string|null
-     */
-    public function getReserveProfile()
-    {
-        return $this->container['reserve_profile'];
-    }
-
-    /**
-     * Sets reserve_profile
-     *
-     * @param string|null $reserve_profile reserve_profile
-     *
-     * @return self
-     */
-    public function setReserveProfile($reserve_profile, $deserialize = false)
-    {
-
-        
-
-        $this->container['reserve_profile'] = $reserve_profile;
-
-        return $this;
-    }
-
-    /**
      * Gets risk_profile
      *
      * @return string|null
@@ -445,6 +389,30 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRiskProfile($risk_profile, $deserialize = false)
     {
         $this->container['risk_profile'] = $risk_profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

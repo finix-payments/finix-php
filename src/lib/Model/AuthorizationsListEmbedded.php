@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * AuthorizationsListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Authroization&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class AuthorizationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets authorizations
      *
-     * @param \Finix\Model\Authorization[]|null $authorizations authorizations
+     * @param \Finix\Model\Authorization[]|null $authorizations `Authorization` objects.
      *
      * @return self
      */

@@ -61,8 +61,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currency' => '\Finix\Model\Currency',
         'amount' => 'int',
+        'currency' => '\Finix\Model\Currency',
         'label' => 'string'
     ];
 
@@ -74,8 +74,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'currency' => null,
         'amount' => null,
+        'currency' => null,
         'label' => null
     ];
 
@@ -106,8 +106,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'currency' => 'currency',
         'amount' => 'amount',
+        'currency' => 'currency',
         'label' => 'label'
     ];
 
@@ -117,8 +117,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'currency' => 'setCurrency',
         'amount' => 'setAmount',
+        'currency' => 'setCurrency',
         'label' => 'setLabel'
     ];
 
@@ -128,8 +128,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'currency' => 'getCurrency',
         'amount' => 'getAmount',
+        'currency' => 'getCurrency',
         'label' => 'getLabel'
     ];
 
@@ -190,8 +190,8 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['label'] = $data['label'] ?? null;
     }
 
@@ -204,16 +204,13 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['label'] === null) {
-            $invalidProperties[] = "'label' can't be null";
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
-        if ((mb_strlen($this->container['label']) < 1)) {
+        if (!is_null($this->container['label']) && (mb_strlen($this->container['label']) < 1)) {
             $invalidProperties[] = "invalid value for 'label', the character length must be bigger than or equal to 1.";
         }
 
@@ -231,30 +228,6 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets currency
-     *
-     * @return \Finix\Model\Currency
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param \Finix\Model\Currency $currency currency
-     *
-     * @return self
-     */
-    public function setCurrency($currency, $deserialize = false)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
 
     /**
      * Gets amount
@@ -281,9 +254,33 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
     }
 
     /**
+     * Gets currency
+     *
+     * @return \Finix\Model\Currency
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param \Finix\Model\Currency $currency currency
+     *
+     * @return self
+     */
+    public function setCurrency($currency, $deserialize = false)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
      * Gets label
      *
-     * @return string
+     * @return string|null
      */
     public function getLabel()
     {
@@ -293,14 +290,14 @@ class CreateSubscriptionAmountRequestFeeAmountData implements ModelInterface, Ar
     /**
      * Sets label
      *
-     * @param string $label The display name of the `Subscirption Amount` that can be used for filtering purposes.
+     * @param string|null $label The display name of the `Subscirption Amount` that can be used for filtering purposes.
      *
      * @return self
      */
     public function setLabel($label, $deserialize = false)
     {
 
-        if ((mb_strlen($label) < 1)) {
+        if (!is_null($label) && (mb_strlen($label) < 1)) {
             throw new \InvalidArgumentException('invalid length for $label when calling CreateSubscriptionAmountRequestFeeAmountData., must be bigger than or equal to 1.');
         }
         

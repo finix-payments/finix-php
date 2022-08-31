@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * DisputesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Dispute&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class DisputesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets disputes
      *
-     * @param \Finix\Model\Dispute[]|null $disputes `Dispute` object.
+     * @param \Finix\Model\Dispute[]|null $disputes `Dispute` objects.
      *
      * @return self
      */

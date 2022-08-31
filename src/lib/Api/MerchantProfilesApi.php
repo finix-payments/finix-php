@@ -119,9 +119,9 @@ class MerchantProfilesApi
     /**
      * Operation get
      *
-     * Show Merchant Profile
+     * Fetch a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -136,9 +136,9 @@ class MerchantProfilesApi
     /**
      * Operation getWithHttpInfo
      *
-     * Show Merchant Profile
+     * Fetch a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -327,9 +327,9 @@ class MerchantProfilesApi
     /**
      * Operation getAsync
      *
-     * Show Merchant Profile
+     * Fetch a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -347,9 +347,9 @@ class MerchantProfilesApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Show Merchant Profile
+     * Fetch a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -398,7 +398,7 @@ class MerchantProfilesApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -501,10 +501,10 @@ class MerchantProfilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -548,10 +548,10 @@ class MerchantProfilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -721,10 +721,10 @@ class MerchantProfilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -746,10 +746,10 @@ class MerchantProfilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -800,10 +800,10 @@ class MerchantProfilesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $id Filter by id (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -813,8 +813,8 @@ class MerchantProfilesApi
         // unbox the parameters from the associative array
         $id = array_key_exists('id', $associative_array) ? $associative_array['id'] : null;
         $before_cursor = array_key_exists('before_cursor', $associative_array) ? $associative_array['before_cursor'] : null;
-        $after_cursor = array_key_exists('after_cursor', $associative_array) ? $associative_array['after_cursor'] : null;
         $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
+        $after_cursor = array_key_exists('after_cursor', $associative_array) ? $associative_array['after_cursor'] : null;
 
 
         $resourcePath = '/merchant_profiles';
@@ -844,18 +844,18 @@ class MerchantProfilesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $after_cursor,
-            'after_cursor', // param base name
-            'string', // openApiType
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
+            $after_cursor,
+            'after_cursor', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -932,7 +932,7 @@ class MerchantProfilesApi
      *
      * Update a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      * @param  \Finix\Model\UpdateMerchantProfileRequest $update_merchant_profile_request update_merchant_profile_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -950,7 +950,7 @@ class MerchantProfilesApi
      *
      * Update a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      * @param  \Finix\Model\UpdateMerchantProfileRequest $update_merchant_profile_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -1119,7 +1119,7 @@ class MerchantProfilesApi
      *
      * Update a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      * @param  \Finix\Model\UpdateMerchantProfileRequest $update_merchant_profile_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -1140,7 +1140,7 @@ class MerchantProfilesApi
      *
      * Update a Merchant Profile
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      * @param  \Finix\Model\UpdateMerchantProfileRequest $update_merchant_profile_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -1190,7 +1190,7 @@ class MerchantProfilesApi
     /**
      * Create request for operation 'update'
      *
-     * @param  string $merchant_profile_id ID of merchant profile (required)
+     * @param  string $merchant_profile_id ID of &#x60;merchant_profile&#x60;. (required)
      * @param  \Finix\Model\UpdateMerchantProfileRequest $update_merchant_profile_request (optional)
      *
      * @throws \InvalidArgumentException

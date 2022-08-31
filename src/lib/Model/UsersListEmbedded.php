@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * UsersListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;User&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class UsersListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets users
      *
-     * @param \Finix\Model\User[]|null $users `User` object.
+     * @param \Finix\Model\User[]|null $users `User` objects.
      *
      * @return self
      */

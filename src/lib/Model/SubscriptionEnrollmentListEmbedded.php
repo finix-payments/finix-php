@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * SubscriptionEnrollmentListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Subscription Enrollment&#x60; resources.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubscriptionEnrollmentListEmbedded implements ModelInterface, ArrayAccess,
     /**
      * Sets subscription_enrollments
      *
-     * @param \Finix\Model\SubscriptionEnrollment[]|null $subscription_enrollments `Subscription Enrollments` resource.
+     * @param \Finix\Model\SubscriptionEnrollment[]|null $subscription_enrollments `Subscription Enrollment` resources.
      *
      * @return self
      */

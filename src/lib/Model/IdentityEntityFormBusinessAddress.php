@@ -749,9 +749,6 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
         if ($this->container['line1'] === null) {
             $invalidProperties[] = "'line1' can't be null";
         }
-        if ($this->container['line2'] === null) {
-            $invalidProperties[] = "'line2' can't be null";
-        }
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
         }
@@ -858,7 +855,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
     /**
      * Gets line2
      *
-     * @return string
+     * @return string|null
      */
     public function getLine2()
     {
@@ -868,7 +865,7 @@ class IdentityEntityFormBusinessAddress implements ModelInterface, ArrayAccess, 
     /**
      * Sets line2
      *
-     * @param string $line2 Second line of the address (max 35 characters).
+     * @param string|null $line2 Second line of the address (max 35 characters).
      *
      * @return self
      */

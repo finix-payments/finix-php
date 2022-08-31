@@ -547,7 +547,7 @@ class DevicesApi
     /**
      * Operation get
      *
-     * Get Device
+     * Fetch a Device
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
@@ -567,7 +567,7 @@ class DevicesApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get Device
+     * Fetch a Device
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
@@ -761,7 +761,7 @@ class DevicesApi
     /**
      * Operation getAsync
      *
-     * Get Device
+     * Fetch a Device
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
@@ -784,7 +784,7 @@ class DevicesApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get Device
+     * Fetch a Device
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
@@ -953,7 +953,7 @@ class DevicesApi
     /**
      * Operation update
      *
-     * Update a Device
+     * Initiate Action on Device
      *
      * @param  string $device_id ID of the &#x60;Device&#x60;. (required)
      * @param  \Finix\Model\UpdateDeviceRequest $update_device_request update_device_request (optional)
@@ -971,7 +971,7 @@ class DevicesApi
     /**
      * Operation updateWithHttpInfo
      *
-     * Update a Device
+     * Initiate Action on Device
      *
      * @param  string $device_id ID of the &#x60;Device&#x60;. (required)
      * @param  \Finix\Model\UpdateDeviceRequest $update_device_request (optional)
@@ -1163,7 +1163,7 @@ class DevicesApi
     /**
      * Operation updateAsync
      *
-     * Update a Device
+     * Initiate Action on Device
      *
      * @param  string $device_id ID of the &#x60;Device&#x60;. (required)
      * @param  \Finix\Model\UpdateDeviceRequest $update_device_request (optional)
@@ -1184,7 +1184,7 @@ class DevicesApi
     /**
      * Operation updateAsyncWithHttpInfo
      *
-     * Update a Device
+     * Initiate Action on Device
      *
      * @param  string $device_id ID of the &#x60;Device&#x60;. (required)
      * @param  \Finix\Model\UpdateDeviceRequest $update_device_request (optional)

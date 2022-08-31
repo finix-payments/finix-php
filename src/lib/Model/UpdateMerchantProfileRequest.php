@@ -60,9 +60,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'fee_profile' => 'string',
-        'risk_profile' => 'string'
+        'risk_profile' => 'string',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -73,9 +73,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'fee_profile' => null,
-        'risk_profile' => null
+        'risk_profile' => null,
+        'tags' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'fee_profile' => 'fee_profile',
-        'risk_profile' => 'risk_profile'
+        'risk_profile' => 'risk_profile',
+        'tags' => 'tags'
     ];
 
     /**
@@ -116,9 +116,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'fee_profile' => 'setFeeProfile',
-        'risk_profile' => 'setRiskProfile'
+        'risk_profile' => 'setRiskProfile',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -127,9 +127,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'fee_profile' => 'getFeeProfile',
-        'risk_profile' => 'getRiskProfile'
+        'risk_profile' => 'getRiskProfile',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -189,9 +189,9 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['fee_profile'] = $data['fee_profile'] ?? null;
         $this->container['risk_profile'] = $data['risk_profile'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -219,30 +219,6 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets fee_profile
      *
      * @return string|null
@@ -255,7 +231,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets fee_profile
      *
-     * @param string|null $fee_profile Id of the fee_profile.
+     * @param string|null $fee_profile ID of the `fee_profile`.
      *
      * @return self
      */
@@ -279,13 +255,37 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets risk_profile
      *
-     * @param string|null $risk_profile Id of the risk_profile.
+     * @param string|null $risk_profile ID of the `risk_profile`.
      *
      * @return self
      */
     public function setRiskProfile($risk_profile, $deserialize = false)
     {
         $this->container['risk_profile'] = $risk_profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

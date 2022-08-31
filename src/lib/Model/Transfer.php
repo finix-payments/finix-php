@@ -61,21 +61,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'type' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
         'amount' => 'int',
         'application' => 'string',
         'card_present_details' => '\Finix\Model\CardPresentDetails',
         'currency' => '\Finix\Model\Currency',
         'destination' => 'string',
         'device' => 'string',
+        'externally_funded' => 'string',
+        'failure_code' => 'string',
+        'failure_message' => 'string',
         'fee' => 'int',
         'fee_type' => '\Finix\Model\FeeType',
         'idempotency_id' => 'string',
-        'identity' => 'string',
         'merchant_identity' => 'string',
         'messages' => 'string[]',
         'raw' => 'object',
@@ -84,11 +85,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => 'string',
         'statement_descriptor' => 'string',
         'subtype' => 'string',
+        'tags' => 'array<string,string>',
         'trace_id' => 'string',
-        'externally_funded' => 'string',
-        'failure_code' => 'string',
-        'failure_message' => 'string',
-        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'type' => 'string',
         '_links' => '\Finix\Model\TransferLinks'
     ];
 
@@ -100,21 +99,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'type' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'additional_buyer_charges' => null,
         'amount' => 'int64',
         'application' => null,
         'card_present_details' => null,
         'currency' => null,
         'destination' => null,
         'device' => null,
+        'externally_funded' => null,
+        'failure_code' => null,
+        'failure_message' => null,
         'fee' => 'int64',
         'fee_type' => null,
         'idempotency_id' => null,
-        'identity' => null,
         'merchant_identity' => null,
         'messages' => null,
         'raw' => null,
@@ -123,11 +123,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => null,
         'statement_descriptor' => null,
         'subtype' => null,
+        'tags' => null,
         'trace_id' => null,
-        'externally_funded' => null,
-        'failure_code' => null,
-        'failure_message' => null,
-        'additional_buyer_charges' => null,
+        'type' => null,
         '_links' => null
     ];
 
@@ -158,21 +156,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'type' => 'type',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
+        'additional_buyer_charges' => 'additional_buyer_charges',
         'amount' => 'amount',
         'application' => 'application',
         'card_present_details' => 'card_present_details',
         'currency' => 'currency',
         'destination' => 'destination',
         'device' => 'device',
+        'externally_funded' => 'externally_funded',
+        'failure_code' => 'failure_code',
+        'failure_message' => 'failure_message',
         'fee' => 'fee',
         'fee_type' => 'fee_type',
         'idempotency_id' => 'idempotency_id',
-        'identity' => 'identity',
         'merchant_identity' => 'merchant_identity',
         'messages' => 'messages',
         'raw' => 'raw',
@@ -181,11 +180,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => 'state',
         'statement_descriptor' => 'statement_descriptor',
         'subtype' => 'subtype',
+        'tags' => 'tags',
         'trace_id' => 'trace_id',
-        'externally_funded' => 'externally_funded',
-        'failure_code' => 'failure_code',
-        'failure_message' => 'failure_message',
-        'additional_buyer_charges' => 'additional_buyer_charges',
+        'type' => 'type',
         '_links' => '_links'
     ];
 
@@ -195,21 +192,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'type' => 'setType',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
         'amount' => 'setAmount',
         'application' => 'setApplication',
         'card_present_details' => 'setCardPresentDetails',
         'currency' => 'setCurrency',
         'destination' => 'setDestination',
         'device' => 'setDevice',
+        'externally_funded' => 'setExternallyFunded',
+        'failure_code' => 'setFailureCode',
+        'failure_message' => 'setFailureMessage',
         'fee' => 'setFee',
         'fee_type' => 'setFeeType',
         'idempotency_id' => 'setIdempotencyId',
-        'identity' => 'setIdentity',
         'merchant_identity' => 'setMerchantIdentity',
         'messages' => 'setMessages',
         'raw' => 'setRaw',
@@ -218,11 +216,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => 'setState',
         'statement_descriptor' => 'setStatementDescriptor',
         'subtype' => 'setSubtype',
+        'tags' => 'setTags',
         'trace_id' => 'setTraceId',
-        'externally_funded' => 'setExternallyFunded',
-        'failure_code' => 'setFailureCode',
-        'failure_message' => 'setFailureMessage',
-        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'type' => 'setType',
         '_links' => 'setLinks'
     ];
 
@@ -232,21 +228,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'type' => 'getType',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
         'amount' => 'getAmount',
         'application' => 'getApplication',
         'card_present_details' => 'getCardPresentDetails',
         'currency' => 'getCurrency',
         'destination' => 'getDestination',
         'device' => 'getDevice',
+        'externally_funded' => 'getExternallyFunded',
+        'failure_code' => 'getFailureCode',
+        'failure_message' => 'getFailureMessage',
         'fee' => 'getFee',
         'fee_type' => 'getFeeType',
         'idempotency_id' => 'getIdempotencyId',
-        'identity' => 'getIdentity',
         'merchant_identity' => 'getMerchantIdentity',
         'messages' => 'getMessages',
         'raw' => 'getRaw',
@@ -255,11 +252,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => 'getState',
         'statement_descriptor' => 'getStatementDescriptor',
         'subtype' => 'getSubtype',
+        'tags' => 'getTags',
         'trace_id' => 'getTraceId',
-        'externally_funded' => 'getExternallyFunded',
-        'failure_code' => 'getFailureCode',
-        'failure_message' => 'getFailureMessage',
-        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'type' => 'getType',
         '_links' => 'getLinks'
     ];
 
@@ -304,15 +299,6 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const TYPE_DEBIT = 'DEBIT';
-    public const TYPE_CREDIT = 'CREDIT';
-    public const TYPE_REVERSAL = 'REVERSAL';
-    public const TYPE_FEE = 'FEE';
-    public const TYPE_ADJUSTMENT = 'ADJUSTMENT';
-    public const TYPE_DISPUTE = 'DISPUTE';
-    public const TYPE_RESERVE = 'RESERVE';
-    public const TYPE_SETTLEMENT = 'SETTLEMENT';
-    public const TYPE_UNKNOWN = 'UNKNOWN';
     public const STATE_CANCELED = 'CANCELED';
     public const STATE_PENDING = 'PENDING';
     public const STATE_FAILED = 'FAILED';
@@ -337,26 +323,15 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     public const SUBTYPE_SPLIT_PAYOUT = 'SPLIT_PAYOUT';
     public const SUBTYPE_SPLIT_PAYOUT_ADJUSTMENT = 'SPLIT_PAYOUT_ADJUSTMENT';
     public const SUBTYPE_SYSTEM = 'SYSTEM';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_DEBIT,
-            self::TYPE_CREDIT,
-            self::TYPE_REVERSAL,
-            self::TYPE_FEE,
-            self::TYPE_ADJUSTMENT,
-            self::TYPE_DISPUTE,
-            self::TYPE_RESERVE,
-            self::TYPE_SETTLEMENT,
-            self::TYPE_UNKNOWN,
-        ];
-    }
+    public const TYPE_DEBIT = 'DEBIT';
+    public const TYPE_CREDIT = 'CREDIT';
+    public const TYPE_REVERSAL = 'REVERSAL';
+    public const TYPE_FEE = 'FEE';
+    public const TYPE_ADJUSTMENT = 'ADJUSTMENT';
+    public const TYPE_DISPUTE = 'DISPUTE';
+    public const TYPE_RESERVE = 'RESERVE';
+    public const TYPE_SETTLEMENT = 'SETTLEMENT';
+    public const TYPE_UNKNOWN = 'UNKNOWN';
 
     /**
      * Gets allowable values of the enum
@@ -405,6 +380,26 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_DEBIT,
+            self::TYPE_CREDIT,
+            self::TYPE_REVERSAL,
+            self::TYPE_FEE,
+            self::TYPE_ADJUSTMENT,
+            self::TYPE_DISPUTE,
+            self::TYPE_RESERVE,
+            self::TYPE_SETTLEMENT,
+            self::TYPE_UNKNOWN,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -419,21 +414,22 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['card_present_details'] = $data['card_present_details'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['destination'] = $data['destination'] ?? null;
         $this->container['device'] = $data['device'] ?? null;
+        $this->container['externally_funded'] = $data['externally_funded'] ?? null;
+        $this->container['failure_code'] = $data['failure_code'] ?? null;
+        $this->container['failure_message'] = $data['failure_message'] ?? null;
         $this->container['fee'] = $data['fee'] ?? null;
         $this->container['fee_type'] = $data['fee_type'] ?? null;
         $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
-        $this->container['identity'] = $data['identity'] ?? null;
         $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
         $this->container['messages'] = $data['messages'] ?? null;
         $this->container['raw'] = $data['raw'] ?? null;
@@ -442,11 +438,9 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['state'] = $data['state'] ?? null;
         $this->container['statement_descriptor'] = $data['statement_descriptor'] ?? null;
         $this->container['subtype'] = $data['subtype'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['trace_id'] = $data['trace_id'] ?? null;
-        $this->container['externally_funded'] = $data['externally_funded'] ?? null;
-        $this->container['failure_code'] = $data['failure_code'] ?? null;
-        $this->container['failure_message'] = $data['failure_message'] ?? null;
-        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -458,15 +452,6 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         $allowedValues = $this->getStateAllowableValues();
         if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
@@ -486,6 +471,15 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -500,64 +494,6 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Type of `Transfer`.
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -627,6 +563,30 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedAt($updated_at, $deserialize = false)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_buyer_charges
+     *
+     * @return \Finix\Model\AdditionalBuyerCharges|null
+     */
+    public function getAdditionalBuyerCharges()
+    {
+        return $this->container['additional_buyer_charges'];
+    }
+
+    /**
+     * Sets additional_buyer_charges
+     *
+     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
+     *
+     * @return self
+     */
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
+    {
+        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
 
         return $this;
     }
@@ -776,6 +736,78 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets externally_funded
+     *
+     * @return string|null
+     */
+    public function getExternallyFunded()
+    {
+        return $this->container['externally_funded'];
+    }
+
+    /**
+     * Sets externally_funded
+     *
+     * @param string|null $externally_funded Details if the `Transfer` will be settled externally by card processors.
+     *
+     * @return self
+     */
+    public function setExternallyFunded($externally_funded, $deserialize = false)
+    {
+        $this->container['externally_funded'] = $externally_funded;
+
+        return $this;
+    }
+
+    /**
+     * Gets failure_code
+     *
+     * @return string|null
+     */
+    public function getFailureCode()
+    {
+        return $this->container['failure_code'];
+    }
+
+    /**
+     * Sets failure_code
+     *
+     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/docs/guides/developers/errors/#failure-codes).
+     *
+     * @return self
+     */
+    public function setFailureCode($failure_code, $deserialize = false)
+    {
+        $this->container['failure_code'] = $failure_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets failure_message
+     *
+     * @return string|null
+     */
+    public function getFailureMessage()
+    {
+        return $this->container['failure_message'];
+    }
+
+    /**
+     * Sets failure_message
+     *
+     * @param string|null $failure_message A human-readable description of why the transaction was declined. This will also include a suggestion on how to complete the payment.
+     *
+     * @return self
+     */
+    public function setFailureMessage($failure_message, $deserialize = false)
+    {
+        $this->container['failure_message'] = $failure_message;
+
+        return $this;
+    }
+
+    /**
      * Gets fee
      *
      * @return int|null
@@ -848,30 +880,6 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets identity
-     *
-     * @return string|null
-     */
-    public function getIdentity()
-    {
-        return $this->container['identity'];
-    }
-
-    /**
-     * Sets identity
-     *
-     * @param string|null $identity The ID of the identity.
-     *
-     * @return self
-     */
-    public function setIdentity($identity, $deserialize = false)
-    {
-        $this->container['identity'] = $identity;
-
-        return $this;
-    }
-
-    /**
      * Gets merchant_identity
      *
      * @return string|null
@@ -908,7 +916,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets messages
      *
-     * @param string[]|null $messages messages
+     * @param string[]|null $messages Message field that provides additional details. This field is typically **null**.
      *
      * @return self
      */
@@ -932,7 +940,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets raw
      *
-     * @param object|null $raw Raw response from the processor
+     * @param object|null $raw Raw response from the processor.
      *
      * @return self
      */
@@ -1084,6 +1092,30 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
      * Gets trace_id
      *
      * @return string|null
@@ -1096,7 +1128,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trace_id
      *
-     * @param string|null $trace_id Trace ID of the `Transfer`. The processor sends back the `trace_id` so you can track the `transfer` end-to-end.
+     * @param string|null $trace_id Trace ID of the `Transfer`. The processor sends back the `trace_id` so you can track the `Transfer` end-to-end.
      *
      * @return self
      */
@@ -1108,97 +1140,35 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets externally_funded
+     * Gets type
      *
      * @return string|null
      */
-    public function getExternallyFunded()
+    public function getType()
     {
-        return $this->container['externally_funded'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets externally_funded
+     * Sets type
      *
-     * @param string|null $externally_funded Details if the Transfer will be settled externally by card processors.
+     * @param string|null $type Type of `Transfer`.
      *
      * @return self
      */
-    public function setExternallyFunded($externally_funded, $deserialize = false)
+    public function setType($type, $deserialize = false)
     {
-        $this->container['externally_funded'] = $externally_funded;
-
-        return $this;
-    }
-
-    /**
-     * Gets failure_code
-     *
-     * @return string|null
-     */
-    public function getFailureCode()
-    {
-        return $this->container['failure_code'];
-    }
-
-    /**
-     * Sets failure_code
-     *
-     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/docs/guides/developers/errors/#failure-codes).
-     *
-     * @return self
-     */
-    public function setFailureCode($failure_code, $deserialize = false)
-    {
-        $this->container['failure_code'] = $failure_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets failure_message
-     *
-     * @return string|null
-     */
-    public function getFailureMessage()
-    {
-        return $this->container['failure_message'];
-    }
-
-    /**
-     * Sets failure_message
-     *
-     * @param string|null $failure_message A human-readable description of why the transaction was declined. This will also include a suggestion on how to complete the payment.
-     *
-     * @return self
-     */
-    public function setFailureMessage($failure_message, $deserialize = false)
-    {
-        $this->container['failure_message'] = $failure_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_buyer_charges
-     *
-     * @return \Finix\Model\AdditionalBuyerCharges|null
-     */
-    public function getAdditionalBuyerCharges()
-    {
-        return $this->container['additional_buyer_charges'];
-    }
-
-    /**
-     * Sets additional_buyer_charges
-     *
-     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
-     *
-     * @return self
-     */
-    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
-    {
-        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -237,7 +237,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets display_name
      *
-     * @param string|null $display_name This will be the merchant name shown to users when making a purchase via Apple Pay.1
+     * @param string|null $display_name This will be the merchant name shown to users when making a purchase via Apple Pay.
      *
      * @return self
      */
@@ -261,7 +261,7 @@ class ApplePaySessionRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets domain
      *
-     * @param string|null $domain The domain where the buyer is initiating the payment.
+     * @param string|null $domain The domain (or website) where the buyer is initiating the payment.
      *
      * @return self
      */

@@ -61,8 +61,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'currency' => '\Finix\Model\Currency',
-        'processor' => 'string',
         'merchant_id' => 'string',
+        'processor' => 'string',
         'tags' => 'array<string,string>'
     ];
 
@@ -75,8 +75,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'currency' => null,
-        'processor' => null,
         'merchant_id' => null,
+        'processor' => null,
         'tags' => null
     ];
 
@@ -108,8 +108,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'currency' => 'currency',
-        'processor' => 'processor',
         'merchant_id' => 'merchant_id',
+        'processor' => 'processor',
         'tags' => 'tags'
     ];
 
@@ -120,8 +120,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'currency' => 'setCurrency',
-        'processor' => 'setProcessor',
         'merchant_id' => 'setMerchantId',
+        'processor' => 'setProcessor',
         'tags' => 'setTags'
     ];
 
@@ -132,8 +132,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'currency' => 'getCurrency',
-        'processor' => 'getProcessor',
         'merchant_id' => 'getMerchantId',
+        'processor' => 'getProcessor',
         'tags' => 'getTags'
     ];
 
@@ -195,8 +195,8 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['processor'] = $data['processor'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
+        $this->container['processor'] = $data['processor'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
 
@@ -209,12 +209,6 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['processor'] === null) {
-            $invalidProperties[] = "'processor' can't be null";
-        }
-        if ($this->container['merchant_id'] === null) {
-            $invalidProperties[] = "'merchant_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -255,33 +249,9 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets processor
-     *
-     * @return string
-     */
-    public function getProcessor()
-    {
-        return $this->container['processor'];
-    }
-
-    /**
-     * Sets processor
-     *
-     * @param string $processor If the `Application` has more than one associated `processor`, it's required when creating `settlements` to include the `processor` (e.g. DUMMY_V1).
-     *
-     * @return self
-     */
-    public function setProcessor($processor, $deserialize = false)
-    {
-        $this->container['processor'] = $processor;
-
-        return $this;
-    }
-
-    /**
      * Gets merchant_id
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantId()
     {
@@ -291,13 +261,37 @@ class CreateSettlementRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets merchant_id
      *
-     * @param string $merchant_id If the `Application` has more than one associated `processor`, this field is required.
+     * @param string|null $merchant_id If the `Application` has more than one associated `processor`, this field is required.
      *
      * @return self
      */
     public function setMerchantId($merchant_id, $deserialize = false)
     {
         $this->container['merchant_id'] = $merchant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor
+     *
+     * @return string|null
+     */
+    public function getProcessor()
+    {
+        return $this->container['processor'];
+    }
+
+    /**
+     * Sets processor
+     *
+     * @param string|null $processor If the `Application` has more than one associated `processor`, it's required when creating `settlements` to include the `processor` (e.g. **DUMMY_V1**).
+     *
+     * @return self
+     */
+    public function setProcessor($processor, $deserialize = false)
+    {
+        $this->container['processor'] = $processor;
 
         return $this;
     }

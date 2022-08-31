@@ -119,7 +119,7 @@ class VerificationsApi
     /**
      * Operation create
      *
-     * Perform a Verification
+     * Create a Merchant Verification
      *
      * @param  \Finix\Model\CreateVerificationRequest $create_verification_request create_verification_request (optional)
      *
@@ -136,7 +136,7 @@ class VerificationsApi
     /**
      * Operation createWithHttpInfo
      *
-     * Perform a Verification
+     * Create a Merchant Verification
      *
      * @param  \Finix\Model\CreateVerificationRequest $create_verification_request (optional)
      *
@@ -350,7 +350,7 @@ class VerificationsApi
     /**
      * Operation createAsync
      *
-     * Perform a Verification
+     * Create a Merchant Verification
      *
      * @param  \Finix\Model\CreateVerificationRequest $create_verification_request (optional)
      *
@@ -370,7 +370,7 @@ class VerificationsApi
     /**
      * Operation createAsyncWithHttpInfo
      *
-     * Perform a Verification
+     * Create a Merchant Verification
      *
      * @param  \Finix\Model\CreateVerificationRequest $create_verification_request (optional)
      *
@@ -528,7 +528,7 @@ class VerificationsApi
     /**
      * Operation get
      *
-     * Get a Verification
+     * Fetch a Verification
      *
      * @param  string $verification_id ID of &#x60;Verification&#x60; object. (required)
      *
@@ -545,7 +545,7 @@ class VerificationsApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Verification
+     * Fetch a Verification
      *
      * @param  string $verification_id ID of &#x60;Verification&#x60; object. (required)
      *
@@ -736,7 +736,7 @@ class VerificationsApi
     /**
      * Operation getAsync
      *
-     * Get a Verification
+     * Fetch a Verification
      *
      * @param  string $verification_id ID of &#x60;Verification&#x60; object. (required)
      *
@@ -756,7 +756,7 @@ class VerificationsApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Verification
+     * Fetch a Verification
      *
      * @param  string $verification_id ID of &#x60;Verification&#x60; object. (required)
      *
@@ -1365,13 +1365,489 @@ class VerificationsApi
     }
 
     /**
+     * Operation listByPaymentInstrumentId
+     *
+     * List Payment Instrument Verifications
+     *
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument &#x60;object. (required)
+     * @param  int $limit The number of entries to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     *
+     * @throws \Finix\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Finix\Model\VerificationsList|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
+     */
+    public function listByPaymentInstrumentId($associative_array)
+    {
+        list($response) = $this->listByPaymentInstrumentIdWithHttpInfo($associative_array);
+        $hasNextCursor = ($response->openAPITypes()['page'] == '\Finix\Model\PageCursor');
+        $queryParams = $this->getQueryParam($response->getPage(), $associative_array, $hasNextCursor);
+        $reachedEnd = $this->reachedEnd($response->getPage(), $hasNextCursor);
+        $listNextFunc = function($limit = null) use($queryParams, $reachedEnd){
+            $queryParams['limit'] = $limit;
+            if ($reachedEnd)
+            {
+                throw new ApiException;
+            }
+            return $this->listByPaymentInstrumentId($queryParams);
+        };
+        if($response->getEmbedded()){
+            $key = key($response->getEmbedded()->getters());
+            $getter = $response->getEmbedded()->getters()[$key];
+            $listEmbedded = $response->getEmbedded()->$getter();
+            if(count($listEmbedded) < $response->getPage()->getLimit()){
+                $reachedEnd = true;
+            }
+            $currList = new \Finix\Model\FinixList($listEmbedded, $listNextFunc, !$reachedEnd);
+        }
+        else{
+            $currList = new \Finix\Model\FinixList(array(), $listNextFunc, false);
+        }
+        $currList = $currList->setPage($response->getPage());
+        $currList = $currList->setLinks($response->getLinks());
+        return $currList;
+    }
+
+    /**
+     * Operation listByPaymentInstrumentIdWithHttpInfo
+     *
+     * List Payment Instrument Verifications
+     *
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument &#x60;object. (required)
+     * @param  int $limit The number of entries to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     *
+     * @throws \Finix\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Finix\Model\VerificationsList|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listByPaymentInstrumentIdWithHttpInfo($associative_array)
+    {
+        $request = $this->listByPaymentInstrumentIdRequest($associative_array);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Finix\Model\VerificationsList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\VerificationsList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\VerificationsList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Finix\Model\Error401Unauthorized' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error401Unauthorized' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error401Unauthorized', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Finix\Model\Error403ForbiddenList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error403ForbiddenList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error403ForbiddenList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Finix\Model\Error404NotFoundList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error404NotFoundList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error404NotFoundList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 406:
+                    if ('\Finix\Model\Error406NotAcceptable' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error406NotAcceptable' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error406NotAcceptable', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Finix\Model\VerificationsList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\VerificationsList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error401Unauthorized',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error403ForbiddenList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error404NotFoundList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error406NotAcceptable',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listByPaymentInstrumentIdAsync
+     *
+     * List Payment Instrument Verifications
+     *
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument &#x60;object. (required)
+     * @param  int $limit The number of entries to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listByPaymentInstrumentIdAsync($associative_array)
+    {
+        return $this->listByPaymentInstrumentIdAsyncWithHttpInfo($associative_array)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listByPaymentInstrumentIdAsyncWithHttpInfo
+     *
+     * List Payment Instrument Verifications
+     *
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument &#x60;object. (required)
+     * @param  int $limit The number of entries to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listByPaymentInstrumentIdAsyncWithHttpInfo($associative_array)
+    {
+        $returnType = '\Finix\Model\VerificationsList';
+        $request = $this->listByPaymentInstrumentIdRequest($associative_array);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listByPaymentInstrumentId'
+     *
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument &#x60;object. (required)
+     * @param  int $limit The number of entries to return. (optional)
+     * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
+     * @param  int $page_number The page number to list. (optional)
+     * @param  int $page_size The size of the page. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listByPaymentInstrumentIdRequest($associative_array)
+    {
+        // unbox the parameters from the associative array
+        $payment_instrument_id = array_key_exists('payment_instrument_id', $associative_array) ? $associative_array['payment_instrument_id'] : null;
+        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
+        $offset = array_key_exists('offset', $associative_array) ? $associative_array['offset'] : null;
+        $page_number = array_key_exists('page_number', $associative_array) ? $associative_array['page_number'] : null;
+        $page_size = array_key_exists('page_size', $associative_array) ? $associative_array['page_size'] : null;
+
+        // verify the required parameter 'payment_instrument_id' is set
+        if ($payment_instrument_id === null || (is_array($payment_instrument_id) && count($payment_instrument_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payment_instrument_id when calling listPaymentInstrumentVerifications'
+            );
+        }
+
+        $resourcePath = '/payment_instruments/{payment_instrument_id}/verifications';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_number,
+            'pageNumber', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($payment_instrument_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'payment_instrument_id' . '}',
+                ObjectSerializer::toPathValue($payment_instrument_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/hal+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/hal+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $headers['Finix-Version'] = '2022-02-01';
+        
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation list
      *
      * List Verifications
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1417,7 +1893,7 @@ class VerificationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1589,7 +2065,7 @@ class VerificationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1613,7 +2089,7 @@ class VerificationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1666,7 +2142,7 @@ class VerificationsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *

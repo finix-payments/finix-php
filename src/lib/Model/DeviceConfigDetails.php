@@ -62,12 +62,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'allow_debit' => 'bool',
+        'bypass_device_on_capture' => 'bool',
         'check_for_duplicate_transactions' => 'bool',
         'prompt_amount_confirmation' => 'bool',
         'prompt_manual_entry' => 'bool',
         'prompt_signature' => 'string',
-        'signature_threshold_amount' => 'int',
-        'bypass_device_on_capture' => 'bool'
+        'signature_threshold_amount' => 'int'
     ];
 
     /**
@@ -79,12 +79,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'allow_debit' => null,
+        'bypass_device_on_capture' => null,
         'check_for_duplicate_transactions' => null,
         'prompt_amount_confirmation' => null,
         'prompt_manual_entry' => null,
         'prompt_signature' => null,
-        'signature_threshold_amount' => 'int64',
-        'bypass_device_on_capture' => null
+        'signature_threshold_amount' => 'int64'
     ];
 
     /**
@@ -115,12 +115,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'allow_debit' => 'allow_debit',
+        'bypass_device_on_capture' => 'bypass_device_on_capture',
         'check_for_duplicate_transactions' => 'check_for_duplicate_transactions',
         'prompt_amount_confirmation' => 'prompt_amount_confirmation',
         'prompt_manual_entry' => 'prompt_manual_entry',
         'prompt_signature' => 'prompt_signature',
-        'signature_threshold_amount' => 'signature_threshold_amount',
-        'bypass_device_on_capture' => 'bypass_device_on_capture'
+        'signature_threshold_amount' => 'signature_threshold_amount'
     ];
 
     /**
@@ -130,12 +130,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'allow_debit' => 'setAllowDebit',
+        'bypass_device_on_capture' => 'setBypassDeviceOnCapture',
         'check_for_duplicate_transactions' => 'setCheckForDuplicateTransactions',
         'prompt_amount_confirmation' => 'setPromptAmountConfirmation',
         'prompt_manual_entry' => 'setPromptManualEntry',
         'prompt_signature' => 'setPromptSignature',
-        'signature_threshold_amount' => 'setSignatureThresholdAmount',
-        'bypass_device_on_capture' => 'setBypassDeviceOnCapture'
+        'signature_threshold_amount' => 'setSignatureThresholdAmount'
     ];
 
     /**
@@ -145,12 +145,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'allow_debit' => 'getAllowDebit',
+        'bypass_device_on_capture' => 'getBypassDeviceOnCapture',
         'check_for_duplicate_transactions' => 'getCheckForDuplicateTransactions',
         'prompt_amount_confirmation' => 'getPromptAmountConfirmation',
         'prompt_manual_entry' => 'getPromptManualEntry',
         'prompt_signature' => 'getPromptSignature',
-        'signature_threshold_amount' => 'getSignatureThresholdAmount',
-        'bypass_device_on_capture' => 'getBypassDeviceOnCapture'
+        'signature_threshold_amount' => 'getSignatureThresholdAmount'
     ];
 
     /**
@@ -211,12 +211,12 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['allow_debit'] = $data['allow_debit'] ?? null;
+        $this->container['bypass_device_on_capture'] = $data['bypass_device_on_capture'] ?? null;
         $this->container['check_for_duplicate_transactions'] = $data['check_for_duplicate_transactions'] ?? null;
         $this->container['prompt_amount_confirmation'] = $data['prompt_amount_confirmation'] ?? null;
         $this->container['prompt_manual_entry'] = $data['prompt_manual_entry'] ?? null;
         $this->container['prompt_signature'] = $data['prompt_signature'] ?? null;
         $this->container['signature_threshold_amount'] = $data['signature_threshold_amount'] ?? null;
-        $this->container['bypass_device_on_capture'] = $data['bypass_device_on_capture'] ?? null;
     }
 
     /**
@@ -263,6 +263,30 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setAllowDebit($allow_debit, $deserialize = false)
     {
         $this->container['allow_debit'] = $allow_debit;
+
+        return $this;
+    }
+
+    /**
+     * Gets bypass_device_on_capture
+     *
+     * @return bool|null
+     */
+    public function getBypassDeviceOnCapture()
+    {
+        return $this->container['bypass_device_on_capture'];
+    }
+
+    /**
+     * Sets bypass_device_on_capture
+     *
+     * @param bool|null $bypass_device_on_capture Sets whether or not the device will be used to capture transactions. This field must be set to **true** (defaults to **false**).
+     *
+     * @return self
+     */
+    public function setBypassDeviceOnCapture($bypass_device_on_capture, $deserialize = false)
+    {
+        $this->container['bypass_device_on_capture'] = $bypass_device_on_capture;
 
         return $this;
     }
@@ -383,30 +407,6 @@ class DeviceConfigDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setSignatureThresholdAmount($signature_threshold_amount, $deserialize = false)
     {
         $this->container['signature_threshold_amount'] = $signature_threshold_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets bypass_device_on_capture
-     *
-     * @return bool|null
-     */
-    public function getBypassDeviceOnCapture()
-    {
-        return $this->container['bypass_device_on_capture'];
-    }
-
-    /**
-     * Sets bypass_device_on_capture
-     *
-     * @param bool|null $bypass_device_on_capture Sets whether or not the device will be used to capture transactions. This field must be set to **true** (defaults to **false**).
-     *
-     * @return self
-     */
-    public function setBypassDeviceOnCapture($bypass_device_on_capture, $deserialize = false)
-    {
-        $this->container['bypass_device_on_capture'] = $bypass_device_on_capture;
 
         return $this;
     }

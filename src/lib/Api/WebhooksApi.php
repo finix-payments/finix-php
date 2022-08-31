@@ -528,7 +528,7 @@ class WebhooksApi
     /**
      * Operation get
      *
-     * Get a Webhook
+     * Fetch a Webhook
      *
      * @param  string $webhook_id ID of &#x60;Webhook&#x60; object. (required)
      *
@@ -545,7 +545,7 @@ class WebhooksApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Webhook
+     * Fetch a Webhook
      *
      * @param  string $webhook_id ID of &#x60;Webhook&#x60; object. (required)
      *
@@ -736,7 +736,7 @@ class WebhooksApi
     /**
      * Operation getAsync
      *
-     * Get a Webhook
+     * Fetch a Webhook
      *
      * @param  string $webhook_id ID of &#x60;Webhook&#x60; object. (required)
      *
@@ -756,7 +756,7 @@ class WebhooksApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Webhook
+     * Fetch a Webhook
      *
      * @param  string $webhook_id ID of &#x60;Webhook&#x60; object. (required)
      *
@@ -910,7 +910,7 @@ class WebhooksApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -956,7 +956,7 @@ class WebhooksApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1128,7 +1128,7 @@ class WebhooksApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1152,7 +1152,7 @@ class WebhooksApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1205,7 +1205,7 @@ class WebhooksApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *

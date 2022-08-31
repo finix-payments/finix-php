@@ -60,10 +60,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'gateway' => 'string',
         'processor' => 'string',
-        'processor_specific_parameters' => 'object'
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -74,10 +73,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'gateway' => null,
         'processor' => null,
-        'processor_specific_parameters' => null
+        'tags' => null
     ];
 
     /**
@@ -107,10 +105,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'gateway' => 'gateway',
         'processor' => 'processor',
-        'processor_specific_parameters' => 'processor_specific_parameters'
+        'tags' => 'tags'
     ];
 
     /**
@@ -119,10 +116,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'gateway' => 'setGateway',
         'processor' => 'setProcessor',
-        'processor_specific_parameters' => 'setProcessorSpecificParameters'
+        'tags' => 'setTags'
     ];
 
     /**
@@ -131,10 +127,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'gateway' => 'getGateway',
         'processor' => 'getProcessor',
-        'processor_specific_parameters' => 'getProcessorSpecificParameters'
+        'tags' => 'getTags'
     ];
 
     /**
@@ -178,8 +173,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
         return self::$openAPIModelName;
     }
 
-    public const GATEWAY_CLOUD_V1 = 'TRIPOS_CLOUD_V1';
-    public const GATEWAY_MOBILE_V1 = 'TRIPOS_MOBILE_V1';
+    public const GATEWAY_TRIPOS_CLOUD_V1 = 'TRIPOS_CLOUD_V1';
+    public const GATEWAY_TRIPOS_MOBILE_V1 = 'TRIPOS_MOBILE_V1';
+    public const GATEWAY_EXPRESS_V1 = 'EXPRESS_V1';
 
     /**
      * Gets allowable values of the enum
@@ -189,8 +185,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
     public function getGatewayAllowableValues()
     {
         return [
-            self::GATEWAY_CLOUD_V1,
-            self::GATEWAY_MOBILE_V1,
+            self::GATEWAY_TRIPOS_CLOUD_V1,
+            self::GATEWAY_TRIPOS_MOBILE_V1,
+            self::GATEWAY_EXPRESS_V1,
         ];
     }
 
@@ -209,10 +206,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['gateway'] = $data['gateway'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
-        $this->container['processor_specific_parameters'] = $data['processor_specific_parameters'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -233,6 +229,9 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
             );
         }
 
+        if ($this->container['processor'] === null) {
+            $invalidProperties[] = "'processor' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -249,30 +248,6 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets gateway
      *
      * @return string|null
@@ -285,7 +260,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
     /**
      * Sets gateway
      *
-     * @param string|null $gateway Name of the gateway that processes the `Merchant's` transaction.
+     * @param string|null $gateway Name of the gateway that processes the `Merchant's` card present transactions. Use `gateway` only to enable a merchantto accept card present transactions.
      *
      * @return self
      */
@@ -309,7 +284,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
     /**
      * Gets processor
      *
-     * @return string|null
+     * @return string
      */
     public function getProcessor()
     {
@@ -319,7 +294,7 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
     /**
      * Sets processor
      *
-     * @param string|null $processor Name of acquiring processor that settles the `Merchant's` transactions.
+     * @param string $processor Set the acquiring processor. Avalible values include: <ul><li><strong>DUMMY_V1</strong></li><li><strong>LITLE_V1</strong></li><li><strong>MASTERCARD_V1</strong></li><li><strong>VISA_V1</strong></li><li><strong>NMI_V1</strong></li><li><strong>VANTIV_V1</strong></li></ul>Use <strong>DUMMY_V1</strong> or  <strong>null</strong> to use your sandbox. For more details on which processor to use, reach out to your Finix point of contact or email <a href=\"/guides/getting-started/support-at-finix/\">Finix Support</a>.
      *
      * @return self
      */
@@ -331,25 +306,25 @@ class CreateMerchantUnderwritingRequest implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets processor_specific_parameters
+     * Gets tags
      *
-     * @return object|null
+     * @return array<string,string>|null
      */
-    public function getProcessorSpecificParameters()
+    public function getTags()
     {
-        return $this->container['processor_specific_parameters'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets processor_specific_parameters
+     * Sets tags
      *
-     * @param object|null $processor_specific_parameters Additional information required by the processor being used.
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setProcessorSpecificParameters($processor_specific_parameters, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $this->container['processor_specific_parameters'] = $processor_specific_parameters;
+        $this->container['tags'] = $tags;
 
         return $this;
     }

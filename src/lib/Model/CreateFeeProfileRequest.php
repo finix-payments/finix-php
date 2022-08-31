@@ -60,7 +60,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'ach_basis_points' => 'int',
         'ach_credit_return_fixed_fee' => 'int',
         'ach_debit_return_fixed_fee' => 'int',
@@ -75,8 +74,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'int',
         'application' => 'string',
         'basis_points' => 'int',
-        'externally_funded_basis_points' => 'int',
-        'externally_funded_fixed_fee' => 'int',
         'charge_interchange' => 'bool',
         'diners_club_basis_points' => 'int',
         'diners_club_charge_interchange' => 'bool',
@@ -91,6 +88,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'discover_network_authorization_fixed_fee' => 'int',
         'dispute_fixed_fee' => 'int',
         'dispute_inquiry_fixed_fee' => 'int',
+        'externally_funded_basis_points' => 'int',
+        'externally_funded_fixed_fee' => 'int',
         'fixed_fee' => 'int',
         'jcb_basis_points' => 'int',
         'jcb_charge_interchange' => 'bool',
@@ -103,6 +102,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'mastercard_fixed_fee' => 'int',
         'qualified_tiers' => 'object',
         'rounding_mode' => 'string',
+        'tags' => 'array<string,string>',
         'visa_acquirer_processing_fixed_fee' => 'int',
         'visa_assessments_basis_points' => 'int',
         'visa_base_ii_credit_voucher_fixed_fee' => 'int',
@@ -122,7 +122,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'ach_basis_points' => null,
         'ach_credit_return_fixed_fee' => null,
         'ach_debit_return_fixed_fee' => null,
@@ -137,8 +136,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => null,
         'application' => null,
         'basis_points' => null,
-        'externally_funded_basis_points' => null,
-        'externally_funded_fixed_fee' => null,
         'charge_interchange' => null,
         'diners_club_basis_points' => null,
         'diners_club_charge_interchange' => null,
@@ -153,6 +150,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'discover_network_authorization_fixed_fee' => null,
         'dispute_fixed_fee' => null,
         'dispute_inquiry_fixed_fee' => null,
+        'externally_funded_basis_points' => null,
+        'externally_funded_fixed_fee' => null,
         'fixed_fee' => null,
         'jcb_basis_points' => null,
         'jcb_charge_interchange' => null,
@@ -165,6 +164,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'mastercard_fixed_fee' => null,
         'qualified_tiers' => null,
         'rounding_mode' => null,
+        'tags' => null,
         'visa_acquirer_processing_fixed_fee' => null,
         'visa_assessments_basis_points' => null,
         'visa_base_ii_credit_voucher_fixed_fee' => null,
@@ -203,7 +203,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'ach_basis_points' => 'ach_basis_points',
         'ach_credit_return_fixed_fee' => 'ach_credit_return_fixed_fee',
         'ach_debit_return_fixed_fee' => 'ach_debit_return_fixed_fee',
@@ -218,8 +217,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'ancillary_fixed_fee_secondary',
         'application' => 'application',
         'basis_points' => 'basis_points',
-        'externally_funded_basis_points' => 'externally_funded_basis_points',
-        'externally_funded_fixed_fee' => 'externally_funded_fixed_fee',
         'charge_interchange' => 'charge_interchange',
         'diners_club_basis_points' => 'diners_club_basis_points',
         'diners_club_charge_interchange' => 'diners_club_charge_interchange',
@@ -234,6 +231,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'discover_network_authorization_fixed_fee' => 'discover_network_authorization_fixed_fee',
         'dispute_fixed_fee' => 'dispute_fixed_fee',
         'dispute_inquiry_fixed_fee' => 'dispute_inquiry_fixed_fee',
+        'externally_funded_basis_points' => 'externally_funded_basis_points',
+        'externally_funded_fixed_fee' => 'externally_funded_fixed_fee',
         'fixed_fee' => 'fixed_fee',
         'jcb_basis_points' => 'jcb_basis_points',
         'jcb_charge_interchange' => 'jcb_charge_interchange',
@@ -246,6 +245,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'mastercard_fixed_fee' => 'mastercard_fixed_fee',
         'qualified_tiers' => 'qualified_tiers',
         'rounding_mode' => 'rounding_mode',
+        'tags' => 'tags',
         'visa_acquirer_processing_fixed_fee' => 'visa_acquirer_processing_fixed_fee',
         'visa_assessments_basis_points' => 'visa_assessments_basis_points',
         'visa_base_ii_credit_voucher_fixed_fee' => 'visa_base_II_credit_voucher_fixed_fee',
@@ -263,7 +263,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'ach_basis_points' => 'setAchBasisPoints',
         'ach_credit_return_fixed_fee' => 'setAchCreditReturnFixedFee',
         'ach_debit_return_fixed_fee' => 'setAchDebitReturnFixedFee',
@@ -278,8 +277,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'setAncillaryFixedFeeSecondary',
         'application' => 'setApplication',
         'basis_points' => 'setBasisPoints',
-        'externally_funded_basis_points' => 'setExternallyFundedBasisPoints',
-        'externally_funded_fixed_fee' => 'setExternallyFundedFixedFee',
         'charge_interchange' => 'setChargeInterchange',
         'diners_club_basis_points' => 'setDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'setDinersClubChargeInterchange',
@@ -294,6 +291,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'discover_network_authorization_fixed_fee' => 'setDiscoverNetworkAuthorizationFixedFee',
         'dispute_fixed_fee' => 'setDisputeFixedFee',
         'dispute_inquiry_fixed_fee' => 'setDisputeInquiryFixedFee',
+        'externally_funded_basis_points' => 'setExternallyFundedBasisPoints',
+        'externally_funded_fixed_fee' => 'setExternallyFundedFixedFee',
         'fixed_fee' => 'setFixedFee',
         'jcb_basis_points' => 'setJcbBasisPoints',
         'jcb_charge_interchange' => 'setJcbChargeInterchange',
@@ -306,6 +305,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'mastercard_fixed_fee' => 'setMastercardFixedFee',
         'qualified_tiers' => 'setQualifiedTiers',
         'rounding_mode' => 'setRoundingMode',
+        'tags' => 'setTags',
         'visa_acquirer_processing_fixed_fee' => 'setVisaAcquirerProcessingFixedFee',
         'visa_assessments_basis_points' => 'setVisaAssessmentsBasisPoints',
         'visa_base_ii_credit_voucher_fixed_fee' => 'setVisaBaseIiCreditVoucherFixedFee',
@@ -323,7 +323,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'ach_basis_points' => 'getAchBasisPoints',
         'ach_credit_return_fixed_fee' => 'getAchCreditReturnFixedFee',
         'ach_debit_return_fixed_fee' => 'getAchDebitReturnFixedFee',
@@ -338,8 +337,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'getAncillaryFixedFeeSecondary',
         'application' => 'getApplication',
         'basis_points' => 'getBasisPoints',
-        'externally_funded_basis_points' => 'getExternallyFundedBasisPoints',
-        'externally_funded_fixed_fee' => 'getExternallyFundedFixedFee',
         'charge_interchange' => 'getChargeInterchange',
         'diners_club_basis_points' => 'getDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'getDinersClubChargeInterchange',
@@ -354,6 +351,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'discover_network_authorization_fixed_fee' => 'getDiscoverNetworkAuthorizationFixedFee',
         'dispute_fixed_fee' => 'getDisputeFixedFee',
         'dispute_inquiry_fixed_fee' => 'getDisputeInquiryFixedFee',
+        'externally_funded_basis_points' => 'getExternallyFundedBasisPoints',
+        'externally_funded_fixed_fee' => 'getExternallyFundedFixedFee',
         'fixed_fee' => 'getFixedFee',
         'jcb_basis_points' => 'getJcbBasisPoints',
         'jcb_charge_interchange' => 'getJcbChargeInterchange',
@@ -366,6 +365,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'mastercard_fixed_fee' => 'getMastercardFixedFee',
         'qualified_tiers' => 'getQualifiedTiers',
         'rounding_mode' => 'getRoundingMode',
+        'tags' => 'getTags',
         'visa_acquirer_processing_fixed_fee' => 'getVisaAcquirerProcessingFixedFee',
         'visa_assessments_basis_points' => 'getVisaAssessmentsBasisPoints',
         'visa_base_ii_credit_voucher_fixed_fee' => 'getVisaBaseIiCreditVoucherFixedFee',
@@ -449,7 +449,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['ach_basis_points'] = $data['ach_basis_points'] ?? null;
         $this->container['ach_credit_return_fixed_fee'] = $data['ach_credit_return_fixed_fee'] ?? null;
         $this->container['ach_debit_return_fixed_fee'] = $data['ach_debit_return_fixed_fee'] ?? null;
@@ -464,8 +463,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['ancillary_fixed_fee_secondary'] = $data['ancillary_fixed_fee_secondary'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['basis_points'] = $data['basis_points'] ?? null;
-        $this->container['externally_funded_basis_points'] = $data['externally_funded_basis_points'] ?? null;
-        $this->container['externally_funded_fixed_fee'] = $data['externally_funded_fixed_fee'] ?? null;
         $this->container['charge_interchange'] = $data['charge_interchange'] ?? null;
         $this->container['diners_club_basis_points'] = $data['diners_club_basis_points'] ?? null;
         $this->container['diners_club_charge_interchange'] = $data['diners_club_charge_interchange'] ?? null;
@@ -480,6 +477,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['discover_network_authorization_fixed_fee'] = $data['discover_network_authorization_fixed_fee'] ?? null;
         $this->container['dispute_fixed_fee'] = $data['dispute_fixed_fee'] ?? null;
         $this->container['dispute_inquiry_fixed_fee'] = $data['dispute_inquiry_fixed_fee'] ?? null;
+        $this->container['externally_funded_basis_points'] = $data['externally_funded_basis_points'] ?? null;
+        $this->container['externally_funded_fixed_fee'] = $data['externally_funded_fixed_fee'] ?? null;
         $this->container['fixed_fee'] = $data['fixed_fee'] ?? null;
         $this->container['jcb_basis_points'] = $data['jcb_basis_points'] ?? null;
         $this->container['jcb_charge_interchange'] = $data['jcb_charge_interchange'] ?? null;
@@ -492,6 +491,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['mastercard_fixed_fee'] = $data['mastercard_fixed_fee'] ?? null;
         $this->container['qualified_tiers'] = $data['qualified_tiers'] ?? null;
         $this->container['rounding_mode'] = $data['rounding_mode'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['visa_acquirer_processing_fixed_fee'] = $data['visa_acquirer_processing_fixed_fee'] ?? null;
         $this->container['visa_assessments_basis_points'] = $data['visa_assessments_basis_points'] ?? null;
         $this->container['visa_base_ii_credit_voucher_fixed_fee'] = $data['visa_base_ii_credit_voucher_fixed_fee'] ?? null;
@@ -512,8 +512,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['fixed_fee'] === null) {
-            $invalidProperties[] = "'fixed_fee' can't be null";
+        if ($this->container['application'] === null) {
+            $invalidProperties[] = "'application' can't be null";
         }
         $allowedValues = $this->getRoundingModeAllowableValues();
         if (!is_null($this->container['rounding_mode']) && !in_array($this->container['rounding_mode'], $allowedValues, true)) {
@@ -538,30 +538,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
 
     /**
      * Gets ach_basis_points
@@ -854,7 +830,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets application
      *
-     * @return string|null
+     * @return string
      */
     public function getApplication()
     {
@@ -864,7 +840,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string $application The ID of the resource.
      *
      * @return self
      */
@@ -895,54 +871,6 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setBasisPoints($basis_points, $deserialize = false)
     {
         $this->container['basis_points'] = $basis_points;
-
-        return $this;
-    }
-
-    /**
-     * Gets externally_funded_basis_points
-     *
-     * @return int|null
-     */
-    public function getExternallyFundedBasisPoints()
-    {
-        return $this->container['externally_funded_basis_points'];
-    }
-
-    /**
-     * Sets externally_funded_basis_points
-     *
-     * @param int|null $externally_funded_basis_points Percentage-based fee incurred against the full amount of each `Transfer` that's card-based and externally funded. Calculated as one hundredth of one percent (1 basis point = .0001 or .01%).
-     *
-     * @return self
-     */
-    public function setExternallyFundedBasisPoints($externally_funded_basis_points, $deserialize = false)
-    {
-        $this->container['externally_funded_basis_points'] = $externally_funded_basis_points;
-
-        return $this;
-    }
-
-    /**
-     * Gets externally_funded_fixed_fee
-     *
-     * @return int|null
-     */
-    public function getExternallyFundedFixedFee()
-    {
-        return $this->container['externally_funded_fixed_fee'];
-    }
-
-    /**
-     * Sets externally_funded_fixed_fee
-     *
-     * @param int|null $externally_funded_fixed_fee Fee in cents incurred for each individual `Transfer` that's card-based and externally funded.
-     *
-     * @return self
-     */
-    public function setExternallyFundedFixedFee($externally_funded_fixed_fee, $deserialize = false)
-    {
-        $this->container['externally_funded_fixed_fee'] = $externally_funded_fixed_fee;
 
         return $this;
     }
@@ -1284,9 +1212,57 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets externally_funded_basis_points
+     *
+     * @return int|null
+     */
+    public function getExternallyFundedBasisPoints()
+    {
+        return $this->container['externally_funded_basis_points'];
+    }
+
+    /**
+     * Sets externally_funded_basis_points
+     *
+     * @param int|null $externally_funded_basis_points Percentage-based fee incurred against the full amount of each `Transfer` that's card-based and externally funded. Calculated as one hundredth of one percent (1 basis point = .0001 or .01%).
+     *
+     * @return self
+     */
+    public function setExternallyFundedBasisPoints($externally_funded_basis_points, $deserialize = false)
+    {
+        $this->container['externally_funded_basis_points'] = $externally_funded_basis_points;
+
+        return $this;
+    }
+
+    /**
+     * Gets externally_funded_fixed_fee
+     *
+     * @return int|null
+     */
+    public function getExternallyFundedFixedFee()
+    {
+        return $this->container['externally_funded_fixed_fee'];
+    }
+
+    /**
+     * Sets externally_funded_fixed_fee
+     *
+     * @param int|null $externally_funded_fixed_fee Fee in cents incurred for each individual `Transfer` that's card-based and externally funded.
+     *
+     * @return self
+     */
+    public function setExternallyFundedFixedFee($externally_funded_fixed_fee, $deserialize = false)
+    {
+        $this->container['externally_funded_fixed_fee'] = $externally_funded_fixed_fee;
+
+        return $this;
+    }
+
+    /**
      * Gets fixed_fee
      *
-     * @return int
+     * @return int|null
      */
     public function getFixedFee()
     {
@@ -1296,7 +1272,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fixed_fee
      *
-     * @param int $fixed_fee Fee in cents incurred for each individual card-based `Transfer`.
+     * @param int|null $fixed_fee Fee in cents incurred for each individual card-based `Transfer`.
      *
      * @return self
      */
@@ -1536,7 +1512,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets qualified_tiers
      *
-     * @param object|null $qualified_tiers qualified_tiers
+     * @param object|null $qualified_tiers The top of the qualified tier tree.
      *
      * @return self
      */
@@ -1577,6 +1553,30 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
             );
         }
         $this->container['rounding_mode'] = $rounding_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

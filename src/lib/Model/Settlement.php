@@ -61,8 +61,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'type' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -76,9 +74,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_type' => 'string',
         'processor' => 'string',
         'status' => 'string',
+        'tags' => 'array<string,string>',
         'total_amount' => 'int',
         'total_fee' => 'int',
         'total_fees' => 'int',
+        'type' => 'string',
         '_links' => '\Finix\Model\SettlementLinks'
     ];
 
@@ -90,8 +90,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'type' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -105,9 +103,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_type' => null,
         'processor' => null,
         'status' => null,
+        'tags' => null,
         'total_amount' => null,
         'total_fee' => null,
         'total_fees' => null,
+        'type' => null,
         '_links' => null
     ];
 
@@ -138,8 +138,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'type' => 'type',
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
@@ -153,9 +151,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_type' => 'payment_type',
         'processor' => 'processor',
         'status' => 'status',
+        'tags' => 'tags',
         'total_amount' => 'total_amount',
         'total_fee' => 'total_fee',
         'total_fees' => 'total_fees',
+        'type' => 'type',
         '_links' => '_links'
     ];
 
@@ -165,8 +165,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'type' => 'setType',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -180,9 +178,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_type' => 'setPaymentType',
         'processor' => 'setProcessor',
         'status' => 'setStatus',
+        'tags' => 'setTags',
         'total_amount' => 'setTotalAmount',
         'total_fee' => 'setTotalFee',
         'total_fees' => 'setTotalFees',
+        'type' => 'setType',
         '_links' => 'setLinks'
     ];
 
@@ -192,8 +192,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'type' => 'getType',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -207,9 +205,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_type' => 'getPaymentType',
         'processor' => 'getProcessor',
         'status' => 'getStatus',
+        'tags' => 'getTags',
         'total_amount' => 'getTotalAmount',
         'total_fee' => 'getTotalFee',
         'total_fees' => 'getTotalFees',
+        'type' => 'getType',
         '_links' => 'getLinks'
     ];
 
@@ -254,6 +254,10 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const STATUS_APPROVED = 'APPROVED';
+    public const STATUS_AWAITING_APPROVAL = 'AWAITING_APPROVAL';
+    public const STATUS_CANCELLED = 'CANCELLED';
+    public const STATUS_PENDING = 'PENDING';
     public const TYPE_MERCHANT_REVENUE = 'MERCHANT_REVENUE';
     public const TYPE_PLATFORM_FEE = 'PLATFORM_FEE';
     public const TYPE_PARTNER_FEE = 'PARTNER_FEE';
@@ -261,11 +265,21 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     public const TYPE_MERCHANT = 'MERCHANT';
     public const TYPE_APPLICATION = 'APPLICATION';
     public const TYPE_PLATFORM = 'PLATFORM';
-    public const STATUS_APPROVED = 'APPROVED';
-    public const STATUS_AWAITING_APPROVAL = 'AWAITING_APPROVAL';
-    public const STATUS_CANCELLED = 'CANCELLED';
-    public const STATUS_PENDING = 'PENDING';
-    public const STATUS_STAGED = 'STAGED';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_APPROVED,
+            self::STATUS_AWAITING_APPROVAL,
+            self::STATUS_CANCELLED,
+            self::STATUS_PENDING,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -286,22 +300,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_APPROVED,
-            self::STATUS_AWAITING_APPROVAL,
-            self::STATUS_CANCELLED,
-            self::STATUS_PENDING,
-            self::STATUS_STAGED,
-        ];
-    }
-
-    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -316,8 +314,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -331,9 +327,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['payment_type'] = $data['payment_type'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['total_amount'] = $data['total_amount'] ?? null;
         $this->container['total_fee'] = $data['total_fee'] ?? null;
         $this->container['total_fees'] = $data['total_fees'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
 
@@ -346,20 +344,20 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'status', must be one of '%s'",
                 $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -378,64 +376,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Type of `Settlement`.
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -576,9 +516,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDestination($destination, $deserialize = false)
     {
-
-        
-
         $this->container['destination'] = $destination;
 
         return $this;
@@ -741,7 +678,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status The status of the `Settlement`. Available values include:<ul><li>**PENDING**<li>**STAGED**<li>**AWAITING_APPROVAL**<li>**APPROVED**.</ul> Merchants only receive payouts when `Settlements` are **APPROVED**. For more information, see [Payouts](/guides/payouts/payouts/).
+     * @param string|null $status The status of the `Settlement`. Available values include:<ul><li>**PENDING**<li>**AWAITING_APPROVAL**<li>**APPROVED**.</ul> Merchants only receive payouts when `Settlements` are **APPROVED** and receive the resulting funding `Transfer` . For more information, see [Payouts](/guides/payouts/payouts/).
      *
      * @return self
      */
@@ -758,6 +695,30 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -823,13 +784,47 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_fees
      *
-     * @param int|null $total_fees Sum of the fees in the `Settlement`.
+     * @param int|null $total_fees Sum of the fees  (including Subcription Billing) in the `Settlement`.
      *
      * @return self
      */
     public function setTotalFees($total_fees, $deserialize = false)
     {
         $this->container['total_fees'] = $total_fees;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type Type of `Settlement`.
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

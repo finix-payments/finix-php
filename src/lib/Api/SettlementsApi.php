@@ -119,9 +119,9 @@ class SettlementsApi
     /**
      * Operation create
      *
-     * Create a Batch Settlement
+     * Close Current Active Settlement
      *
-     * @param  string $identity_id ID of identity to fetch (required)
+     * @param  string $identity_id ID of the &#x60;Identity&#x60; for the merchant you want to settle. (required)
      * @param  \Finix\Model\CreateSettlementRequest $create_settlement_request create_settlement_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -137,9 +137,9 @@ class SettlementsApi
     /**
      * Operation createWithHttpInfo
      *
-     * Create a Batch Settlement
+     * Close Current Active Settlement
      *
-     * @param  string $identity_id ID of identity to fetch (required)
+     * @param  string $identity_id ID of the &#x60;Identity&#x60; for the merchant you want to settle. (required)
      * @param  \Finix\Model\CreateSettlementRequest $create_settlement_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -375,9 +375,9 @@ class SettlementsApi
     /**
      * Operation createAsync
      *
-     * Create a Batch Settlement
+     * Close Current Active Settlement
      *
-     * @param  string $identity_id ID of identity to fetch (required)
+     * @param  string $identity_id ID of the &#x60;Identity&#x60; for the merchant you want to settle. (required)
      * @param  \Finix\Model\CreateSettlementRequest $create_settlement_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -396,9 +396,9 @@ class SettlementsApi
     /**
      * Operation createAsyncWithHttpInfo
      *
-     * Create a Batch Settlement
+     * Close Current Active Settlement
      *
-     * @param  string $identity_id ID of identity to fetch (required)
+     * @param  string $identity_id ID of the &#x60;Identity&#x60; for the merchant you want to settle. (required)
      * @param  \Finix\Model\CreateSettlementRequest $create_settlement_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -448,7 +448,7 @@ class SettlementsApi
     /**
      * Create request for operation 'create'
      *
-     * @param  string $identity_id ID of identity to fetch (required)
+     * @param  string $identity_id ID of the &#x60;Identity&#x60; for the merchant you want to settle. (required)
      * @param  \Finix\Model\CreateSettlementRequest $create_settlement_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -570,7 +570,7 @@ class SettlementsApi
     /**
      * Operation get
      *
-     * Get a Settlement
+     * Fetch a Settlement
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
      *
@@ -587,7 +587,7 @@ class SettlementsApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Settlement
+     * Fetch a Settlement
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
      *
@@ -778,7 +778,7 @@ class SettlementsApi
     /**
      * Operation getAsync
      *
-     * Get a Settlement
+     * Fetch a Settlement
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
      *
@@ -798,7 +798,7 @@ class SettlementsApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Settlement
+     * Fetch a Settlement
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
      *
@@ -953,7 +953,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1000,7 +1000,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1196,7 +1196,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1221,7 +1221,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1275,7 +1275,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1414,7 +1414,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1461,7 +1461,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1657,7 +1657,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1682,7 +1682,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1736,7 +1736,7 @@ class SettlementsApi
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
      * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1870,16 +1870,16 @@ class SettlementsApi
     /**
      * Operation list
      *
-     * List Settlements
+     * List All Settlements
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1921,16 +1921,16 @@ class SettlementsApi
     /**
      * Operation listWithHttpInfo
      *
-     * List Settlements
+     * List All Settlements
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2098,16 +2098,16 @@ class SettlementsApi
     /**
      * Operation listAsync
      *
-     * List Settlements
+     * List All Settlements
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2127,16 +2127,16 @@ class SettlementsApi
     /**
      * Operation listAsyncWithHttpInfo
      *
-     * List Settlements
+     * List All Settlements
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2189,12 +2189,12 @@ class SettlementsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  int $limit The numbers of items to return (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2654,388 +2654,6 @@ class SettlementsApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation update
-     *
-     * Update a Settlement
-     *
-     * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  \Finix\Model\UpdateSettlementRequest $update_settlement_request update_settlement_request (optional)
-     *
-     * @throws \Finix\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Finix\Model\Settlement|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error406NotAcceptable
-     */
-    public function update($settlement_id, $update_settlement_request = null)
-    {
-        list($response) = $this->updateWithHttpInfo($settlement_id, $update_settlement_request);
-        return $response;
-    }
-
-    /**
-     * Operation updateWithHttpInfo
-     *
-     * Update a Settlement
-     *
-     * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  \Finix\Model\UpdateSettlementRequest $update_settlement_request (optional)
-     *
-     * @throws \Finix\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Finix\Model\Settlement|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateWithHttpInfo($settlement_id, $update_settlement_request = null)
-    {
-        $request = $this->updateRequest($settlement_id, $update_settlement_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Finix\Model\Settlement' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Finix\Model\Settlement' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Finix\Model\Settlement', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\Finix\Model\Error401Unauthorized' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Finix\Model\Error401Unauthorized' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Finix\Model\Error401Unauthorized', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\Finix\Model\Error403ForbiddenList' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Finix\Model\Error403ForbiddenList' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Finix\Model\Error403ForbiddenList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 406:
-                    if ('\Finix\Model\Error406NotAcceptable' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Finix\Model\Error406NotAcceptable' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Finix\Model\Error406NotAcceptable', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Finix\Model\Settlement';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Finix\Model\Settlement',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Finix\Model\Error401Unauthorized',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Finix\Model\Error403ForbiddenList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 406:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Finix\Model\Error406NotAcceptable',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateAsync
-     *
-     * Update a Settlement
-     *
-     * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  \Finix\Model\UpdateSettlementRequest $update_settlement_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateAsync($settlement_id, $update_settlement_request = null)
-    {
-        return $this->updateAsyncWithHttpInfo($settlement_id, $update_settlement_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation updateAsyncWithHttpInfo
-     *
-     * Update a Settlement
-     *
-     * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  \Finix\Model\UpdateSettlementRequest $update_settlement_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateAsyncWithHttpInfo($settlement_id, $update_settlement_request = null)
-    {
-        $returnType = '\Finix\Model\Settlement';
-        $request = $this->updateRequest($settlement_id, $update_settlement_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'update'
-     *
-     * @param  string $settlement_id ID of &#x60;Settlement&#x60; object. (required)
-     * @param  \Finix\Model\UpdateSettlementRequest $update_settlement_request (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function updateRequest($settlement_id, $update_settlement_request = null)
-    {
-        // verify the required parameter 'settlement_id' is set
-        if ($settlement_id === null || (is_array($settlement_id) && count($settlement_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $settlement_id when calling updateSettlement'
-            );
-        }
-
-        $resourcePath = '/settlements/{settlement_id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($settlement_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'settlement_id' . '}',
-                ObjectSerializer::toPathValue($settlement_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/hal+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/hal+json'],
-                ['application/hal+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($update_settlement_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($update_settlement_request));
-            } 
-            elseif($headers['Content-Type'] === 'multipart/form-data'){
-                $multiStreamArr = [];
-                $i = 0;
-                foreach (array_keys($update_settlement_request->getters()) as $get){
-                    $getterName = $update_settlement_request->getters()[$get];
-                    $multiStreamArr[$i] =  ['name' => $get, 
-                    'contents' =>$update_settlement_request->$getterName()];
-                    $i = $i + 1;
-                }
-                $httpBody = new MultipartStream($multiStreamArr, 'boundary');
-                
-                $headers = $this->headerSelector->selectHeadersForMultipart(
-                    ['application/hal+json']
-                );
-            }
-            else {
-                $httpBody = $update_settlement_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $headers['Finix-Version'] = '2022-02-01';
-        
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

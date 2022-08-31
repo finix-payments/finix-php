@@ -204,6 +204,18 @@ class IdentityEntityDob implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['day']) && ($this->container['day'] < 1)) {
+            $invalidProperties[] = "invalid value for 'day', must be bigger than or equal to 1.";
+        }
+        
+        if (!is_null($this->container['month']) && ($this->container['month'] < 1)) {
+            $invalidProperties[] = "invalid value for 'month', must be bigger than or equal to 1.";
+        }
+        
+        if (!is_null($this->container['year']) && ($this->container['year'] < 1900)) {
+            $invalidProperties[] = "invalid value for 'year', must be bigger than or equal to 1900.";
+        }
+        
         return $invalidProperties;
     }
 
@@ -232,12 +244,18 @@ class IdentityEntityDob implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets day
      *
-     * @param int|null $day day
+     * @param int|null $day Day of birth (between 1 and 31).
      *
      * @return self
      */
     public function setDay($day, $deserialize = false)
     {
+
+        if (!is_null($day) && ($day < 1)) {
+            throw new \InvalidArgumentException('invalid value for $day when calling IdentityEntityDob., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['day'] = $day;
 
         return $this;
@@ -256,12 +274,18 @@ class IdentityEntityDob implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets month
      *
-     * @param int|null $month month
+     * @param int|null $month Month of birth (between 1 and 12).
      *
      * @return self
      */
     public function setMonth($month, $deserialize = false)
     {
+
+        if (!is_null($month) && ($month < 1)) {
+            throw new \InvalidArgumentException('invalid value for $month when calling IdentityEntityDob., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['month'] = $month;
 
         return $this;
@@ -280,12 +304,18 @@ class IdentityEntityDob implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets year
      *
-     * @param int|null $year year
+     * @param int|null $year Year of birth (4-digit). Year must be greater than 1900.
      *
      * @return self
      */
     public function setYear($year, $deserialize = false)
     {
+
+        if (!is_null($year) && ($year < 1900)) {
+            throw new \InvalidArgumentException('invalid value for $year when calling IdentityEntityDob., must be bigger than or equal to 1900.');
+        }
+        
+
         $this->container['year'] = $year;
 
         return $this;

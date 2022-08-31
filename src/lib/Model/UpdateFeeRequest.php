@@ -220,7 +220,7 @@ class UpdateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tags
      *
-     * @param object|null $tags tags
+     * @param object|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */

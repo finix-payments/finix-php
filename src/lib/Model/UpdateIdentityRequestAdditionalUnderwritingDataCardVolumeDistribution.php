@@ -62,8 +62,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
       */
     protected static $openAPITypes = [
         'card_present_percentage' => 'int',
-        'mail_order_telephone_order_percentage' => 'int',
-        'ecommerce_percentage' => 'int'
+        'ecommerce_percentage' => 'int',
+        'mail_order_telephone_order_percentage' => 'int'
     ];
 
     /**
@@ -75,8 +75,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
       */
     protected static $openAPIFormats = [
         'card_present_percentage' => null,
-        'mail_order_telephone_order_percentage' => null,
-        'ecommerce_percentage' => null
+        'ecommerce_percentage' => null,
+        'mail_order_telephone_order_percentage' => null
     ];
 
     /**
@@ -107,8 +107,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      */
     protected static $attributeMap = [
         'card_present_percentage' => 'card_present_percentage',
-        'mail_order_telephone_order_percentage' => 'mail_order_telephone_order_percentage',
-        'ecommerce_percentage' => 'ecommerce_percentage'
+        'ecommerce_percentage' => 'ecommerce_percentage',
+        'mail_order_telephone_order_percentage' => 'mail_order_telephone_order_percentage'
     ];
 
     /**
@@ -118,8 +118,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      */
     protected static $setters = [
         'card_present_percentage' => 'setCardPresentPercentage',
-        'mail_order_telephone_order_percentage' => 'setMailOrderTelephoneOrderPercentage',
-        'ecommerce_percentage' => 'setEcommercePercentage'
+        'ecommerce_percentage' => 'setEcommercePercentage',
+        'mail_order_telephone_order_percentage' => 'setMailOrderTelephoneOrderPercentage'
     ];
 
     /**
@@ -129,8 +129,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
      */
     protected static $getters = [
         'card_present_percentage' => 'getCardPresentPercentage',
-        'mail_order_telephone_order_percentage' => 'getMailOrderTelephoneOrderPercentage',
-        'ecommerce_percentage' => 'getEcommercePercentage'
+        'ecommerce_percentage' => 'getEcommercePercentage',
+        'mail_order_telephone_order_percentage' => 'getMailOrderTelephoneOrderPercentage'
     ];
 
     /**
@@ -191,8 +191,8 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
     public function __construct(array $data = null)
     {
         $this->container['card_present_percentage'] = $data['card_present_percentage'] ?? null;
-        $this->container['mail_order_telephone_order_percentage'] = $data['mail_order_telephone_order_percentage'] ?? null;
         $this->container['ecommerce_percentage'] = $data['ecommerce_percentage'] ?? null;
+        $this->container['mail_order_telephone_order_percentage'] = $data['mail_order_telephone_order_percentage'] ?? null;
     }
 
     /**
@@ -244,30 +244,6 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
     }
 
     /**
-     * Gets mail_order_telephone_order_percentage
-     *
-     * @return int|null
-     */
-    public function getMailOrderTelephoneOrderPercentage()
-    {
-        return $this->container['mail_order_telephone_order_percentage'];
-    }
-
-    /**
-     * Sets mail_order_telephone_order_percentage
-     *
-     * @param int|null $mail_order_telephone_order_percentage The percentage of the merchant's business that's mail or telephone order (between 0 and 100).
-     *
-     * @return self
-     */
-    public function setMailOrderTelephoneOrderPercentage($mail_order_telephone_order_percentage, $deserialize = false)
-    {
-        $this->container['mail_order_telephone_order_percentage'] = $mail_order_telephone_order_percentage;
-
-        return $this;
-    }
-
-    /**
      * Gets ecommerce_percentage
      *
      * @return int|null
@@ -287,6 +263,30 @@ class UpdateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution impl
     public function setEcommercePercentage($ecommerce_percentage, $deserialize = false)
     {
         $this->container['ecommerce_percentage'] = $ecommerce_percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets mail_order_telephone_order_percentage
+     *
+     * @return int|null
+     */
+    public function getMailOrderTelephoneOrderPercentage()
+    {
+        return $this->container['mail_order_telephone_order_percentage'];
+    }
+
+    /**
+     * Sets mail_order_telephone_order_percentage
+     *
+     * @param int|null $mail_order_telephone_order_percentage The percentage of the merchant's business that's mail or telephone order (between 0 and 100).
+     *
+     * @return self
+     */
+    public function setMailOrderTelephoneOrderPercentage($mail_order_telephone_order_percentage, $deserialize = false)
+    {
+        $this->container['mail_order_telephone_order_percentage'] = $mail_order_telephone_order_percentage;
 
         return $this;
     }

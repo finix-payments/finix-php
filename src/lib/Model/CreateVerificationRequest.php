@@ -60,11 +60,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'identity' => 'string',
-        'instrument' => 'string',
         'merchant' => 'string',
-        'processor' => 'string'
+        'processor' => 'string',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -75,11 +74,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'identity' => null,
-        'instrument' => null,
         'merchant' => null,
-        'processor' => null
+        'processor' => null,
+        'tags' => null
     ];
 
     /**
@@ -109,11 +107,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'identity' => 'identity',
-        'instrument' => 'instrument',
         'merchant' => 'merchant',
-        'processor' => 'processor'
+        'processor' => 'processor',
+        'tags' => 'tags'
     ];
 
     /**
@@ -122,11 +119,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'identity' => 'setIdentity',
-        'instrument' => 'setInstrument',
         'merchant' => 'setMerchant',
-        'processor' => 'setProcessor'
+        'processor' => 'setProcessor',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -135,11 +131,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'identity' => 'getIdentity',
-        'instrument' => 'getInstrument',
         'merchant' => 'getMerchant',
-        'processor' => 'getProcessor'
+        'processor' => 'getProcessor',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -199,11 +194,10 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['identity'] = $data['identity'] ?? null;
-        $this->container['instrument'] = $data['instrument'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -231,30 +225,6 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets identity
      *
      * @return string|null
@@ -274,30 +244,6 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setIdentity($identity, $deserialize = false)
     {
         $this->container['identity'] = $identity;
-
-        return $this;
-    }
-
-    /**
-     * Gets instrument
-     *
-     * @return string|null
-     */
-    public function getInstrument()
-    {
-        return $this->container['instrument'];
-    }
-
-    /**
-     * Sets instrument
-     *
-     * @param string|null $instrument The `Payment Instrument` that'll be used to settle the `Merchant's` funds.
-     *
-     * @return self
-     */
-    public function setInstrument($instrument, $deserialize = false)
-    {
-        $this->container['instrument'] = $instrument;
 
         return $this;
     }
@@ -339,13 +285,37 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets processor
      *
-     * @param string|null $processor Name of the `Verification` processor.
+     * @param string|null $processor Set the acquiring processor. Avalible values include: <ul><li><strong>DUMMY_V1</strong></li><li><strong>LITLE_V1</strong></li><li><strong>MASTERCARD_V1</strong></li><li><strong>VISA_V1</strong></li><li><strong>NMI_V1</strong></li><li><strong>VANTIV_V1</strong></li></ul>Use <strong>DUMMY_V1</strong> or  <strong>null</strong> to use your sandbox. For more details on which processor to use, reach out to your Finix point of contact or email <a href=\"/guides/getting-started/support-at-finix/\">Finix Support</a>.
      *
      * @return self
      */
     public function setProcessor($processor, $deserialize = false)
     {
         $this->container['processor'] = $processor;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

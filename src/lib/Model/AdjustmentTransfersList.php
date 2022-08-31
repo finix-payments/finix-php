@@ -60,9 +60,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'page' => '\Finix\Model\PageCursor',
         '_embedded' => '\Finix\Model\AdjustmentTransfersListEmbedded',
-        '_links' => '\Finix\Model\DisputeEvidenceLinks',
-        'page' => '\Finix\Model\PageCursor'
+        '_links' => '\Finix\Model\DisputeEvidenceLinks'
     ];
 
     /**
@@ -73,9 +73,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'page' => null,
         '_embedded' => null,
-        '_links' => null,
-        'page' => null
+        '_links' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'page' => 'page',
         '_embedded' => '_embedded',
-        '_links' => '_links',
-        'page' => 'page'
+        '_links' => '_links'
     ];
 
     /**
@@ -116,9 +116,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'page' => 'setPage',
         '_embedded' => 'setEmbedded',
-        '_links' => 'setLinks',
-        'page' => 'setPage'
+        '_links' => 'setLinks'
     ];
 
     /**
@@ -127,9 +127,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'page' => 'getPage',
         '_embedded' => 'getEmbedded',
-        '_links' => 'getLinks',
-        'page' => 'getPage'
+        '_links' => 'getLinks'
     ];
 
     /**
@@ -189,9 +189,9 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
+        $this->container['page'] = $data['page'] ?? null;
         $this->container['_embedded'] = $data['_embedded'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
-        $this->container['page'] = $data['page'] ?? null;
     }
 
     /**
@@ -217,6 +217,30 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets page
+     *
+     * @return \Finix\Model\PageCursor|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param \Finix\Model\PageCursor|null $page page
+     *
+     * @return self
+     */
+    public function setPage($page, $deserialize = false)
+    {
+        $this->container['page'] = $page;
+
+        return $this;
+    }
 
     /**
      * Gets _embedded
@@ -262,30 +286,6 @@ class AdjustmentTransfersList implements ModelInterface, ArrayAccess, \JsonSeria
     public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
-
-        return $this;
-    }
-
-    /**
-     * Gets page
-     *
-     * @return \Finix\Model\PageCursor|null
-     */
-    public function getPage()
-    {
-        return $this->container['page'];
-    }
-
-    /**
-     * Sets page
-     *
-     * @param \Finix\Model\PageCursor|null $page page
-     *
-     * @return self
-     */
-    public function setPage($page, $deserialize = false)
-    {
-        $this->container['page'] = $page;
 
         return $this;
     }

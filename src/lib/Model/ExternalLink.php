@@ -62,14 +62,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'created_at' => '\DateTime',
-        'url' => 'string',
-        'type' => 'string',
-        'expires_at' => 'string',
-        'user_id' => 'string',
-        'file_id' => 'string',
         'duration' => 'string',
+        'expired' => 'bool',
+        'expires_at' => 'string',
+        'file_id' => 'string',
         'tags' => 'array<string,string>',
-        'expired' => 'bool'
+        'type' => 'string',
+        'url' => 'string',
+        'user_id' => 'string'
     ];
 
     /**
@@ -82,14 +82,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'created_at' => 'date-time',
-        'url' => null,
-        'type' => null,
-        'expires_at' => null,
-        'user_id' => null,
-        'file_id' => null,
         'duration' => null,
+        'expired' => null,
+        'expires_at' => null,
+        'file_id' => null,
         'tags' => null,
-        'expired' => null
+        'type' => null,
+        'url' => null,
+        'user_id' => null
     ];
 
     /**
@@ -121,14 +121,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'created_at' => 'created_at',
-        'url' => 'url',
-        'type' => 'type',
-        'expires_at' => 'expires_at',
-        'user_id' => 'user_id',
-        'file_id' => 'file_id',
         'duration' => 'duration',
+        'expired' => 'expired',
+        'expires_at' => 'expires_at',
+        'file_id' => 'file_id',
         'tags' => 'tags',
-        'expired' => 'expired'
+        'type' => 'type',
+        'url' => 'url',
+        'user_id' => 'user_id'
     ];
 
     /**
@@ -139,14 +139,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
-        'url' => 'setUrl',
-        'type' => 'setType',
-        'expires_at' => 'setExpiresAt',
-        'user_id' => 'setUserId',
-        'file_id' => 'setFileId',
         'duration' => 'setDuration',
+        'expired' => 'setExpired',
+        'expires_at' => 'setExpiresAt',
+        'file_id' => 'setFileId',
         'tags' => 'setTags',
-        'expired' => 'setExpired'
+        'type' => 'setType',
+        'url' => 'setUrl',
+        'user_id' => 'setUserId'
     ];
 
     /**
@@ -157,14 +157,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
-        'url' => 'getUrl',
-        'type' => 'getType',
-        'expires_at' => 'getExpiresAt',
-        'user_id' => 'getUserId',
-        'file_id' => 'getFileId',
         'duration' => 'getDuration',
+        'expired' => 'getExpired',
+        'expires_at' => 'getExpiresAt',
+        'file_id' => 'getFileId',
         'tags' => 'getTags',
-        'expired' => 'getExpired'
+        'type' => 'getType',
+        'url' => 'getUrl',
+        'user_id' => 'getUserId'
     ];
 
     /**
@@ -226,14 +226,14 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['expires_at'] = $data['expires_at'] ?? null;
-        $this->container['user_id'] = $data['user_id'] ?? null;
-        $this->container['file_id'] = $data['file_id'] ?? null;
         $this->container['duration'] = $data['duration'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['expired'] = $data['expired'] ?? null;
+        $this->container['expires_at'] = $data['expires_at'] ?? null;
+        $this->container['file_id'] = $data['file_id'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['user_id'] = $data['user_id'] ?? null;
     }
 
     /**
@@ -309,49 +309,49 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets url
+     * Gets duration
      *
      * @return string|null
      */
-    public function getUrl()
+    public function getDuration()
     {
-        return $this->container['url'];
+        return $this->container['duration'];
     }
 
     /**
-     * Sets url
+     * Sets duration
      *
-     * @param string|null $url The URL you can share with merchants to **UPLOAD** or **DOWNLOAD** files depending on the request sent.
+     * @param string|null $duration Details how long the `url` will be avalible for users to upload files to.
      *
      * @return self
      */
-    public function setUrl($url, $deserialize = false)
+    public function setDuration($duration, $deserialize = false)
     {
-        $this->container['url'] = $url;
+        $this->container['duration'] = $duration;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets expired
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getType()
+    public function getExpired()
     {
-        return $this->container['type'];
+        return $this->container['expired'];
     }
 
     /**
-     * Sets type
+     * Sets expired
      *
-     * @param string|null $type Sets if the link is for uploading or downloading files from Finix.
+     * @param bool|null $expired <ul><li>If <strong>TRUE</strong> the link has expired<br><li>If <strong>FALSE</strong>, the link is active and files can still be uploaded or downloaded from the link.
      *
      * @return self
      */
-    public function setType($type, $deserialize = false)
+    public function setExpired($expired, $deserialize = false)
     {
-        $this->container['type'] = $type;
+        $this->container['expired'] = $expired;
 
         return $this;
     }
@@ -381,30 +381,6 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets user_id
-     *
-     * @return string|null
-     */
-    public function getUserId()
-    {
-        return $this->container['user_id'];
-    }
-
-    /**
-     * Sets user_id
-     *
-     * @param string|null $user_id The ID of the `user` that requested to create this link.
-     *
-     * @return self
-     */
-    public function setUserId($user_id, $deserialize = false)
-    {
-        $this->container['user_id'] = $user_id;
-
-        return $this;
-    }
-
-    /**
      * Gets file_id
      *
      * @return string|null
@@ -424,30 +400,6 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFileId($file_id, $deserialize = false)
     {
         $this->container['file_id'] = $file_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration
-     *
-     * @return string|null
-     */
-    public function getDuration()
-    {
-        return $this->container['duration'];
-    }
-
-    /**
-     * Sets duration
-     *
-     * @param string|null $duration Details how long the `url` will be avalible for users to upload files to.
-     *
-     * @return self
-     */
-    public function setDuration($duration, $deserialize = false)
-    {
-        $this->container['duration'] = $duration;
 
         return $this;
     }
@@ -477,25 +429,73 @@ class ExternalLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets expired
+     * Gets type
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getExpired()
+    public function getType()
     {
-        return $this->container['expired'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets expired
+     * Sets type
      *
-     * @param bool|null $expired <ul><li>If <strong>TRUE</strong> the link has expired<br><li>If <strong>FALSE</strong>, the link is active and files can still be uploaded or downloaded from the link.
+     * @param string|null $type Sets if the link is for uploading or downloading files from Finix.
      *
      * @return self
      */
-    public function setExpired($expired, $deserialize = false)
+    public function setType($type, $deserialize = false)
     {
-        $this->container['expired'] = $expired;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url The URL you can share with merchants to **UPLOAD** or **DOWNLOAD** files depending on the request sent.
+     *
+     * @return self
+     */
+    public function setUrl($url, $deserialize = false)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_id
+     *
+     * @return string|null
+     */
+    public function getUserId()
+    {
+        return $this->container['user_id'];
+    }
+
+    /**
+     * Sets user_id
+     *
+     * @param string|null $user_id The ID of the `user` that requested to create this link.
+     *
+     * @return self
+     */
+    public function setUserId($user_id, $deserialize = false)
+    {
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }

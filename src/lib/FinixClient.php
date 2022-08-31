@@ -30,6 +30,7 @@ namespace Finix;
 
 use Finix\Api\AuthorizationsApi;
 use Finix\Api\BalanceTransfersApi;
+use Finix\Api\ComplianceFormsApi;
 use Finix\Api\DevicesApi;
 use Finix\Api\DisputesApi;
 use Finix\Api\FeeProfilesApi;
@@ -38,6 +39,7 @@ use Finix\Api\IdentitiesApi;
 use Finix\Api\InstrumentUpdatesApi;
 use Finix\Api\MerchantProfilesApi;
 use Finix\Api\MerchantsApi;
+use Finix\Api\OnboardingFormsApi;
 use Finix\Api\PaymentInstrumentsApi;
 use Finix\Api\SettlementsApi;
 use Finix\Api\TransfersApi;
@@ -550,6 +552,11 @@ class FinixClient
     public readonly BalanceTransfersApi $balanceTransfers;
 
     /**
+     * @var ComplianceFormsApi ComplianceFormsApi
+     */
+    public readonly ComplianceFormsApi $complianceForms;
+
+    /**
      * @var DevicesApi DevicesApi
      */
     public readonly DevicesApi $devices;
@@ -588,6 +595,11 @@ class FinixClient
      * @var MerchantsApi MerchantsApi
      */
     public readonly MerchantsApi $merchants;
+
+    /**
+     * @var OnboardingFormsApi OnboardingFormsApi
+     */
+    public readonly OnboardingFormsApi $onboardingForms;
 
     /**
      * @var PaymentInstrumentsApi PaymentInstrumentsApi
@@ -648,6 +660,7 @@ class FinixClient
 
         $this->authorizations = new AuthorizationsApi($client, $config, $selector, $hostIndex);
         $this->balanceTransfers = new BalanceTransfersApi($client, $config, $selector, $hostIndex);
+        $this->complianceForms = new ComplianceFormsApi($client, $config, $selector, $hostIndex);
         $this->devices = new DevicesApi($client, $config, $selector, $hostIndex);
         $this->disputes = new DisputesApi($client, $config, $selector, $hostIndex);
         $this->feeProfiles = new FeeProfilesApi($client, $config, $selector, $hostIndex);
@@ -656,6 +669,7 @@ class FinixClient
         $this->instrumentUpdates = new InstrumentUpdatesApi($client, $config, $selector, $hostIndex);
         $this->merchantProfiles = new MerchantProfilesApi($client, $config, $selector, $hostIndex);
         $this->merchants = new MerchantsApi($client, $config, $selector, $hostIndex);
+        $this->onboardingForms = new OnboardingFormsApi($client, $config, $selector, $hostIndex);
         $this->paymentInstruments = new PaymentInstrumentsApi($client, $config, $selector, $hostIndex);
         $this->settlements = new SettlementsApi($client, $config, $selector, $hostIndex);
         $this->transfers = new TransfersApi($client, $config, $selector, $hostIndex);

@@ -60,9 +60,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'url' => 'string',
+        'authentication' => '\Finix\Model\CreateWebhookRequestAuthentication',
         'enabled' => 'bool',
-        'authentication' => '\Finix\Model\CreateWebhookRequestAuthentication'
+        'url' => 'string'
     ];
 
     /**
@@ -73,9 +73,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'url' => null,
+        'authentication' => null,
         'enabled' => null,
-        'authentication' => null
+        'url' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
+        'authentication' => 'authentication',
         'enabled' => 'enabled',
-        'authentication' => 'authentication'
+        'url' => 'url'
     ];
 
     /**
@@ -116,9 +116,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
+        'authentication' => 'setAuthentication',
         'enabled' => 'setEnabled',
-        'authentication' => 'setAuthentication'
+        'url' => 'setUrl'
     ];
 
     /**
@@ -127,9 +127,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
+        'authentication' => 'getAuthentication',
         'enabled' => 'getEnabled',
-        'authentication' => 'getAuthentication'
+        'url' => 'getUrl'
     ];
 
     /**
@@ -189,9 +189,9 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = $data['url'] ?? null;
-        $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['authentication'] = $data['authentication'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -203,7 +203,10 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['url']) && (mb_strlen($this->container['url']) > 120)) {
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
+        }
+        if ((mb_strlen($this->container['url']) > 120)) {
             $invalidProperties[] = "invalid value for 'url', the character length must be smaller than or equal to 120.";
         }
 
@@ -223,30 +226,25 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets url
+     * Gets authentication
      *
-     * @return string|null
+     * @return \Finix\Model\CreateWebhookRequestAuthentication|null
      */
-    public function getUrl()
+    public function getAuthentication()
     {
-        return $this->container['url'];
+        return $this->container['authentication'];
     }
 
     /**
-     * Sets url
+     * Sets authentication
      *
-     * @param string|null $url The HTTP or HTTPS URL where callbacks (i.e. events) will be sent via POST request (max 120 characters).
+     * @param \Finix\Model\CreateWebhookRequestAuthentication|null $authentication authentication
      *
      * @return self
      */
-    public function setUrl($url, $deserialize = false)
+    public function setAuthentication($authentication, $deserialize = false)
     {
-        if (!is_null($url) && (mb_strlen($url) > 120)) {
-            throw new \InvalidArgumentException('invalid length for $url when calling CreateWebhookRequest., must be smaller than or equal to 120.');
-        }
-        
-
-        $this->container['url'] = $url;
+        $this->container['authentication'] = $authentication;
 
         return $this;
     }
@@ -276,25 +274,30 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets authentication
+     * Gets url
      *
-     * @return \Finix\Model\CreateWebhookRequestAuthentication|null
+     * @return string
      */
-    public function getAuthentication()
+    public function getUrl()
     {
-        return $this->container['authentication'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets authentication
+     * Sets url
      *
-     * @param \Finix\Model\CreateWebhookRequestAuthentication|null $authentication authentication
+     * @param string $url The HTTP or HTTPS URL where callbacks (i.e. events) will be sent via POST request (max 120 characters).
      *
      * @return self
      */
-    public function setAuthentication($authentication, $deserialize = false)
+    public function setUrl($url, $deserialize = false)
     {
-        $this->container['authentication'] = $authentication;
+        if ((mb_strlen($url) > 120)) {
+            throw new \InvalidArgumentException('invalid length for $url when calling CreateWebhookRequest., must be smaller than or equal to 120.');
+        }
+        
+
+        $this->container['url'] = $url;
 
         return $this;
     }

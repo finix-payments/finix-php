@@ -60,21 +60,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'expiration_year' => 'int',
-        'tags' => 'array<string,string>',
-        'number' => 'string',
-        'expiration_month' => 'int',
         'address' => '\Finix\Model\CreatePaymentInstrumentRequestAddress',
-        'security_code' => 'string',
-        'type' => 'string',
+        'expiration_month' => 'int',
+        'expiration_year' => 'int',
         'identity' => 'string',
+        'name' => 'string',
+        'number' => 'string',
+        'security_code' => 'string',
+        'tags' => 'array<string,string>',
+        'type' => 'string',
         'third_party_token' => 'string',
-        'account_type' => 'string',
-        'country' => 'string',
-        'bank_code' => 'string',
         'account_number' => 'string',
-        'token' => 'string'
+        'account_type' => 'string',
+        'attempt_bank_account_validation_check' => 'bool',
+        'bank_code' => 'string',
+        'country' => 'string',
+        'token' => 'string',
+        'merchant_identity' => 'string'
     ];
 
     /**
@@ -85,21 +87,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'expiration_year' => null,
-        'tags' => null,
-        'number' => null,
-        'expiration_month' => null,
         'address' => null,
-        'security_code' => null,
-        'type' => null,
+        'expiration_month' => null,
+        'expiration_year' => null,
         'identity' => null,
+        'name' => null,
+        'number' => null,
+        'security_code' => null,
+        'tags' => null,
+        'type' => null,
         'third_party_token' => null,
-        'account_type' => null,
-        'country' => null,
-        'bank_code' => null,
         'account_number' => null,
-        'token' => null
+        'account_type' => null,
+        'attempt_bank_account_validation_check' => null,
+        'bank_code' => null,
+        'country' => null,
+        'token' => null,
+        'merchant_identity' => null
     ];
 
     /**
@@ -129,21 +133,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'expiration_year' => 'expiration_year',
-        'tags' => 'tags',
-        'number' => 'number',
-        'expiration_month' => 'expiration_month',
         'address' => 'address',
-        'security_code' => 'security_code',
-        'type' => 'type',
+        'expiration_month' => 'expiration_month',
+        'expiration_year' => 'expiration_year',
         'identity' => 'identity',
+        'name' => 'name',
+        'number' => 'number',
+        'security_code' => 'security_code',
+        'tags' => 'tags',
+        'type' => 'type',
         'third_party_token' => 'third_party_token',
-        'account_type' => 'account_type',
-        'country' => 'country',
-        'bank_code' => 'bank_code',
         'account_number' => 'account_number',
-        'token' => 'token'
+        'account_type' => 'account_type',
+        'attempt_bank_account_validation_check' => 'attempt_bank_account_validation_check',
+        'bank_code' => 'bank_code',
+        'country' => 'country',
+        'token' => 'token',
+        'merchant_identity' => 'merchant_identity'
     ];
 
     /**
@@ -152,21 +158,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'expiration_year' => 'setExpirationYear',
-        'tags' => 'setTags',
-        'number' => 'setNumber',
-        'expiration_month' => 'setExpirationMonth',
         'address' => 'setAddress',
-        'security_code' => 'setSecurityCode',
-        'type' => 'setType',
+        'expiration_month' => 'setExpirationMonth',
+        'expiration_year' => 'setExpirationYear',
         'identity' => 'setIdentity',
+        'name' => 'setName',
+        'number' => 'setNumber',
+        'security_code' => 'setSecurityCode',
+        'tags' => 'setTags',
+        'type' => 'setType',
         'third_party_token' => 'setThirdPartyToken',
-        'account_type' => 'setAccountType',
-        'country' => 'setCountry',
-        'bank_code' => 'setBankCode',
         'account_number' => 'setAccountNumber',
-        'token' => 'setToken'
+        'account_type' => 'setAccountType',
+        'attempt_bank_account_validation_check' => 'setAttemptBankAccountValidationCheck',
+        'bank_code' => 'setBankCode',
+        'country' => 'setCountry',
+        'token' => 'setToken',
+        'merchant_identity' => 'setMerchantIdentity'
     ];
 
     /**
@@ -175,21 +183,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'expiration_year' => 'getExpirationYear',
-        'tags' => 'getTags',
-        'number' => 'getNumber',
-        'expiration_month' => 'getExpirationMonth',
         'address' => 'getAddress',
-        'security_code' => 'getSecurityCode',
-        'type' => 'getType',
+        'expiration_month' => 'getExpirationMonth',
+        'expiration_year' => 'getExpirationYear',
         'identity' => 'getIdentity',
+        'name' => 'getName',
+        'number' => 'getNumber',
+        'security_code' => 'getSecurityCode',
+        'tags' => 'getTags',
+        'type' => 'getType',
         'third_party_token' => 'getThirdPartyToken',
-        'account_type' => 'getAccountType',
-        'country' => 'getCountry',
-        'bank_code' => 'getBankCode',
         'account_number' => 'getAccountNumber',
-        'token' => 'getToken'
+        'account_type' => 'getAccountType',
+        'attempt_bank_account_validation_check' => 'getAttemptBankAccountValidationCheck',
+        'bank_code' => 'getBankCode',
+        'country' => 'getCountry',
+        'token' => 'getToken',
+        'merchant_identity' => 'getMerchantIdentity'
     ];
 
     /**
@@ -234,8 +244,9 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     public const TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
     public const TYPE_TOKEN = 'TOKEN';
+    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
+    public const TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
     public const TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
     public const ACCOUNT_TYPE_CHECKING = 'CHECKING';
     public const ACCOUNT_TYPE_SAVINGS = 'SAVINGS';
@@ -251,8 +262,9 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     {
         return [
             self::TYPE_APPLE_PAY,
-            self::TYPE_BANK_ACCOUNT,
             self::TYPE_TOKEN,
+            self::TYPE_BANK_ACCOUNT,
+            self::TYPE_GOOGLE_PAY,
             self::TYPE_PAYMENT_CARD,
         ];
     }
@@ -287,21 +299,23 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['expiration_year'] = $data['expiration_year'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['expiration_month'] = $data['expiration_month'] ?? null;
         $this->container['address'] = $data['address'] ?? null;
-        $this->container['security_code'] = $data['security_code'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
+        $this->container['expiration_month'] = $data['expiration_month'] ?? null;
+        $this->container['expiration_year'] = $data['expiration_year'] ?? null;
         $this->container['identity'] = $data['identity'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['number'] = $data['number'] ?? null;
+        $this->container['security_code'] = $data['security_code'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['third_party_token'] = $data['third_party_token'] ?? null;
-        $this->container['account_type'] = $data['account_type'] ?? null;
-        $this->container['country'] = $data['country'] ?? null;
-        $this->container['bank_code'] = $data['bank_code'] ?? null;
         $this->container['account_number'] = $data['account_number'] ?? null;
+        $this->container['account_type'] = $data['account_type'] ?? null;
+        $this->container['attempt_bank_account_validation_check'] = $data['attempt_bank_account_validation_check'] ?? false;
+        $this->container['bank_code'] = $data['bank_code'] ?? null;
+        $this->container['country'] = $data['country'] ?? null;
         $this->container['token'] = $data['token'] ?? null;
+        $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
     }
 
     /**
@@ -347,97 +361,25 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets name
+     * Gets address
      *
-     * @return string|null
+     * @return \Finix\Model\CreatePaymentInstrumentRequestAddress|null
      */
-    public function getName()
+    public function getAddress()
     {
-        return $this->container['name'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets name
+     * Sets address
      *
-     * @param string|null $name The name of the bank account or card owner.
+     * @param \Finix\Model\CreatePaymentInstrumentRequestAddress|null $address address
      *
      * @return self
      */
-    public function setName($name, $deserialize = false)
+    public function setAddress($address, $deserialize = false)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets expiration_year
-     *
-     * @return int|null
-     */
-    public function getExpirationYear()
-    {
-        return $this->container['expiration_year'];
-    }
-
-    /**
-     * Sets expiration_year
-     *
-     * @param int|null $expiration_year The 4-digit expiration year of the card.
-     *
-     * @return self
-     */
-    public function setExpirationYear($expiration_year, $deserialize = false)
-    {
-        $this->container['expiration_year'] = $expiration_year;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets number
-     *
-     * @return string|null
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param string|null $number The card or bank account number (no dashes in between numbers).
-     *
-     * @return self
-     */
-    public function setNumber($number, $deserialize = false)
-    {
-        $this->container['number'] = $number;
+        $this->container['address'] = $address;
 
         return $this;
     }
@@ -467,25 +409,97 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets address
+     * Gets expiration_year
      *
-     * @return \Finix\Model\CreatePaymentInstrumentRequestAddress|null
+     * @return int|null
      */
-    public function getAddress()
+    public function getExpirationYear()
     {
-        return $this->container['address'];
+        return $this->container['expiration_year'];
     }
 
     /**
-     * Sets address
+     * Sets expiration_year
      *
-     * @param \Finix\Model\CreatePaymentInstrumentRequestAddress|null $address address
+     * @param int|null $expiration_year The 4-digit expiration year of the card.
      *
      * @return self
      */
-    public function setAddress($address, $deserialize = false)
+    public function setExpirationYear($expiration_year, $deserialize = false)
     {
-        $this->container['address'] = $address;
+        $this->container['expiration_year'] = $expiration_year;
+
+        return $this;
+    }
+
+    /**
+     * Gets identity
+     *
+     * @return string|null
+     */
+    public function getIdentity()
+    {
+        return $this->container['identity'];
+    }
+
+    /**
+     * Sets identity
+     *
+     * @param string|null $identity The ID of the resource.
+     *
+     * @return self
+     */
+    public function setIdentity($identity, $deserialize = false)
+    {
+        $this->container['identity'] = $identity;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The name of the bank account or card owner.
+     *
+     * @return self
+     */
+    public function setName($name, $deserialize = false)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets number
+     *
+     * @return string|null
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param string|null $number The card or bank account number (no dashes in between numbers).
+     *
+     * @return self
+     */
+    public function setNumber($number, $deserialize = false)
+    {
+        $this->container['number'] = $number;
 
         return $this;
     }
@@ -510,6 +524,30 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     public function setSecurityCode($security_code, $deserialize = false)
     {
         $this->container['security_code'] = $security_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -549,30 +587,6 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets identity
-     *
-     * @return string|null
-     */
-    public function getIdentity()
-    {
-        return $this->container['identity'];
-    }
-
-    /**
-     * Sets identity
-     *
-     * @param string|null $identity The ID of the resource.
-     *
-     * @return self
-     */
-    public function setIdentity($identity, $deserialize = false)
-    {
-        $this->container['identity'] = $identity;
-
-        return $this;
-    }
-
-    /**
      * Gets third_party_token
      *
      * @return string|null
@@ -585,13 +599,37 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets third_party_token
      *
-     * @param string|null $third_party_token third_party_token
+     * @param string|null $third_party_token Stringified token provided by Google. Required to process Google Pay transactions.
      *
      * @return self
      */
     public function setThirdPartyToken($third_party_token, $deserialize = false)
     {
         $this->container['third_party_token'] = $third_party_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_number
+     *
+     * @return string|null
+     */
+    public function getAccountNumber()
+    {
+        return $this->container['account_number'];
+    }
+
+    /**
+     * Sets account_number
+     *
+     * @param string|null $account_number The bank account number (no dashes in between numbers).
+     *
+     * @return self
+     */
+    public function setAccountNumber($account_number, $deserialize = false)
+    {
+        $this->container['account_number'] = $account_number;
 
         return $this;
     }
@@ -631,25 +669,25 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets country
+     * Gets attempt_bank_account_validation_check
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getCountry()
+    public function getAttemptBankAccountValidationCheck()
     {
-        return $this->container['country'];
+        return $this->container['attempt_bank_account_validation_check'];
     }
 
     /**
-     * Sets country
+     * Sets attempt_bank_account_validation_check
      *
-     * @param string|null $country 3 Letter country code (e.g. USA).
+     * @param bool|null $attempt_bank_account_validation_check Set to **true** if you want to request a bank account validation. Default value is **false**.
      *
      * @return self
      */
-    public function setCountry($country, $deserialize = false)
+    public function setAttemptBankAccountValidationCheck($attempt_bank_account_validation_check, $deserialize = false)
     {
-        $this->container['country'] = $country;
+        $this->container['attempt_bank_account_validation_check'] = $attempt_bank_account_validation_check;
 
         return $this;
     }
@@ -679,25 +717,25 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets account_number
+     * Gets country
      *
      * @return string|null
      */
-    public function getAccountNumber()
+    public function getCountry()
     {
-        return $this->container['account_number'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets account_number
+     * Sets country
      *
-     * @param string|null $account_number The bank account number (no dashes in between numbers).
+     * @param string|null $country 3 Letter country code (e.g. USA).
      *
      * @return self
      */
-    public function setAccountNumber($account_number, $deserialize = false)
+    public function setCountry($country, $deserialize = false)
     {
-        $this->container['account_number'] = $account_number;
+        $this->container['country'] = $country;
 
         return $this;
     }
@@ -715,13 +753,37 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets token
      *
-     * @param string|null $token token
+     * @param string|null $token ID of the `Token` that was returned from the tokenization client or hosted fields
      *
      * @return self
      */
     public function setToken($token, $deserialize = false)
     {
         $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_identity
+     *
+     * @return string|null
+     */
+    public function getMerchantIdentity()
+    {
+        return $this->container['merchant_identity'];
+    }
+
+    /**
+     * Sets merchant_identity
+     *
+     * @param string|null $merchant_identity The `id` of the identity used when registering the business with Google Pay through our registration API.
+     *
+     * @return self
+     */
+    public function setMerchantIdentity($merchant_identity, $deserialize = false)
+    {
+        $this->container['merchant_identity'] = $merchant_identity;
 
         return $this;
     }

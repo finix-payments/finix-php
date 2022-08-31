@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * CreateProcessorRequestConfig Class Doc Comment
  *
  * @category Class
+ * @description Configure the details of how a &#x60;Processor&#x60; handles transactions.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -191,9 +192,6 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['can_debit_bank_account'] === null) {
-            $invalidProperties[] = "'can_debit_bank_account' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -212,7 +210,7 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets can_debit_bank_account
      *
-     * @return bool
+     * @return bool|null
      */
     public function getCanDebitBankAccount()
     {
@@ -222,7 +220,7 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets can_debit_bank_account
      *
-     * @param bool $can_debit_bank_account Details if a `Processor` can debit bank accounts.
+     * @param bool|null $can_debit_bank_account Details if a `Processor` can debit bank accounts.
      *
      * @return self
      */

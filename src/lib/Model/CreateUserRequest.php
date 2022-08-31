@@ -61,8 +61,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
-        'enabled' => 'bool'
+        'enabled' => 'bool',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -73,8 +73,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
-        'enabled' => null
+        'enabled' => null,
+        'tags' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
-        'enabled' => 'enabled'
+        'enabled' => 'enabled',
+        'tags' => 'tags'
     ];
 
     /**
@@ -114,8 +114,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
-        'enabled' => 'setEnabled'
+        'enabled' => 'setEnabled',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -124,8 +124,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
-        'enabled' => 'getEnabled'
+        'enabled' => 'getEnabled',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -185,8 +185,8 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -214,30 +214,6 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets enabled
      *
      * @return bool|null
@@ -257,6 +233,30 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

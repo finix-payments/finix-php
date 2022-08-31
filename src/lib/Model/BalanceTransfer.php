@@ -476,7 +476,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets destination
      *
-     * @param string|null $destination ID of the `Payment Instrument` where funds will be sent.
+     * @param string|null $destination The account where funds get credited. For balance transfers, this is an aliased ID and will have the value of `FOR_BENEFIT_OF_ACCOUNT` or `OPERATING_ACCOUNT`.
      *
      * @return self
      */
@@ -572,7 +572,7 @@ class BalanceTransfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets source
      *
-     * @param string|null $source ID of the `Payment Instrument` where funds get debited.
+     * @param string|null $source The account where funds get debited. For balance transfers, this is an aliased ID and will have the value of `FOR_BENEFIT_OF_ACCOUNT` or `OPERATING_ACCOUNT`.
      *
      * @return self
      */

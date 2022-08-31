@@ -15,3 +15,4 @@ openapi-generator generate \
 mv ./src/lib/Configuration.php ./src/lib/FinixClient.php
 mv ./src/composer.json composer.json
 rm ./src/README.md
+rm -rf src/.openapi-generator

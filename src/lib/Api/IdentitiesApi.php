@@ -122,15 +122,15 @@ class IdentitiesApi
      * Create an Associated Identity
      *
      * @param  string $identity_id ID of &#x60;Identity&#x60; to associate object with. (required)
-     * @param  \Finix\Model\CreateIdentityRequest $create_identity_request  (optional)
+     * @param  \Finix\Model\CreateAssociatedIdentityRequest $create_associated_identity_request create_associated_identity_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Finix\Model\Identity|\Finix\Model\ErrorGeneric|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
      */
-    public function createAssociatedIdentity($identity_id, $create_identity_request = null)
+    public function createAssociatedIdentity($identity_id, $create_associated_identity_request = null)
     {
-        list($response) = $this->createAssociatedIdentityWithHttpInfo($identity_id, $create_identity_request);
+        list($response) = $this->createAssociatedIdentityWithHttpInfo($identity_id, $create_associated_identity_request);
         return $response;
     }
 
@@ -140,15 +140,15 @@ class IdentitiesApi
      * Create an Associated Identity
      *
      * @param  string $identity_id ID of &#x60;Identity&#x60; to associate object with. (required)
-     * @param  \Finix\Model\CreateIdentityRequest $create_identity_request  (optional)
+     * @param  \Finix\Model\CreateAssociatedIdentityRequest $create_associated_identity_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\Identity|\Finix\Model\ErrorGeneric|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAssociatedIdentityWithHttpInfo($identity_id, $create_identity_request = null)
+    public function createAssociatedIdentityWithHttpInfo($identity_id, $create_associated_identity_request = null)
     {
-        $request = $this->createAssociatedIdentityRequest($identity_id, $create_identity_request);
+        $request = $this->createAssociatedIdentityRequest($identity_id, $create_associated_identity_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -355,14 +355,14 @@ class IdentitiesApi
      * Create an Associated Identity
      *
      * @param  string $identity_id ID of &#x60;Identity&#x60; to associate object with. (required)
-     * @param  \Finix\Model\CreateIdentityRequest $create_identity_request  (optional)
+     * @param  \Finix\Model\CreateAssociatedIdentityRequest $create_associated_identity_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAssociatedIdentityAsync($identity_id, $create_identity_request = null)
+    public function createAssociatedIdentityAsync($identity_id, $create_associated_identity_request = null)
     {
-        return $this->createAssociatedIdentityAsyncWithHttpInfo($identity_id, $create_identity_request)
+        return $this->createAssociatedIdentityAsyncWithHttpInfo($identity_id, $create_associated_identity_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -376,15 +376,15 @@ class IdentitiesApi
      * Create an Associated Identity
      *
      * @param  string $identity_id ID of &#x60;Identity&#x60; to associate object with. (required)
-     * @param  \Finix\Model\CreateIdentityRequest $create_identity_request  (optional)
+     * @param  \Finix\Model\CreateAssociatedIdentityRequest $create_associated_identity_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAssociatedIdentityAsyncWithHttpInfo($identity_id, $create_identity_request = null)
+    public function createAssociatedIdentityAsyncWithHttpInfo($identity_id, $create_associated_identity_request = null)
     {
         $returnType = '\Finix\Model\Identity';
-        $request = $this->createAssociatedIdentityRequest($identity_id, $create_identity_request);
+        $request = $this->createAssociatedIdentityRequest($identity_id, $create_associated_identity_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -426,12 +426,12 @@ class IdentitiesApi
      * Create request for operation 'createAssociatedIdentity'
      *
      * @param  string $identity_id ID of &#x60;Identity&#x60; to associate object with. (required)
-     * @param  \Finix\Model\CreateIdentityRequest $create_identity_request  (optional)
+     * @param  \Finix\Model\CreateAssociatedIdentityRequest $create_associated_identity_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAssociatedIdentityRequest($identity_id, $create_identity_request = null)
+    public function createAssociatedIdentityRequest($identity_id, $create_associated_identity_request = null)
     {
         // verify the required parameter 'identity_id' is set
         if ($identity_id === null || (is_array($identity_id) && count($identity_id) === 0)) {
@@ -471,17 +471,17 @@ class IdentitiesApi
         }
 
         // for model (json/xml)
-        if (isset($create_identity_request)) {
+        if (isset($create_associated_identity_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_identity_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_associated_identity_request));
             } 
             elseif($headers['Content-Type'] === 'multipart/form-data'){
                 $multiStreamArr = [];
                 $i = 0;
-                foreach (array_keys($create_identity_request->getters()) as $get){
-                    $getterName = $create_identity_request->getters()[$get];
+                foreach (array_keys($create_associated_identity_request->getters()) as $get){
+                    $getterName = $create_associated_identity_request->getters()[$get];
                     $multiStreamArr[$i] =  ['name' => $get, 
-                    'contents' =>$create_identity_request->$getterName()];
+                    'contents' =>$create_associated_identity_request->$getterName()];
                     $i = $i + 1;
                 }
                 $httpBody = new MultipartStream($multiStreamArr, 'boundary');
@@ -491,7 +491,7 @@ class IdentitiesApi
                 );
             }
             else {
-                $httpBody = $create_identity_request;
+                $httpBody = $create_associated_identity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1743,18 +1743,18 @@ class IdentitiesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $default_statement_descriptor Filter by the default_statement_descriptor (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $default_statement_descriptor Filter by the &#x60;default_statement_descriptor&#x60;. (optional)
      * @param  string $business_name Filter by the full business name. Partial business names are not supported. (optional)
-     * @param  string $business_type Filter by the business type. Partial business types are not supported (optional)
+     * @param  string $business_type Filter by the business type. Partial business types are not supported. (optional)
      * @param  string $email Filter by the email address or email domain. Partial emails are not supported. (optional)
-     * @param  string $first_name Filter by the first name of the person associated to the Identity. (optional)
-     * @param  string $last_name Filter by the last name of the person associated to the identity. (optional)
+     * @param  string $first_name Filter by the first name of the person associated to the &#x60;Identity&#x60;. (optional)
+     * @param  string $last_name Filter by the last name of the person associated to the &#x60;Identity&#x60;. (optional)
      * @param  string $title Filter by the title if available. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -1800,18 +1800,18 @@ class IdentitiesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $default_statement_descriptor Filter by the default_statement_descriptor (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $default_statement_descriptor Filter by the &#x60;default_statement_descriptor&#x60;. (optional)
      * @param  string $business_name Filter by the full business name. Partial business names are not supported. (optional)
-     * @param  string $business_type Filter by the business type. Partial business types are not supported (optional)
+     * @param  string $business_type Filter by the business type. Partial business types are not supported. (optional)
      * @param  string $email Filter by the email address or email domain. Partial emails are not supported. (optional)
-     * @param  string $first_name Filter by the first name of the person associated to the Identity. (optional)
-     * @param  string $last_name Filter by the last name of the person associated to the identity. (optional)
+     * @param  string $first_name Filter by the first name of the person associated to the &#x60;Identity&#x60;. (optional)
+     * @param  string $last_name Filter by the last name of the person associated to the &#x60;Identity&#x60;. (optional)
      * @param  string $title Filter by the title if available. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2006,18 +2006,18 @@ class IdentitiesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $default_statement_descriptor Filter by the default_statement_descriptor (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $default_statement_descriptor Filter by the &#x60;default_statement_descriptor&#x60;. (optional)
      * @param  string $business_name Filter by the full business name. Partial business names are not supported. (optional)
-     * @param  string $business_type Filter by the business type. Partial business types are not supported (optional)
+     * @param  string $business_type Filter by the business type. Partial business types are not supported. (optional)
      * @param  string $email Filter by the email address or email domain. Partial emails are not supported. (optional)
-     * @param  string $first_name Filter by the first name of the person associated to the Identity. (optional)
-     * @param  string $last_name Filter by the last name of the person associated to the identity. (optional)
+     * @param  string $first_name Filter by the first name of the person associated to the &#x60;Identity&#x60;. (optional)
+     * @param  string $last_name Filter by the last name of the person associated to the &#x60;Identity&#x60;. (optional)
      * @param  string $title Filter by the title if available. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2041,18 +2041,18 @@ class IdentitiesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $default_statement_descriptor Filter by the default_statement_descriptor (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $default_statement_descriptor Filter by the &#x60;default_statement_descriptor&#x60;. (optional)
      * @param  string $business_name Filter by the full business name. Partial business names are not supported. (optional)
-     * @param  string $business_type Filter by the business type. Partial business types are not supported (optional)
+     * @param  string $business_type Filter by the business type. Partial business types are not supported. (optional)
      * @param  string $email Filter by the email address or email domain. Partial emails are not supported. (optional)
-     * @param  string $first_name Filter by the first name of the person associated to the Identity. (optional)
-     * @param  string $last_name Filter by the last name of the person associated to the identity. (optional)
+     * @param  string $first_name Filter by the first name of the person associated to the &#x60;Identity&#x60;. (optional)
+     * @param  string $last_name Filter by the last name of the person associated to the &#x60;Identity&#x60;. (optional)
      * @param  string $title Filter by the title if available. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
@@ -2105,18 +2105,18 @@ class IdentitiesApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $id Filter by id (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $default_statement_descriptor Filter by the default_statement_descriptor (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $default_statement_descriptor Filter by the &#x60;default_statement_descriptor&#x60;. (optional)
      * @param  string $business_name Filter by the full business name. Partial business names are not supported. (optional)
-     * @param  string $business_type Filter by the business type. Partial business types are not supported (optional)
+     * @param  string $business_type Filter by the business type. Partial business types are not supported. (optional)
      * @param  string $email Filter by the email address or email domain. Partial emails are not supported. (optional)
-     * @param  string $first_name Filter by the first name of the person associated to the Identity. (optional)
-     * @param  string $last_name Filter by the last name of the person associated to the identity. (optional)
+     * @param  string $first_name Filter by the first name of the person associated to the &#x60;Identity&#x60;. (optional)
+     * @param  string $last_name Filter by the last name of the person associated to the &#x60;Identity&#x60;. (optional)
      * @param  string $title Filter by the title if available. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *

@@ -60,9 +60,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'page' => '\Finix\Model\PageOffset',
         '_embedded' => '\Finix\Model\DisputesListEmbedded',
-        '_links' => '\Finix\Model\ListLinks',
-        'page' => '\Finix\Model\PageOffset'
+        '_links' => '\Finix\Model\ListLinks'
     ];
 
     /**
@@ -73,9 +73,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'page' => null,
         '_embedded' => null,
-        '_links' => null,
-        'page' => null
+        '_links' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'page' => 'page',
         '_embedded' => '_embedded',
-        '_links' => '_links',
-        'page' => 'page'
+        '_links' => '_links'
     ];
 
     /**
@@ -116,9 +116,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'page' => 'setPage',
         '_embedded' => 'setEmbedded',
-        '_links' => 'setLinks',
-        'page' => 'setPage'
+        '_links' => 'setLinks'
     ];
 
     /**
@@ -127,9 +127,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'page' => 'getPage',
         '_embedded' => 'getEmbedded',
-        '_links' => 'getLinks',
-        'page' => 'getPage'
+        '_links' => 'getLinks'
     ];
 
     /**
@@ -189,9 +189,9 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['page'] = $data['page'] ?? null;
         $this->container['_embedded'] = $data['_embedded'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
-        $this->container['page'] = $data['page'] ?? null;
     }
 
     /**
@@ -217,6 +217,30 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets page
+     *
+     * @return \Finix\Model\PageOffset|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param \Finix\Model\PageOffset|null $page page
+     *
+     * @return self
+     */
+    public function setPage($page, $deserialize = false)
+    {
+        $this->container['page'] = $page;
+
+        return $this;
+    }
 
     /**
      * Gets _embedded
@@ -262,30 +286,6 @@ class DisputesList implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLinks($_links, $deserialize = false)
     {
         $this->container['_links'] = $_links;
-
-        return $this;
-    }
-
-    /**
-     * Gets page
-     *
-     * @return \Finix\Model\PageOffset|null
-     */
-    public function getPage()
-    {
-        return $this->container['page'];
-    }
-
-    /**
-     * Sets page
-     *
-     * @param \Finix\Model\PageOffset|null $page page
-     *
-     * @return self
-     */
-    public function setPage($page, $deserialize = false)
-    {
-        $this->container['page'] = $page;
 
         return $this;
     }

@@ -61,29 +61,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
+        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'additional_purchase_data' => '\Finix\Model\AdditionalPurchaseData',
         'adjustment_request' => 'bool',
         'amount' => 'int',
-        'config_override' => 'array<string,string>',
         'currency' => '\Finix\Model\Currency',
         'destination' => 'string',
         'device' => 'string',
         'device_configuration' => '\Finix\Model\ConfigurationDetails',
         'fee' => 'int',
-        'gateway' => 'string',
-        '_3d_secure_authentication' => '\Finix\Model\CreateAuthorizationRequest3dSecureAuthentication',
+        'fraud_session_id' => 'string',
         'idempotency_id' => 'string',
-        'input_method' => 'string',
         'merchant' => 'string',
-        'merchant_identity' => 'string',
         'operation_key' => 'string',
         'payment_instrument' => '\Finix\Model\CardPresentInstrumentForm',
         'processor' => 'string',
         'source' => 'string',
         'statement_descriptor' => 'string',
-        'fraud_session_id' => 'string',
-        'additional_purchase_data' => '\Finix\Model\AdditionalPurchaseData',
-        'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges'
+        'tags' => 'array<string,string>',
+        '_3d_secure_authentication' => '\Finix\Model\CreateTransferRequest3dSecureAuthentication'
     ];
 
     /**
@@ -94,29 +90,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
+        'additional_buyer_charges' => null,
+        'additional_purchase_data' => null,
         'adjustment_request' => null,
         'amount' => 'int64',
-        'config_override' => null,
         'currency' => null,
         'destination' => null,
         'device' => null,
         'device_configuration' => null,
         'fee' => 'int64',
-        'gateway' => null,
-        '_3d_secure_authentication' => null,
+        'fraud_session_id' => null,
         'idempotency_id' => null,
-        'input_method' => null,
         'merchant' => null,
-        'merchant_identity' => null,
         'operation_key' => null,
         'payment_instrument' => null,
         'processor' => null,
         'source' => null,
         'statement_descriptor' => null,
-        'fraud_session_id' => null,
-        'additional_purchase_data' => null,
-        'additional_buyer_charges' => null
+        'tags' => null,
+        '_3d_secure_authentication' => null
     ];
 
     /**
@@ -146,29 +138,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
+        'additional_buyer_charges' => 'additional_buyer_charges',
+        'additional_purchase_data' => 'additional_purchase_data',
         'adjustment_request' => 'adjustment_request',
         'amount' => 'amount',
-        'config_override' => 'config_override',
         'currency' => 'currency',
         'destination' => 'destination',
         'device' => 'device',
         'device_configuration' => 'device_configuration',
         'fee' => 'fee',
-        'gateway' => 'gateway',
-        '_3d_secure_authentication' => '3d_secure_authentication',
+        'fraud_session_id' => 'fraud_session_id',
         'idempotency_id' => 'idempotency_id',
-        'input_method' => 'input_method',
         'merchant' => 'merchant',
-        'merchant_identity' => 'merchant_identity',
         'operation_key' => 'operation_key',
         'payment_instrument' => 'payment_instrument',
         'processor' => 'processor',
         'source' => 'source',
         'statement_descriptor' => 'statement_descriptor',
-        'fraud_session_id' => 'fraud_session_id',
-        'additional_purchase_data' => 'additional_purchase_data',
-        'additional_buyer_charges' => 'additional_buyer_charges'
+        'tags' => 'tags',
+        '_3d_secure_authentication' => '3d_secure_authentication'
     ];
 
     /**
@@ -177,29 +165,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
+        'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'additional_purchase_data' => 'setAdditionalPurchaseData',
         'adjustment_request' => 'setAdjustmentRequest',
         'amount' => 'setAmount',
-        'config_override' => 'setConfigOverride',
         'currency' => 'setCurrency',
         'destination' => 'setDestination',
         'device' => 'setDevice',
         'device_configuration' => 'setDeviceConfiguration',
         'fee' => 'setFee',
-        'gateway' => 'setGateway',
-        '_3d_secure_authentication' => 'set3dSecureAuthentication',
+        'fraud_session_id' => 'setFraudSessionId',
         'idempotency_id' => 'setIdempotencyId',
-        'input_method' => 'setInputMethod',
         'merchant' => 'setMerchant',
-        'merchant_identity' => 'setMerchantIdentity',
         'operation_key' => 'setOperationKey',
         'payment_instrument' => 'setPaymentInstrument',
         'processor' => 'setProcessor',
         'source' => 'setSource',
         'statement_descriptor' => 'setStatementDescriptor',
-        'fraud_session_id' => 'setFraudSessionId',
-        'additional_purchase_data' => 'setAdditionalPurchaseData',
-        'additional_buyer_charges' => 'setAdditionalBuyerCharges'
+        'tags' => 'setTags',
+        '_3d_secure_authentication' => 'set3dSecureAuthentication'
     ];
 
     /**
@@ -208,29 +192,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
+        'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'additional_purchase_data' => 'getAdditionalPurchaseData',
         'adjustment_request' => 'getAdjustmentRequest',
         'amount' => 'getAmount',
-        'config_override' => 'getConfigOverride',
         'currency' => 'getCurrency',
         'destination' => 'getDestination',
         'device' => 'getDevice',
         'device_configuration' => 'getDeviceConfiguration',
         'fee' => 'getFee',
-        'gateway' => 'getGateway',
-        '_3d_secure_authentication' => 'get3dSecureAuthentication',
+        'fraud_session_id' => 'getFraudSessionId',
         'idempotency_id' => 'getIdempotencyId',
-        'input_method' => 'getInputMethod',
         'merchant' => 'getMerchant',
-        'merchant_identity' => 'getMerchantIdentity',
         'operation_key' => 'getOperationKey',
         'payment_instrument' => 'getPaymentInstrument',
         'processor' => 'getProcessor',
         'source' => 'getSource',
         'statement_descriptor' => 'getStatementDescriptor',
-        'fraud_session_id' => 'getFraudSessionId',
-        'additional_purchase_data' => 'getAdditionalPurchaseData',
-        'additional_buyer_charges' => 'getAdditionalBuyerCharges'
+        'tags' => 'getTags',
+        '_3d_secure_authentication' => 'get3dSecureAuthentication'
     ];
 
     /**
@@ -274,18 +254,6 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-    public const GATEWAY_CLOUD_V1 = 'TRIPOS_CLOUD_V1';
-    public const GATEWAY_MOBILE_V1 = 'TRIPOS_MOBILE_V1';
-    public const INPUT_METHOD_UNKNOWN = 'UNKNOWN';
-    public const INPUT_METHOD_SWIPED = 'SWIPED';
-    public const INPUT_METHOD_MANUAL_KEY_ENTRY = 'MANUAL_KEY_ENTRY';
-    public const INPUT_METHOD_CONTACTLESS_MSD = 'CONTACTLESS_MSD';
-    public const INPUT_METHOD_CONTACTLESS_EMV = 'CONTACTLESS_EMV';
-    public const INPUT_METHOD_SWIPED_FALLBACK = 'SWIPED_FALLBACK';
-    public const INPUT_METHOD_KEYED_FALLBACK = 'KEYED_FALLBACK';
-    public const INPUT_METHOD_CONTACTLESS = 'CONTACTLESS';
-    public const INPUT_METHOD_DIGITAL_WALLET = 'DIGITAL_WALLET';
-    public const INPUT_METHOD_CHIP_ENTRY = 'CHIP_ENTRY';
     public const OPERATION_KEY_PUSH_TO_CARD = 'PUSH_TO_CARD';
     public const OPERATION_KEY_PULL_FROM_CARD = 'PULL_FROM_CARD';
     public const OPERATION_KEY_CARD_PRESENT_DEBIT = 'CARD_PRESENT_DEBIT';
@@ -294,40 +262,6 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public const OPERATION_KEY_UNREFERENCED_REFUND = 'UNREFERENCED_REFUND';
     public const OPERATION_KEY_MERCHANT_CREDIT_ADJUSTMENT = 'MERCHANT_CREDIT_ADJUSTMENT';
     public const OPERATION_KEY_MERCHANT_DEBIT_ADJUSTMENT = 'MERCHANT_DEBIT_ADJUSTMENT';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getGatewayAllowableValues()
-    {
-        return [
-            self::GATEWAY_CLOUD_V1,
-            self::GATEWAY_MOBILE_V1,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getInputMethodAllowableValues()
-    {
-        return [
-            self::INPUT_METHOD_UNKNOWN,
-            self::INPUT_METHOD_SWIPED,
-            self::INPUT_METHOD_MANUAL_KEY_ENTRY,
-            self::INPUT_METHOD_CONTACTLESS_MSD,
-            self::INPUT_METHOD_CONTACTLESS_EMV,
-            self::INPUT_METHOD_SWIPED_FALLBACK,
-            self::INPUT_METHOD_KEYED_FALLBACK,
-            self::INPUT_METHOD_CONTACTLESS,
-            self::INPUT_METHOD_DIGITAL_WALLET,
-            self::INPUT_METHOD_CHIP_ENTRY,
-        ];
-    }
 
     /**
      * Gets allowable values of the enum
@@ -363,29 +297,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['additional_purchase_data'] = $data['additional_purchase_data'] ?? null;
         $this->container['adjustment_request'] = $data['adjustment_request'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['config_override'] = $data['config_override'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['destination'] = $data['destination'] ?? null;
         $this->container['device'] = $data['device'] ?? null;
         $this->container['device_configuration'] = $data['device_configuration'] ?? null;
         $this->container['fee'] = $data['fee'] ?? null;
-        $this->container['gateway'] = $data['gateway'] ?? null;
-        $this->container['_3d_secure_authentication'] = $data['_3d_secure_authentication'] ?? null;
+        $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
         $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
-        $this->container['input_method'] = $data['input_method'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
-        $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
         $this->container['operation_key'] = $data['operation_key'] ?? null;
         $this->container['payment_instrument'] = $data['payment_instrument'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
         $this->container['statement_descriptor'] = $data['statement_descriptor'] ?? null;
-        $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
-        $this->container['additional_purchase_data'] = $data['additional_purchase_data'] ?? null;
-        $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['_3d_secure_authentication'] = $data['_3d_secure_authentication'] ?? null;
     }
 
     /**
@@ -397,24 +327,12 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getGatewayAllowableValues();
-        if (!is_null($this->container['gateway']) && !in_array($this->container['gateway'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'gateway', must be one of '%s'",
-                $this->container['gateway'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
-
-        $allowedValues = $this->getInputMethodAllowableValues();
-        if (!is_null($this->container['input_method']) && !in_array($this->container['input_method'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'input_method', must be one of '%s'",
-                $this->container['input_method'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
         }
-
         $allowedValues = $this->getOperationKeyAllowableValues();
         if (!is_null($this->container['operation_key']) && !in_array($this->container['operation_key'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -440,25 +358,49 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets tags
+     * Gets additional_buyer_charges
      *
-     * @return array<string,string>|null
+     * @return \Finix\Model\AdditionalBuyerCharges|null
      */
-    public function getTags()
+    public function getAdditionalBuyerCharges()
     {
-        return $this->container['tags'];
+        return $this->container['additional_buyer_charges'];
     }
 
     /**
-     * Sets tags
+     * Sets additional_buyer_charges
      *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
      *
      * @return self
      */
-    public function setTags($tags, $deserialize = false)
+    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
-        $this->container['tags'] = $tags;
+        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_purchase_data
+     *
+     * @return \Finix\Model\AdditionalPurchaseData|null
+     */
+    public function getAdditionalPurchaseData()
+    {
+        return $this->container['additional_purchase_data'];
+    }
+
+    /**
+     * Sets additional_purchase_data
+     *
+     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
+     *
+     * @return self
+     */
+    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
+    {
+        $this->container['additional_purchase_data'] = $additional_purchase_data;
 
         return $this;
     }
@@ -490,7 +432,7 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets amount
      *
-     * @return int|null
+     * @return int
      */
     public function getAmount()
     {
@@ -500,7 +442,7 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets amount
      *
-     * @param int|null $amount The total amount that will be debited in cents (e.g. 100 cents to debit $1.00).
+     * @param int $amount The total amount that will be debited in cents (e.g. 100 cents to debit $1.00).
      *
      * @return self
      */
@@ -512,33 +454,9 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets config_override
-     *
-     * @return array<string,string>|null
-     */
-    public function getConfigOverride()
-    {
-        return $this->container['config_override'];
-    }
-
-    /**
-     * Sets config_override
-     *
-     * @param array<string,string>|null $config_override config_override
-     *
-     * @return self
-     */
-    public function setConfigOverride($config_override, $deserialize = false)
-    {
-        $this->container['config_override'] = $config_override;
-
-        return $this;
-    }
-
-    /**
      * Gets currency
      *
-     * @return \Finix\Model\Currency|null
+     * @return \Finix\Model\Currency
      */
     public function getCurrency()
     {
@@ -548,7 +466,7 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets currency
      *
-     * @param \Finix\Model\Currency|null $currency currency
+     * @param \Finix\Model\Currency $currency currency
      *
      * @return self
      */
@@ -656,59 +574,25 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets gateway
+     * Gets fraud_session_id
      *
      * @return string|null
      */
-    public function getGateway()
+    public function getFraudSessionId()
     {
-        return $this->container['gateway'];
+        return $this->container['fraud_session_id'];
     }
 
     /**
-     * Sets gateway
+     * Sets fraud_session_id
      *
-     * @param string|null $gateway Name of the gateway that processed this `transfer`. (Finix Core only).
+     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
      *
      * @return self
      */
-    public function setGateway($gateway, $deserialize = false)
+    public function setFraudSessionId($fraud_session_id, $deserialize = false)
     {
-        $allowedValues = $this->getGatewayAllowableValues();
-        if (!is_null($gateway) && !in_array($gateway, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'gateway', must be one of '%s'",
-                    $gateway,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['gateway'] = $gateway;
-
-        return $this;
-    }
-
-    /**
-     * Gets _3d_secure_authentication
-     *
-     * @return \Finix\Model\CreateAuthorizationRequest3dSecureAuthentication|null
-     */
-    public function get3dSecureAuthentication()
-    {
-        return $this->container['_3d_secure_authentication'];
-    }
-
-    /**
-     * Sets _3d_secure_authentication
-     *
-     * @param \Finix\Model\CreateAuthorizationRequest3dSecureAuthentication|null $_3d_secure_authentication _3d_secure_authentication
-     *
-     * @return self
-     */
-    public function set3dSecureAuthentication($_3d_secure_authentication, $deserialize = false)
-    {
-        $this->container['_3d_secure_authentication'] = $_3d_secure_authentication;
+        $this->container['fraud_session_id'] = $fraud_session_id;
 
         return $this;
     }
@@ -738,40 +622,6 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets input_method
-     *
-     * @return string|null
-     */
-    public function getInputMethod()
-    {
-        return $this->container['input_method'];
-    }
-
-    /**
-     * Sets input_method
-     *
-     * @param string|null $input_method Details how the card details were entered.
-     *
-     * @return self
-     */
-    public function setInputMethod($input_method, $deserialize = false)
-    {
-        $allowedValues = $this->getInputMethodAllowableValues();
-        if (!is_null($input_method) && !in_array($input_method, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'input_method', must be one of '%s'",
-                    $input_method,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['input_method'] = $input_method;
-
-        return $this;
-    }
-
-    /**
      * Gets merchant
      *
      * @return string|null
@@ -791,30 +641,6 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setMerchant($merchant, $deserialize = false)
     {
         $this->container['merchant'] = $merchant;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant_identity
-     *
-     * @return string|null
-     */
-    public function getMerchantIdentity()
-    {
-        return $this->container['merchant_identity'];
-    }
-
-    /**
-     * Sets merchant_identity
-     *
-     * @param string|null $merchant_identity ID of the `Identity` the `Merchant` was created under and the `Transfer` was submitted with.
-     *
-     * @return self
-     */
-    public function setMerchantIdentity($merchant_identity, $deserialize = false)
-    {
-        $this->container['merchant_identity'] = $merchant_identity;
 
         return $this;
     }
@@ -950,73 +776,49 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets fraud_session_id
+     * Gets tags
      *
-     * @return string|null
+     * @return array<string,string>|null
      */
-    public function getFraudSessionId()
+    public function getTags()
     {
-        return $this->container['fraud_session_id'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets fraud_session_id
+     * Sets tags
      *
-     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setFraudSessionId($fraud_session_id, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $this->container['fraud_session_id'] = $fraud_session_id;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets additional_purchase_data
+     * Gets _3d_secure_authentication
      *
-     * @return \Finix\Model\AdditionalPurchaseData|null
+     * @return \Finix\Model\CreateTransferRequest3dSecureAuthentication|null
      */
-    public function getAdditionalPurchaseData()
+    public function get3dSecureAuthentication()
     {
-        return $this->container['additional_purchase_data'];
+        return $this->container['_3d_secure_authentication'];
     }
 
     /**
-     * Sets additional_purchase_data
+     * Sets _3d_secure_authentication
      *
-     * @param \Finix\Model\AdditionalPurchaseData|null $additional_purchase_data additional_purchase_data
+     * @param \Finix\Model\CreateTransferRequest3dSecureAuthentication|null $_3d_secure_authentication _3d_secure_authentication
      *
      * @return self
      */
-    public function setAdditionalPurchaseData($additional_purchase_data, $deserialize = false)
+    public function set3dSecureAuthentication($_3d_secure_authentication, $deserialize = false)
     {
-        $this->container['additional_purchase_data'] = $additional_purchase_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_buyer_charges
-     *
-     * @return \Finix\Model\AdditionalBuyerCharges|null
-     */
-    public function getAdditionalBuyerCharges()
-    {
-        return $this->container['additional_buyer_charges'];
-    }
-
-    /**
-     * Sets additional_buyer_charges
-     *
-     * @param \Finix\Model\AdditionalBuyerCharges|null $additional_buyer_charges additional_buyer_charges
-     *
-     * @return self
-     */
-    public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
-    {
-        $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+        $this->container['_3d_secure_authentication'] = $_3d_secure_authentication;
 
         return $this;
     }

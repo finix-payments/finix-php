@@ -88,8 +88,8 @@ class IdentitiesApiTest extends TestCase
     public function testCreateAssociatedIdentity()
     {
         $identityId = "IDpYDM7J9n57q849o9E9yNrG";
-        $createIdentityRequest = new Model\CreateIdentityRequest(array(
-            'entity' => new Model\CreateIdentityRequestEntity(array(
+        $createIdentityRequest = new Model\CreateAssociatedIdentityRequest(array(
+            'entity' => new Model\CreateAssociatedIdentityRequestEntity(array(
                 'phone' => "7145677613",
                 'first_name' => "Amy",
                 'last_name' => "Wade",

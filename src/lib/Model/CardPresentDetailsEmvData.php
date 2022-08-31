@@ -61,14 +61,14 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'application_identifier' => 'string',
         'application_label' => 'string',
         'application_preferred_name' => 'string',
         'application_transaction_counter' => 'string',
         'cryptogram' => 'string',
         'issuer_code_table_index' => 'string',
-        'pin_verified' => 'bool'
+        'pin_verified' => 'bool',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -79,14 +79,14 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'application_identifier' => null,
         'application_label' => null,
         'application_preferred_name' => null,
         'application_transaction_counter' => null,
         'cryptogram' => null,
         'issuer_code_table_index' => null,
-        'pin_verified' => null
+        'pin_verified' => null,
+        'tags' => null
     ];
 
     /**
@@ -116,14 +116,14 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'application_identifier' => 'application_identifier',
         'application_label' => 'application_label',
         'application_preferred_name' => 'application_preferred_name',
         'application_transaction_counter' => 'application_transaction_counter',
         'cryptogram' => 'cryptogram',
         'issuer_code_table_index' => 'issuer_code_table_index',
-        'pin_verified' => 'pin_verified'
+        'pin_verified' => 'pin_verified',
+        'tags' => 'tags'
     ];
 
     /**
@@ -132,14 +132,14 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'application_identifier' => 'setApplicationIdentifier',
         'application_label' => 'setApplicationLabel',
         'application_preferred_name' => 'setApplicationPreferredName',
         'application_transaction_counter' => 'setApplicationTransactionCounter',
         'cryptogram' => 'setCryptogram',
         'issuer_code_table_index' => 'setIssuerCodeTableIndex',
-        'pin_verified' => 'setPinVerified'
+        'pin_verified' => 'setPinVerified',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -148,14 +148,14 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'application_identifier' => 'getApplicationIdentifier',
         'application_label' => 'getApplicationLabel',
         'application_preferred_name' => 'getApplicationPreferredName',
         'application_transaction_counter' => 'getApplicationTransactionCounter',
         'cryptogram' => 'getCryptogram',
         'issuer_code_table_index' => 'getIssuerCodeTableIndex',
-        'pin_verified' => 'getPinVerified'
+        'pin_verified' => 'getPinVerified',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -215,7 +215,6 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['application_identifier'] = $data['application_identifier'] ?? null;
         $this->container['application_label'] = $data['application_label'] ?? null;
         $this->container['application_preferred_name'] = $data['application_preferred_name'] ?? null;
@@ -223,6 +222,7 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['cryptogram'] = $data['cryptogram'] ?? null;
         $this->container['issuer_code_table_index'] = $data['issuer_code_table_index'] ?? null;
         $this->container['pin_verified'] = $data['pin_verified'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -248,30 +248,6 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
 
     /**
      * Gets application_identifier
@@ -437,6 +413,30 @@ class CardPresentDetailsEmvData implements ModelInterface, ArrayAccess, \JsonSer
     public function setPinVerified($pin_verified, $deserialize = false)
     {
         $this->container['pin_verified'] = $pin_verified;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

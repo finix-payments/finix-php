@@ -61,8 +61,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'additional_underwriting_data' => '\Finix\Model\UpdateIdentityRequestAdditionalUnderwritingData',
-        'tags' => 'array<string,string>',
-        'entity' => '\Finix\Model\UpdateIdentityRequestEntity'
+        'entity' => '\Finix\Model\UpdateIdentityRequestEntity',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -74,8 +74,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'additional_underwriting_data' => null,
-        'tags' => null,
-        'entity' => null
+        'entity' => null,
+        'tags' => null
     ];
 
     /**
@@ -106,8 +106,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'additional_underwriting_data' => 'additional_underwriting_data',
-        'tags' => 'tags',
-        'entity' => 'entity'
+        'entity' => 'entity',
+        'tags' => 'tags'
     ];
 
     /**
@@ -117,8 +117,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'additional_underwriting_data' => 'setAdditionalUnderwritingData',
-        'tags' => 'setTags',
-        'entity' => 'setEntity'
+        'entity' => 'setEntity',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -128,8 +128,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'additional_underwriting_data' => 'getAdditionalUnderwritingData',
-        'tags' => 'getTags',
-        'entity' => 'getEntity'
+        'entity' => 'getEntity',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -190,8 +190,8 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['additional_underwriting_data'] = $data['additional_underwriting_data'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['entity'] = $data['entity'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -243,30 +243,6 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
      * Gets entity
      *
      * @return \Finix\Model\UpdateIdentityRequestEntity|null
@@ -286,6 +262,30 @@ class UpdateIdentityRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setEntity($entity, $deserialize = false)
     {
         $this->container['entity'] = $entity;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

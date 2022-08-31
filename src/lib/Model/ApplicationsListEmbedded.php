@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * ApplicationsListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Application&#x60; resources.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class ApplicationsListEmbedded implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets applications
      *
-     * @param \Finix\Model\Application[]|null $applications `Application` resource.
+     * @param \Finix\Model\Application[]|null $applications `Application` resources.
      *
      * @return self
      */

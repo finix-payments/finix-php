@@ -79,8 +79,6 @@ class SubTypeTransfer
 
     public const SPLIT_PAYOUT_ADJUSTMENT = 'SPLIT_PAYOUT_ADJUSTMENT';
 
-    public const SYSTEM = 'SYSTEM';
-
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -105,8 +103,7 @@ class SubTypeTransfer
             self::SETTLEMENT_PARTNER,
             self::SETTLEMENT_PLATFORM,
             self::SPLIT_PAYOUT,
-            self::SPLIT_PAYOUT_ADJUSTMENT,
-            self::SYSTEM
+            self::SPLIT_PAYOUT_ADJUSTMENT
         ];
     }
 }

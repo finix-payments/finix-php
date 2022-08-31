@@ -60,22 +60,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sort' => 'string',
+        'amount' => 'int',
+        'amount_gt' => 'int',
+        'amount_gte' => 'int',
+        'amount_lt' => 'int',
+        'amount_lte' => 'int',
         'before_cursor' => 'string',
-        'limit' => 'int',
-        'idempotency_id' => 'string',
-        'state' => 'string',
         'created_at_gte' => 'string',
         'created_at_lte' => 'string',
+        'idempotency_id' => 'string',
+        'limit' => 'int',
+        'sort' => 'string',
+        'state' => 'string',
         'updated_at_gte' => 'string',
         'updated_at_lte' => 'string',
-        'is_void' => 'string',
-        'amount' => 'int',
-        'amount_lt' => 'int',
-        'amount_gt' => 'int',
-        'amount_lte' => 'int',
-        'amount_gte' => 'int',
         'trace_id' => 'string',
+        'is_void' => 'string',
         'instrument_bin' => 'string',
         'instrument_account_last4' => 'string',
         'instrument_brand_type' => 'string',
@@ -99,22 +99,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sort' => null,
+        'amount' => null,
+        'amount_gt' => null,
+        'amount_gte' => null,
+        'amount_lt' => null,
+        'amount_lte' => null,
         'before_cursor' => null,
-        'limit' => null,
-        'idempotency_id' => null,
-        'state' => null,
         'created_at_gte' => null,
         'created_at_lte' => null,
+        'idempotency_id' => null,
+        'limit' => null,
+        'sort' => null,
+        'state' => null,
         'updated_at_gte' => null,
         'updated_at_lte' => null,
-        'is_void' => null,
-        'amount' => null,
-        'amount_lt' => null,
-        'amount_gt' => null,
-        'amount_lte' => null,
-        'amount_gte' => null,
         'trace_id' => null,
+        'is_void' => null,
         'instrument_bin' => null,
         'instrument_account_last4' => null,
         'instrument_brand_type' => null,
@@ -157,22 +157,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'sort' => 'sort',
+        'amount' => 'amount',
+        'amount_gt' => 'amount.gt',
+        'amount_gte' => 'amount.gte',
+        'amount_lt' => 'amount.lt',
+        'amount_lte' => 'amount.lte',
         'before_cursor' => 'before_cursor',
-        'limit' => 'limit',
-        'idempotency_id' => 'idempotency_id',
-        'state' => 'state',
         'created_at_gte' => 'created_at.gte',
         'created_at_lte' => 'created_at.lte',
+        'idempotency_id' => 'idempotency_id',
+        'limit' => 'limit',
+        'sort' => 'sort',
+        'state' => 'state',
         'updated_at_gte' => 'updated_at.gte',
         'updated_at_lte' => 'updated_at.lte',
-        'is_void' => 'is_void',
-        'amount' => 'amount',
-        'amount_lt' => 'amount.lt',
-        'amount_gt' => 'amount.gt',
-        'amount_lte' => 'amount.lte',
-        'amount_gte' => 'amount.gte',
         'trace_id' => 'trace_id',
+        'is_void' => 'is_void',
         'instrument_bin' => 'instrument_bin',
         'instrument_account_last4' => 'instrument_account_last4',
         'instrument_brand_type' => 'instrument_brand_type',
@@ -194,22 +194,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'sort' => 'setSort',
+        'amount' => 'setAmount',
+        'amount_gt' => 'setAmountGt',
+        'amount_gte' => 'setAmountGte',
+        'amount_lt' => 'setAmountLt',
+        'amount_lte' => 'setAmountLte',
         'before_cursor' => 'setBeforeCursor',
-        'limit' => 'setLimit',
-        'idempotency_id' => 'setIdempotencyId',
-        'state' => 'setState',
         'created_at_gte' => 'setCreatedAtGte',
         'created_at_lte' => 'setCreatedAtLte',
+        'idempotency_id' => 'setIdempotencyId',
+        'limit' => 'setLimit',
+        'sort' => 'setSort',
+        'state' => 'setState',
         'updated_at_gte' => 'setUpdatedAtGte',
         'updated_at_lte' => 'setUpdatedAtLte',
-        'is_void' => 'setIsVoid',
-        'amount' => 'setAmount',
-        'amount_lt' => 'setAmountLt',
-        'amount_gt' => 'setAmountGt',
-        'amount_lte' => 'setAmountLte',
-        'amount_gte' => 'setAmountGte',
         'trace_id' => 'setTraceId',
+        'is_void' => 'setIsVoid',
         'instrument_bin' => 'setInstrumentBin',
         'instrument_account_last4' => 'setInstrumentAccountLast4',
         'instrument_brand_type' => 'setInstrumentBrandType',
@@ -231,22 +231,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'sort' => 'getSort',
+        'amount' => 'getAmount',
+        'amount_gt' => 'getAmountGt',
+        'amount_gte' => 'getAmountGte',
+        'amount_lt' => 'getAmountLt',
+        'amount_lte' => 'getAmountLte',
         'before_cursor' => 'getBeforeCursor',
-        'limit' => 'getLimit',
-        'idempotency_id' => 'getIdempotencyId',
-        'state' => 'getState',
         'created_at_gte' => 'getCreatedAtGte',
         'created_at_lte' => 'getCreatedAtLte',
+        'idempotency_id' => 'getIdempotencyId',
+        'limit' => 'getLimit',
+        'sort' => 'getSort',
+        'state' => 'getState',
         'updated_at_gte' => 'getUpdatedAtGte',
         'updated_at_lte' => 'getUpdatedAtLte',
-        'is_void' => 'getIsVoid',
-        'amount' => 'getAmount',
-        'amount_lt' => 'getAmountLt',
-        'amount_gt' => 'getAmountGt',
-        'amount_lte' => 'getAmountLte',
-        'amount_gte' => 'getAmountGte',
         'trace_id' => 'getTraceId',
+        'is_void' => 'getIsVoid',
         'instrument_bin' => 'getInstrumentBin',
         'instrument_account_last4' => 'getInstrumentAccountLast4',
         'instrument_brand_type' => 'getInstrumentBrandType',
@@ -319,22 +319,22 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['sort'] = $data['sort'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['amount_gt'] = $data['amount_gt'] ?? null;
+        $this->container['amount_gte'] = $data['amount_gte'] ?? null;
+        $this->container['amount_lt'] = $data['amount_lt'] ?? null;
+        $this->container['amount_lte'] = $data['amount_lte'] ?? null;
         $this->container['before_cursor'] = $data['before_cursor'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? null;
-        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
         $this->container['created_at_gte'] = $data['created_at_gte'] ?? null;
         $this->container['created_at_lte'] = $data['created_at_lte'] ?? null;
+        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['sort'] = $data['sort'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
         $this->container['updated_at_gte'] = $data['updated_at_gte'] ?? null;
         $this->container['updated_at_lte'] = $data['updated_at_lte'] ?? null;
-        $this->container['is_void'] = $data['is_void'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['amount_lt'] = $data['amount_lt'] ?? null;
-        $this->container['amount_gt'] = $data['amount_gt'] ?? null;
-        $this->container['amount_lte'] = $data['amount_lte'] ?? null;
-        $this->container['amount_gte'] = $data['amount_gte'] ?? null;
         $this->container['trace_id'] = $data['trace_id'] ?? null;
+        $this->container['is_void'] = $data['is_void'] ?? null;
         $this->container['instrument_bin'] = $data['instrument_bin'] ?? null;
         $this->container['instrument_account_last4'] = $data['instrument_account_last4'] ?? null;
         $this->container['instrument_brand_type'] = $data['instrument_brand_type'] ?? null;
@@ -375,25 +375,121 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets sort
+     * Gets amount
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getSort()
+    public function getAmount()
     {
-        return $this->container['sort'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets sort
+     * Sets amount
      *
-     * @param string|null $sort Specify key to be used for sorting the collection
+     * @param int|null $amount Filter by an amount equal to the given value.
      *
      * @return self
      */
-    public function setSort($sort, $deserialize = false)
+    public function setAmount($amount, $deserialize = false)
     {
-        $this->container['sort'] = $sort;
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_gt
+     *
+     * @return int|null
+     */
+    public function getAmountGt()
+    {
+        return $this->container['amount_gt'];
+    }
+
+    /**
+     * Sets amount_gt
+     *
+     * @param int|null $amount_gt Filter by an amount greater than.
+     *
+     * @return self
+     */
+    public function setAmountGt($amount_gt, $deserialize = false)
+    {
+        $this->container['amount_gt'] = $amount_gt;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_gte
+     *
+     * @return int|null
+     */
+    public function getAmountGte()
+    {
+        return $this->container['amount_gte'];
+    }
+
+    /**
+     * Sets amount_gte
+     *
+     * @param int|null $amount_gte Filter by an amount greater than or equal.
+     *
+     * @return self
+     */
+    public function setAmountGte($amount_gte, $deserialize = false)
+    {
+        $this->container['amount_gte'] = $amount_gte;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_lt
+     *
+     * @return int|null
+     */
+    public function getAmountLt()
+    {
+        return $this->container['amount_lt'];
+    }
+
+    /**
+     * Sets amount_lt
+     *
+     * @param int|null $amount_lt Filter by an amount less than.
+     *
+     * @return self
+     */
+    public function setAmountLt($amount_lt, $deserialize = false)
+    {
+        $this->container['amount_lt'] = $amount_lt;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_lte
+     *
+     * @return int|null
+     */
+    public function getAmountLte()
+    {
+        return $this->container['amount_lte'];
+    }
+
+    /**
+     * Sets amount_lte
+     *
+     * @param int|null $amount_lte Filter by an amount less than or equal.
+     *
+     * @return self
+     */
+    public function setAmountLte($amount_lte, $deserialize = false)
+    {
+        $this->container['amount_lte'] = $amount_lte;
 
         return $this;
     }
@@ -423,25 +519,49 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets limit
+     * Gets created_at_gte
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getCreatedAtGte()
     {
-        return $this->container['limit'];
+        return $this->container['created_at_gte'];
     }
 
     /**
-     * Sets limit
+     * Sets created_at_gte
      *
-     * @param int|null $limit The numbers of items to return
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
-    public function setLimit($limit, $deserialize = false)
+    public function setCreatedAtGte($created_at_gte, $deserialize = false)
     {
-        $this->container['limit'] = $limit;
+        $this->container['created_at_gte'] = $created_at_gte;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at_lte
+     *
+     * @return string|null
+     */
+    public function getCreatedAtLte()
+    {
+        return $this->container['created_at_lte'];
+    }
+
+    /**
+     * Sets created_at_lte
+     *
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
+     *
+     * @return self
+     */
+    public function setCreatedAtLte($created_at_lte, $deserialize = false)
+    {
+        $this->container['created_at_lte'] = $created_at_lte;
 
         return $this;
     }
@@ -459,13 +579,61 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets idempotency_id
      *
-     * @param string|null $idempotency_id Filter by idempotency_id
+     * @param string|null $idempotency_id Filter by `idempotency_id`.
      *
      * @return self
      */
     public function setIdempotencyId($idempotency_id, $deserialize = false)
     {
         $this->container['idempotency_id'] = $idempotency_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int|null
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int|null $limit The numbers of items to return.
+     *
+     * @return self
+     */
+    public function setLimit($limit, $deserialize = false)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     *
+     * @return string|null
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     *
+     * @param string|null $sort Specify key to be used for sorting the collection.
+     *
+     * @return self
+     */
+    public function setSort($sort, $deserialize = false)
+    {
+        $this->container['sort'] = $sort;
 
         return $this;
     }
@@ -495,54 +663,6 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets created_at_gte
-     *
-     * @return string|null
-     */
-    public function getCreatedAtGte()
-    {
-        return $this->container['created_at_gte'];
-    }
-
-    /**
-     * Sets created_at_gte
-     *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
-     *
-     * @return self
-     */
-    public function setCreatedAtGte($created_at_gte, $deserialize = false)
-    {
-        $this->container['created_at_gte'] = $created_at_gte;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at_lte
-     *
-     * @return string|null
-     */
-    public function getCreatedAtLte()
-    {
-        return $this->container['created_at_lte'];
-    }
-
-    /**
-     * Sets created_at_lte
-     *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
-     *
-     * @return self
-     */
-    public function setCreatedAtLte($created_at_lte, $deserialize = false)
-    {
-        $this->container['created_at_lte'] = $created_at_lte;
-
-        return $this;
-    }
-
-    /**
      * Gets updated_at_gte
      *
      * @return string|null
@@ -555,7 +675,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets updated_at_gte
      *
-     * @param string|null $updated_at_gte Filter where updated_at is after the given date
+     * @param string|null $updated_at_gte Filter where `updated_at` is after the given date.
      *
      * @return self
      */
@@ -579,157 +699,13 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets updated_at_lte
      *
-     * @param string|null $updated_at_lte Filter where updated_at is before the given date
+     * @param string|null $updated_at_lte Filter where `updated_at` is before the given date.
      *
      * @return self
      */
     public function setUpdatedAtLte($updated_at_lte, $deserialize = false)
     {
         $this->container['updated_at_lte'] = $updated_at_lte;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_void
-     *
-     * @return string|null
-     */
-    public function getIsVoid()
-    {
-        return $this->container['is_void'];
-    }
-
-    /**
-     * Sets is_void
-     *
-     * @param string|null $is_void Filter by idempotency_id
-     *
-     * @return self
-     */
-    public function setIsVoid($is_void, $deserialize = false)
-    {
-        $this->container['is_void'] = $is_void;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return int|null
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int|null $amount Filter by an amount equal to the given value
-     *
-     * @return self
-     */
-    public function setAmount($amount, $deserialize = false)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_lt
-     *
-     * @return int|null
-     */
-    public function getAmountLt()
-    {
-        return $this->container['amount_lt'];
-    }
-
-    /**
-     * Sets amount_lt
-     *
-     * @param int|null $amount_lt Filter by an amount less than
-     *
-     * @return self
-     */
-    public function setAmountLt($amount_lt, $deserialize = false)
-    {
-        $this->container['amount_lt'] = $amount_lt;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_gt
-     *
-     * @return int|null
-     */
-    public function getAmountGt()
-    {
-        return $this->container['amount_gt'];
-    }
-
-    /**
-     * Sets amount_gt
-     *
-     * @param int|null $amount_gt Filter by an amount greater than
-     *
-     * @return self
-     */
-    public function setAmountGt($amount_gt, $deserialize = false)
-    {
-        $this->container['amount_gt'] = $amount_gt;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_lte
-     *
-     * @return int|null
-     */
-    public function getAmountLte()
-    {
-        return $this->container['amount_lte'];
-    }
-
-    /**
-     * Sets amount_lte
-     *
-     * @param int|null $amount_lte Filter by an amount less than or equal
-     *
-     * @return self
-     */
-    public function setAmountLte($amount_lte, $deserialize = false)
-    {
-        $this->container['amount_lte'] = $amount_lte;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_gte
-     *
-     * @return int|null
-     */
-    public function getAmountGte()
-    {
-        return $this->container['amount_gte'];
-    }
-
-    /**
-     * Sets amount_gte
-     *
-     * @param int|null $amount_gte Filter by an amount greater than or equal
-     *
-     * @return self
-     */
-    public function setAmountGte($amount_gte, $deserialize = false)
-    {
-        $this->container['amount_gte'] = $amount_gte;
 
         return $this;
     }
@@ -747,13 +723,37 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets trace_id
      *
-     * @param string|null $trace_id Filter by trace_id
+     * @param string|null $trace_id Filter by `trace_id`.
      *
      * @return self
      */
     public function setTraceId($trace_id, $deserialize = false)
     {
         $this->container['trace_id'] = $trace_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_void
+     *
+     * @return string|null
+     */
+    public function getIsVoid()
+    {
+        return $this->container['is_void'];
+    }
+
+    /**
+     * Sets is_void
+     *
+     * @param string|null $is_void Filter by `idempotency_id`.
+     *
+     * @return self
+     */
+    public function setIsVoid($is_void, $deserialize = false)
+    {
+        $this->container['is_void'] = $is_void;
 
         return $this;
     }
@@ -771,7 +771,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_bin
      *
-     * @param string|null $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number
+     * @param string|null $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number.
      *
      * @return self
      */
@@ -795,7 +795,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_account_last4
      *
-     * @param string|null $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4=9444 BIN
+     * @param string|null $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4=9444 BIN.
      *
      * @return self
      */
@@ -819,7 +819,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_brand_type
      *
-     * @param string|null $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down
+     * @param string|null $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down.
      *
      * @return self
      */
@@ -843,7 +843,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets merchant_identity_id
      *
-     * @param string|null $merchant_identity_id Filter by Identity ID
+     * @param string|null $merchant_identity_id Filter by `Identity` ID.
      *
      * @return self
      */
@@ -867,7 +867,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets merchant_identity_name
      *
-     * @param string|null $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive
+     * @param string|null $merchant_identity_name Filter Transactions by `Identity` name. The name is not case-sensitive.
      *
      * @return self
      */
@@ -891,7 +891,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_name
      *
-     * @param string|null $instrument_name Filter Transactions by payment instrument name
+     * @param string|null $instrument_name Filter Transactions by `Payment Instrument` name.
      *
      * @return self
      */
@@ -915,7 +915,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_type
      *
-     * @param string|null $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card
+     * @param string|null $instrument_type Filter Transactions by `Payment Instrument` type. Available instrument types include: Bank Account or Payment Card.
      *
      * @return self
      */
@@ -939,7 +939,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets merchant_id
      *
-     * @param string|null $merchant_id Filter by Merchant ID
+     * @param string|null $merchant_id Filter by `Merchant` ID.
      *
      * @return self
      */
@@ -963,7 +963,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets merchant_mid
      *
-     * @param string|null $merchant_mid Filter by Merchant Identification Number (MID)
+     * @param string|null $merchant_mid Filter by Merchant Identification Number (MID).
      *
      * @return self
      */
@@ -987,7 +987,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets instrument_card_last4
      *
-     * @param string|null $instrument_card_last4 Filter by the payment card last 4 digits
+     * @param string|null $instrument_card_last4 Filter by the payment card last 4 digits.
      *
      * @return self
      */
@@ -1011,7 +1011,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets merchant_processor_id
      *
-     * @param string|null $merchant_processor_id Filter by Processor ID
+     * @param string|null $merchant_processor_id Filter by `Processor` ID.
      *
      * @return self
      */
@@ -1035,7 +1035,7 @@ class ListAuthorizationsQueryParams implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets type
      *
-     * @param string|null $type Type of the authorization.
+     * @param string|null $type Type of the `Authorization`.
      *
      * @return self
      */

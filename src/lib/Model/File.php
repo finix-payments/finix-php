@@ -61,18 +61,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'status' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
-        'linked_type' => 'string',
-        'linked_to' => 'string',
-        'extension' => 'string',
-        'display_name' => 'string',
-        'type' => 'string',
-        'platform_id' => 'string',
         'application_id' => 'string',
+        'display_name' => 'string',
+        'extension' => 'string',
+        'identity_id' => 'string',
+        'linked_to' => 'string',
+        'linked_type' => 'string',
+        'platform_id' => 'string',
+        'status' => 'string',
         'tags' => 'array<string,string>',
-        'identity_id' => 'string'
+        'type' => 'string'
     ];
 
     /**
@@ -84,18 +84,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'status' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
-        'linked_type' => null,
-        'linked_to' => null,
-        'extension' => null,
-        'display_name' => null,
-        'type' => null,
-        'platform_id' => null,
         'application_id' => null,
+        'display_name' => null,
+        'extension' => null,
+        'identity_id' => null,
+        'linked_to' => null,
+        'linked_type' => null,
+        'platform_id' => null,
+        'status' => null,
         'tags' => null,
-        'identity_id' => null
+        'type' => null
     ];
 
     /**
@@ -126,18 +126,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'status' => 'status',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
-        'linked_type' => 'linked_type',
-        'linked_to' => 'linked_to',
-        'extension' => 'extension',
-        'display_name' => 'display_name',
-        'type' => 'type',
-        'platform_id' => 'platform_id',
         'application_id' => 'application_id',
+        'display_name' => 'display_name',
+        'extension' => 'extension',
+        'identity_id' => 'identity_id',
+        'linked_to' => 'linked_to',
+        'linked_type' => 'linked_type',
+        'platform_id' => 'platform_id',
+        'status' => 'status',
         'tags' => 'tags',
-        'identity_id' => 'identity_id'
+        'type' => 'type'
     ];
 
     /**
@@ -147,18 +147,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'status' => 'setStatus',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
-        'linked_type' => 'setLinkedType',
-        'linked_to' => 'setLinkedTo',
-        'extension' => 'setExtension',
-        'display_name' => 'setDisplayName',
-        'type' => 'setType',
-        'platform_id' => 'setPlatformId',
         'application_id' => 'setApplicationId',
+        'display_name' => 'setDisplayName',
+        'extension' => 'setExtension',
+        'identity_id' => 'setIdentityId',
+        'linked_to' => 'setLinkedTo',
+        'linked_type' => 'setLinkedType',
+        'platform_id' => 'setPlatformId',
+        'status' => 'setStatus',
         'tags' => 'setTags',
-        'identity_id' => 'setIdentityId'
+        'type' => 'setType'
     ];
 
     /**
@@ -168,18 +168,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'status' => 'getStatus',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
-        'linked_type' => 'getLinkedType',
-        'linked_to' => 'getLinkedTo',
-        'extension' => 'getExtension',
-        'display_name' => 'getDisplayName',
-        'type' => 'getType',
-        'platform_id' => 'getPlatformId',
         'application_id' => 'getApplicationId',
+        'display_name' => 'getDisplayName',
+        'extension' => 'getExtension',
+        'identity_id' => 'getIdentityId',
+        'linked_to' => 'getLinkedTo',
+        'linked_type' => 'getLinkedType',
+        'platform_id' => 'getPlatformId',
+        'status' => 'getStatus',
         'tags' => 'getTags',
-        'identity_id' => 'getIdentityId'
+        'type' => 'getType'
     ];
 
     /**
@@ -240,18 +240,18 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
-        $this->container['linked_type'] = $data['linked_type'] ?? null;
-        $this->container['linked_to'] = $data['linked_to'] ?? null;
-        $this->container['extension'] = $data['extension'] ?? null;
-        $this->container['display_name'] = $data['display_name'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['platform_id'] = $data['platform_id'] ?? null;
         $this->container['application_id'] = $data['application_id'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
+        $this->container['extension'] = $data['extension'] ?? null;
         $this->container['identity_id'] = $data['identity_id'] ?? null;
+        $this->container['linked_to'] = $data['linked_to'] ?? null;
+        $this->container['linked_type'] = $data['linked_type'] ?? null;
+        $this->container['platform_id'] = $data['platform_id'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -298,30 +298,6 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status The status of the file's review. The statuses available includes:<br><li><strong>REQUIRES_UPLOAD</strong>: A file still needs to be uploaded to the file object.<br><li><strong>PENDING</strong>: Finix's underwriting team is still reviewing the uploaded files.<br><li><strong>INVALID</strong>: The file couldn't be read.<br><li><strong>UPLOADED</strong>: The file has been uploaded to the resource.
-     *
-     * @return self
-     */
-    public function setStatus($status, $deserialize = false)
-    {
-        $this->container['status'] = $status;
 
         return $this;
     }
@@ -375,73 +351,25 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets linked_type
+     * Gets application_id
      *
      * @return string|null
      */
-    public function getLinkedType()
+    public function getApplicationId()
     {
-        return $this->container['linked_type'];
+        return $this->container['application_id'];
     }
 
     /**
-     * Sets linked_type
+     * Sets application_id
      *
-     * @param string|null $linked_type Autofills to **Merchant**.
+     * @param string|null $application_id The ID of the `Application` that the `File` was created under.
      *
      * @return self
      */
-    public function setLinkedType($linked_type, $deserialize = false)
+    public function setApplicationId($application_id, $deserialize = false)
     {
-        $this->container['linked_type'] = $linked_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets linked_to
-     *
-     * @return string|null
-     */
-    public function getLinkedTo()
-    {
-        return $this->container['linked_to'];
-    }
-
-    /**
-     * Sets linked_to
-     *
-     * @param string|null $linked_to The resource ID the `File` is linked to.
-     *
-     * @return self
-     */
-    public function setLinkedTo($linked_to, $deserialize = false)
-    {
-        $this->container['linked_to'] = $linked_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets extension
-     *
-     * @return string|null
-     */
-    public function getExtension()
-    {
-        return $this->container['extension'];
-    }
-
-    /**
-     * Sets extension
-     *
-     * @param string|null $extension The extension of the file.
-     *
-     * @return self
-     */
-    public function setExtension($extension, $deserialize = false)
-    {
-        $this->container['extension'] = $extension;
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }
@@ -471,25 +399,97 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets type
+     * Gets extension
      *
      * @return string|null
      */
-    public function getType()
+    public function getExtension()
     {
-        return $this->container['type'];
+        return $this->container['extension'];
     }
 
     /**
-     * Sets type
+     * Sets extension
      *
-     * @param string|null $type The type of document.
+     * @param string|null $extension The extension of the file.
      *
      * @return self
      */
-    public function setType($type, $deserialize = false)
+    public function setExtension($extension, $deserialize = false)
     {
-        $this->container['type'] = $type;
+        $this->container['extension'] = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Gets identity_id
+     *
+     * @return string|null
+     */
+    public function getIdentityId()
+    {
+        return $this->container['identity_id'];
+    }
+
+    /**
+     * Sets identity_id
+     *
+     * @param string|null $identity_id ID of the `Identity` that created the `File`.
+     *
+     * @return self
+     */
+    public function setIdentityId($identity_id, $deserialize = false)
+    {
+        $this->container['identity_id'] = $identity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets linked_to
+     *
+     * @return string|null
+     */
+    public function getLinkedTo()
+    {
+        return $this->container['linked_to'];
+    }
+
+    /**
+     * Sets linked_to
+     *
+     * @param string|null $linked_to The resource ID the `File` is linked to.
+     *
+     * @return self
+     */
+    public function setLinkedTo($linked_to, $deserialize = false)
+    {
+        $this->container['linked_to'] = $linked_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets linked_type
+     *
+     * @return string|null
+     */
+    public function getLinkedType()
+    {
+        return $this->container['linked_type'];
+    }
+
+    /**
+     * Sets linked_type
+     *
+     * @param string|null $linked_type Autofills to **Merchant**.
+     *
+     * @return self
+     */
+    public function setLinkedType($linked_type, $deserialize = false)
+    {
+        $this->container['linked_type'] = $linked_type;
 
         return $this;
     }
@@ -519,25 +519,25 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets application_id
+     * Gets status
      *
      * @return string|null
      */
-    public function getApplicationId()
+    public function getStatus()
     {
-        return $this->container['application_id'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets application_id
+     * Sets status
      *
-     * @param string|null $application_id The ID of the `Application` that the `File` was created under.
+     * @param string|null $status The status of the file's review. The statuses available includes:<br><li><strong>REQUIRES_UPLOAD</strong>: A file still needs to be uploaded to the file object.<br><li><strong>PENDING</strong>: Finix's underwriting team is still reviewing the uploaded files.<br><li><strong>INVALID</strong>: The file couldn't be read.<br><li><strong>UPLOADED</strong>: The file has been uploaded to the resource.
      *
      * @return self
      */
-    public function setApplicationId($application_id, $deserialize = false)
+    public function setStatus($status, $deserialize = false)
     {
-        $this->container['application_id'] = $application_id;
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -567,25 +567,25 @@ class File implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets identity_id
+     * Gets type
      *
      * @return string|null
      */
-    public function getIdentityId()
+    public function getType()
     {
-        return $this->container['identity_id'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets identity_id
+     * Sets type
      *
-     * @param string|null $identity_id ID of the `Identity` that created the `File`.
+     * @param string|null $type The type of document.
      *
      * @return self
      */
-    public function setIdentityId($identity_id, $deserialize = false)
+    public function setType($type, $deserialize = false)
     {
-        $this->container['identity_id'] = $identity_id;
+        $this->container['type'] = $type;
 
         return $this;
     }

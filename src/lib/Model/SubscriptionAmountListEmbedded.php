@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * SubscriptionAmountListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;subscription_amount&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubscriptionAmountListEmbedded implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets subscription_amounts
      *
-     * @param \Finix\Model\SubscriptionAmount[]|null $subscription_amounts subscription_amounts
+     * @param \Finix\Model\SubscriptionAmount[]|null $subscription_amounts `subscription_amount` objects.
      *
      * @return self
      */

@@ -220,12 +220,6 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
         if ($this->container['fee_amount_data'] === null) {
             $invalidProperties[] = "'fee_amount_data' can't be null";
         }
-        if ($this->container['nickname'] === null) {
-            $invalidProperties[] = "'nickname' can't be null";
-        }
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -298,7 +292,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets nickname
      *
-     * @return string
+     * @return string|null
      */
     public function getNickname()
     {
@@ -308,7 +302,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets nickname
      *
-     * @param string $nickname Human readable name.
+     * @param string|null $nickname Human readable name.
      *
      * @return self
      */
@@ -322,7 +316,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets tags
      *
-     * @return array<string,string>
+     * @return array<string,string>|null
      */
     public function getTags()
     {
@@ -332,7 +326,7 @@ class CreateSubscriptionAmountRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets tags
      *
-     * @param array<string,string> $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */

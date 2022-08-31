@@ -267,9 +267,6 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id, $deserialize = false)
     {
-
-        
-
         $this->container['id'] = $id;
 
         return $this;

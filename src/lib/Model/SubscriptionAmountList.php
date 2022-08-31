@@ -61,7 +61,8 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'page' => '\Finix\Model\UsersListPage',
-        '_embedded' => '\Finix\Model\SubscriptionAmountListEmbedded'
+        '_embedded' => '\Finix\Model\SubscriptionAmountListEmbedded',
+        '_links' => '\Finix\Model\ListLinks'
     ];
 
     /**
@@ -73,7 +74,8 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'page' => null,
-        '_embedded' => null
+        '_embedded' => null,
+        '_links' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'page' => 'page',
-        '_embedded' => '_embedded'
+        '_embedded' => '_embedded',
+        '_links' => '_links'
     ];
 
     /**
@@ -114,7 +117,8 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'page' => 'setPage',
-        '_embedded' => 'setEmbedded'
+        '_embedded' => 'setEmbedded',
+        '_links' => 'setLinks'
     ];
 
     /**
@@ -124,7 +128,8 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'page' => 'getPage',
-        '_embedded' => 'getEmbedded'
+        '_embedded' => 'getEmbedded',
+        '_links' => 'getLinks'
     ];
 
     /**
@@ -186,6 +191,7 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->container['page'] = $data['page'] ?? null;
         $this->container['_embedded'] = $data['_embedded'] ?? null;
+        $this->container['_links'] = $data['_links'] ?? null;
     }
 
     /**
@@ -256,6 +262,30 @@ class SubscriptionAmountList implements ModelInterface, ArrayAccess, \JsonSerial
     public function setEmbedded($_embedded, $deserialize = false)
     {
         $this->container['_embedded'] = $_embedded;
+
+        return $this;
+    }
+
+    /**
+     * Gets _links
+     *
+     * @return \Finix\Model\ListLinks|null
+     */
+    public function getLinks()
+    {
+        return $this->container['_links'];
+    }
+
+    /**
+     * Sets _links
+     *
+     * @param \Finix\Model\ListLinks|null $_links _links
+     *
+     * @return self
+     */
+    public function setLinks($_links, $deserialize = false)
+    {
+        $this->container['_links'] = $_links;
 
         return $this;
     }

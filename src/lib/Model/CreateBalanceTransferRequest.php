@@ -61,13 +61,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'description' => 'string',
-        'tags' => 'array<string,string>',
-        'destination' => 'string',
-        'currency' => '\Finix\Model\Currency',
         'amount' => 'int',
+        'currency' => '\Finix\Model\Currency',
+        'description' => 'string',
+        'destination' => 'string',
+        'processor_type' => 'string',
         'source' => 'string',
-        'processor_type' => 'string'
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -78,13 +78,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'description' => null,
-        'tags' => null,
-        'destination' => null,
-        'currency' => null,
         'amount' => 'int64',
+        'currency' => null,
+        'description' => null,
+        'destination' => null,
+        'processor_type' => null,
         'source' => null,
-        'processor_type' => null
+        'tags' => null
     ];
 
     /**
@@ -114,13 +114,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'description' => 'description',
-        'tags' => 'tags',
-        'destination' => 'destination',
-        'currency' => 'currency',
         'amount' => 'amount',
+        'currency' => 'currency',
+        'description' => 'description',
+        'destination' => 'destination',
+        'processor_type' => 'processor_type',
         'source' => 'source',
-        'processor_type' => 'processor_type'
+        'tags' => 'tags'
     ];
 
     /**
@@ -129,13 +129,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'description' => 'setDescription',
-        'tags' => 'setTags',
-        'destination' => 'setDestination',
-        'currency' => 'setCurrency',
         'amount' => 'setAmount',
+        'currency' => 'setCurrency',
+        'description' => 'setDescription',
+        'destination' => 'setDestination',
+        'processor_type' => 'setProcessorType',
         'source' => 'setSource',
-        'processor_type' => 'setProcessorType'
+        'tags' => 'setTags'
     ];
 
     /**
@@ -144,13 +144,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'description' => 'getDescription',
-        'tags' => 'getTags',
-        'destination' => 'getDestination',
-        'currency' => 'getCurrency',
         'amount' => 'getAmount',
+        'currency' => 'getCurrency',
+        'description' => 'getDescription',
+        'destination' => 'getDestination',
+        'processor_type' => 'getProcessorType',
         'source' => 'getSource',
-        'processor_type' => 'getProcessorType'
+        'tags' => 'getTags'
     ];
 
     /**
@@ -240,13 +240,13 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['destination'] = $data['destination'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['source'] = $data['source'] ?? null;
+        $this->container['currency'] = $data['currency'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['destination'] = $data['destination'] ?? null;
         $this->container['processor_type'] = $data['processor_type'] ?? null;
+        $this->container['source'] = $data['source'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -258,6 +258,15 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
         if ($this->container['destination'] === null) {
             $invalidProperties[] = "'destination' can't be null";
         }
@@ -270,11 +279,8 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
             );
         }
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+        if ($this->container['processor_type'] === null) {
+            $invalidProperties[] = "'processor_type' can't be null";
         }
         if ($this->container['source'] === null) {
             $invalidProperties[] = "'source' can't be null";
@@ -288,9 +294,6 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
             );
         }
 
-        if ($this->container['processor_type'] === null) {
-            $invalidProperties[] = "'processor_type' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,83 +310,25 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets description
+     * Gets amount
      *
-     * @return string|null
+     * @return int
      */
-    public function getDescription()
+    public function getAmount()
     {
-        return $this->container['description'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets description
+     * Sets amount
      *
-     * @param string|null $description Additional information about the `balance_transfer` (e.g. **Transferring funds for Holidays**).
+     * @param int $amount The total amount that will be debited in cents (e.g. 100 cents to debit $1.00).
      *
      * @return self
      */
-    public function setDescription($description, $deserialize = false)
+    public function setAmount($amount, $deserialize = false)
     {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets destination
-     *
-     * @return string
-     */
-    public function getDestination()
-    {
-        return $this->container['destination'];
-    }
-
-    /**
-     * Sets destination
-     *
-     * @param string $destination Choose the value that best applies to the account where funds will get credited.
-     *
-     * @return self
-     */
-    public function setDestination($destination, $deserialize = false)
-    {
-        $allowedValues = $this->getDestinationAllowableValues();
-        if (!in_array($destination, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'destination', must be one of '%s'",
-                    $destination,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['destination'] = $destination;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -413,59 +358,59 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets amount
+     * Gets description
      *
-     * @return int
+     * @return string
      */
-    public function getAmount()
+    public function getDescription()
     {
-        return $this->container['amount'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets amount
+     * Sets description
      *
-     * @param int $amount The total amount that will be debited in cents (e.g. 100 cents to debit $1.00).
+     * @param string $description Additional information about the `balance_transfer` (e.g. **Transferring funds for Holidays**).
      *
      * @return self
      */
-    public function setAmount($amount, $deserialize = false)
+    public function setDescription($description, $deserialize = false)
     {
-        $this->container['amount'] = $amount;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets source
+     * Gets destination
      *
      * @return string
      */
-    public function getSource()
+    public function getDestination()
     {
-        return $this->container['source'];
+        return $this->container['destination'];
     }
 
     /**
-     * Sets source
+     * Sets destination
      *
-     * @param string $source Choose the value that best applies to the account where funds will get debited.
+     * @param string $destination The account where funds get credited. For balance transfers, this is an aliased ID and will have the value of `FOR_BENEFIT_OF_ACCOUNT` or `OPERATING_ACCOUNT`.
      *
      * @return self
      */
-    public function setSource($source, $deserialize = false)
+    public function setDestination($destination, $deserialize = false)
     {
-        $allowedValues = $this->getSourceAllowableValues();
-        if (!in_array($source, $allowedValues, true) && !$deserialize) {
+        $allowedValues = $this->getDestinationAllowableValues();
+        if (!in_array($destination, $allowedValues, true) && !$deserialize) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'source', must be one of '%s'",
-                    $source,
+                    "Invalid value '%s' for 'destination', must be one of '%s'",
+                    $destination,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['source'] = $source;
+        $this->container['destination'] = $destination;
 
         return $this;
     }
@@ -490,6 +435,64 @@ class CreateBalanceTransferRequest implements ModelInterface, ArrayAccess, \Json
     public function setProcessorType($processor_type, $deserialize = false)
     {
         $this->container['processor_type'] = $processor_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string $source The account where funds get debited. For balance transfers, this is an aliased ID and will have the value of `FOR_BENEFIT_OF_ACCOUNT` or `OPERATING_ACCOUNT`.
+     *
+     * @return self
+     */
+    public function setSource($source, $deserialize = false)
+    {
+        $allowedValues = $this->getSourceAllowableValues();
+        if (!in_array($source, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'source', must be one of '%s'",
+                    $source,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

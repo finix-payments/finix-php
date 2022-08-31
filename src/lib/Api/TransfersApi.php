@@ -576,7 +576,7 @@ class TransfersApi
      *
      * Refund or Reverse a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  \Finix\Model\CreateReversalRequest $create_reversal_request create_reversal_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -594,7 +594,7 @@ class TransfersApi
      *
      * Refund or Reverse a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  \Finix\Model\CreateReversalRequest $create_reversal_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -832,7 +832,7 @@ class TransfersApi
      *
      * Refund or Reverse a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  \Finix\Model\CreateReversalRequest $create_reversal_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -853,7 +853,7 @@ class TransfersApi
      *
      * Refund or Reverse a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  \Finix\Model\CreateReversalRequest $create_reversal_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -903,7 +903,7 @@ class TransfersApi
     /**
      * Create request for operation 'createTransferReversal'
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  \Finix\Model\CreateReversalRequest $create_reversal_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -1025,9 +1025,9 @@ class TransfersApi
     /**
      * Operation get
      *
-     * Get a Transfer
+     * Fetch a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1042,9 +1042,9 @@ class TransfersApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Transfer
+     * Fetch a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1233,9 +1233,9 @@ class TransfersApi
     /**
      * Operation getAsync
      *
-     * Get a Transfer
+     * Fetch a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1253,9 +1253,9 @@ class TransfersApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Transfer
+     * Fetch a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1304,7 +1304,7 @@ class TransfersApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1407,7 +1407,7 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
@@ -1454,7 +1454,7 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
@@ -1650,7 +1650,7 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
@@ -1675,7 +1675,7 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
@@ -1729,7 +1729,7 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
@@ -1868,37 +1868,37 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  string $id Filter by id (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $ready_to_settle_at_gte Filter by ready_to_settle_at (optional)
-     * @param  string $ready_to_settle_at_lte Filter by ready_to_settle_at (optional)
-     * @param  int $statement_descriptor Filter by statement_descriptor (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
+     * @param  string $ready_to_settle_at_gte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  string $ready_to_settle_at_lte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  int $statement_descriptor Filter by &#x60;statement_descriptor&#x60;. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Filter by &#x60;Transfer&#x60; type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -1943,37 +1943,37 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  string $id Filter by id (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $ready_to_settle_at_gte Filter by ready_to_settle_at (optional)
-     * @param  string $ready_to_settle_at_lte Filter by ready_to_settle_at (optional)
-     * @param  int $statement_descriptor Filter by statement_descriptor (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
+     * @param  string $ready_to_settle_at_gte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  string $ready_to_settle_at_lte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  int $statement_descriptor Filter by &#x60;statement_descriptor&#x60;. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Filter by &#x60;Transfer&#x60; type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2167,37 +2167,37 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  string $id Filter by id (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $ready_to_settle_at_gte Filter by ready_to_settle_at (optional)
-     * @param  string $ready_to_settle_at_lte Filter by ready_to_settle_at (optional)
-     * @param  int $statement_descriptor Filter by statement_descriptor (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
+     * @param  string $ready_to_settle_at_gte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  string $ready_to_settle_at_lte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  int $statement_descriptor Filter by &#x60;statement_descriptor&#x60;. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Filter by &#x60;Transfer&#x60; type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2220,37 +2220,37 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  string $id Filter by id (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $ready_to_settle_at_gte Filter by ready_to_settle_at (optional)
-     * @param  string $ready_to_settle_at_lte Filter by ready_to_settle_at (optional)
-     * @param  int $statement_descriptor Filter by statement_descriptor (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
+     * @param  string $ready_to_settle_at_gte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  string $ready_to_settle_at_lte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  int $statement_descriptor Filter by &#x60;statement_descriptor&#x60;. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Filter by &#x60;Transfer&#x60; type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2302,37 +2302,37 @@ class TransfersApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $sort Specify key to be used for sorting the collection (optional)
+     * @param  string $sort Specify key to be used for sorting the collection. (optional)
      * @param  string $after_cursor Return every resource created after the cursor value. (optional)
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  int $amount Filter by an amount equal to the given value (optional)
-     * @param  int $amount_gte Filter by an amount greater than or equal (optional)
-     * @param  int $amount_gt Filter by an amount greater than (optional)
-     * @param  int $amount_lte Filter by an amount less than or equal (optional)
-     * @param  int $amount_lt Filter by an amount less than (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $idempotency_id Filter by idempotency_id (optional)
-     * @param  string $id Filter by id (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  int $amount Filter by an amount equal to the given value. (optional)
+     * @param  int $amount_gte Filter by an amount greater than or equal. (optional)
+     * @param  int $amount_gt Filter by an amount greater than. (optional)
+     * @param  int $amount_lte Filter by an amount less than or equal. (optional)
+     * @param  int $amount_lt Filter by an amount less than. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $idempotency_id Filter by &#x60;idempotency_id&#x60;. (optional)
+     * @param  string $id Filter by &#x60;id&#x60;. (optional)
      * @param  string $state Filter by Transaction state. (optional)
-     * @param  string $ready_to_settle_at_gte Filter by ready_to_settle_at (optional)
-     * @param  string $ready_to_settle_at_lte Filter by ready_to_settle_at (optional)
-     * @param  int $statement_descriptor Filter by statement_descriptor (optional)
-     * @param  string $trace_id Filter by trace_id (optional)
-     * @param  string $updated_at_gte Filter where updated_at is after the given date (optional)
-     * @param  string $updated_at_lte Filter where updated_at is before the given date (optional)
-     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN (optional)
-     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down (optional)
-     * @param  string $merchant_identity_id Filter by Identity ID (optional)
-     * @param  string $merchant_identity_name Filter Transactions by Identity name. The name is not case-sensitive (optional)
-     * @param  string $instrument_name Filter Transactions by payment instrument name (optional)
-     * @param  string $instrument_type Filter Transactions by payment instrument type. Available instrument types include: Bank Account or Payment Card (optional)
-     * @param  string $merchant_id Filter by Merchant ID (optional)
-     * @param  string $merchant_mid Filter by Merchant Identification Number (MID) (optional)
-     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits (optional)
-     * @param  string $merchant_processor_id Filter by Processor ID (optional)
-     * @param  string $type Filter by Transfer type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
+     * @param  string $ready_to_settle_at_gte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  string $ready_to_settle_at_lte Filter by &#x60;ready_to_settle_at&#x60;. (optional)
+     * @param  int $statement_descriptor Filter by &#x60;statement_descriptor&#x60;. (optional)
+     * @param  string $trace_id Filter by &#x60;trace_id&#x60;. (optional)
+     * @param  string $updated_at_gte Filter where &#x60;updated_at&#x60; is after the given date. (optional)
+     * @param  string $updated_at_lte Filter where &#x60;updated_at&#x60; is before the given date. (optional)
+     * @param  string $instrument_bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $instrument_account_last4 Filter Transactions by the last 4 digits of the bank account. The bank account last 4 are the last 4 digits of the masked number instrument_account_last4&#x3D;9444 BIN. (optional)
+     * @param  string $instrument_brand_type Filter by card brand. Available card brand types can be found in the drop-down. (optional)
+     * @param  string $merchant_identity_id Filter by &#x60;Identity&#x60; ID. (optional)
+     * @param  string $merchant_identity_name Filter Transactions by &#x60;Identity&#x60; name. The name is not case-sensitive. (optional)
+     * @param  string $instrument_name Filter Transactions by &#x60;Payment Instrument&#x60; name. (optional)
+     * @param  string $instrument_type Filter Transactions by &#x60;Payment Instrument&#x60; type. Available instrument types include: Bank Account or Payment Card (optional)
+     * @param  string $merchant_id Filter by &#x60;Merchant&#x60; ID. (optional)
+     * @param  string $merchant_mid Filter by Merchant Identification Number (MID). (optional)
+     * @param  string $instrument_card_last4 Filter by the payment card last 4 digits. (optional)
+     * @param  string $merchant_processor_id Filter by &#x60;Processor&#x60; ID. (optional)
+     * @param  string $type Filter by &#x60;Transfer&#x60; type. Available type filters include: All, Debits, Refunds, or Credits. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2742,7 +2742,7 @@ class TransfersApi
      *
      * Update a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      * @param  \Finix\Model\UpdateTransferRequest $update_transfer_request update_transfer_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2760,7 +2760,7 @@ class TransfersApi
      *
      * Update a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      * @param  \Finix\Model\UpdateTransferRequest $update_transfer_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
@@ -2952,7 +2952,7 @@ class TransfersApi
      *
      * Update a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      * @param  \Finix\Model\UpdateTransferRequest $update_transfer_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -2973,7 +2973,7 @@ class TransfersApi
      *
      * Update a Transfer
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      * @param  \Finix\Model\UpdateTransferRequest $update_transfer_request (optional)
      *
      * @throws \InvalidArgumentException
@@ -3023,7 +3023,7 @@ class TransfersApi
     /**
      * Create request for operation 'update'
      *
-     * @param  string $transfer_id ID of &#x60;transfer&#x60; object. (required)
+     * @param  string $transfer_id ID of &#x60;Transfer&#x60; resource. (required)
      * @param  \Finix\Model\UpdateTransferRequest $update_transfer_request (optional)
      *
      * @throws \InvalidArgumentException

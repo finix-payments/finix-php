@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * DisputeEvidenceListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;evidence&#x60; created for a &#x60;Dispute&#x60;.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class DisputeEvidenceListEmbedded implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets evidences
      *
-     * @param \Finix\Model\DisputeEvidence[]|null $evidences evidences
+     * @param \Finix\Model\DisputeEvidence[]|null $evidences `Evidence` objects.
      *
      * @return self
      */

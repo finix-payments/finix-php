@@ -891,7 +891,7 @@ class PaymentInstrumentsApi
     /**
      * Operation get
      *
-     * Get a Payment Instrument
+     * Fetch a Payment Instrument
      *
      * @param  string $payment_instrument_id ID of object (required)
      *
@@ -908,7 +908,7 @@ class PaymentInstrumentsApi
     /**
      * Operation getWithHttpInfo
      *
-     * Get a Payment Instrument
+     * Fetch a Payment Instrument
      *
      * @param  string $payment_instrument_id ID of object (required)
      *
@@ -1122,7 +1122,7 @@ class PaymentInstrumentsApi
     /**
      * Operation getAsync
      *
-     * Get a Payment Instrument
+     * Fetch a Payment Instrument
      *
      * @param  string $payment_instrument_id ID of object (required)
      *
@@ -1142,7 +1142,7 @@ class PaymentInstrumentsApi
     /**
      * Operation getAsyncWithHttpInfo
      *
-     * Get a Payment Instrument
+     * Fetch a Payment Instrument
      *
      * @param  string $payment_instrument_id ID of object (required)
      *
@@ -1296,7 +1296,7 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $payment_instrument_id ID of object (required)
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
      * @param  int $page_size The size of the page. (optional)
@@ -1343,7 +1343,7 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $payment_instrument_id ID of object (required)
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
      * @param  int $page_size The size of the page. (optional)
@@ -1539,7 +1539,7 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $payment_instrument_id ID of object (required)
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
      * @param  int $page_size The size of the page. (optional)
@@ -1564,7 +1564,7 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $payment_instrument_id ID of object (required)
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
      * @param  int $page_size The size of the page. (optional)
@@ -1618,7 +1618,7 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  string $payment_instrument_id ID of object (required)
+     * @param  string $payment_instrument_id ID of &#x60;Payment Instrument&#x60; object. (required)
      * @param  int $limit The number of entries to return. (optional)
      * @param  int $offset The number of items to skip before starting to collect the result set. (optional)
      * @param  int $page_size The size of the page. (optional)
@@ -1757,21 +1757,21 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $account_last4 Filter by the last 4 digits of the account if available. (optional)
      * @param  string $account_routing_number Filter by the account routing number if available. (optional)
-     * @param  string $application Filter by application id (optional)
-     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
-     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards (optional)
-     * @param  string $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards. (optional)
-     * @param  string $name Filter by the name. (optional)
-     * @param  string $owner_identity_id Filter by the owner id of the associated identity. (optional)
-     * @param  string $type Filter by the payment instrument type. (optional)
+     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
+     * @param  string $application Filter by &#x60;Application&#x60; ID. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $last_four Filter by the last 4 digits of the &#x60;Payment Instrument&#x60; card. This filter only applies to payment cards. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $name Filter by the name. (optional)
+     * @param  string $owner_identity_id Filter by the owner id of the associated &#x60;Identity&#x60;. (optional)
+     * @param  string $type Filter by the &#x60;Payment Instrument&#x60; type. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1815,21 +1815,21 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $account_last4 Filter by the last 4 digits of the account if available. (optional)
      * @param  string $account_routing_number Filter by the account routing number if available. (optional)
-     * @param  string $application Filter by application id (optional)
-     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
-     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards (optional)
-     * @param  string $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards. (optional)
-     * @param  string $name Filter by the name. (optional)
-     * @param  string $owner_identity_id Filter by the owner id of the associated identity. (optional)
-     * @param  string $type Filter by the payment instrument type. (optional)
+     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
+     * @param  string $application Filter by &#x60;Application&#x60; ID. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $last_four Filter by the last 4 digits of the &#x60;Payment Instrument&#x60; card. This filter only applies to payment cards. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $name Filter by the name. (optional)
+     * @param  string $owner_identity_id Filter by the owner id of the associated &#x60;Identity&#x60;. (optional)
+     * @param  string $type Filter by the &#x60;Payment Instrument&#x60; type. (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1999,21 +1999,21 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $account_last4 Filter by the last 4 digits of the account if available. (optional)
      * @param  string $account_routing_number Filter by the account routing number if available. (optional)
-     * @param  string $application Filter by application id (optional)
-     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
-     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards (optional)
-     * @param  string $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards. (optional)
-     * @param  string $name Filter by the name. (optional)
-     * @param  string $owner_identity_id Filter by the owner id of the associated identity. (optional)
-     * @param  string $type Filter by the payment instrument type. (optional)
+     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
+     * @param  string $application Filter by &#x60;Application&#x60; ID. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $last_four Filter by the last 4 digits of the &#x60;Payment Instrument&#x60; card. This filter only applies to payment cards. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $name Filter by the name. (optional)
+     * @param  string $owner_identity_id Filter by the owner id of the associated &#x60;Identity&#x60;. (optional)
+     * @param  string $type Filter by the &#x60;Payment Instrument&#x60; type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2035,21 +2035,21 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $account_last4 Filter by the last 4 digits of the account if available. (optional)
      * @param  string $account_routing_number Filter by the account routing number if available. (optional)
-     * @param  string $application Filter by application id (optional)
-     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
-     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards (optional)
-     * @param  string $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards. (optional)
-     * @param  string $name Filter by the name. (optional)
-     * @param  string $owner_identity_id Filter by the owner id of the associated identity. (optional)
-     * @param  string $type Filter by the payment instrument type. (optional)
+     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
+     * @param  string $application Filter by &#x60;Application&#x60; ID. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $last_four Filter by the last 4 digits of the &#x60;Payment Instrument&#x60; card. This filter only applies to payment cards. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $name Filter by the name. (optional)
+     * @param  string $owner_identity_id Filter by the owner id of the associated &#x60;Identity&#x60;. (optional)
+     * @param  string $type Filter by the &#x60;Payment Instrument&#x60; type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2100,21 +2100,21 @@ class PaymentInstrumentsApi
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
-     * @param  int $limit The numbers of items to return (optional)
-     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
      * @param  string $account_last4 Filter by the last 4 digits of the account if available. (optional)
      * @param  string $account_routing_number Filter by the account routing number if available. (optional)
-     * @param  string $application Filter by application id (optional)
-     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number (optional)
-     * @param  string $created_at_gte Filter where created_at is after the given date. (optional)
-     * @param  string $created_at_lte Filter where created_at is before the given date. (optional)
-     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
-     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards (optional)
-     * @param  string $last_four Filter by the last 4 digits of the Payment Instrument card. This filter only applies to payment cards. (optional)
-     * @param  string $name Filter by the name. (optional)
-     * @param  string $owner_identity_id Filter by the owner id of the associated identity. (optional)
-     * @param  string $type Filter by the payment instrument type. (optional)
+     * @param  string $after_cursor Return every resource created after the cursor value. (optional)
+     * @param  string $application Filter by &#x60;Application&#x60; ID. (optional)
      * @param  string $before_cursor Return every resource created before the cursor value. (optional)
+     * @param  string $bin Filter by Bank Identification Number (BIN). The BIN is the first 6 digits of the masked number. (optional)
+     * @param  string $created_at_gte Filter where &#x60;created_at&#x60; is after the given date. (optional)
+     * @param  string $created_at_lte Filter where &#x60;created_at&#x60; is before the given date. (optional)
+     * @param  string $expiration_month Filter by the expiration month associated with the &#x60;Payment Instrument&#x60; if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $expiration_year Filter by the 4 digit expiration year associated with the Payment Instrument if applicable. This filter only applies to payment cards. (optional)
+     * @param  string $last_four Filter by the last 4 digits of the &#x60;Payment Instrument&#x60; card. This filter only applies to payment cards. (optional)
+     * @param  int $limit The numbers of items to return. (optional)
+     * @param  string $name Filter by the name. (optional)
+     * @param  string $owner_identity_id Filter by the owner id of the associated &#x60;Identity&#x60;. (optional)
+     * @param  string $type Filter by the &#x60;Payment Instrument&#x60; type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2122,21 +2122,21 @@ class PaymentInstrumentsApi
     public function listRequest($associative_array)
     {
         // unbox the parameters from the associative array
-        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
-        $after_cursor = array_key_exists('after_cursor', $associative_array) ? $associative_array['after_cursor'] : null;
         $account_last4 = array_key_exists('account_last4', $associative_array) ? $associative_array['account_last4'] : null;
         $account_routing_number = array_key_exists('account_routing_number', $associative_array) ? $associative_array['account_routing_number'] : null;
+        $after_cursor = array_key_exists('after_cursor', $associative_array) ? $associative_array['after_cursor'] : null;
         $application = array_key_exists('application', $associative_array) ? $associative_array['application'] : null;
+        $before_cursor = array_key_exists('before_cursor', $associative_array) ? $associative_array['before_cursor'] : null;
         $bin = array_key_exists('bin', $associative_array) ? $associative_array['bin'] : null;
         $created_at_gte = array_key_exists('created_at_gte', $associative_array) ? $associative_array['created_at_gte'] : null;
         $created_at_lte = array_key_exists('created_at_lte', $associative_array) ? $associative_array['created_at_lte'] : null;
         $expiration_month = array_key_exists('expiration_month', $associative_array) ? $associative_array['expiration_month'] : null;
         $expiration_year = array_key_exists('expiration_year', $associative_array) ? $associative_array['expiration_year'] : null;
         $last_four = array_key_exists('last_four', $associative_array) ? $associative_array['last_four'] : null;
+        $limit = array_key_exists('limit', $associative_array) ? $associative_array['limit'] : null;
         $name = array_key_exists('name', $associative_array) ? $associative_array['name'] : null;
         $owner_identity_id = array_key_exists('owner_identity_id', $associative_array) ? $associative_array['owner_identity_id'] : null;
         $type = array_key_exists('type', $associative_array) ? $associative_array['type'] : null;
-        $before_cursor = array_key_exists('before_cursor', $associative_array) ? $associative_array['before_cursor'] : null;
 
 
         $resourcePath = '/payment_instruments';
@@ -2146,24 +2146,6 @@ class PaymentInstrumentsApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $after_cursor,
-            'after_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $account_last4,
@@ -2184,8 +2166,26 @@ class PaymentInstrumentsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $after_cursor,
+            'after_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $application,
             'application', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $before_cursor,
+            'before_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2247,6 +2247,15 @@ class PaymentInstrumentsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $name,
             'name', // param base name
             'string', // openApiType
@@ -2267,15 +2276,6 @@ class PaymentInstrumentsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $type,
             'type', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $before_cursor,
-            'before_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

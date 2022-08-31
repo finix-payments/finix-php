@@ -222,24 +222,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
-        if ($this->container['line1'] === null) {
-            $invalidProperties[] = "'line1' can't be null";
-        }
-        if ($this->container['line2'] === null) {
-            $invalidProperties[] = "'line2' can't be null";
-        }
-        if ($this->container['postal_code'] === null) {
-            $invalidProperties[] = "'postal_code' can't be null";
-        }
-        if ($this->container['region'] === null) {
-            $invalidProperties[] = "'region' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -258,7 +240,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -268,7 +250,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string $city City (max 20 characters).
+     * @param string|null $city City (max 20 characters).
      *
      * @return self
      */
@@ -282,7 +264,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets country
      *
-     * @return \Finix\Model\Country
+     * @return \Finix\Model\Country|null
      */
     public function getCountry()
     {
@@ -292,7 +274,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets country
      *
-     * @param \Finix\Model\Country $country country
+     * @param \Finix\Model\Country|null $country country
      *
      * @return self
      */
@@ -306,7 +288,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets line1
      *
-     * @return string
+     * @return string|null
      */
     public function getLine1()
     {
@@ -316,7 +298,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets line1
      *
-     * @param string $line1 First line of the address (max 35 characters).
+     * @param string|null $line1 First line of the address (max 35 characters).
      *
      * @return self
      */
@@ -330,7 +312,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets line2
      *
-     * @return string
+     * @return string|null
      */
     public function getLine2()
     {
@@ -340,7 +322,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets line2
      *
-     * @param string $line2 Second line of the address (max 35 characters).
+     * @param string|null $line2 Second line of the address (max 35 characters).
      *
      * @return self
      */
@@ -354,7 +336,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets postal_code
      *
-     * @return string
+     * @return string|null
      */
     public function getPostalCode()
     {
@@ -364,7 +346,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets postal_code
      *
-     * @param string $postal_code Zip or Postal code (max 7 characters).
+     * @param string|null $postal_code Zip or Postal code (max 7 characters).
      *
      * @return self
      */
@@ -378,7 +360,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets region
      *
-     * @return string
+     * @return string|null
      */
     public function getRegion()
     {
@@ -388,7 +370,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region
      *
-     * @param string $region 2-letter State code.
+     * @param string|null $region 2-letter State code.
      *
      * @return self
      */

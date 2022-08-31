@@ -255,7 +255,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sort
      *
-     * @param string|null $sort Specify key to be used for sorting the collection
+     * @param string|null $sort Specify key to be used for sorting the collection.
      *
      * @return self
      */
@@ -279,7 +279,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets offset
      *
-     * @param int|null $offset The number of items to skip before starting to collect the result set
+     * @param int|null $offset The number of items to skip before starting to collect the result set.
      *
      * @return self
      */
@@ -303,7 +303,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets updated_at_gte
      *
-     * @param string|null $updated_at_gte Filter where updated_at is after the given date
+     * @param string|null $updated_at_gte Filter where `updated_at` is after the given date.
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class ListDisputesQueryParams implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets updated_at_lte
      *
-     * @param string|null $updated_at_lte Filter where updated_at is before the given date
+     * @param string|null $updated_at_lte Filter where `updated_at` is before the given date.
      *
      * @return self
      */

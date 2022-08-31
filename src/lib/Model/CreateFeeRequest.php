@@ -60,16 +60,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => 'array<string,string>',
         'amount' => 'int',
         'currency' => '\Finix\Model\Currency',
-        'label' => 'string',
         'fee_subtype' => 'string',
-        'fee_type' => '\Finix\Model\FeeType',
+        'fee_type' => 'string',
+        'label' => 'string',
         'linked_id' => 'string',
         'linked_type' => 'string',
         'merchant_id' => 'string',
-        'settlement_delay_days' => 'int'
+        'settlement_delay_days' => 'int',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -80,16 +80,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null,
         'amount' => 'int64',
         'currency' => null,
-        'label' => null,
         'fee_subtype' => null,
         'fee_type' => null,
+        'label' => null,
         'linked_id' => null,
         'linked_type' => null,
         'merchant_id' => null,
-        'settlement_delay_days' => null
+        'settlement_delay_days' => null,
+        'tags' => null
     ];
 
     /**
@@ -119,16 +119,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags',
         'amount' => 'amount',
         'currency' => 'currency',
-        'label' => 'label',
         'fee_subtype' => 'fee_subtype',
         'fee_type' => 'fee_type',
+        'label' => 'label',
         'linked_id' => 'linked_id',
         'linked_type' => 'linked_type',
         'merchant_id' => 'merchant_id',
-        'settlement_delay_days' => 'settlement_delay_days'
+        'settlement_delay_days' => 'settlement_delay_days',
+        'tags' => 'tags'
     ];
 
     /**
@@ -137,16 +137,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags',
         'amount' => 'setAmount',
         'currency' => 'setCurrency',
-        'label' => 'setLabel',
         'fee_subtype' => 'setFeeSubtype',
         'fee_type' => 'setFeeType',
+        'label' => 'setLabel',
         'linked_id' => 'setLinkedId',
         'linked_type' => 'setLinkedType',
         'merchant_id' => 'setMerchantId',
-        'settlement_delay_days' => 'setSettlementDelayDays'
+        'settlement_delay_days' => 'setSettlementDelayDays',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -155,16 +155,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags',
         'amount' => 'getAmount',
         'currency' => 'getCurrency',
-        'label' => 'getLabel',
         'fee_subtype' => 'getFeeSubtype',
         'fee_type' => 'getFeeType',
+        'label' => 'getLabel',
         'linked_id' => 'getLinkedId',
         'linked_type' => 'getLinkedType',
         'merchant_id' => 'getMerchantId',
-        'settlement_delay_days' => 'getSettlementDelayDays'
+        'settlement_delay_days' => 'getSettlementDelayDays',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -209,6 +209,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     public const FEE_SUBTYPE_CUSTOM = 'CUSTOM';
+    public const FEE_TYPE_CUSTOM = 'CUSTOM';
     public const LINKED_TYPE_APPLICATION = 'APPLICATION';
     public const LINKED_TYPE_PLATFORM = 'PLATFORM';
     public const LINKED_TYPE_SUBSCRIPTION = 'SUBSCRIPTION';
@@ -223,6 +224,18 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return [
             self::FEE_SUBTYPE_CUSTOM,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFeeTypeAllowableValues()
+    {
+        return [
+            self::FEE_TYPE_CUSTOM,
         ];
     }
 
@@ -256,16 +269,16 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['label'] = $data['label'] ?? null;
         $this->container['fee_subtype'] = $data['fee_subtype'] ?? null;
         $this->container['fee_type'] = $data['fee_type'] ?? null;
+        $this->container['label'] = $data['label'] ?? null;
         $this->container['linked_id'] = $data['linked_id'] ?? null;
         $this->container['linked_type'] = $data['linked_type'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['settlement_delay_days'] = $data['settlement_delay_days'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -298,6 +311,15 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['fee_type'] === null) {
             $invalidProperties[] = "'fee_type' can't be null";
         }
+        $allowedValues = $this->getFeeTypeAllowableValues();
+        if (!is_null($this->container['fee_type']) && !in_array($this->container['fee_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'fee_type', must be one of '%s'",
+                $this->container['fee_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getLinkedTypeAllowableValues();
         if (!is_null($this->container['linked_type']) && !in_array($this->container['linked_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -307,6 +329,9 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['merchant_id'] === null) {
+            $invalidProperties[] = "'merchant_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -321,30 +346,6 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
 
     /**
      * Gets amount
@@ -395,30 +396,6 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets label
-     *
-     * @return string|null
-     */
-    public function getLabel()
-    {
-        return $this->container['label'];
-    }
-
-    /**
-     * Sets label
-     *
-     * @param string|null $label The display name of the `Fee` that can be used for filtering purposes.
-     *
-     * @return self
-     */
-    public function setLabel($label, $deserialize = false)
-    {
-        $this->container['label'] = $label;
-
-        return $this;
-    }
-
-    /**
      * Gets fee_subtype
      *
      * @return string
@@ -455,7 +432,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_type
      *
-     * @return \Finix\Model\FeeType
+     * @return string
      */
     public function getFeeType()
     {
@@ -465,13 +442,47 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_type
      *
-     * @param \Finix\Model\FeeType $fee_type fee_type
+     * @param string $fee_type The type of the fee. Must be set to **CUSTOM**.
      *
      * @return self
      */
     public function setFeeType($fee_type, $deserialize = false)
     {
+        $allowedValues = $this->getFeeTypeAllowableValues();
+        if (!in_array($fee_type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'fee_type', must be one of '%s'",
+                    $fee_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['fee_type'] = $fee_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string|null $label The display name of the `Fee` that can be used for filtering purposes.
+     *
+     * @return self
+     */
+    public function setLabel($label, $deserialize = false)
+    {
+        $this->container['label'] = $label;
 
         return $this;
     }
@@ -537,7 +548,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchant_id
      *
-     * @return string|null
+     * @return string
      */
     public function getMerchantId()
     {
@@ -547,7 +558,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant_id
      *
-     * @param string|null $merchant_id The ID of the resource.
+     * @param string $merchant_id The ID of the resource.
      *
      * @return self
      */
@@ -578,6 +589,30 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSettlementDelayDays($settlement_delay_days, $deserialize = false)
     {
         $this->container['settlement_delay_days'] = $settlement_delay_days;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * AdditionalPurchaseData Class Doc Comment
  *
  * @category Class
- * @description The additional information about the purchase. Used for Level 2 and Level 3 Processing.
+ * @description Additional information about the purchase. Used for Level 2 and Level 3 Processing.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -258,9 +258,6 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['customer_reference_number'] === null) {
-            $invalidProperties[] = "'customer_reference_number' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -279,7 +276,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets customer_reference_number
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerReferenceNumber()
     {
@@ -289,7 +286,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets customer_reference_number
      *
-     * @param string $customer_reference_number The customer reference for the purchase (max 17 characters).
+     * @param string|null $customer_reference_number The customer reference for the purchase (max 17 characters).
      *
      * @return self
      */
@@ -433,7 +430,7 @@ class AdditionalPurchaseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets item_data
      *
-     * @param \Finix\Model\AdditionalPurchaseDataItemDataInner[]|null $item_data item_data
+     * @param \Finix\Model\AdditionalPurchaseDataItemDataInner[]|null $item_data Additional information about the transaction. Used for Level 2 and Level 3 Processing.
      *
      * @return self
      */

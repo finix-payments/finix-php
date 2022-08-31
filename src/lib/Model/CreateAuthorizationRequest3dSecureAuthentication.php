@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * CreateAuthorizationRequest3dSecureAuthentication Class Doc Comment
  *
  * @category Class
- * @description The 3D secure information for an authorization.
+ * @description The information required to create a 3D secure &#x60;Authorization&#x60;.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -210,12 +210,6 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['cardholder_authentication'] === null) {
-            $invalidProperties[] = "'cardholder_authentication' can't be null";
-        }
-        if ($this->container['electronic_commerce_indicator'] === null) {
-            $invalidProperties[] = "'electronic_commerce_indicator' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -234,7 +228,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
     /**
      * Gets cardholder_authentication
      *
-     * @return string
+     * @return string|null
      */
     public function getCardholderAuthentication()
     {
@@ -244,7 +238,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
     /**
      * Sets cardholder_authentication
      *
-     * @param string $cardholder_authentication Provides evidence that the cardholder authentication occurred or that the merchant attempted authentication. This is unique for each authentication transaction.
+     * @param string|null $cardholder_authentication Provides evidence that the cardholder authentication occurred or that the merchant attempted authentication. This is unique for each authentication transaction.
      *
      * @return self
      */
@@ -274,9 +268,6 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
      */
     public function setCardholderIpAddress($cardholder_ip_address, $deserialize = false)
     {
-
-        
-
         $this->container['cardholder_ip_address'] = $cardholder_ip_address;
 
         return $this;
@@ -285,7 +276,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
     /**
      * Gets electronic_commerce_indicator
      *
-     * @return string
+     * @return string|null
      */
     public function getElectronicCommerceIndicator()
     {
@@ -295,7 +286,7 @@ class CreateAuthorizationRequest3dSecureAuthentication implements ModelInterface
     /**
      * Sets electronic_commerce_indicator
      *
-     * @param string $electronic_commerce_indicator AUTHENTICATED: Approved by 3D Secure Vendor; ATTEMPTED: Issuer or cardholder does not support 3D Secure
+     * @param string|null $electronic_commerce_indicator AUTHENTICATED: Approved by 3D Secure Vendor; ATTEMPTED: Issuer or cardholder does not support 3D Secure
      *
      * @return self
      */

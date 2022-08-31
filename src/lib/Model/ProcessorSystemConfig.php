@@ -61,13 +61,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'class_key_identifier' => 'string',
         'acquirer_country_code' => 'string',
         'acquiring_bin' => 'string',
         'allow_credit_for_partner' => 'bool',
         'available_countries' => '\Finix\Model\Country[]',
         'business_application_id' => 'string',
-        'configuration_templates' => '\Finix\Model\ProcessorSystemConfigConfigurationTemplates',
+        'class_key_identifier' => 'string',
+        'config' => '\Finix\Model\ProcessorSystemConfigConfig',
         'default_currencies' => '\Finix\Model\Currency[]',
         'disable_ppgs' => 'bool',
         'fee_program_indicator' => 'string',
@@ -102,13 +102,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'class_key_identifier' => null,
         'acquirer_country_code' => null,
         'acquiring_bin' => null,
         'allow_credit_for_partner' => null,
         'available_countries' => null,
         'business_application_id' => null,
-        'configuration_templates' => null,
+        'class_key_identifier' => null,
+        'config' => null,
         'default_currencies' => null,
         'disable_ppgs' => null,
         'fee_program_indicator' => null,
@@ -162,13 +162,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'class_key_identifier' => 'CLASS_KEY_IDENTIFIER',
         'acquirer_country_code' => 'acquirer_country_code',
         'acquiring_bin' => 'acquiring_bin',
         'allow_credit_for_partner' => 'allow_credit_for_partner',
         'available_countries' => 'available_countries',
         'business_application_id' => 'business_application_id',
-        'configuration_templates' => 'configuration_templates',
+        'class_key_identifier' => 'class_key_identifier',
+        'config' => 'config',
         'default_currencies' => 'default_currencies',
         'disable_ppgs' => 'disable_ppgs',
         'fee_program_indicator' => 'fee_program_indicator',
@@ -201,13 +201,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'class_key_identifier' => 'setClassKeyIdentifier',
         'acquirer_country_code' => 'setAcquirerCountryCode',
         'acquiring_bin' => 'setAcquiringBin',
         'allow_credit_for_partner' => 'setAllowCreditForPartner',
         'available_countries' => 'setAvailableCountries',
         'business_application_id' => 'setBusinessApplicationId',
-        'configuration_templates' => 'setConfigurationTemplates',
+        'class_key_identifier' => 'setClassKeyIdentifier',
+        'config' => 'setConfig',
         'default_currencies' => 'setDefaultCurrencies',
         'disable_ppgs' => 'setDisablePpgs',
         'fee_program_indicator' => 'setFeeProgramIndicator',
@@ -240,13 +240,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'class_key_identifier' => 'getClassKeyIdentifier',
         'acquirer_country_code' => 'getAcquirerCountryCode',
         'acquiring_bin' => 'getAcquiringBin',
         'allow_credit_for_partner' => 'getAllowCreditForPartner',
         'available_countries' => 'getAvailableCountries',
         'business_application_id' => 'getBusinessApplicationId',
-        'configuration_templates' => 'getConfigurationTemplates',
+        'class_key_identifier' => 'getClassKeyIdentifier',
+        'config' => 'getConfig',
         'default_currencies' => 'getDefaultCurrencies',
         'disable_ppgs' => 'getDisablePpgs',
         'fee_program_indicator' => 'getFeeProgramIndicator',
@@ -314,7 +314,6 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-    public const CLASS_KEY_IDENTIFIER_IO_FINIX_VISA_DIRECT_CLIENT_VISA_SYSTEM_CONFIG = 'io.finix.visa.direct.client.VisaSystemConfig';
     public const ACQUIRER_COUNTRY_CODE__004 = '004';
     public const ACQUIRER_COUNTRY_CODE__008 = '008';
     public const ACQUIRER_COUNTRY_CODE__010 = '010';
@@ -564,24 +563,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
     public const ACQUIRER_COUNTRY_CODE__882 = '882';
     public const ACQUIRER_COUNTRY_CODE__887 = '887';
     public const ACQUIRER_COUNTRY_CODE__894 = '894';
+    public const CLASS_KEY_IDENTIFIER_IO_FINIX_VISA_DIRECT_CLIENT_VISA_SYSTEM_CONFIG = 'io.finix.visa.direct.client.VisaSystemConfig';
     public const SOURCE_OF_FUNDS__01 = '01';
     public const SOURCE_OF_FUNDS__02 = '02';
     public const SOURCE_OF_FUNDS__03 = '03';
     public const SOURCE_OF_FUNDS__04 = '04';
     public const SOURCE_OF_FUNDS__05 = '05';
     public const SOURCE_OF_FUNDS__06 = '06';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getClassKeyIdentifierAllowableValues()
-    {
-        return [
-            self::CLASS_KEY_IDENTIFIER_IO_FINIX_VISA_DIRECT_CLIENT_VISA_SYSTEM_CONFIG,
-        ];
-    }
 
     /**
      * Gets allowable values of the enum
@@ -848,6 +836,18 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string[]
      */
+    public function getClassKeyIdentifierAllowableValues()
+    {
+        return [
+            self::CLASS_KEY_IDENTIFIER_IO_FINIX_VISA_DIRECT_CLIENT_VISA_SYSTEM_CONFIG,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getSourceOfFundsAllowableValues()
     {
         return [
@@ -875,13 +875,13 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['class_key_identifier'] = $data['class_key_identifier'] ?? null;
         $this->container['acquirer_country_code'] = $data['acquirer_country_code'] ?? null;
         $this->container['acquiring_bin'] = $data['acquiring_bin'] ?? null;
         $this->container['allow_credit_for_partner'] = $data['allow_credit_for_partner'] ?? null;
         $this->container['available_countries'] = $data['available_countries'] ?? null;
         $this->container['business_application_id'] = $data['business_application_id'] ?? null;
-        $this->container['configuration_templates'] = $data['configuration_templates'] ?? null;
+        $this->container['class_key_identifier'] = $data['class_key_identifier'] ?? null;
+        $this->container['config'] = $data['config'] ?? null;
         $this->container['default_currencies'] = $data['default_currencies'] ?? null;
         $this->container['disable_ppgs'] = $data['disable_ppgs'] ?? null;
         $this->container['fee_program_indicator'] = $data['fee_program_indicator'] ?? null;
@@ -917,20 +917,20 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getClassKeyIdentifierAllowableValues();
-        if (!is_null($this->container['class_key_identifier']) && !in_array($this->container['class_key_identifier'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'class_key_identifier', must be one of '%s'",
-                $this->container['class_key_identifier'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getAcquirerCountryCodeAllowableValues();
         if (!is_null($this->container['acquirer_country_code']) && !in_array($this->container['acquirer_country_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'acquirer_country_code', must be one of '%s'",
                 $this->container['acquirer_country_code'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getClassKeyIdentifierAllowableValues();
+        if (!is_null($this->container['class_key_identifier']) && !in_array($this->container['class_key_identifier'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'class_key_identifier', must be one of '%s'",
+                $this->container['class_key_identifier'],
                 implode("', '", $allowedValues)
             );
         }
@@ -958,40 +958,6 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets class_key_identifier
-     *
-     * @return string|null
-     */
-    public function getClassKeyIdentifier()
-    {
-        return $this->container['class_key_identifier'];
-    }
-
-    /**
-     * Sets class_key_identifier
-     *
-     * @param string|null $class_key_identifier Field used by processor to communicate with Finix.
-     *
-     * @return self
-     */
-    public function setClassKeyIdentifier($class_key_identifier, $deserialize = false)
-    {
-        $allowedValues = $this->getClassKeyIdentifierAllowableValues();
-        if (!is_null($class_key_identifier) && !in_array($class_key_identifier, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'class_key_identifier', must be one of '%s'",
-                    $class_key_identifier,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['class_key_identifier'] = $class_key_identifier;
-
-        return $this;
-    }
 
     /**
      * Gets acquirer_country_code
@@ -1046,9 +1012,6 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setAcquiringBin($acquiring_bin, $deserialize = false)
     {
-
-        
-
         $this->container['acquiring_bin'] = $acquiring_bin;
 
         return $this;
@@ -1127,25 +1090,59 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets configuration_templates
+     * Gets class_key_identifier
      *
-     * @return \Finix\Model\ProcessorSystemConfigConfigurationTemplates|null
+     * @return string|null
      */
-    public function getConfigurationTemplates()
+    public function getClassKeyIdentifier()
     {
-        return $this->container['configuration_templates'];
+        return $this->container['class_key_identifier'];
     }
 
     /**
-     * Sets configuration_templates
+     * Sets class_key_identifier
      *
-     * @param \Finix\Model\ProcessorSystemConfigConfigurationTemplates|null $configuration_templates configuration_templates
+     * @param string|null $class_key_identifier Field used by processor to communicate with Finix.
      *
      * @return self
      */
-    public function setConfigurationTemplates($configuration_templates, $deserialize = false)
+    public function setClassKeyIdentifier($class_key_identifier, $deserialize = false)
     {
-        $this->container['configuration_templates'] = $configuration_templates;
+        $allowedValues = $this->getClassKeyIdentifierAllowableValues();
+        if (!is_null($class_key_identifier) && !in_array($class_key_identifier, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'class_key_identifier', must be one of '%s'",
+                    $class_key_identifier,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['class_key_identifier'] = $class_key_identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets config
+     *
+     * @return \Finix\Model\ProcessorSystemConfigConfig|null
+     */
+    public function getConfig()
+    {
+        return $this->container['config'];
+    }
+
+    /**
+     * Sets config
+     *
+     * @param \Finix\Model\ProcessorSystemConfigConfig|null $config config
+     *
+     * @return self
+     */
+    public function setConfig($config, $deserialize = false)
+    {
+        $this->container['config'] = $config;
 
         return $this;
     }

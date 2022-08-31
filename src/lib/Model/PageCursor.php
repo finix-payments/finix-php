@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * PageCursor Class Doc Comment
  *
  * @category Class
- * @description 
+ * @description Details the page that&#39;s returned.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

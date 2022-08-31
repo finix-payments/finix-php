@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * PaymentInstrumentUpdatesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;updates&#x60; for a &#x60;Payment Instrument&#x60;.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -191,10 +192,7 @@ class PaymentInstrumentUpdatesListEmbedded implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['updates'] === null) {
-            $invalidProperties[] = "'updates' can't be null";
-        }
-        if ((count($this->container['updates']) < 0)) {
+        if (!is_null($this->container['updates']) && (count($this->container['updates']) < 0)) {
             $invalidProperties[] = "invalid value for 'updates', number of items must be greater than or equal to 0.";
         }
 
@@ -216,7 +214,7 @@ class PaymentInstrumentUpdatesListEmbedded implements ModelInterface, ArrayAcces
     /**
      * Gets updates
      *
-     * @return \Finix\Model\InstrumentUpdate[]
+     * @return \Finix\Model\InstrumentUpdate[]|null
      */
     public function getUpdates()
     {
@@ -226,7 +224,7 @@ class PaymentInstrumentUpdatesListEmbedded implements ModelInterface, ArrayAcces
     /**
      * Sets updates
      *
-     * @param \Finix\Model\InstrumentUpdate[] $updates updates
+     * @param \Finix\Model\InstrumentUpdate[]|null $updates `Update` objects.
      *
      * @return self
      */
@@ -235,7 +233,7 @@ class PaymentInstrumentUpdatesListEmbedded implements ModelInterface, ArrayAcces
 
         
 
-        if ((count($updates) < 0)) {
+        if (!is_null($updates) && (count($updates) < 0)) {
             throw new \InvalidArgumentException('invalid length for $updates when calling PaymentInstrumentUpdatesListEmbedded., number of items must be greater than or equal to 0.');
         }
         $this->container['updates'] = $updates;

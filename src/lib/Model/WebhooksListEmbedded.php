@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * WebhooksListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Webhook&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class WebhooksListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets webhooks
      *
-     * @param \Finix\Model\Webhook[]|null $webhooks webhooks
+     * @param \Finix\Model\Webhook[]|null $webhooks `Webhook` objects.
      *
      * @return self
      */

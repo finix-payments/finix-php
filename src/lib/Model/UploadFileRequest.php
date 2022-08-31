@@ -219,7 +219,7 @@ class UploadFileRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets file
      *
-     * @param \SplFileObject|null $file Path to the file you want to upload (e.g. **_/Users/Desktop/finix_file.png**).
+     * @param \SplFileObject|null $file Path to the file you want to upload<br>(e.g. **_/Users/Desktop/finix_file.png**).
      *
      * @return self
      */

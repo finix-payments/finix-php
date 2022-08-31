@@ -63,7 +63,7 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'page' => '\Finix\Model\PageOffset',
         '_embedded' => '\Finix\Model\PaymentInstrumentUpdatesListEmbedded',
-        '_links' => 'array<string,mixed>'
+        '_links' => '\Finix\Model\ListLinks'
     ];
 
     /**
@@ -204,9 +204,6 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['page'] === null) {
-            $invalidProperties[] = "'page' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -225,7 +222,7 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets page
      *
-     * @return \Finix\Model\PageOffset
+     * @return \Finix\Model\PageOffset|null
      */
     public function getPage()
     {
@@ -235,7 +232,7 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets page
      *
-     * @param \Finix\Model\PageOffset $page page
+     * @param \Finix\Model\PageOffset|null $page page
      *
      * @return self
      */
@@ -273,7 +270,7 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets _links
      *
-     * @return array<string,mixed>|null
+     * @return \Finix\Model\ListLinks|null
      */
     public function getLinks()
     {
@@ -283,7 +280,7 @@ class PaymentInstrumentUpdatesList implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets _links
      *
-     * @param array<string,mixed>|null $_links _links
+     * @param \Finix\Model\ListLinks|null $_links _links
      *
      * @return self
      */

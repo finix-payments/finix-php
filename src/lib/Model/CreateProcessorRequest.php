@@ -61,9 +61,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
         'config' => '\Finix\Model\CreateProcessorRequestConfig',
-        'tags' => 'array<string,string>'
+        'tags' => 'array<string,string>',
+        'type' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
         'config' => null,
-        'tags' => null
+        'tags' => null,
+        'type' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
         'config' => 'config',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'type' => 'type'
     ];
 
     /**
@@ -117,9 +117,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
         'config' => 'setConfig',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'type' => 'setType'
     ];
 
     /**
@@ -128,9 +128,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
         'config' => 'getConfig',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'type' => 'getType'
     ];
 
     /**
@@ -190,9 +190,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
         $this->container['config'] = $data['config'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -211,9 +211,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'type', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['config'] === null) {
-            $invalidProperties[] = "'config' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -230,39 +227,9 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-
-        if ((mb_strlen($type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling CreateProcessorRequest., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * Gets config
      *
-     * @return \Finix\Model\CreateProcessorRequestConfig
+     * @return \Finix\Model\CreateProcessorRequestConfig|null
      */
     public function getConfig()
     {
@@ -272,7 +239,7 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets config
      *
-     * @param \Finix\Model\CreateProcessorRequestConfig $config config
+     * @param \Finix\Model\CreateProcessorRequestConfig|null $config config
      *
      * @return self
      */
@@ -303,6 +270,36 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type The type of processor. Use **DUMMY_V1** for sandbox.
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+
+        if ((mb_strlen($type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $type when calling CreateProcessorRequest., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['type'] = $type;
 
         return $this;
     }

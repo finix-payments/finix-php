@@ -1,26 +1,19 @@
 {
-    {{#composerPackageName}}
-    "name": "{{.}}",
-    {{/composerPackageName}}
-    {{#artifactVersion}}
-    "version": "{{.}}",
-    {{/artifactVersion}}
-    "description": "{{{appDescription}}}",
+    "name": "finix/finix-php",
+    "description": "The Finix API library for PHP",
+    "version": "1.0.0",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
         "php",
         "sdk",
-        "rest",
-        "api"
+        "api",
+        "finix"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://finix.com",
+    "license": "Apache-2.0",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Finix",
+            "email": "support@finixpayments.com"
         }
     ],
     "require": {
@@ -36,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "{{escapedInvokerPackage}}\\" : "{{srcBasePath}}/" }
+        "psr-4": { "Finix\\" : "src/lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "{{escapedInvokerPackage}}\\Test\\" : "{{testBasePath}}/" }
+        "psr-4": { "Finix\\Test\\" : "src/test/" }
     }
 }

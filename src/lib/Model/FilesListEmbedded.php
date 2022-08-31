@@ -36,7 +36,7 @@ use \Finix\ObjectSerializer;
  * FilesListEmbedded Class Doc Comment
  *
  * @category Class
- * @description The number of items to skip before starting to collect the result set.
+ * @description List of &#x60;File&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -220,7 +220,7 @@ class FilesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets files
      *
-     * @param \Finix\Model\File[]|null $files files
+     * @param \Finix\Model\File[]|null $files `File` objects.
      *
      * @return self
      */

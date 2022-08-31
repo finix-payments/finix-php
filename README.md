@@ -3,7 +3,7 @@ This is the official Finix PHP API Library
 
 ## Installation
 ### Prerequisites
-- PHP 8.1 or higher
+- PHP 8.0 or higher
 - Suggested: Your own API credentials.
 Our tests use the API credentials from Finix's public documentation, however you need your own credentials to submit requests.
 ### Composer
@@ -112,7 +112,7 @@ try{
 ```
 ## Supported APIs
 - Transfers
-- Authorization
+- Authorizations
 - Identities
 - Merchants
 - Payment Instruments

@@ -62,8 +62,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'id' => 'string',
         'before_cursor' => 'string',
-        'after_cursor' => 'string',
-        'limit' => 'int'
+        'limit' => 'int',
+        'after_cursor' => 'string'
     ];
 
     /**
@@ -76,8 +76,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     protected static $openAPIFormats = [
         'id' => null,
         'before_cursor' => null,
-        'after_cursor' => null,
-        'limit' => null
+        'limit' => null,
+        'after_cursor' => null
     ];
 
     /**
@@ -109,8 +109,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     protected static $attributeMap = [
         'id' => 'id',
         'before_cursor' => 'before_cursor',
-        'after_cursor' => 'after_cursor',
-        'limit' => 'limit'
+        'limit' => 'limit',
+        'after_cursor' => 'after_cursor'
     ];
 
     /**
@@ -121,8 +121,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     protected static $setters = [
         'id' => 'setId',
         'before_cursor' => 'setBeforeCursor',
-        'after_cursor' => 'setAfterCursor',
-        'limit' => 'setLimit'
+        'limit' => 'setLimit',
+        'after_cursor' => 'setAfterCursor'
     ];
 
     /**
@@ -133,8 +133,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     protected static $getters = [
         'id' => 'getId',
         'before_cursor' => 'getBeforeCursor',
-        'after_cursor' => 'getAfterCursor',
-        'limit' => 'getLimit'
+        'limit' => 'getLimit',
+        'after_cursor' => 'getAfterCursor'
     ];
 
     /**
@@ -196,8 +196,8 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['before_cursor'] = $data['before_cursor'] ?? null;
-        $this->container['after_cursor'] = $data['after_cursor'] ?? null;
         $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['after_cursor'] = $data['after_cursor'] ?? null;
     }
 
     /**
@@ -237,7 +237,7 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     /**
      * Sets id
      *
-     * @param string|null $id Filter by id
+     * @param string|null $id Filter by `id`.
      *
      * @return self
      */
@@ -273,6 +273,30 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets limit
+     *
+     * @return int|null
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int|null $limit The numbers of items to return.
+     *
+     * @return self
+     */
+    public function setLimit($limit, $deserialize = false)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
      * Gets after_cursor
      *
      * @return string|null
@@ -292,30 +316,6 @@ class ListMerchantProfilesQueryParams implements ModelInterface, ArrayAccess, \J
     public function setAfterCursor($after_cursor, $deserialize = false)
     {
         $this->container['after_cursor'] = $after_cursor;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     *
-     * @return int|null
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param int|null $limit The numbers of items to return
-     *
-     * @return self
-     */
-    public function setLimit($limit, $deserialize = false)
-    {
-        $this->container['limit'] = $limit;
 
         return $this;
     }

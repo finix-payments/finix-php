@@ -232,7 +232,7 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets day
      *
-     * @param int|null $day day
+     * @param int|null $day Day business was incorporated (between 1 and 31).
      *
      * @return self
      */
@@ -256,7 +256,7 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets month
      *
-     * @param int|null $month month
+     * @param int|null $month Month business was incorporated (between 1 and 12).
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
     /**
      * Sets year
      *
-     * @param int|null $year year
+     * @param int|null $year Year business was incorporated (4-digit).
      *
      * @return self
      */

@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * ProcessorsListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Processors&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class ProcessorsListEmbedded implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets processors
      *
-     * @param \Finix\Model\Processor[]|null $processors `Processors` object.
+     * @param \Finix\Model\Processor[]|null $processors `Processors` objects.
      *
      * @return self
      */

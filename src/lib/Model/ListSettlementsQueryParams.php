@@ -261,7 +261,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets created_at_gte
      *
-     * @param string|null $created_at_gte Filter where created_at is after the given date.
+     * @param string|null $created_at_gte Filter where `created_at` is after the given date.
      *
      * @return self
      */
@@ -285,7 +285,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets created_at_lte
      *
-     * @param string|null $created_at_lte Filter where created_at is before the given date.
+     * @param string|null $created_at_lte Filter where `created_at` is before the given date.
      *
      * @return self
      */
@@ -309,7 +309,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets updated_at_gte
      *
-     * @param string|null $updated_at_gte Filter where updated_at is after the given date
+     * @param string|null $updated_at_gte Filter where `updated_at` is after the given date.
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets updated_at_lte
      *
-     * @param string|null $updated_at_lte Filter where updated_at is before the given date
+     * @param string|null $updated_at_lte Filter where `updated_at` is before the given date.
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets id
      *
-     * @param string|null $id Filter by id
+     * @param string|null $id Filter by `id`.
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class ListSettlementsQueryParams implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets limit
      *
-     * @param int|null $limit The numbers of items to return
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */

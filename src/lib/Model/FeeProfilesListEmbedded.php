@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * FeeProfilesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;fee_profile&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class FeeProfilesListEmbedded implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fee_profiles
      *
-     * @param \Finix\Model\FeeProfile[]|null $fee_profiles fee_profiles
+     * @param \Finix\Model\FeeProfile[]|null $fee_profiles `fee_profile` objects.
      *
      * @return self
      */

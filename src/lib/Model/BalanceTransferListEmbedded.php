@@ -220,7 +220,7 @@ class BalanceTransferListEmbedded implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets balance_transfers
      *
-     * @param \Finix\Model\BalanceTransferList[]|null $balance_transfers balance_transfers
+     * @param \Finix\Model\BalanceTransferList[]|null $balance_transfers `balance_transfer` objects.
      *
      * @return self
      */

@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * MerchantProfilesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;merchant_profile&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -219,7 +220,7 @@ class MerchantProfilesListEmbedded implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets merchant_profiles
      *
-     * @param \Finix\Model\MerchantProfile[]|null $merchant_profiles merchant_profiles
+     * @param \Finix\Model\MerchantProfile[]|null $merchant_profiles `merchant_profile` objects.
      *
      * @return self
      */

@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * SettlementsListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Settlement&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

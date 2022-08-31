@@ -36,6 +36,7 @@ use \Finix\ObjectSerializer;
  * FeesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;fee&#x60; objects.
  * @package  Finix
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class FeesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fees
      *
-     * @param \Finix\Model\Fee[]|null $fees `fee` object.
+     * @param \Finix\Model\Fee[]|null $fees `fee` objects.
      *
      * @return self
      */
