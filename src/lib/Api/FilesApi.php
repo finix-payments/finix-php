@@ -908,7 +908,7 @@ class FilesApi
     }
 
     /**
-     * Operation downloadFile
+     * Operation download
      *
      * Download a file
      *
@@ -918,14 +918,14 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
      */
-    public function downloadFile($file_id)
+    public function download($file_id)
     {
-        list($response) = $this->downloadFileWithHttpInfo($file_id);
+        list($response) = $this->downloadWithHttpInfo($file_id);
         return $response;
     }
 
     /**
-     * Operation downloadFileWithHttpInfo
+     * Operation downloadWithHttpInfo
      *
      * Download a file
      *
@@ -935,9 +935,9 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadFileWithHttpInfo($file_id)
+    public function downloadWithHttpInfo($file_id)
     {
-        $request = $this->downloadFileRequest($file_id);
+        $request = $this->downloadRequest($file_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1116,7 +1116,7 @@ class FilesApi
     }
 
     /**
-     * Operation downloadFileAsync
+     * Operation downloadAsync
      *
      * Download a file
      *
@@ -1125,9 +1125,9 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsync($file_id)
+    public function downloadAsync($file_id)
     {
-        return $this->downloadFileAsyncWithHttpInfo($file_id)
+        return $this->downloadAsyncWithHttpInfo($file_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1136,7 +1136,7 @@ class FilesApi
     }
 
     /**
-     * Operation downloadFileAsyncWithHttpInfo
+     * Operation downloadAsyncWithHttpInfo
      *
      * Download a file
      *
@@ -1145,10 +1145,10 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsyncWithHttpInfo($file_id)
+    public function downloadAsyncWithHttpInfo($file_id)
     {
         $returnType = '\SplFileObject';
-        $request = $this->downloadFileRequest($file_id);
+        $request = $this->downloadRequest($file_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1187,14 +1187,14 @@ class FilesApi
     }
 
     /**
-     * Create request for operation 'downloadFile'
+     * Create request for operation 'download'
      *
      * @param  string $file_id The ID of the &#x60;File&#x60; that was created to upload the file. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function downloadFileRequest($file_id)
+    public function downloadRequest($file_id)
     {
         // verify the required parameter 'file_id' is set
         if ($file_id === null || (is_array($file_id) && count($file_id) === 0)) {
@@ -3120,7 +3120,7 @@ class FilesApi
     }
 
     /**
-     * Operation uploadFile
+     * Operation upload
      *
      * Upload files Directly
      *
@@ -3131,14 +3131,14 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\File|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
      */
-    public function uploadFile($file_id, $upload_file_request = null)
+    public function upload($file_id, $upload_file_request = null)
     {
-        list($response) = $this->uploadFileWithHttpInfo($file_id, $upload_file_request);
+        list($response) = $this->uploadWithHttpInfo($file_id, $upload_file_request);
         return $response;
     }
 
     /**
-     * Operation uploadFileWithHttpInfo
+     * Operation uploadWithHttpInfo
      *
      * Upload files Directly
      *
@@ -3149,9 +3149,9 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\File|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadFileWithHttpInfo($file_id, $upload_file_request = null)
+    public function uploadWithHttpInfo($file_id, $upload_file_request = null)
     {
-        $request = $this->uploadFileRequest($file_id, $upload_file_request);
+        $request = $this->uploadRequest($file_id, $upload_file_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3330,7 +3330,7 @@ class FilesApi
     }
 
     /**
-     * Operation uploadFileAsync
+     * Operation uploadAsync
      *
      * Upload files Directly
      *
@@ -3340,9 +3340,9 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsync($file_id, $upload_file_request = null)
+    public function uploadAsync($file_id, $upload_file_request = null)
     {
-        return $this->uploadFileAsyncWithHttpInfo($file_id, $upload_file_request)
+        return $this->uploadAsyncWithHttpInfo($file_id, $upload_file_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3351,7 +3351,7 @@ class FilesApi
     }
 
     /**
-     * Operation uploadFileAsyncWithHttpInfo
+     * Operation uploadAsyncWithHttpInfo
      *
      * Upload files Directly
      *
@@ -3361,10 +3361,10 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsyncWithHttpInfo($file_id, $upload_file_request = null)
+    public function uploadAsyncWithHttpInfo($file_id, $upload_file_request = null)
     {
         $returnType = '\Finix\Model\File';
-        $request = $this->uploadFileRequest($file_id, $upload_file_request);
+        $request = $this->uploadRequest($file_id, $upload_file_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3403,7 +3403,7 @@ class FilesApi
     }
 
     /**
-     * Create request for operation 'uploadFile'
+     * Create request for operation 'upload'
      *
      * @param  string $file_id The ID of the &#x60;File&#x60; that was created to upload the file. (required)
      * @param  \Finix\Model\UploadFileRequest $upload_file_request (optional)
@@ -3411,7 +3411,7 @@ class FilesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function uploadFileRequest($file_id, $upload_file_request = null)
+    public function uploadRequest($file_id, $upload_file_request = null)
     {
         // verify the required parameter 'file_id' is set
         if ($file_id === null || (is_array($file_id) && count($file_id) === 0)) {

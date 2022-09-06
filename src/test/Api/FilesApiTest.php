@@ -132,7 +132,7 @@ class FilesApiTest extends TestCase
      */
     public function testDownloadFile()
     {
-        $downloadedFile = $this->client->files->downloadFile("FILE_bJecqoRPasStEPVpvKHtgA");
+        $downloadedFile = $this->client->files->download("FILE_bJecqoRPasStEPVpvKHtgA");
         $this->assertTrue($downloadedFile->getSize() > 0);
         
     }
@@ -223,7 +223,7 @@ class FilesApiTest extends TestCase
     public function testUploadFile()
     {
         $file =  fopen('test.png', 'r');
-        $testUpload = $this->client->files->uploadFile(self::$fileId
+        $testUpload = $this->client->files->upload(self::$fileId
         , new Model\UploadFileRequest(array('file'=>$file)));
         $this->assertSame($testUpload->getId(), self::$fileId);
     }

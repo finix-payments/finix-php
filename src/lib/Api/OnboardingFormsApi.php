@@ -117,7 +117,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingForm
+     * Operation create
      *
      * Create an Onboarding Form
      *
@@ -127,14 +127,14 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList
      */
-    public function createOnboardingForm($create_onboarding_form_request = null)
+    public function create($create_onboarding_form_request = null)
     {
-        list($response) = $this->createOnboardingFormWithHttpInfo($create_onboarding_form_request);
+        list($response) = $this->createWithHttpInfo($create_onboarding_form_request);
         return $response;
     }
 
     /**
-     * Operation createOnboardingFormWithHttpInfo
+     * Operation createWithHttpInfo
      *
      * Create an Onboarding Form
      *
@@ -144,9 +144,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOnboardingFormWithHttpInfo($create_onboarding_form_request = null)
+    public function createWithHttpInfo($create_onboarding_form_request = null)
     {
-        $request = $this->createOnboardingFormRequest($create_onboarding_form_request);
+        $request = $this->createRequest($create_onboarding_form_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -348,7 +348,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingFormAsync
+     * Operation createAsync
      *
      * Create an Onboarding Form
      *
@@ -357,9 +357,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOnboardingFormAsync($create_onboarding_form_request = null)
+    public function createAsync($create_onboarding_form_request = null)
     {
-        return $this->createOnboardingFormAsyncWithHttpInfo($create_onboarding_form_request)
+        return $this->createAsyncWithHttpInfo($create_onboarding_form_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -368,7 +368,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingFormAsyncWithHttpInfo
+     * Operation createAsyncWithHttpInfo
      *
      * Create an Onboarding Form
      *
@@ -377,10 +377,10 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOnboardingFormAsyncWithHttpInfo($create_onboarding_form_request = null)
+    public function createAsyncWithHttpInfo($create_onboarding_form_request = null)
     {
         $returnType = '\Finix\Model\OnboardingForm';
-        $request = $this->createOnboardingFormRequest($create_onboarding_form_request);
+        $request = $this->createRequest($create_onboarding_form_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -419,14 +419,14 @@ class OnboardingFormsApi
     }
 
     /**
-     * Create request for operation 'createOnboardingForm'
+     * Create request for operation 'create'
      *
      * @param  \Finix\Model\CreateOnboardingFormRequest $create_onboarding_form_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createOnboardingFormRequest($create_onboarding_form_request = null)
+    public function createRequest($create_onboarding_form_request = null)
     {
 
         $resourcePath = '/onboarding_forms';
@@ -526,7 +526,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingFormLink
+     * Operation createLink
      *
      * Create an Onboarding Form Link
      *
@@ -537,14 +537,14 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\OnboardingFormLink|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList
      */
-    public function createOnboardingFormLink($onboarding_form_id, $create_onboarding_form_link_request = null)
+    public function createLink($onboarding_form_id, $create_onboarding_form_link_request = null)
     {
-        list($response) = $this->createOnboardingFormLinkWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request);
+        list($response) = $this->createLinkWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request);
         return $response;
     }
 
     /**
-     * Operation createOnboardingFormLinkWithHttpInfo
+     * Operation createLinkWithHttpInfo
      *
      * Create an Onboarding Form Link
      *
@@ -555,9 +555,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\OnboardingFormLink|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOnboardingFormLinkWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request = null)
+    public function createLinkWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request = null)
     {
-        $request = $this->createOnboardingFormLinkRequest($onboarding_form_id, $create_onboarding_form_link_request);
+        $request = $this->createLinkRequest($onboarding_form_id, $create_onboarding_form_link_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -759,7 +759,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingFormLinkAsync
+     * Operation createLinkAsync
      *
      * Create an Onboarding Form Link
      *
@@ -769,9 +769,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOnboardingFormLinkAsync($onboarding_form_id, $create_onboarding_form_link_request = null)
+    public function createLinkAsync($onboarding_form_id, $create_onboarding_form_link_request = null)
     {
-        return $this->createOnboardingFormLinkAsyncWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request)
+        return $this->createLinkAsyncWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -780,7 +780,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation createOnboardingFormLinkAsyncWithHttpInfo
+     * Operation createLinkAsyncWithHttpInfo
      *
      * Create an Onboarding Form Link
      *
@@ -790,10 +790,10 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOnboardingFormLinkAsyncWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request = null)
+    public function createLinkAsyncWithHttpInfo($onboarding_form_id, $create_onboarding_form_link_request = null)
     {
         $returnType = '\Finix\Model\OnboardingFormLink';
-        $request = $this->createOnboardingFormLinkRequest($onboarding_form_id, $create_onboarding_form_link_request);
+        $request = $this->createLinkRequest($onboarding_form_id, $create_onboarding_form_link_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -832,7 +832,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Create request for operation 'createOnboardingFormLink'
+     * Create request for operation 'createLink'
      *
      * @param  string $onboarding_form_id The ID of the &#x60;onboarding_form&#x60; resource. (required)
      * @param  \Finix\Model\CreateOnboardingFormLinkRequest $create_onboarding_form_link_request (optional)
@@ -840,7 +840,7 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createOnboardingFormLinkRequest($onboarding_form_id, $create_onboarding_form_link_request = null)
+    public function createLinkRequest($onboarding_form_id, $create_onboarding_form_link_request = null)
     {
         // verify the required parameter 'onboarding_form_id' is set
         if ($onboarding_form_id === null || (is_array($onboarding_form_id) && count($onboarding_form_id) === 0)) {
@@ -954,7 +954,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation getOnboardingForm
+     * Operation get
      *
      * Fetch an Onboarding Form
      *
@@ -964,14 +964,14 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized
      */
-    public function getOnboardingForm($onboarding_form_id)
+    public function get($onboarding_form_id)
     {
-        list($response) = $this->getOnboardingFormWithHttpInfo($onboarding_form_id);
+        list($response) = $this->getWithHttpInfo($onboarding_form_id);
         return $response;
     }
 
     /**
-     * Operation getOnboardingFormWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Fetch an Onboarding Form
      *
@@ -981,9 +981,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOnboardingFormWithHttpInfo($onboarding_form_id)
+    public function getWithHttpInfo($onboarding_form_id)
     {
-        $request = $this->getOnboardingFormRequest($onboarding_form_id);
+        $request = $this->getRequest($onboarding_form_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1093,7 +1093,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation getOnboardingFormAsync
+     * Operation getAsync
      *
      * Fetch an Onboarding Form
      *
@@ -1102,9 +1102,9 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOnboardingFormAsync($onboarding_form_id)
+    public function getAsync($onboarding_form_id)
     {
-        return $this->getOnboardingFormAsyncWithHttpInfo($onboarding_form_id)
+        return $this->getAsyncWithHttpInfo($onboarding_form_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1113,7 +1113,7 @@ class OnboardingFormsApi
     }
 
     /**
-     * Operation getOnboardingFormAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Fetch an Onboarding Form
      *
@@ -1122,10 +1122,10 @@ class OnboardingFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOnboardingFormAsyncWithHttpInfo($onboarding_form_id)
+    public function getAsyncWithHttpInfo($onboarding_form_id)
     {
         $returnType = '\Finix\Model\OnboardingForm';
-        $request = $this->getOnboardingFormRequest($onboarding_form_id);
+        $request = $this->getRequest($onboarding_form_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1164,14 +1164,14 @@ class OnboardingFormsApi
     }
 
     /**
-     * Create request for operation 'getOnboardingForm'
+     * Create request for operation 'get'
      *
      * @param  string $onboarding_form_id The id of the &#x60;onboarding_form&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOnboardingFormRequest($onboarding_form_id)
+    public function getRequest($onboarding_form_id)
     {
         // verify the required parameter 'onboarding_form_id' is set
         if ($onboarding_form_id === null || (is_array($onboarding_form_id) && count($onboarding_form_id) === 0)) {

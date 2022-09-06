@@ -321,28 +321,28 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public const ADDRESS_VERIFICATION_NO_MATCH = 'NO_MATCH';
     public const ADDRESS_VERIFICATION_NOT_SUPPORTED = 'NOT_SUPPORTED';
     public const ADDRESS_VERIFICATION_UNKNOWN = 'UNKNOWN';
-    public const INSTRUMENT_TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const INSTRUMENT_TYPE_TOKEN = 'TOKEN';
-    public const INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
-    public const INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const INSTRUMENT_TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
+    public const INSTRUMENT_TYPE_TOKEN = 'TOKEN';
+    public const INSTRUMENT_TYPE_APPLE_PAY = 'APPLE_PAY';
     public const INSTRUMENT_TYPE_VIRTUAL = 'VIRTUAL';
-    public const INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
     public const INSTRUMENT_TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
+    public const INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const INSTRUMENT_TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
     public const PAYLOAD_TYPE_SOURCE = 'SOURCE';
     public const PAYLOAD_TYPE_DESTINATION = 'DESTINATION';
     public const SECURITY_CODE_VERIFICATION_MATCHED = 'MATCHED';
     public const SECURITY_CODE_VERIFICATION_UNKNOWN = 'UNKNOWN';
     public const SECURITY_CODE_VERIFICATION_UNMATCHED = 'UNMATCHED';
-    public const TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const TYPE_TOKEN = 'TOKEN';
-    public const TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
-    public const TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
+    public const TYPE_TOKEN = 'TOKEN';
+    public const TYPE_APPLE_PAY = 'APPLE_PAY';
     public const TYPE_VIRTUAL = 'VIRTUAL';
-    public const TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
     public const TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
+    public const TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
     public const ACCOUNT_TYPE_CHECKING = 'CHECKING';
     public const ACCOUNT_TYPE_SAVINGS = 'SAVINGS';
@@ -379,14 +379,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getInstrumentTypeAllowableValues()
     {
         return [
-            self::INSTRUMENT_TYPE_APPLE_PAY,
-            self::INSTRUMENT_TYPE_TOKEN,
-            self::INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT,
-            self::INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD,
             self::INSTRUMENT_TYPE_BANK_ACCOUNT,
+            self::INSTRUMENT_TYPE_TOKEN,
+            self::INSTRUMENT_TYPE_APPLE_PAY,
             self::INSTRUMENT_TYPE_VIRTUAL,
-            self::INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN,
+            self::INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT,
             self::INSTRUMENT_TYPE_GOOGLE_PAY,
+            self::INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN,
+            self::INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD,
             self::INSTRUMENT_TYPE_PAYMENT_CARD,
         ];
     }
@@ -426,14 +426,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_APPLE_PAY,
-            self::TYPE_TOKEN,
-            self::TYPE_PAYMENT_CARD_PRESENT,
-            self::TYPE_SWIPED_PAYMENT_CARD,
             self::TYPE_BANK_ACCOUNT,
+            self::TYPE_TOKEN,
+            self::TYPE_APPLE_PAY,
             self::TYPE_VIRTUAL,
-            self::TYPE_VANTIV_OMNI_TOKEN,
+            self::TYPE_PAYMENT_CARD_PRESENT,
             self::TYPE_GOOGLE_PAY,
+            self::TYPE_VANTIV_OMNI_TOKEN,
+            self::TYPE_SWIPED_PAYMENT_CARD,
             self::TYPE_PAYMENT_CARD,
         ];
     }

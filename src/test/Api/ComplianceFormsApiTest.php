@@ -87,7 +87,7 @@ class ComplianceFormsApiTest extends TestCase
     public function testGetComplianceForms()
     {
         $complianceFormsId = "cf_fEojUGLjwUiqNTBp68JWq8";
-        $complianceForm = $this->client->complianceForms->getComplianceForms($complianceFormsId);
+        $complianceForm = $this->client->complianceForms->list($complianceFormsId);
         $this->assertEquals($complianceForm->getId(), $complianceFormsId);
         $this->assertEquals($complianceForm->getType(), "PCI_SAQ_A");
         $this->assertEquals($complianceForm->getLinkedType(), "MERCHANT");

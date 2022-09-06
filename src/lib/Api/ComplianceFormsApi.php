@@ -117,7 +117,7 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation getComplianceForms
+     * Operation list
      *
      * View Compliance Forms
      *
@@ -127,14 +127,14 @@ class ComplianceFormsApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\ComplianceForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
      */
-    public function getComplianceForms($compliance_forms_id)
+    public function list($compliance_forms_id)
     {
-        list($response) = $this->getComplianceFormsWithHttpInfo($compliance_forms_id);
+        list($response) = $this->listWithHttpInfo($compliance_forms_id);
         return $response;
     }
 
     /**
-     * Operation getComplianceFormsWithHttpInfo
+     * Operation listWithHttpInfo
      *
      * View Compliance Forms
      *
@@ -144,9 +144,9 @@ class ComplianceFormsApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\ComplianceForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getComplianceFormsWithHttpInfo($compliance_forms_id)
+    public function listWithHttpInfo($compliance_forms_id)
     {
-        $request = $this->getComplianceFormsRequest($compliance_forms_id);
+        $request = $this->listRequest($compliance_forms_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -325,7 +325,7 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation getComplianceFormsAsync
+     * Operation listAsync
      *
      * View Compliance Forms
      *
@@ -334,9 +334,9 @@ class ComplianceFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getComplianceFormsAsync($compliance_forms_id)
+    public function listAsync($compliance_forms_id)
     {
-        return $this->getComplianceFormsAsyncWithHttpInfo($compliance_forms_id)
+        return $this->listAsyncWithHttpInfo($compliance_forms_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -345,7 +345,7 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation getComplianceFormsAsyncWithHttpInfo
+     * Operation listAsyncWithHttpInfo
      *
      * View Compliance Forms
      *
@@ -354,10 +354,10 @@ class ComplianceFormsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getComplianceFormsAsyncWithHttpInfo($compliance_forms_id)
+    public function listAsyncWithHttpInfo($compliance_forms_id)
     {
         $returnType = '\Finix\Model\ComplianceForm';
-        $request = $this->getComplianceFormsRequest($compliance_forms_id);
+        $request = $this->listRequest($compliance_forms_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -396,14 +396,14 @@ class ComplianceFormsApi
     }
 
     /**
-     * Create request for operation 'getComplianceForms'
+     * Create request for operation 'list'
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getComplianceFormsRequest($compliance_forms_id)
+    public function listRequest($compliance_forms_id)
     {
         // verify the required parameter 'compliance_forms_id' is set
         if ($compliance_forms_id === null || (is_array($compliance_forms_id) && count($compliance_forms_id) === 0)) {
@@ -495,36 +495,38 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation updateComplianceForms
+     * Operation update
      *
      * Complete Compliance Forms
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
+     * @param  \Finix\Model\UpdateComplianceFormRequest $update_compliance_form_request update_compliance_form_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Finix\Model\ComplianceForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList
      */
-    public function updateComplianceForms($compliance_forms_id)
+    public function update($compliance_forms_id, $update_compliance_form_request = null)
     {
-        list($response) = $this->updateComplianceFormsWithHttpInfo($compliance_forms_id);
+        list($response) = $this->updateWithHttpInfo($compliance_forms_id, $update_compliance_form_request);
         return $response;
     }
 
     /**
-     * Operation updateComplianceFormsWithHttpInfo
+     * Operation updateWithHttpInfo
      *
      * Complete Compliance Forms
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
+     * @param  \Finix\Model\UpdateComplianceFormRequest $update_compliance_form_request (optional)
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\ComplianceForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateComplianceFormsWithHttpInfo($compliance_forms_id)
+    public function updateWithHttpInfo($compliance_forms_id, $update_compliance_form_request = null)
     {
-        $request = $this->updateComplianceFormsRequest($compliance_forms_id);
+        $request = $this->updateRequest($compliance_forms_id, $update_compliance_form_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -726,18 +728,19 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation updateComplianceFormsAsync
+     * Operation updateAsync
      *
      * Complete Compliance Forms
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
+     * @param  \Finix\Model\UpdateComplianceFormRequest $update_compliance_form_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateComplianceFormsAsync($compliance_forms_id)
+    public function updateAsync($compliance_forms_id, $update_compliance_form_request = null)
     {
-        return $this->updateComplianceFormsAsyncWithHttpInfo($compliance_forms_id)
+        return $this->updateAsyncWithHttpInfo($compliance_forms_id, $update_compliance_form_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -746,19 +749,20 @@ class ComplianceFormsApi
     }
 
     /**
-     * Operation updateComplianceFormsAsyncWithHttpInfo
+     * Operation updateAsyncWithHttpInfo
      *
      * Complete Compliance Forms
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
+     * @param  \Finix\Model\UpdateComplianceFormRequest $update_compliance_form_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateComplianceFormsAsyncWithHttpInfo($compliance_forms_id)
+    public function updateAsyncWithHttpInfo($compliance_forms_id, $update_compliance_form_request = null)
     {
         $returnType = '\Finix\Model\ComplianceForm';
-        $request = $this->updateComplianceFormsRequest($compliance_forms_id);
+        $request = $this->updateRequest($compliance_forms_id, $update_compliance_form_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -797,14 +801,15 @@ class ComplianceFormsApi
     }
 
     /**
-     * Create request for operation 'updateComplianceForms'
+     * Create request for operation 'update'
      *
      * @param  string $compliance_forms_id ID of the &#x60;compliance_form&#x60;. (required)
+     * @param  \Finix\Model\UpdateComplianceFormRequest $update_compliance_form_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateComplianceFormsRequest($compliance_forms_id)
+    public function updateRequest($compliance_forms_id, $update_compliance_form_request = null)
     {
         // verify the required parameter 'compliance_forms_id' is set
         if ($compliance_forms_id === null || (is_array($compliance_forms_id) && count($compliance_forms_id) === 0)) {
@@ -839,12 +844,34 @@ class ComplianceFormsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'application/hal+json'],
-                []
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($update_compliance_form_request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($update_compliance_form_request));
+            } 
+            elseif($headers['Content-Type'] === 'multipart/form-data'){
+                $multiStreamArr = [];
+                $i = 0;
+                foreach (array_keys($update_compliance_form_request->getters()) as $get){
+                    $getterName = $update_compliance_form_request->getters()[$get];
+                    $multiStreamArr[$i] =  ['name' => $get, 
+                    'contents' =>$update_compliance_form_request->$getterName()];
+                    $i = $i + 1;
+                }
+                $httpBody = new MultipartStream($multiStreamArr, 'boundary');
+                
+                $headers = $this->headerSelector->selectHeadersForMultipart(
+                    ['application/hal+json']
+                );
+            }
+            else {
+                $httpBody = $update_compliance_form_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

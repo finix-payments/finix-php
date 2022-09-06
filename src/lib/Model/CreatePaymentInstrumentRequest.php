@@ -243,9 +243,9 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
         return self::$openAPIModelName;
     }
 
-    public const TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const TYPE_TOKEN = 'TOKEN';
     public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
+    public const TYPE_TOKEN = 'TOKEN';
+    public const TYPE_APPLE_PAY = 'APPLE_PAY';
     public const TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
     public const TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
     public const ACCOUNT_TYPE_CHECKING = 'CHECKING';
@@ -261,9 +261,9 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_APPLE_PAY,
-            self::TYPE_TOKEN,
             self::TYPE_BANK_ACCOUNT,
+            self::TYPE_TOKEN,
+            self::TYPE_APPLE_PAY,
             self::TYPE_GOOGLE_PAY,
             self::TYPE_PAYMENT_CARD,
         ];

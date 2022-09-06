@@ -103,7 +103,7 @@ class OnboardingFormsApiTest extends TestCase
             ))
         ));
 
-        $onboardingForm = $this->client->onboardingForms->createOnboardingForm($onboardingCreateRequest);
+        $onboardingForm = $this->client->onboardingForms->create($onboardingCreateRequest);
         self::$onboardingId = $onboardingForm->getId();
         $this->assertEquals($onboardingForm->getOnboardingData()->getMaxTransactionAmount(), $onboardingCreateRequest->getOnboardingData()->getMaxTransactionAmount());
         $this->assertEquals($onboardingForm->getMerchantProcessors(), $onboardingCreateRequest->getMerchantProcessors());
@@ -125,7 +125,7 @@ class OnboardingFormsApiTest extends TestCase
             'expiration_in_minutes' => '30'
         ));
 
-        $onboardingLink = $this->client->onboardingForms->createOnboardingFormLink(self::$onboardingId, 
+        $onboardingLink = $this->client->onboardingForms->createLink(self::$onboardingId, 
         $onboardingLinkRequest);
 
         $this->assertTrue(str_contains($onboardingLink->getLinkUrl(), self::$onboardingId));
@@ -139,7 +139,7 @@ class OnboardingFormsApiTest extends TestCase
      */
     public function testGetOnboardingFormLink()
     {
-        $onboardingForm = $this->client->onboardingForms->getOnboardingForm(self::$onboardingId);
+        $onboardingForm = $this->client->onboardingForms->get(self::$onboardingId);
 
         $this->assertEquals($onboardingForm->getOnboardingData()->getMaxTransactionAmount(), 100000);
         $this->assertEquals($onboardingForm->getMerchantProcessors()[0]["processor"], "LITLE_V1");

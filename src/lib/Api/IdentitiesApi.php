@@ -2343,7 +2343,7 @@ class IdentitiesApi
     }
 
     /**
-     * Operation listAssocaiatedIdentities
+     * Operation listAssociatedIdentities
      *
      * List Associated Identities
      *
@@ -2358,9 +2358,9 @@ class IdentitiesApi
      * @throws \InvalidArgumentException
      * @return \Finix\Model\IdentitiesList|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable
      */
-    public function listAssocaiatedIdentities($associative_array)
+    public function listAssociatedIdentities($associative_array)
     {
-        list($response) = $this->listAssocaiatedIdentitiesWithHttpInfo($associative_array);
+        list($response) = $this->listAssociatedIdentitiesWithHttpInfo($associative_array);
         $hasNextCursor = ($response->openAPITypes()['page'] == '\Finix\Model\PageCursor');
         $queryParams = $this->getQueryParam($response->getPage(), $associative_array, $hasNextCursor);
         $reachedEnd = $this->reachedEnd($response->getPage(), $hasNextCursor);
@@ -2370,7 +2370,7 @@ class IdentitiesApi
             {
                 throw new ApiException;
             }
-            return $this->listAssocaiatedIdentities($queryParams);
+            return $this->listAssociatedIdentities($queryParams);
         };
         if($response->getEmbedded()){
             $key = key($response->getEmbedded()->getters());
@@ -2390,7 +2390,7 @@ class IdentitiesApi
     }
 
     /**
-     * Operation listAssocaiatedIdentitiesWithHttpInfo
+     * Operation listAssociatedIdentitiesWithHttpInfo
      *
      * List Associated Identities
      *
@@ -2405,9 +2405,9 @@ class IdentitiesApi
      * @throws \InvalidArgumentException
      * @return array of \Finix\Model\IdentitiesList|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAssocaiatedIdentitiesWithHttpInfo($associative_array)
+    public function listAssociatedIdentitiesWithHttpInfo($associative_array)
     {
-        $request = $this->listAssocaiatedIdentitiesRequest($associative_array);
+        $request = $this->listAssociatedIdentitiesRequest($associative_array);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2586,7 +2586,7 @@ class IdentitiesApi
     }
 
     /**
-     * Operation listAssocaiatedIdentitiesAsync
+     * Operation listAssociatedIdentitiesAsync
      *
      * List Associated Identities
      *
@@ -2600,9 +2600,9 @@ class IdentitiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAssocaiatedIdentitiesAsync($associative_array)
+    public function listAssociatedIdentitiesAsync($associative_array)
     {
-        return $this->listAssocaiatedIdentitiesAsyncWithHttpInfo($associative_array)
+        return $this->listAssociatedIdentitiesAsyncWithHttpInfo($associative_array)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2611,7 +2611,7 @@ class IdentitiesApi
     }
 
     /**
-     * Operation listAssocaiatedIdentitiesAsyncWithHttpInfo
+     * Operation listAssociatedIdentitiesAsyncWithHttpInfo
      *
      * List Associated Identities
      *
@@ -2625,10 +2625,10 @@ class IdentitiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAssocaiatedIdentitiesAsyncWithHttpInfo($associative_array)
+    public function listAssociatedIdentitiesAsyncWithHttpInfo($associative_array)
     {
         $returnType = '\Finix\Model\IdentitiesList';
-        $request = $this->listAssocaiatedIdentitiesRequest($associative_array);
+        $request = $this->listAssociatedIdentitiesRequest($associative_array);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2667,7 +2667,7 @@ class IdentitiesApi
     }
 
     /**
-     * Create request for operation 'listAssocaiatedIdentities'
+     * Create request for operation 'listAssociatedIdentities'
      *
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
@@ -2679,7 +2679,7 @@ class IdentitiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listAssocaiatedIdentitiesRequest($associative_array)
+    public function listAssociatedIdentitiesRequest($associative_array)
     {
         // unbox the parameters from the associative array
         $identity_id = array_key_exists('identity_id', $associative_array) ? $associative_array['identity_id'] : null;

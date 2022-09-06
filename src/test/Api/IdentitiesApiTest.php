@@ -218,7 +218,7 @@ class IdentitiesApiTest extends TestCase
     public function testListIdentityAssociatedIdentities()
     {
         $identityId = "IDpYDM7J9n57q849o9E9yNrG";
-        $identitiesList = $this->client->identities->listAssocaiatedIdentities(array(
+        $identitiesList = $this->client->identities->listAssociatedIdentities(array(
             'identity_id' => $identityId
         ));
         $this->assertTrue(count($identitiesList) >= 0);
