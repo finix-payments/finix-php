@@ -2313,7 +2313,7 @@ class MerchantsApi
         }
         else
         {
-            $queryParams['offset'] = $pageObject->getOffset();
+            $queryParams['offset'] = $pageObject->getOffset() + $pageObject->getLimit();
             return $queryParams;
         }
     }
