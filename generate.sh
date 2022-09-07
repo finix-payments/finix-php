@@ -1,3 +1,5 @@
+find ./src/lib/Model ! -name 'FinixList.php' -type f -exec rm -f {} +
+
 openapi-generator generate \
 -g php \
 -i openapi/finix-api.yaml \

@@ -73,7 +73,7 @@ $page = transfersList->getPage();
 $links = transfersList->getLinks();
 
 // Check if there is more to list, value equals to False if end of list has been reached 
-$hasMore = transfersList->hasMore()();
+$hasMore = transfersList->hasMore();
 
 // Get the next 5 elements
 $nextTransfersList = transfersList->listNext(5);
@@ -126,3 +126,5 @@ try{
 - Verifications
 - Merchant Profiles
 - Fee Profiles
+- Onboarding Forms
+- Compliance Forms
