@@ -8,7 +8,7 @@ This is the official Finix PHP API Library
 Our tests use the API credentials from Finix's public documentation, however you need your own credentials to submit requests.
 ### Composer
 ```
-composer require finix/php
+composer require finix-payments/finix-php
 ```
 
 ## Using the Library

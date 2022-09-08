@@ -1,5 +1,5 @@
 {
-    "name": "finix/finix-php",
+    "name": "finix-payments/finix-php",
     "description": "The Finix API library for PHP",
     "version": "1.0.0",
     "keywords": [
