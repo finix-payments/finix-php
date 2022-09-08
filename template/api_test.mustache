@@ -1,0 +1,74 @@
+<?php
+/**
+ * {{classname}}Test
+ * PHP version 7.4
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Finix
+ * @link     https://finix.com
+ */
+
+namespace {{invokerPackage}}\Test\Api;
+
+use \{{invokerPackage}}\Configuration;
+use \{{invokerPackage}}\ApiException;
+use \{{invokerPackage}}\ObjectSerializer;
+use PHPUnit\Framework\TestCase;
+use \Finix\Model as Model;
+use \Finix\Environment;
+use \Finix\FinixClient;
+/**
+ * {{classname}}Test Class Doc Comment
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Finix
+ * @link     https://finix.com
+ */
+{{#operations}}class {{classname}}Test extends TestCase
+{
+
+    /**
+     * Setup before running any test cases
+     */
+    public static function setUpBeforeClass(): void
+    {
+    }
+
+    /**
+     * Setup before running each test case
+     */
+    public function setUp(): void
+    {
+    }
+
+    /**
+     * Clean up after running each test case
+     */
+    public function tearDown(): void
+    {
+    }
+
+    /**
+     * Clean up after running all test cases
+     */
+    public static function tearDownAfterClass(): void
+    {
+    }
+    {{#operation}}
+
+    /**
+     * Test case for {{#vendorExtensions.x-java-method-name}}{{{.}}}{{/vendorExtensions.x-java-method-name}}{{^vendorExtensions.x-java-method-name}}{{operationId}}{{/vendorExtensions.x-java-method-name}}
+     *
+     * {{{summary}}}.
+     *
+     */
+    public function test{{vendorExtensions.x-test-operation-id}}()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+    {{/operation}}
+}
+{{/operations}}

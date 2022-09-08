@@ -1,0 +1,37 @@
+{
+    "name": "finix/finix-php",
+    "description": "The Finix API library for PHP",
+    "version": "1.0.0",
+    "keywords": [
+        "php",
+        "sdk",
+        "api",
+        "finix"
+    ],
+    "homepage": "https://finix.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Finix",
+            "email": "support@finixpayments.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": { "Finix\\" : "src/lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Finix\\Test\\" : "src/test/" }
+    }
+}

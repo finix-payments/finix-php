@@ -1,0 +1,41 @@
+<?php
+{{#models}}
+{{#model}}
+/**
+ * {{classname}}
+ *
+ * PHP version 7.4
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Finix
+ * @link     https://finix.com
+ */
+
+namespace {{modelPackage}};
+{{^isEnum}}
+{{^parentSchema}}
+
+use \ArrayAccess;
+{{/parentSchema}}
+{{/isEnum}}
+use \{{invokerPackage}}\ObjectSerializer;
+
+/**
+ * {{classname}} Class Doc Comment
+ *
+ * @category Class
+{{#description}}
+ * @description {{.}}
+{{/description}}
+ * @package  {{invokerPackage}}
+ * @author   Finix
+ * @link     https://finix.com
+{{^isEnum}}
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
+{{/isEnum}}
+ */
+{{#isEnum}}{{>model_enum}}{{/isEnum}}{{^isEnum}}{{>model_generic}}{{/isEnum}}
+{{/model}}{{/models}}

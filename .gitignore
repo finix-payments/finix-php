@@ -39,3 +39,8 @@ bin/
 /.idea/vcs.xml
 /.idea/modules.xml
 /.idea/misc.xml
+
+debugOpenApi.sh
+
+quickstart.php
+/vendor/
