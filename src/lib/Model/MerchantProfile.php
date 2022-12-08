@@ -49,6 +49,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => '\DateTime',
         'application' => 'string',
         'fee_profile' => 'string',
+        'payout_profile' => 'string',
         'risk_profile' => 'string',
         'tags' => 'array<string,string>',
         '_links' => '\Finix\Model\MerchantProfileLinks'
@@ -67,6 +68,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'date-time',
         'application' => null,
         'fee_profile' => null,
+        'payout_profile' => null,
         'risk_profile' => null,
         'tags' => null,
         '_links' => null
@@ -104,6 +106,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'updated_at',
         'application' => 'application',
         'fee_profile' => 'fee_profile',
+        'payout_profile' => 'payout_profile',
         'risk_profile' => 'risk_profile',
         'tags' => 'tags',
         '_links' => '_links'
@@ -120,6 +123,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'setUpdatedAt',
         'application' => 'setApplication',
         'fee_profile' => 'setFeeProfile',
+        'payout_profile' => 'setPayoutProfile',
         'risk_profile' => 'setRiskProfile',
         'tags' => 'setTags',
         '_links' => 'setLinks'
@@ -136,6 +140,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'getUpdatedAt',
         'application' => 'getApplication',
         'fee_profile' => 'getFeeProfile',
+        'payout_profile' => 'getPayoutProfile',
         'risk_profile' => 'getRiskProfile',
         'tags' => 'getTags',
         '_links' => 'getLinks'
@@ -203,6 +208,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['fee_profile'] = $data['fee_profile'] ?? null;
+        $this->container['payout_profile'] = $data['payout_profile'] ?? null;
         $this->container['risk_profile'] = $data['risk_profile'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
@@ -245,7 +251,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the `Merchant Profile` resource.
      *
      * @return self
      */
@@ -317,7 +323,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string|null $application The ID of the `Application` associated with the  `Merchant Profile`.
      *
      * @return self
      */
@@ -341,13 +347,37 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_profile
      *
-     * @param string|null $fee_profile The ID of the resource.
+     * @param string|null $fee_profile The ID of the `Fee Profile` associated with the `Merchant Profile` resource.
      *
      * @return self
      */
     public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_profile
+     *
+     * @return string|null
+     */
+    public function getPayoutProfile()
+    {
+        return $this->container['payout_profile'];
+    }
+
+    /**
+     * Sets payout_profile
+     *
+     * @param string|null $payout_profile The ID of the `Payout Profile` associated with the `Merchant Profile` resource.
+     *
+     * @return self
+     */
+    public function setPayoutProfile($payout_profile, $deserialize = false)
+    {
+        $this->container['payout_profile'] = $payout_profile;
 
         return $this;
     }
@@ -365,7 +395,7 @@ class MerchantProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets risk_profile
      *
-     * @param string|null $risk_profile The ID of the resource.
+     * @param string|null $risk_profile The ID of the `Risk Profile` associated with the `Merchant Profile` resource.
      *
      * @return self
      */

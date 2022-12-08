@@ -163,19 +163,21 @@ class PaymentInstrumentsApiTest extends TestCase
      */
     public function testListPaymentInstrumentUpdates()
     {
-        $paymentInstrumentUpdateList = $this->client->paymentInstruments->listUpdatesByPaymentInstrumentId(array(
-            'payment_instrument_id' => "PIe2YvpcjvoVJ6PzoRPBK137"
-        ));
-        $this->assertTrue(count($paymentInstrumentUpdateList) >= 0);
-        if (count($paymentInstrumentUpdateList) == 0)
-        {
-            $this->assertSame($paymentInstrumentUpdateList->hasMore(), false);
-        }
-        if ($paymentInstrumentUpdateList->hasMore())
-        {
-            $nextList = $paymentInstrumentUpdateList->listNext(1);
-            $this->assertSame(count($nextList), 1);
-        }
+        // Removed as support for payment instrument updates removed.
+        // $paymentInstrumentUpdateList = $this->client->paymentInstruments->listUpdatesByPaymentInstrumentId(array(
+        //     'payment_instrument_id' => "PIe2YvpcjvoVJ6PzoRPBK137"
+        // ));
+        // $this->assertTrue(count($paymentInstrumentUpdateList) >= 0);
+        // if (count($paymentInstrumentUpdateList) == 0)
+        // {
+        //     $this->assertSame($paymentInstrumentUpdateList->hasMore(), false);
+        // }
+        // if ($paymentInstrumentUpdateList->hasMore())
+        // {
+        //     $nextList = $paymentInstrumentUpdateList->listNext(1);
+        //     $this->assertSame(count($nextList), 1);
+        // }
+        $this->markTestIncomplete('Not implemented');
     }
 
     /**

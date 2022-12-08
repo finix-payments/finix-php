@@ -44,9 +44,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entity' => 'object',
+        'additional_underwriting_data' => '\Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData',
         'associated_entities' => 'object[]',
-        'additional_underwriting_data' => 'object',
+        'entity' => '\Finix\Model\CreateOnboardingFormRequestOnboardingDataEntity',
         'payment_instruments' => 'object',
         'max_transaction_amount' => 'int'
     ];
@@ -59,9 +59,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entity' => null,
-        'associated_entities' => null,
         'additional_underwriting_data' => null,
+        'associated_entities' => null,
+        'entity' => null,
         'payment_instruments' => null,
         'max_transaction_amount' => null
     ];
@@ -93,9 +93,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity' => 'entity',
-        'associated_entities' => 'associated_entities',
         'additional_underwriting_data' => 'additional_underwriting_data',
+        'associated_entities' => 'associated_entities',
+        'entity' => 'entity',
         'payment_instruments' => 'payment_instruments',
         'max_transaction_amount' => 'max_transaction_amount'
     ];
@@ -106,9 +106,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'entity' => 'setEntity',
-        'associated_entities' => 'setAssociatedEntities',
         'additional_underwriting_data' => 'setAdditionalUnderwritingData',
+        'associated_entities' => 'setAssociatedEntities',
+        'entity' => 'setEntity',
         'payment_instruments' => 'setPaymentInstruments',
         'max_transaction_amount' => 'setMaxTransactionAmount'
     ];
@@ -119,9 +119,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'entity' => 'getEntity',
-        'associated_entities' => 'getAssociatedEntities',
         'additional_underwriting_data' => 'getAdditionalUnderwritingData',
+        'associated_entities' => 'getAssociatedEntities',
+        'entity' => 'getEntity',
         'payment_instruments' => 'getPaymentInstruments',
         'max_transaction_amount' => 'getMaxTransactionAmount'
     ];
@@ -183,9 +183,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity'] = $data['entity'] ?? null;
-        $this->container['associated_entities'] = $data['associated_entities'] ?? null;
         $this->container['additional_underwriting_data'] = $data['additional_underwriting_data'] ?? null;
+        $this->container['associated_entities'] = $data['associated_entities'] ?? null;
+        $this->container['entity'] = $data['entity'] ?? null;
         $this->container['payment_instruments'] = $data['payment_instruments'] ?? null;
         $this->container['max_transaction_amount'] = $data['max_transaction_amount'] ?? null;
     }
@@ -215,25 +215,25 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
 
 
     /**
-     * Gets entity
+     * Gets additional_underwriting_data
      *
-     * @return object|null
+     * @return \Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData|null
      */
-    public function getEntity()
+    public function getAdditionalUnderwritingData()
     {
-        return $this->container['entity'];
+        return $this->container['additional_underwriting_data'];
     }
 
     /**
-     * Sets entity
+     * Sets additional_underwriting_data
      *
-     * @param object|null $entity The `entity` information saved in the `Identity` of the user.
+     * @param \Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData|null $additional_underwriting_data additional_underwriting_data
      *
      * @return self
      */
-    public function setEntity($entity, $deserialize = false)
+    public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
     {
-        $this->container['entity'] = $entity;
+        $this->container['additional_underwriting_data'] = $additional_underwriting_data;
 
         return $this;
     }
@@ -263,25 +263,25 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
     }
 
     /**
-     * Gets additional_underwriting_data
+     * Gets entity
      *
-     * @return object|null
+     * @return \Finix\Model\CreateOnboardingFormRequestOnboardingDataEntity|null
      */
-    public function getAdditionalUnderwritingData()
+    public function getEntity()
     {
-        return $this->container['additional_underwriting_data'];
+        return $this->container['entity'];
     }
 
     /**
-     * Sets additional_underwriting_data
+     * Sets entity
      *
-     * @param object|null $additional_underwriting_data Additional underwriting data about the user.
+     * @param \Finix\Model\CreateOnboardingFormRequestOnboardingDataEntity|null $entity entity
      *
      * @return self
      */
-    public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
+    public function setEntity($entity, $deserialize = false)
     {
-        $this->container['additional_underwriting_data'] = $additional_underwriting_data;
+        $this->container['entity'] = $entity;
 
         return $this;
     }

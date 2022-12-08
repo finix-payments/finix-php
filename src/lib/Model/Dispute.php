@@ -51,7 +51,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
         'amount' => 'int',
         'application' => 'string',
         'currency' => '\Finix\Model\Currency',
-        'dispute_details' => 'array<string,mixed>',
+        'dispute_details' => '\Finix\Model\DisputeDisputeDetails',
         'identity' => 'string',
         'message' => 'string',
         'occurred_at' => '\DateTime',
@@ -479,7 +479,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the `Application` resource the `Dispute` was created under.
+     * @param string|null $application The ID of the `Application` resource that the `Dispute` was created under.
      *
      * @return self
      */
@@ -517,7 +517,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dispute_details
      *
-     * @return array<string,mixed>|null
+     * @return \Finix\Model\DisputeDisputeDetails|null
      */
     public function getDisputeDetails()
     {
@@ -527,7 +527,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dispute_details
      *
-     * @param array<string,mixed>|null $dispute_details Details about the `Dispute` recieved by the `Processor`. May be any type of data.
+     * @param \Finix\Model\DisputeDisputeDetails|null $dispute_details dispute_details
      *
      * @return self
      */
@@ -551,7 +551,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identity
      *
-     * @param string|null $identity The ID of the resource.
+     * @param string|null $identity The ID of the `Identity` associated with the `Dispute`.
      *
      * @return self
      */
@@ -599,7 +599,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets occurred_at
      *
-     * @param \DateTime|null $occurred_at Point in time when dispute occurred.
+     * @param \DateTime|null $occurred_at Point in time when the `Transfer` that's getting disputed got created.
      *
      * @return self
      */
@@ -657,7 +657,7 @@ class Dispute implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets respond_by
      *
-     * @param \DateTime|null $respond_by Point in time when dispute has to be resolved and the `Merchant` needs to respond by.
+     * @param \DateTime|null $respond_by Point in time, the `Merchant` needs to respond to the dispute by.
      *
      * @return self
      */

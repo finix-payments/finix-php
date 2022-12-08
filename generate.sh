@@ -1,5 +1,8 @@
+
+echo "Removing Models"
 find ./src/lib/Model ! -name 'FinixList.php' -type f -exec rm -f {} +
 
+echo "Generating Library"
 openapi-generator generate \
 -g php \
 -i openapi/finix-api.yaml \

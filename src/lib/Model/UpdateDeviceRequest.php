@@ -161,7 +161,10 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
+    public const ACTION_ACTIVATE = 'ACTIVATE';
+    public const ACTION_CREATE_IDLE_MESSAGE = 'CREATE_IDLE_MESSAGE';
     public const ACTION_DEACTIVATE = 'DEACTIVATE';
+    public const ACTION_REBOOT = 'REBOOT';
 
     /**
      * Gets allowable values of the enum
@@ -171,7 +174,10 @@ class UpdateDeviceRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function getActionAllowableValues()
     {
         return [
+            self::ACTION_ACTIVATE,
+            self::ACTION_CREATE_IDLE_MESSAGE,
             self::ACTION_DEACTIVATE,
+            self::ACTION_REBOOT,
         ];
     }
 

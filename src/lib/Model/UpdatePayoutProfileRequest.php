@@ -1,6 +1,6 @@
 <?php
 /**
- * ListPaymentInstrumentUpdatesQueryParams
+ * UpdatePayoutProfileRequest
  *
  * PHP version 7.4
  *
@@ -16,9 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ListPaymentInstrumentUpdatesQueryParams Class Doc Comment
+ * UpdatePayoutProfileRequest Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -26,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdatePayoutProfileRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +36,7 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ListPaymentInstrumentUpdatesQueryParams';
+    protected static $openAPIModelName = 'UpdatePayoutProfileRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,9 +44,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'limit' => 'int',
-        'offset' => 'int',
-        'page_size' => 'int'
+        'gross' => '\Finix\Model\UpdatePayoutProfileRequestGross',
+        'tags' => 'array<string,string>',
+        'type' => 'string',
+        'net' => '\Finix\Model\UpdatePayoutProfileRequestNet'
     ];
 
     /**
@@ -56,9 +58,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
-        'offset' => null,
-        'page_size' => null
+        'gross' => null,
+        'tags' => null,
+        'type' => null,
+        'net' => null
     ];
 
     /**
@@ -88,9 +91,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'limit' => 'limit',
-        'offset' => 'offset',
-        'page_size' => 'pageSize'
+        'gross' => 'gross',
+        'tags' => 'tags',
+        'type' => 'type',
+        'net' => 'net'
     ];
 
     /**
@@ -99,9 +103,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'limit' => 'setLimit',
-        'offset' => 'setOffset',
-        'page_size' => 'setPageSize'
+        'gross' => 'setGross',
+        'tags' => 'setTags',
+        'type' => 'setType',
+        'net' => 'setNet'
     ];
 
     /**
@@ -110,9 +115,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'limit' => 'getLimit',
-        'offset' => 'getOffset',
-        'page_size' => 'getPageSize'
+        'gross' => 'getGross',
+        'tags' => 'getTags',
+        'type' => 'getType',
+        'net' => 'getNet'
     ];
 
     /**
@@ -156,6 +162,23 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
         return self::$openAPIModelName;
     }
 
+    public const TYPE_CUSTOM = 'CUSTOM';
+    public const TYPE_GROSS = 'GROSS';
+    public const TYPE_NET = 'NET';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_CUSTOM,
+            self::TYPE_GROSS,
+            self::TYPE_NET,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -172,9 +195,10 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['limit'] = $data['limit'] ?? null;
-        $this->container['offset'] = $data['offset'] ?? null;
-        $this->container['page_size'] = $data['page_size'] ?? null;
+        $this->container['gross'] = $data['gross'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['net'] = $data['net'] ?? null;
     }
 
     /**
@@ -185,6 +209,15 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -202,73 +235,107 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets limit
+     * Gets gross
      *
-     * @return int|null
+     * @return \Finix\Model\UpdatePayoutProfileRequestGross|null
      */
-    public function getLimit()
+    public function getGross()
     {
-        return $this->container['limit'];
+        return $this->container['gross'];
     }
 
     /**
-     * Sets limit
+     * Sets gross
      *
-     * @param int|null $limit The number of entries to return.
+     * @param \Finix\Model\UpdatePayoutProfileRequestGross|null $gross gross
      *
      * @return self
      */
-    public function setLimit($limit, $deserialize = false)
+    public function setGross($gross, $deserialize = false)
     {
-        $this->container['limit'] = $limit;
+        $this->container['gross'] = $gross;
 
         return $this;
     }
 
     /**
-     * Gets offset
+     * Gets tags
      *
-     * @return int|null
+     * @return array<string,string>|null
      */
-    public function getOffset()
+    public function getTags()
     {
-        return $this->container['offset'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets offset
+     * Sets tags
      *
-     * @param int|null $offset The number of items to skip before starting to collect the result set.
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setOffset($offset, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $this->container['offset'] = $offset;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets page_size
+     * Gets type
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPageSize()
+    public function getType()
     {
-        return $this->container['page_size'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets page_size
+     * Sets type
      *
-     * @param int|null $page_size The size of the page.
+     * @param string|null $type Configures how fees are calculated and billed from payouts. For more infromation, see [Payout Types](/guides/payouts/#payout-types).
      *
      * @return self
      */
-    public function setPageSize($page_size, $deserialize = false)
+    public function setType($type, $deserialize = false)
     {
-        $this->container['page_size'] = $page_size;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets net
+     *
+     * @return \Finix\Model\UpdatePayoutProfileRequestNet|null
+     */
+    public function getNet()
+    {
+        return $this->container['net'];
+    }
+
+    /**
+     * Sets net
+     *
+     * @param \Finix\Model\UpdatePayoutProfileRequestNet|null $net net
+     *
+     * @return self
+     */
+    public function setNet($net, $deserialize = false)
+    {
+        $this->container['net'] = $net;
 
         return $this;
     }

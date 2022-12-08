@@ -46,10 +46,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     protected static $openAPITypes = [
         'city' => 'string',
         'country' => 'string',
-        'region' => 'string',
-        'line2' => 'string',
         'line1' => 'string',
-        'postal_code' => 'string'
+        'line2' => 'string',
+        'postal_code' => 'string',
+        'region' => 'string'
     ];
 
     /**
@@ -62,10 +62,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     protected static $openAPIFormats = [
         'city' => null,
         'country' => null,
-        'region' => null,
-        'line2' => null,
         'line1' => null,
-        'postal_code' => null
+        'line2' => null,
+        'postal_code' => null,
+        'region' => null
     ];
 
     /**
@@ -97,10 +97,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     protected static $attributeMap = [
         'city' => 'city',
         'country' => 'country',
-        'region' => 'region',
-        'line2' => 'line2',
         'line1' => 'line1',
-        'postal_code' => 'postal_code'
+        'line2' => 'line2',
+        'postal_code' => 'postal_code',
+        'region' => 'region'
     ];
 
     /**
@@ -111,10 +111,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     protected static $setters = [
         'city' => 'setCity',
         'country' => 'setCountry',
-        'region' => 'setRegion',
-        'line2' => 'setLine2',
         'line1' => 'setLine1',
-        'postal_code' => 'setPostalCode'
+        'line2' => 'setLine2',
+        'postal_code' => 'setPostalCode',
+        'region' => 'setRegion'
     ];
 
     /**
@@ -125,10 +125,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     protected static $getters = [
         'city' => 'getCity',
         'country' => 'getCountry',
-        'region' => 'getRegion',
-        'line2' => 'getLine2',
         'line1' => 'getLine1',
-        'postal_code' => 'getPostalCode'
+        'line2' => 'getLine2',
+        'postal_code' => 'getPostalCode',
+        'region' => 'getRegion'
     ];
 
     /**
@@ -190,10 +190,10 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     {
         $this->container['city'] = $data['city'] ?? null;
         $this->container['country'] = $data['country'] ?? null;
-        $this->container['region'] = $data['region'] ?? null;
-        $this->container['line2'] = $data['line2'] ?? null;
         $this->container['line1'] = $data['line1'] ?? null;
+        $this->container['line2'] = $data['line2'] ?? null;
         $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['region'] = $data['region'] ?? null;
     }
 
     /**
@@ -213,20 +213,20 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
             $invalidProperties[] = "invalid value for 'country', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['region']) && (mb_strlen($this->container['region']) < 1)) {
-            $invalidProperties[] = "invalid value for 'region', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 1)) {
+            $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['line2']) && (mb_strlen($this->container['line2']) < 1)) {
             $invalidProperties[] = "invalid value for 'line2', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 1)) {
-            $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['postal_code']) && (mb_strlen($this->container['postal_code']) < 1)) {
             $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['region']) && (mb_strlen($this->container['region']) < 1)) {
+            $invalidProperties[] = "invalid value for 'region', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -305,31 +305,31 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     }
 
     /**
-     * Gets region
+     * Gets line1
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getLine1()
     {
-        return $this->container['region'];
+        return $this->container['line1'];
     }
 
     /**
-     * Sets region
+     * Sets line1
      *
-     * @param string|null $region 2-letter State code.
+     * @param string|null $line1 First line of the address (max 35 characters).
      *
      * @return self
      */
-    public function setRegion($region, $deserialize = false)
+    public function setLine1($line1, $deserialize = false)
     {
 
-        if (!is_null($region) && (mb_strlen($region) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $region when calling CreateAssociatedIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        if (!is_null($line1) && (mb_strlen($line1) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $line1 when calling CreateAssociatedIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
         }
         
 
-        $this->container['region'] = $region;
+        $this->container['line1'] = $line1;
 
         return $this;
     }
@@ -365,36 +365,6 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
     }
 
     /**
-     * Gets line1
-     *
-     * @return string|null
-     */
-    public function getLine1()
-    {
-        return $this->container['line1'];
-    }
-
-    /**
-     * Sets line1
-     *
-     * @param string|null $line1 First line of the address (max 35 characters).
-     *
-     * @return self
-     */
-    public function setLine1($line1, $deserialize = false)
-    {
-
-        if (!is_null($line1) && (mb_strlen($line1) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $line1 when calling CreateAssociatedIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
-        }
-        
-
-        $this->container['line1'] = $line1;
-
-        return $this;
-    }
-
-    /**
      * Gets postal_code
      *
      * @return string|null
@@ -420,6 +390,36 @@ class CreateAssociatedIdentityRequestEntityPersonalAddress implements ModelInter
         
 
         $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets region
+     *
+     * @return string|null
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     * @param string|null $region 2-letter State code.
+     *
+     * @return self
+     */
+    public function setRegion($region, $deserialize = false)
+    {
+
+        if (!is_null($region) && (mb_strlen($region) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $region when calling CreateAssociatedIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['region'] = $region;
 
         return $this;
     }

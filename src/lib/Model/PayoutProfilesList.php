@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationDetailsCashbackOptionsManualEntry
+ * PayoutProfilesList
  *
  * PHP version 7.4
  *
@@ -16,9 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ConfigurationDetailsCashbackOptionsManualEntry Class Doc Comment
+ * PayoutProfilesList Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Payout Profiles&#x60;.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -26,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, ArrayAccess, \JsonSerializable
+class PayoutProfilesList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +36,7 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ConfigurationDetails_cashback_options_manual_entry';
+    protected static $openAPIModelName = 'PayoutProfilesList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,8 +44,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount_increment' => 'int',
-        'maximum_amount' => 'int'
+        '_embedded' => '\Finix\Model\PayoutProfilesListEmbedded',
+        '_links' => '\Finix\Model\ListLinks',
+        'page' => '\Finix\Model\PageCursor'
     ];
 
     /**
@@ -55,8 +57,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount_increment' => null,
-        'maximum_amount' => null
+        '_embedded' => null,
+        '_links' => null,
+        'page' => null
     ];
 
     /**
@@ -86,8 +89,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount_increment' => 'amount_increment',
-        'maximum_amount' => 'maximum_amount'
+        '_embedded' => '_embedded',
+        '_links' => '_links',
+        'page' => 'page'
     ];
 
     /**
@@ -96,8 +100,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'amount_increment' => 'setAmountIncrement',
-        'maximum_amount' => 'setMaximumAmount'
+        '_embedded' => 'setEmbedded',
+        '_links' => 'setLinks',
+        'page' => 'setPage'
     ];
 
     /**
@@ -106,8 +111,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'amount_increment' => 'getAmountIncrement',
-        'maximum_amount' => 'getMaximumAmount'
+        '_embedded' => 'getEmbedded',
+        '_links' => 'getLinks',
+        'page' => 'getPage'
     ];
 
     /**
@@ -167,8 +173,9 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount_increment'] = $data['amount_increment'] ?? null;
-        $this->container['maximum_amount'] = $data['maximum_amount'] ?? null;
+        $this->container['_embedded'] = $data['_embedded'] ?? null;
+        $this->container['_links'] = $data['_links'] ?? null;
+        $this->container['page'] = $data['page'] ?? null;
     }
 
     /**
@@ -196,49 +203,73 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
 
 
     /**
-     * Gets amount_increment
+     * Gets _embedded
      *
-     * @return int|null
+     * @return \Finix\Model\PayoutProfilesListEmbedded|null
      */
-    public function getAmountIncrement()
+    public function getEmbedded()
     {
-        return $this->container['amount_increment'];
+        return $this->container['_embedded'];
     }
 
     /**
-     * Sets amount_increment
+     * Sets _embedded
      *
-     * @param int|null $amount_increment amount_increment
+     * @param \Finix\Model\PayoutProfilesListEmbedded|null $_embedded _embedded
      *
      * @return self
      */
-    public function setAmountIncrement($amount_increment, $deserialize = false)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
-        $this->container['amount_increment'] = $amount_increment;
+        $this->container['_embedded'] = $_embedded;
 
         return $this;
     }
 
     /**
-     * Gets maximum_amount
+     * Gets _links
      *
-     * @return int|null
+     * @return \Finix\Model\ListLinks|null
      */
-    public function getMaximumAmount()
+    public function getLinks()
     {
-        return $this->container['maximum_amount'];
+        return $this->container['_links'];
     }
 
     /**
-     * Sets maximum_amount
+     * Sets _links
      *
-     * @param int|null $maximum_amount maximum_amount
+     * @param \Finix\Model\ListLinks|null $_links _links
      *
      * @return self
      */
-    public function setMaximumAmount($maximum_amount, $deserialize = false)
+    public function setLinks($_links, $deserialize = false)
     {
-        $this->container['maximum_amount'] = $maximum_amount;
+        $this->container['_links'] = $_links;
+
+        return $this;
+    }
+
+    /**
+     * Gets page
+     *
+     * @return \Finix\Model\PageCursor|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param \Finix\Model\PageCursor|null $page page
+     *
+     * @return self
+     */
+    public function setPage($page, $deserialize = false)
+    {
+        $this->container['page'] = $page;
 
         return $this;
     }

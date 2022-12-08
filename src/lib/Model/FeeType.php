@@ -17,7 +17,7 @@ use \Finix\ObjectSerializer;
  * FeeType Class Doc Comment
  *
  * @category Class
- * @description The type of fee.
+ * @description Details the type of fee if the &#x60;Transfer&#x60; includes a &#x60;fee&#x60;.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com

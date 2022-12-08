@@ -226,15 +226,13 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
         return self::$openAPIModelName;
     }
 
-    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
-    public const TYPE_TOKEN = 'TOKEN';
     public const TYPE_APPLE_PAY = 'APPLE_PAY';
+    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
     public const TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
     public const TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
+    public const TYPE_TOKEN = 'TOKEN';
     public const ACCOUNT_TYPE_CHECKING = 'CHECKING';
     public const ACCOUNT_TYPE_SAVINGS = 'SAVINGS';
-    public const ACCOUNT_TYPE_CORPORATE = 'CORPORATE';
-    public const ACCOUNT_TYPE_CORP_SAVINGS = 'CORP_SAVINGS';
 
     /**
      * Gets allowable values of the enum
@@ -244,11 +242,11 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_BANK_ACCOUNT,
-            self::TYPE_TOKEN,
             self::TYPE_APPLE_PAY,
+            self::TYPE_BANK_ACCOUNT,
             self::TYPE_GOOGLE_PAY,
             self::TYPE_PAYMENT_CARD,
+            self::TYPE_TOKEN,
         ];
     }
 
@@ -262,8 +260,6 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
         return [
             self::ACCOUNT_TYPE_CHECKING,
             self::ACCOUNT_TYPE_SAVINGS,
-            self::ACCOUNT_TYPE_CORPORATE,
-            self::ACCOUNT_TYPE_CORP_SAVINGS,
         ];
     }
 
@@ -428,7 +424,7 @@ class CreatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets identity
      *
-     * @param string|null $identity The ID of the resource.
+     * @param string|null $identity The ID of the `Identity` used to create the `Payment Instrument` resource.
      *
      * @return self
      */

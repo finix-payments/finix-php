@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationDetailsTipOptions
+ * ListPayoutprofilesQueryParams
  *
  * PHP version 7.4
  *
@@ -16,7 +16,7 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ConfigurationDetailsTipOptions Class Doc Comment
+ * ListPayoutprofilesQueryParams Class Doc Comment
  *
  * @category Class
  * @package  Finix
@@ -26,7 +26,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ListPayoutprofilesQueryParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +35,7 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ConfigurationDetails_tip_options';
+    protected static $openAPIModelName = 'ListPayoutprofilesQueryParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,9 +43,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'other_options' => 'string',
-        'tip_selections' => 'string'
+        'after_cursor' => 'string',
+        'limit' => 'int'
     ];
 
     /**
@@ -56,9 +55,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'other_options' => null,
-        'tip_selections' => null
+        'after_cursor' => null,
+        'limit' => null
     ];
 
     /**
@@ -88,9 +86,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'other_options' => 'other_options',
-        'tip_selections' => 'tip_selections'
+        'after_cursor' => 'after_cursor',
+        'limit' => 'limit'
     ];
 
     /**
@@ -99,9 +96,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'other_options' => 'setOtherOptions',
-        'tip_selections' => 'setTipSelections'
+        'after_cursor' => 'setAfterCursor',
+        'limit' => 'setLimit'
     ];
 
     /**
@@ -110,9 +106,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'other_options' => 'getOtherOptions',
-        'tip_selections' => 'getTipSelections'
+        'after_cursor' => 'getAfterCursor',
+        'limit' => 'getLimit'
     ];
 
     /**
@@ -172,9 +167,8 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['other_options'] = $data['other_options'] ?? null;
-        $this->container['tip_selections'] = $data['tip_selections'] ?? null;
+        $this->container['after_cursor'] = $data['after_cursor'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
     }
 
     /**
@@ -202,73 +196,49 @@ class ConfigurationDetailsTipOptions implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets type
+     * Gets after_cursor
      *
      * @return string|null
      */
-    public function getType()
+    public function getAfterCursor()
     {
-        return $this->container['type'];
+        return $this->container['after_cursor'];
     }
 
     /**
-     * Sets type
+     * Sets after_cursor
      *
-     * @param string|null $type type
+     * @param string|null $after_cursor Return every resource created after the cursor value.
      *
      * @return self
      */
-    public function setType($type, $deserialize = false)
+    public function setAfterCursor($after_cursor, $deserialize = false)
     {
-        $this->container['type'] = $type;
+        $this->container['after_cursor'] = $after_cursor;
 
         return $this;
     }
 
     /**
-     * Gets other_options
+     * Gets limit
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getOtherOptions()
+    public function getLimit()
     {
-        return $this->container['other_options'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets other_options
+     * Sets limit
      *
-     * @param string|null $other_options other_options
+     * @param int|null $limit The numbers of items to return.
      *
      * @return self
      */
-    public function setOtherOptions($other_options, $deserialize = false)
+    public function setLimit($limit, $deserialize = false)
     {
-        $this->container['other_options'] = $other_options;
-
-        return $this;
-    }
-
-    /**
-     * Gets tip_selections
-     *
-     * @return string|null
-     */
-    public function getTipSelections()
-    {
-        return $this->container['tip_selections'];
-    }
-
-    /**
-     * Sets tip_selections
-     *
-     * @param string|null $tip_selections tip_selections
-     *
-     * @return self
-     */
-    public function setTipSelections($tip_selections, $deserialize = false)
-    {
-        $this->container['tip_selections'] = $tip_selections;
+        $this->container['limit'] = $limit;
 
         return $this;
     }

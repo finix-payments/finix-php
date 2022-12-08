@@ -54,12 +54,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'device_configuration' => '\Finix\Model\ConfigurationDetails',
         'fee' => 'int',
         'fraud_session_id' => 'string',
+        'hsa_fsa_payment' => 'bool',
         'idempotency_id' => 'string',
         'merchant' => 'string',
         'operation_key' => 'string',
         'payment_instrument' => '\Finix\Model\CardPresentInstrumentForm',
         'processor' => 'string',
         'source' => 'string',
+        'security_code' => 'string',
         'statement_descriptor' => 'string',
         'tags' => 'array<string,string>',
         '_3d_secure_authentication' => '\Finix\Model\CreateTransferRequest3dSecureAuthentication'
@@ -83,12 +85,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'device_configuration' => null,
         'fee' => 'int64',
         'fraud_session_id' => null,
+        'hsa_fsa_payment' => null,
         'idempotency_id' => null,
         'merchant' => null,
         'operation_key' => null,
         'payment_instrument' => null,
         'processor' => null,
         'source' => null,
+        'security_code' => null,
         'statement_descriptor' => null,
         'tags' => null,
         '_3d_secure_authentication' => null
@@ -131,12 +135,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'device_configuration' => 'device_configuration',
         'fee' => 'fee',
         'fraud_session_id' => 'fraud_session_id',
+        'hsa_fsa_payment' => 'hsa_fsa_payment',
         'idempotency_id' => 'idempotency_id',
         'merchant' => 'merchant',
         'operation_key' => 'operation_key',
         'payment_instrument' => 'payment_instrument',
         'processor' => 'processor',
         'source' => 'source',
+        'security_code' => 'security_code',
         'statement_descriptor' => 'statement_descriptor',
         'tags' => 'tags',
         '_3d_secure_authentication' => '3d_secure_authentication'
@@ -158,12 +164,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'device_configuration' => 'setDeviceConfiguration',
         'fee' => 'setFee',
         'fraud_session_id' => 'setFraudSessionId',
+        'hsa_fsa_payment' => 'setHsaFsaPayment',
         'idempotency_id' => 'setIdempotencyId',
         'merchant' => 'setMerchant',
         'operation_key' => 'setOperationKey',
         'payment_instrument' => 'setPaymentInstrument',
         'processor' => 'setProcessor',
         'source' => 'setSource',
+        'security_code' => 'setSecurityCode',
         'statement_descriptor' => 'setStatementDescriptor',
         'tags' => 'setTags',
         '_3d_secure_authentication' => 'set3dSecureAuthentication'
@@ -185,12 +193,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'device_configuration' => 'getDeviceConfiguration',
         'fee' => 'getFee',
         'fraud_session_id' => 'getFraudSessionId',
+        'hsa_fsa_payment' => 'getHsaFsaPayment',
         'idempotency_id' => 'getIdempotencyId',
         'merchant' => 'getMerchant',
         'operation_key' => 'getOperationKey',
         'payment_instrument' => 'getPaymentInstrument',
         'processor' => 'getProcessor',
         'source' => 'getSource',
+        'security_code' => 'getSecurityCode',
         'statement_descriptor' => 'getStatementDescriptor',
         'tags' => 'getTags',
         '_3d_secure_authentication' => 'get3dSecureAuthentication'
@@ -290,12 +300,14 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['device_configuration'] = $data['device_configuration'] ?? null;
         $this->container['fee'] = $data['fee'] ?? null;
         $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
+        $this->container['hsa_fsa_payment'] = $data['hsa_fsa_payment'] ?? null;
         $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['operation_key'] = $data['operation_key'] ?? null;
         $this->container['payment_instrument'] = $data['payment_instrument'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
+        $this->container['security_code'] = $data['security_code'] ?? null;
         $this->container['statement_descriptor'] = $data['statement_descriptor'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_3d_secure_authentication'] = $data['_3d_secure_authentication'] ?? null;
@@ -569,13 +581,37 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets fraud_session_id
      *
-     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
+     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/guides/payments/fraud-detection/).
      *
      * @return self
      */
     public function setFraudSessionId($fraud_session_id, $deserialize = false)
     {
         $this->container['fraud_session_id'] = $fraud_session_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets hsa_fsa_payment
+     *
+     * @return bool|null
+     */
+    public function getHsaFsaPayment()
+    {
+        return $this->container['hsa_fsa_payment'];
+    }
+
+    /**
+     * Sets hsa_fsa_payment
+     *
+     * @param bool|null $hsa_fsa_payment Set to to **true** to process a payment using a `Payment Instrument` [created from a health savings account (HSA) or flexible spending account (FSA)](/docs/guides/making-a-payment/hsa-fsa/).
+     *
+     * @return self
+     */
+    public function setHsaFsaPayment($hsa_fsa_payment, $deserialize = false)
+    {
+        $this->container['hsa_fsa_payment'] = $hsa_fsa_payment;
 
         return $this;
     }
@@ -735,6 +771,30 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets security_code
+     *
+     * @return string|null
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['security_code'];
+    }
+
+    /**
+     * Sets security_code
+     *
+     * @param string|null $security_code The 3-4 digit security code for the card (i.e. CVV code). Include the CVV code of the card to include [Card Verification Checks](/guides/payments/making-a-payment/card-verification-checks/) with the created `Transfer`.
+     *
+     * @return self
+     */
+    public function setSecurityCode($security_code, $deserialize = false)
+    {
+        $this->container['security_code'] = $security_code;
+
+        return $this;
+    }
+
+    /**
      * Gets statement_descriptor
      *
      * @return string|null
@@ -747,7 +807,7 @@ class CreateTransferRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets statement_descriptor
      *
-     * @param string|null $statement_descriptor The description of the transaction that appears on the buyer's bank or card statement.
+     * @param string|null $statement_descriptor <li>The description of the transaction that appears on the buyer's bank or card statement.</li><li><kbd>statement_descriptors</kbd> for `Transfers` in <strong>live</strong> enviroments will have a <kbd>FI*</kbd> prefix.
      *
      * @return self
      */

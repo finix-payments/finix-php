@@ -45,7 +45,7 @@ class ApplicationProfilesList implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'page' => '\Finix\Model\PageCursor',
         '_embedded' => '\Finix\Model\ApplicationProfilesListEmbedded',
-        '_links' => '\Finix\Model\ApplicationProfilesListLinks'
+        '_links' => '\Finix\Model\ListLinks'
     ];
 
     /**
@@ -252,7 +252,7 @@ class ApplicationProfilesList implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets _links
      *
-     * @return \Finix\Model\ApplicationProfilesListLinks|null
+     * @return \Finix\Model\ListLinks|null
      */
     public function getLinks()
     {
@@ -262,7 +262,7 @@ class ApplicationProfilesList implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets _links
      *
-     * @param \Finix\Model\ApplicationProfilesListLinks|null $_links _links
+     * @param \Finix\Model\ListLinks|null $_links _links
      *
      * @return self
      */

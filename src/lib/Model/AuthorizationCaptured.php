@@ -711,7 +711,7 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets failure_code
      *
-     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/docs/guides/developers/errors/#failure-codes).
+     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/guides/developers/errors/#failure-codes).
      *
      * @return self
      */
@@ -807,7 +807,7 @@ class AuthorizationCaptured implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets merchant_identity
      *
-     * @param string|null $merchant_identity The ID of the resource.
+     * @param string|null $merchant_identity The ID of the `Merchant` resource the `Authorization` was captured under.
      *
      * @return self
      */

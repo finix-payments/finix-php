@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationDetailsCashbackOptions
+ * PayoutProfilesListEmbedded
  *
  * PHP version 7.4
  *
@@ -16,9 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ConfigurationDetailsCashbackOptions Class Doc Comment
+ * PayoutProfilesListEmbedded Class Doc Comment
  *
  * @category Class
+ * @description List of &#x60;Payout Profiles&#x60;.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -26,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class PayoutProfilesListEmbedded implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +36,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ConfigurationDetails_cashback_options';
+    protected static $openAPIModelName = 'PayoutProfilesList__embedded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,8 +44,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'manual_entry' => '\Finix\Model\ConfigurationDetailsCashbackOptionsManualEntry',
-        'selection_amounts' => 'string'
+        'payout_profiles' => '\Finix\Model\PayoutProfile[]'
     ];
 
     /**
@@ -55,8 +55,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'manual_entry' => null,
-        'selection_amounts' => null
+        'payout_profiles' => null
     ];
 
     /**
@@ -86,8 +85,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'manual_entry' => 'manual_entry',
-        'selection_amounts' => 'selection_amounts'
+        'payout_profiles' => 'payout_profiles'
     ];
 
     /**
@@ -96,8 +94,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'manual_entry' => 'setManualEntry',
-        'selection_amounts' => 'setSelectionAmounts'
+        'payout_profiles' => 'setPayoutProfiles'
     ];
 
     /**
@@ -106,8 +103,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'manual_entry' => 'getManualEntry',
-        'selection_amounts' => 'getSelectionAmounts'
+        'payout_profiles' => 'getPayoutProfiles'
     ];
 
     /**
@@ -167,8 +163,7 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['manual_entry'] = $data['manual_entry'] ?? null;
-        $this->container['selection_amounts'] = $data['selection_amounts'] ?? null;
+        $this->container['payout_profiles'] = $data['payout_profiles'] ?? null;
     }
 
     /**
@@ -196,49 +191,25 @@ class ConfigurationDetailsCashbackOptions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets manual_entry
+     * Gets payout_profiles
      *
-     * @return \Finix\Model\ConfigurationDetailsCashbackOptionsManualEntry|null
+     * @return \Finix\Model\PayoutProfile[]|null
      */
-    public function getManualEntry()
+    public function getPayoutProfiles()
     {
-        return $this->container['manual_entry'];
+        return $this->container['payout_profiles'];
     }
 
     /**
-     * Sets manual_entry
+     * Sets payout_profiles
      *
-     * @param \Finix\Model\ConfigurationDetailsCashbackOptionsManualEntry|null $manual_entry manual_entry
+     * @param \Finix\Model\PayoutProfile[]|null $payout_profiles `Payout Profile` objects.
      *
      * @return self
      */
-    public function setManualEntry($manual_entry, $deserialize = false)
+    public function setPayoutProfiles($payout_profiles, $deserialize = false)
     {
-        $this->container['manual_entry'] = $manual_entry;
-
-        return $this;
-    }
-
-    /**
-     * Gets selection_amounts
-     *
-     * @return string|null
-     */
-    public function getSelectionAmounts()
-    {
-        return $this->container['selection_amounts'];
-    }
-
-    /**
-     * Sets selection_amounts
-     *
-     * @param string|null $selection_amounts selection_amounts
-     *
-     * @return self
-     */
-    public function setSelectionAmounts($selection_amounts, $deserialize = false)
-    {
-        $this->container['selection_amounts'] = $selection_amounts;
+        $this->container['payout_profiles'] = $payout_profiles;
 
         return $this;
     }

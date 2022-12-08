@@ -19,7 +19,7 @@ use \Finix\ObjectSerializer;
  * WebhookAuthentication Class Doc Comment
  *
  * @category Class
- * @description The authentication settings that are used to send webhook events.
+ * @description The [authentication settings](/guides/developers/webhooks/#authenticating-webhooks) that are used to send webhook events.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com

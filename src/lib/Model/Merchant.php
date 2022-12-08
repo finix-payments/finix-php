@@ -384,7 +384,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the `Merchant` resource.
      *
      * @return self
      */
@@ -874,7 +874,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ready_to_settle_upon
      *
-     * @param string|null $ready_to_settle_upon Details how `Authorizations` captured by the `Merchant` are settled.
+     * @param string|null $ready_to_settle_upon Details how transactions captured by the `Merchant` are settled.
      *
      * @return self
      */

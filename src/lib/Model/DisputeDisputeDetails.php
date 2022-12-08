@@ -1,6 +1,6 @@
 <?php
 /**
- * ApplicationProfilesListLinks
+ * DisputeDisputeDetails
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ApplicationProfilesListLinks Class Doc Comment
+ * DisputeDisputeDetails Class Doc Comment
  *
  * @category Class
- * @description For your convenience, every response includes several URLs which link to resources relevant to the request. You can use these &#x60;_links&#x60; to make your follow-up requests and quickly access relevant IDs.
+ * @description Details about the &#x60;Dispute&#x60; received by the &#x60;Processor&#x60;. Any data from the processor can get included.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \JsonSerializable
+class DisputeDisputeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ApplicationProfilesList__links';
+    protected static $openAPIModelName = 'Dispute_dispute_details';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,11 +44,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'first' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'last' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'next' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'prev' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'self' => '\Finix\Model\ApplicationLinksSelf'
+        'case_id' => 'string',
+        'pin_debit_adjustment_number' => 'string',
+        'reason_code' => 'string'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'first' => null,
-        'last' => null,
-        'next' => null,
-        'prev' => null,
-        'self' => null
+        'case_id' => null,
+        'pin_debit_adjustment_number' => null,
+        'reason_code' => null
     ];
 
     /**
@@ -93,11 +89,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'first' => 'first',
-        'last' => 'last',
-        'next' => 'next',
-        'prev' => 'prev',
-        'self' => 'self'
+        'case_id' => 'case_id',
+        'pin_debit_adjustment_number' => 'pin_debit_adjustment_number',
+        'reason_code' => 'reason_code'
     ];
 
     /**
@@ -106,11 +100,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'first' => 'setFirst',
-        'last' => 'setLast',
-        'next' => 'setNext',
-        'prev' => 'setPrev',
-        'self' => 'setSelf'
+        'case_id' => 'setCaseId',
+        'pin_debit_adjustment_number' => 'setPinDebitAdjustmentNumber',
+        'reason_code' => 'setReasonCode'
     ];
 
     /**
@@ -119,11 +111,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'first' => 'getFirst',
-        'last' => 'getLast',
-        'next' => 'getNext',
-        'prev' => 'getPrev',
-        'self' => 'getSelf'
+        'case_id' => 'getCaseId',
+        'pin_debit_adjustment_number' => 'getPinDebitAdjustmentNumber',
+        'reason_code' => 'getReasonCode'
     ];
 
     /**
@@ -183,11 +173,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['first'] = $data['first'] ?? null;
-        $this->container['last'] = $data['last'] ?? null;
-        $this->container['next'] = $data['next'] ?? null;
-        $this->container['prev'] = $data['prev'] ?? null;
-        $this->container['self'] = $data['self'] ?? null;
+        $this->container['case_id'] = $data['case_id'] ?? null;
+        $this->container['pin_debit_adjustment_number'] = $data['pin_debit_adjustment_number'] ?? null;
+        $this->container['reason_code'] = $data['reason_code'] ?? null;
     }
 
     /**
@@ -215,121 +203,73 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets first
+     * Gets case_id
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return string|null
      */
-    public function getFirst()
+    public function getCaseId()
     {
-        return $this->container['first'];
+        return $this->container['case_id'];
     }
 
     /**
-     * Sets first
+     * Sets case_id
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $first first
+     * @param string|null $case_id The case number the `Processor` has given the dispute in their internal database.
      *
      * @return self
      */
-    public function setFirst($first, $deserialize = false)
+    public function setCaseId($case_id, $deserialize = false)
     {
-        $this->container['first'] = $first;
+        $this->container['case_id'] = $case_id;
 
         return $this;
     }
 
     /**
-     * Gets last
+     * Gets pin_debit_adjustment_number
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return string|null
      */
-    public function getLast()
+    public function getPinDebitAdjustmentNumber()
     {
-        return $this->container['last'];
+        return $this->container['pin_debit_adjustment_number'];
     }
 
     /**
-     * Sets last
+     * Sets pin_debit_adjustment_number
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $last last
+     * @param string|null $pin_debit_adjustment_number Used by the processor to identify the funds that are getting disputed.
      *
      * @return self
      */
-    public function setLast($last, $deserialize = false)
+    public function setPinDebitAdjustmentNumber($pin_debit_adjustment_number, $deserialize = false)
     {
-        $this->container['last'] = $last;
+        $this->container['pin_debit_adjustment_number'] = $pin_debit_adjustment_number;
 
         return $this;
     }
 
     /**
-     * Gets next
+     * Gets reason_code
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return string|null
      */
-    public function getNext()
+    public function getReasonCode()
     {
-        return $this->container['next'];
+        return $this->container['reason_code'];
     }
 
     /**
-     * Sets next
+     * Sets reason_code
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $next next
+     * @param string|null $reason_code Used by the processor and card networks to identify why the dispute got filed.
      *
      * @return self
      */
-    public function setNext($next, $deserialize = false)
+    public function setReasonCode($reason_code, $deserialize = false)
     {
-        $this->container['next'] = $next;
-
-        return $this;
-    }
-
-    /**
-     * Gets prev
-     *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
-     */
-    public function getPrev()
-    {
-        return $this->container['prev'];
-    }
-
-    /**
-     * Sets prev
-     *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $prev prev
-     *
-     * @return self
-     */
-    public function setPrev($prev, $deserialize = false)
-    {
-        $this->container['prev'] = $prev;
-
-        return $this;
-    }
-
-    /**
-     * Gets self
-     *
-     * @return \Finix\Model\ApplicationLinksSelf|null
-     */
-    public function getSelf()
-    {
-        return $this->container['self'];
-    }
-
-    /**
-     * Sets self
-     *
-     * @param \Finix\Model\ApplicationLinksSelf|null $self self
-     *
-     * @return self
-     */
-    public function setSelf($self, $deserialize = false)
-    {
-        $this->container['self'] = $self;
+        $this->container['reason_code'] = $reason_code;
 
         return $this;
     }

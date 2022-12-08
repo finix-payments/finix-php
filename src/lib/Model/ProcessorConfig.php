@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateAssociatedIdentityRequestEntityIncorporationDate
+ * ProcessorConfig
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateAssociatedIdentityRequestEntityIncorporationDate Class Doc Comment
+ * ProcessorConfig Class Doc Comment
  *
  * @category Class
- * @description The date the company was founded and registered with the US.
+ * @description Configure how the &#x60;Processor&#x60; handles transaction details, specifc to the processor.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProcessorConfig implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateAssociatedIdentityRequest_entity_incorporation_date';
+    protected static $openAPIModelName = 'Processor_config';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,9 +44,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'year' => 'int',
-        'day' => 'int',
-        'month' => 'int'
+        'can_debit_bank_account' => 'bool'
     ];
 
     /**
@@ -57,9 +55,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'year' => null,
-        'day' => null,
-        'month' => null
+        'can_debit_bank_account' => null
     ];
 
     /**
@@ -89,9 +85,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'year' => 'year',
-        'day' => 'day',
-        'month' => 'month'
+        'can_debit_bank_account' => 'canDebitBankAccount'
     ];
 
     /**
@@ -100,9 +94,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'year' => 'setYear',
-        'day' => 'setDay',
-        'month' => 'setMonth'
+        'can_debit_bank_account' => 'setCanDebitBankAccount'
     ];
 
     /**
@@ -111,9 +103,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'year' => 'getYear',
-        'day' => 'getDay',
-        'month' => 'getMonth'
+        'can_debit_bank_account' => 'getCanDebitBankAccount'
     ];
 
     /**
@@ -173,9 +163,7 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['year'] = $data['year'] ?? null;
-        $this->container['day'] = $data['day'] ?? null;
-        $this->container['month'] = $data['month'] ?? null;
+        $this->container['can_debit_bank_account'] = $data['can_debit_bank_account'] ?? null;
     }
 
     /**
@@ -203,73 +191,25 @@ class CreateAssociatedIdentityRequestEntityIncorporationDate implements ModelInt
 
 
     /**
-     * Gets year
+     * Gets can_debit_bank_account
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getYear()
+    public function getCanDebitBankAccount()
     {
-        return $this->container['year'];
+        return $this->container['can_debit_bank_account'];
     }
 
     /**
-     * Sets year
+     * Sets can_debit_bank_account
      *
-     * @param int|null $year year
+     * @param bool|null $can_debit_bank_account Details if the `Application` can debit bank accounts using the `Processor`.
      *
      * @return self
      */
-    public function setYear($year, $deserialize = false)
+    public function setCanDebitBankAccount($can_debit_bank_account, $deserialize = false)
     {
-        $this->container['year'] = $year;
-
-        return $this;
-    }
-
-    /**
-     * Gets day
-     *
-     * @return int|null
-     */
-    public function getDay()
-    {
-        return $this->container['day'];
-    }
-
-    /**
-     * Sets day
-     *
-     * @param int|null $day day
-     *
-     * @return self
-     */
-    public function setDay($day, $deserialize = false)
-    {
-        $this->container['day'] = $day;
-
-        return $this;
-    }
-
-    /**
-     * Gets month
-     *
-     * @return int|null
-     */
-    public function getMonth()
-    {
-        return $this->container['month'];
-    }
-
-    /**
-     * Sets month
-     *
-     * @param int|null $month month
-     *
-     * @return self
-     */
-    public function setMonth($month, $deserialize = false)
-    {
-        $this->container['month'] = $month;
+        $this->container['can_debit_bank_account'] = $can_debit_bank_account;
 
         return $this;
     }

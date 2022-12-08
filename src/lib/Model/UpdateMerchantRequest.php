@@ -496,7 +496,7 @@ class UpdateMerchantRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets ready_to_settle_upon
      *
-     * @param string|null $ready_to_settle_upon Details how `Authorizations` captured by the `Merchant` are settled.
+     * @param string|null $ready_to_settle_upon Details how transactions captured by the `Merchant` are settled.
      *
      * @return self
      */

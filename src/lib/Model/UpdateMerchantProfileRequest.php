@@ -44,6 +44,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'fee_profile' => 'string',
+        'payout_profile' => 'string',
         'risk_profile' => 'string',
         'tags' => 'array<string,string>'
     ];
@@ -57,6 +58,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'fee_profile' => null,
+        'payout_profile' => null,
         'risk_profile' => null,
         'tags' => null
     ];
@@ -89,6 +91,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'fee_profile' => 'fee_profile',
+        'payout_profile' => 'payout_profile',
         'risk_profile' => 'risk_profile',
         'tags' => 'tags'
     ];
@@ -100,6 +103,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'fee_profile' => 'setFeeProfile',
+        'payout_profile' => 'setPayoutProfile',
         'risk_profile' => 'setRiskProfile',
         'tags' => 'setTags'
     ];
@@ -111,6 +115,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'fee_profile' => 'getFeeProfile',
+        'payout_profile' => 'getPayoutProfile',
         'risk_profile' => 'getRiskProfile',
         'tags' => 'getTags'
     ];
@@ -173,6 +178,7 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->container['fee_profile'] = $data['fee_profile'] ?? null;
+        $this->container['payout_profile'] = $data['payout_profile'] ?? null;
         $this->container['risk_profile'] = $data['risk_profile'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
@@ -221,6 +227,30 @@ class UpdateMerchantProfileRequest implements ModelInterface, ArrayAccess, \Json
     public function setFeeProfile($fee_profile, $deserialize = false)
     {
         $this->container['fee_profile'] = $fee_profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_profile
+     *
+     * @return string|null
+     */
+    public function getPayoutProfile()
+    {
+        return $this->container['payout_profile'];
+    }
+
+    /**
+     * Sets payout_profile
+     *
+     * @param string|null $payout_profile ID of the `payout_profile`.
+     *
+     * @return self
+     */
+    public function setPayoutProfile($payout_profile, $deserialize = false)
+    {
+        $this->container['payout_profile'] = $payout_profile;
 
         return $this;
     }

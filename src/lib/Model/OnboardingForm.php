@@ -44,12 +44,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'onboarding_data' => '\Finix\Model\OnboardingFormOnboardingData',
-        'merchant_processors' => '\Finix\Model\CreateOnboardingFormRequestMerchantProcessorsInner[]',
-        'onboarding_link' => '\Finix\Model\OnboardingFormOnboardingLink',
-        'status' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'merchant_processors' => '\Finix\Model\CreateOnboardingFormRequestMerchantProcessorsInner[]',
+        'onboarding_data' => '\Finix\Model\OnboardingFormOnboardingData',
+        'onboarding_link' => '\Finix\Model\OnboardingFormOnboardingLink',
+        'status' => 'string',
         'tags' => 'array<string,string>'
     ];
 
@@ -62,12 +62,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'onboarding_data' => null,
-        'merchant_processors' => null,
-        'onboarding_link' => null,
-        'status' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'merchant_processors' => null,
+        'onboarding_data' => null,
+        'onboarding_link' => null,
+        'status' => null,
         'tags' => null
     ];
 
@@ -99,12 +99,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'onboarding_data' => 'onboarding_data',
-        'merchant_processors' => 'merchant_processors',
-        'onboarding_link' => 'onboarding_link',
-        'status' => 'status',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
+        'merchant_processors' => 'merchant_processors',
+        'onboarding_data' => 'onboarding_data',
+        'onboarding_link' => 'onboarding_link',
+        'status' => 'status',
         'tags' => 'tags'
     ];
 
@@ -115,12 +115,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'onboarding_data' => 'setOnboardingData',
-        'merchant_processors' => 'setMerchantProcessors',
-        'onboarding_link' => 'setOnboardingLink',
-        'status' => 'setStatus',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'merchant_processors' => 'setMerchantProcessors',
+        'onboarding_data' => 'setOnboardingData',
+        'onboarding_link' => 'setOnboardingLink',
+        'status' => 'setStatus',
         'tags' => 'setTags'
     ];
 
@@ -131,12 +131,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'onboarding_data' => 'getOnboardingData',
-        'merchant_processors' => 'getMerchantProcessors',
-        'onboarding_link' => 'getOnboardingLink',
-        'status' => 'getStatus',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'merchant_processors' => 'getMerchantProcessors',
+        'onboarding_data' => 'getOnboardingData',
+        'onboarding_link' => 'getOnboardingLink',
+        'status' => 'getStatus',
         'tags' => 'getTags'
     ];
 
@@ -213,12 +213,12 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['onboarding_data'] = $data['onboarding_data'] ?? null;
-        $this->container['merchant_processors'] = $data['merchant_processors'] ?? null;
-        $this->container['onboarding_link'] = $data['onboarding_link'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['merchant_processors'] = $data['merchant_processors'] ?? null;
+        $this->container['onboarding_data'] = $data['onboarding_data'] ?? null;
+        $this->container['onboarding_link'] = $data['onboarding_link'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
 
@@ -280,25 +280,49 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets onboarding_data
+     * Gets created_at
      *
-     * @return \Finix\Model\OnboardingFormOnboardingData|null
+     * @return \DateTime|null
      */
-    public function getOnboardingData()
+    public function getCreatedAt()
     {
-        return $this->container['onboarding_data'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets onboarding_data
+     * Sets created_at
      *
-     * @param \Finix\Model\OnboardingFormOnboardingData|null $onboarding_data onboarding_data
+     * @param \DateTime|null $created_at Timestamp of when the object was created.
      *
      * @return self
      */
-    public function setOnboardingData($onboarding_data, $deserialize = false)
+    public function setCreatedAt($created_at, $deserialize = false)
     {
-        $this->container['onboarding_data'] = $onboarding_data;
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at Timestamp of when the object was last updated.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at, $deserialize = false)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
@@ -323,6 +347,30 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMerchantProcessors($merchant_processors, $deserialize = false)
     {
         $this->container['merchant_processors'] = $merchant_processors;
+
+        return $this;
+    }
+
+    /**
+     * Gets onboarding_data
+     *
+     * @return \Finix\Model\OnboardingFormOnboardingData|null
+     */
+    public function getOnboardingData()
+    {
+        return $this->container['onboarding_data'];
+    }
+
+    /**
+     * Sets onboarding_data
+     *
+     * @param \Finix\Model\OnboardingFormOnboardingData|null $onboarding_data onboarding_data
+     *
+     * @return self
+     */
+    public function setOnboardingData($onboarding_data, $deserialize = false)
+    {
+        $this->container['onboarding_data'] = $onboarding_data;
 
         return $this;
     }
@@ -381,54 +429,6 @@ class OnboardingForm implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime|null $created_at Timestamp of when the object was created.
-     *
-     * @return self
-     */
-    public function setCreatedAt($created_at, $deserialize = false)
-    {
-        $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated_at
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updated_at'];
-    }
-
-    /**
-     * Sets updated_at
-     *
-     * @param \DateTime|null $updated_at Timestamp of when the object was last updated.
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updated_at, $deserialize = false)
-    {
-        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

@@ -43,11 +43,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'terms_of_service_url' => 'string',
-        'return_url' => 'string',
-        'fee_details_url' => 'string',
+        'expiration_in_minutes' => 'int',
         'expired_session_url' => 'string',
-        'expiration_in_minutes' => 'int'
+        'fee_details_url' => 'string',
+        'return_url' => 'string',
+        'terms_of_service_url' => 'string'
     ];
 
     /**
@@ -58,11 +58,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'terms_of_service_url' => null,
-        'return_url' => null,
-        'fee_details_url' => null,
+        'expiration_in_minutes' => null,
         'expired_session_url' => null,
-        'expiration_in_minutes' => null
+        'fee_details_url' => null,
+        'return_url' => null,
+        'terms_of_service_url' => null
     ];
 
     /**
@@ -92,11 +92,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'terms_of_service_url' => 'terms_of_service_url',
-        'return_url' => 'return_url',
-        'fee_details_url' => 'fee_details_url',
+        'expiration_in_minutes' => 'expiration_in_minutes',
         'expired_session_url' => 'expired_session_url',
-        'expiration_in_minutes' => 'expiration_in_minutes'
+        'fee_details_url' => 'fee_details_url',
+        'return_url' => 'return_url',
+        'terms_of_service_url' => 'terms_of_service_url'
     ];
 
     /**
@@ -105,11 +105,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'terms_of_service_url' => 'setTermsOfServiceUrl',
-        'return_url' => 'setReturnUrl',
-        'fee_details_url' => 'setFeeDetailsUrl',
+        'expiration_in_minutes' => 'setExpirationInMinutes',
         'expired_session_url' => 'setExpiredSessionUrl',
-        'expiration_in_minutes' => 'setExpirationInMinutes'
+        'fee_details_url' => 'setFeeDetailsUrl',
+        'return_url' => 'setReturnUrl',
+        'terms_of_service_url' => 'setTermsOfServiceUrl'
     ];
 
     /**
@@ -118,11 +118,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'terms_of_service_url' => 'getTermsOfServiceUrl',
-        'return_url' => 'getReturnUrl',
-        'fee_details_url' => 'getFeeDetailsUrl',
+        'expiration_in_minutes' => 'getExpirationInMinutes',
         'expired_session_url' => 'getExpiredSessionUrl',
-        'expiration_in_minutes' => 'getExpirationInMinutes'
+        'fee_details_url' => 'getFeeDetailsUrl',
+        'return_url' => 'getReturnUrl',
+        'terms_of_service_url' => 'getTermsOfServiceUrl'
     ];
 
     /**
@@ -182,11 +182,11 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['terms_of_service_url'] = $data['terms_of_service_url'] ?? null;
-        $this->container['return_url'] = $data['return_url'] ?? null;
-        $this->container['fee_details_url'] = $data['fee_details_url'] ?? null;
-        $this->container['expired_session_url'] = $data['expired_session_url'] ?? null;
         $this->container['expiration_in_minutes'] = $data['expiration_in_minutes'] ?? null;
+        $this->container['expired_session_url'] = $data['expired_session_url'] ?? null;
+        $this->container['fee_details_url'] = $data['fee_details_url'] ?? null;
+        $this->container['return_url'] = $data['return_url'] ?? null;
+        $this->container['terms_of_service_url'] = $data['terms_of_service_url'] ?? null;
     }
 
     /**
@@ -214,73 +214,25 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets terms_of_service_url
+     * Gets expiration_in_minutes
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getTermsOfServiceUrl()
+    public function getExpirationInMinutes()
     {
-        return $this->container['terms_of_service_url'];
+        return $this->container['expiration_in_minutes'];
     }
 
     /**
-     * Sets terms_of_service_url
+     * Sets expiration_in_minutes
      *
-     * @param string|null $terms_of_service_url Your Terms of Service URL. The URL is provided to users for consent along with Finix's Terms of Service.
+     * @param int|null $expiration_in_minutes How long (in minutes) the link is valid for.
      *
      * @return self
      */
-    public function setTermsOfServiceUrl($terms_of_service_url, $deserialize = false)
+    public function setExpirationInMinutes($expiration_in_minutes, $deserialize = false)
     {
-        $this->container['terms_of_service_url'] = $terms_of_service_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets return_url
-     *
-     * @return string|null
-     */
-    public function getReturnUrl()
-    {
-        return $this->container['return_url'];
-    }
-
-    /**
-     * Sets return_url
-     *
-     * @param string|null $return_url The URL users get sent to after completing the onboarding flow.
-     *
-     * @return self
-     */
-    public function setReturnUrl($return_url, $deserialize = false)
-    {
-        $this->container['return_url'] = $return_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets fee_details_url
-     *
-     * @return string|null
-     */
-    public function getFeeDetailsUrl()
-    {
-        return $this->container['fee_details_url'];
-    }
-
-    /**
-     * Sets fee_details_url
-     *
-     * @param string|null $fee_details_url The URL of the page where you display the fees related to processing payments (for more info, see [Displaying Processing Fees](/guides/onboarding/onboarding-form/#displaying-processing-fees)).
-     *
-     * @return self
-     */
-    public function setFeeDetailsUrl($fee_details_url, $deserialize = false)
-    {
-        $this->container['fee_details_url'] = $fee_details_url;
+        $this->container['expiration_in_minutes'] = $expiration_in_minutes;
 
         return $this;
     }
@@ -310,25 +262,73 @@ class CreateOnboardingFormLinkRequest implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets expiration_in_minutes
+     * Gets fee_details_url
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getExpirationInMinutes()
+    public function getFeeDetailsUrl()
     {
-        return $this->container['expiration_in_minutes'];
+        return $this->container['fee_details_url'];
     }
 
     /**
-     * Sets expiration_in_minutes
+     * Sets fee_details_url
      *
-     * @param int|null $expiration_in_minutes How long (in minutes) the link is valid for.
+     * @param string|null $fee_details_url The URL of the page where you display the fees related to processing payments (for more info, see [Displaying Processing Fees](/guides/onboarding/onboarding-form/#displaying-processing-fees)).
      *
      * @return self
      */
-    public function setExpirationInMinutes($expiration_in_minutes, $deserialize = false)
+    public function setFeeDetailsUrl($fee_details_url, $deserialize = false)
     {
-        $this->container['expiration_in_minutes'] = $expiration_in_minutes;
+        $this->container['fee_details_url'] = $fee_details_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_url
+     *
+     * @return string|null
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['return_url'];
+    }
+
+    /**
+     * Sets return_url
+     *
+     * @param string|null $return_url The URL users get sent to after completing the onboarding flow.
+     *
+     * @return self
+     */
+    public function setReturnUrl($return_url, $deserialize = false)
+    {
+        $this->container['return_url'] = $return_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets terms_of_service_url
+     *
+     * @return string|null
+     */
+    public function getTermsOfServiceUrl()
+    {
+        return $this->container['terms_of_service_url'];
+    }
+
+    /**
+     * Sets terms_of_service_url
+     *
+     * @param string|null $terms_of_service_url Your Terms of Service URL. The URL is provided to users for consent along with Finix's Terms of Service.
+     *
+     * @return self
+     */
+    public function setTermsOfServiceUrl($terms_of_service_url, $deserialize = false)
+    {
+        $this->container['terms_of_service_url'] = $terms_of_service_url;
 
         return $this;
     }

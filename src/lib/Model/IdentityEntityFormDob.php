@@ -44,9 +44,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'year' => 'int',
         'day' => 'int',
-        'month' => 'int'
+        'month' => 'int',
+        'year' => 'int'
     ];
 
     /**
@@ -57,9 +57,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'year' => null,
         'day' => null,
-        'month' => null
+        'month' => null,
+        'year' => null
     ];
 
     /**
@@ -89,9 +89,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'year' => 'year',
         'day' => 'day',
-        'month' => 'month'
+        'month' => 'month',
+        'year' => 'year'
     ];
 
     /**
@@ -100,9 +100,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'year' => 'setYear',
         'day' => 'setDay',
-        'month' => 'setMonth'
+        'month' => 'setMonth',
+        'year' => 'setYear'
     ];
 
     /**
@@ -111,9 +111,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'year' => 'getYear',
         'day' => 'getDay',
-        'month' => 'getMonth'
+        'month' => 'getMonth',
+        'year' => 'getYear'
     ];
 
     /**
@@ -173,9 +173,9 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['year'] = $data['year'] ?? null;
         $this->container['day'] = $data['day'] ?? null;
         $this->container['month'] = $data['month'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
     }
 
     /**
@@ -201,30 +201,6 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets year
-     *
-     * @return int|null
-     */
-    public function getYear()
-    {
-        return $this->container['year'];
-    }
-
-    /**
-     * Sets year
-     *
-     * @param int|null $year Year of birth (4-digit).
-     *
-     * @return self
-     */
-    public function setYear($year, $deserialize = false)
-    {
-        $this->container['year'] = $year;
-
-        return $this;
-    }
 
     /**
      * Gets day
@@ -270,6 +246,30 @@ class IdentityEntityFormDob implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setMonth($month, $deserialize = false)
     {
         $this->container['month'] = $month;
+
+        return $this;
+    }
+
+    /**
+     * Gets year
+     *
+     * @return int|null
+     */
+    public function getYear()
+    {
+        return $this->container['year'];
+    }
+
+    /**
+     * Sets year
+     *
+     * @param int|null $year Year of birth (4-digit).
+     *
+     * @return self
+     */
+    public function setYear($year, $deserialize = false)
+    {
+        $this->container['year'] = $year;
 
         return $this;
     }

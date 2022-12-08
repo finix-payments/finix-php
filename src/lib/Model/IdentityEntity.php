@@ -44,6 +44,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'amex_mid' => 'int',
         'annual_card_volume' => 'int',
         'business_address' => '\Finix\Model\IdentityEntityBusinessAddress',
         'business_name' => 'string',
@@ -57,7 +58,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'string',
         'first_name' => 'string',
         'has_accepted_credit_cards_previously' => 'bool',
-        'incorporation_date' => '\Finix\Model\IdentityEntityIncorporationDate',
+        'incorporation_date' => '\Finix\Model\IdentityEntityFormIncorporationDate',
         'last_name' => 'string',
         'max_transaction_amount' => 'int',
         'mcc' => 'string',
@@ -80,6 +81,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'amex_mid' => null,
         'annual_card_volume' => null,
         'business_address' => null,
         'business_name' => null,
@@ -135,6 +137,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'amex_mid' => 'amex_mid',
         'annual_card_volume' => 'annual_card_volume',
         'business_address' => 'business_address',
         'business_name' => 'business_name',
@@ -169,6 +172,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'amex_mid' => 'setAmexMid',
         'annual_card_volume' => 'setAnnualCardVolume',
         'business_address' => 'setBusinessAddress',
         'business_name' => 'setBusinessName',
@@ -203,6 +207,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'amex_mid' => 'getAmexMid',
         'annual_card_volume' => 'getAnnualCardVolume',
         'business_address' => 'getBusinessAddress',
         'business_name' => 'getBusinessName',
@@ -303,6 +308,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['amex_mid'] = $data['amex_mid'] ?? null;
         $this->container['annual_card_volume'] = $data['annual_card_volume'] ?? null;
         $this->container['business_address'] = $data['business_address'] ?? null;
         $this->container['business_name'] = $data['business_name'] ?? null;
@@ -411,6 +417,30 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets amex_mid
+     *
+     * @return int|null
+     */
+    public function getAmexMid()
+    {
+        return $this->container['amex_mid'];
+    }
+
+    /**
+     * Sets amex_mid
+     *
+     * @param int|null $amex_mid Assigned amexMid value. If a value is passed, it must be 10 or 11 digits.
+     *
+     * @return self
+     */
+    public function setAmexMid($amex_mid, $deserialize = false)
+    {
+        $this->container['amex_mid'] = $amex_mid;
+
+        return $this;
+    }
 
     /**
      * Gets annual_card_volume
@@ -763,7 +793,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets incorporation_date
      *
-     * @return \Finix\Model\IdentityEntityIncorporationDate|null
+     * @return \Finix\Model\IdentityEntityFormIncorporationDate|null
      */
     public function getIncorporationDate()
     {
@@ -773,7 +803,7 @@ class IdentityEntity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets incorporation_date
      *
-     * @param \Finix\Model\IdentityEntityIncorporationDate|null $incorporation_date incorporation_date
+     * @param \Finix\Model\IdentityEntityFormIncorporationDate|null $incorporation_date incorporation_date
      *
      * @return self
      */

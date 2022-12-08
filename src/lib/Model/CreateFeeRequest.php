@@ -541,7 +541,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant_id
      *
-     * @param string $merchant_id The ID of the resource.
+     * @param string $merchant_id The ID of the `Merchant` resource used to create the `Fee`.
      *
      * @return self
      */
@@ -565,7 +565,7 @@ class CreateFeeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settlement_delay_days
      *
-     * @param int|null $settlement_delay_days Delays in days, when the fee will be submitted for settlement.
+     * @param int|null $settlement_delay_days Delays in days, when the `Transfer` the `Fee` creates will be submitted for settlement.
      *
      * @return self
      */

@@ -49,6 +49,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => '\DateTime',
         'application' => 'string',
         'application_config' => '\Finix\Model\ProcessorApplicationConfig',
+        'config' => '\Finix\Model\ProcessorConfig',
         'default_merchant_profile' => 'string',
         'enabled' => 'bool',
         'processor' => 'string',
@@ -69,6 +70,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'date-time',
         'application' => null,
         'application_config' => null,
+        'config' => null,
         'default_merchant_profile' => null,
         'enabled' => null,
         'processor' => null,
@@ -108,6 +110,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'updated_at',
         'application' => 'application',
         'application_config' => 'application_config',
+        'config' => 'config',
         'default_merchant_profile' => 'default_merchant_profile',
         'enabled' => 'enabled',
         'processor' => 'processor',
@@ -126,6 +129,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'setUpdatedAt',
         'application' => 'setApplication',
         'application_config' => 'setApplicationConfig',
+        'config' => 'setConfig',
         'default_merchant_profile' => 'setDefaultMerchantProfile',
         'enabled' => 'setEnabled',
         'processor' => 'setProcessor',
@@ -144,6 +148,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'getUpdatedAt',
         'application' => 'getApplication',
         'application_config' => 'getApplicationConfig',
+        'config' => 'getConfig',
         'default_merchant_profile' => 'getDefaultMerchantProfile',
         'enabled' => 'getEnabled',
         'processor' => 'getProcessor',
@@ -213,6 +218,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['application_config'] = $data['application_config'] ?? null;
+        $this->container['config'] = $data['config'] ?? null;
         $this->container['default_merchant_profile'] = $data['default_merchant_profile'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['processor'] = $data['processor'] ?? null;
@@ -365,6 +371,30 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets config
+     *
+     * @return \Finix\Model\ProcessorConfig|null
+     */
+    public function getConfig()
+    {
+        return $this->container['config'];
+    }
+
+    /**
+     * Sets config
+     *
+     * @param \Finix\Model\ProcessorConfig|null $config config
+     *
+     * @return self
+     */
+    public function setConfig($config, $deserialize = false)
+    {
+        $this->container['config'] = $config;
+
+        return $this;
+    }
+
+    /**
      * Gets default_merchant_profile
      *
      * @return string|null
@@ -377,7 +407,7 @@ class Processor implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_merchant_profile
      *
-     * @param string|null $default_merchant_profile The ID of the resource.
+     * @param string|null $default_merchant_profile The ID of the `Merchant Profile` resource used to create the `Processor`.
      *
      * @return self
      */

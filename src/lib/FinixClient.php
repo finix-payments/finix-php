@@ -24,6 +24,7 @@ use Finix\Api\MerchantProfilesApi;
 use Finix\Api\MerchantsApi;
 use Finix\Api\OnboardingFormsApi;
 use Finix\Api\PaymentInstrumentsApi;
+use Finix\Api\PayoutProfilesApi;
 use Finix\Api\SettlementsApi;
 use Finix\Api\TransfersApi;
 use Finix\Api\VerificationsApi;
@@ -528,87 +529,92 @@ class FinixClient
     /**
      * @var AuthorizationsApi AuthorizationsApi
      */
-    public readonly AuthorizationsApi $authorizations;
+    public AuthorizationsApi $authorizations;
 
     /**
      * @var BalanceTransfersApi BalanceTransfersApi
      */
-    public readonly BalanceTransfersApi $balanceTransfers;
+    public BalanceTransfersApi $balanceTransfers;
 
     /**
      * @var ComplianceFormsApi ComplianceFormsApi
      */
-    public readonly ComplianceFormsApi $complianceForms;
+    public ComplianceFormsApi $complianceForms;
 
     /**
      * @var DevicesApi DevicesApi
      */
-    public readonly DevicesApi $devices;
+    public DevicesApi $devices;
 
     /**
      * @var DisputesApi DisputesApi
      */
-    public readonly DisputesApi $disputes;
+    public DisputesApi $disputes;
 
     /**
      * @var FeeProfilesApi FeeProfilesApi
      */
-    public readonly FeeProfilesApi $feeProfiles;
+    public FeeProfilesApi $feeProfiles;
 
     /**
      * @var FilesApi FilesApi
      */
-    public readonly FilesApi $files;
+    public FilesApi $files;
 
     /**
      * @var IdentitiesApi IdentitiesApi
      */
-    public readonly IdentitiesApi $identities;
+    public IdentitiesApi $identities;
 
     /**
      * @var InstrumentUpdatesApi InstrumentUpdatesApi
      */
-    public readonly InstrumentUpdatesApi $instrumentUpdates;
+    public InstrumentUpdatesApi $instrumentUpdates;
 
     /**
      * @var MerchantProfilesApi MerchantProfilesApi
      */
-    public readonly MerchantProfilesApi $merchantProfiles;
+    public MerchantProfilesApi $merchantProfiles;
 
     /**
      * @var MerchantsApi MerchantsApi
      */
-    public readonly MerchantsApi $merchants;
+    public MerchantsApi $merchants;
 
     /**
      * @var OnboardingFormsApi OnboardingFormsApi
      */
-    public readonly OnboardingFormsApi $onboardingForms;
+    public OnboardingFormsApi $onboardingForms;
 
     /**
      * @var PaymentInstrumentsApi PaymentInstrumentsApi
      */
-    public readonly PaymentInstrumentsApi $paymentInstruments;
+    public PaymentInstrumentsApi $paymentInstruments;
+
+    /**
+     * @var PayoutProfilesApi PayoutProfilesApi
+     */
+    public PayoutProfilesApi $payoutProfiles;
 
     /**
      * @var SettlementsApi SettlementsApi
      */
-    public readonly SettlementsApi $settlements;
+    public SettlementsApi $settlements;
 
     /**
      * @var TransfersApi TransfersApi
      */
-    public readonly TransfersApi $transfers;
+    public TransfersApi $transfers;
 
     /**
      * @var VerificationsApi VerificationsApi
      */
-    public readonly VerificationsApi $verifications;
+    public VerificationsApi $verifications;
 
     /**
      * @var WebhooksApi WebhooksApi
      */
-    public readonly WebhooksApi $webhooks;
+    public WebhooksApi $webhooks;
 
     /**
      * @var Configuration
@@ -655,6 +661,7 @@ class FinixClient
         $this->merchants = new MerchantsApi($client, $config, $selector, $hostIndex);
         $this->onboardingForms = new OnboardingFormsApi($client, $config, $selector, $hostIndex);
         $this->paymentInstruments = new PaymentInstrumentsApi($client, $config, $selector, $hostIndex);
+        $this->payoutProfiles = new PayoutProfilesApi($client, $config, $selector, $hostIndex);
         $this->settlements = new SettlementsApi($client, $config, $selector, $hostIndex);
         $this->transfers = new TransfersApi($client, $config, $selector, $hostIndex);
         $this->verifications = new VerificationsApi($client, $config, $selector, $hostIndex);

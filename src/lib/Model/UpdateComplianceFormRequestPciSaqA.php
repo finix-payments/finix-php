@@ -44,11 +44,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
+        'ip_address' => 'string',
         'name' => 'string',
         'signed_at' => 'string',
-        'user_agent' => 'string',
-        'ip_address' => 'string',
-        'title' => 'string'
+        'title' => 'string',
+        'user_agent' => 'string'
     ];
 
     /**
@@ -59,11 +59,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'ip_address' => null,
         'name' => null,
         'signed_at' => null,
-        'user_agent' => null,
-        'ip_address' => null,
-        'title' => null
+        'title' => null,
+        'user_agent' => null
     ];
 
     /**
@@ -93,11 +93,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
+        'ip_address' => 'ip_address',
         'name' => 'name',
         'signed_at' => 'signed_at',
-        'user_agent' => 'user_agent',
-        'ip_address' => 'ip_address',
-        'title' => 'title'
+        'title' => 'title',
+        'user_agent' => 'user_agent'
     ];
 
     /**
@@ -106,11 +106,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
+        'ip_address' => 'setIpAddress',
         'name' => 'setName',
         'signed_at' => 'setSignedAt',
-        'user_agent' => 'setUserAgent',
-        'ip_address' => 'setIpAddress',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'user_agent' => 'setUserAgent'
     ];
 
     /**
@@ -119,11 +119,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
+        'ip_address' => 'getIpAddress',
         'name' => 'getName',
         'signed_at' => 'getSignedAt',
-        'user_agent' => 'getUserAgent',
-        'ip_address' => 'getIpAddress',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'user_agent' => 'getUserAgent'
     ];
 
     /**
@@ -183,11 +183,11 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
+        $this->container['ip_address'] = $data['ip_address'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['signed_at'] = $data['signed_at'] ?? null;
-        $this->container['user_agent'] = $data['user_agent'] ?? null;
-        $this->container['ip_address'] = $data['ip_address'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
+        $this->container['user_agent'] = $data['user_agent'] ?? null;
     }
 
     /**
@@ -213,6 +213,30 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ip_address
+     *
+     * @return string|null
+     */
+    public function getIpAddress()
+    {
+        return $this->container['ip_address'];
+    }
+
+    /**
+     * Sets ip_address
+     *
+     * @param string|null $ip_address IP address of the person attesting to this `compliance_form`.
+     *
+     * @return self
+     */
+    public function setIpAddress($ip_address, $deserialize = false)
+    {
+        $this->container['ip_address'] = $ip_address;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -263,54 +287,6 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets user_agent
-     *
-     * @return string|null
-     */
-    public function getUserAgent()
-    {
-        return $this->container['user_agent'];
-    }
-
-    /**
-     * Sets user_agent
-     *
-     * @param string|null $user_agent User agent of the person attesting to this `compliance_form`.
-     *
-     * @return self
-     */
-    public function setUserAgent($user_agent, $deserialize = false)
-    {
-        $this->container['user_agent'] = $user_agent;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip_address
-     *
-     * @return string|null
-     */
-    public function getIpAddress()
-    {
-        return $this->container['ip_address'];
-    }
-
-    /**
-     * Sets ip_address
-     *
-     * @param string|null $ip_address IP address of the person attesting to this `compliance_form`.
-     *
-     * @return self
-     */
-    public function setIpAddress($ip_address, $deserialize = false)
-    {
-        $this->container['ip_address'] = $ip_address;
-
-        return $this;
-    }
-
-    /**
      * Gets title
      *
      * @return string|null
@@ -330,6 +306,30 @@ class UpdateComplianceFormRequestPciSaqA implements ModelInterface, ArrayAccess,
     public function setTitle($title, $deserialize = false)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_agent
+     *
+     * @return string|null
+     */
+    public function getUserAgent()
+    {
+        return $this->container['user_agent'];
+    }
+
+    /**
+     * Sets user_agent
+     *
+     * @param string|null $user_agent User agent of the person attesting to this `compliance_form`.
+     *
+     * @return self
+     */
+    public function setUserAgent($user_agent, $deserialize = false)
+    {
+        $this->container['user_agent'] = $user_agent;
 
         return $this;
     }

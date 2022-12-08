@@ -45,8 +45,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'identity' => 'string',
         'merchant' => 'string',
-        'processor' => 'string',
-        'tags' => 'array<string,string>'
+        'tags' => 'array<string,string>',
+        'processor' => 'string'
     ];
 
     /**
@@ -59,8 +59,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPIFormats = [
         'identity' => null,
         'merchant' => null,
-        'processor' => null,
-        'tags' => null
+        'tags' => null,
+        'processor' => null
     ];
 
     /**
@@ -92,8 +92,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     protected static $attributeMap = [
         'identity' => 'identity',
         'merchant' => 'merchant',
-        'processor' => 'processor',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'processor' => 'processor'
     ];
 
     /**
@@ -104,8 +104,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     protected static $setters = [
         'identity' => 'setIdentity',
         'merchant' => 'setMerchant',
-        'processor' => 'setProcessor',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'processor' => 'setProcessor'
     ];
 
     /**
@@ -116,8 +116,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'identity' => 'getIdentity',
         'merchant' => 'getMerchant',
-        'processor' => 'getProcessor',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'processor' => 'getProcessor'
     ];
 
     /**
@@ -179,8 +179,8 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->container['identity'] = $data['identity'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
-        $this->container['processor'] = $data['processor'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['processor'] = $data['processor'] ?? null;
     }
 
     /**
@@ -256,30 +256,6 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets processor
-     *
-     * @return string|null
-     */
-    public function getProcessor()
-    {
-        return $this->container['processor'];
-    }
-
-    /**
-     * Sets processor
-     *
-     * @param string|null $processor Set the acquiring processor. Avalible values include: <ul><li><strong>DUMMY_V1</strong></li><li><strong>LITLE_V1</strong></li><li><strong>MASTERCARD_V1</strong></li><li><strong>VISA_V1</strong></li><li><strong>NMI_V1</strong></li><li><strong>VANTIV_V1</strong></li></ul>Use <strong>DUMMY_V1</strong> or  <strong>null</strong> to use your sandbox. For more details on which processor to use, reach out to your Finix point of contact or email <a href=\"/guides/getting-started/support-at-finix/\">Finix Support</a>.
-     *
-     * @return self
-     */
-    public function setProcessor($processor, $deserialize = false)
-    {
-        $this->container['processor'] = $processor;
-
-        return $this;
-    }
-
-    /**
      * Gets tags
      *
      * @return array<string,string>|null
@@ -299,6 +275,30 @@ class CreateVerificationRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setTags($tags, $deserialize = false)
     {
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor
+     *
+     * @return string|null
+     */
+    public function getProcessor()
+    {
+        return $this->container['processor'];
+    }
+
+    /**
+     * Sets processor
+     *
+     * @param string|null $processor Set the acquiring processor. Avalible values include: <ul><li><strong>DUMMY_V1</strong></li><li><strong>LITLE_V1</strong></li><li><strong>MASTERCARD_V1</strong></li><li><strong>VISA_V1</strong></li><li><strong>NMI_V1</strong></li><li><strong>VANTIV_V1</strong></li></ul>Use <strong>DUMMY_V1</strong> or  <strong>null</strong> to use your sandbox. For more details on which processor to use, reach out to your Finix point of contact or email <a href=\"/guides/getting-started/support-at-finix/\">Finix Support</a>.
+     *
+     * @return self
+     */
+    public function setProcessor($processor, $deserialize = false)
+    {
+        $this->container['processor'] = $processor;
 
         return $this;
     }
