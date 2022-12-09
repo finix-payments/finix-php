@@ -13,6 +13,9 @@
 .classpath
 .settings/
 
+### VScode fileas
+.vscode/
+
 ### OSX
 bin/
 **.DS_Store
