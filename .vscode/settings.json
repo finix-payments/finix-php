@@ -1,8 +1,0 @@
-{
-  "phpunit.execPath": "",
-  "phpunit.args": [
-  
-  ],
-  "php.suggest.basic": false,
-  "phpunit.phpunit": "vendor/bin/phpunit"
-}
