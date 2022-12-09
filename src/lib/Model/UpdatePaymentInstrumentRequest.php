@@ -44,6 +44,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
+        'enabled' => 'bool',
         'tags' => 'array<string,string>'
     ];
 
@@ -55,6 +56,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'enabled' => null,
         'tags' => null
     ];
 
@@ -85,6 +87,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
+        'enabled' => 'enabled',
         'tags' => 'tags'
     ];
 
@@ -94,6 +97,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
+        'enabled' => 'setEnabled',
         'tags' => 'setTags'
     ];
 
@@ -103,6 +107,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
+        'enabled' => 'getEnabled',
         'tags' => 'getTags'
     ];
 
@@ -163,6 +168,7 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
+        $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
     }
 
@@ -189,6 +195,30 @@ class UpdatePaymentInstrumentRequest implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets enabled
+     *
+     * @return bool|null
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param bool|null $enabled Details if the `Payment Instrument` resource is enabled. Default value is **true**; set to **false** to disable the `Payment Instrument`.
+     *
+     * @return self
+     */
+    public function setEnabled($enabled, $deserialize = false)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
 
     /**
      * Gets tags

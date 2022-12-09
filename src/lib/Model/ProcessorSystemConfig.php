@@ -1061,7 +1061,7 @@ class ProcessorSystemConfig implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets business_application_id
      *
-     * @param string|null $business_application_id The ID of the resource.
+     * @param string|null $business_application_id The ID of the `Application` linked to the `Processor`.
      *
      * @return self
      */

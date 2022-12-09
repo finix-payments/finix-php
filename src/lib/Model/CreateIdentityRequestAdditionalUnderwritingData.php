@@ -48,11 +48,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         'average_ach_transfer_amount' => 'int',
         'average_card_transfer_amount' => 'int',
         'business_description' => 'string',
+        'card_volume_distribution' => '\Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution',
         'credit_check_allowed' => 'bool',
         'credit_check_ip_address' => 'string',
         'credit_check_timestamp' => 'string',
         'credit_check_user_agent' => 'string',
-        'card_volume_distribution' => '\Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution',
         'merchant_agreement_accepted' => 'bool',
         'merchant_agreement_ip_address' => 'string',
         'merchant_agreement_timestamp' => 'string',
@@ -73,11 +73,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         'average_ach_transfer_amount' => null,
         'average_card_transfer_amount' => null,
         'business_description' => null,
+        'card_volume_distribution' => null,
         'credit_check_allowed' => null,
         'credit_check_ip_address' => null,
         'credit_check_timestamp' => null,
         'credit_check_user_agent' => null,
-        'card_volume_distribution' => null,
         'merchant_agreement_accepted' => null,
         'merchant_agreement_ip_address' => null,
         'merchant_agreement_timestamp' => null,
@@ -117,11 +117,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         'average_ach_transfer_amount' => 'average_ach_transfer_amount',
         'average_card_transfer_amount' => 'average_card_transfer_amount',
         'business_description' => 'business_description',
+        'card_volume_distribution' => 'card_volume_distribution',
         'credit_check_allowed' => 'credit_check_allowed',
         'credit_check_ip_address' => 'credit_check_ip_address',
         'credit_check_timestamp' => 'credit_check_timestamp',
         'credit_check_user_agent' => 'credit_check_user_agent',
-        'card_volume_distribution' => 'card_volume_distribution',
         'merchant_agreement_accepted' => 'merchant_agreement_accepted',
         'merchant_agreement_ip_address' => 'merchant_agreement_ip_address',
         'merchant_agreement_timestamp' => 'merchant_agreement_timestamp',
@@ -140,11 +140,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         'average_ach_transfer_amount' => 'setAverageAchTransferAmount',
         'average_card_transfer_amount' => 'setAverageCardTransferAmount',
         'business_description' => 'setBusinessDescription',
+        'card_volume_distribution' => 'setCardVolumeDistribution',
         'credit_check_allowed' => 'setCreditCheckAllowed',
         'credit_check_ip_address' => 'setCreditCheckIpAddress',
         'credit_check_timestamp' => 'setCreditCheckTimestamp',
         'credit_check_user_agent' => 'setCreditCheckUserAgent',
-        'card_volume_distribution' => 'setCardVolumeDistribution',
         'merchant_agreement_accepted' => 'setMerchantAgreementAccepted',
         'merchant_agreement_ip_address' => 'setMerchantAgreementIpAddress',
         'merchant_agreement_timestamp' => 'setMerchantAgreementTimestamp',
@@ -163,11 +163,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         'average_ach_transfer_amount' => 'getAverageAchTransferAmount',
         'average_card_transfer_amount' => 'getAverageCardTransferAmount',
         'business_description' => 'getBusinessDescription',
+        'card_volume_distribution' => 'getCardVolumeDistribution',
         'credit_check_allowed' => 'getCreditCheckAllowed',
         'credit_check_ip_address' => 'getCreditCheckIpAddress',
         'credit_check_timestamp' => 'getCreditCheckTimestamp',
         'credit_check_user_agent' => 'getCreditCheckUserAgent',
-        'card_volume_distribution' => 'getCardVolumeDistribution',
         'merchant_agreement_accepted' => 'getMerchantAgreementAccepted',
         'merchant_agreement_ip_address' => 'getMerchantAgreementIpAddress',
         'merchant_agreement_timestamp' => 'getMerchantAgreementTimestamp',
@@ -254,11 +254,11 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         $this->container['average_ach_transfer_amount'] = $data['average_ach_transfer_amount'] ?? null;
         $this->container['average_card_transfer_amount'] = $data['average_card_transfer_amount'] ?? null;
         $this->container['business_description'] = $data['business_description'] ?? null;
+        $this->container['card_volume_distribution'] = $data['card_volume_distribution'] ?? null;
         $this->container['credit_check_allowed'] = $data['credit_check_allowed'] ?? null;
         $this->container['credit_check_ip_address'] = $data['credit_check_ip_address'] ?? null;
         $this->container['credit_check_timestamp'] = $data['credit_check_timestamp'] ?? null;
         $this->container['credit_check_user_agent'] = $data['credit_check_user_agent'] ?? null;
-        $this->container['card_volume_distribution'] = $data['card_volume_distribution'] ?? null;
         $this->container['merchant_agreement_accepted'] = $data['merchant_agreement_accepted'] ?? null;
         $this->container['merchant_agreement_ip_address'] = $data['merchant_agreement_ip_address'] ?? null;
         $this->container['merchant_agreement_timestamp'] = $data['merchant_agreement_timestamp'] ?? null;
@@ -421,6 +421,30 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
     }
 
     /**
+     * Gets card_volume_distribution
+     *
+     * @return \Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null
+     */
+    public function getCardVolumeDistribution()
+    {
+        return $this->container['card_volume_distribution'];
+    }
+
+    /**
+     * Sets card_volume_distribution
+     *
+     * @param \Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null $card_volume_distribution card_volume_distribution
+     *
+     * @return self
+     */
+    public function setCardVolumeDistribution($card_volume_distribution, $deserialize = false)
+    {
+        $this->container['card_volume_distribution'] = $card_volume_distribution;
+
+        return $this;
+    }
+
+    /**
      * Gets credit_check_allowed
      *
      * @return bool|null
@@ -530,30 +554,6 @@ class CreateIdentityRequestAdditionalUnderwritingData implements ModelInterface,
         
 
         $this->container['credit_check_user_agent'] = $credit_check_user_agent;
-
-        return $this;
-    }
-
-    /**
-     * Gets card_volume_distribution
-     *
-     * @return \Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null
-     */
-    public function getCardVolumeDistribution()
-    {
-        return $this->container['card_volume_distribution'];
-    }
-
-    /**
-     * Sets card_volume_distribution
-     *
-     * @param \Finix\Model\CreateIdentityRequestAdditionalUnderwritingDataCardVolumeDistribution|null $card_volume_distribution card_volume_distribution
-     *
-     * @return self
-     */
-    public function setCardVolumeDistribution($card_volume_distribution, $deserialize = false)
-    {
-        $this->container['card_volume_distribution'] = $card_volume_distribution;
 
         return $this;
     }

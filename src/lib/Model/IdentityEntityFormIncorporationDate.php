@@ -19,7 +19,7 @@ use \Finix\ObjectSerializer;
  * IdentityEntityFormIncorporationDate Class Doc Comment
  *
  * @category Class
- * @description Date company was founded.
+ * @description The date the company was founded and registered.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -44,9 +44,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'year' => 'int',
         'day' => 'int',
-        'month' => 'int'
+        'month' => 'int',
+        'year' => 'int'
     ];
 
     /**
@@ -57,9 +57,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'year' => null,
         'day' => null,
-        'month' => null
+        'month' => null,
+        'year' => null
     ];
 
     /**
@@ -89,9 +89,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'year' => 'year',
         'day' => 'day',
-        'month' => 'month'
+        'month' => 'month',
+        'year' => 'year'
     ];
 
     /**
@@ -100,9 +100,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'year' => 'setYear',
         'day' => 'setDay',
-        'month' => 'setMonth'
+        'month' => 'setMonth',
+        'year' => 'setYear'
     ];
 
     /**
@@ -111,9 +111,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'year' => 'getYear',
         'day' => 'getDay',
-        'month' => 'getMonth'
+        'month' => 'getMonth',
+        'year' => 'getYear'
     ];
 
     /**
@@ -173,9 +173,9 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['year'] = $data['year'] ?? null;
         $this->container['day'] = $data['day'] ?? null;
         $this->container['month'] = $data['month'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
     }
 
     /**
@@ -201,30 +201,6 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets year
-     *
-     * @return int|null
-     */
-    public function getYear()
-    {
-        return $this->container['year'];
-    }
-
-    /**
-     * Sets year
-     *
-     * @param int|null $year Year business was incorporated (4-digit).
-     *
-     * @return self
-     */
-    public function setYear($year, $deserialize = false)
-    {
-        $this->container['year'] = $year;
-
-        return $this;
-    }
 
     /**
      * Gets day
@@ -270,6 +246,30 @@ class IdentityEntityFormIncorporationDate implements ModelInterface, ArrayAccess
     public function setMonth($month, $deserialize = false)
     {
         $this->container['month'] = $month;
+
+        return $this;
+    }
+
+    /**
+     * Gets year
+     *
+     * @return int|null
+     */
+    public function getYear()
+    {
+        return $this->container['year'];
+    }
+
+    /**
+     * Sets year
+     *
+     * @param int|null $year Year business was incorporated (4-digit).
+     *
+     * @return self
+     */
+    public function setYear($year, $deserialize = false)
+    {
+        $this->container['year'] = $year;
 
         return $this;
     }

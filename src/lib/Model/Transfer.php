@@ -48,7 +48,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'additional_healthcare_data' => '\Finix\Model\AdditionalHealthcareData',
+        'address_verification' => 'string',
         'amount' => 'int',
+        'amount_requested' => 'int',
         'application' => 'string',
         'card_present_details' => '\Finix\Model\CardPresentDetails',
         'currency' => '\Finix\Model\Currency',
@@ -64,6 +67,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'messages' => 'string[]',
         'raw' => 'object',
         'ready_to_settle_at' => '\DateTime',
+        'security_code_verification' => 'string',
         'source' => 'string',
         'state' => 'string',
         'statement_descriptor' => 'string',
@@ -86,7 +90,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'additional_buyer_charges' => null,
+        'additional_healthcare_data' => null,
+        'address_verification' => null,
         'amount' => 'int64',
+        'amount_requested' => null,
         'application' => null,
         'card_present_details' => null,
         'currency' => null,
@@ -102,6 +109,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'messages' => null,
         'raw' => null,
         'ready_to_settle_at' => 'date-time',
+        'security_code_verification' => null,
         'source' => null,
         'state' => null,
         'statement_descriptor' => null,
@@ -143,7 +151,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'additional_buyer_charges' => 'additional_buyer_charges',
+        'additional_healthcare_data' => 'additional_healthcare_data',
+        'address_verification' => 'address_verification',
         'amount' => 'amount',
+        'amount_requested' => 'amount_requested',
         'application' => 'application',
         'card_present_details' => 'card_present_details',
         'currency' => 'currency',
@@ -159,6 +170,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'messages' => 'messages',
         'raw' => 'raw',
         'ready_to_settle_at' => 'ready_to_settle_at',
+        'security_code_verification' => 'security_code_verification',
         'source' => 'source',
         'state' => 'state',
         'statement_descriptor' => 'statement_descriptor',
@@ -179,7 +191,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'additional_healthcare_data' => 'setAdditionalHealthcareData',
+        'address_verification' => 'setAddressVerification',
         'amount' => 'setAmount',
+        'amount_requested' => 'setAmountRequested',
         'application' => 'setApplication',
         'card_present_details' => 'setCardPresentDetails',
         'currency' => 'setCurrency',
@@ -195,6 +210,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'messages' => 'setMessages',
         'raw' => 'setRaw',
         'ready_to_settle_at' => 'setReadyToSettleAt',
+        'security_code_verification' => 'setSecurityCodeVerification',
         'source' => 'setSource',
         'state' => 'setState',
         'statement_descriptor' => 'setStatementDescriptor',
@@ -215,7 +231,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'additional_healthcare_data' => 'getAdditionalHealthcareData',
+        'address_verification' => 'getAddressVerification',
         'amount' => 'getAmount',
+        'amount_requested' => 'getAmountRequested',
         'application' => 'getApplication',
         'card_present_details' => 'getCardPresentDetails',
         'currency' => 'getCurrency',
@@ -231,6 +250,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         'messages' => 'getMessages',
         'raw' => 'getRaw',
         'ready_to_settle_at' => 'getReadyToSettleAt',
+        'security_code_verification' => 'getSecurityCodeVerification',
         'source' => 'getSource',
         'state' => 'getState',
         'statement_descriptor' => 'getStatementDescriptor',
@@ -401,7 +421,10 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['additional_healthcare_data'] = $data['additional_healthcare_data'] ?? null;
+        $this->container['address_verification'] = $data['address_verification'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['amount_requested'] = $data['amount_requested'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['card_present_details'] = $data['card_present_details'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
@@ -417,6 +440,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['messages'] = $data['messages'] ?? null;
         $this->container['raw'] = $data['raw'] ?? null;
         $this->container['ready_to_settle_at'] = $data['ready_to_settle_at'] ?? null;
+        $this->container['security_code_verification'] = $data['security_code_verification'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
         $this->container['statement_descriptor'] = $data['statement_descriptor'] ?? null;
@@ -575,6 +599,54 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets additional_healthcare_data
+     *
+     * @return \Finix\Model\AdditionalHealthcareData|null
+     */
+    public function getAdditionalHealthcareData()
+    {
+        return $this->container['additional_healthcare_data'];
+    }
+
+    /**
+     * Sets additional_healthcare_data
+     *
+     * @param \Finix\Model\AdditionalHealthcareData|null $additional_healthcare_data additional_healthcare_data
+     *
+     * @return self
+     */
+    public function setAdditionalHealthcareData($additional_healthcare_data, $deserialize = false)
+    {
+        $this->container['additional_healthcare_data'] = $additional_healthcare_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_verification
+     *
+     * @return string|null
+     */
+    public function getAddressVerification()
+    {
+        return $this->container['address_verification'];
+    }
+
+    /**
+     * Sets address_verification
+     *
+     * @param string|null $address_verification Details the results of the Address Verification checks.
+     *
+     * @return self
+     */
+    public function setAddressVerification($address_verification, $deserialize = false)
+    {
+        $this->container['address_verification'] = $address_verification;
+
+        return $this;
+    }
+
+    /**
      * Gets amount
      *
      * @return int|null
@@ -599,6 +671,30 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets amount_requested
+     *
+     * @return int|null
+     */
+    public function getAmountRequested()
+    {
+        return $this->container['amount_requested'];
+    }
+
+    /**
+     * Sets amount_requested
+     *
+     * @param int|null $amount_requested Details the `amount` that was requested to get debited from the `source` when the transaction was created.
+     *
+     * @return self
+     */
+    public function setAmountRequested($amount_requested, $deserialize = false)
+    {
+        $this->container['amount_requested'] = $amount_requested;
+
+        return $this;
+    }
+
+    /**
      * Gets application
      *
      * @return string|null
@@ -611,7 +707,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string|null $application The ID of the `Application` the `Transfer` was created under.
      *
      * @return self
      */
@@ -707,7 +803,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets device
      *
-     * @param string|null $device The ID of the resource.
+     * @param string|null $device The ID of the `Device` resource the `Transfer` was created under.
      *
      * @return self
      */
@@ -755,7 +851,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets failure_code
      *
-     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/docs/guides/developers/errors/#failure-codes).
+     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/guides/developers/errors/#failure-codes).
      *
      * @return self
      */
@@ -851,7 +947,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets idempotency_id
      *
-     * @param string|null $idempotency_id ID to [idempotently](#section/Idempotency-Requests) identifty the transfer.
+     * @param string|null $idempotency_id ID to [idempotently](/api/overview/#section/Idempotency-Requests) identifty the transfer.
      *
      * @return self
      */
@@ -875,7 +971,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant_identity
      *
-     * @param string|null $merchant_identity The ID of the resource.
+     * @param string|null $merchant_identity The ID of the `Merchant` the `Authorization` was created under.
      *
      * @return self
      */
@@ -959,6 +1055,30 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets security_code_verification
+     *
+     * @return string|null
+     */
+    public function getSecurityCodeVerification()
+    {
+        return $this->container['security_code_verification'];
+    }
+
+    /**
+     * Sets security_code_verification
+     *
+     * @param string|null $security_code_verification Details the results of the Security Code Verification checks.
+     *
+     * @return self
+     */
+    public function setSecurityCodeVerification($security_code_verification, $deserialize = false)
+    {
+        $this->container['security_code_verification'] = $security_code_verification;
+
+        return $this;
+    }
+
+    /**
      * Gets source
      *
      * @return string|null
@@ -971,7 +1091,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets source
      *
-     * @param string|null $source The ID of the resource.
+     * @param string|null $source The ID of the `Payment Instrument` that will be debited and performing the `Transfer`.
      *
      * @return self
      */
@@ -1029,7 +1149,7 @@ class Transfer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets statement_descriptor
      *
-     * @param string|null $statement_descriptor The description of the merchant that appears on the buyer's bank or card statement.
+     * @param string|null $statement_descriptor <li>The description of the seller that appears on the buyer's bank or card statement.</li><li><kbd>statement_descriptors</kbd> for `Transfers` in <strong>live</strong> enviroments will have a <kbd>FI*</kbd> prefix.
      *
      * @return self
      */

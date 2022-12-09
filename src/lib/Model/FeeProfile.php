@@ -19,6 +19,7 @@ use \Finix\ObjectSerializer;
  * FeeProfile Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -53,13 +54,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'american_express_assessment_basis_points' => 'int',
         'american_express_basis_points' => 'int',
         'american_express_charge_interchange' => 'bool',
-        'american_express_fixed_fee' => 'int',
         'american_express_externally_funded_basis_points' => 'int',
         'american_express_externally_funded_fixed_fee' => 'int',
+        'american_express_fixed_fee' => 'int',
         'ancillary_fixed_fee_primary' => 'int',
         'ancillary_fixed_fee_secondary' => 'int',
         'application' => 'string',
         'basis_points' => 'int',
+        'card_cross_border_basis_points' => 'int',
+        'card_cross_border_fixed_fee' => 'int',
         'charge_interchange' => 'bool',
         'diners_club_basis_points' => 'int',
         'diners_club_charge_interchange' => 'bool',
@@ -68,9 +71,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'discover_basis_points' => 'int',
         'discover_charge_interchange' => 'bool',
         'discover_data_usage_fixed_fee' => 'int',
-        'discover_fixed_fee' => 'int',
         'discover_externally_funded_basis_points' => 'int',
         'discover_externally_funded_fixed_fee' => 'int',
+        'discover_fixed_fee' => 'int',
         'discover_network_authorization_fixed_fee' => 'int',
         'dispute_fixed_fee' => 'int',
         'dispute_inquiry_fixed_fee' => 'int',
@@ -119,13 +122,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'american_express_assessment_basis_points' => null,
         'american_express_basis_points' => null,
         'american_express_charge_interchange' => null,
-        'american_express_fixed_fee' => null,
         'american_express_externally_funded_basis_points' => null,
         'american_express_externally_funded_fixed_fee' => null,
+        'american_express_fixed_fee' => null,
         'ancillary_fixed_fee_primary' => null,
         'ancillary_fixed_fee_secondary' => null,
         'application' => null,
         'basis_points' => null,
+        'card_cross_border_basis_points' => null,
+        'card_cross_border_fixed_fee' => null,
         'charge_interchange' => null,
         'diners_club_basis_points' => null,
         'diners_club_charge_interchange' => null,
@@ -134,9 +139,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'discover_basis_points' => null,
         'discover_charge_interchange' => null,
         'discover_data_usage_fixed_fee' => null,
-        'discover_fixed_fee' => null,
         'discover_externally_funded_basis_points' => null,
         'discover_externally_funded_fixed_fee' => null,
+        'discover_fixed_fee' => null,
         'discover_network_authorization_fixed_fee' => null,
         'dispute_fixed_fee' => null,
         'dispute_inquiry_fixed_fee' => null,
@@ -204,13 +209,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'american_express_assessment_basis_points' => 'american_express_assessment_basis_points',
         'american_express_basis_points' => 'american_express_basis_points',
         'american_express_charge_interchange' => 'american_express_charge_interchange',
-        'american_express_fixed_fee' => 'american_express_fixed_fee',
         'american_express_externally_funded_basis_points' => 'american_express_externally_funded_basis_points',
         'american_express_externally_funded_fixed_fee' => 'american_express_externally_funded_fixed_fee',
+        'american_express_fixed_fee' => 'american_express_fixed_fee',
         'ancillary_fixed_fee_primary' => 'ancillary_fixed_fee_primary',
         'ancillary_fixed_fee_secondary' => 'ancillary_fixed_fee_secondary',
         'application' => 'application',
         'basis_points' => 'basis_points',
+        'card_cross_border_basis_points' => 'card_cross_border_basis_points',
+        'card_cross_border_fixed_fee' => 'card_cross_border_fixed_fee',
         'charge_interchange' => 'charge_interchange',
         'diners_club_basis_points' => 'diners_club_basis_points',
         'diners_club_charge_interchange' => 'diners_club_charge_interchange',
@@ -219,9 +226,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'discover_basis_points' => 'discover_basis_points',
         'discover_charge_interchange' => 'discover_charge_interchange',
         'discover_data_usage_fixed_fee' => 'discover_data_usage_fixed_fee',
-        'discover_fixed_fee' => 'discover_fixed_fee',
         'discover_externally_funded_basis_points' => 'discover_externally_funded_basis_points',
         'discover_externally_funded_fixed_fee' => 'discover_externally_funded_fixed_fee',
+        'discover_fixed_fee' => 'discover_fixed_fee',
         'discover_network_authorization_fixed_fee' => 'discover_network_authorization_fixed_fee',
         'dispute_fixed_fee' => 'dispute_fixed_fee',
         'dispute_inquiry_fixed_fee' => 'dispute_inquiry_fixed_fee',
@@ -268,13 +275,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'american_express_assessment_basis_points' => 'setAmericanExpressAssessmentBasisPoints',
         'american_express_basis_points' => 'setAmericanExpressBasisPoints',
         'american_express_charge_interchange' => 'setAmericanExpressChargeInterchange',
-        'american_express_fixed_fee' => 'setAmericanExpressFixedFee',
         'american_express_externally_funded_basis_points' => 'setAmericanExpressExternallyFundedBasisPoints',
         'american_express_externally_funded_fixed_fee' => 'setAmericanExpressExternallyFundedFixedFee',
+        'american_express_fixed_fee' => 'setAmericanExpressFixedFee',
         'ancillary_fixed_fee_primary' => 'setAncillaryFixedFeePrimary',
         'ancillary_fixed_fee_secondary' => 'setAncillaryFixedFeeSecondary',
         'application' => 'setApplication',
         'basis_points' => 'setBasisPoints',
+        'card_cross_border_basis_points' => 'setCardCrossBorderBasisPoints',
+        'card_cross_border_fixed_fee' => 'setCardCrossBorderFixedFee',
         'charge_interchange' => 'setChargeInterchange',
         'diners_club_basis_points' => 'setDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'setDinersClubChargeInterchange',
@@ -283,9 +292,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'discover_basis_points' => 'setDiscoverBasisPoints',
         'discover_charge_interchange' => 'setDiscoverChargeInterchange',
         'discover_data_usage_fixed_fee' => 'setDiscoverDataUsageFixedFee',
-        'discover_fixed_fee' => 'setDiscoverFixedFee',
         'discover_externally_funded_basis_points' => 'setDiscoverExternallyFundedBasisPoints',
         'discover_externally_funded_fixed_fee' => 'setDiscoverExternallyFundedFixedFee',
+        'discover_fixed_fee' => 'setDiscoverFixedFee',
         'discover_network_authorization_fixed_fee' => 'setDiscoverNetworkAuthorizationFixedFee',
         'dispute_fixed_fee' => 'setDisputeFixedFee',
         'dispute_inquiry_fixed_fee' => 'setDisputeInquiryFixedFee',
@@ -332,13 +341,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'american_express_assessment_basis_points' => 'getAmericanExpressAssessmentBasisPoints',
         'american_express_basis_points' => 'getAmericanExpressBasisPoints',
         'american_express_charge_interchange' => 'getAmericanExpressChargeInterchange',
-        'american_express_fixed_fee' => 'getAmericanExpressFixedFee',
         'american_express_externally_funded_basis_points' => 'getAmericanExpressExternallyFundedBasisPoints',
         'american_express_externally_funded_fixed_fee' => 'getAmericanExpressExternallyFundedFixedFee',
+        'american_express_fixed_fee' => 'getAmericanExpressFixedFee',
         'ancillary_fixed_fee_primary' => 'getAncillaryFixedFeePrimary',
         'ancillary_fixed_fee_secondary' => 'getAncillaryFixedFeeSecondary',
         'application' => 'getApplication',
         'basis_points' => 'getBasisPoints',
+        'card_cross_border_basis_points' => 'getCardCrossBorderBasisPoints',
+        'card_cross_border_fixed_fee' => 'getCardCrossBorderFixedFee',
         'charge_interchange' => 'getChargeInterchange',
         'diners_club_basis_points' => 'getDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'getDinersClubChargeInterchange',
@@ -347,9 +358,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         'discover_basis_points' => 'getDiscoverBasisPoints',
         'discover_charge_interchange' => 'getDiscoverChargeInterchange',
         'discover_data_usage_fixed_fee' => 'getDiscoverDataUsageFixedFee',
-        'discover_fixed_fee' => 'getDiscoverFixedFee',
         'discover_externally_funded_basis_points' => 'getDiscoverExternallyFundedBasisPoints',
         'discover_externally_funded_fixed_fee' => 'getDiscoverExternallyFundedFixedFee',
+        'discover_fixed_fee' => 'getDiscoverFixedFee',
         'discover_network_authorization_fixed_fee' => 'getDiscoverNetworkAuthorizationFixedFee',
         'dispute_fixed_fee' => 'getDisputeFixedFee',
         'dispute_inquiry_fixed_fee' => 'getDisputeInquiryFixedFee',
@@ -462,13 +473,15 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['american_express_assessment_basis_points'] = $data['american_express_assessment_basis_points'] ?? null;
         $this->container['american_express_basis_points'] = $data['american_express_basis_points'] ?? null;
         $this->container['american_express_charge_interchange'] = $data['american_express_charge_interchange'] ?? null;
-        $this->container['american_express_fixed_fee'] = $data['american_express_fixed_fee'] ?? null;
         $this->container['american_express_externally_funded_basis_points'] = $data['american_express_externally_funded_basis_points'] ?? null;
         $this->container['american_express_externally_funded_fixed_fee'] = $data['american_express_externally_funded_fixed_fee'] ?? null;
+        $this->container['american_express_fixed_fee'] = $data['american_express_fixed_fee'] ?? null;
         $this->container['ancillary_fixed_fee_primary'] = $data['ancillary_fixed_fee_primary'] ?? null;
         $this->container['ancillary_fixed_fee_secondary'] = $data['ancillary_fixed_fee_secondary'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['basis_points'] = $data['basis_points'] ?? null;
+        $this->container['card_cross_border_basis_points'] = $data['card_cross_border_basis_points'] ?? null;
+        $this->container['card_cross_border_fixed_fee'] = $data['card_cross_border_fixed_fee'] ?? null;
         $this->container['charge_interchange'] = $data['charge_interchange'] ?? null;
         $this->container['diners_club_basis_points'] = $data['diners_club_basis_points'] ?? null;
         $this->container['diners_club_charge_interchange'] = $data['diners_club_charge_interchange'] ?? null;
@@ -477,9 +490,9 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['discover_basis_points'] = $data['discover_basis_points'] ?? null;
         $this->container['discover_charge_interchange'] = $data['discover_charge_interchange'] ?? null;
         $this->container['discover_data_usage_fixed_fee'] = $data['discover_data_usage_fixed_fee'] ?? null;
-        $this->container['discover_fixed_fee'] = $data['discover_fixed_fee'] ?? null;
         $this->container['discover_externally_funded_basis_points'] = $data['discover_externally_funded_basis_points'] ?? null;
         $this->container['discover_externally_funded_fixed_fee'] = $data['discover_externally_funded_fixed_fee'] ?? null;
+        $this->container['discover_fixed_fee'] = $data['discover_fixed_fee'] ?? null;
         $this->container['discover_network_authorization_fixed_fee'] = $data['discover_network_authorization_fixed_fee'] ?? null;
         $this->container['dispute_fixed_fee'] = $data['dispute_fixed_fee'] ?? null;
         $this->container['dispute_inquiry_fixed_fee'] = $data['dispute_inquiry_fixed_fee'] ?? null;
@@ -556,7 +569,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param string|null $id The ID of the `Fee Profile` resource.
      *
      * @return self
      */
@@ -652,7 +665,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ach_credit_return_fixed_fee
      *
-     * @param int|null $ach_credit_return_fixed_fee A fixed amount in cents that will be charged to the merchant for processing an echeck (also called ACH payments) credit return.
+     * @param int|null $ach_credit_return_fixed_fee A fixed amount in cents that will be charged to the seller for processing an echeck (also called ACH payments) credit return.
      *
      * @return self
      */
@@ -676,7 +689,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ach_debit_return_fixed_fee
      *
-     * @param int|null $ach_debit_return_fixed_fee A fixed amount in cents that will be charged to the merchant for processing an echeck (also called ACH payment) debit return.
+     * @param int|null $ach_debit_return_fixed_fee A fixed amount in cents that will be charged to the seller for processing an echeck (also called ACH payment) debit return.
      *
      * @return self
      */
@@ -784,30 +797,6 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets american_express_fixed_fee
-     *
-     * @return int|null
-     */
-    public function getAmericanExpressFixedFee()
-    {
-        return $this->container['american_express_fixed_fee'];
-    }
-
-    /**
-     * Sets american_express_fixed_fee
-     *
-     * @param int|null $american_express_fixed_fee Fee in cents incurred for each individual American Express `Transfer`.
-     *
-     * @return self
-     */
-    public function setAmericanExpressFixedFee($american_express_fixed_fee, $deserialize = false)
-    {
-        $this->container['american_express_fixed_fee'] = $american_express_fixed_fee;
-
-        return $this;
-    }
-
-    /**
      * Gets american_express_externally_funded_basis_points
      *
      * @return int|null
@@ -851,6 +840,30 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAmericanExpressExternallyFundedFixedFee($american_express_externally_funded_fixed_fee, $deserialize = false)
     {
         $this->container['american_express_externally_funded_fixed_fee'] = $american_express_externally_funded_fixed_fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets american_express_fixed_fee
+     *
+     * @return int|null
+     */
+    public function getAmericanExpressFixedFee()
+    {
+        return $this->container['american_express_fixed_fee'];
+    }
+
+    /**
+     * Sets american_express_fixed_fee
+     *
+     * @param int|null $american_express_fixed_fee Fee in cents incurred for each individual American Express `Transfer`.
+     *
+     * @return self
+     */
+    public function setAmericanExpressFixedFee($american_express_fixed_fee, $deserialize = false)
+    {
+        $this->container['american_express_fixed_fee'] = $american_express_fixed_fee;
 
         return $this;
     }
@@ -916,7 +929,7 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string|null $application The ID of the `Application` associated with the  `Fee Profile`.
      *
      * @return self
      */
@@ -947,6 +960,54 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBasisPoints($basis_points, $deserialize = false)
     {
         $this->container['basis_points'] = $basis_points;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_cross_border_basis_points
+     *
+     * @return int|null
+     */
+    public function getCardCrossBorderBasisPoints()
+    {
+        return $this->container['card_cross_border_basis_points'];
+    }
+
+    /**
+     * Sets card_cross_border_basis_points
+     *
+     * @param int|null $card_cross_border_basis_points Percentage-based fee charged against the full amount of every `Transfer` that includes non-US cards. Calculated as one hundredth of one percent (1 basis point = .0001 or .01%).
+     *
+     * @return self
+     */
+    public function setCardCrossBorderBasisPoints($card_cross_border_basis_points, $deserialize = false)
+    {
+        $this->container['card_cross_border_basis_points'] = $card_cross_border_basis_points;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_cross_border_fixed_fee
+     *
+     * @return int|null
+     */
+    public function getCardCrossBorderFixedFee()
+    {
+        return $this->container['card_cross_border_fixed_fee'];
+    }
+
+    /**
+     * Sets card_cross_border_fixed_fee
+     *
+     * @param int|null $card_cross_border_fixed_fee Fee in cents charged against every `Transfer` that includes non-US cards.
+     *
+     * @return self
+     */
+    public function setCardCrossBorderFixedFee($card_cross_border_fixed_fee, $deserialize = false)
+    {
+        $this->container['card_cross_border_fixed_fee'] = $card_cross_border_fixed_fee;
 
         return $this;
     }
@@ -1144,30 +1205,6 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets discover_fixed_fee
-     *
-     * @return int|null
-     */
-    public function getDiscoverFixedFee()
-    {
-        return $this->container['discover_fixed_fee'];
-    }
-
-    /**
-     * Sets discover_fixed_fee
-     *
-     * @param int|null $discover_fixed_fee Fee in cents incurred for each individual Discover `Transfer`.
-     *
-     * @return self
-     */
-    public function setDiscoverFixedFee($discover_fixed_fee, $deserialize = false)
-    {
-        $this->container['discover_fixed_fee'] = $discover_fixed_fee;
-
-        return $this;
-    }
-
-    /**
      * Gets discover_externally_funded_basis_points
      *
      * @return int|null
@@ -1211,6 +1248,30 @@ class FeeProfile implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDiscoverExternallyFundedFixedFee($discover_externally_funded_fixed_fee, $deserialize = false)
     {
         $this->container['discover_externally_funded_fixed_fee'] = $discover_externally_funded_fixed_fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets discover_fixed_fee
+     *
+     * @return int|null
+     */
+    public function getDiscoverFixedFee()
+    {
+        return $this->container['discover_fixed_fee'];
+    }
+
+    /**
+     * Sets discover_fixed_fee
+     *
+     * @param int|null $discover_fixed_fee Fee in cents incurred for each individual Discover `Transfer`.
+     *
+     * @return self
+     */
+    public function setDiscoverFixedFee($discover_fixed_fee, $deserialize = false)
+    {
+        $this->container['discover_fixed_fee'] = $discover_fixed_fee;
 
         return $this;
     }

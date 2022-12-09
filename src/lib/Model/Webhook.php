@@ -49,6 +49,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'application' => 'string',
         'authentication' => '\Finix\Model\WebhookAuthentication',
         'enabled' => 'bool',
+        'enabled_events' => '\Finix\Model\WebhookEnabledEventsInner[]',
+        'previous_secret_expires_at' => 'string',
+        'secret_signing_key' => 'string',
         'url' => 'string',
         '_links' => '\Finix\Model\ProcessorLinks'
     ];
@@ -67,6 +70,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'application' => null,
         'authentication' => null,
         'enabled' => null,
+        'enabled_events' => null,
+        'previous_secret_expires_at' => null,
+        'secret_signing_key' => null,
         'url' => null,
         '_links' => null
     ];
@@ -104,6 +110,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'application' => 'application',
         'authentication' => 'authentication',
         'enabled' => 'enabled',
+        'enabled_events' => 'enabled_events',
+        'previous_secret_expires_at' => 'previous_secret_expires_at',
+        'secret_signing_key' => 'secret_signing_key',
         'url' => 'url',
         '_links' => '_links'
     ];
@@ -120,6 +129,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'application' => 'setApplication',
         'authentication' => 'setAuthentication',
         'enabled' => 'setEnabled',
+        'enabled_events' => 'setEnabledEvents',
+        'previous_secret_expires_at' => 'setPreviousSecretExpiresAt',
+        'secret_signing_key' => 'setSecretSigningKey',
         'url' => 'setUrl',
         '_links' => 'setLinks'
     ];
@@ -136,6 +148,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'application' => 'getApplication',
         'authentication' => 'getAuthentication',
         'enabled' => 'getEnabled',
+        'enabled_events' => 'getEnabledEvents',
+        'previous_secret_expires_at' => 'getPreviousSecretExpiresAt',
+        'secret_signing_key' => 'getSecretSigningKey',
         'url' => 'getUrl',
         '_links' => 'getLinks'
     ];
@@ -203,6 +218,9 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['application'] = $data['application'] ?? null;
         $this->container['authentication'] = $data['authentication'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['enabled_events'] = $data['enabled_events'] ?? null;
+        $this->container['previous_secret_expires_at'] = $data['previous_secret_expires_at'] ?? null;
+        $this->container['secret_signing_key'] = $data['secret_signing_key'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
         $this->container['_links'] = $data['_links'] ?? null;
     }
@@ -371,6 +389,78 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled_events
+     *
+     * @return \Finix\Model\WebhookEnabledEventsInner[]|null
+     */
+    public function getEnabledEvents()
+    {
+        return $this->container['enabled_events'];
+    }
+
+    /**
+     * Sets enabled_events
+     *
+     * @param \Finix\Model\WebhookEnabledEventsInner[]|null $enabled_events A list of events the [webhook is explicitly enabled for](/guides/developers/webhooks/#webhook-event-filtering).
+     *
+     * @return self
+     */
+    public function setEnabledEvents($enabled_events, $deserialize = false)
+    {
+        $this->container['enabled_events'] = $enabled_events;
+
+        return $this;
+    }
+
+    /**
+     * Gets previous_secret_expires_at
+     *
+     * @return string|null
+     */
+    public function getPreviousSecretExpiresAt()
+    {
+        return $this->container['previous_secret_expires_at'];
+    }
+
+    /**
+     * Sets previous_secret_expires_at
+     *
+     * @param string|null $previous_secret_expires_at The time when the previous `secret_signing_key` will expire. This is **null** when the webhook is initially created.
+     *
+     * @return self
+     */
+    public function setPreviousSecretExpiresAt($previous_secret_expires_at, $deserialize = false)
+    {
+        $this->container['previous_secret_expires_at'] = $previous_secret_expires_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets secret_signing_key
+     *
+     * @return string|null
+     */
+    public function getSecretSigningKey()
+    {
+        return $this->container['secret_signing_key'];
+    }
+
+    /**
+     * Sets secret_signing_key
+     *
+     * @param string|null $secret_signing_key The secret signing key that gets used to verify webhook events.
+     *
+     * @return self
+     */
+    public function setSecretSigningKey($secret_signing_key, $deserialize = false)
+    {
+        $this->container['secret_signing_key'] = $secret_signing_key;
 
         return $this;
     }

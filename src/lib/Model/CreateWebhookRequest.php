@@ -45,6 +45,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'authentication' => '\Finix\Model\CreateWebhookRequestAuthentication',
         'enabled' => 'bool',
+        'enabled_events' => '\Finix\Model\WebhookEnabledEventsInner[]',
         'url' => 'string'
     ];
 
@@ -58,6 +59,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPIFormats = [
         'authentication' => null,
         'enabled' => null,
+        'enabled_events' => null,
         'url' => null
     ];
 
@@ -90,6 +92,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $attributeMap = [
         'authentication' => 'authentication',
         'enabled' => 'enabled',
+        'enabled_events' => 'enabled_events',
         'url' => 'url'
     ];
 
@@ -101,6 +104,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $setters = [
         'authentication' => 'setAuthentication',
         'enabled' => 'setEnabled',
+        'enabled_events' => 'setEnabledEvents',
         'url' => 'setUrl'
     ];
 
@@ -112,6 +116,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'authentication' => 'getAuthentication',
         'enabled' => 'getEnabled',
+        'enabled_events' => 'getEnabledEvents',
         'url' => 'getUrl'
     ];
 
@@ -174,6 +179,7 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $this->container['authentication'] = $data['authentication'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['enabled_events'] = $data['enabled_events'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
     }
 
@@ -252,6 +258,30 @@ class CreateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled_events
+     *
+     * @return \Finix\Model\WebhookEnabledEventsInner[]|null
+     */
+    public function getEnabledEvents()
+    {
+        return $this->container['enabled_events'];
+    }
+
+    /**
+     * Sets enabled_events
+     *
+     * @param \Finix\Model\WebhookEnabledEventsInner[]|null $enabled_events A list of events the [webhook is explicitly enabled for](/guides/developers/webhooks/#webhook-event-filtering).
+     *
+     * @return self
+     */
+    public function setEnabledEvents($enabled_events, $deserialize = false)
+    {
+        $this->container['enabled_events'] = $enabled_events;
 
         return $this;
     }

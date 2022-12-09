@@ -46,8 +46,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $openAPITypes = [
         'city' => 'string',
         'country' => 'string',
-        'line1' => 'string',
+        'region' => 'string',
         'line2' => 'string',
+        'line1' => 'string',
         'postal_code' => 'string'
     ];
 
@@ -61,8 +62,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $openAPIFormats = [
         'city' => null,
         'country' => null,
-        'line1' => null,
+        'region' => null,
         'line2' => null,
+        'line1' => null,
         'postal_code' => null
     ];
 
@@ -95,8 +97,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $attributeMap = [
         'city' => 'city',
         'country' => 'country',
-        'line1' => 'line1',
+        'region' => 'region',
         'line2' => 'line2',
+        'line1' => 'line1',
         'postal_code' => 'postal_code'
     ];
 
@@ -108,8 +111,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $setters = [
         'city' => 'setCity',
         'country' => 'setCountry',
-        'line1' => 'setLine1',
+        'region' => 'setRegion',
         'line2' => 'setLine2',
+        'line1' => 'setLine1',
         'postal_code' => 'setPostalCode'
     ];
 
@@ -121,8 +125,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     protected static $getters = [
         'city' => 'getCity',
         'country' => 'getCountry',
-        'line1' => 'getLine1',
+        'region' => 'getRegion',
         'line2' => 'getLine2',
+        'line1' => 'getLine1',
         'postal_code' => 'getPostalCode'
     ];
 
@@ -185,8 +190,9 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     {
         $this->container['city'] = $data['city'] ?? null;
         $this->container['country'] = $data['country'] ?? null;
-        $this->container['line1'] = $data['line1'] ?? null;
+        $this->container['region'] = $data['region'] ?? null;
         $this->container['line2'] = $data['line2'] ?? null;
+        $this->container['line1'] = $data['line1'] ?? null;
         $this->container['postal_code'] = $data['postal_code'] ?? null;
     }
 
@@ -198,6 +204,30 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 1)) {
+            $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['country']) && (mb_strlen($this->container['country']) < 1)) {
+            $invalidProperties[] = "invalid value for 'country', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['region']) && (mb_strlen($this->container['region']) < 1)) {
+            $invalidProperties[] = "invalid value for 'region', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['line2']) && (mb_strlen($this->container['line2']) < 1)) {
+            $invalidProperties[] = "invalid value for 'line2', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 1)) {
+            $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['postal_code']) && (mb_strlen($this->container['postal_code']) < 1)) {
+            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -233,6 +263,12 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setCity($city, $deserialize = false)
     {
+
+        if (!is_null($city) && (mb_strlen($city) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['city'] = $city;
 
         return $this;
@@ -257,31 +293,43 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setCountry($country, $deserialize = false)
     {
+
+        if (!is_null($country) && (mb_strlen($country) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $country when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets line1
+     * Gets region
      *
      * @return string|null
      */
-    public function getLine1()
+    public function getRegion()
     {
-        return $this->container['line1'];
+        return $this->container['region'];
     }
 
     /**
-     * Sets line1
+     * Sets region
      *
-     * @param string|null $line1 First line of the address (max 35 characters).
+     * @param string|null $region 2-letter State code.
      *
      * @return self
      */
-    public function setLine1($line1, $deserialize = false)
+    public function setRegion($region, $deserialize = false)
     {
-        $this->container['line1'] = $line1;
+
+        if (!is_null($region) && (mb_strlen($region) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $region when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['region'] = $region;
 
         return $this;
     }
@@ -305,7 +353,43 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setLine2($line2, $deserialize = false)
     {
+
+        if (!is_null($line2) && (mb_strlen($line2) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $line2 when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['line2'] = $line2;
+
+        return $this;
+    }
+
+    /**
+     * Gets line1
+     *
+     * @return string|null
+     */
+    public function getLine1()
+    {
+        return $this->container['line1'];
+    }
+
+    /**
+     * Sets line1
+     *
+     * @param string|null $line1 First line of the address (max 35 characters).
+     *
+     * @return self
+     */
+    public function setLine1($line1, $deserialize = false)
+    {
+
+        if (!is_null($line1) && (mb_strlen($line1) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $line1 when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
+        $this->container['line1'] = $line1;
 
         return $this;
     }
@@ -329,6 +413,12 @@ class UpdateIdentityRequestEntityPersonalAddress implements ModelInterface, Arra
      */
     public function setPostalCode($postal_code, $deserialize = false)
     {
+
+        if (!is_null($postal_code) && (mb_strlen($postal_code) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $postal_code when calling UpdateIdentityRequestEntityPersonalAddress., must be bigger than or equal to 1.');
+        }
+        
+
         $this->container['postal_code'] = $postal_code;
 
         return $this;

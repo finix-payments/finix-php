@@ -45,19 +45,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'allow_debit' => 'bool',
-        'allow_partial_approvals' => 'bool',
         'bypass_device_on_capture' => 'bool',
-        'cashback_options' => '\Finix\Model\ConfigurationDetailsCashbackOptions',
         'check_for_duplicate_transactions' => 'bool',
-        'is_cash_back_allowed' => 'bool',
-        'is_gift_supported' => 'string',
-        'is_manual_entry_allowed' => 'bool',
-        'market_code' => 'string',
         'prompt_amount_confirmation' => 'bool',
         'prompt_manual_entry' => 'bool',
         'prompt_signature' => 'string',
-        'signature_threshold_amount' => 'int',
-        'tip_options' => '\Finix\Model\ConfigurationDetailsTipOptions'
+        'signature_threshold_amount' => 'int'
     ];
 
     /**
@@ -69,19 +62,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'allow_debit' => null,
-        'allow_partial_approvals' => null,
         'bypass_device_on_capture' => null,
-        'cashback_options' => null,
         'check_for_duplicate_transactions' => null,
-        'is_cash_back_allowed' => null,
-        'is_gift_supported' => null,
-        'is_manual_entry_allowed' => null,
-        'market_code' => null,
         'prompt_amount_confirmation' => null,
         'prompt_manual_entry' => null,
         'prompt_signature' => null,
-        'signature_threshold_amount' => null,
-        'tip_options' => null
+        'signature_threshold_amount' => null
     ];
 
     /**
@@ -112,19 +98,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'allow_debit' => 'allow_debit',
-        'allow_partial_approvals' => 'allow_partial_approvals',
         'bypass_device_on_capture' => 'bypass_device_on_capture',
-        'cashback_options' => 'cashback_options',
         'check_for_duplicate_transactions' => 'check_for_duplicate_transactions',
-        'is_cash_back_allowed' => 'is_cash_back_allowed',
-        'is_gift_supported' => 'is_gift_supported',
-        'is_manual_entry_allowed' => 'is_manual_entry_allowed',
-        'market_code' => 'market_code',
         'prompt_amount_confirmation' => 'prompt_amount_confirmation',
         'prompt_manual_entry' => 'prompt_manual_entry',
         'prompt_signature' => 'prompt_signature',
-        'signature_threshold_amount' => 'signature_threshold_amount',
-        'tip_options' => 'tip_options'
+        'signature_threshold_amount' => 'signature_threshold_amount'
     ];
 
     /**
@@ -134,19 +113,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'allow_debit' => 'setAllowDebit',
-        'allow_partial_approvals' => 'setAllowPartialApprovals',
         'bypass_device_on_capture' => 'setBypassDeviceOnCapture',
-        'cashback_options' => 'setCashbackOptions',
         'check_for_duplicate_transactions' => 'setCheckForDuplicateTransactions',
-        'is_cash_back_allowed' => 'setIsCashBackAllowed',
-        'is_gift_supported' => 'setIsGiftSupported',
-        'is_manual_entry_allowed' => 'setIsManualEntryAllowed',
-        'market_code' => 'setMarketCode',
         'prompt_amount_confirmation' => 'setPromptAmountConfirmation',
         'prompt_manual_entry' => 'setPromptManualEntry',
         'prompt_signature' => 'setPromptSignature',
-        'signature_threshold_amount' => 'setSignatureThresholdAmount',
-        'tip_options' => 'setTipOptions'
+        'signature_threshold_amount' => 'setSignatureThresholdAmount'
     ];
 
     /**
@@ -156,19 +128,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'allow_debit' => 'getAllowDebit',
-        'allow_partial_approvals' => 'getAllowPartialApprovals',
         'bypass_device_on_capture' => 'getBypassDeviceOnCapture',
-        'cashback_options' => 'getCashbackOptions',
         'check_for_duplicate_transactions' => 'getCheckForDuplicateTransactions',
-        'is_cash_back_allowed' => 'getIsCashBackAllowed',
-        'is_gift_supported' => 'getIsGiftSupported',
-        'is_manual_entry_allowed' => 'getIsManualEntryAllowed',
-        'market_code' => 'getMarketCode',
         'prompt_amount_confirmation' => 'getPromptAmountConfirmation',
         'prompt_manual_entry' => 'getPromptManualEntry',
         'prompt_signature' => 'getPromptSignature',
-        'signature_threshold_amount' => 'getSignatureThresholdAmount',
-        'tip_options' => 'getTipOptions'
+        'signature_threshold_amount' => 'getSignatureThresholdAmount'
     ];
 
     /**
@@ -229,19 +194,12 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['allow_debit'] = $data['allow_debit'] ?? null;
-        $this->container['allow_partial_approvals'] = $data['allow_partial_approvals'] ?? null;
         $this->container['bypass_device_on_capture'] = $data['bypass_device_on_capture'] ?? null;
-        $this->container['cashback_options'] = $data['cashback_options'] ?? null;
         $this->container['check_for_duplicate_transactions'] = $data['check_for_duplicate_transactions'] ?? null;
-        $this->container['is_cash_back_allowed'] = $data['is_cash_back_allowed'] ?? null;
-        $this->container['is_gift_supported'] = $data['is_gift_supported'] ?? null;
-        $this->container['is_manual_entry_allowed'] = $data['is_manual_entry_allowed'] ?? null;
-        $this->container['market_code'] = $data['market_code'] ?? null;
         $this->container['prompt_amount_confirmation'] = $data['prompt_amount_confirmation'] ?? null;
         $this->container['prompt_manual_entry'] = $data['prompt_manual_entry'] ?? null;
         $this->container['prompt_signature'] = $data['prompt_signature'] ?? null;
         $this->container['signature_threshold_amount'] = $data['signature_threshold_amount'] ?? null;
-        $this->container['tip_options'] = $data['tip_options'] ?? null;
     }
 
     /**
@@ -293,30 +251,6 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets allow_partial_approvals
-     *
-     * @return bool|null
-     */
-    public function getAllowPartialApprovals()
-    {
-        return $this->container['allow_partial_approvals'];
-    }
-
-    /**
-     * Sets allow_partial_approvals
-     *
-     * @param bool|null $allow_partial_approvals Determines if a transaction can be partially approved (Usually **null**).
-     *
-     * @return self
-     */
-    public function setAllowPartialApprovals($allow_partial_approvals, $deserialize = false)
-    {
-        $this->container['allow_partial_approvals'] = $allow_partial_approvals;
-
-        return $this;
-    }
-
-    /**
      * Gets bypass_device_on_capture
      *
      * @return bool|null
@@ -341,30 +275,6 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets cashback_options
-     *
-     * @return \Finix\Model\ConfigurationDetailsCashbackOptions|null
-     */
-    public function getCashbackOptions()
-    {
-        return $this->container['cashback_options'];
-    }
-
-    /**
-     * Sets cashback_options
-     *
-     * @param \Finix\Model\ConfigurationDetailsCashbackOptions|null $cashback_options cashback_options
-     *
-     * @return self
-     */
-    public function setCashbackOptions($cashback_options, $deserialize = false)
-    {
-        $this->container['cashback_options'] = $cashback_options;
-
-        return $this;
-    }
-
-    /**
      * Gets check_for_duplicate_transactions
      *
      * @return bool|null
@@ -384,102 +294,6 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setCheckForDuplicateTransactions($check_for_duplicate_transactions, $deserialize = false)
     {
         $this->container['check_for_duplicate_transactions'] = $check_for_duplicate_transactions;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_cash_back_allowed
-     *
-     * @return bool|null
-     */
-    public function getIsCashBackAllowed()
-    {
-        return $this->container['is_cash_back_allowed'];
-    }
-
-    /**
-     * Sets is_cash_back_allowed
-     *
-     * @param bool|null $is_cash_back_allowed Sets whether the device will allow cash back.
-     *
-     * @return self
-     */
-    public function setIsCashBackAllowed($is_cash_back_allowed, $deserialize = false)
-    {
-        $this->container['is_cash_back_allowed'] = $is_cash_back_allowed;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_gift_supported
-     *
-     * @return string|null
-     */
-    public function getIsGiftSupported()
-    {
-        return $this->container['is_gift_supported'];
-    }
-
-    /**
-     * Sets is_gift_supported
-     *
-     * @param string|null $is_gift_supported Sets whether the device will allow gifting funds.
-     *
-     * @return self
-     */
-    public function setIsGiftSupported($is_gift_supported, $deserialize = false)
-    {
-        $this->container['is_gift_supported'] = $is_gift_supported;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_manual_entry_allowed
-     *
-     * @return bool|null
-     */
-    public function getIsManualEntryAllowed()
-    {
-        return $this->container['is_manual_entry_allowed'];
-    }
-
-    /**
-     * Sets is_manual_entry_allowed
-     *
-     * @param bool|null $is_manual_entry_allowed Sets whether the device will process payment details entered manually.
-     *
-     * @return self
-     */
-    public function setIsManualEntryAllowed($is_manual_entry_allowed, $deserialize = false)
-    {
-        $this->container['is_manual_entry_allowed'] = $is_manual_entry_allowed;
-
-        return $this;
-    }
-
-    /**
-     * Gets market_code
-     *
-     * @return string|null
-     */
-    public function getMarketCode()
-    {
-        return $this->container['market_code'];
-    }
-
-    /**
-     * Sets market_code
-     *
-     * @param string|null $market_code Used by the processor to handle the `transfer`. Usually **null**.
-     *
-     * @return self
-     */
-    public function setMarketCode($market_code, $deserialize = false)
-    {
-        $this->container['market_code'] = $market_code;
 
         return $this;
     }
@@ -576,30 +390,6 @@ class ConfigurationDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSignatureThresholdAmount($signature_threshold_amount, $deserialize = false)
     {
         $this->container['signature_threshold_amount'] = $signature_threshold_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets tip_options
-     *
-     * @return \Finix\Model\ConfigurationDetailsTipOptions|null
-     */
-    public function getTipOptions()
-    {
-        return $this->container['tip_options'];
-    }
-
-    /**
-     * Sets tip_options
-     *
-     * @param \Finix\Model\ConfigurationDetailsTipOptions|null $tip_options tip_options
-     *
-     * @return self
-     */
-    public function setTipOptions($tip_options, $deserialize = false)
-    {
-        $this->container['tip_options'] = $tip_options;
 
         return $this;
     }

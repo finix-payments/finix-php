@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfigurationDetailsCashbackOptionsManualEntry
+ * UpdatePayoutProfileRequest
  *
  * PHP version 7.4
  *
@@ -16,9 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ConfigurationDetailsCashbackOptionsManualEntry Class Doc Comment
+ * UpdatePayoutProfileRequest Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -26,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdatePayoutProfileRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +36,7 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ConfigurationDetails_cashback_options_manual_entry';
+    protected static $openAPIModelName = 'UpdatePayoutProfileRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,8 +44,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount_increment' => 'int',
-        'maximum_amount' => 'int'
+        'gross' => '\Finix\Model\UpdatePayoutProfileRequestGross',
+        'tags' => 'array<string,string>',
+        'type' => 'string',
+        'net' => '\Finix\Model\UpdatePayoutProfileRequestNet'
     ];
 
     /**
@@ -55,8 +58,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount_increment' => null,
-        'maximum_amount' => null
+        'gross' => null,
+        'tags' => null,
+        'type' => null,
+        'net' => null
     ];
 
     /**
@@ -86,8 +91,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount_increment' => 'amount_increment',
-        'maximum_amount' => 'maximum_amount'
+        'gross' => 'gross',
+        'tags' => 'tags',
+        'type' => 'type',
+        'net' => 'net'
     ];
 
     /**
@@ -96,8 +103,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'amount_increment' => 'setAmountIncrement',
-        'maximum_amount' => 'setMaximumAmount'
+        'gross' => 'setGross',
+        'tags' => 'setTags',
+        'type' => 'setType',
+        'net' => 'setNet'
     ];
 
     /**
@@ -106,8 +115,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'amount_increment' => 'getAmountIncrement',
-        'maximum_amount' => 'getMaximumAmount'
+        'gross' => 'getGross',
+        'tags' => 'getTags',
+        'type' => 'getType',
+        'net' => 'getNet'
     ];
 
     /**
@@ -151,6 +162,23 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
         return self::$openAPIModelName;
     }
 
+    public const TYPE_CUSTOM = 'CUSTOM';
+    public const TYPE_GROSS = 'GROSS';
+    public const TYPE_NET = 'NET';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_CUSTOM,
+            self::TYPE_GROSS,
+            self::TYPE_NET,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -167,8 +195,10 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount_increment'] = $data['amount_increment'] ?? null;
-        $this->container['maximum_amount'] = $data['maximum_amount'] ?? null;
+        $this->container['gross'] = $data['gross'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['net'] = $data['net'] ?? null;
     }
 
     /**
@@ -179,6 +209,15 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -196,49 +235,107 @@ class ConfigurationDetailsCashbackOptionsManualEntry implements ModelInterface, 
 
 
     /**
-     * Gets amount_increment
+     * Gets gross
      *
-     * @return int|null
+     * @return \Finix\Model\UpdatePayoutProfileRequestGross|null
      */
-    public function getAmountIncrement()
+    public function getGross()
     {
-        return $this->container['amount_increment'];
+        return $this->container['gross'];
     }
 
     /**
-     * Sets amount_increment
+     * Sets gross
      *
-     * @param int|null $amount_increment amount_increment
+     * @param \Finix\Model\UpdatePayoutProfileRequestGross|null $gross gross
      *
      * @return self
      */
-    public function setAmountIncrement($amount_increment, $deserialize = false)
+    public function setGross($gross, $deserialize = false)
     {
-        $this->container['amount_increment'] = $amount_increment;
+        $this->container['gross'] = $gross;
 
         return $this;
     }
 
     /**
-     * Gets maximum_amount
+     * Gets tags
      *
-     * @return int|null
+     * @return array<string,string>|null
      */
-    public function getMaximumAmount()
+    public function getTags()
     {
-        return $this->container['maximum_amount'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets maximum_amount
+     * Sets tags
      *
-     * @param int|null $maximum_amount maximum_amount
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
      *
      * @return self
      */
-    public function setMaximumAmount($maximum_amount, $deserialize = false)
+    public function setTags($tags, $deserialize = false)
     {
-        $this->container['maximum_amount'] = $maximum_amount;
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type Configures how fees are calculated and billed from payouts. For more infromation, see [Payout Types](/guides/payouts/#payout-types).
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets net
+     *
+     * @return \Finix\Model\UpdatePayoutProfileRequestNet|null
+     */
+    public function getNet()
+    {
+        return $this->container['net'];
+    }
+
+    /**
+     * Sets net
+     *
+     * @param \Finix\Model\UpdatePayoutProfileRequestNet|null $net net
+     *
+     * @return self
+     */
+    public function setNet($net, $deserialize = false)
+    {
+        $this->container['net'] = $net;
 
         return $this;
     }

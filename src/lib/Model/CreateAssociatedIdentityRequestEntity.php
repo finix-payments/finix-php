@@ -56,7 +56,7 @@ class CreateAssociatedIdentityRequestEntity implements ModelInterface, ArrayAcce
         'email' => 'string',
         'first_name' => 'string',
         'has_accepted_credit_cards_previously' => 'bool',
-        'incorporation_date' => '\Finix\Model\CreateAssociatedIdentityRequestEntityIncorporationDate',
+        'incorporation_date' => '\Finix\Model\IdentityEntityFormIncorporationDate',
         'last_name' => 'string',
         'max_transaction_amount' => 'int',
         'mcc' => 'string',
@@ -767,7 +767,7 @@ class CreateAssociatedIdentityRequestEntity implements ModelInterface, ArrayAcce
     /**
      * Gets incorporation_date
      *
-     * @return \Finix\Model\CreateAssociatedIdentityRequestEntityIncorporationDate|null
+     * @return \Finix\Model\IdentityEntityFormIncorporationDate|null
      */
     public function getIncorporationDate()
     {
@@ -777,7 +777,7 @@ class CreateAssociatedIdentityRequestEntity implements ModelInterface, ArrayAcce
     /**
      * Sets incorporation_date
      *
-     * @param \Finix\Model\CreateAssociatedIdentityRequestEntityIncorporationDate|null $incorporation_date incorporation_date
+     * @param \Finix\Model\IdentityEntityFormIncorporationDate|null $incorporation_date incorporation_date
      *
      * @return self
      */

@@ -44,7 +44,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'config' => '\Finix\Model\CreateProcessorRequestConfig',
         'tags' => 'array<string,string>',
         'type' => 'string'
     ];
@@ -57,7 +56,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'config' => null,
         'tags' => null,
         'type' => null
     ];
@@ -89,7 +87,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'config' => 'config',
         'tags' => 'tags',
         'type' => 'type'
     ];
@@ -100,7 +97,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'config' => 'setConfig',
         'tags' => 'setTags',
         'type' => 'setType'
     ];
@@ -111,7 +107,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'config' => 'getConfig',
         'tags' => 'getTags',
         'type' => 'getType'
     ];
@@ -173,7 +168,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['config'] = $data['config'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
     }
@@ -208,30 +202,6 @@ class CreateProcessorRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets config
-     *
-     * @return \Finix\Model\CreateProcessorRequestConfig|null
-     */
-    public function getConfig()
-    {
-        return $this->container['config'];
-    }
-
-    /**
-     * Sets config
-     *
-     * @param \Finix\Model\CreateProcessorRequestConfig|null $config config
-     *
-     * @return self
-     */
-    public function setConfig($config, $deserialize = false)
-    {
-        $this->container['config'] = $config;
-
-        return $this;
-    }
 
     /**
      * Gets tags

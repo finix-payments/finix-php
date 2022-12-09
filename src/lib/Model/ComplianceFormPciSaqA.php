@@ -44,12 +44,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'signed_at' => 'string',
-        'user_agent' => 'string',
         'ip_address' => 'string',
         'is_accepted' => 'bool',
-        'title' => 'string'
+        'name' => 'string',
+        'signed_at' => 'string',
+        'title' => 'string',
+        'user_agent' => 'string'
     ];
 
     /**
@@ -60,12 +60,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'signed_at' => null,
-        'user_agent' => null,
         'ip_address' => null,
         'is_accepted' => null,
-        'title' => null
+        'name' => null,
+        'signed_at' => null,
+        'title' => null,
+        'user_agent' => null
     ];
 
     /**
@@ -95,12 +95,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'signed_at' => 'signed_at',
-        'user_agent' => 'user_agent',
         'ip_address' => 'ip_address',
         'is_accepted' => 'is_accepted',
-        'title' => 'title'
+        'name' => 'name',
+        'signed_at' => 'signed_at',
+        'title' => 'title',
+        'user_agent' => 'user_agent'
     ];
 
     /**
@@ -109,12 +109,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'signed_at' => 'setSignedAt',
-        'user_agent' => 'setUserAgent',
         'ip_address' => 'setIpAddress',
         'is_accepted' => 'setIsAccepted',
-        'title' => 'setTitle'
+        'name' => 'setName',
+        'signed_at' => 'setSignedAt',
+        'title' => 'setTitle',
+        'user_agent' => 'setUserAgent'
     ];
 
     /**
@@ -123,12 +123,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'signed_at' => 'getSignedAt',
-        'user_agent' => 'getUserAgent',
         'ip_address' => 'getIpAddress',
         'is_accepted' => 'getIsAccepted',
-        'title' => 'getTitle'
+        'name' => 'getName',
+        'signed_at' => 'getSignedAt',
+        'title' => 'getTitle',
+        'user_agent' => 'getUserAgent'
     ];
 
     /**
@@ -188,12 +188,12 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['signed_at'] = $data['signed_at'] ?? null;
-        $this->container['user_agent'] = $data['user_agent'] ?? null;
         $this->container['ip_address'] = $data['ip_address'] ?? null;
         $this->container['is_accepted'] = $data['is_accepted'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['signed_at'] = $data['signed_at'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
+        $this->container['user_agent'] = $data['user_agent'] ?? null;
     }
 
     /**
@@ -219,78 +219,6 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Name of the person completing (aka attesting to) the `compliance_form`.
-     *
-     * @return self
-     */
-    public function setName($name, $deserialize = false)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets signed_at
-     *
-     * @return string|null
-     */
-    public function getSignedAt()
-    {
-        return $this->container['signed_at'];
-    }
-
-    /**
-     * Sets signed_at
-     *
-     * @param string|null $signed_at Timestamp of the person attesting to this `compliance_form`.
-     *
-     * @return self
-     */
-    public function setSignedAt($signed_at, $deserialize = false)
-    {
-        $this->container['signed_at'] = $signed_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_agent
-     *
-     * @return string|null
-     */
-    public function getUserAgent()
-    {
-        return $this->container['user_agent'];
-    }
-
-    /**
-     * Sets user_agent
-     *
-     * @param string|null $user_agent User agent of the person attesting to this `compliance_form`.
-     *
-     * @return self
-     */
-    public function setUserAgent($user_agent, $deserialize = false)
-    {
-        $this->container['user_agent'] = $user_agent;
-
-        return $this;
-    }
 
     /**
      * Gets ip_address
@@ -341,6 +269,54 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Name of the person completing (aka attesting to) the `compliance_form`.
+     *
+     * @return self
+     */
+    public function setName($name, $deserialize = false)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets signed_at
+     *
+     * @return string|null
+     */
+    public function getSignedAt()
+    {
+        return $this->container['signed_at'];
+    }
+
+    /**
+     * Sets signed_at
+     *
+     * @param string|null $signed_at Timestamp of the person attesting to this `compliance_form`.
+     *
+     * @return self
+     */
+    public function setSignedAt($signed_at, $deserialize = false)
+    {
+        $this->container['signed_at'] = $signed_at;
+
+        return $this;
+    }
+
+    /**
      * Gets title
      *
      * @return string|null
@@ -360,6 +336,30 @@ class ComplianceFormPciSaqA implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setTitle($title, $deserialize = false)
     {
         $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_agent
+     *
+     * @return string|null
+     */
+    public function getUserAgent()
+    {
+        return $this->container['user_agent'];
+    }
+
+    /**
+     * Sets user_agent
+     *
+     * @param string|null $user_agent User agent of the person attesting to this `compliance_form`.
+     *
+     * @return self
+     */
+    public function setUserAgent($user_agent, $deserialize = false)
+    {
+        $this->container['user_agent'] = $user_agent;
 
         return $this;
     }

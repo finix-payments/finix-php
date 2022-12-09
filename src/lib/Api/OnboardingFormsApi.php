@@ -945,7 +945,7 @@ class OnboardingFormsApi
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized
+     * @return \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList
      */
     public function get($onboarding_form_id)
     {
@@ -962,7 +962,7 @@ class OnboardingFormsApi
      *
      * @throws \Finix\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Finix\Model\OnboardingForm|\Finix\Model\Error401Unauthorized|\Finix\Model\Error403ForbiddenList|\Finix\Model\Error404NotFoundList|\Finix\Model\Error406NotAcceptable|\Finix\Model\Error422InvalidFieldList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($onboarding_form_id)
     {
@@ -1034,6 +1034,66 @@ class OnboardingFormsApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 403:
+                    if ('\Finix\Model\Error403ForbiddenList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error403ForbiddenList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error403ForbiddenList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Finix\Model\Error404NotFoundList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error404NotFoundList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error404NotFoundList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 406:
+                    if ('\Finix\Model\Error406NotAcceptable' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error406NotAcceptable' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error406NotAcceptable', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Finix\Model\Error422InvalidFieldList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Finix\Model\Error422InvalidFieldList' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Finix\Model\Error422InvalidFieldList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\Finix\Model\OnboardingForm';
@@ -1066,6 +1126,38 @@ class OnboardingFormsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Finix\Model\Error401Unauthorized',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error403ForbiddenList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error404NotFoundList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error406NotAcceptable',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Finix\Model\Error422InvalidFieldList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

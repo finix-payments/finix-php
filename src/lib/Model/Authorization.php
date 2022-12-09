@@ -48,7 +48,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         '_3ds_redirect_url' => 'string',
+        'address_verification' => 'string',
         'additional_buyer_charges' => '\Finix\Model\AdditionalBuyerCharges',
+        'additional_healthcare_data' => '\Finix\Model\AdditionalHealthcareData',
         'amount' => 'int',
         'application' => 'string',
         'card_present_details' => '\Finix\Model\CardPresentDetails',
@@ -58,11 +60,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'expires_at' => '\DateTime',
         'failure_code' => 'string',
         'failure_message' => 'string',
-        'idempotency_id' => 'string',
+        'security_code_checks' => 'string',
         'is_void' => 'bool',
         'merchant_identity' => 'string',
         'messages' => 'string[]',
         'raw' => 'object',
+        'security_code_verification' => 'string',
         'source' => 'string',
         'state' => 'string',
         'tags' => 'array<string,string>',
@@ -84,7 +87,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         '_3ds_redirect_url' => null,
+        'address_verification' => null,
         'additional_buyer_charges' => null,
+        'additional_healthcare_data' => null,
         'amount' => null,
         'application' => null,
         'card_present_details' => null,
@@ -94,11 +99,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'expires_at' => 'date-time',
         'failure_code' => null,
         'failure_message' => null,
-        'idempotency_id' => null,
+        'security_code_checks' => null,
         'is_void' => null,
         'merchant_identity' => null,
         'messages' => null,
         'raw' => null,
+        'security_code_verification' => null,
         'source' => null,
         'state' => null,
         'tags' => null,
@@ -139,7 +145,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         '_3ds_redirect_url' => '3ds_redirect_url',
+        'address_verification' => 'address_verification',
         'additional_buyer_charges' => 'additional_buyer_charges',
+        'additional_healthcare_data' => 'additional_healthcare_data',
         'amount' => 'amount',
         'application' => 'application',
         'card_present_details' => 'card_present_details',
@@ -149,11 +157,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'expires_at' => 'expires_at',
         'failure_code' => 'failure_code',
         'failure_message' => 'failure_message',
-        'idempotency_id' => 'idempotency_id',
+        'security_code_checks' => 'security_code_checks',
         'is_void' => 'is_void',
         'merchant_identity' => 'merchant_identity',
         'messages' => 'messages',
         'raw' => 'raw',
+        'security_code_verification' => 'security_code_verification',
         'source' => 'source',
         'state' => 'state',
         'tags' => 'tags',
@@ -173,7 +182,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         '_3ds_redirect_url' => 'set3dsRedirectUrl',
+        'address_verification' => 'setAddressVerification',
         'additional_buyer_charges' => 'setAdditionalBuyerCharges',
+        'additional_healthcare_data' => 'setAdditionalHealthcareData',
         'amount' => 'setAmount',
         'application' => 'setApplication',
         'card_present_details' => 'setCardPresentDetails',
@@ -183,11 +194,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'expires_at' => 'setExpiresAt',
         'failure_code' => 'setFailureCode',
         'failure_message' => 'setFailureMessage',
-        'idempotency_id' => 'setIdempotencyId',
+        'security_code_checks' => 'setSecurityCodeChecks',
         'is_void' => 'setIsVoid',
         'merchant_identity' => 'setMerchantIdentity',
         'messages' => 'setMessages',
         'raw' => 'setRaw',
+        'security_code_verification' => 'setSecurityCodeVerification',
         'source' => 'setSource',
         'state' => 'setState',
         'tags' => 'setTags',
@@ -207,7 +219,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         '_3ds_redirect_url' => 'get3dsRedirectUrl',
+        'address_verification' => 'getAddressVerification',
         'additional_buyer_charges' => 'getAdditionalBuyerCharges',
+        'additional_healthcare_data' => 'getAdditionalHealthcareData',
         'amount' => 'getAmount',
         'application' => 'getApplication',
         'card_present_details' => 'getCardPresentDetails',
@@ -217,11 +231,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         'expires_at' => 'getExpiresAt',
         'failure_code' => 'getFailureCode',
         'failure_message' => 'getFailureMessage',
-        'idempotency_id' => 'getIdempotencyId',
+        'security_code_checks' => 'getSecurityCodeChecks',
         'is_void' => 'getIsVoid',
         'merchant_identity' => 'getMerchantIdentity',
         'messages' => 'getMessages',
         'raw' => 'getRaw',
+        'security_code_verification' => 'getSecurityCodeVerification',
         'source' => 'getSource',
         'state' => 'getState',
         'tags' => 'getTags',
@@ -313,7 +328,9 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['_3ds_redirect_url'] = $data['_3ds_redirect_url'] ?? null;
+        $this->container['address_verification'] = $data['address_verification'] ?? null;
         $this->container['additional_buyer_charges'] = $data['additional_buyer_charges'] ?? null;
+        $this->container['additional_healthcare_data'] = $data['additional_healthcare_data'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['card_present_details'] = $data['card_present_details'] ?? null;
@@ -323,11 +340,12 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['expires_at'] = $data['expires_at'] ?? null;
         $this->container['failure_code'] = $data['failure_code'] ?? null;
         $this->container['failure_message'] = $data['failure_message'] ?? null;
-        $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
+        $this->container['security_code_checks'] = $data['security_code_checks'] ?? null;
         $this->container['is_void'] = $data['is_void'] ?? null;
         $this->container['merchant_identity'] = $data['merchant_identity'] ?? null;
         $this->container['messages'] = $data['messages'] ?? null;
         $this->container['raw'] = $data['raw'] ?? null;
+        $this->container['security_code_verification'] = $data['security_code_verification'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
@@ -471,6 +489,30 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets address_verification
+     *
+     * @return string|null
+     */
+    public function getAddressVerification()
+    {
+        return $this->container['address_verification'];
+    }
+
+    /**
+     * Sets address_verification
+     *
+     * @param string|null $address_verification Details the results of the Address Verification checks.
+     *
+     * @return self
+     */
+    public function setAddressVerification($address_verification, $deserialize = false)
+    {
+        $this->container['address_verification'] = $address_verification;
+
+        return $this;
+    }
+
+    /**
      * Gets additional_buyer_charges
      *
      * @return \Finix\Model\AdditionalBuyerCharges|null
@@ -490,6 +532,30 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalBuyerCharges($additional_buyer_charges, $deserialize = false)
     {
         $this->container['additional_buyer_charges'] = $additional_buyer_charges;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_healthcare_data
+     *
+     * @return \Finix\Model\AdditionalHealthcareData|null
+     */
+    public function getAdditionalHealthcareData()
+    {
+        return $this->container['additional_healthcare_data'];
+    }
+
+    /**
+     * Sets additional_healthcare_data
+     *
+     * @param \Finix\Model\AdditionalHealthcareData|null $additional_healthcare_data additional_healthcare_data
+     *
+     * @return self
+     */
+    public function setAdditionalHealthcareData($additional_healthcare_data, $deserialize = false)
+    {
+        $this->container['additional_healthcare_data'] = $additional_healthcare_data;
 
         return $this;
     }
@@ -681,7 +747,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets failure_code
      *
-     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/docs/guides/developers/errors/#failure-codes).
+     * @param string|null $failure_code The code of the failure so the decline can be handled programmatically. For more info on how to handle the failure, see [Failure Codes](/guides/developers/errors/#failure-codes).
      *
      * @return self
      */
@@ -717,25 +783,25 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets idempotency_id
+     * Gets security_code_checks
      *
      * @return string|null
      */
-    public function getIdempotencyId()
+    public function getSecurityCodeChecks()
     {
-        return $this->container['idempotency_id'];
+        return $this->container['security_code_checks'];
     }
 
     /**
-     * Sets idempotency_id
+     * Sets security_code_checks
      *
-     * @param string|null $idempotency_id A randomly generated value that'll be associated with the request.
+     * @param string|null $security_code_checks Details the results of the Security Code Verification checks.
      *
      * @return self
      */
-    public function setIdempotencyId($idempotency_id, $deserialize = false)
+    public function setSecurityCodeChecks($security_code_checks, $deserialize = false)
     {
-        $this->container['idempotency_id'] = $idempotency_id;
+        $this->container['security_code_checks'] = $security_code_checks;
 
         return $this;
     }
@@ -777,7 +843,7 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant_identity
      *
-     * @param string|null $merchant_identity The ID of the resource.
+     * @param string|null $merchant_identity The ID of the `Merchant` resource the `Authorization` was captured under.
      *
      * @return self
      */
@@ -832,6 +898,30 @@ class Authorization implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRaw($raw, $deserialize = false)
     {
         $this->container['raw'] = $raw;
+
+        return $this;
+    }
+
+    /**
+     * Gets security_code_verification
+     *
+     * @return string|null
+     */
+    public function getSecurityCodeVerification()
+    {
+        return $this->container['security_code_verification'];
+    }
+
+    /**
+     * Sets security_code_verification
+     *
+     * @param string|null $security_code_verification Details the results of the Security Code Verification che
+     *
+     * @return self
+     */
+    public function setSecurityCodeVerification($security_code_verification, $deserialize = false)
+    {
+        $this->container['security_code_verification'] = $security_code_verification;
 
         return $this;
     }

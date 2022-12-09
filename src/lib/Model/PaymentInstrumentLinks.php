@@ -44,12 +44,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'self' => '\Finix\Model\ApplicationLinksSelf',
-        'authorizations' => '\Finix\Model\PaymentInstrumentLinksAuthorizations',
-        'transfers' => '\Finix\Model\PaymentInstrumentLinksTransfers',
-        'verifications' => '\Finix\Model\MerchantLinksVerifications',
         'application' => '\Finix\Model\MerchantLinksApplication',
-        'identity' => '\Finix\Model\MerchantLinksIdentity'
+        'authorizations' => '\Finix\Model\PaymentInstrumentLinksAuthorizations',
+        'identity' => '\Finix\Model\MerchantLinksIdentity',
+        'self' => '\Finix\Model\ApplicationLinksSelf',
+        'transfers' => '\Finix\Model\PaymentInstrumentLinksTransfers',
+        'updates' => '\Finix\Model\PaymentInstrumentLinksUpdates',
+        'verifications' => '\Finix\Model\MerchantLinksVerifications'
     ];
 
     /**
@@ -60,12 +61,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'self' => null,
-        'authorizations' => null,
-        'transfers' => null,
-        'verifications' => null,
         'application' => null,
-        'identity' => null
+        'authorizations' => null,
+        'identity' => null,
+        'self' => null,
+        'transfers' => null,
+        'updates' => null,
+        'verifications' => null
     ];
 
     /**
@@ -95,12 +97,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'self' => 'self',
-        'authorizations' => 'authorizations',
-        'transfers' => 'transfers',
-        'verifications' => 'verifications',
         'application' => 'application',
-        'identity' => 'identity'
+        'authorizations' => 'authorizations',
+        'identity' => 'identity',
+        'self' => 'self',
+        'transfers' => 'transfers',
+        'updates' => 'updates',
+        'verifications' => 'verifications'
     ];
 
     /**
@@ -109,12 +112,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'self' => 'setSelf',
-        'authorizations' => 'setAuthorizations',
-        'transfers' => 'setTransfers',
-        'verifications' => 'setVerifications',
         'application' => 'setApplication',
-        'identity' => 'setIdentity'
+        'authorizations' => 'setAuthorizations',
+        'identity' => 'setIdentity',
+        'self' => 'setSelf',
+        'transfers' => 'setTransfers',
+        'updates' => 'setUpdates',
+        'verifications' => 'setVerifications'
     ];
 
     /**
@@ -123,12 +127,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'self' => 'getSelf',
-        'authorizations' => 'getAuthorizations',
-        'transfers' => 'getTransfers',
-        'verifications' => 'getVerifications',
         'application' => 'getApplication',
-        'identity' => 'getIdentity'
+        'authorizations' => 'getAuthorizations',
+        'identity' => 'getIdentity',
+        'self' => 'getSelf',
+        'transfers' => 'getTransfers',
+        'updates' => 'getUpdates',
+        'verifications' => 'getVerifications'
     ];
 
     /**
@@ -188,12 +193,13 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['self'] = $data['self'] ?? null;
-        $this->container['authorizations'] = $data['authorizations'] ?? null;
-        $this->container['transfers'] = $data['transfers'] ?? null;
-        $this->container['verifications'] = $data['verifications'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
+        $this->container['authorizations'] = $data['authorizations'] ?? null;
         $this->container['identity'] = $data['identity'] ?? null;
+        $this->container['self'] = $data['self'] ?? null;
+        $this->container['transfers'] = $data['transfers'] ?? null;
+        $this->container['updates'] = $data['updates'] ?? null;
+        $this->container['verifications'] = $data['verifications'] ?? null;
     }
 
     /**
@@ -221,25 +227,25 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets self
+     * Gets application
      *
-     * @return \Finix\Model\ApplicationLinksSelf|null
+     * @return \Finix\Model\MerchantLinksApplication|null
      */
-    public function getSelf()
+    public function getApplication()
     {
-        return $this->container['self'];
+        return $this->container['application'];
     }
 
     /**
-     * Sets self
+     * Sets application
      *
-     * @param \Finix\Model\ApplicationLinksSelf|null $self self
+     * @param \Finix\Model\MerchantLinksApplication|null $application application
      *
      * @return self
      */
-    public function setSelf($self, $deserialize = false)
+    public function setApplication($application, $deserialize = false)
     {
-        $this->container['self'] = $self;
+        $this->container['application'] = $application;
 
         return $this;
     }
@@ -269,6 +275,54 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets identity
+     *
+     * @return \Finix\Model\MerchantLinksIdentity|null
+     */
+    public function getIdentity()
+    {
+        return $this->container['identity'];
+    }
+
+    /**
+     * Sets identity
+     *
+     * @param \Finix\Model\MerchantLinksIdentity|null $identity identity
+     *
+     * @return self
+     */
+    public function setIdentity($identity, $deserialize = false)
+    {
+        $this->container['identity'] = $identity;
+
+        return $this;
+    }
+
+    /**
+     * Gets self
+     *
+     * @return \Finix\Model\ApplicationLinksSelf|null
+     */
+    public function getSelf()
+    {
+        return $this->container['self'];
+    }
+
+    /**
+     * Sets self
+     *
+     * @param \Finix\Model\ApplicationLinksSelf|null $self self
+     *
+     * @return self
+     */
+    public function setSelf($self, $deserialize = false)
+    {
+        $this->container['self'] = $self;
+
+        return $this;
+    }
+
+    /**
      * Gets transfers
      *
      * @return \Finix\Model\PaymentInstrumentLinksTransfers|null
@@ -293,6 +347,30 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets updates
+     *
+     * @return \Finix\Model\PaymentInstrumentLinksUpdates|null
+     */
+    public function getUpdates()
+    {
+        return $this->container['updates'];
+    }
+
+    /**
+     * Sets updates
+     *
+     * @param \Finix\Model\PaymentInstrumentLinksUpdates|null $updates updates
+     *
+     * @return self
+     */
+    public function setUpdates($updates, $deserialize = false)
+    {
+        $this->container['updates'] = $updates;
+
+        return $this;
+    }
+
+    /**
      * Gets verifications
      *
      * @return \Finix\Model\MerchantLinksVerifications|null
@@ -312,54 +390,6 @@ class PaymentInstrumentLinks implements ModelInterface, ArrayAccess, \JsonSerial
     public function setVerifications($verifications, $deserialize = false)
     {
         $this->container['verifications'] = $verifications;
-
-        return $this;
-    }
-
-    /**
-     * Gets application
-     *
-     * @return \Finix\Model\MerchantLinksApplication|null
-     */
-    public function getApplication()
-    {
-        return $this->container['application'];
-    }
-
-    /**
-     * Sets application
-     *
-     * @param \Finix\Model\MerchantLinksApplication|null $application application
-     *
-     * @return self
-     */
-    public function setApplication($application, $deserialize = false)
-    {
-        $this->container['application'] = $application;
-
-        return $this;
-    }
-
-    /**
-     * Gets identity
-     *
-     * @return \Finix\Model\MerchantLinksIdentity|null
-     */
-    public function getIdentity()
-    {
-        return $this->container['identity'];
-    }
-
-    /**
-     * Sets identity
-     *
-     * @param \Finix\Model\MerchantLinksIdentity|null $identity identity
-     *
-     * @return self
-     */
-    public function setIdentity($identity, $deserialize = false)
-    {
-        $this->container['identity'] = $identity;
 
         return $this;
     }

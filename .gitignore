@@ -15,6 +15,7 @@
 
 ### OSX
 bin/
+**.DS_Store
 .DS_Store
 
 ### IntelliJ template
@@ -41,6 +42,9 @@ bin/
 /.idea/misc.xml
 
 debugOpenApi.sh
-
 quickstart.php
 /vendor/
+
+# Misc PHP orchestration files
+composer.phar
+installer

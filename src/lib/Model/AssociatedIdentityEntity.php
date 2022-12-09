@@ -44,8 +44,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amex_mid' => 'int',
-        'annual_card_volume' => 'int',
         'business_address' => '\Finix\Model\IdentityEntityBusinessAddress',
         'business_name' => 'string',
         'business_phone' => 'string',
@@ -58,7 +56,7 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'email' => 'string',
         'first_name' => 'string',
         'has_accepted_credit_cards_previously' => 'bool',
-        'incorporation_date' => '\Finix\Model\IdentityEntityIncorporationDate',
+        'incorporation_date' => '\Finix\Model\IdentityEntityFormIncorporationDate',
         'last_name' => 'string',
         'max_transaction_amount' => 'int',
         'mcc' => 'string',
@@ -70,7 +68,9 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'tax_authority' => 'string',
         'tax_id_provided' => 'bool',
         'title' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'amex_mid' => 'int',
+        'annual_card_volume' => 'int'
     ];
 
     /**
@@ -81,8 +81,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amex_mid' => null,
-        'annual_card_volume' => null,
         'business_address' => null,
         'business_name' => null,
         'business_phone' => null,
@@ -107,7 +105,9 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'tax_authority' => null,
         'tax_id_provided' => null,
         'title' => null,
-        'url' => null
+        'url' => null,
+        'amex_mid' => null,
+        'annual_card_volume' => null
     ];
 
     /**
@@ -137,8 +137,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'amex_mid' => 'amex_mid',
-        'annual_card_volume' => 'annual_card_volume',
         'business_address' => 'business_address',
         'business_name' => 'business_name',
         'business_phone' => 'business_phone',
@@ -163,7 +161,9 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'tax_authority' => 'tax_authority',
         'tax_id_provided' => 'tax_id_provided',
         'title' => 'title',
-        'url' => 'url'
+        'url' => 'url',
+        'amex_mid' => 'amex_mid',
+        'annual_card_volume' => 'annual_card_volume'
     ];
 
     /**
@@ -172,8 +172,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'amex_mid' => 'setAmexMid',
-        'annual_card_volume' => 'setAnnualCardVolume',
         'business_address' => 'setBusinessAddress',
         'business_name' => 'setBusinessName',
         'business_phone' => 'setBusinessPhone',
@@ -198,7 +196,9 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'tax_authority' => 'setTaxAuthority',
         'tax_id_provided' => 'setTaxIdProvided',
         'title' => 'setTitle',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'amex_mid' => 'setAmexMid',
+        'annual_card_volume' => 'setAnnualCardVolume'
     ];
 
     /**
@@ -207,8 +207,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'amex_mid' => 'getAmexMid',
-        'annual_card_volume' => 'getAnnualCardVolume',
         'business_address' => 'getBusinessAddress',
         'business_name' => 'getBusinessName',
         'business_phone' => 'getBusinessPhone',
@@ -233,7 +231,9 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         'tax_authority' => 'getTaxAuthority',
         'tax_id_provided' => 'getTaxIdProvided',
         'title' => 'getTitle',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'amex_mid' => 'getAmexMid',
+        'annual_card_volume' => 'getAnnualCardVolume'
     ];
 
     /**
@@ -308,8 +308,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['amex_mid'] = $data['amex_mid'] ?? null;
-        $this->container['annual_card_volume'] = $data['annual_card_volume'] ?? null;
         $this->container['business_address'] = $data['business_address'] ?? null;
         $this->container['business_name'] = $data['business_name'] ?? null;
         $this->container['business_phone'] = $data['business_phone'] ?? null;
@@ -335,6 +333,8 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['tax_id_provided'] = $data['tax_id_provided'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
+        $this->container['amex_mid'] = $data['amex_mid'] ?? null;
+        $this->container['annual_card_volume'] = $data['annual_card_volume'] ?? null;
     }
 
     /**
@@ -417,54 +417,6 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets amex_mid
-     *
-     * @return int|null
-     */
-    public function getAmexMid()
-    {
-        return $this->container['amex_mid'];
-    }
-
-    /**
-     * Sets amex_mid
-     *
-     * @param int|null $amex_mid Assigned amexMid value. If a value is passed, it must be 10 or 11 digits.
-     *
-     * @return self
-     */
-    public function setAmexMid($amex_mid, $deserialize = false)
-    {
-        $this->container['amex_mid'] = $amex_mid;
-
-        return $this;
-    }
-
-    /**
-     * Gets annual_card_volume
-     *
-     * @return int|null
-     */
-    public function getAnnualCardVolume()
-    {
-        return $this->container['annual_card_volume'];
-    }
-
-    /**
-     * Sets annual_card_volume
-     *
-     * @param int|null $annual_card_volume The annual credit card sales (in cents) expected to be processed by this merchant (max 19 characters).
-     *
-     * @return self
-     */
-    public function setAnnualCardVolume($annual_card_volume, $deserialize = false)
-    {
-        $this->container['annual_card_volume'] = $annual_card_volume;
-
-        return $this;
-    }
 
     /**
      * Gets business_address
@@ -793,7 +745,7 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets incorporation_date
      *
-     * @return \Finix\Model\IdentityEntityIncorporationDate|null
+     * @return \Finix\Model\IdentityEntityFormIncorporationDate|null
      */
     public function getIncorporationDate()
     {
@@ -803,7 +755,7 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets incorporation_date
      *
-     * @param \Finix\Model\IdentityEntityIncorporationDate|null $incorporation_date incorporation_date
+     * @param \Finix\Model\IdentityEntityFormIncorporationDate|null $incorporation_date incorporation_date
      *
      * @return self
      */
@@ -1144,6 +1096,54 @@ class AssociatedIdentityEntity implements ModelInterface, ArrayAccess, \JsonSeri
         
 
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets amex_mid
+     *
+     * @return int|null
+     */
+    public function getAmexMid()
+    {
+        return $this->container['amex_mid'];
+    }
+
+    /**
+     * Sets amex_mid
+     *
+     * @param int|null $amex_mid Assigned amexMid value. If a value is passed, it must be 10 or 11 digits.
+     *
+     * @return self
+     */
+    public function setAmexMid($amex_mid, $deserialize = false)
+    {
+        $this->container['amex_mid'] = $amex_mid;
+
+        return $this;
+    }
+
+    /**
+     * Gets annual_card_volume
+     *
+     * @return int|null
+     */
+    public function getAnnualCardVolume()
+    {
+        return $this->container['annual_card_volume'];
+    }
+
+    /**
+     * Sets annual_card_volume
+     *
+     * @param int|null $annual_card_volume The annual credit card sales (in cents) expected to be processed by this merchant (max 19 characters).
+     *
+     * @return self
+     */
+    public function setAnnualCardVolume($annual_card_volume, $deserialize = false)
+    {
+        $this->container['annual_card_volume'] = $annual_card_volume;
 
         return $this;
     }

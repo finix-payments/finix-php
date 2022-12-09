@@ -1,6 +1,6 @@
 <?php
 /**
- * ApplicationProfilesListLinks
+ * OnboardingFormOnboardingDataEntityIncorporationDate
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ApplicationProfilesListLinks Class Doc Comment
+ * OnboardingFormOnboardingDataEntityIncorporationDate Class Doc Comment
  *
  * @category Class
- * @description For your convenience, every response includes several URLs which link to resources relevant to the request. You can use these &#x60;_links&#x60; to make your follow-up requests and quickly access relevant IDs.
+ * @description The date the company was founded and registered with the US.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \JsonSerializable
+class OnboardingFormOnboardingDataEntityIncorporationDate implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ApplicationProfilesList__links';
+    protected static $openAPIModelName = 'OnboardingFormOnboardingData_entity_incorporation_date';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,11 +44,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'first' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'last' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'next' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'prev' => '\Finix\Model\ApplicationLinksApplicationProfile',
-        'self' => '\Finix\Model\ApplicationLinksSelf'
+        'day' => 'int',
+        'month' => 'int',
+        'year' => 'int'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'first' => null,
-        'last' => null,
-        'next' => null,
-        'prev' => null,
-        'self' => null
+        'day' => null,
+        'month' => null,
+        'year' => null
     ];
 
     /**
@@ -93,11 +89,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'first' => 'first',
-        'last' => 'last',
-        'next' => 'next',
-        'prev' => 'prev',
-        'self' => 'self'
+        'day' => 'day',
+        'month' => 'month',
+        'year' => 'year'
     ];
 
     /**
@@ -106,11 +100,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'first' => 'setFirst',
-        'last' => 'setLast',
-        'next' => 'setNext',
-        'prev' => 'setPrev',
-        'self' => 'setSelf'
+        'day' => 'setDay',
+        'month' => 'setMonth',
+        'year' => 'setYear'
     ];
 
     /**
@@ -119,11 +111,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'first' => 'getFirst',
-        'last' => 'getLast',
-        'next' => 'getNext',
-        'prev' => 'getPrev',
-        'self' => 'getSelf'
+        'day' => 'getDay',
+        'month' => 'getMonth',
+        'year' => 'getYear'
     ];
 
     /**
@@ -183,11 +173,9 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['first'] = $data['first'] ?? null;
-        $this->container['last'] = $data['last'] ?? null;
-        $this->container['next'] = $data['next'] ?? null;
-        $this->container['prev'] = $data['prev'] ?? null;
-        $this->container['self'] = $data['self'] ?? null;
+        $this->container['day'] = $data['day'] ?? null;
+        $this->container['month'] = $data['month'] ?? null;
+        $this->container['year'] = $data['year'] ?? null;
     }
 
     /**
@@ -215,121 +203,73 @@ class ApplicationProfilesListLinks implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets first
+     * Gets day
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return int|null
      */
-    public function getFirst()
+    public function getDay()
     {
-        return $this->container['first'];
+        return $this->container['day'];
     }
 
     /**
-     * Sets first
+     * Sets day
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $first first
+     * @param int|null $day Day business was incorporated (between 1 and 31).
      *
      * @return self
      */
-    public function setFirst($first, $deserialize = false)
+    public function setDay($day, $deserialize = false)
     {
-        $this->container['first'] = $first;
+        $this->container['day'] = $day;
 
         return $this;
     }
 
     /**
-     * Gets last
+     * Gets month
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return int|null
      */
-    public function getLast()
+    public function getMonth()
     {
-        return $this->container['last'];
+        return $this->container['month'];
     }
 
     /**
-     * Sets last
+     * Sets month
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $last last
+     * @param int|null $month Month of birth (between 1 and 12).
      *
      * @return self
      */
-    public function setLast($last, $deserialize = false)
+    public function setMonth($month, $deserialize = false)
     {
-        $this->container['last'] = $last;
+        $this->container['month'] = $month;
 
         return $this;
     }
 
     /**
-     * Gets next
+     * Gets year
      *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
+     * @return int|null
      */
-    public function getNext()
+    public function getYear()
     {
-        return $this->container['next'];
+        return $this->container['year'];
     }
 
     /**
-     * Sets next
+     * Sets year
      *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $next next
+     * @param int|null $year Year business was incorporated (4-digit).
      *
      * @return self
      */
-    public function setNext($next, $deserialize = false)
+    public function setYear($year, $deserialize = false)
     {
-        $this->container['next'] = $next;
-
-        return $this;
-    }
-
-    /**
-     * Gets prev
-     *
-     * @return \Finix\Model\ApplicationLinksApplicationProfile|null
-     */
-    public function getPrev()
-    {
-        return $this->container['prev'];
-    }
-
-    /**
-     * Sets prev
-     *
-     * @param \Finix\Model\ApplicationLinksApplicationProfile|null $prev prev
-     *
-     * @return self
-     */
-    public function setPrev($prev, $deserialize = false)
-    {
-        $this->container['prev'] = $prev;
-
-        return $this;
-    }
-
-    /**
-     * Gets self
-     *
-     * @return \Finix\Model\ApplicationLinksSelf|null
-     */
-    public function getSelf()
-    {
-        return $this->container['self'];
-    }
-
-    /**
-     * Sets self
-     *
-     * @param \Finix\Model\ApplicationLinksSelf|null $self self
-     *
-     * @return self
-     */
-    public function setSelf($self, $deserialize = false)
-    {
-        $this->container['self'] = $self;
+        $this->container['year'] = $year;
 
         return $this;
     }

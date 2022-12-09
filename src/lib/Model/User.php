@@ -422,7 +422,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets role
      *
-     * @param string|null $role Details the level of access the [`User`](#tag/Users) has available.
+     * @param string|null $role Details the level of access the [`User`](/api/tag/Users) has available.
      *
      * @return self
      */

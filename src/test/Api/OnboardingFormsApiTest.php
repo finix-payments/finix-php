@@ -19,6 +19,8 @@ use PHPUnit\Framework\TestCase;
 use \Finix\Model as Model;
 use \Finix\Environment;
 use \Finix\FinixClient;
+use Finix\Model\OnboardingFormOnboardingData;
+
 /**
  * OnboardingFormsApiTest Class Doc Comment
  *
@@ -29,7 +31,10 @@ use \Finix\FinixClient;
  */
 class OnboardingFormsApiTest extends TestCase
 {
-    public $client;
+    /**
+     * @var FinixClient
+     */
+    public FinixClient $client;
     public static $onboardingId;
     /**
      * Setup before running any test cases
@@ -71,26 +76,34 @@ class OnboardingFormsApiTest extends TestCase
      */
     public function testCreateOnboardingForm()
     {
-        $onboardingCreateRequest = new Model\CreateOnboardingFormRequest(array(
-            "onboarding_data" => new Model\CreateOnboardingFormRequestOnboardingData((array(
-                "max_transaction_amount" => 100000
-            ))),
-            "merchant_processors" => [new Model\CreateOnboardingFormRequestMerchantProcessorsInner(
-                array("processor" => "LITLE_V1")
-            )],
-            "onboarding_link_details" => new Model\CreateOnboardingFormRequestOnboardingLinkDetails(array(
+        $onboardingCreateRequest = new Model\CreateOnboardingFormRequest([
+            "onboarding_data" => new Model\OnboardingFormOnboardingData([
+                "max_transaction_amount" => 100000,
+                "entity" => new Model\OnboardingFormOnboardingDataEntity([
+                    "first_name" => "John"
+                ]),
+                "additional_underwriting_data" => new Model\OnboardingFormOnboardingDataAdditionalUnderwritingData([
+                    "annual_ach_volume" => 0
+                ])
+            ]),
+            "merchant_processors" => [
+                new Model\CreateOnboardingFormRequestMerchantProcessorsInner(["processor" => "LITLE_V1"])
+            ],
+            "onboarding_link_details" => new Model\CreateOnboardingFormRequestOnboardingLinkDetails([
                 "return_url" => "https://www.finix.com/docs",
                 "expired_session_url" => "https://www.finix.com/",
                 "terms_of_service_url" => "https://www.finix.com/terms-and-policies",
                 "fee_details_url" => "https://www.finix.com/docs",
                 "expiration_in_minutes" => "30"
-            ))
-        ));
+            ])
+        ]);
 
         $onboardingForm = $this->client->onboardingForms->create($onboardingCreateRequest);
         self::$onboardingId = $onboardingForm->getId();
         $this->assertEquals($onboardingForm->getOnboardingData()->getMaxTransactionAmount(), $onboardingCreateRequest->getOnboardingData()->getMaxTransactionAmount());
         $this->assertEquals($onboardingForm->getMerchantProcessors(), $onboardingCreateRequest->getMerchantProcessors());
+        $this->assertEquals($onboardingForm->getOnboardingData()->getAdditionalUnderwritingData()->getAnnualAchVolume(), 0);
+        $this->assertEquals($onboardingForm->getOnboardingData()->getEntity()->getFirstName(), "John");
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateProcessorRequestConfig
+ * AdditionalHealthcareData
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateProcessorRequestConfig Class Doc Comment
+ * AdditionalHealthcareData Class Doc Comment
  *
  * @category Class
- * @description Configure the details of how a &#x60;Processor&#x60; handles transactions.
+ * @description Optional object detailing [specific healthcare amounts](/docs/guides/making-a-payment/hsa-fsa/).
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \JsonSerializable
+class AdditionalHealthcareData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateProcessorRequest_config';
+    protected static $openAPIModelName = 'AdditionalHealthcareData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,7 +44,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'can_debit_bank_account' => 'bool'
+        'clinic_amount' => 'int',
+        'dental_amount' => 'int',
+        'prescription_amount' => 'int',
+        'vision_amount' => 'int'
     ];
 
     /**
@@ -55,7 +58,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'can_debit_bank_account' => null
+        'clinic_amount' => null,
+        'dental_amount' => null,
+        'prescription_amount' => null,
+        'vision_amount' => null
     ];
 
     /**
@@ -85,7 +91,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'can_debit_bank_account' => 'canDebitBankAccount'
+        'clinic_amount' => 'clinic_amount',
+        'dental_amount' => 'dental_amount',
+        'prescription_amount' => 'prescription_amount',
+        'vision_amount' => 'vision_amount'
     ];
 
     /**
@@ -94,7 +103,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'can_debit_bank_account' => 'setCanDebitBankAccount'
+        'clinic_amount' => 'setClinicAmount',
+        'dental_amount' => 'setDentalAmount',
+        'prescription_amount' => 'setPrescriptionAmount',
+        'vision_amount' => 'setVisionAmount'
     ];
 
     /**
@@ -103,7 +115,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'can_debit_bank_account' => 'getCanDebitBankAccount'
+        'clinic_amount' => 'getClinicAmount',
+        'dental_amount' => 'getDentalAmount',
+        'prescription_amount' => 'getPrescriptionAmount',
+        'vision_amount' => 'getVisionAmount'
     ];
 
     /**
@@ -163,7 +178,10 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['can_debit_bank_account'] = $data['can_debit_bank_account'] ?? null;
+        $this->container['clinic_amount'] = $data['clinic_amount'] ?? null;
+        $this->container['dental_amount'] = $data['dental_amount'] ?? null;
+        $this->container['prescription_amount'] = $data['prescription_amount'] ?? null;
+        $this->container['vision_amount'] = $data['vision_amount'] ?? null;
     }
 
     /**
@@ -191,25 +209,97 @@ class CreateProcessorRequestConfig implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets can_debit_bank_account
+     * Gets clinic_amount
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getCanDebitBankAccount()
+    public function getClinicAmount()
     {
-        return $this->container['can_debit_bank_account'];
+        return $this->container['clinic_amount'];
     }
 
     /**
-     * Sets can_debit_bank_account
+     * Sets clinic_amount
      *
-     * @param bool|null $can_debit_bank_account Details if a `Processor` can debit bank accounts.
+     * @param int|null $clinic_amount The amount used for clinic and office visits such as a copay amount.
      *
      * @return self
      */
-    public function setCanDebitBankAccount($can_debit_bank_account, $deserialize = false)
+    public function setClinicAmount($clinic_amount, $deserialize = false)
     {
-        $this->container['can_debit_bank_account'] = $can_debit_bank_account;
+        $this->container['clinic_amount'] = $clinic_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets dental_amount
+     *
+     * @return int|null
+     */
+    public function getDentalAmount()
+    {
+        return $this->container['dental_amount'];
+    }
+
+    /**
+     * Sets dental_amount
+     *
+     * @param int|null $dental_amount The amount used for dental related expenses.
+     *
+     * @return self
+     */
+    public function setDentalAmount($dental_amount, $deserialize = false)
+    {
+        $this->container['dental_amount'] = $dental_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets prescription_amount
+     *
+     * @return int|null
+     */
+    public function getPrescriptionAmount()
+    {
+        return $this->container['prescription_amount'];
+    }
+
+    /**
+     * Sets prescription_amount
+     *
+     * @param int|null $prescription_amount The amount used to purchase perscriptions and medications.
+     *
+     * @return self
+     */
+    public function setPrescriptionAmount($prescription_amount, $deserialize = false)
+    {
+        $this->container['prescription_amount'] = $prescription_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets vision_amount
+     *
+     * @return int|null
+     */
+    public function getVisionAmount()
+    {
+        return $this->container['vision_amount'];
+    }
+
+    /**
+     * Sets vision_amount
+     *
+     * @param int|null $vision_amount The amount used for vision related expenses.
+     *
+     * @return self
+     */
+    public function setVisionAmount($vision_amount, $deserialize = false)
+    {
+        $this->container['vision_amount'] = $vision_amount;
 
         return $this;
     }

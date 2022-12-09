@@ -19,7 +19,7 @@ use \Finix\ObjectSerializer;
  * AdditionalBuyerCharges Class Doc Comment
  *
  * @category Class
- * @description Object detailing any [Buyer Charges](/guides/payments/buyer-charges) that got included in the &#x60;Authorization&#x60;.
+ * @description Object detailing any [Buyer Charges](/guides/payments/making-a-payment/buyer-charges/) that got included in the &#x60;Authorization&#x60;.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com

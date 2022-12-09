@@ -1,6 +1,6 @@
 <?php
 /**
- * ListPaymentInstrumentUpdatesQueryParams
+ * DisputeDisputeDetails
  *
  * PHP version 7.4
  *
@@ -16,9 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * ListPaymentInstrumentUpdatesQueryParams Class Doc Comment
+ * DisputeDisputeDetails Class Doc Comment
  *
  * @category Class
+ * @description Details about the &#x60;Dispute&#x60; received by the &#x60;Processor&#x60;. Any data from the processor can get included.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -26,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class DisputeDisputeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -35,7 +36,7 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ListPaymentInstrumentUpdatesQueryParams';
+    protected static $openAPIModelName = 'Dispute_dispute_details';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -43,9 +44,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'limit' => 'int',
-        'offset' => 'int',
-        'page_size' => 'int'
+        'case_id' => 'string',
+        'pin_debit_adjustment_number' => 'string',
+        'reason_code' => 'string'
     ];
 
     /**
@@ -56,9 +57,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
-        'offset' => null,
-        'page_size' => null
+        'case_id' => null,
+        'pin_debit_adjustment_number' => null,
+        'reason_code' => null
     ];
 
     /**
@@ -88,9 +89,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'limit' => 'limit',
-        'offset' => 'offset',
-        'page_size' => 'pageSize'
+        'case_id' => 'case_id',
+        'pin_debit_adjustment_number' => 'pin_debit_adjustment_number',
+        'reason_code' => 'reason_code'
     ];
 
     /**
@@ -99,9 +100,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'limit' => 'setLimit',
-        'offset' => 'setOffset',
-        'page_size' => 'setPageSize'
+        'case_id' => 'setCaseId',
+        'pin_debit_adjustment_number' => 'setPinDebitAdjustmentNumber',
+        'reason_code' => 'setReasonCode'
     ];
 
     /**
@@ -110,9 +111,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'limit' => 'getLimit',
-        'offset' => 'getOffset',
-        'page_size' => 'getPageSize'
+        'case_id' => 'getCaseId',
+        'pin_debit_adjustment_number' => 'getPinDebitAdjustmentNumber',
+        'reason_code' => 'getReasonCode'
     ];
 
     /**
@@ -172,9 +173,9 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['limit'] = $data['limit'] ?? null;
-        $this->container['offset'] = $data['offset'] ?? null;
-        $this->container['page_size'] = $data['page_size'] ?? null;
+        $this->container['case_id'] = $data['case_id'] ?? null;
+        $this->container['pin_debit_adjustment_number'] = $data['pin_debit_adjustment_number'] ?? null;
+        $this->container['reason_code'] = $data['reason_code'] ?? null;
     }
 
     /**
@@ -202,73 +203,73 @@ class ListPaymentInstrumentUpdatesQueryParams implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets limit
+     * Gets case_id
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getCaseId()
     {
-        return $this->container['limit'];
+        return $this->container['case_id'];
     }
 
     /**
-     * Sets limit
+     * Sets case_id
      *
-     * @param int|null $limit The number of entries to return.
+     * @param string|null $case_id The case number the `Processor` has given the dispute in their internal database.
      *
      * @return self
      */
-    public function setLimit($limit, $deserialize = false)
+    public function setCaseId($case_id, $deserialize = false)
     {
-        $this->container['limit'] = $limit;
+        $this->container['case_id'] = $case_id;
 
         return $this;
     }
 
     /**
-     * Gets offset
+     * Gets pin_debit_adjustment_number
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getOffset()
+    public function getPinDebitAdjustmentNumber()
     {
-        return $this->container['offset'];
+        return $this->container['pin_debit_adjustment_number'];
     }
 
     /**
-     * Sets offset
+     * Sets pin_debit_adjustment_number
      *
-     * @param int|null $offset The number of items to skip before starting to collect the result set.
+     * @param string|null $pin_debit_adjustment_number Used by the processor to identify the funds that are getting disputed.
      *
      * @return self
      */
-    public function setOffset($offset, $deserialize = false)
+    public function setPinDebitAdjustmentNumber($pin_debit_adjustment_number, $deserialize = false)
     {
-        $this->container['offset'] = $offset;
+        $this->container['pin_debit_adjustment_number'] = $pin_debit_adjustment_number;
 
         return $this;
     }
 
     /**
-     * Gets page_size
+     * Gets reason_code
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPageSize()
+    public function getReasonCode()
     {
-        return $this->container['page_size'];
+        return $this->container['reason_code'];
     }
 
     /**
-     * Sets page_size
+     * Sets reason_code
      *
-     * @param int|null $page_size The size of the page.
+     * @param string|null $reason_code Used by the processor and card networks to identify why the dispute got filed.
      *
      * @return self
      */
-    public function setPageSize($page_size, $deserialize = false)
+    public function setReasonCode($reason_code, $deserialize = false)
     {
-        $this->container['page_size'] = $page_size;
+        $this->container['reason_code'] = $reason_code;
 
         return $this;
     }

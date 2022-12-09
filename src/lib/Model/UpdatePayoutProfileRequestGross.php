@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityEntityIncorporationDate
+ * UpdatePayoutProfileRequestGross
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * IdentityEntityIncorporationDate Class Doc Comment
+ * UpdatePayoutProfileRequestGross Class Doc Comment
  *
  * @category Class
- * @description The date the company was founded and registered with the US.
+ * @description Configure how &#x60;Payout Profiles&#x60; with type **GROSS** are setup.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdatePayoutProfileRequestGross implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Identity_entity_incorporation_date';
+    protected static $openAPIModelName = 'UpdatePayoutProfileRequest_gross';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,9 +44,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'day' => 'int',
-        'month' => 'int',
-        'year' => 'int'
+        'fees' => '\Finix\Model\UpdatePayoutProfileRequestGrossFees',
+        'payouts' => '\Finix\Model\UpdatePayoutProfileRequestGrossPayouts'
     ];
 
     /**
@@ -57,9 +56,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'day' => null,
-        'month' => null,
-        'year' => null
+        'fees' => null,
+        'payouts' => null
     ];
 
     /**
@@ -89,9 +87,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'day' => 'day',
-        'month' => 'month',
-        'year' => 'year'
+        'fees' => 'fees',
+        'payouts' => 'payouts'
     ];
 
     /**
@@ -100,9 +97,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'day' => 'setDay',
-        'month' => 'setMonth',
-        'year' => 'setYear'
+        'fees' => 'setFees',
+        'payouts' => 'setPayouts'
     ];
 
     /**
@@ -111,9 +107,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'day' => 'getDay',
-        'month' => 'getMonth',
-        'year' => 'getYear'
+        'fees' => 'getFees',
+        'payouts' => 'getPayouts'
     ];
 
     /**
@@ -173,9 +168,8 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['day'] = $data['day'] ?? null;
-        $this->container['month'] = $data['month'] ?? null;
-        $this->container['year'] = $data['year'] ?? null;
+        $this->container['fees'] = $data['fees'] ?? null;
+        $this->container['payouts'] = $data['payouts'] ?? null;
     }
 
     /**
@@ -203,73 +197,49 @@ class IdentityEntityIncorporationDate implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets day
+     * Gets fees
      *
-     * @return int|null
+     * @return \Finix\Model\UpdatePayoutProfileRequestGrossFees|null
      */
-    public function getDay()
+    public function getFees()
     {
-        return $this->container['day'];
+        return $this->container['fees'];
     }
 
     /**
-     * Sets day
+     * Sets fees
      *
-     * @param int|null $day Day business was incorporated (between 1 and 31).
+     * @param \Finix\Model\UpdatePayoutProfileRequestGrossFees|null $fees fees
      *
      * @return self
      */
-    public function setDay($day, $deserialize = false)
+    public function setFees($fees, $deserialize = false)
     {
-        $this->container['day'] = $day;
+        $this->container['fees'] = $fees;
 
         return $this;
     }
 
     /**
-     * Gets month
+     * Gets payouts
      *
-     * @return int|null
+     * @return \Finix\Model\UpdatePayoutProfileRequestGrossPayouts|null
      */
-    public function getMonth()
+    public function getPayouts()
     {
-        return $this->container['month'];
+        return $this->container['payouts'];
     }
 
     /**
-     * Sets month
+     * Sets payouts
      *
-     * @param int|null $month Month business was incorporated (between 1 and 12).
+     * @param \Finix\Model\UpdatePayoutProfileRequestGrossPayouts|null $payouts payouts
      *
      * @return self
      */
-    public function setMonth($month, $deserialize = false)
+    public function setPayouts($payouts, $deserialize = false)
     {
-        $this->container['month'] = $month;
-
-        return $this;
-    }
-
-    /**
-     * Gets year
-     *
-     * @return int|null
-     */
-    public function getYear()
-    {
-        return $this->container['year'];
-    }
-
-    /**
-     * Sets year
-     *
-     * @param int|null $year Year business was incorporated (4-digit).
-     *
-     * @return self
-     */
-    public function setYear($year, $deserialize = false)
-    {
-        $this->container['year'] = $year;
+        $this->container['payouts'] = $payouts;
 
         return $this;
     }

@@ -19,6 +19,7 @@ use PHPUnit\Framework\TestCase;
 use \Finix\Model as Model;
 use \Finix\Environment;
 use \Finix\FinixClient;
+use Finix\Model\UpdateWebhookRequest;
 
 /**
  * WebhooksApiTest Class Doc Comment
@@ -30,7 +31,11 @@ use \Finix\FinixClient;
  */
 class WebhooksApiTest extends TestCase
 {
-    public $client;
+
+    /**
+     * @var FinixClient
+     */
+    public FinixClient $client;
     public static $webhookId;
     /**
      * Setup before running any test cases
@@ -133,20 +138,32 @@ class WebhooksApiTest extends TestCase
     public function testUpdateWebhook()
     {
         $urlValue = "https://example.com/";
-        $updatedWebhook = $this->client->webhooks->update(self::$webhookId, 
+        $updatedWebhook = $this->client->webhooks->update(
+            self::$webhookId, 
             new Model\UpdateWebhookRequest(array(
-                'enabled' => true
+                'enabled' => true,
+                'enabled_events' => [
+                    new Model\WebhookEnabledEventsInner(array(
+                        'entity' => 'transfer',
+                        'types' => ['created']
+                    )),
+                    new Model\WebhookEnabledEventsInner(array(
+                        "entity"=>"authorization",
+                        "types"=> ["created", "updated"]
+                    )),
+                ]
             ))
         );
 
         $this->assertSame($updatedWebhook->getUrl(), $urlValue);
         $this->assertSame($updatedWebhook->getEnabled(), true);
+        $this->assertSame($updatedWebhook->getEnabledEvents()[0]->getEntity(), "transfer");
+        $this->assertSame($updatedWebhook->getEnabledEvents()[1]->getEntity(), "authorization");
 
         $updatedWebhook = $this->client->webhooks->update(self::$webhookId, 
             new Model\UpdateWebhookRequest(array(
-                'enabled' => false
+                'enabled' => false,
             ))
         );
-        
     }
 }

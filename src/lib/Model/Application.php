@@ -637,7 +637,7 @@ class Application implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ready_to_settle_upon
      *
-     * @param string|null $ready_to_settle_upon Details when `Authroizations` submitted under the `Application` will be ready to settle.
+     * @param string|null $ready_to_settle_upon Details when transactions submitted under the `Application` will be ready to settle.
      *
      * @return self
      */

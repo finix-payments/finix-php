@@ -520,7 +520,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets annual_card_volume
      *
-     * @param int|null $annual_card_volume Approximate annual credit card sales expected to be processed in cents by this merchant (max 19 characters).
+     * @param int|null $annual_card_volume Approximate annual credit card sales expected to be processed in cents by this seller (max 19 characters).
      *
      * @return self
      */
@@ -927,7 +927,7 @@ class IdentityEntityForm implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets mcc
      *
-     * @param string|null $mcc The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card_x/mcc.pdf)) the merchant is classified under.
+     * @param string|null $mcc The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card_x/mcc.pdf)) the seller is classified under.
      *
      * @return self
      */

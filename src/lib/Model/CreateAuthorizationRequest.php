@@ -50,9 +50,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => '\Finix\Model\Currency',
         'device' => 'string',
         'fraud_session_id' => 'string',
+        'hsa_fsa_payment' => 'bool',
         'idempotency_id' => 'string',
         'merchant' => 'string',
         'operation_key' => '\Finix\Model\OperationKey',
+        'security_code' => 'string',
         'source' => 'string',
         'tags' => 'array<string,string>',
         '_3d_secure_authentication' => '\Finix\Model\CreateAuthorizationRequest3dSecureAuthentication'
@@ -72,9 +74,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => null,
         'device' => null,
         'fraud_session_id' => null,
+        'hsa_fsa_payment' => null,
         'idempotency_id' => null,
         'merchant' => null,
         'operation_key' => null,
+        'security_code' => null,
         'source' => null,
         'tags' => null,
         '_3d_secure_authentication' => null
@@ -113,9 +117,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => 'currency',
         'device' => 'device',
         'fraud_session_id' => 'fraud_session_id',
+        'hsa_fsa_payment' => 'hsa_fsa_payment',
         'idempotency_id' => 'idempotency_id',
         'merchant' => 'merchant',
         'operation_key' => 'operation_key',
+        'security_code' => 'security_code',
         'source' => 'source',
         'tags' => 'tags',
         '_3d_secure_authentication' => '3d_secure_authentication'
@@ -133,9 +139,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => 'setCurrency',
         'device' => 'setDevice',
         'fraud_session_id' => 'setFraudSessionId',
+        'hsa_fsa_payment' => 'setHsaFsaPayment',
         'idempotency_id' => 'setIdempotencyId',
         'merchant' => 'setMerchant',
         'operation_key' => 'setOperationKey',
+        'security_code' => 'setSecurityCode',
         'source' => 'setSource',
         'tags' => 'setTags',
         '_3d_secure_authentication' => 'set3dSecureAuthentication'
@@ -153,9 +161,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => 'getCurrency',
         'device' => 'getDevice',
         'fraud_session_id' => 'getFraudSessionId',
+        'hsa_fsa_payment' => 'getHsaFsaPayment',
         'idempotency_id' => 'getIdempotencyId',
         'merchant' => 'getMerchant',
         'operation_key' => 'getOperationKey',
+        'security_code' => 'getSecurityCode',
         'source' => 'getSource',
         'tags' => 'getTags',
         '_3d_secure_authentication' => 'get3dSecureAuthentication'
@@ -224,9 +234,11 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['device'] = $data['device'] ?? null;
         $this->container['fraud_session_id'] = $data['fraud_session_id'] ?? null;
+        $this->container['hsa_fsa_payment'] = $data['hsa_fsa_payment'] ?? null;
         $this->container['idempotency_id'] = $data['idempotency_id'] ?? null;
         $this->container['merchant'] = $data['merchant'] ?? null;
         $this->container['operation_key'] = $data['operation_key'] ?? null;
+        $this->container['security_code'] = $data['security_code'] ?? null;
         $this->container['source'] = $data['source'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['_3d_secure_authentication'] = $data['_3d_secure_authentication'] ?? null;
@@ -371,7 +383,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets device
      *
-     * @param string|null $device The ID of the resource.
+     * @param string|null $device The ID of the `Device` that the `Authorization` was created under.
      *
      * @return self
      */
@@ -395,13 +407,37 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets fraud_session_id
      *
-     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/docs/guides/payments/fraud-detection/).
+     * @param string|null $fraud_session_id The `fraud_session_session` ID you want to review for fraud. For more info, see [Fraud Detection](/guides/payments/fraud-detection/).
      *
      * @return self
      */
     public function setFraudSessionId($fraud_session_id, $deserialize = false)
     {
         $this->container['fraud_session_id'] = $fraud_session_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets hsa_fsa_payment
+     *
+     * @return bool|null
+     */
+    public function getHsaFsaPayment()
+    {
+        return $this->container['hsa_fsa_payment'];
+    }
+
+    /**
+     * Sets hsa_fsa_payment
+     *
+     * @param bool|null $hsa_fsa_payment Set to to **true** to process a payment using a `Payment Instrument` [created from a health savings account (HSA) or flexible spending account (FSA)](/docs/guides/making-a-payment/hsa-fsa/).
+     *
+     * @return self
+     */
+    public function setHsaFsaPayment($hsa_fsa_payment, $deserialize = false)
+    {
+        $this->container['hsa_fsa_payment'] = $hsa_fsa_payment;
 
         return $this;
     }
@@ -443,7 +479,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets merchant
      *
-     * @param string|null $merchant The ID of the resource.
+     * @param string|null $merchant The ID of the `Merchant` that the `Authorization` was created under.
      *
      * @return self
      */
@@ -479,6 +515,30 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Gets security_code
+     *
+     * @return string|null
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['security_code'];
+    }
+
+    /**
+     * Sets security_code
+     *
+     * @param string|null $security_code The 3-4 digit security code for the card (i.e. CVV code). Include the CVV code of the card to include [Card Verification Checks](/guides/payments/making-a-payment/card-verification-checks/) with the created `Authorization`.
+     *
+     * @return self
+     */
+    public function setSecurityCode($security_code, $deserialize = false)
+    {
+        $this->container['security_code'] = $security_code;
+
+        return $this;
+    }
+
+    /**
      * Gets source
      *
      * @return string|null
@@ -491,7 +551,7 @@ class CreateAuthorizationRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets source
      *
-     * @param string|null $source The ID of the resource.
+     * @param string|null $source The ID of the `Payment Instrument` that will be debited and performing the `Authorization`.
      *
      * @return self
      */

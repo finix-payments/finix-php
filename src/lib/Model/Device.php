@@ -281,7 +281,7 @@ class Device implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the activated `Device`.
      *
      * @return self
      */

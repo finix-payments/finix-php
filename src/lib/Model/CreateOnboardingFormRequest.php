@@ -43,9 +43,10 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'onboarding_data' => '\Finix\Model\CreateOnboardingFormRequestOnboardingData',
+        'onboarding_data' => '\Finix\Model\OnboardingFormOnboardingData',
         'merchant_processors' => '\Finix\Model\CreateOnboardingFormRequestMerchantProcessorsInner[]',
-        'onboarding_link_details' => '\Finix\Model\CreateOnboardingFormRequestOnboardingLinkDetails'
+        'onboarding_link_details' => '\Finix\Model\CreateOnboardingFormRequestOnboardingLinkDetails',
+        'tags' => 'array<string,string>'
     ];
 
     /**
@@ -58,7 +59,8 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'onboarding_data' => null,
         'merchant_processors' => null,
-        'onboarding_link_details' => null
+        'onboarding_link_details' => null,
+        'tags' => null
     ];
 
     /**
@@ -90,7 +92,8 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'onboarding_data' => 'onboarding_data',
         'merchant_processors' => 'merchant_processors',
-        'onboarding_link_details' => 'onboarding_link_details'
+        'onboarding_link_details' => 'onboarding_link_details',
+        'tags' => 'tags'
     ];
 
     /**
@@ -101,7 +104,8 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'onboarding_data' => 'setOnboardingData',
         'merchant_processors' => 'setMerchantProcessors',
-        'onboarding_link_details' => 'setOnboardingLinkDetails'
+        'onboarding_link_details' => 'setOnboardingLinkDetails',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -112,7 +116,8 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'onboarding_data' => 'getOnboardingData',
         'merchant_processors' => 'getMerchantProcessors',
-        'onboarding_link_details' => 'getOnboardingLinkDetails'
+        'onboarding_link_details' => 'getOnboardingLinkDetails',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -175,6 +180,7 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
         $this->container['onboarding_data'] = $data['onboarding_data'] ?? null;
         $this->container['merchant_processors'] = $data['merchant_processors'] ?? null;
         $this->container['onboarding_link_details'] = $data['onboarding_link_details'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
     }
 
     /**
@@ -204,7 +210,7 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets onboarding_data
      *
-     * @return \Finix\Model\CreateOnboardingFormRequestOnboardingData|null
+     * @return \Finix\Model\OnboardingFormOnboardingData|null
      */
     public function getOnboardingData()
     {
@@ -214,7 +220,7 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets onboarding_data
      *
-     * @param \Finix\Model\CreateOnboardingFormRequestOnboardingData|null $onboarding_data onboarding_data
+     * @param \Finix\Model\OnboardingFormOnboardingData|null $onboarding_data onboarding_data
      *
      * @return self
      */
@@ -269,6 +275,30 @@ class CreateOnboardingFormRequest implements ModelInterface, ArrayAccess, \JsonS
     public function setOnboardingLinkDetails($onboarding_link_details, $deserialize = false)
     {
         $this->container['onboarding_link_details'] = $onboarding_link_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

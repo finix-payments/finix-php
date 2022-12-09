@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOnboardingFormRequestOnboardingData
+ * PayoutProfilesList
  *
  * PHP version 7.4
  *
@@ -16,10 +16,10 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateOnboardingFormRequestOnboardingData Class Doc Comment
+ * PayoutProfilesList Class Doc Comment
  *
  * @category Class
- * @description The prefilled information of the user that&#39;s being onboarded. For more information, see [Prefilling Fields](/guides/onboarding/onboarding-form/#prefilling-fields).
+ * @description List of &#x60;Payout Profiles&#x60;.
  * @package  Finix
  * @author   Finix
  * @link     https://finix.com
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateOnboardingFormRequestOnboardingData implements ModelInterface, ArrayAccess, \JsonSerializable
+class PayoutProfilesList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateOnboardingFormRequest_onboarding_data';
+    protected static $openAPIModelName = 'PayoutProfilesList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,11 +44,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entity' => 'object',
-        'associated_entities' => 'object[]',
-        'additional_underwriting_data' => 'object',
-        'payment_instruments' => 'object',
-        'max_transaction_amount' => 'int'
+        '_embedded' => '\Finix\Model\PayoutProfilesListEmbedded',
+        '_links' => '\Finix\Model\ListLinks',
+        'page' => '\Finix\Model\PageCursor'
     ];
 
     /**
@@ -59,11 +57,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entity' => null,
-        'associated_entities' => null,
-        'additional_underwriting_data' => null,
-        'payment_instruments' => null,
-        'max_transaction_amount' => null
+        '_embedded' => null,
+        '_links' => null,
+        'page' => null
     ];
 
     /**
@@ -93,11 +89,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity' => 'entity',
-        'associated_entities' => 'associated_entities',
-        'additional_underwriting_data' => 'additional_underwriting_data',
-        'payment_instruments' => 'payment_instruments',
-        'max_transaction_amount' => 'max_transaction_amount'
+        '_embedded' => '_embedded',
+        '_links' => '_links',
+        'page' => 'page'
     ];
 
     /**
@@ -106,11 +100,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'entity' => 'setEntity',
-        'associated_entities' => 'setAssociatedEntities',
-        'additional_underwriting_data' => 'setAdditionalUnderwritingData',
-        'payment_instruments' => 'setPaymentInstruments',
-        'max_transaction_amount' => 'setMaxTransactionAmount'
+        '_embedded' => 'setEmbedded',
+        '_links' => 'setLinks',
+        'page' => 'setPage'
     ];
 
     /**
@@ -119,11 +111,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'entity' => 'getEntity',
-        'associated_entities' => 'getAssociatedEntities',
-        'additional_underwriting_data' => 'getAdditionalUnderwritingData',
-        'payment_instruments' => 'getPaymentInstruments',
-        'max_transaction_amount' => 'getMaxTransactionAmount'
+        '_embedded' => 'getEmbedded',
+        '_links' => 'getLinks',
+        'page' => 'getPage'
     ];
 
     /**
@@ -183,11 +173,9 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity'] = $data['entity'] ?? null;
-        $this->container['associated_entities'] = $data['associated_entities'] ?? null;
-        $this->container['additional_underwriting_data'] = $data['additional_underwriting_data'] ?? null;
-        $this->container['payment_instruments'] = $data['payment_instruments'] ?? null;
-        $this->container['max_transaction_amount'] = $data['max_transaction_amount'] ?? null;
+        $this->container['_embedded'] = $data['_embedded'] ?? null;
+        $this->container['_links'] = $data['_links'] ?? null;
+        $this->container['page'] = $data['page'] ?? null;
     }
 
     /**
@@ -215,121 +203,73 @@ class CreateOnboardingFormRequestOnboardingData implements ModelInterface, Array
 
 
     /**
-     * Gets entity
+     * Gets _embedded
      *
-     * @return object|null
+     * @return \Finix\Model\PayoutProfilesListEmbedded|null
      */
-    public function getEntity()
+    public function getEmbedded()
     {
-        return $this->container['entity'];
+        return $this->container['_embedded'];
     }
 
     /**
-     * Sets entity
+     * Sets _embedded
      *
-     * @param object|null $entity The `entity` information saved in the `Identity` of the user.
+     * @param \Finix\Model\PayoutProfilesListEmbedded|null $_embedded _embedded
      *
      * @return self
      */
-    public function setEntity($entity, $deserialize = false)
+    public function setEmbedded($_embedded, $deserialize = false)
     {
-        $this->container['entity'] = $entity;
+        $this->container['_embedded'] = $_embedded;
 
         return $this;
     }
 
     /**
-     * Gets associated_entities
+     * Gets _links
      *
-     * @return object[]|null
+     * @return \Finix\Model\ListLinks|null
      */
-    public function getAssociatedEntities()
+    public function getLinks()
     {
-        return $this->container['associated_entities'];
+        return $this->container['_links'];
     }
 
     /**
-     * Sets associated_entities
+     * Sets _links
      *
-     * @param object[]|null $associated_entities The `entities` saved in the `associated_identities` of the user. For more information, see [Create an Associated Identity](/guides/onboarding/onboarding-form/#prefilling-fields).
+     * @param \Finix\Model\ListLinks|null $_links _links
      *
      * @return self
      */
-    public function setAssociatedEntities($associated_entities, $deserialize = false)
+    public function setLinks($_links, $deserialize = false)
     {
-        $this->container['associated_entities'] = $associated_entities;
+        $this->container['_links'] = $_links;
 
         return $this;
     }
 
     /**
-     * Gets additional_underwriting_data
+     * Gets page
      *
-     * @return object|null
+     * @return \Finix\Model\PageCursor|null
      */
-    public function getAdditionalUnderwritingData()
+    public function getPage()
     {
-        return $this->container['additional_underwriting_data'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets additional_underwriting_data
+     * Sets page
      *
-     * @param object|null $additional_underwriting_data Additional underwriting data about the user.
+     * @param \Finix\Model\PageCursor|null $page page
      *
      * @return self
      */
-    public function setAdditionalUnderwritingData($additional_underwriting_data, $deserialize = false)
+    public function setPage($page, $deserialize = false)
     {
-        $this->container['additional_underwriting_data'] = $additional_underwriting_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_instruments
-     *
-     * @return object|null
-     */
-    public function getPaymentInstruments()
-    {
-        return $this->container['payment_instruments'];
-    }
-
-    /**
-     * Sets payment_instruments
-     *
-     * @param object|null $payment_instruments The `Payment Instrument` that'll be used to payout the user. For more information, see [Payouts](/guides/payouts/).
-     *
-     * @return self
-     */
-    public function setPaymentInstruments($payment_instruments, $deserialize = false)
-    {
-        $this->container['payment_instruments'] = $payment_instruments;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_transaction_amount
-     *
-     * @return int|null
-     */
-    public function getMaxTransactionAmount()
-    {
-        return $this->container['max_transaction_amount'];
-    }
-
-    /**
-     * Sets max_transaction_amount
-     *
-     * @param int|null $max_transaction_amount Maximum amount that can be transacted for a single transaction in cents (max 12 characters). Must be equal to or less than your `max_transaction_amount`.
-     *
-     * @return self
-     */
-    public function setMaxTransactionAmount($max_transaction_amount, $deserialize = false)
-    {
-        $this->container['max_transaction_amount'] = $max_transaction_amount;
+        $this->container['page'] = $page;
 
         return $this;
     }

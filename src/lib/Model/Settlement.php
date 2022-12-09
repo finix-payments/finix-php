@@ -239,7 +239,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
 
     public const STATUS_APPROVED = 'APPROVED';
     public const STATUS_AWAITING_APPROVAL = 'AWAITING_APPROVAL';
-    public const STATUS_CANCELLED = 'CANCELLED';
     public const STATUS_PENDING = 'PENDING';
     public const TYPE_MERCHANT_REVENUE = 'MERCHANT_REVENUE';
     public const TYPE_PLATFORM_FEE = 'PLATFORM_FEE';
@@ -259,7 +258,6 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::STATUS_APPROVED,
             self::STATUS_AWAITING_APPROVAL,
-            self::STATUS_CANCELLED,
             self::STATUS_PENDING,
         ];
     }
@@ -373,7 +371,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the `Settlement` resource.
      *
      * @return self
      */
@@ -541,7 +539,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identity
      *
-     * @param string|null $identity The ID of the resource.
+     * @param string|null $identity The ID of the `Identity` used to create the `Settlement` resource.
      *
      * @return self
      */
@@ -565,7 +563,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant_id
      *
-     * @param string|null $merchant_id The ID of the resource.
+     * @param string|null $merchant_id The ID of the `Merchant` used to create the `Settlement` resource.
      *
      * @return self
      */
@@ -661,7 +659,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status The status of the `Settlement`. Available values include:<ul><li>**PENDING**<li>**AWAITING_APPROVAL**<li>**APPROVED**.</ul> Merchants only receive payouts when `Settlements` are **APPROVED** and receive the resulting funding `Transfer` . For more information, see [Payouts](/guides/payouts/payouts/).
+     * @param string|null $status The status of the `Settlement`. Available values include:<ul><li>**PENDING**<li>**AWAITING_APPROVAL**<li>**APPROVED**.</ul> Merchants only receive payouts when `Settlements` are **APPROVED** and receive the resulting funding `Transfer` . For more information, see [Payouts](/guides/payouts/).
      *
      * @return self
      */

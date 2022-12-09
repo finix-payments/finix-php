@@ -44,8 +44,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'unsigned_file' => 'string',
-        'signed_file' => 'string'
+        'signed_file' => 'string',
+        'unsigned_file' => 'string'
     ];
 
     /**
@@ -56,8 +56,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'unsigned_file' => null,
-        'signed_file' => null
+        'signed_file' => null,
+        'unsigned_file' => null
     ];
 
     /**
@@ -87,8 +87,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'unsigned_file' => 'unsigned_file',
-        'signed_file' => 'signed_file'
+        'signed_file' => 'signed_file',
+        'unsigned_file' => 'unsigned_file'
     ];
 
     /**
@@ -97,8 +97,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'unsigned_file' => 'setUnsignedFile',
-        'signed_file' => 'setSignedFile'
+        'signed_file' => 'setSignedFile',
+        'unsigned_file' => 'setUnsignedFile'
     ];
 
     /**
@@ -107,8 +107,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'unsigned_file' => 'getUnsignedFile',
-        'signed_file' => 'getSignedFile'
+        'signed_file' => 'getSignedFile',
+        'unsigned_file' => 'getUnsignedFile'
     ];
 
     /**
@@ -168,8 +168,8 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['unsigned_file'] = $data['unsigned_file'] ?? null;
         $this->container['signed_file'] = $data['signed_file'] ?? null;
+        $this->container['unsigned_file'] = $data['unsigned_file'] ?? null;
     }
 
     /**
@@ -197,30 +197,6 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets unsigned_file
-     *
-     * @return string|null
-     */
-    public function getUnsignedFile()
-    {
-        return $this->container['unsigned_file'];
-    }
-
-    /**
-     * Sets unsigned_file
-     *
-     * @param string|null $unsigned_file ID of the `File` resource that has the `compliance_form`.
-     *
-     * @return self
-     */
-    public function setUnsignedFile($unsigned_file, $deserialize = false)
-    {
-        $this->container['unsigned_file'] = $unsigned_file;
-
-        return $this;
-    }
-
-    /**
      * Gets signed_file
      *
      * @return string|null
@@ -240,6 +216,30 @@ class ComplianceFormFiles implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setSignedFile($signed_file, $deserialize = false)
     {
         $this->container['signed_file'] = $signed_file;
+
+        return $this;
+    }
+
+    /**
+     * Gets unsigned_file
+     *
+     * @return string|null
+     */
+    public function getUnsignedFile()
+    {
+        return $this->container['unsigned_file'];
+    }
+
+    /**
+     * Sets unsigned_file
+     *
+     * @param string|null $unsigned_file ID of the `File` resource that has the `compliance_form`.
+     *
+     * @return self
+     */
+    public function setUnsignedFile($unsigned_file, $deserialize = false)
+    {
+        $this->container['unsigned_file'] = $unsigned_file;
 
         return $this;
     }

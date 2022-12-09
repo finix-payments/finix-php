@@ -347,7 +347,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
     /**
      * Sets annual_ach_volume
      *
-     * @param int|null $annual_ach_volume The approximate annual ACH sales expected to be processed (in cents) by this merchant (max 10 characters).
+     * @param int|null $annual_ach_volume The approximate annual ACH sales expected to be processed (in cents) by this seller (max 10 characters).
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
     /**
      * Sets average_ach_transfer_amount
      *
-     * @param int|null $average_ach_transfer_amount The approximate average ACH sale amount (in cents) for this merchant.
+     * @param int|null $average_ach_transfer_amount The approximate average ACH sale amount (in cents) for this seller.
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
     /**
      * Sets average_card_transfer_amount
      *
-     * @param int|null $average_card_transfer_amount The average credit card sale amount (in cents) for this merchant.
+     * @param int|null $average_card_transfer_amount The average credit card sale amount (in cents) for this seller.
      *
      * @return self
      */
@@ -701,7 +701,7 @@ class IdentityAdditionalUnderwritingData implements ModelInterface, ArrayAccess,
     /**
      * Sets refund_policy
      *
-     * @param string|null $refund_policy Include the value that best applies to the merchant's refund policy.
+     * @param string|null $refund_policy Include the value that best applies to the seller's refund policy.
      *
      * @return self
      */

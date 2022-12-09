@@ -57,6 +57,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'int',
         'application' => 'string',
         'basis_points' => 'int',
+        'card_cross_border_basis_points' => 'int',
+        'card_cross_border_fixed_fee' => 'int',
         'charge_interchange' => 'bool',
         'diners_club_basis_points' => 'int',
         'diners_club_charge_interchange' => 'bool',
@@ -119,6 +121,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => null,
         'application' => null,
         'basis_points' => null,
+        'card_cross_border_basis_points' => null,
+        'card_cross_border_fixed_fee' => null,
         'charge_interchange' => null,
         'diners_club_basis_points' => null,
         'diners_club_charge_interchange' => null,
@@ -200,6 +204,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'ancillary_fixed_fee_secondary',
         'application' => 'application',
         'basis_points' => 'basis_points',
+        'card_cross_border_basis_points' => 'card_cross_border_basis_points',
+        'card_cross_border_fixed_fee' => 'card_cross_border_fixed_fee',
         'charge_interchange' => 'charge_interchange',
         'diners_club_basis_points' => 'diners_club_basis_points',
         'diners_club_charge_interchange' => 'diners_club_charge_interchange',
@@ -260,6 +266,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'setAncillaryFixedFeeSecondary',
         'application' => 'setApplication',
         'basis_points' => 'setBasisPoints',
+        'card_cross_border_basis_points' => 'setCardCrossBorderBasisPoints',
+        'card_cross_border_fixed_fee' => 'setCardCrossBorderFixedFee',
         'charge_interchange' => 'setChargeInterchange',
         'diners_club_basis_points' => 'setDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'setDinersClubChargeInterchange',
@@ -320,6 +328,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ancillary_fixed_fee_secondary' => 'getAncillaryFixedFeeSecondary',
         'application' => 'getApplication',
         'basis_points' => 'getBasisPoints',
+        'card_cross_border_basis_points' => 'getCardCrossBorderBasisPoints',
+        'card_cross_border_fixed_fee' => 'getCardCrossBorderFixedFee',
         'charge_interchange' => 'getChargeInterchange',
         'diners_club_basis_points' => 'getDinersClubBasisPoints',
         'diners_club_charge_interchange' => 'getDinersClubChargeInterchange',
@@ -446,6 +456,8 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['ancillary_fixed_fee_secondary'] = $data['ancillary_fixed_fee_secondary'] ?? null;
         $this->container['application'] = $data['application'] ?? null;
         $this->container['basis_points'] = $data['basis_points'] ?? null;
+        $this->container['card_cross_border_basis_points'] = $data['card_cross_border_basis_points'] ?? null;
+        $this->container['card_cross_border_fixed_fee'] = $data['card_cross_border_fixed_fee'] ?? null;
         $this->container['charge_interchange'] = $data['charge_interchange'] ?? null;
         $this->container['diners_club_basis_points'] = $data['diners_club_basis_points'] ?? null;
         $this->container['diners_club_charge_interchange'] = $data['diners_club_charge_interchange'] ?? null;
@@ -823,7 +835,7 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets application
      *
-     * @param string $application The ID of the resource.
+     * @param string $application The ID of the `Application` associated with the  `Fee Profile`.
      *
      * @return self
      */
@@ -854,6 +866,54 @@ class CreateFeeProfileRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setBasisPoints($basis_points, $deserialize = false)
     {
         $this->container['basis_points'] = $basis_points;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_cross_border_basis_points
+     *
+     * @return int|null
+     */
+    public function getCardCrossBorderBasisPoints()
+    {
+        return $this->container['card_cross_border_basis_points'];
+    }
+
+    /**
+     * Sets card_cross_border_basis_points
+     *
+     * @param int|null $card_cross_border_basis_points Percentage-based fee charged against the full amount of every `Transfer` that includes non-US cards. Calculated as one hundredth of one percent (1 basis point = .0001 or .01%).
+     *
+     * @return self
+     */
+    public function setCardCrossBorderBasisPoints($card_cross_border_basis_points, $deserialize = false)
+    {
+        $this->container['card_cross_border_basis_points'] = $card_cross_border_basis_points;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_cross_border_fixed_fee
+     *
+     * @return int|null
+     */
+    public function getCardCrossBorderFixedFee()
+    {
+        return $this->container['card_cross_border_fixed_fee'];
+    }
+
+    /**
+     * Sets card_cross_border_fixed_fee
+     *
+     * @param int|null $card_cross_border_fixed_fee Fee in cents charged against every `Transfer` that includes non-US cards.
+     *
+     * @return self
+     */
+    public function setCardCrossBorderFixedFee($card_cross_border_fixed_fee, $deserialize = false)
+    {
+        $this->container['card_cross_border_fixed_fee'] = $card_cross_border_fixed_fee;
 
         return $this;
     }

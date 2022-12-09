@@ -43,8 +43,8 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fee_profile' => 'string',
-        'risk_profile' => 'string',
+        'fee_profile' => 'object',
+        'risk_profile' => 'object',
         'tags' => 'array<string,string>'
     ];
 
@@ -204,7 +204,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets fee_profile
      *
-     * @return string|null
+     * @return object|null
      */
     public function getFeeProfile()
     {
@@ -214,7 +214,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets fee_profile
      *
-     * @param string|null $fee_profile The ID of the resource.
+     * @param object|null $fee_profile The ID of the `Fee Profile` associated with the `Application`.
      *
      * @return self
      */
@@ -228,7 +228,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets risk_profile
      *
-     * @return string|null
+     * @return object|null
      */
     public function getRiskProfile()
     {
@@ -238,7 +238,7 @@ class UpdateApplicationProfileRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets risk_profile
      *
-     * @param string|null $risk_profile The ID of the resource.
+     * @param object|null $risk_profile The ID of the `Fee Profile` associated with the `Application`.
      *
      * @return self
      */

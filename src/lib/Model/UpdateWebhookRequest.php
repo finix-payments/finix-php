@@ -44,6 +44,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'enabled' => 'bool',
+        'enabled_events' => '\Finix\Model\WebhookEnabledEventsInner[]',
         'url' => 'string'
     ];
 
@@ -56,6 +57,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'enabled' => null,
+        'enabled_events' => null,
         'url' => null
     ];
 
@@ -87,6 +89,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'enabled' => 'enabled',
+        'enabled_events' => 'enabled_events',
         'url' => 'url'
     ];
 
@@ -97,6 +100,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'enabled' => 'setEnabled',
+        'enabled_events' => 'setEnabledEvents',
         'url' => 'setUrl'
     ];
 
@@ -107,6 +111,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'enabled' => 'getEnabled',
+        'enabled_events' => 'getEnabledEvents',
         'url' => 'getUrl'
     ];
 
@@ -168,6 +173,7 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['enabled_events'] = $data['enabled_events'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
     }
 
@@ -215,6 +221,30 @@ class UpdateWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setEnabled($enabled, $deserialize = false)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled_events
+     *
+     * @return \Finix\Model\WebhookEnabledEventsInner[]|null
+     */
+    public function getEnabledEvents()
+    {
+        return $this->container['enabled_events'];
+    }
+
+    /**
+     * Sets enabled_events
+     *
+     * @param \Finix\Model\WebhookEnabledEventsInner[]|null $enabled_events A list of events the [webhook is explicitly enabled for](/guides/developers/webhooks/#webhook-event-filtering).
+     *
+     * @return self
+     */
+    public function setEnabledEvents($enabled_events, $deserialize = false)
+    {
+        $this->container['enabled_events'] = $enabled_events;
 
         return $this;
     }

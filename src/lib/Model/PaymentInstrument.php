@@ -55,12 +55,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         'card_name' => 'string',
         'card_type' => 'string',
         'currency' => '\Finix\Model\Currency',
+        'enabled' => 'bool',
         'expiration_month' => 'int',
         'expiration_year' => 'int',
         'fast_funds_indicator' => 'string',
         'fingerprint' => 'string',
         'identity' => 'string',
         'instrument_type' => 'string',
+        'issuer_country' => 'string',
         'last_four' => 'string',
         'name' => 'string',
         'online_gambing_block_indicator' => 'string',
@@ -96,12 +98,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         'card_name' => null,
         'card_type' => null,
         'currency' => null,
+        'enabled' => null,
         'expiration_month' => null,
         'expiration_year' => null,
         'fast_funds_indicator' => null,
         'fingerprint' => null,
         'identity' => null,
         'instrument_type' => null,
+        'issuer_country' => null,
         'last_four' => null,
         'name' => null,
         'online_gambing_block_indicator' => null,
@@ -156,12 +160,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         'card_name' => 'card_name',
         'card_type' => 'card_type',
         'currency' => 'currency',
+        'enabled' => 'enabled',
         'expiration_month' => 'expiration_month',
         'expiration_year' => 'expiration_year',
         'fast_funds_indicator' => 'fast_funds_indicator',
         'fingerprint' => 'fingerprint',
         'identity' => 'identity',
         'instrument_type' => 'instrument_type',
+        'issuer_country' => 'issuer_country',
         'last_four' => 'last_four',
         'name' => 'name',
         'online_gambing_block_indicator' => 'online_gambing_block_indicator',
@@ -195,12 +201,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         'card_name' => 'setCardName',
         'card_type' => 'setCardType',
         'currency' => 'setCurrency',
+        'enabled' => 'setEnabled',
         'expiration_month' => 'setExpirationMonth',
         'expiration_year' => 'setExpirationYear',
         'fast_funds_indicator' => 'setFastFundsIndicator',
         'fingerprint' => 'setFingerprint',
         'identity' => 'setIdentity',
         'instrument_type' => 'setInstrumentType',
+        'issuer_country' => 'setIssuerCountry',
         'last_four' => 'setLastFour',
         'name' => 'setName',
         'online_gambing_block_indicator' => 'setOnlineGambingBlockIndicator',
@@ -234,12 +242,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         'card_name' => 'getCardName',
         'card_type' => 'getCardType',
         'currency' => 'getCurrency',
+        'enabled' => 'getEnabled',
         'expiration_month' => 'getExpirationMonth',
         'expiration_year' => 'getExpirationYear',
         'fast_funds_indicator' => 'getFastFundsIndicator',
         'fingerprint' => 'getFingerprint',
         'identity' => 'getIdentity',
         'instrument_type' => 'getInstrumentType',
+        'issuer_country' => 'getIssuerCountry',
         'last_four' => 'getLastFour',
         'name' => 'getName',
         'online_gambing_block_indicator' => 'getOnlineGambingBlockIndicator',
@@ -297,43 +307,70 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
-    public const ADDRESS_VERIFICATION_POSTAL_CODE_AND_STREET_MATCH = 'POSTAL_CODE_AND_STREET_MATCH';
-    public const ADDRESS_VERIFICATION_STREET_MATCH = 'STREET_MATCH';
-    public const ADDRESS_VERIFICATION_POSTAL_CODE_MATCH = 'POSTAL_CODE_MATCH';
+    public const ADDRESS_VERIFICATION_NOT_SUPPORTED = 'NOT_SUPPORTED';
     public const ADDRESS_VERIFICATION_NO_ADDRESS = 'NO_ADDRESS';
     public const ADDRESS_VERIFICATION_NO_MATCH = 'NO_MATCH';
-    public const ADDRESS_VERIFICATION_NOT_SUPPORTED = 'NOT_SUPPORTED';
+    public const ADDRESS_VERIFICATION_POSTAL_CODE_AND_STREET_MATCH = 'POSTAL_CODE_AND_STREET_MATCH';
+    public const ADDRESS_VERIFICATION_POSTAL_CODE_MATCH = 'POSTAL_CODE_MATCH';
+    public const ADDRESS_VERIFICATION_STREET_MATCH = 'STREET_MATCH';
     public const ADDRESS_VERIFICATION_UNKNOWN = 'UNKNOWN';
-    public const INSTRUMENT_TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
-    public const INSTRUMENT_TYPE_TOKEN = 'TOKEN';
+    public const BRAND_AMERICAN_EXPRESS = 'AMERICAN_EXPRESS';
+    public const BRAND_CHINA_T_UNION = 'CHINA_T_UNION';
+    public const BRAND_CHINA_UNION_PAY = 'CHINA_UNION_PAY';
+    public const BRAND_DANKORT = 'DANKORT';
+    public const BRAND_DINERS_CLUB = 'DINERS_CLUB';
+    public const BRAND_DINERS_CLUB_INTERNATIONAL = 'DINERS_CLUB_INTERNATIONAL';
+    public const BRAND_DISCOVER = 'DISCOVER';
+    public const BRAND_INSTAPAYMENT = 'INSTAPAYMENT';
+    public const BRAND_INTERPAYMENT = 'INTERPAYMENT';
+    public const BRAND_JCB = 'JCB';
+    public const BRAND_LANKAPAY = 'LANKAPAY';
+    public const BRAND_MAESTRO = 'MAESTRO';
+    public const BRAND_MASTERCARD = 'MASTERCARD';
+    public const BRAND_MIR = 'MIR';
+    public const BRAND_RUPAY = 'RUPAY';
+    public const BRAND_TROY = 'TROY';
+    public const BRAND_UATP = 'UATP';
+    public const BRAND_UNKNOWN = 'UNKNOWN';
+    public const BRAND_VERVE = 'VERVE';
+    public const BRAND_VISA = 'VISA';
+    public const CARD_TYPE_CREDIT = 'CREDIT';
+    public const CARD_TYPE_DEBIT = 'DEBIT';
+    public const CARD_TYPE_HSA_FSA = 'HSA_FSA';
+    public const CARD_TYPE_NON_RELOADABLE_PREPAID = 'NON_RELOADABLE_PREPAID';
+    public const CARD_TYPE_RELOADABLE_PREPAID = 'RELOADABLE_PREPAID';
+    public const CARD_TYPE_UNKNOWN = 'UNKNOWN';
     public const INSTRUMENT_TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const INSTRUMENT_TYPE_VIRTUAL = 'VIRTUAL';
-    public const INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
+    public const INSTRUMENT_TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
     public const INSTRUMENT_TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
-    public const INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
-    public const INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const INSTRUMENT_TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
-    public const PAYLOAD_TYPE_SOURCE = 'SOURCE';
+    public const INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
+    public const INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
+    public const INSTRUMENT_TYPE_TOKEN = 'TOKEN';
+    public const INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const INSTRUMENT_TYPE_VIRTUAL = 'VIRTUAL';
+    public const ISSUER_COUNTRY_NON_USA = 'NON_USA';
+    public const ISSUER_COUNTRY_UNKNOWN = 'UNKNOWN';
+    public const ISSUER_COUNTRY_USA = 'USA';
     public const PAYLOAD_TYPE_DESTINATION = 'DESTINATION';
+    public const PAYLOAD_TYPE_SOURCE = 'SOURCE';
     public const SECURITY_CODE_VERIFICATION_MATCHED = 'MATCHED';
     public const SECURITY_CODE_VERIFICATION_UNKNOWN = 'UNKNOWN';
     public const SECURITY_CODE_VERIFICATION_UNMATCHED = 'UNMATCHED';
-    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
-    public const TYPE_TOKEN = 'TOKEN';
     public const TYPE_APPLE_PAY = 'APPLE_PAY';
-    public const TYPE_VIRTUAL = 'VIRTUAL';
-    public const TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
+    public const TYPE_BANK_ACCOUNT = 'BANK_ACCOUNT';
     public const TYPE_GOOGLE_PAY = 'GOOGLE_PAY';
-    public const TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
-    public const TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
     public const TYPE_PAYMENT_CARD = 'PAYMENT_CARD';
+    public const TYPE_PAYMENT_CARD_PRESENT = 'PAYMENT_CARD_PRESENT';
+    public const TYPE_SWIPED_PAYMENT_CARD = 'SWIPED_PAYMENT_CARD';
+    public const TYPE_TOKEN = 'TOKEN';
+    public const TYPE_VANTIV_OMNI_TOKEN = 'VANTIV_OMNI_TOKEN';
+    public const TYPE_VIRTUAL = 'VIRTUAL';
     public const ACCOUNT_TYPE_CHECKING = 'CHECKING';
     public const ACCOUNT_TYPE_SAVINGS = 'SAVINGS';
-    public const ACCOUNT_TYPE_CORPORATE = 'CORPORATE';
-    public const ACCOUNT_TYPE_CORP_SAVINGS = 'CORP_SAVINGS';
-    public const BANK_ACCOUNT_VALIDATION_CHECK_NOT_ATTEMPTED = 'NOT_ATTEMPTED';
     public const BANK_ACCOUNT_VALIDATION_CHECK_INCONCLUSIVE = 'INCONCLUSIVE';
     public const BANK_ACCOUNT_VALIDATION_CHECK_INVALID = 'INVALID';
+    public const BANK_ACCOUNT_VALIDATION_CHECK_NOT_ATTEMPTED = 'NOT_ATTEMPTED';
     public const BANK_ACCOUNT_VALIDATION_CHECK_VALID = 'VALID';
 
     /**
@@ -344,13 +381,61 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getAddressVerificationAllowableValues()
     {
         return [
-            self::ADDRESS_VERIFICATION_POSTAL_CODE_AND_STREET_MATCH,
-            self::ADDRESS_VERIFICATION_STREET_MATCH,
-            self::ADDRESS_VERIFICATION_POSTAL_CODE_MATCH,
+            self::ADDRESS_VERIFICATION_NOT_SUPPORTED,
             self::ADDRESS_VERIFICATION_NO_ADDRESS,
             self::ADDRESS_VERIFICATION_NO_MATCH,
-            self::ADDRESS_VERIFICATION_NOT_SUPPORTED,
+            self::ADDRESS_VERIFICATION_POSTAL_CODE_AND_STREET_MATCH,
+            self::ADDRESS_VERIFICATION_POSTAL_CODE_MATCH,
+            self::ADDRESS_VERIFICATION_STREET_MATCH,
             self::ADDRESS_VERIFICATION_UNKNOWN,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBrandAllowableValues()
+    {
+        return [
+            self::BRAND_AMERICAN_EXPRESS,
+            self::BRAND_CHINA_T_UNION,
+            self::BRAND_CHINA_UNION_PAY,
+            self::BRAND_DANKORT,
+            self::BRAND_DINERS_CLUB,
+            self::BRAND_DINERS_CLUB_INTERNATIONAL,
+            self::BRAND_DISCOVER,
+            self::BRAND_INSTAPAYMENT,
+            self::BRAND_INTERPAYMENT,
+            self::BRAND_JCB,
+            self::BRAND_LANKAPAY,
+            self::BRAND_MAESTRO,
+            self::BRAND_MASTERCARD,
+            self::BRAND_MIR,
+            self::BRAND_RUPAY,
+            self::BRAND_TROY,
+            self::BRAND_UATP,
+            self::BRAND_UNKNOWN,
+            self::BRAND_VERVE,
+            self::BRAND_VISA,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCardTypeAllowableValues()
+    {
+        return [
+            self::CARD_TYPE_CREDIT,
+            self::CARD_TYPE_DEBIT,
+            self::CARD_TYPE_HSA_FSA,
+            self::CARD_TYPE_NON_RELOADABLE_PREPAID,
+            self::CARD_TYPE_RELOADABLE_PREPAID,
+            self::CARD_TYPE_UNKNOWN,
         ];
     }
 
@@ -362,15 +447,29 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getInstrumentTypeAllowableValues()
     {
         return [
-            self::INSTRUMENT_TYPE_BANK_ACCOUNT,
-            self::INSTRUMENT_TYPE_TOKEN,
             self::INSTRUMENT_TYPE_APPLE_PAY,
-            self::INSTRUMENT_TYPE_VIRTUAL,
-            self::INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT,
+            self::INSTRUMENT_TYPE_BANK_ACCOUNT,
             self::INSTRUMENT_TYPE_GOOGLE_PAY,
-            self::INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN,
-            self::INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD,
             self::INSTRUMENT_TYPE_PAYMENT_CARD,
+            self::INSTRUMENT_TYPE_PAYMENT_CARD_PRESENT,
+            self::INSTRUMENT_TYPE_SWIPED_PAYMENT_CARD,
+            self::INSTRUMENT_TYPE_TOKEN,
+            self::INSTRUMENT_TYPE_VANTIV_OMNI_TOKEN,
+            self::INSTRUMENT_TYPE_VIRTUAL,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getIssuerCountryAllowableValues()
+    {
+        return [
+            self::ISSUER_COUNTRY_NON_USA,
+            self::ISSUER_COUNTRY_UNKNOWN,
+            self::ISSUER_COUNTRY_USA,
         ];
     }
 
@@ -382,8 +481,8 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getPayloadTypeAllowableValues()
     {
         return [
-            self::PAYLOAD_TYPE_SOURCE,
             self::PAYLOAD_TYPE_DESTINATION,
+            self::PAYLOAD_TYPE_SOURCE,
         ];
     }
 
@@ -409,15 +508,15 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_BANK_ACCOUNT,
-            self::TYPE_TOKEN,
             self::TYPE_APPLE_PAY,
-            self::TYPE_VIRTUAL,
-            self::TYPE_PAYMENT_CARD_PRESENT,
+            self::TYPE_BANK_ACCOUNT,
             self::TYPE_GOOGLE_PAY,
-            self::TYPE_VANTIV_OMNI_TOKEN,
-            self::TYPE_SWIPED_PAYMENT_CARD,
             self::TYPE_PAYMENT_CARD,
+            self::TYPE_PAYMENT_CARD_PRESENT,
+            self::TYPE_SWIPED_PAYMENT_CARD,
+            self::TYPE_TOKEN,
+            self::TYPE_VANTIV_OMNI_TOKEN,
+            self::TYPE_VIRTUAL,
         ];
     }
 
@@ -431,8 +530,6 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         return [
             self::ACCOUNT_TYPE_CHECKING,
             self::ACCOUNT_TYPE_SAVINGS,
-            self::ACCOUNT_TYPE_CORPORATE,
-            self::ACCOUNT_TYPE_CORP_SAVINGS,
         ];
     }
 
@@ -444,9 +541,9 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getBankAccountValidationCheckAllowableValues()
     {
         return [
-            self::BANK_ACCOUNT_VALIDATION_CHECK_NOT_ATTEMPTED,
             self::BANK_ACCOUNT_VALIDATION_CHECK_INCONCLUSIVE,
             self::BANK_ACCOUNT_VALIDATION_CHECK_INVALID,
+            self::BANK_ACCOUNT_VALIDATION_CHECK_NOT_ATTEMPTED,
             self::BANK_ACCOUNT_VALIDATION_CHECK_VALID,
         ];
     }
@@ -477,12 +574,14 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['card_name'] = $data['card_name'] ?? null;
         $this->container['card_type'] = $data['card_type'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['expiration_month'] = $data['expiration_month'] ?? null;
         $this->container['expiration_year'] = $data['expiration_year'] ?? null;
         $this->container['fast_funds_indicator'] = $data['fast_funds_indicator'] ?? null;
         $this->container['fingerprint'] = $data['fingerprint'] ?? null;
         $this->container['identity'] = $data['identity'] ?? null;
         $this->container['instrument_type'] = $data['instrument_type'] ?? null;
+        $this->container['issuer_country'] = $data['issuer_country'] ?? null;
         $this->container['last_four'] = $data['last_four'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['online_gambing_block_indicator'] = $data['online_gambing_block_indicator'] ?? null;
@@ -517,6 +616,24 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
             );
         }
 
+        $allowedValues = $this->getBrandAllowableValues();
+        if (!is_null($this->container['brand']) && !in_array($this->container['brand'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'brand', must be one of '%s'",
+                $this->container['brand'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCardTypeAllowableValues();
+        if (!is_null($this->container['card_type']) && !in_array($this->container['card_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'card_type', must be one of '%s'",
+                $this->container['card_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if (!is_null($this->container['expiration_month']) && ($this->container['expiration_month'] > 12)) {
             $invalidProperties[] = "invalid value for 'expiration_month', must be smaller than or equal to 12.";
         }
@@ -534,6 +651,15 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'instrument_type', must be one of '%s'",
                 $this->container['instrument_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getIssuerCountryAllowableValues();
+        if (!is_null($this->container['issuer_country']) && !in_array($this->container['issuer_country'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'issuer_country', must be one of '%s'",
+                $this->container['issuer_country'],
                 implode("', '", $allowedValues)
             );
         }
@@ -611,7 +737,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the `Payment Instrument`.
      *
      * @return self
      */
@@ -741,7 +867,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string|null $application The ID of the `Application` resource the `Payment Instrument` was created under.
      *
      * @return self
      */
@@ -795,6 +921,16 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function setBrand($brand, $deserialize = false)
     {
+        $allowedValues = $this->getBrandAllowableValues();
+        if (!is_null($brand) && !in_array($brand, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'brand', must be one of '%s'",
+                    $brand,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['brand'] = $brand;
 
         return $this;
@@ -843,6 +979,16 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function setCardType($card_type, $deserialize = false)
     {
+        $allowedValues = $this->getCardTypeAllowableValues();
+        if (!is_null($card_type) && !in_array($card_type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'card_type', must be one of '%s'",
+                    $card_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['card_type'] = $card_type;
 
         return $this;
@@ -868,6 +1014,30 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCurrency($currency, $deserialize = false)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled
+     *
+     * @return bool|null
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param bool|null $enabled Details if the `Payment Instrument` resource is enabled. Default value is **true**; set to **false** to disable the `Payment Instrument`.
+     *
+     * @return self
+     */
+    public function setEnabled($enabled, $deserialize = false)
+    {
+        $this->container['enabled'] = $enabled;
 
         return $this;
     }
@@ -996,7 +1166,7 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets identity
      *
-     * @param string|null $identity The ID of the resource.
+     * @param string|null $identity The ID of the `Identity` used to create the `Payment Instrument` resource.
      *
      * @return self
      */
@@ -1037,6 +1207,40 @@ class PaymentInstrument implements ModelInterface, ArrayAccess, \JsonSerializabl
             );
         }
         $this->container['instrument_type'] = $instrument_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuer_country
+     *
+     * @return string|null
+     */
+    public function getIssuerCountry()
+    {
+        return $this->container['issuer_country'];
+    }
+
+    /**
+     * Sets issuer_country
+     *
+     * @param string|null $issuer_country Details what country the card was issued in:<li><strong>USA</strong>: The card was issued inside the United States.<li><strong>NON_USA</strong>: The card was issued outside of the United States.<li><strong>UNKNOWN</strong>: Processor did not return an issuer country for this particular BIN.
+     *
+     * @return self
+     */
+    public function setIssuerCountry($issuer_country, $deserialize = false)
+    {
+        $allowedValues = $this->getIssuerCountryAllowableValues();
+        if (!is_null($issuer_country) && !in_array($issuer_country, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'issuer_country', must be one of '%s'",
+                    $issuer_country,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['issuer_country'] = $issuer_country;
 
         return $this;
     }

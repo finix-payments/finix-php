@@ -44,19 +44,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'type' => 'string',
-        'state' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'compliance_form_template' => 'string',
         'due_at' => '\DateTime',
+        'files' => '\Finix\Model\ComplianceFormFiles',
         'linked_to' => 'string',
         'linked_type' => 'string',
         'pci_saq_a' => '\Finix\Model\ComplianceFormPciSaqA',
-        'files' => '\Finix\Model\ComplianceFormFiles',
+        'state' => 'string',
+        'tags' => 'array<string,string>',
+        'type' => 'string',
         'valid_from' => '\DateTime',
         'valid_until' => 'string',
-        'compliance_form_template' => 'string',
-        'tags' => 'array<string,string>'
+        'version' => 'string'
     ];
 
     /**
@@ -68,19 +69,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'type' => null,
-        'state' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'compliance_form_template' => null,
         'due_at' => 'date-time',
+        'files' => null,
         'linked_to' => null,
         'linked_type' => null,
         'pci_saq_a' => null,
-        'files' => null,
+        'state' => null,
+        'tags' => null,
+        'type' => null,
         'valid_from' => 'date-time',
         'valid_until' => null,
-        'compliance_form_template' => null,
-        'tags' => null
+        'version' => null
     ];
 
     /**
@@ -111,19 +113,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'type' => 'type',
-        'state' => 'state',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
+        'compliance_form_template' => 'compliance_form_template',
         'due_at' => 'due_at',
+        'files' => 'files',
         'linked_to' => 'linked_to',
         'linked_type' => 'linked_type',
         'pci_saq_a' => 'pci_saq_a',
-        'files' => 'files',
+        'state' => 'state',
+        'tags' => 'tags',
+        'type' => 'type',
         'valid_from' => 'valid_from',
         'valid_until' => 'valid_until',
-        'compliance_form_template' => 'compliance_form_template',
-        'tags' => 'tags'
+        'version' => 'version'
     ];
 
     /**
@@ -133,19 +136,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'type' => 'setType',
-        'state' => 'setState',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'compliance_form_template' => 'setComplianceFormTemplate',
         'due_at' => 'setDueAt',
+        'files' => 'setFiles',
         'linked_to' => 'setLinkedTo',
         'linked_type' => 'setLinkedType',
         'pci_saq_a' => 'setPciSaqA',
-        'files' => 'setFiles',
+        'state' => 'setState',
+        'tags' => 'setTags',
+        'type' => 'setType',
         'valid_from' => 'setValidFrom',
         'valid_until' => 'setValidUntil',
-        'compliance_form_template' => 'setComplianceFormTemplate',
-        'tags' => 'setTags'
+        'version' => 'setVersion'
     ];
 
     /**
@@ -155,19 +159,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'type' => 'getType',
-        'state' => 'getState',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'compliance_form_template' => 'getComplianceFormTemplate',
         'due_at' => 'getDueAt',
+        'files' => 'getFiles',
         'linked_to' => 'getLinkedTo',
         'linked_type' => 'getLinkedType',
         'pci_saq_a' => 'getPciSaqA',
-        'files' => 'getFiles',
+        'state' => 'getState',
+        'tags' => 'getTags',
+        'type' => 'getType',
         'valid_from' => 'getValidFrom',
         'valid_until' => 'getValidUntil',
-        'compliance_form_template' => 'getComplianceFormTemplate',
-        'tags' => 'getTags'
+        'version' => 'getVersion'
     ];
 
     /**
@@ -211,23 +216,11 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const TYPE_PCI_SAQ_A = 'PCI_SAQ_A';
     public const STATE_PENDING = 'PENDING';
     public const STATE_COMPLETED = 'COMPLETED';
     public const STATE_INVALID = 'INVALID';
     public const STATE_INCOMPLETE = 'INCOMPLETE';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_PCI_SAQ_A,
-        ];
-    }
+    public const TYPE_PCI_SAQ_A = 'PCI_SAQ_A';
 
     /**
      * Gets allowable values of the enum
@@ -241,6 +234,18 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
             self::STATE_COMPLETED,
             self::STATE_INVALID,
             self::STATE_INCOMPLETE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_PCI_SAQ_A,
         ];
     }
 
@@ -260,19 +265,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['compliance_form_template'] = $data['compliance_form_template'] ?? null;
         $this->container['due_at'] = $data['due_at'] ?? null;
+        $this->container['files'] = $data['files'] ?? null;
         $this->container['linked_to'] = $data['linked_to'] ?? null;
         $this->container['linked_type'] = $data['linked_type'] ?? null;
         $this->container['pci_saq_a'] = $data['pci_saq_a'] ?? null;
-        $this->container['files'] = $data['files'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['valid_from'] = $data['valid_from'] ?? null;
         $this->container['valid_until'] = $data['valid_until'] ?? null;
-        $this->container['compliance_form_template'] = $data['compliance_form_template'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['version'] = $data['version'] ?? null;
     }
 
     /**
@@ -284,20 +290,20 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         $allowedValues = $this->getStateAllowableValues();
         if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'state', must be one of '%s'",
                 $this->container['state'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -337,74 +343,6 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id, $deserialize = false)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Type of `compliance_form`. There is one available value: **PCI_SAQ_A**.
-     *
-     * @return self
-     */
-    public function setType($type, $deserialize = false)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state The state of the `compliance_form`.
-     *
-     * @return self
-     */
-    public function setState($state, $deserialize = false)
-    {
-        $allowedValues = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'state', must be one of '%s'",
-                    $state,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['state'] = $state;
 
         return $this;
     }
@@ -458,6 +396,30 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets compliance_form_template
+     *
+     * @return string|null
+     */
+    public function getComplianceFormTemplate()
+    {
+        return $this->container['compliance_form_template'];
+    }
+
+    /**
+     * Sets compliance_form_template
+     *
+     * @param string|null $compliance_form_template Template linked to this `compliance_form`.
+     *
+     * @return self
+     */
+    public function setComplianceFormTemplate($compliance_form_template, $deserialize = false)
+    {
+        $this->container['compliance_form_template'] = $compliance_form_template;
+
+        return $this;
+    }
+
+    /**
      * Gets due_at
      *
      * @return \DateTime|null
@@ -477,6 +439,30 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDueAt($due_at, $deserialize = false)
     {
         $this->container['due_at'] = $due_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets files
+     *
+     * @return \Finix\Model\ComplianceFormFiles|null
+     */
+    public function getFiles()
+    {
+        return $this->container['files'];
+    }
+
+    /**
+     * Sets files
+     *
+     * @param \Finix\Model\ComplianceFormFiles|null $files files
+     *
+     * @return self
+     */
+    public function setFiles($files, $deserialize = false)
+    {
+        $this->container['files'] = $files;
 
         return $this;
     }
@@ -554,25 +540,93 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets files
+     * Gets state
      *
-     * @return \Finix\Model\ComplianceFormFiles|null
+     * @return string|null
      */
-    public function getFiles()
+    public function getState()
     {
-        return $this->container['files'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets files
+     * Sets state
      *
-     * @param \Finix\Model\ComplianceFormFiles|null $files files
+     * @param string|null $state The state of the `compliance_form`.
      *
      * @return self
      */
-    public function setFiles($files, $deserialize = false)
+    public function setState($state, $deserialize = false)
     {
-        $this->container['files'] = $files;
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($state) && !in_array($state, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'state', must be one of '%s'",
+                    $state,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return array<string,string>|null
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
+     *
+     * @return self
+     */
+    public function setTags($tags, $deserialize = false)
+    {
+        $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type Type of `compliance_form`. There is one available value: **PCI_SAQ_A**.
+     *
+     * @return self
+     */
+    public function setType($type, $deserialize = false)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true) && !$deserialize) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -626,49 +680,25 @@ class ComplianceForm implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets compliance_form_template
+     * Gets version
      *
      * @return string|null
      */
-    public function getComplianceFormTemplate()
+    public function getVersion()
     {
-        return $this->container['compliance_form_template'];
+        return $this->container['version'];
     }
 
     /**
-     * Sets compliance_form_template
+     * Sets version
      *
-     * @param string|null $compliance_form_template Template linked to this `compliance_form`.
+     * @param string|null $version Details the version of the SAQ form. When `compliance_forms` are created, Finix automatically provides the most up-to-date SAQ form that's available.
      *
      * @return self
      */
-    public function setComplianceFormTemplate($compliance_form_template, $deserialize = false)
+    public function setVersion($version, $deserialize = false)
     {
-        $this->container['compliance_form_template'] = $compliance_form_template;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return array<string,string>|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param array<string,string>|null $tags Key value pair for annotating custom meta data (e.g. order numbers).
-     *
-     * @return self
-     */
-    public function setTags($tags, $deserialize = false)
-    {
-        $this->container['tags'] = $tags;
+        $this->container['version'] = $version;
 
         return $this;
     }

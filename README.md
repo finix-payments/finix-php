@@ -126,5 +126,6 @@ try{
 - Verifications
 - Merchant Profiles
 - Fee Profiles
+- Payout Profiles
 - Onboarding Forms
 - Compliance Forms

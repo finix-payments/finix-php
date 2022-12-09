@@ -44,6 +44,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'tags' => 'array<string,string>',
+        'enabled' => 'bool',
         'type' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
@@ -66,6 +67,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'tags' => null,
+        'enabled' => null,
         'type' => null,
         'id' => null,
         'created_at' => 'date-time',
@@ -107,6 +109,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'tags' => 'tags',
+        'enabled' => 'enabled',
         'type' => 'type',
         'id' => 'id',
         'created_at' => 'created_at',
@@ -127,6 +130,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'tags' => 'setTags',
+        'enabled' => 'setEnabled',
         'type' => 'setType',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
@@ -147,6 +151,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'tags' => 'getTags',
+        'enabled' => 'getEnabled',
         'type' => 'getType',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
@@ -259,6 +264,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['tags'] = $data['tags'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
@@ -348,6 +354,30 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets enabled
+     *
+     * @return bool|null
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param bool|null $enabled Details if the `Payment Instrument` resource is enabled. Set to `false` to disable the `Payment Instrument`.
+     *
+     * @return self
+     */
+    public function setEnabled($enabled, $deserialize = false)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string|null
@@ -394,7 +424,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param string|null $id The ID of the resource.
+     * @param string|null $id The ID of the `Payment Instrument`.
      *
      * @return self
      */
@@ -466,7 +496,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets application
      *
-     * @param string|null $application The ID of the resource.
+     * @param string|null $application The ID of the `Application` resource the `Payment Instrument` was created under.
      *
      * @return self
      */
@@ -538,7 +568,7 @@ class PaymentInstrumentToken implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets identity
      *
-     * @param string|null $identity The ID of the resource.
+     * @param string|null $identity The ID of the `Identity` used to create the `Payment Instrument` resource.
      *
      * @return self
      */

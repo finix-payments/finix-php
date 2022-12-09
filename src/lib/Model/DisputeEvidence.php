@@ -338,7 +338,7 @@ class DisputeEvidence implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dispute
      *
-     * @param string|null $dispute The ID of the resource.
+     * @param string|null $dispute The ID of the `Dispute` associated with the evidence.
      *
      * @return self
      */
