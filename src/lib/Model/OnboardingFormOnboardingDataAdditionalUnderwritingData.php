@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOnboardingFormRequestOnboardingDataEntity
+ * OnboardingFormOnboardingDataAdditionalUnderwritingData
  *
  * PHP version 7.4
  *
@@ -16,7 +16,7 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateOnboardingFormRequestOnboardingDataEntity Class Doc Comment
+ * OnboardingFormOnboardingDataAdditionalUnderwritingData Class Doc Comment
  *
  * @category Class
  * @description Additional underwriting data about the user.
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface, ArrayAccess, \JsonSerializable
+class OnboardingFormOnboardingDataAdditionalUnderwritingData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateOnboardingFormRequest_onboarding_data_entity';
+    protected static $openAPIModelName = 'OnboardingFormOnboardingData_additional_underwriting_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -427,7 +427,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($business_description) && (mb_strlen($business_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $business_description when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $business_description when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -505,7 +505,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($credit_check_ip_address) && (mb_strlen($credit_check_ip_address) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_ip_address when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $credit_check_ip_address when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -535,7 +535,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($credit_check_timestamp) && (mb_strlen($credit_check_timestamp) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_timestamp when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $credit_check_timestamp when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -565,7 +565,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($credit_check_user_agent) && (mb_strlen($credit_check_user_agent) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credit_check_user_agent when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $credit_check_user_agent when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -619,7 +619,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($merchant_agreement_ip_address) && (mb_strlen($merchant_agreement_ip_address) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_agreement_ip_address when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $merchant_agreement_ip_address when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -649,7 +649,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($merchant_agreement_timestamp) && (mb_strlen($merchant_agreement_timestamp) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_agreement_timestamp when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $merchant_agreement_timestamp when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -679,7 +679,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
     {
 
         if (!is_null($merchant_agreement_user_agent) && (mb_strlen($merchant_agreement_user_agent) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_agreement_user_agent when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $merchant_agreement_user_agent when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 
@@ -719,7 +719,7 @@ class CreateOnboardingFormRequestOnboardingDataEntity implements ModelInterface,
         }
 
         if (!is_null($refund_policy) && (mb_strlen($refund_policy) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $refund_policy when calling CreateOnboardingFormRequestOnboardingDataEntity., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $refund_policy when calling OnboardingFormOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
         }
         
 

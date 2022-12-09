@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate
+ * OnboardingFormOnboardingDataEntityIncorporationDate
  *
  * PHP version 7.4
  *
@@ -16,7 +16,7 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate Class Doc Comment
+ * OnboardingFormOnboardingDataEntityIncorporationDate Class Doc Comment
  *
  * @category Class
  * @description The date the company was founded and registered with the US.
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate implements ModelInterface, ArrayAccess, \JsonSerializable
+class OnboardingFormOnboardingDataEntityIncorporationDate implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorpo
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateOnboardingFormRequest_onboarding_data_additional_underwriting_data_incorporation_date';
+    protected static $openAPIModelName = 'OnboardingFormOnboardingData_entity_incorporation_date';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

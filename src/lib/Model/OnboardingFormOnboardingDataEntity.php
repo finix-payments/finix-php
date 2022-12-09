@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData
+ * OnboardingFormOnboardingDataEntity
  *
  * PHP version 7.4
  *
@@ -16,7 +16,7 @@ use \ArrayAccess;
 use \Finix\ObjectSerializer;
 
 /**
- * CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData Class Doc Comment
+ * OnboardingFormOnboardingDataEntity Class Doc Comment
  *
  * @category Class
  * @description The &#x60;entity&#x60; information saved in the &#x60;Identity&#x60; of the user.
@@ -27,7 +27,7 @@ use \Finix\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implements ModelInterface, ArrayAccess, \JsonSerializable
+class OnboardingFormOnboardingDataEntity implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateOnboardingFormRequest_onboarding_data_additional_underwriting_data';
+    protected static $openAPIModelName = 'OnboardingFormOnboardingData_entity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
         'email' => 'string',
         'first_name' => 'string',
         'has_accepted_credit_cards_previously' => 'bool',
-        'incorporation_date' => '\Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate',
+        'incorporation_date' => '\Finix\Model\OnboardingFormOnboardingDataEntityIncorporationDate',
         'last_name' => 'string',
         'max_transaction_amount' => 'int',
         'mcc' => 'string',
@@ -511,7 +511,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($business_name) && (mb_strlen($business_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $business_name when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $business_name when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -541,7 +541,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($business_phone) && (mb_strlen($business_phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $business_phone when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $business_phone when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -619,7 +619,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($default_statement_descriptor) && (mb_strlen($default_statement_descriptor) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $default_statement_descriptor when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $default_statement_descriptor when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -697,7 +697,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($doing_business_as) && (mb_strlen($doing_business_as) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $doing_business_as when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $doing_business_as when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -727,7 +727,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($email) && (mb_strlen($email) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $email when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -757,7 +757,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($first_name) && (mb_strlen($first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $first_name when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $first_name when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -793,7 +793,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     /**
      * Gets incorporation_date
      *
-     * @return \Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate|null
+     * @return \Finix\Model\OnboardingFormOnboardingDataEntityIncorporationDate|null
      */
     public function getIncorporationDate()
     {
@@ -803,7 +803,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     /**
      * Sets incorporation_date
      *
-     * @param \Finix\Model\CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingDataIncorporationDate|null $incorporation_date incorporation_date
+     * @param \Finix\Model\OnboardingFormOnboardingDataEntityIncorporationDate|null $incorporation_date incorporation_date
      *
      * @return self
      */
@@ -835,7 +835,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($last_name) && (mb_strlen($last_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $last_name when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $last_name when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -889,7 +889,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($mcc) && (mb_strlen($mcc) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $mcc when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $mcc when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -929,7 +929,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
         }
 
         if (!is_null($ownership_type) && (mb_strlen($ownership_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $ownership_type when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $ownership_type when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -983,7 +983,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($phone) && (mb_strlen($phone) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $phone when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -1109,7 +1109,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($title) && (mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $title when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 
@@ -1139,7 +1139,7 @@ class CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData implem
     {
 
         if (!is_null($url) && (mb_strlen($url) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $url when calling CreateOnboardingFormRequestOnboardingDataAdditionalUnderwritingData., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $url when calling OnboardingFormOnboardingDataEntity., must be bigger than or equal to 1.');
         }
         
 

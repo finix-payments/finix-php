@@ -20505,6 +20505,8 @@ components:
       x-examples: {}
       title: CreateOnboardingFormRequest
       properties:
+        onboarding_data:
+          $ref: '#/components/schemas/OnboardingFormOnboardingData'
         merchant_processors:
           type: array
           description: An array of objects with the processors and gateways users
@@ -20515,372 +20517,6 @@ components:
               processor:
                 type: string
                 description: The name of the processor you plan to onboard users to.
-        onboarding_data:
-          type: object
-          description: The prefilled information of the user that's being onboarded.
-            For more information, see [Prefilling Fields](/guides/onboarding/onboarding-form/#prefilling-fields).
-          properties:
-            additional_underwriting_data:
-              type: object
-              description: The `entity` information saved in the `Identity` of the
-                user.
-              properties:
-                amex_mid:
-                  type: integer
-                  description: Assigned amexMid value. If a value is passed, it must
-                    be 10 or 11 digits.
-                  nullable: true
-                annual_card_volume:
-                  type: integer
-                  description: The annual credit card sales (in cents) expected to
-                    be processed by this seller (max 19 characters).
-                  nullable: true
-                business_address:
-                  type: object
-                  description: The primary address for the legal entity.
-                  nullable: true
-                  properties:
-                    line1:
-                      type: string
-                      minLength: 1
-                      description: First line of the address (max 35 characters).
-                      nullable: true
-                    line2:
-                      type: string
-                      minLength: 1
-                      description: Second line of the address (max 35 characters).
-                      nullable: true
-                    city:
-                      type: string
-                      minLength: 1
-                      description: City (max 20 characters).
-                      nullable: true
-                    region:
-                      type: string
-                      minLength: 1
-                      description: 2-letter state code.
-                      nullable: true
-                    postal_code:
-                      type: string
-                      minLength: 1
-                      description: Zip or Postal code (max 7 characters).
-                      nullable: true
-                    country:
-                      type: string
-                      minLength: 1
-                      description: 3-Letter Country code (e.g. USA).
-                      nullable: true
-                business_name:
-                  type: string
-                  minLength: 1
-                  description: The merchant's legal business name (max 120 characters).<ul><li>If
-                    <strong>INDIVIDUAL_SOLE_PROPRIETORSHIP</strong>, pass the owner's
-                    legal first name, last name and middle initial.
-                  nullable: true
-                business_phone:
-                  type: string
-                  minLength: 1
-                  description: Customer service phone number where the seller can
-                    be reached (max 10 characters).
-                  nullable: true
-                business_tax_id_provided:
-                  type: boolean
-                  description: Details if the `business_tax_id` was provided.
-                business_type:
-                  description: Include the value that best applies to the seller.
-                  type: string
-                  nullable: true
-                default_statement_descriptor:
-                  type: string
-                  minLength: 1
-                  description: The description of the seller that appears on the buyer's
-                    bank or card statement.
-                  nullable: true
-                discover_mid:
-                  description: Assigned discoverMid value.
-                  type: integer
-                  nullable: true
-                dob:
-                  type: object
-                  description: The control owner's date of birth.
-                  nullable: true
-                  properties:
-                    day:
-                      type: integer
-                      description: Day of birth (between 1 and 31).
-                      minimum: 1
-                    month:
-                      type: integer
-                      description: Month of birth (between 1 and 12).
-                      minimum: 1
-                    year:
-                      type: integer
-                      description: Year of birth (4-digit). Year must be greater than
-                        1900.
-                      minimum: 1900
-                doing_business_as:
-                  type: string
-                  minLength: 1
-                  description: Alternate names of the business. If there are no other
-                    names, pass the same value used for `business_name` (max 60 characters).
-                  nullable: true
-                email:
-                  type: string
-                  minLength: 1
-                  description: The email address of the principal control owner where
-                    they can be reached (max 100 characters).
-                  nullable: true
-                first_name:
-                  type: string
-                  minLength: 1
-                  description: The legal first name of the merchant's control owner
-                    (max 20 characters).
-                  nullable: true
-                has_accepted_credit_cards_previously:
-                  type: boolean
-                  description: Defaults to **false** if not passed.
-                incorporation_date:
-                  type: object
-                  description: The date the company was founded and registered with
-                    the US.
-                  nullable: true
-                  properties:
-                    day:
-                      type: integer
-                      description: Day business was incorporated (between 1 and 31).
-                    month:
-                      type: integer
-                      description: Month of birth (between 1 and 12).
-                    year:
-                      type: integer
-                      description: Year business was incorporated (4-digit).
-                last_name:
-                  type: string
-                  minLength: 1
-                  description: The legal last name of the merchant's control owner
-                    (max 20 characters).
-                  nullable: true
-                max_transaction_amount:
-                  type: integer
-                  description: The maximum amount (in cents) that can be charged for
-                    a single transaction (max 12 characters).
-                  nullable: true
-                mcc:
-                  type: string
-                  minLength: 1
-                  description: The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card\_x/mcc.pdf))
-                    that this seller will be classified under.
-                  nullable: true
-                ownership_type:
-                  type: string
-                  minLength: 1
-                  description: 'Values can be either: <ul><li><strong>PUBLIC</strong>
-                    to indicate a publicly-traded company.<li><strong>PRIVATE</strong>
-                    for privately-held businesses.'
-                  enum:
-                  - PUBLIC
-                  - PRIVATE
-                  nullable: true
-                personal_address:
-                  type: object
-                  description: The home address of the merchant's principal control
-                    owner. This field is used for identity verification purposes.
-                  nullable: true
-                  properties:
-                    line1:
-                      type: string
-                      minLength: 1
-                      description: First line of the address (max 35 characters).
-                      nullable: true
-                    line2:
-                      type: string
-                      minLength: 1
-                      description: Second line of the address (max 35 characters).
-                      nullable: true
-                    city:
-                      type: string
-                      minLength: 1
-                      description: City (max 20 characters).
-                      nullable: true
-                    region:
-                      type: string
-                      minLength: 1
-                      description: 2-letter State code.
-                      nullable: true
-                    postal_code:
-                      type: string
-                      minLength: 1
-                      description: Zip or Postal code (max 7 characters).
-                      nullable: true
-                    country:
-                      type: string
-                      minLength: 1
-                      description: 3-Letter country code (e.g. USA).
-                      nullable: true
-                phone:
-                  type: string
-                  minLength: 1
-                  description: The principal control owner's phone number (max 10
-                    characters).
-                  nullable: true
-                principal_percentage_ownership:
-                  type: integer
-                  description: Percentage of the company owned by the principal control
-                    owner (min 0; max 100).
-                  nullable: true
-                short_business_name:
-                  type: string
-                  description: Abbreviated names of the business. If there are no
-                    abbreviated name, leave this field blank.
-                  nullable: true
-                tax_authority:
-                  type: string
-                  description: <ul><li>Only required when onboarding a seller with
-                    a <tt>MCC</tt> of <strong>9311</strong>.<li> The <tt>tax_authority</tt>
-                    is the tax gathering entity (e.g San Francisco Water Authority).
-                  nullable: true
-                tax_id_provided:
-                  type: boolean
-                  description: Details if the `tax_id` was provided.
-                title:
-                  type: string
-                  minLength: 1
-                  description: The corporate title of the control owner (e.g. Chief
-                    Executive Officer, CFO, etc. Max 60 characters).
-                  nullable: true
-                url:
-                  type: string
-                  minLength: 1
-                  description: The URL of the merchant's public website.
-                  nullable: true
-            associated_entities:
-              type: array
-              description: The `entities` saved in the `associated_identities` of
-                the user. For more information, see [Create an Associated Identity](/guides/onboarding/onboarding-form/#prefilling-fields).
-              items:
-                type: object
-            entity:
-              type: object
-              description: Additional underwriting data about the user.
-              properties:
-                annual_ach_volume:
-                  type: integer
-                  description: The approximate annual ACH sales expected to be processed
-                    (in cents) by this merchant (max 10 characters).
-                average_ach_transfer_amount:
-                  type: integer
-                  description: The approximate average ACH sale amount (in cents)
-                    for this merchant.
-                average_card_transfer_amount:
-                  type: integer
-                  description: The average credit card sale amount (in cents) for
-                    this merchant.
-                business_description:
-                  type: string
-                  minLength: 1
-                  description: Description of this merchant's business (max 200 characters).
-                card_volume_distribution:
-                  type: object
-                  description: The distribution of the merchant's credit card volume
-                    The sum of `card_volume_distribution` must be 100.
-                  nullable: true
-                  properties:
-                    card_present_percentage:
-                      type: integer
-                      description: The percentage of the merchant's volume that's
-                        card present (between 0 and 100).
-                    ecommerce_percentage:
-                      type: integer
-                      description: The percentage of the merchant's business that
-                        is eCommerce (between 0 and 100).
-                    mail_order_telephone_order_percentage:
-                      type: integer
-                      description: The percentage of the merchant's business that
-                        is a mail or telephone order (between 0 and 100).
-                credit_check_allowed:
-                  type: boolean
-                  description: Sets if this merchant has consented and accepted to
-                    a credit check.
-                credit_check_ip_address:
-                  type: string
-                  minLength: 1
-                  description: The IP address of the merchant when they consented
-                    to a credit check (e.g., 42.1.1.113 ).
-                credit_check_timestamp:
-                  type: string
-                  minLength: 1
-                  description: A timestamp of when this merchant consented to a credit
-                    check (e.g., 2021-04-28T16:42:55Z).
-                credit_check_user_agent:
-                  type: string
-                  minLength: 1
-                  description: The details of the browser that was used when this
-                    merchant consented to a credit check (e.g., Mozilla 5.0 (Macintosh;
-                    Intel Mac OS X 10 _14_6)).
-                merchant_agreement_accepted:
-                  type: boolean
-                  description: Sets whether this merchant has accepted the terms and
-                    conditions of the merchant agreement.
-                merchant_agreement_ip_address:
-                  type: string
-                  minLength: 1
-                  description: IP address of the merchant when this merchant accepted
-                    the merchant agreement (e.g., 42.1.1.113).
-                merchant_agreement_timestamp:
-                  type: string
-                  minLength: 1
-                  description: Timestamp of when the merchant accepted Finix's Terms
-                    of Service (e.g., 2021-04-28T16:42:55Z).
-                merchant_agreement_user_agent:
-                  type: string
-                  minLength: 1
-                  description: The details of the browser that was used when this
-                    merchant accepted Finix's Terms of Service (e.g., Mozilla 5.0
-                    (Macintosh; Intel Mac OS X 10 _14_6)).
-                refund_policy:
-                  type: string
-                  minLength: 1
-                  description: Include the value that best applies to the merchant's
-                    refund policy.
-                  enum:
-                  - NO_REFUNDS
-                  - MERCHANDISE_EXCHANGE_ONLY
-                  - WITHIN_30_DAYS
-                  - OTHER
-                volume_distribution_by_business_type:
-                  type: object
-                  description: Merchant's distribution of credit card volume by business
-                    type. Sum of `volume_distribution_by_business_type` must be 100.
-                  nullable: true
-                  properties:
-                    business_to_business_volume_percentage:
-                      type: integer
-                      description: The percentage of the merchant's volume that's
-                        business to business (between 0 and 100).
-                    business_to_consumer_volume_percentage:
-                      type: integer
-                      description: The percentage of the merchant's volume that's
-                        business to consumer (between 0 and 100).
-                    consumer_to_consumer_volume_percentage:
-                      type: integer
-                      description: Merchant's percentage of volume that is consumer
-                        to consumer (between 0 and 100).
-                    other_volume_percentage:
-                      type: integer
-                      description: The percentage of the merchant's volume that isn't
-                        represented by the previous fields (between 0 and 100).
-                    person_to_person_volume_percentage:
-                      type: integer
-                      description: The percentage the merchant's volume that's person
-                        to person (between 0 and 100).
-            payment_instruments:
-              type: object
-              description: The `Payment Instrument` that'll be used to payout the
-                user. For more information, see [Payouts](/guides/payouts/).
-            max_transaction_amount:
-              type: integer
-              description: Maximum amount that can be transacted for a single transaction
-                in cents (max 12 characters). Must be equal to or less than your `max_transaction_amount`.
         onboarding_link_details:
           type: object
           description: The information of the initial onboarding link. This is only
@@ -20931,31 +20567,7 @@ components:
                 type: string
                 description: The name of the processor you plan to onboard users to.
         onboarding_data:
-          type: object
-          description: The prefilled information of the user that's being onboarding.
-            See [Prefilling Fields](/guides/onboarding/onboarding-form/).
-          properties:
-            additional_underwriting_data:
-              type: object
-              description: Additional underwriting data about the user.
-            associated_entities:
-              type: array
-              description: The `entities` saved in the `associated_identities` of
-                the user. For more information, see [Create an Associated Identity](/api/#operation/createAssociatedIdentity).
-              items:
-                type: object
-            entity:
-              type: object
-              description: The `entity` information saved in the `Identity` of the
-                user.
-            max_transaction_amount:
-              type: integer
-              description: Maximum amount that can be transacted for a single transaction
-                in cents (max 12 characters). Must be equal to or less than your `max_transaction_amount`.
-            payment_instruments:
-              type: object
-              description: The `Payment Instrument` that'll be used to payout the
-                user. For more information, see [Payouts](/guides/payouts).
+          $ref: '#/components/schemas/OnboardingFormOnboardingData'
         onboarding_link:
           type: object
           description: The information of the initial onboarding link. This is only
@@ -21431,6 +21043,555 @@ components:
               description: Include a number of `submission_delay_days` to delay when
                 `funding_transfers` for both payouts *and* fees get submitted (in
                 days) to debit/credit the `payment_instrument_id`.
+    OnboardingFormOnboardingData:
+      title: OnboardingFormOnboardingData
+      x-stoplight:
+        id: lu5e8v4djdyv7
+      type: object
+      description: The prefilled information of the user that's being onboarded. For
+        more information, see [Prefilling Fields](/guides/onboarding/onboarding-form/#prefilling-fields).
+      properties:
+        additional_underwriting_data:
+          type: object
+          description: Additional underwriting data about the user.
+          properties:
+            annual_ach_volume:
+              type: integer
+              description: The approximate annual ACH sales expected to be processed
+                (in cents) by this merchant (max 10 characters).
+            average_ach_transfer_amount:
+              type: integer
+              description: The approximate average ACH sale amount (in cents) for
+                this merchant.
+            average_card_transfer_amount:
+              type: integer
+              description: The average credit card sale amount (in cents) for this
+                merchant.
+            business_description:
+              type: string
+              minLength: 1
+              description: Description of this merchant's business (max 200 characters).
+            card_volume_distribution:
+              type: object
+              description: The distribution of the merchant's credit card volume The
+                sum of `card_volume_distribution` must be 100.
+              nullable: true
+              properties:
+                card_present_percentage:
+                  type: integer
+                  description: The percentage of the merchant's volume that's card
+                    present (between 0 and 100).
+                ecommerce_percentage:
+                  type: integer
+                  description: The percentage of the merchant's business that is eCommerce
+                    (between 0 and 100).
+                mail_order_telephone_order_percentage:
+                  type: integer
+                  description: The percentage of the merchant's business that is a
+                    mail or telephone order (between 0 and 100).
+            credit_check_allowed:
+              type: boolean
+              description: Sets if this merchant has consented and accepted to a credit
+                check.
+            credit_check_ip_address:
+              type: string
+              minLength: 1
+              description: The IP address of the merchant when they consented to a
+                credit check (e.g., 42.1.1.113 ).
+            credit_check_timestamp:
+              type: string
+              minLength: 1
+              description: A timestamp of when this merchant consented to a credit
+                check (e.g., 2021-04-28T16:42:55Z).
+            credit_check_user_agent:
+              type: string
+              minLength: 1
+              description: The details of the browser that was used when this merchant
+                consented to a credit check (e.g., Mozilla 5.0 (Macintosh; Intel Mac
+                OS X 10 _14_6)).
+            merchant_agreement_accepted:
+              type: boolean
+              description: Sets whether this merchant has accepted the terms and conditions
+                of the merchant agreement.
+            merchant_agreement_ip_address:
+              type: string
+              minLength: 1
+              description: IP address of the merchant when this merchant accepted
+                the merchant agreement (e.g., 42.1.1.113).
+            merchant_agreement_timestamp:
+              type: string
+              minLength: 1
+              description: Timestamp of when the merchant accepted Finix's Terms of
+                Service (e.g., 2021-04-28T16:42:55Z).
+            merchant_agreement_user_agent:
+              type: string
+              minLength: 1
+              description: The details of the browser that was used when this merchant
+                accepted Finix's Terms of Service (e.g., Mozilla 5.0 (Macintosh; Intel
+                Mac OS X 10 _14_6)).
+            refund_policy:
+              type: string
+              minLength: 1
+              description: Include the value that best applies to the merchant's refund
+                policy.
+              enum:
+              - NO_REFUNDS
+              - MERCHANDISE_EXCHANGE_ONLY
+              - WITHIN_30_DAYS
+              - OTHER
+            volume_distribution_by_business_type:
+              type: object
+              description: Merchant's distribution of credit card volume by business
+                type. Sum of `volume_distribution_by_business_type` must be 100.
+              nullable: true
+              properties:
+                business_to_business_volume_percentage:
+                  type: integer
+                  description: The percentage of the merchant's volume that's business
+                    to business (between 0 and 100).
+                business_to_consumer_volume_percentage:
+                  type: integer
+                  description: The percentage of the merchant's volume that's business
+                    to consumer (between 0 and 100).
+                consumer_to_consumer_volume_percentage:
+                  type: integer
+                  description: Merchant's percentage of volume that is consumer to
+                    consumer (between 0 and 100).
+                other_volume_percentage:
+                  type: integer
+                  description: The percentage of the merchant's volume that isn't
+                    represented by the previous fields (between 0 and 100).
+                person_to_person_volume_percentage:
+                  type: integer
+                  description: The percentage the merchant's volume that's person
+                    to person (between 0 and 100).
+        associated_entities:
+          type: array
+          description: The `entities` saved in the `associated_identities` of the
+            user. For more information, see [Create an Associated Identity](/guides/onboarding/onboarding-form/#prefilling-fields).
+          items:
+            type: object
+            description: Underwriting data that's required to verify the `Identity`.
+            properties:
+              annual_card_volume:
+                type: integer
+                description: The annual credit card sales (in cents) expected to be
+                  processed (max 19 characters).
+              business_address:
+                type: object
+                description: The primary address for the legal entity.
+                nullable: true
+                properties:
+                  city:
+                    type: string
+                    description: City (max 20 characters).
+                    minLength: 1
+                  country:
+                    type: string
+                    minLength: 1
+                  line2:
+                    type: string
+                    minLength: 1
+                    description: Second line of the address (max 35 characters).
+                  line1:
+                    type: string
+                    minLength: 1
+                    description: First line of the address (max 35 characters).
+                  postal_code:
+                    type: string
+                    minLength: 1
+                    description: Zip or Postal code (max 7 characters).
+                  region:
+                    type: string
+                    minLength: 1
+                    description: 2-letter state code.
+              business_name:
+                type: string
+                minLength: 1
+                description: Abbreviated names of the business. If there are no abbreviated
+                  name, leave this field blank.
+                nullable: true
+              business_phone:
+                type: string
+                minLength: 1
+                description: Customer service phone number where the merchant can
+                  be reached (max 10 characters).
+              business_tax_id:
+                type: string
+                minLength: 1
+                description: Details if the `business_tax_id` was provided.
+              business_type:
+                type: string
+                minLength: 1
+                description: Include the value that best applies to the merchant.
+                enum:
+                - INDIVIDUAL_SOLE_PROPRIETORSHIP
+                - CORPORATION
+                - LIMITED_LIABILITY_COMPANY
+                - PARTNERSHIP
+                - ASSOCIATION_ESTATE_TRUST
+                - TAX_EXEMPT_ORGANIZATION
+                - INTERNATIONAL_ORGANIZATION
+                - GOVERNMENT_AGENCY
+              default_statement_descriptor:
+                type: string
+                minLength: 1
+                description: The description of the merchant that appears on the buyer's
+                  bank or card statement.
+              dob:
+                type: object
+                description: 'The control owner''s date of birth.
+
+                  '
+                properties:
+                  day:
+                    type: integer
+                  month:
+                    type: integer
+                  year:
+                    type: integer
+              doing_business_as:
+                type: string
+                minLength: 1
+                description: Alternate names of the business. If there are no other
+                  names, pass the same value used for `business_name` (max 60 characters).
+              email:
+                type: string
+                minLength: 1
+                description: The email address of the principal control owner where
+                  they can be reached (max 100 characters).
+              first_name:
+                type: string
+                minLength: 1
+                description: The legal first name of the control owner (max 20 characters).
+              has_accepted_credit_cards_previously:
+                type: boolean
+                description: Defaults to **false** if not passed.
+              incorporation_date:
+                type: object
+                description: The date the company was founded and registered.
+                nullable: true
+                properties:
+                  day:
+                    type: integer
+                    description: Day business was incorporated (between 1 and 31).
+                  month:
+                    type: integer
+                    description: Month business was incorporated (between 1 and 12).
+                  year:
+                    type: integer
+                    description: Year business was incorporated (4-digit).
+              last_name:
+                type: string
+                minLength: 1
+                description: The `Identity` owner's legal last name.
+              max_transaction_amount:
+                type: integer
+                description: The maximum amount (in cents) that can be charged for
+                  a single transaction (max 12 characters).
+              mcc:
+                type: string
+                minLength: 1
+                description: The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card_x/mcc.pdf))
+                  that this merchant will be classified under.
+              ownership_type:
+                type: string
+                minLength: 1
+                nullable: true
+                description: 'Values can be either:
+
+                  <ul><li><strong>PUBLIC</strong> to indicate a publicly-traded company.
+
+                  <li><strong>PRIVATE</strong> for privately-held businesses.'
+              personal_address:
+                type: object
+                description: The home address of the principal control owner. This
+                  field is used for identity verification purposes.
+                properties:
+                  city:
+                    type: string
+                    minLength: 1
+                    description: City (max 20 characters).
+                  country:
+                    type: string
+                    minLength: 1
+                    description: 3-Letter country code (e.g. USA).
+                  line1:
+                    type: string
+                    minLength: 1
+                    description: First line of the address (max 35 characters).
+                  line2:
+                    type: string
+                    minLength: 1
+                    description: Second line of the address (max 35 characters).
+                  postal_code:
+                    type: string
+                    minLength: 1
+                    description: Zip or Postal code (max 7 characters).
+                  region:
+                    type: string
+                    minLength: 1
+                    description: 2-letter State code.
+              phone:
+                type: string
+                minLength: 1
+                description: The principal control owner's phone number (max 10 characters).
+              principal_percentage_ownership:
+                type: integer
+                description: Percentage of the company owned by the principal control
+                  owner (min 0; max 100).
+              tax_id:
+                type: string
+                minLength: 1
+                description: Details if the `tax_id` was provided.
+              title:
+                type: string
+                minLength: 1
+                description: The corporate title of the control owner (e.g. Chief
+                  Executive Officer, CFO, etc. Max 60 characters).
+              url:
+                type: string
+                minLength: 1
+                description: The URL of the `Identity` owner's public website.
+        entity:
+          type: object
+          description: The `entity` information saved in the `Identity` of the user.
+          properties:
+            amex_mid:
+              type: integer
+              description: Assigned amexMid value. If a value is passed, it must be
+                10 or 11 digits.
+              nullable: true
+            annual_card_volume:
+              type: integer
+              description: The annual credit card sales (in cents) expected to be
+                processed by this seller (max 19 characters).
+              nullable: true
+            business_address:
+              type: object
+              description: The primary address for the legal entity.
+              nullable: true
+              properties:
+                line1:
+                  type: string
+                  minLength: 1
+                  description: First line of the address (max 35 characters).
+                  nullable: true
+                line2:
+                  type: string
+                  minLength: 1
+                  description: Second line of the address (max 35 characters).
+                  nullable: true
+                city:
+                  type: string
+                  minLength: 1
+                  description: City (max 20 characters).
+                  nullable: true
+                region:
+                  type: string
+                  minLength: 1
+                  description: 2-letter state code.
+                  nullable: true
+                postal_code:
+                  type: string
+                  minLength: 1
+                  description: Zip or Postal code (max 7 characters).
+                  nullable: true
+                country:
+                  type: string
+                  minLength: 1
+                  description: 3-Letter Country code (e.g. USA).
+                  nullable: true
+            business_name:
+              type: string
+              minLength: 1
+              description: The merchant's legal business name (max 120 characters).<ul><li>If
+                <strong>INDIVIDUAL_SOLE_PROPRIETORSHIP</strong>, pass the owner's
+                legal first name, last name and middle initial.
+              nullable: true
+            business_phone:
+              type: string
+              minLength: 1
+              description: Customer service phone number where the seller can be reached
+                (max 10 characters).
+              nullable: true
+            business_tax_id_provided:
+              type: boolean
+              description: Details if the `business_tax_id` was provided.
+            business_type:
+              description: Include the value that best applies to the seller.
+              type: string
+              nullable: true
+            default_statement_descriptor:
+              type: string
+              minLength: 1
+              description: The description of the seller that appears on the buyer's
+                bank or card statement.
+              nullable: true
+            discover_mid:
+              description: Assigned discoverMid value.
+              type: integer
+              nullable: true
+            dob:
+              type: object
+              description: The control owner's date of birth.
+              nullable: true
+              properties:
+                day:
+                  type: integer
+                  description: Day of birth (between 1 and 31).
+                  minimum: 1
+                month:
+                  type: integer
+                  description: Month of birth (between 1 and 12).
+                  minimum: 1
+                year:
+                  type: integer
+                  description: Year of birth (4-digit). Year must be greater than
+                    1900.
+                  minimum: 1900
+            doing_business_as:
+              type: string
+              minLength: 1
+              description: Alternate names of the business. If there are no other
+                names, pass the same value used for `business_name` (max 60 characters).
+              nullable: true
+            email:
+              type: string
+              minLength: 1
+              description: The email address of the principal control owner where
+                they can be reached (max 100 characters).
+              nullable: true
+            first_name:
+              type: string
+              minLength: 1
+              description: The legal first name of the merchant's control owner (max
+                20 characters).
+              nullable: true
+            has_accepted_credit_cards_previously:
+              type: boolean
+              description: Defaults to **false** if not passed.
+            incorporation_date:
+              type: object
+              description: The date the company was founded and registered with the
+                US.
+              nullable: true
+              properties:
+                day:
+                  type: integer
+                  description: Day business was incorporated (between 1 and 31).
+                month:
+                  type: integer
+                  description: Month of birth (between 1 and 12).
+                year:
+                  type: integer
+                  description: Year business was incorporated (4-digit).
+            last_name:
+              type: string
+              minLength: 1
+              description: The legal last name of the merchant's control owner (max
+                20 characters).
+              nullable: true
+            max_transaction_amount:
+              type: integer
+              description: The maximum amount (in cents) that can be charged for a
+                single transaction (max 12 characters).
+              nullable: true
+            mcc:
+              type: string
+              minLength: 1
+              description: The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card\_x/mcc.pdf))
+                that this seller will be classified under.
+              nullable: true
+            ownership_type:
+              type: string
+              minLength: 1
+              description: 'Values can be either: <ul><li><strong>PUBLIC</strong>
+                to indicate a publicly-traded company.<li><strong>PRIVATE</strong>
+                for privately-held businesses.'
+              enum:
+              - PUBLIC
+              - PRIVATE
+              nullable: true
+            personal_address:
+              type: object
+              description: The home address of the merchant's principal control owner.
+                This field is used for identity verification purposes.
+              nullable: true
+              properties:
+                line1:
+                  type: string
+                  minLength: 1
+                  description: First line of the address (max 35 characters).
+                  nullable: true
+                line2:
+                  type: string
+                  minLength: 1
+                  description: Second line of the address (max 35 characters).
+                  nullable: true
+                city:
+                  type: string
+                  minLength: 1
+                  description: City (max 20 characters).
+                  nullable: true
+                region:
+                  type: string
+                  minLength: 1
+                  description: 2-letter State code.
+                  nullable: true
+                postal_code:
+                  type: string
+                  minLength: 1
+                  description: Zip or Postal code (max 7 characters).
+                  nullable: true
+                country:
+                  type: string
+                  minLength: 1
+                  description: 3-Letter country code (e.g. USA).
+                  nullable: true
+            phone:
+              type: string
+              minLength: 1
+              description: The principal control owner's phone number (max 10 characters).
+              nullable: true
+            principal_percentage_ownership:
+              type: integer
+              description: Percentage of the company owned by the principal control
+                owner (min 0; max 100).
+              nullable: true
+            short_business_name:
+              type: string
+              description: Abbreviated names of the business. If there are no abbreviated
+                name, leave this field blank.
+              nullable: true
+            tax_authority:
+              type: string
+              description: <ul><li>Only required when onboarding a seller with a <tt>MCC</tt>
+                of <strong>9311</strong>.<li> The <tt>tax_authority</tt> is the tax
+                gathering entity (e.g San Francisco Water Authority).
+              nullable: true
+            tax_id_provided:
+              type: boolean
+              description: Details if the `tax_id` was provided.
+            title:
+              type: string
+              minLength: 1
+              description: The corporate title of the control owner (e.g. Chief Executive
+                Officer, CFO, etc. Max 60 characters).
+              nullable: true
+            url:
+              type: string
+              minLength: 1
+              description: The URL of the merchant's public website.
+              nullable: true
+        payment_instruments:
+          type: object
+          description: The `Payment Instrument` that'll be used to payout the user.
+            For more information, see [Payouts](/guides/payouts/).
+        max_transaction_amount:
+          type: integer
+          description: Maximum amount that can be transacted for a single transaction
+            in cents (max 12 characters). Must be equal to or less than your `max_transaction_amount`.
     ListAuthorizationsQueryParams:
       type: object
       properties:
