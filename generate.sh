@@ -8,8 +8,8 @@ openapi-generator generate \
 -i openapi/finix-api.yaml \
 -o src \
 -t template \
+--additional-properties=artifactVersion=2.0.0 \
 --global-property skipFormModel=false \
---global-property httpUserAgent=finix-php/0.0.1 \
 --global-property modelTests=false,modelDocs=false \
 --global-property apiDocs=false \
 --skip-validate-spec \
